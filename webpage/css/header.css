@@ -1,0 +1,147 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+div{
+	/*border:1px solid red;*/
+}
+		a{
+			text-decoration: none;
+		}
+		li{
+			list-style: none;
+		}
+		body{
+			width: 1350px;
+			margin: 0 auto;
+		}
+		#topBox{
+			width: 1350px;
+			height: 170px;
+
+		}
+		#topBox1{
+			width: 1002px;
+			height: 103px;
+			margin: 0 auto;
+		}
+		#HR1{
+			width: 1002px;
+			height: 5px;
+			background-color: #284c7e;
+		}
+		#logo{
+			width: 1002px;
+			height: 88px;
+			position: relative;
+		}
+		#logoPic{
+			margin-top: 5px;
+		}
+		#searchPart{
+			border: 1px solid green;
+			width: 300px;
+			height: 80px;
+			position: absolute;
+			margin-left:450px;
+			margin-top: -28px;
+		}
+		input{
+			border: 2px dotted b6b6b6;
+			width: 257px;
+			height: 36px;
+			margin-left: 25px;
+			margin-top: 30px;
+			font-size: 14px;
+		}
+		#search_btn{
+			border: dotted b6b6b6;
+			height: 36px;
+			width: 36px;
+			background-color: #ffffff;
+			position: absolute;
+			margin-left: -36px;
+			margin-top: 32px;
+		}
+		#header-login{
+			height: 50px;
+			width: 100px;
+			margin-left: 820px;
+			margin-top: 8px;
+			font-size: 18px;
+			border-radius: 2em;
+		}
+		#header-login span{
+			border:1px solid green;
+			position: relative;
+			margin:center;
+		}
+		#header-login span:hover{
+			border:1px solid green;
+			position: relative;
+			background-color:#0e6eb8;
+		}
+		#search_btn img{
+			margin: 0 auto;
+		}
+		#titleSpan{
+			position: absolute;
+			margin-left: 115px;
+			margin-top: 5px;
+		}
+		.titleFont{
+			color: #fc8237;
+			font-size: 12px;
+		}
+		#topBox hr{
+			border-top: 1px  #d6d6d6;
+		}
+		#topBox2{
+			width: 1002px;
+			height: 60px;
+			margin: 0 auto;
+		}
+		#navFont{
+			float: left;
+			width: 1002px;
+			text-align: center;
+			margin-top: 0px;
+			margin-left: 6px;
+			font-size: 14px;
+			font-weight: bold;
+			font-family: '宋体';
+			position: absolute;
+		}
+		#navFont a{
+			display: block;
+			color: #333333;
+		}
+		#navFont a:hover{
+			color: #ffffff;
+			display: block;
+			background-color: #00aded;
+		}
+		#navFont li{
+			float: left;
+			width: 108px;
+			text-align: center;
+			line-height: 56px;
+		}
+		#navFont li:hover{
+			float: left;
+			width: 108px;
+			text-align: center;
+			line-height: 56px;
+			background-color: #0e6eb8;
+		}
+		#navFont li ul{
+			display: none;
+		}
+		#navFont li:hover ul{
+			margin-left: 0px;
+			display: block;
+		}
+		#navFont li:hover ul li{
+			width: 145px;
+			background-color: #0e6eb8;
+		}
