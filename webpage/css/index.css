@@ -1,0 +1,94 @@
+*{
+
+}
+#myNiceCarousel{
+  width:75%;
+  height:75%;
+  margin-left:170px;
+}
+.tutor_information{
+  width:1025px;
+  margin-top:15px;
+  margin-left:170px;
+  border:1px solid #e4dfd7;
+}
+.tutor_information_pic img{
+  width:50%;
+  height:50%;
+  margin-left:400px;
+  margin-top:15px;
+}
+#choose_button{
+  margin-left:390px;
+  margin-top:15px;
+}
+#i_wonder_release{
+  margin-left:290px;
+}
+#personal_information{
+  margin-left:23px;
+  margin-top:15px;
+}
+#personal_inf{
+  margin-left:-5px;
+  width:200px;
+}
+#personal_name{
+  height:100px;
+  border:1px solid #e4dfd7;
+  margin-top:5px;
+}
+#pager{
+  margin-left: 400px;
+}
+.learning_community{
+  width:1025px;
+  margin-top:15px;
+  margin-left:170px;
+  border:1px solid #e4dfd7;
+}
+.studycommunity img{
+  width:50%;
+  height:50%;
+  margin-left:400px;
+  margin-top:15px;
+}
+#cards{
+  width:1025px;
+}
+#pic_article_keyword{
+  border:1px solid #e4dfd7;
+  margin-left:40px;
+  width:180px;
+  height:150px;
+}
+#pic_article_keyword a{
+  width:160px;
+  display: block;
+}
+#pic_article_keyword a img{
+  width:70%;
+  height:70%;
+  margin-left:23px;
+  margin-top:10px;
+}
+#cards_article{
+  width:600px;
+  height:150px;
+  border:1px solid #e4dfd7;
+  margin-left:180px;
+  margin-top:-152px;
+  padding:8px;
+}
+#cards_time{
+  margin-left:430px;
+  margin-top:-12px;
+}
+#cards_keyword{
+  margin-left:800px;
+  margin-top:-170px;
+  padding:20px;
+  width:150px;
+  height:150px;
+  border:1px solid #e4dfd7;
+}
