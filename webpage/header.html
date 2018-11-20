@@ -4,6 +4,7 @@
 	<title></title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/header.css"/>
+	
 </head>
 <body>
 	<!-- 整体 -->
@@ -12,23 +13,7 @@
 			<div id="HR1">
 			</div>
 			<div id="logo">
-				<img src="images/logo.png" alt="logo" id="logoPic">
-				<div id="searchPart">
-					<!-- 搜索框 -->
-					<form id="partForm">
-						<input type="text" value="请输入您要搜索的科目或年级" id="partInput">
-							<input type="submit" id="search_btn" name="heder-submit">
-								<!-- <img src="images/search_btn.gif" alt="search_btn"> -->
-							</input>
-						</input>
-					</form>
-				</div>
-				<!-- 登录注册 -->
-				<div id="header-login">
-					<span><a href="#">登录</a></span>
-					<!-- <span>/</span> -->
-					<span><a href="#">注册</a></span>
-				</div>
+				<img src="images/headerLogo.png" alt="logo" id="logoPic">
 			</div>
 			<hr>
 		</div>
@@ -57,8 +42,28 @@
 						<li><a href="#">心理困惑</a></li>
 					</ul>
 				</li>
-				<li class="navFont1"><a href="#">联系我们</a></li>
 			</ul>
+			<!-- 搜索框 -->
+			<div id="searchPart">
+					<form id="partForm">
+						<!-- 待修改搜索的值 -->
+						<input type="text" value="请输入您要搜索的科目" id="partInput"/>
+						<input type="submit" id="search_btn" name="heder-submit" autofocus="autofocus"/>
+								<!-- <img src="images/search_btn.gif" alt="search_btn"> -->
+					</form>
+				</div>
+				<!-- 登录注册 -->
+				<div id="header-login">
+					<span><a href="#">登录</a></span>
+					<!-- <span>/</span> -->
+					<span><a href="#">注册</a></span>
+				</div>
 		</div>
 </body>
+<script>
+	var search = document.getElementById("partInput");
+  search.onfocus = function(){
+      search.value="";
+  }
+</script>
 </html>
