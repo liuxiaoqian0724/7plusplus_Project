@@ -139,4 +139,26 @@
 			return false;
 		}
 	}
+			//关闭弹框
+			function closeframe(){
+				var register=document.getElementById("register");
+				var login=document.getElementById("login");
+	      		register.style.display="none";
+	      		login.style.display="none";
+			}
 	
+			//登录验证
+			function logincheck(){
+				var useremail=$("#login_email").val();
+				var password=$("#login_password").val();
+				var show=$("#show");
+				if(useremail==""||password==""){
+					show.html("邮箱或密码为空！");
+					console.log(1);
+					return false;
+				}
+				else{
+					show.html("");
+					return true;
+				}
+			}	
