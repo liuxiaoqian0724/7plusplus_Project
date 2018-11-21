@@ -18,7 +18,7 @@ div{
 		#logo{
 			/*border:1px solid black;*/
 			margin-left: -130px;
-			margin-top: -5px;
+			margin-top: 5px;
 		}
 		#topBox{
 			width: 1350px;
@@ -41,7 +41,10 @@ div{
 			position: relative;
 		}
 		#logoPic{
-			margin-top: 5px;
+			position: relative;
+			
+			top: -10px;
+			height: 60px;
 		}
 		#searchPart{
 			/*border: 1px solid green;*/
@@ -49,26 +52,26 @@ div{
 			height: 80px;
 			position: absolute;
 			margin-left:700px;
-			margin-top: -20px;
+			margin-top: -30px;
 		}
 		input{
 			border: 2px dotted b6b6b6;
 			width: 257px;
-			height: 36px;
+			height: 25px;
 			margin-left: 25px;
-			margin-top: 35px;
+			margin-top: 40px;
 			font-size: 14px;
 			border-radius:10px;
 		}
 		#search_btn{
 			border: dotted b6b6b6;
-			height: 37px;
+			height: 28px;
 			width: 42px;
 			background-color: #ffffff;
 			position: absolute;
 			color: #01DFCE;
 			margin-left: -43px;
-			margin-top: 37px;
+			margin-top: 42px;
 			font-family: '宋体';
 			font-weight: bold;
 		}
@@ -76,8 +79,8 @@ div{
 			/*border: 1px solid green;*/
 			height: 30px;
 			width: 120px;
-			margin-left: 1130px;
-			margin-top: 25px;
+			margin-left: 1150px;
+			margin-top: 15px;
 			font-size: 18px;
 			position: absolute;
 		}
@@ -114,7 +117,7 @@ div{
 		#topBox2{
 			/*border:1px solid red;*/
 			width: 1300px;
-			height: 70px;
+			height: 50px;
 			margin: 0 auto;
 			background-color: #01DFCE;
 			margin-top: -7px;
@@ -143,14 +146,14 @@ div{
 			float: left;
 			width: 108px;
 			text-align: center;
-			line-height: 70px;
+			line-height: 50px;
 			margin-left: 22px;
 		}
 		#navFont li:hover{
 			float: left;
 			width: 108px;
 			text-align: center;
-			line-height: 70px;
+			line-height: 50px;
 			background-color: #33A6B8;
 		}
 		#navFont li ul{
