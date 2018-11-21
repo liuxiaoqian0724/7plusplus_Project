@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>家教详情</title>
+	<meta charset="utf-8">
+	<!-- <link href="dist/css/zui.css" rel="stylesheet"> -->
+   <!--引入css-->
+   <link rel="stylesheet" href="dist/css/zui.min.css">
+
+   <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.staticfile.org/ionicons/2.0.1/css/ionicons.min.css">
+   <link rel="stylesheet" type="text/css" href="css/tutordetail.css">
+   <!--引入js-->
+   <script type="text/javascript" src="dist/lib/jquery/jquery.js"></script>
+   <script type="text/javascript" src="dist/js/zui.min.js"></script>
+	
+	<script src="js/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="js/tutordetail.js"></script>
+</head>
+<body>
+<!--header-->
+<div class="header"></div>
+
+<!--content-->
+<div class="content">
+	<!--内容的上半部分-->
+	<div class="content-top">
+		<!--面包屑-->
+		<!-- <div id="crumbs">
+	        <ul>
+	            <li><a href="#">Home</a></li>
+	            <li><a href="#">Home</a></li>
+	            <li><a href="#">Home</a></li>
+	            <li><a href="#">Home</a></li>
+
+	        </ul>
+   		</div> -->
+   		<div class="crumb">
+   			<ul>
+   				<li><a href="">Home</a> <i class="icon ion-arrow-right-b"></i></li>
+   				<li><a href="">石家庄数学老师</a><i class="icon ion-arrow-right-b"></i></li>	
+   				<li><a href="">石家庄一年级老师</a><i class="icon ion-arrow-right-b"></i></li>
+   				<li><a href="">李老师</a></li>
+   			</ul>
+   		</div>
+   		<!--个人信息-->
+   		<div class="information">
+   			<!--左半部分 photo-->
+   			<div class="in-photo">
+   				<div class="bigimg">
+   					<img src="images/img1.jpg">
+   				</div>
+   				<div class="imgs">
+   					<ul>
+   						<!--数据库循环-->
+   						<li><!-- 使用图片 -->
+							<img data-toggle="lightbox" src="images/img2.jpg" data-image="images/img1.jpg" data-caption="小图看大图" class="img-thumbnail" alt="" width="80">
+						</li>
+   						<li><img src="images/img2.jpg"></li>
+   						<li><img src="images/img2.jpg"></li>
+   					</ul>
+   				</div>
+   			</div>
+   			<!--详细信息-->
+   			<div class="in-detail">
+   				<div class="de-name">
+   					家教名
+   				</div>
+   				<div class="de-lineone">
+   					教龄：11年&nbsp;&nbsp;|&nbsp;&nbsp; 授课366小时&nbsp;&nbsp;|&nbsp;&nbsp; 好评数48条 
+   				</div>
+   				<div class="de-linetwo">
+   					<div class="one">
+   						<!--数据库查询-->
+   						<span class="title">课酬</span>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="price"><i class="icon icon-yen"></i>139/小时</span>
+   						<span class="star">⭐⭐⭐⭐</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">用户评价</span>
+   					</div>
+   					<div class="two">
+   						<!--如果符合，则√变色-->
+   						<span class="title">认证</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="aa"><i class="icon1 ion-android-checkmark-circle"></i>&nbsp;实名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="icon1 ion-android-checkmark-circle"></i>&nbsp;学历</span>
+   					</div>
+   				</div>
+   				<div class="de-linethree">
+   					<span class="title">授课年级</span>
+   					<div class="grade">
+   						<ul>
+   							<li class="gradeli">一年级</li>
+   							<li class="gradeli">一年级</li>
+   							<li class="gradeli">一年级</li>
+   							<li class="gradeli">一年级</li>
+   							<li class="gradeli">一年级</li>
+   							<li class="gradeli">一年级</li>
+   							<li class="gradeli">一年级</li>
+   							<li class="gradeli">一年级</li>
+   						</ul>
+   					</div>
+   				</div>
+   				<div class="de-linefour">
+   					<span class="title">授课方式</span>
+   					<div class="pattern">
+   						<ul>
+   							<li class="patternli">老师上门</li>
+   							<li class="patternli">学生上门</li>
+   						</ul>
+   					</div>
+   				</div>
+               <!--按钮-->
+   				<div class="de-linefive">
+                  <button class="btn1 btn-lg" type="button">预约</button>
+                  <button class="btn1 btn-lg" type="button">咨询</button>
+               </div>
+   			</div>
+
+   		</div>
+	</div>
+
+	<!--内容的中间部分-->
+	<div class="content-middle">
+		<!--中间的左半部分-->
+		<div class="middle-left">
+         <!--标签页-->
+         <ul class="nav nav-tabs">
+           <li class="active"><a data-tab href="#tabContent1">学生评价</a></li>
+           <li><a data-tab href="#tabContent2">老师详情</a></li>
+           <!-- <li><a data-tab href="#tabContent3">标签3</a></li> -->
+         </ul>
+         <div class="tab-content">
+            <div class="tab-pane active" id="tabContent1">
+               <div class="tabone-top">
+                  <div class="top-left">
+                     <p>满意率</p>
+                     <span>96.47%</span>
+                     <!-- <span class="star">⭐⭐⭐⭐⭐</span> -->
+                  </div>
+                  <div class="separator"></div> 
+                  <div class="top-right">
+                     <p>大家都在说：</p>
+                     <div class="right-tab">
+                        <ul>
+                           <!--数据库查询-->
+                           <li>全部31</li>
+                           
+                           <li>思路清晰31</li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <hr>
+               <!--评价条件-->
+               <div class="comment-conditions">
+                  <ul>
+                     <li id="rank">排序:</li>
+                     <!--数据库中查询-->
+                     <a href=""><li>好评(52)</li></a>
+                     <a href=""><li>中评(2)</li></a>
+                     <a href=""><li>差评(1)</li></a>
+                  </ul>
+               </div>
+               <hr>
+               <div class="comments">
+                  <!--数据库循环-->
+                  <div class="user-comment">
+                     <!--照片框-->
+                     <div class="user-photo">
+                        <img src="http://zui.sexy/docs/img/img2.jpg" width="55px" height="55px" class="img-circle" alt="圆形图片">
+                     </div>
+                     <div class="user-info">
+                        <p class="username">用户名</p>
+                        <p class="usercomment">用户的评价</p>
+                        <p class="usertime">2018年11月20日 18:55</p>
+                     </div>
+                  </div>
+                  <div class="dashed"></div>
+                  <div class="user-comment">
+                     <!--照片框-->
+                     <div class="user-photo">
+                        <img src="http://zui.sexy/docs/img/img2.jpg" width="55px" height="55px" class="img-circle" alt="圆形图片">
+                     </div>
+                     <div class="user-info">
+                        <p class="username">用户名</p>
+                        <p class="usercomment">用户的评价</p>
+                        <p class="usertime">2018年11月20日 18:55</p>
+                     </div>
+                  </div>
+
+                  <div class="page">
+                     <ul class="pager pager-loose">
+                       <li class="previous" name='page2'><a href="" class="page1">上一页</a></li>
+                       <li name='page2' class="a"><a href="" >1</a></li>
+                       <li name='page2' class="a"><a href="" >2</a></li>
+                       <li name='page2' class="a"><a href="" >3</a></li>
+                       <li name='page2' class="a"><a href="" >4</a></li>
+                       <li name='page2' class="a"><a href="" >5</a></li>
+                       <li class="next" name='page2'><a href="">下一页</a></li>
+                     </ul>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="tab-pane" id="tabContent2">
+               <!--成功案例-->
+               <div class="successcase">
+                  <p class="successtitle"><!-- &nbsp;&nbsp; --><i class="icon2 icon-file-text-o"></i>&nbsp;&nbsp;&nbsp;成功案例</p>
+                  <div class="cases">
+                     <!--数据库循环-->
+                     <div class="case">
+                        <p class="ca-title">奥数从不入门到获奖</p>
+                        <div class="ca-content">
+                           刘同学，从三年级开始奥数，学习一年后效果不佳，对奥数也有了一些抵触，我从四年级开始带他，注重教学方法，课堂效率，激发他的学习兴趣，**生活实际，在快乐中学习，帮助刘同学迅速建立了信心，使其在奥数学习中如鱼得水。在五年级的一次数学邀请赛中取得了二等奖的好成绩。
+                        </div>
+                     </div>
+                     <div class="dashed"></div>
+                     <div class="case">
+                        <p class="ca-title">奥数从不入门到获奖</p>
+                        <div class="ca-content">
+                           刘同学，从三年级开始奥数，学习一年后效果不佳，对奥数也有了一些抵触，我从四年级开始带他，注重教学方法，课堂效率，激发他的学习兴趣，**生活实际，在快乐中学习，帮助刘同学迅速建立了信心，使其在奥数学习中如鱼得水。在五年级的一次数学邀请赛中取得了二等奖的好成绩。
+                        </div>
+                     </div>
+                     <div class="dashed"></div>
+                     <div class="hidecase">
+                        <div class="case">
+                           <p class="ca-title">奥数从不入门到获奖</p>
+                           <div class="ca-content">
+                              刘同学，从三年级开始奥数，学习一年后效果不佳，对奥数也有了一些抵触，我从四年级开始带他，注重教学方法，课堂效率，激发他的学习兴趣，**生活实际，在快乐中学习，帮助刘同学迅速建立了信心，使其在奥数学习中如鱼得水。在五年级的一次数学邀请赛中取得了二等奖的好成绩。
+                           </div>
+                        </div>
+                        <div class="dashed"></div>
+                        <div class="case">
+                           <p class="ca-title">奥数从不入门到获奖</p>
+                           <div class="ca-content">
+                              刘同学，从三年级开始奥数，学习一年后效果不佳，对奥数也有了一些抵触，我从四年级开始带他，注重教学方法，课堂效率，激发他的学习兴趣，**生活实际，在快乐中学习，帮助刘同学迅速建立了信心，使其在奥数学习中如鱼得水。在五年级的一次数学邀请赛中取得了二等奖的好成绩。
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!--更多-->
+                  <div class="box">
+                       <span class="line"></span>
+                       <span class="text">查看更多<i class="icon icon-angle-down"></i></span>
+                       <span class="line"></span>
+                     </div>
+               </div> 
+               <!--h教学经历-->   
+               <div class="teaex">
+                  <p class="teaextitle"><i class="icon2 icon-file-text-o"></i>&nbsp;&nbsp;&nbsp;教学经历</p>
+                  <div class="teacase">
+                      <!--时间-->
+                     <p class="teaextime">2011/02—至今 </p>
+                     <p class="teaextag">知名学校数学老师</p>
+                     <p class="teaexwork">   
+                        兼职在教育机构从事培训工作，尤其擅长一对一个性化辅导，根据学生特点因材施教。经验丰富，教学突出，深受学生喜爱！
+                     </p>
+                  </div>
+                  <div class="dashed"></div>
+                  <div class="teacase">
+                      <!--时间-->
+                     <p class="teaextime">2011/02—至今 </p>
+                     <p class="teaextag">知名学校数学老师</p>
+                     <p class="teaexwork">   
+                        兼职在教育机构从事培训工作，尤其擅长一对一个性化辅导，根据学生特点因材施教。经验丰富，教学突出，深受学生喜爱！
+                     </p>
+                  </div>
+               </div> 
+            </div>
+         </div>
+      </div>
+		<!--中间的右半部分-->
+		<div class="middle-right">
+         <!--常用地址-->
+         <div class="address">
+            <p><i class="icon4 icon-map-marker"></i>&nbsp;&nbsp;常用地址</p>
+
+         </div>
+         <!--教学特色-->
+         <div class="feature">
+            <p><!-- <i class="icon4 icon-map-marker"></i> -->&nbsp;&nbsp;教学特色</p>
+         </div>
+      </div>
+
+	</div>
+
+	<!--内容的底部-->
+	<div class="content-bottom">
+		<!--相似老师-->
+      <p class="similartitle"><i class="icon2 icon-file-text-o"></i>&nbsp;&nbsp;&nbsp;相似老师</p>
+      <div class="similarteachers">
+         <div class="teacher">
+            <!--头像-->
+            <div class="teaphoto">
+            </div>
+            <div class="teainfo">
+               <p class="teaname">小初数学李老师</p>
+               <p class="info">⭐⭐⭐⭐⭐&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>教龄5年&nbsp;&nbsp;&nbsp;授课134个小时</span></p>
+               <div class="teatag">
+                  <ul>
+                     <li>小升初</li>
+                     <li>小升初</li>
+                     <li>小升初</li>
+                     <li>小升初</li>
+                  </ul>
+               </div>
+            </div>
+            <div class="separator"></div>
+            <div class="teaprice">
+               <p><i class="icon3 icon-yen"></i>&nbsp;<span class="price1">163</span><span class="qi">起</span></p>
+               <button class="btn2" type="button">立即查看</button>
+            </div>
+         </div>
+         <hr>
+         <div class="teacher">
+            <!--头像-->
+            <div class="teaphoto">
+            </div>
+            <div class="teainfo">
+               <p class="teaname">小初数学李老师</p>
+               <p class="info">⭐⭐⭐⭐⭐&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>教龄5年&nbsp;&nbsp;&nbsp;授课134个小时</span></p>
+               <div class="teatag">
+                  <ul>
+                     <li>小升初</li>
+                     <li>小升初</li>
+                     <li>小升初</li>
+                     <li>小升初</li>
+                  </ul>
+               </div>
+            </div>
+            <div class="separator"></div>
+            <div class="teaprice">
+               <p><i class="icon3 icon-yen"></i>&nbsp;<span class="price1">163</span><span class="qi">起</span></p>
+               <button class="btn2" type="button">立即查看</button>
+            </div>
+         </div>
+      </div>
+	</div>
+	
+</div>
+
+<!--footer-->
+<div class="footer">
+</div>
+</body>
+</html>
