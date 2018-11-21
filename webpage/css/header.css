@@ -61,25 +61,30 @@ div{
 		}
 		#search_btn{
 			border: dotted b6b6b6;
-			height: 36px;
-			width: 36px;
+			height: 37px;
+			width: 42px;
 			background-color: #ffffff;
 			position: absolute;
-			margin-left: -36px;
+			color: #01DFCE;
+			margin-left: -43px;
 			margin-top: 32px;
+			font-family: '宋体';
+			font-weight: bold;
 		}
 		#header-login{
 			/*border: 1px solid green;*/
 			height: 30px;
 			width: 80px;
 			margin-left: 850px;
-			margin-top: 14px;
+			margin-top: 16px;
 			font-size: 18px;
 			position: absolute;
 		}
 		#header-login a{
 			font-size: 18px;
 			color:  #FFFFF0;
+			font-family: '宋体';
+			font-weight: bold;
 		 }
 		#header-login span{
 			/*border:1px solid green;*/
@@ -89,7 +94,8 @@ div{
 		#header-login span:hover{
 			/*border:1px solid green;*/
 			position: relative;
-			background-color:#33A6B8;
+			/*background-color:#33A6B8;*/
+			text-decoration: underline;
 		}
 		#search_btn img{
 			margin: 0 auto;
@@ -103,16 +109,16 @@ div{
 			color: #fc8237;
 			font-size: 12px;
 		}
-		#topBox hr{
+		/*#topBox hr{
 			border-top: 1px  #d6d6d6;
-		}
+		}*/
 		#topBox2{
 			/*border:1px solid red;*/
 			width: 1002px;
 			height: 60px;
 			margin: 0 auto;
 			background-color: #01DFCE;
-			margin-top: -12px;
+			margin-top: -7px;
 		}
 		#navFont{
 			float: left;
@@ -157,4 +163,9 @@ div{
 		#navFont li:hover ul li{
 			width: 145px;
 			background-color: #33A6B8;
+		}
+		#header-icon{
+			position:absolute;
+			margin-left: -36px;
+			margin-top: 8px;
 		}
