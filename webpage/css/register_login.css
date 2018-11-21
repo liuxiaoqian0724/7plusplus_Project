@@ -6,7 +6,15 @@
 	margin-top: 50px;
 	padding-left: 30px;
 	padding-top:20px;
-/*	display:none;*/
+	display:none;
+}
+#closeframe{
+	float:right;
+	margin-top:-70px;
+}
+#closebutton{
+	border:0px;
+	background:transparent;
 }
 #login_qrcode{
 	width:180px;
@@ -22,7 +30,7 @@
 #register{
 	width:900px;
 	margin-left:220px;
-	/*display:none;*/
+	display:none;
 }
 #register_title{
 	margin-left:100px;
