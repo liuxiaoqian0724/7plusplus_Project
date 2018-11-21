@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<!-- zui -->
+    <link rel="stylesheet" href="dist/css/zui.css" />
+    <link rel="stylesheet" href="dist/lib/kindeditor/kindeditor.css" />
+    <link rel="stylesheet" href="dist/lib/kindeditor/kindeditor.min.css" />
+    <!-- <link rel="stylesheet" href="css/teacherwrite.css" /> -->
+    <!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
+    <script src="dist/jquery-3.2.1.min.js"></script>
+    <!-- ZUI Javascript组件 -->
+    <script type="text/javascript" src="dist/js/zui.js"></script>
+    <script src="dist/lib/kindeditor/kindeditor.min.js"></script>
+    <script src="dist/lib/kindeditor/kindeditor.js"></script>
+     <script src="dist/lib/kindeditor/kindeditor/plugins.ok.js"></script>
+</head>
+<body>
+	<textarea id="content" name="content" class="form-control kindeditor" style="height:150px;">Hello, world!</textarea>
+</body>
+<script type="text/javascript">
+	KindEditor.create('textarea.kindeditor', {
+    basePath: '/dist/lib/kindeditor/',
+    allowFileManager : true,
+    bodyClass : 'article-content'
+});
+</script>
+</html>
