@@ -6,19 +6,23 @@
 	<link rel="stylesheet" type="text/css" href="css/register_login.css"/>
 	<!-- zui -->
     <link rel="stylesheet" href="dist/css/zui.css" />
+    <link rel="stylesheet" href="css/verify.css" />
     <!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
-    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery-3.2.1.js"></script>
     <!-- ZUI Javascript组件 -->
     <script type="text/javascript" src="dist/js/zui.js"></script>
+    <script src="js/verify.js"></script>
+    <script src="js/verify.min.js"></script>
+
 </head>
 <body>
 	<!--登录注册按钮-->
 	<div class="btn-group">
-  		<button class="btn" id="login_button">登录</button>
-  		<button class="btn" id="register_button">注册</button>
+  		<button class="btn" id="login_button" onclick="loginDis()">登录</button>
+  		<button class="btn" id="register_button" onclick="registDis()">注册</button>
 	</div>
 	<!--登录-->
-	<div id="login">
+	<div id="login" style="display: none;">
 		<div id="login_title">
 			<h1>登录</h1>
 		</div>
@@ -36,8 +40,7 @@
 		<h5></h5>
 		<!--按钮-->
 		<button class="btn" type="button">忘记密码</button>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<button class="btn" type="button">免费注册</button>
+		<button class="btn" type="button" style="margin-left: 200px;">免费注册</button>
 		<h5></h5>
 		<button class="btn btn-block " type="button" style="width:361px">立即登录</button>
 		<!--二维码-->
@@ -49,54 +52,64 @@
 	</div>
 
 	<!--注册register-->
-	<div class="panel" id="register">
+	<div class="panel" id="register"style="display:none;">
 		<div id="register_title">
-			<h1>注册</h1>
+			<h1>会员注册</h1>
 			<h3></h3>
 		</div>
   		<div class="panel-body">
-  			<form class="form-horizontal" onsubmit="return check()">
+  			<form class="form-horizontal" onsubmit="return checkRegist()">
   				<!--用户名-->
   				<div class="form-group">
     				<label for="exampleInputAccount4" class="col-sm-2">用户名</label>
     				<div class="col-md-6 col-sm-10">
-      					<input type="text" class="form-control" id="exampleInputAccount4" placeholder="请输入1-6位的汉字、英文、数字、下划线">
+      					<input type="text" class="form-control" id="username" placeholder="请输入1-6位的汉字、英文、数字、下划线" onblur="checkName()"><span id="nameError" style="color: red;font-size: 17px;">
+      					</span>
     				</div>
   				</div>
   				<!--密码-->
   				<div class="form-group">
     				<label for="exampleInputPassword4" class="col-sm-2">密码</label>
     				<div class="col-md-6 col-sm-10">
-      					<input type="password" class="form-control" id="exampleInputPassword4" placeholder="密码">
+      					<input type="password" class="form-control" id="password" placeholder="密码的格式为6-16位，只能是字母、数字和下划线" onblur="checkPwd()">
+      					<span id="pwdError" style="color: red;font-size: 17px;">
+      					</span>
     				</div>
   				</div>
   				<!--确认密码-->
   				<div class="form-group">
     				<label for="exampleInputPassword4" class="col-sm-2">确认密码</label>
     				<div class="col-md-6 col-sm-10">
-      					<input type="password" class="form-control" id="exampleInputPassword4" placeholder="再次输入">
+      					<input type="password" class="form-control" id="repassword" placeholder="确认密码" onblur="checkRePwd()">
+      					<span id="rePwdError" style="color: red;font-size: 17px;">
+      					</span>
     				</div>
   				</div>
   				<!--邮箱-->
   				<div class="form-group">
     				<label for="exampleInputAccount4" class="col-sm-2">邮箱</label>
     				<div class="col-md-6 col-sm-10">
-      					<input type="text" class="form-control" id="exampleInputAccount4" placeholder="邮箱名" style="width:320px;">
+      					<input type="text" class="form-control" id="email" placeholder="邮箱名" style="width:320px;"onblur="checkEmail()">
+      					<span id="emailError" style="color: red;font-size: 17px;">
+      					</span>
       					<button class="btn" type="button" style="float:right; margin-top:-32px;">发送验证码</button>
     				</div>
   				</div>
   				<!--图形验证-->
   				<div class="form-group">
     				<label for="exampleInputAccount4" class="col-sm-2">图形验证</label>
-    				<div class="col-md-6 col-sm-10">
-      					<input type="text" class="form-control" id="exampleInputAccount4" placeholder="输入图形中的文字">
-    				</div>
+    				<div id="mpanel1" style="margin-left: 157px;">
+					</div>
+					<span id="identifyError" style="color: red;font-size: 17px;">
+      					</span>
   				</div>
   				<!--邮箱验证码-->
   				<div class="form-group">
     				<label for="exampleInputAccount4" class="col-sm-2">邮箱验证码</label>
     				<div class="col-md-6 col-sm-10">
-      					<input type="text" class="form-control" id="exampleInputAccount4" placeholder="请注意查收邮件">
+      					<input type="text" class="form-control" id="EIdentify" placeholder="请注意查收邮件" onblur="checkEIdentify()">
+      					<span id="EIdentifyError" style="color: red;font-size: 17px;">
+      					</span>
     				</div>
   				</div>
   				<!--角色-->
@@ -105,23 +118,23 @@
 	  				<label class="radio-inline">
 	  					<input type="radio" name="radioOptionsExample"> 家长
 					</label>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<label class="radio-inline">
-	  					<input type="radio" name="radioOptionsExample"> 老师
+					<label class="radio-inline" style="margin-left: 100px;">
+	  					<input type="radio" name="radioOptionsExample" checked="checked"> 老师
 					</label>
   				</div>
   				<!--协议-->
   				<div class="form-group">
     				<div class="col-sm-offset-2 col-sm-10">
-      					<div class="checkbox">
-          					<input type="checkbox">我已阅读并同意家教用户网站协议
+      					<div class="checkbox" style="margin-left: 100px;">
+          					<input type="checkbox" id="principle">我已阅读并同意家教用户网站协议
       					</div>
     				</div>
   				</div>
+  				<span id="allError" style="color: red;margin-left: 220px;font-size: 18px;"></span>
   				<!--注册按钮-->
   				<div class="form-group">
     				<div class="col-sm-offset-2 col-sm-10">
-      					<button type="submit" class="btn btn-default">注册</button>
+      					<button type="submit" class="btn btn-default " style="width: 58%;">注册</button>
     				</div>
   				</div>
 			</form>
@@ -133,35 +146,8 @@
 			<p>扫描二维码获得更多动态信息</p>
 		</div>
 	</div>
-
-	<script type="text/javascript">
-		//设置登录、注册按钮的点击效果
-		window.onload=function(){
-  			var login_button=document.getElementById("login_button");
-  			var login=document.getElementById("login");
-  			var register_button=document.getElementById("register_button");
-  			var register=document.getElementById("register");
-  			login_button.onclick=function(){
-    			if(login.style.display=="none"){
-      				login.style.display="block";
-    			}
-    			else{
-      				login.style.display="none";
-    			}
-    			register.style.display="none";
-  			}
-  			register_button.onclick=function(){
-    			if(register.style.display=="none"){
-      				register.style.display="block";
-    			}
-    			else{
-      				register.style.display="none";
-    			}
-    			login.style.display="none";
-  			}
-		}
-		//注册验证
-
-	</script>
+<script type="text/javascript" src="js/checkLogin_regist.js">
+	
+</script>
 </body>
 </html>
