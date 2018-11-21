@@ -1,0 +1,54 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+div{
+	/*border:1px red solid;*/
+}
+a{
+	text-decoration: none;
+	/*border:1px red solid;*/
+}
+.footer{
+	border:1px #34495E solid;
+	width: 100%;
+	height: 120px;
+	background-color: #34495E;
+	/*margin-top: -10px;*/
+}
+.footer-font{
+	width: 70%;
+	height: 60px;
+	margin-top: 20px;
+	margin-top: 40px;
+}
+#footer-font-img{
+	/*border: 1px #34495E solid;*/
+	width:170px;
+	height:120px;
+	margin-left: 1000px;
+	margin-top: -100px;
+	position: relative;
+}
+.footer-font a{
+	margin-left: 60px;
+	font-size: 18px;
+	font-family: '宋体';
+	font-weight: bold;
+	color: #fffff0;
+}
+.footer-font a:hover{
+	margin-left: 60px;
+	font-size: 18px;
+	font-family: '宋体';
+	color: #fffff0;
+	text-decoration: underline;
+}
+#footer-font-img-font{
+	/*border:1px #34495E solid;*/
+	font-size: 16px;
+	font-family: '宋体';
+	color: #fffff0;
+	font-weight: bold;
+	margin-top: 72px;
+}
