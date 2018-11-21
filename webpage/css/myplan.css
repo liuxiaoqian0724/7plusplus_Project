@@ -1,0 +1,57 @@
+.panel-body > div{
+    height: 200px;
+    margin-bottom: 20px;
+    border:1px dashed red;
+  }
+ .panel-body > div >div{
+ 	float: left;
+ }
+ .panel-body #c2-right-img{
+ 	width: 140px;
+ 	height: 200px;
+ 	border-right: 1px solid #c0c0c0;
+ }
+ .panel-body #c2-right-img img{
+ 	margin-left: 20px;
+ 	margin-top: 30px;
+ }
+.panel-body #c2-right-img p{
+	font-size: 20px;
+	text-align: center;
+	margin-top: 20px;
+}
+.panel-body #c2-right-item div{
+	width: 180px;
+	height: 180px;
+	border: 1px dashed #c0c0c0;
+	float: left;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+.panel-body #c2-right-item div p{
+	width: 160px;
+	height: 140px;
+	text-indent: 2em;
+	font-size: 15px;
+	word-wrap: break-word;
+	overflow-y: auto;
+	margin-left: 10px;
+}
+.panel-body #c2-right-item div span{
+	float: right;
+	font-size: 14px;
+	margin-right: 10px;
+}
+.panel-body #c2-right-edit{
+	width: 55px;
+	height: 200px;
+}
+.panel-body #c2-right-edit a{
+	color: black;
+	display: block;
+	margin-left: 7px;
+	padding-top: 5px;
+}
+.panel-body #c2-right-edit a:hover{
+	color: red;
+}
