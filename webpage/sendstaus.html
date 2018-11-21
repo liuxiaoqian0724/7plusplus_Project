@@ -83,7 +83,10 @@
 			</div>
 		</nav>
 		<div class="container-fixed-md">
-			<div class="panel">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h2>发布状态</h2>
+				</div>
 				<div class="panel-body">
 					<div class="main">
 						<div class="pic">
@@ -109,10 +112,10 @@
 	</body>
 	<script language="javascript" type="text/javascript"> 
 	var second = totalSecond.innerText;
- 	setInterval("redirect()", 1000);
- 	function redirect() {
- 		totalSecond.innerText = --second;
- 		if(second <= 0) location.href = 'sendmessage.html';
- 	}
+   	setInterval("redirect()", 1000);
+   	function redirect() {
+   		totalSecond.innerText = --second;
+   		if(second <= 0) location.href = 'sendmessage.html';
+   	}
 	</script>
 </html>
