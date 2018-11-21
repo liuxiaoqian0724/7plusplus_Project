@@ -1,0 +1,27 @@
+#c2-right .panel-body div h3{
+    margin-left: 30px;
+  }
+  #c2-right .panel-body div h3 span{
+    float: right;
+    margin-right: 40px;
+  }
+  #c2-right .panel-body div p{
+    margin-left: 10px;
+    margin-right:10px;
+    text-indent: 2em;
+  }
+  #c2-right .panel-body div input{
+    float: right;
+    margin-right:40px;
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: #e7e7e7;
+    background-color:  white; color: black;
+  }
+  
+  #c2-right .panel-body div{
+    height: 180px;
+    margin-bottom: 20px;
+    border:1px solid #C0C0C0;
+    /*overflow-y: auto;*/
+  }
