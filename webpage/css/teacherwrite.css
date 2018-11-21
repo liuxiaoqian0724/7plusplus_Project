@@ -1,0 +1,11 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+div{
+	border:1px red solid;
+}
+#teacher-write{
+	width: 70%;
+	height:400px;
+}
