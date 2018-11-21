@@ -55,12 +55,12 @@
 			<h3></h3>
 		</div>
   		<div class="panel-body">
-  			<form class="form-horizontal">
-  				<!--邮箱-->
+  			<form class="form-horizontal" onsubmit="return check()">
+  				<!--用户名-->
   				<div class="form-group">
-    				<label for="exampleInputAccount4" class="col-sm-2">邮箱</label>
+    				<label for="exampleInputAccount4" class="col-sm-2">用户名</label>
     				<div class="col-md-6 col-sm-10">
-      					<input type="text" class="form-control" id="exampleInputAccount4" placeholder="邮箱名">
+      					<input type="text" class="form-control" id="exampleInputAccount4" placeholder="请输入1-6位的汉字、英文、数字、下划线">
     				</div>
   				</div>
   				<!--密码-->
@@ -77,11 +77,12 @@
       					<input type="password" class="form-control" id="exampleInputPassword4" placeholder="再次输入">
     				</div>
   				</div>
-  				<!--用户名-->
+  				<!--邮箱-->
   				<div class="form-group">
-    				<label for="exampleInputAccount4" class="col-sm-2">用户名</label>
+    				<label for="exampleInputAccount4" class="col-sm-2">邮箱</label>
     				<div class="col-md-6 col-sm-10">
-      					<input type="text" class="form-control" id="exampleInputAccount4" placeholder="用户名">
+      					<input type="text" class="form-control" id="exampleInputAccount4" placeholder="邮箱名" style="width:320px;">
+      					<button class="btn" type="button" style="float:right; margin-top:-32px;">发送验证码</button>
     				</div>
   				</div>
   				<!--图形验证-->
@@ -134,6 +135,7 @@
 	</div>
 
 	<script type="text/javascript">
+		//设置登录、注册按钮的点击效果
 		window.onload=function(){
   			var login_button=document.getElementById("login_button");
   			var login=document.getElementById("login");
@@ -158,6 +160,8 @@
     			login.style.display="none";
   			}
 		}
+		//注册验证
+
 	</script>
 </body>
 </html>
