@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>个人信息修改页</title>
+<!-- ZUI 标准版压缩后的 CSS 文件 -->
+<link rel="stylesheet" href="css/zui.min.css">
+<link rel="stylesheet" type="text/css" href="css/personal-information-edit.css">
+<!-- ZUI Javascript 依赖 jQuery -->
+<script src="lib/jquery/jquery.js"></script>
+<!-- ZUI 标准版压缩后的 JavaScript 文件 -->
+<script src="js/zui.min.js"></script>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<style type="text/css">
+	body{
+		width: 1350px;
+		margin: 0 auto;
+	}
+</style>
+<!-- 上传图片，并且放入指定div中 -->
+<script>
+	$(document).ready(function(){
+		 $('#chooseImage').on('change',function(){
+	 	$(this).css("background-color","#FFFFCC");
+	 	console.log("123");
+    	var filePath = $(this).val(),         //获取到input的value，里面是文件的路径
+    		fileFormat = filePath.substring(filePath.lastIndexOf(".")).toLowerCase(),
+    		src = window.URL.createObjectURL(this.files[0]); //转成可以在本地预览的格式
+    	console.log("456");
+    	// 检查是否是图片
+    	if( !fileFormat.match(/.png|.jpg|.jpeg|.bmp/) ) {
+    		alert('上传错误,文件格式必须为：png/jpg/jpeg');
+        	return;  
+        }
+
+        $('#cropedBigImg').attr('src',src);
+ 	 	src = window.URL.createObjectURL(this.files[0]); //转成可以在本地预览的格式
+	});
+	});
+	
+	
+	</script>
+<meta charset="utf-8">
+</head>
+<body>
+	<div id="header"></div>
+	<div id="content">
+		<div id="c1">
+			<div><a href="#"><i class="icon icon-arrow-left icon-1x"></i>返回个人中心</a></div><br>
+			<span class="c1-item">个人信息修改</span>
+			<form action="#" method="post">
+				<input type="submit" name="免费注册" value="免费注册" class="c1-item">
+			</form>
+		</div>
+		<form action="#" method="post" class="form-horizontal">
+			<div id="c2">
+				<div id="c2-left">
+					<span>个人信息验证</span>
+					<div id="c2-left-left" class="c2-left-item">
+						<div class="form-group">
+							<label for="exampleInputAccount4" class="col-sm-2">身份证号</label>
+						    <div class="col-md-6 col-sm-10">
+						      <input type="text" class="form-control" id="exampleInputAccount4" placeholder="单行输入">
+						    </div>
+						</div>
+						<div class="form-group">
+						    <label for="exampleInputPassword4" class="col-sm-2">真实姓名</label>
+						    <div class="col-md-6 col-sm-10">
+						      <input type="password" class="form-control" id="exampleInputPassword4" placeholder="单行输入">
+						    </div>
+						</div>
+						<div id="c2-left-left-photo">
+							<span class="photo">学生证</span>
+							<div class="photo">
+								<img id="cropedBigImg" value='custom' src="images/empty-photo.png" title="学生证照片"/>
+								<input type="file" id="chooseImage" name="file" accept="image/*">
+								<input type="button" name="选择文件" value="选择文件">
+							</div>
+
+						</div>
+					</div>		
+					<div id="c2-left-right"  class="c2-left-item">
+						<img src="images/empty-photo.png" width="150px" height="150px" class="img-circle" alt="圆形图片"><br>
+						<span>我的头像</span>
+						<input type="file" id="chooseImage" name="file" accept="image/*">
+						<input type="button" name="上传头像" value="上传头像">
+					</div>	
+				</div>
+				<div id="c2-right">
+						<img src="images/code.png">
+					<p>扫描二维码获取更多信息</p>	
+				</div>
+			</div>
+			<div id="c3">
+				<span>完善个人信息</span>
+				<div class="form-group">
+					<label for="exampleInputAccount4" class="col-sm-2">我的学校</label>
+					<div class="col-md-6 col-sm-10">
+				 		<input type="text" class="form-control" id="exampleInputAccount4" placeholder="单行输入">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputPassword4" class="col-sm-2">我的年纪</label>
+					<div class="col-md-6 col-sm-10">
+				  		<input type="password" class="form-control" id="exampleInputPassword4" placeholder="单行输入">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputPassword4" class="col-sm-2">我的手机</label>
+					<div class="col-md-6 col-sm-10">
+				  		<input type="password" class="form-control" id="exampleInputPassword4" placeholder="单行输入">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputPassword4" class="col-sm-2">我的地址</label>
+					<div class="col-md-6 col-sm-10">
+				  		<input type="password" class="form-control" id="exampleInputPassword4" placeholder="单行输入">
+					</div>
+				</div>
+				<input type="submit" name="保存信息" value="保存信息">
+			</div>
+		</form>
+		
+	</div>
+
+</body>
+</html>
