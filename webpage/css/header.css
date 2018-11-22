@@ -17,7 +17,7 @@ div{
 		}
 		#logo{
 			/*border:1px solid black;*/
-			margin-left: -130px;
+			margin-left: 30%;
 			margin-top: 5px;
 		}
 		#topBox{
@@ -46,7 +46,7 @@ div{
 			width: 300px;
 			height: 80px;
 			position: absolute;
-			margin-left:780px;
+			margin-left:60%;
 			margin-top: -30px;
 		}
 		#partInput{
@@ -119,10 +119,10 @@ div{
 		}
 		#navFont{
 			float: left;
-			width: 100%;
+			width: 75%;
 			text-align: center;
 			margin-top: 0px;
-			margin-left: 6px;
+			margin-left: 50px;
 			font-size: 14px;
 			font-weight: bold;
 			font-family: '宋体';
