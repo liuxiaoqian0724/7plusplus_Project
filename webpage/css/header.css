@@ -46,7 +46,7 @@ div{
 			width: 300px;
 			height: 80px;
 			position: absolute;
-			margin-left:700px;
+			margin-left:780px;
 			margin-top: -30px;
 		}
 		#partInput{
@@ -140,26 +140,34 @@ div{
 		#navFont li{
 			float: left;
 			width: 108px;
+			height: 50px;
 			text-align: center;
 			line-height: 50px;
-			margin-left: 22px;
+			margin-left: 30px;
 		}
 		#navFont li:hover{
 			float: left;
 			width: 108px;
+			height: 50px;
 			text-align: center;
 			line-height: 50px;
 			background-color: #33A6B8;
 		}
 		#navFont li ul{
 			display: none;
+			margin-left: 30px;
 		}
 		#navFont li:hover ul{
 			margin-left: 0px;
 			display: block;
 			z-index: 999;
+			height: 50px;
+			line-height: 50px;
+			margin-left: -30px;
 		}
 		#navFont li:hover ul li{
-			width:86px;
+			width:108px;
 			background-color:#33A6B8;
+			line-height: 50px;
+			height: 50px;
 		}
