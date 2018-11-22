@@ -118,6 +118,8 @@ div{
 			margin-top: -7px;
 		}
 		#navFont{
+			margin: 0 auto;
+			width: 75%;
 			float: left;
 			width: 75%;
 			text-align: center;
