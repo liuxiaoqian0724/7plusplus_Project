@@ -29,23 +29,26 @@
 		<div id="closeframe">
 			<button id="closebutton" onclick="closeframe()"><i class="icon icon-times"></i></button>
 		</div>
-		<!--用户名-->
-		<div class="input-control has-icon-left" style="width:361px">
-  			<input id="inputAccountExample1" type="text" class="form-control" placeholder="用户名">
-  			<label for="inputAccountExample1" class="input-control-icon-left"><i class="icon icon-user "></i></label>
-		</div>
-		<h5></h5>
-		<!--密码-->
-		<div class="input-control has-icon-right" style="width:361px">
-  			<input id="inputPasswordExample1" type="password" class="form-control" placeholder="密码">
-  			<label for="inputPasswordExample1" class="input-control-icon-right"><i class="icon icon-key"></i></label>
-		</div>
-		<h5></h5>
-		<!--按钮-->
-		<button class="btn" type="button">忘记密码</button>
-		<button class="btn" type="button" style="margin-left: 200px;">免费注册</button>
-		<h5></h5>
-		<button class="btn btn-block " type="button" style="width:361px">立即登录</button>
+		<form id="login_form" onsubmit="return logincheck()">
+			<!--邮箱-->
+			<div class="input-control has-icon-left" style="width:361px">
+				<input id="login_useremail" type="text" class="form-control" placeholder="邮箱" name="login_useremail">
+				<label for="inputAccountExample1" class="input-control-icon-left"><i class="icon icon-user "></i></label>
+			</div>
+			<h5></h5>
+			<!--密码-->
+			<div class="input-control has-icon-right" style="width:361px">
+				<input id="login_password" type="password" class="form-control" placeholder="密码" name="login_password">
+				<label for="inputPasswordExample1" class="input-control-icon-right"><i class="icon icon-key"></i></label>
+			</div>
+			<h5></h5>
+			<!--按钮-->
+			<button class="btn" type="button">忘记密码</button>
+			<button class="btn" type="button" style="margin-left:200px">免费注册</button>
+			<h5></h5>
+			<button class="btn btn-block" type="submit" style="width:361px" id="loginnow">立即登录</button>
+			<span id="show" style="color:red;"></span>
+		</form>
 		<!--二维码-->
 		<div id="login_qrcode">
 			<button class="btn btn-block " type="button">免费注册</button>
