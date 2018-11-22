@@ -1,0 +1,43 @@
+		body{
+			font-size:13px;
+			line-height:13px;
+			font-family:'微软雅黑';
+		}
+		a{	
+			font-size: 13px;
+			color: #000000;
+			text-decoration: none;
+		}
+		a:active{
+			font-size:13px;
+			color: #4a4a92;
+		}
+		img {
+			vertical-align: middle;
+			border:0;
+		}
+		.no_circle{
+			list-style:none;
+			text-indent: 3em;
+		    display:block;
+		}
+		#bulid{
+			text-indent: 4.5em;
+		}
+		
+		#Catalog{
+			background-image: url("../images/404Left.jpg");
+			background-repeat: no-repeat;
+			padding-top: 35px;
+			padding-left: 0px;
+			width: 25%;
+			height: 910px;
+			
+		}
+		#prj{
+			margin-bottom: -12px;
+			margin-left: -20px;
+		}
+		#open{
+			margin-left: -25px;
+		}
