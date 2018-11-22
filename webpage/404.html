@@ -9,15 +9,15 @@
 </head>
 
 <body>
-	<img src="images/404Top.png" style="position: absolute;float: left;">
-	<img src="images/404Left.jpg" style="position: absolute; float: left;margin-top: 72px;" id="leftpic">
-  
-	<a  href="javascript:onclick=jump() "><img src="images/backtoindex2.png" style="z-index:1;width:500px;height:130px;position: absolute; float: left;margin-top: 470px;margin-left: 820px"></a>
-	<img src="images/404Bottom.jpg" style="z-index:-2;position: absolute; float: left;margin-top: 650px;margin-left: 290px"> 
-   <img src="images/404.jpg" style="z-index:-2;position: absolute; float: left; margin-left: 350px; margin-top: 190px;">
-  <img src="images/404no2.png" style="z-index:1;width:500px;height: 200px; position: absolute;float: left;margin-top: 180px;margin-left: 1100px">
-  <img src="images/404Logo.png" style="z-index:-2;width:180px;height: 250px;position: absolute; float: left;margin-top: 150px;margin-left: 1650px">
-  <img src="images/404beta.jpg" style="z-index:-2;height:500px;position: absolute; float: left;margin-top: 72px;margin-left: 1050px">
+<div id="wrapper">
+	<img src="images/404Top.png" style="position: absolute;float: left; width: 1335px;">
+	<img src="images/404Left.jpg" style="position: absolute; float: left;margin-top: 54px;width: 210px ;"  id="leftpic">
+	<a  href="javascript:onclick=jump() "><img src="images/backtoindex2.png" style="z-index:1;width:370px;height:110px;position: absolute; float: left;margin-top: 370px;margin-left: 570px"></a>
+	<img src="images/404Bottom.jpg" style="z-index:-2;position: absolute; width:1130px;float: left;margin-top: 500px;margin-left: 205px;overflow: hidden;"> 
+   <img src="images/404.jpg" style="z-index:-2;position: absolute; float: left; width:400px;margin-left: 310px; margin-top: 150px;">
+  <img src="images/404no2.png" style="z-index:1;width:375px;height: 200px; position: absolute;float: left;margin-top: 130px;margin-left: 790px">
+  <img src="images/404Logo.png" style="z-index:-1;width:144px;height: 200px;position: absolute; float: left;margin-top: 110px;margin-left: 1190px">
+  <img src="images/404beta.jpg" style="z-index:-2;width:590px;height:355px;position: absolute; float: left;margin-top: 54px;margin-left: 745px;">
   <!-- treemenu -->
   <div id="Catalog">
     <ul id="prj">
@@ -50,6 +50,7 @@
   <div id="tip">
     <p>页面将在<span id="totalSecond" style="color: red; font-size: 25px;">5</span>s内跳转到主页，如未跳转请单击"回到首页"。</p>
   </div>
+</div>
   <script language="javascript" type="text/javascript"> 
   var second = totalSecond.innerText;
     setInterval("redirect()", 1000);
