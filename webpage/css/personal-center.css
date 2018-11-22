@@ -1,9 +1,9 @@
  body{
-    width: 1350px;/*宽度不能为100%，要找出网页的实际宽度像素值。*/
-    margin: 0 auto;
+    width: 100%;/*宽度不能为100%，要找出网页的实际宽度像素值。*/
+    
   }
   /*头部CSS*/
- /* #head{
+/*  #head{
     height:100px;
     background-color: #dddddd;
   }
@@ -11,20 +11,20 @@
     float: left;
     list-style-type: none;
     text-align: center;
-  }*/
-
+  }
+*/
 /*内容页CSS*/
  
  #content{
     /*width: 93.5%;*/
-    width: 75%;
+    width: 1200px;
+    margin: 0 auto;
     height: 800px;
-    margin-left: 60px;
     position: absolute;
     z-index: -1;
   }
   #c1{
-    width: 100%;
+    width: 1200px;
     height: 20%;
     margin-top: -10px;
   }
@@ -38,7 +38,7 @@
     height: 160px;
   }
   #c1-img div{
-    width: 120px;
+    width: 180px;
     height: 120px; 
     margin-left: 33px;
     margin-top: 10px; 
@@ -58,7 +58,7 @@
     font-size: 15px;
   }
   #c1-about{
-    width: 120px;
+    width: 130px;
     height: 160px;
   }
   #c1-about p{
@@ -81,11 +81,11 @@
   }
   #c1-person{
     height: 160px;
-    width: 300px;
+    width: 380px;
   }
   #c1-person-p1{
     height: 30px;
-    width: 300px;
+    width: 180px;
     padding-left: 10px;
     font-size: 20px;
     margin-top: 20px;
@@ -96,7 +96,7 @@
   }
   #c1-star{
     height: 160px;
-    width: 180px;
+    width: 100px;
   }
   #c1-star-p1{
     height: 30px;
@@ -106,12 +106,12 @@
     text-align: center;
   }
   #c1-star-div{
-     height: 100px;
+     height: 10%;
     width: 180px;
     margin-left: 25px;
   }
   #c1-star-div input{
-      width: 90px;
+      width: 100px;
       height: 30px;
       margin-top: 20px;
       background-color: white; 
@@ -119,7 +119,7 @@
       font-size: 12px;
       border-radius: 12px;
       border:1px solid #c0c0c0;
-      margin-left: 25px;
+      margin-left: 20px;
   }
   #c2{
     width: 1200px;
@@ -132,9 +132,8 @@
   #c2-left{
     height: 100%;
     width: 180px;
-    margin-top: 20px;
     margin-left: 120px;
-    
+    background-color: #F9F9F9;
   }
   .c2-left-item{
     width: 180px;
@@ -147,6 +146,8 @@
     color: black;
     font-size: 17px;
     padding-left: 15px;
+    padding-top: 5px;
+    margin-bottom: 10px;
     text-decoration: none;
   }
   .c2-left-item a:hover{
@@ -166,5 +167,8 @@
   #c2-right{
     width: 800px;
     height: 100%;
+  }
+  #c2-right .panel-heading{
+    background-color: #c0ffeb;
   }
   
