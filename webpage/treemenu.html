@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>树形菜单</title>
+	<style type="text/css">
+		body{font-size:13px;
+		     line-height:13px;
+		     font-family:'微软雅黑';
+			 }
+		a{font-size: 13px;
+		  color: #000000;
+		  text-decoration: none;
+		  }
+		a:hover{font-size:13px;
+		       color: #ff0000;
+			   }
+		img {
+			vertical-align: middle;
+			border:0;
+		}
+		.no_circle{list-style:none;
+			 
+			text-indent: 3em;
+		   display:block;
+		}
+		#bulid{
+			text-indent: 4.5em;
+		}
+		
+		#Catalog{
+
+			padding-top: 35px;
+			padding-left: 0px;
+			width: 60%;
+			height: 910px;
+			background-image: url('images/404Left.jpg');
+			background-repeat: no-repeat;
+		}
+		#prj{
+			margin-bottom: -12px;
+			margin-left: -16px;
+		}
+		#open{
+			margin-left: -10px;
+		}
+	</style>
+	<script  type="text/javascript">
+	function show(d1){
+		if(document.getElementById(d1).style.display=='none'){
+	 		document.getElementById(d1).style.display='block';  //触动的层如果处于隐藏状态，即显示
+			document.getElementById('p2').style.display='block';
+			document.getElementById('p1').style.display='none';
+	 	}else{
+			
+			document.getElementById(d1).style.display='none';  //触动的层如果处于显示状态，即隐藏
+	 		document.getElementById('p2').style.display='none';
+			document.getElementById('p1').style.display='block';
+	   	}
+	}
+</script>
+</head>
+
+<body>	
+<div>
+<!-- 目录结构 -->
+	<div id="Catalog">
+		<ul id="prj">
+			<a href="javascript:onclick=show('open') ">
+			<img src="images/right.png" id="p1" style="display: none;float: left">
+			<img src="images/show.png" id="p2" style="display:block;float: left">
+			<img src="images/prj.gif">青蓝家教网</a></ul>
+		<ul id="open" class="no_circle">
+			<li><img src="images/right.png"><img src="images/src.png"></a>src</li>
+	        <li> <img src="images/right.png"><img src="images/Apache.png">Apache Tomcat v9.0</li>
+	        <li><img src="images/right.png"><img src="images/Apache.png">JRE System Library[JDK 8]</li> 
+	        <li id="bulid"><img src="images/file.png">bulid</li>
+	        <li><img src="images/right.png"><img src="images/file.png">WebContent</li> 
+	    </ul>
+	</div>
+	<div>
+		
+	</div>
+</div>
+</body>
+</html>
