@@ -1,24 +1,8 @@
- body{
-    width: 100%;/*宽度不能为100%，要找出网页的实际宽度像素值。*/
-    
-  }
-  /*头部CSS*/
-/*  #head{
-    height:100px;
-    background-color: #dddddd;
-  }
-  #head ul li{
-    float: left;
-    list-style-type: none;
-    text-align: center;
-  }
-*/
-/*内容页CSS*/
+
  
  #content{
     /*width: 93.5%;*/
     width: 1200px;
-    margin: 0 auto;
     height: 800px;
     position: absolute;
     z-index: -1;
