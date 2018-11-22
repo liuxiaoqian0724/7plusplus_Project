@@ -4,8 +4,17 @@
 	<title>家教信息列表</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.staticfile.org/ionicons/2.0.1/css/ionicons.min.css">
+	<!--引入css-->
+   <link rel="stylesheet" href="dist/css/zui.min.css">
+
 	<link rel="stylesheet" type="text/css" href="css/tutorlist.css">
 	<script src="js/jquery-3.2.1.js"></script>
+	<!--引入js-->
+   <script type="text/javascript" src="dist/lib/jquery/jquery.js"></script>
+   <script type="text/javascript" src="dist/js/zui.min.js"></script>
+
+	<script type="text/javascript" src="js/tutorlist.js"></script>
+
 </head>
 
 
@@ -19,28 +28,16 @@
 	<!--条件筛选-->
 	<div class="content-top">
 		<div class="title">
-			<div title="title-title"><h4>全部老师 &nbsp;&nbsp;&nbsp;></h4></div>
-			<ul>
-					
-				<li class="title-condition">一年级 &nbsp;<a href=""><i class="icon1 ion-close" onclick="deleteli()"></i></a></li>
-				<li class="title-line">&nbsp;&nbsp;|</li>
+			<div class="title-title"><h3>全部老师 &nbsp;&nbsp;&nbsp;></h3></div>
+			<ul class="title-ul">
+				<!-- <li class="title-condition">一年级 &nbsp;<a href=""><i class="icon1 ion-close" onclick="deleteli()"></i></a></li> -->
+				<!-- <li class="title-line">&nbsp;&nbsp;|</li> -->
+ 				<li class="title-condition">一年级 &nbsp;
+ 					<a href=""><i class="icon1 ion-close"></i></a></li>
  				<li class="title-condition">数学 &nbsp;
  					<a href=""><i class="icon1 ion-close"></i></a></li>
- 				<li class="title-line">&nbsp;&nbsp;|</li>
-				<li class="title-condition">长安区 &nbsp;<a href=""><i class="icon1 ion-close"></i></a></li>
-				<li class="title-line">&nbsp;&nbsp;|</li>
-				<li class="title-condition">老师上门&nbsp;<a href=""><i class="icon1 ion-close"></i></a> </li>
-				<li class="title-line">&nbsp;&nbsp;|</li>
-				<li class="title-condition">女老师 &nbsp;<a href=""><i class="icon1 ion-close"></i></a></li>
-				<li class="title-line">&nbsp;&nbsp;|</li>
-				<li id="spe3"><!-- <a href=""> -->清空筛选项<!-- </a> --></li>
+				<li id="spe3">清空筛选项</li>
 			</ul>
-			<!-- <script type="text/javascript">
-				var deleteli = function(icon1){
-					alert("123");
-					$('.title-condition').remove();				
-				}
-			</script> -->
 
 		</div>		<br>
 		<div class="content-conditions">
@@ -50,80 +47,67 @@
 						<li class="spe">
 							授课年级
 						</li>
-						<li class="con-li">
-							<a href="">一年级</a>
-						</li>
+						<a href=""><li class="con-li">
+							一年级
+						</li></a>
 						<li class="con-li">
 							一年级
 						</li>
 						<li class="con-li">
 							一年级
 						</li>
-					</ul>
+					</ul>					
 				</li>
+				<div class="dashed"></div>
 				<li class="con-content">
 					<ul class="con-ul">
 						<li class="spe">
 							教学科目
 						</li>
+						<!--后台循环-->
+						<a href="">
 						<li class="con-li">
 							
-						</li>
-						<li class="con-li">
-						
-						</li>
-						<li class="con-li">
-							
-						</li>
+						</li></a>
 					</ul>
 				</li>
+				<div class="dashed"></div>
 				<li class="con-content">
 					<ul class="con-ul">
 						<li class="spe">
 							上门区域
-						<li class="con-li">
+						</li>
+						<!--后台循环-->
+						<a href=""><li class="con-li">
 							
-						</li>
-						<li class="con-li">
-						
-						</li>
-						<li class="con-li">
-							
-						</li>
+						</li></a>
 					</ul>
 				</li>
+				<div class="dashed"></div>
 				<li class="con-content">
 					<ul class="con-ul">
 						<li class="spe">
 							老师性别
 						</li>
-						<li class="con-li">
+						<!--后台循环-->
+						<a href=""><li class="con-li">
 							
-						</li>
-						<li class="con-li">
-						
-						</li>
-						<li class="con-li">
-							
-						</li>
+						</li></a>
 					</ul>
 				</li>
+				<div class="dashed"></div>
 				<li class="con-content">
 					<ul class="con-ul">
 						<li class="spe">
 							上门方式
 						</li>
-						<li class="con-li">
+						<!--后台循环-->
+						<a href=""><li class="con-li">
 							
-						</li>
-						<li class="con-li">
-						
-						</li>
-						<li class="con-li">
-							
-						</li>
+						</li></a>
 					</ul>
 				</li>
+				<div class="dashed"></div>
 			</ul>
 		</div>
 	</div>
@@ -158,11 +142,12 @@
 						<div class="username">
 							家教姓名
 						</div>
+						<!-- <p>家教姓名</p> -->
 						<div class="information">
 							<div class="firline">
 								<div class="star">⭐⭐⭐⭐⭐</div>
-								<div class="teachages">教龄&nbsp;&nbsp;&nbsp;&nbsp;年</div>	
-								<div class="teachhours">授课&nbsp;&nbsp;&nbsp;&nbsp;小时</div>
+								<div class="teachages">教龄17年</div>	
+								<div class="teachhours">授课134小时</div>
 							</div>
 							<div class="tags">
 								<div class="tag">
@@ -177,7 +162,45 @@
 					<!--家长评论-->
 					<div class="tutor-comment">家长评论</div>
 					<div class="tutor-check">
-						<div class="price">￥      <span class="spe2">起</span></div>
+						<div class="price"><i class="icon icon-yen"></i>200<span class="spe2">起</span></div>
+						<div class="check">
+							<button class="btn" type="button">立即查看</button>
+						</div>
+					</div>
+				</div>
+				</a>
+				<a href="">
+				<div class="tutorone">
+					<!--家教头像-->
+					<div class="tutor-photo">
+						photo
+					</div>
+					<!--家教基本信息-->
+					<div class="tutor-information">
+						<div class="username">
+							家教姓名
+						</div>
+						<!-- <p>家教姓名</p> -->
+						<div class="information">
+							<div class="firline">
+								<div class="star">⭐⭐⭐⭐⭐</div>
+								<div class="teachages">教龄17年</div>	
+								<div class="teachhours">授课134小时</div>
+							</div>
+							<div class="tags">
+								<div class="tag">
+									教师资历
+								</div>
+								<div class="tag">
+									学历学位
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--家长评论-->
+					<div class="tutor-comment">家长评论</div>
+					<div class="tutor-check">
+						<div class="price"><i class="icon icon-yen"></i>200<span class="spe2">起</span></div>
 						<div class="check">
 							<button class="btn" type="button">立即查看</button>
 						</div>
@@ -258,15 +281,6 @@
 </div>
 <div class="footer"></div>
 
-	
-<!-- <script type="text/javascript">
-	$(document).ready(function(c) {
-				$('.close').on('click', function(c){
-					$('.aaa').fadeOut('slow', function(c){
-						$('.aaa').remove();
-					});
-					});	  
-				});
-</script> -->
 </body>
+
 </html>

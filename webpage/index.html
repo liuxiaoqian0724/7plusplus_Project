@@ -28,19 +28,19 @@
   		<!-- 轮播项目 -->
   		<div class="carousel-inner">
     		<div class="item active">
-      			<img alt="First slide" src="http://zui.sexy/docs/img/slide1.jpg">
+      			<img alt="First slide" src="images/banner1.jpg">
       			<div class="carousel-caption">
         			
       			</div>
     		</div>
     		<div class="item">
-      			<img alt="Second slide" src="http://zui.sexy/docs/img/slide2.jpg">
+      			<img alt="Second slide" src="images/banner2.jpg">
       			<div class="carousel-caption">
         			
       			</div>
     		</div>
     		<div class="item">
-      			<img alt="Third slide" src="http://zui.sexy/docs/img/slide3.jpg">
+      			<img alt="Third slide" src="images/banner3.jpg">
       			<div class="carousel-caption">
         			
       			</div>
@@ -84,8 +84,8 @@
   					<div class="card-content text-muted"  id="personal_name">
   						<p></p>
   						<p>&nbsp;&nbsp;&nbsp;姓名：</p>
-  						<p>&nbsp;&nbsp;&nbsp;教龄：</p>
   						<p>&nbsp;&nbsp;&nbsp;学历：</p>
+  						<p>&nbsp;&nbsp;&nbsp;简介：</p>
   					</div>
 				</a>
   			</div>
@@ -96,8 +96,8 @@
   					<div class="card-content text-muted"  id="personal_name">
   						<p></p>
   						<p>&nbsp;&nbsp;&nbsp;姓名：</p>
-  						<p>&nbsp;&nbsp;&nbsp;教龄：</p>
   						<p>&nbsp;&nbsp;&nbsp;学历：</p>
+  						<p>&nbsp;&nbsp;&nbsp;简介：</p>
   					</div>
 				</a>
   			</div>
@@ -108,8 +108,8 @@
   					<div class="card-content text-muted"  id="personal_name">
   						<p></p>
   						<p>&nbsp;&nbsp;&nbsp;姓名：</p>
-  						<p>&nbsp;&nbsp;&nbsp;教龄：</p>
   						<p>&nbsp;&nbsp;&nbsp;学历：</p>
+  						<p>&nbsp;&nbsp;&nbsp;简介：</p>
   					</div>
 				</a>
   			</div>
@@ -120,8 +120,8 @@
   					<div class="card-content text-muted"  id="personal_name">
   						<p></p>
   						<p>&nbsp;&nbsp;&nbsp;姓名：</p>
-  						<p>&nbsp;&nbsp;&nbsp;教龄：</p>
   						<p>&nbsp;&nbsp;&nbsp;学历：</p>
+  						<p>&nbsp;&nbsp;&nbsp;简介：</p>
   					</div>
 				</a>
   			</div>
@@ -132,8 +132,8 @@
   					<div class="card-content text-muted"  id="personal_name">
   						<p></p>
   						<p>&nbsp;&nbsp;&nbsp;姓名：</p>
-  						<p>&nbsp;&nbsp;&nbsp;教龄：</p>
   						<p>&nbsp;&nbsp;&nbsp;学历：</p>
+  						<p>&nbsp;&nbsp;&nbsp;简介：</p>
   					</div>
 				</a>
   			</div>
@@ -146,7 +146,7 @@
 	<!--家教信息end-->
 
 	<!--学习社区learning_community-->
-	<div class="learning_community">
+	<div id="learning_community" class="panel">
 		<!--学习社区图片-->
 		<div class="studycommunity"><img src="images/studycommunity.png"></div>
 		<!--按钮choose_button-->
@@ -162,30 +162,127 @@
   			</label>
   			<button class="btn" type="button" id="i_wonder_release"><i class="icon icon-pencil"></i>&nbsp;我要发布</button>
 		</div>
-
-		<!--帖子-->
-		<div class="cards cards-borderless" id="cards">
-  			<div class="col-md-4 col-sm-6 col-lg-3" id="pic_article_keyword">
-    			<a class="card" href="###">
-  					<img src="images/physics.jpg" alt="">
-  					<div class="caption">高三冲刺精华帖</div>
-				</a>
-				<div class="card-content text-muted" id="cards_article">
-  					<h3>巧解物理难题——高三冲刺经验分享</h3>
-  					<p>抓住物理学基础的主干知识进行复习。从近年高考物理试卷和理科综合试卷的物理部分我们不难看出，高考试题重点要考查学生对物理学基础的主干知识。主干知识是物理知识体系中最重要的知识，学好主干知识是学好物理的关键，是提高能力的基点。每个考生在复习备考过程中，要在主干知识上狠下功夫。不仅要记住……</p>
-  					<div id="cards_time">2018-11-19 17:42</div>
-  				</div>
-				
-  				<div class="btn-group btn-group-vertical" id="cards_keyword">
-  					<button type="button" class="btn">#物理</button>
-  					<p></p>
-					<button type="button" class="btn">#高考冲刺</button>
-					<p></p>
-  					<button type="button" class="btn">#好文</button>
-				</div>
-  			</div>	
-		</div>
-		
+		<!--学习经验-->
+		<div id="learning_experience" class="panel" style="display: none;">
+      <div class="items items-hover" id="card">
+        <div class="item">
+          <!--关键词-->
+          <div class="card_keyword">
+            <div class="btn-group btn-group-vertical" style="width:150px; position:relative; margin-left:15px;">
+              <button type="button" class="btn">#物理</button>
+              <button type="button" class="btn">#中考冲刺</button>
+              <button type="button" class="btn">#好文</button>
+            </div>
+            <h3></h3>
+            <div class="btn-group">
+              <button type="button" class="btn"><i class="icon icon-star-empty"></i>108</button>
+              <button type="button" class="btn"><i class="icon icon-thumbs-o-up"></i>108</button>
+              <button type="button" class="btn"><i class="icon icon-chat-line"></i>108</button>
+            </div>
+          </div>
+          <!--文章及图片-->
+          <div class="cards_article">
+            <div class="item-heading">
+              <div class="pull-right label label-success"></div>
+              <h4><a href="###">巧解物理难题——中考冲刺经验分享</a></h4>
+            </div>
+            <div class="item-content">
+              <div class="media pull-right"><img src="images/physics.jpg" alt="" style="height:75%; width:75%;margin-top:-20px; margin-left:15px;"></div>
+              <div class="text">作为考生，首先要知道中考物理的命题方向，各省、市中考题都要遵循既利于选拔，又利于初中物理教学，突出自主学习的主旋律的原则，所以在命题中有80%都是基础题和中等难度题，只有20%的题较有难度。只要同学们调整好心态，认真复习，中考一定会考出好成绩。首先要重视……</div>
+            </div>
+            <div class="item-footer">
+              <a href="#" class="text-muted"><span class="text-muted">2013-11-11 16:14:37</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="items items-hover" id="card">
+        <div class="item">
+          <!--关键词-->
+          <div class="card_keyword">
+            <div class="btn-group btn-group-vertical" style="width:150px; position:relative; margin-left:15px;">
+              <button type="button" class="btn">#数学</button>
+              <button type="button" class="btn">#高考冲刺</button>
+              <button type="button" class="btn">#好文</button>
+            </div>
+            <h3></h3>
+            <div class="btn-group">
+              <button type="button" class="btn"><i class="icon icon-star-empty"></i>108</button>
+              <button type="button" class="btn"><i class="icon icon-thumbs-o-up"></i>108</button>
+              <button type="button" class="btn"><i class="icon icon-chat-line"></i>108</button>
+            </div>
+          </div>
+          <!--文章及图片-->
+          <div class="cards_article">
+            <div class="item-heading">
+              <div class="pull-right label label-success"></div>
+              <h4><a href="###">学霸传授——高考数学偷分技巧</a></h4>
+            </div>
+            <div class="item-content">
+              <div class="media pull-right"><img src="images/maths.jpg" alt="" style="height:75%; width:75%;margin-top:-20px; margin-left:15px;"></div>
+              <div class="text">数学作为三大主课之一，所占的分量相当的重，很多学生也明白如果数学学不好的话想要考上理想的大学是天方夜谭，但是苦于无学习之法，那么高中数学都有哪些学习方法呢?今天我们就给大家整理出来一些高考数学“偷分技巧”……</div>
+            </div>
+            <div class="item-footer">
+              <a href="#" class="text-muted"><span class="text-muted">2013-11-11 16:14:37</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="items items-hover" id="card">
+        <div class="item">
+          <!--关键词-->
+          <div class="card_keyword">
+            <div class="btn-group btn-group-vertical" style="width:150px; position:relative; margin-left:15px;">
+              <button type="button" class="btn">#英语</button>
+              <button type="button" class="btn">#中考冲刺</button>
+              <button type="button" class="btn">#好文</button>
+            </div>
+            <h3></h3>
+            <div class="btn-group">
+              <button type="button" class="btn"><i class="icon icon-star-empty"></i>108</button>
+              <button type="button" class="btn"><i class="icon icon-thumbs-o-up"></i>108</button>
+              <button type="button" class="btn"><i class="icon icon-chat-line"></i>108</button>
+            </div>
+          </div>
+          <!--文章及图片-->
+          <div class="cards_article">
+            <div class="item-heading">
+              <div class="pull-right label label-success"></div>
+              <h4><a href="###">中考英语完形填空三大技巧分享</a></h4>
+            </div>
+            <div class="item-content">
+              <div class="media pull-right"><img src="images/english.jpg" alt="" style="height:75%; width:75%;margin-top:-20px; margin-left:15px;"></div>
+              <div class="text">完形填空题以其内容广泛和知识、能力有机结合而备受命题者的青睐，它也是各类英语测试和竞赛中的重点题。且多数同学认为完形填空题是较难的题型 之一。金华龙文教育个性化辅导教师认为，完形填空题难主要有两个原因：一是它所测试的内容几乎是无所不包：单词、……</div>
+            </div>
+            <div class="item-footer">
+              <a href="#" class="text-muted"><span class="text-muted">2013-11-11 16:14:37</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--课程问答-->
+    <div id="course_question">
+      <div id="question_answer">
+        <div class="items items-hover" id="qanda">
+          <div class="item">
+            <div class="item-heading">
+              <div class="pull-right label label-success">初三物理</div>
+              <h4><a href="###">问：请问初三物理有哪些重点</a></h4>
+            </div>
+            <div class="item-content">
+              <div class="text">电学和力学毋庸置疑是中考物理的两大重点，其中电学包括基础的电压、电流、电阻、电路知识，欧姆定律，电功率相关问题以及电学试验，大题和试验电学部分是必考考点；力学部分重点在压力压强以及机械效率和机械结合的相关问题。其他犄角旮旯自己多注意看书就好，中考贵在基础，所以复习到最后还是应该回……</div>
+            </div>
+            <div class="item-footer">
+              <a href="#" class="text-muted"><i class="icon-comments"></i> 243</a> &nbsp; <span class="text-muted">2013-11-11 16:14:37</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="goodresponder">
+        
+      </div>
+    </div>
 		<!--分页-->
 		<div id="pager">
 			<ul class="pager" data-ride="pager" data-page="2" data-rec-total="89" data-max-nav-count="4" data-elements="prev_icon,nav,next_icon"></ul>
