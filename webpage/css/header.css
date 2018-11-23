@@ -154,9 +154,11 @@ body{
 			background-color:#2C83DF;
 			line-height: 50px;
 			height: 50px;
-			margin-left: 0px;
+			margin-left: -20px;
 			display: none;
-			z-index: 999;
+			/*z-index: 999;*/
+			position: relative;
+
 			font-size: 18px;
 		}
 
