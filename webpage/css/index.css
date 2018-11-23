@@ -1,13 +1,10 @@
-*{
-
-}
 #myNiceCarousel{
   width:75%;
   height:75%;
   margin-left:170px;
 }
 .tutor_information{
-  width:1025px;
+  width:75%;
   margin-top:15px;
   margin-left:170px;
   border:1px solid #e4dfd7;
@@ -41,8 +38,8 @@
 #pager{
   margin-left: 400px;
 }
-.learning_community{
-  width:1025px;
+#learning_community{
+  width:75%;
   margin-top:15px;
   margin-left:170px;
   border:1px solid #e4dfd7;
@@ -53,42 +50,77 @@
   margin-left:400px;
   margin-top:15px;
 }
-#cards{
-  width:1025px;
+#learning_experience{
+  margin:15px;
+  height:523px;
 }
-#pic_article_keyword{
-  border:1px solid #e4dfd7;
-  margin-left:40px;
-  width:180px;
-  height:150px;
+#card{
+  height:174px;
 }
-#pic_article_keyword a{
-  width:160px;
-  display: block;
+.card_keyword{
+  position: relative;
+  padding:10px;
+  width:210px;
+  margin-left: 15px;
 }
-#pic_article_keyword a img{
-  width:70%;
-  height:70%;
-  margin-left:23px;
-  margin-top:10px;
+.cards_article{
+   position: relative;
+   width:730px;
+   margin-left: 240px;
+   margin-top:-170px;
+   padding-top:10px;
+   padding-left:10px;
 }
-#cards_article{
+#course_question{
+  margin-top:15px;
+}
+#question_answer{
+  height:523px;
+  position: relative;
+  margin-top:5px;
+}
+#qanda{
+  position: relative;
   width:600px;
-  height:150px;
-  border:1px solid #e4dfd7;
-  margin-left:180px;
-  margin-top:-152px;
-  padding:8px;
+  margin-left:15px;
+  padding:5px;
 }
-#cards_time{
-  margin-left:430px;
-  margin-top:-12px;
+#goodresponder{
+  position: relative;
+  width:375px;
+  margin-left:625px;
+  margin-top:-523px;
 }
-#cards_keyword{
-  margin-left:800px;
-  margin-top:-170px;
-  padding:20px;
-  width:150px;
-  height:150px;
+#goodresponder img{
+  width:35%;
+  height:35%;
+}
+#community_author{
+  position: relative;
+  margin-top:15px;
+}
+#author{
+  position: relative;
+  margin:15px;
+  padding:-15px;
+  height:190px;
+}
+.personal_introduction{
   border:1px solid #e4dfd7;
+  width:240px;
+  position: relative;
+  margin-left: 310px;
+  margin-top: -160px;
+  margin-bottom: 30px;
+  padding:5px;
+}
+.personal_article{
+  border:1px solid #e4dfd7;
+  width:350px;
+  height:150px;
+  position: relative;
+  margin-left: 560px;
+  margin-top:-180px;
+  padding-left: 15px;
+  padding-top: -20px;
 }
