@@ -1,10 +1,10 @@
-*{
-	margin: 0;
-	padding: 0;
-}
-div{
-	/*border:1px solid red;*/
-}
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+		/*border:1px solid red;*/
+		}
 		a{
 			text-decoration: none;
 		}
@@ -12,12 +12,14 @@ div{
 			list-style: none;
 		}
 		body{
+			font-weight: bold;
+			font-family: STXihei, "Microsoft YaHei";
 			width: 100%;
 			margin: 0 auto;
 		}
 		#logo{
 			/*border:1px solid black;*/
-			margin-left: 30%;
+			margin-left: 400px;
 			margin-top: 5px;
 		}
 		#topBox{
@@ -31,7 +33,7 @@ div{
 			margin: 0 auto;
 		}
 		#logo{
-			width: 30%;
+			/*width: 30%;*/
 			height: 88px;
 			position: relative;
 			margin-left: 100px;
@@ -46,7 +48,7 @@ div{
 			width: 300px;
 			height: 80px;
 			position: absolute;
-			margin-left:60%;
+			margin-left:830px;
 			margin-top: -30px;
 		}
 		#partInput{
@@ -67,7 +69,6 @@ div{
 			color: #01DFCE;
 			margin-left: -42px;
 			margin-top: 41px;
-			font-family: '宋体';
 			font-weight: bold;
 		}
 		#header-login{
@@ -82,7 +83,6 @@ div{
 		#header-login a{
 			font-size: 18px;
 			color:  #FFFFF0;
-			font-family: '宋体';
 			font-weight: bold;
 			margin-left: 7px;
 		 }
@@ -107,7 +107,6 @@ div{
 		}
 		.titleFont{
 			color: #fc8237;
-			font-size: 12px;
 		}
 		#topBox2{
 			/*border:1px solid red;*/
@@ -119,15 +118,12 @@ div{
 		}
 		#navFont{
 			margin: 0 auto;
-			width: 75%;
+			width: 1200px;
 			float: left;
-			width: 75%;
 			text-align: center;
 			margin-top: 0px;
 			margin-left: 50px;
-			font-size: 14px;
 			font-weight: bold;
-			font-family: '宋体';
 			/*position: absolute;*/
 		}
 		#navFont a{
@@ -158,11 +154,12 @@ div{
 		#navFont li ul{
 			display: none;
 			margin-left: 30px;
+			/*z-index: 999;*/
 		}
 		#navFont li:hover ul{
 			margin-left: 0px;
 			display: block;
-			z-index: 999;
+			/*z-index: 999;*/
 			height: 50px;
 			line-height: 50px;
 			margin-left: -30px;
@@ -170,6 +167,13 @@ div{
 		#navFont li:hover ul li{
 			width:108px;
 			background-color:#33A6B8;
+			line-height: 50px;
+			height: 50px;
+		}
+		/*没有效果*/
+		#navFont li ul li:hover{
+			width:108px;
+			background-color:#2C83DF;
 			line-height: 50px;
 			height: 50px;
 		}
