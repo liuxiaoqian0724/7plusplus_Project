@@ -128,14 +128,9 @@ a{
 			float: left;
 			text-align: center;
 			margin-top: 0px;
-			margin-left: 30px;
+			margin-left: -30px;
 			font-weight: bold;
 		}
-		/*#navFont li ul{
-			border: 1px black solid;
-			width: 108px;
-			height: 150px;
-		}*/
 		#navFont a{
 			display: block;
 			color: #FFFFF0;
@@ -151,7 +146,7 @@ a{
 			height: 50px;
 			text-align: center;
 			line-height: 50px;
-			/*margin-left: 30px;*/
+			margin-left: 30px;
 			z-index: 999;
 		}
 		#navFont li:hover{
@@ -167,6 +162,7 @@ a{
 			display: none;
 			/*z-index: 999;*/
 			position: relative;
+
 			font-size: 18px;
 		}
 
@@ -767,7 +763,7 @@ hr{
 }
 .star{
 	height: 30px;
-	border: 1px black solid;
+	/*border: 1px black solid;*/
 	float: left;
 	line-height: 25px;
 	width: 120px;
@@ -777,7 +773,7 @@ hr{
 }
 .star1{
 	height: 30px;
-	border: 1px black solid;
+	/*border: 1px black solid;*/
 	float: left;
 	line-height: 25px;
 	width: 120px;
@@ -916,7 +912,6 @@ hr{
 #footer-font-about{
 	width: 420px;
 	height: 200px;
-	/*border: 1px black solid;*/
 	margin-left: 0px;
 	margin-top: 10px;
 	float: left;
@@ -935,12 +930,11 @@ hr{
 }
 #footer-font-a{
 	/*display: inline;*/
-	/*border: 1px black solid;*/
-	float: left;
 	width: 120px;
 	height: 240px;
 	margin-left: 55px;
-	/*margin-top: -226px;*/
+	float: left;
+	margin-top: 10px;
 }
 #a-title{
 	/*display: inline;*/
@@ -960,12 +954,12 @@ hr{
 }
 #footer-font-friend{
 	width: 200px;
-	float: left;
 	height: 240px;
 	/*display: inline;*/
-	/*border: 1px black solid;*/
 	margin-left: 55px;
+	margin-top: 10px;
 	/*margin-top: -265px;*/
+	float: left;
 }
 #friend-title{
 	width: 200px;
@@ -974,20 +968,19 @@ hr{
 #friend-logo{
 	width: 200px;
 	height: 150px;
-	margin-top: 50px;
+	margin-top: 55px;
+	float: left;
 }
 #friend-logo-div1 i{
-	margin-left: 10px;
+	/*margin-left: 10px;*/
 }
 #footer-font-img{
-	/*border: 1px black solid;*/
-	float: left;
+	/*border: 1px #34495E solid;*/
 	width:170px;
 	height:120px;
-	line-height: 60px;
 	margin-left: 55px;
-	/*margin-top: -280px;*/
-	position: relative;
+	float: left;
+	margin-top: 10px;
 }
 .footer-font a{
 	margin-left: 60px;
@@ -1008,7 +1001,7 @@ hr{
 	font-size: 16px;
 	color: #fffff0;
 	font-weight: normal;
-	margin-top: 40px;
+	margin-top: 10px;
 }
 /*权利归属*/
 #footer-right{

@@ -151,9 +151,11 @@ a{
 			background-color:#2C83DF;
 			line-height: 50px;
 			height: 50px;
-			margin-left: 0px;
+			margin-left: -20px;
 			display: none;
-			z-index: 999;
+			/*z-index: 999;*/
+			position: relative;
+
 			font-size: 18px;
 		}
 
@@ -666,6 +668,7 @@ h3{
 	height: 200px;
 	margin-left: 0px;
 	margin-top: 10px;
+	float: left;
 }
 #about-font{
 	width: 420px;
@@ -683,8 +686,9 @@ h3{
 	/*display: inline;*/
 	width: 120px;
 	height: 240px;
-	margin-left: 460px;
-	margin-top: -226px;
+	margin-left: 55px;
+	float: left;
+	margin-top: 10px;
 }
 #a-title{
 	/*display: inline;*/
@@ -706,8 +710,10 @@ h3{
 	width: 200px;
 	height: 240px;
 	/*display: inline;*/
-	margin-left: 635px;
-	margin-top: -265px;
+	margin-left: 55px;
+	margin-top: 10px;
+	/*margin-top: -265px;*/
+	float: left;
 }
 #friend-title{
 	width: 200px;
@@ -716,18 +722,19 @@ h3{
 #friend-logo{
 	width: 200px;
 	height: 150px;
-	margin-top: 50px;
+	margin-top: 55px;
+	float: left;
 }
 #friend-logo-div1 i{
-	margin-left: 10px;
+	/*margin-left: 10px;*/
 }
 #footer-font-img{
 	/*border: 1px #34495E solid;*/
 	width:170px;
 	height:120px;
-	margin-left: 920px;
-	margin-top: -280px;
-	position: relative;
+	margin-left: 55px;
+	float: left;
+	margin-top: 10px;
 }
 .footer-font a{
 	margin-left: 60px;
@@ -748,7 +755,7 @@ h3{
 	font-size: 16px;
 	color: #fffff0;
 	font-weight: normal;
-	margin-top: 40px;
+	margin-top: 10px;
 }
 /*权利归属*/
 #footer-right{
