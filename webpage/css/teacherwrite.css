@@ -5,7 +5,25 @@
 div{
 	border:1px red solid;
 }
-#teacher-write{
-	width: 70%;
-	height:400px;
+body{
+	font-family: STXihei, "Microsoft YaHei";
+}
+#write-box{
+	width: 772px;
+	height: 328px;
+	margin: 0 auto;
+	margin-top: 100px;
+}
+#write-box-font{
+	width:750px;
+	height: 60px;
+	margin: 0 auto;
+	color: #fffff0;
+	background-color: #81C7D4;
+	letter-spacing: 2px;
+}
+#write-box-text{
+	width: 750px;
+	height: 260px;
+	/*margin-top: 60px;*/
 }

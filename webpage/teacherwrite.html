@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="dist/css/zui.css" />
     <link rel="stylesheet" href="dist/lib/kindeditor/kindeditor.css" />
     <link rel="stylesheet" href="dist/lib/kindeditor/kindeditor.min.css" />
-    <!-- <link rel="stylesheet" href="css/teacherwrite.css" /> -->
+    <link rel="stylesheet" href="css/teacherwrite.css" />
     <!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
     <script src="dist/jquery-3.2.1.min.js"></script>
     <!-- ZUI Javascript组件 -->
@@ -17,13 +17,23 @@
      <script src="dist/lib/kindeditor/kindeditor/plugins.ok.js"></script>
 </head>
 <body>
-	<textarea id="content" name="content" class="form-control kindeditor" style="height:150px;">Hello, world!</textarea>
+	<div id="write-box">
+		<div id="write-box-font"><h2>请填写内容：</h2></div>
+		<div id="write-box-text"><textarea id="contentSimple" name="content" class="form-control kindeditorSimple">Hello, world!</textarea></div>
+	</div>
 </body>
 <script type="text/javascript">
-	KindEditor.create('textarea.kindeditor', {
+	KindEditor.create('textarea.kindeditorSimple', {
     basePath: '/dist/lib/kindeditor/',
-    allowFileManager : true,
-    bodyClass : 'article-content'
+    bodyClass : 'article-content',
+    resizeType : 1,
+    allowPreviewEmoticons : false,
+    allowImageUpload : false,
+    items : [
+        'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+        'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+        'insertunorderedlist', '|', 'emoticons', 'image', 'link'
+    ]
 });
 </script>
 </html>
