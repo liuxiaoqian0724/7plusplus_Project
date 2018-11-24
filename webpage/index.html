@@ -16,37 +16,28 @@
 
   <body>
   	<!--轮播图myNiceCarousel-->
-    <div id="myNiceCarousel" class="carousel slide" data-ride="carousel">
-  		
+    <div id="myNiceCarousel" class="carousel slide" data-ride="carousel" style="position: relative; margin-top: 15px;">
   		<!-- 圆点指示器 -->
   		<ol class="carousel-indicators">
     		<li data-target="#myNiceCarousel" data-slide-to="0" class="active"></li>
     		<li data-target="#myNiceCarousel" data-slide-to="1"></li>
     		<li data-target="#myNiceCarousel" data-slide-to="2"></li>
   		</ol>
-  		
   		<!-- 轮播项目 -->
   		<div class="carousel-inner">
     		<div class="item active">
       			<img alt="First slide" src="images/banner1.jpg">
-      			<div class="carousel-caption">
-        			
-      			</div>
+      			<div class="carousel-caption"></div>
     		</div>
     		<div class="item">
       			<img alt="Second slide" src="images/banner2.jpg">
-      			<div class="carousel-caption">
-        			
-      			</div>
+      			<div class="carousel-caption"></div>
     		</div>
     		<div class="item">
       			<img alt="Third slide" src="images/banner3.jpg">
-      			<div class="carousel-caption">
-        			
-      			</div>
+      			<div class="carousel-caption"></div>
     		</div>
   		</div>
-  		
   		<!-- 项目切换按钮 -->
   		<a class="left carousel-control" href="#myNiceCarousel" data-slide="prev">
     		<span class="icon icon-chevron-left"></span>
@@ -54,7 +45,6 @@
   		<a class="right carousel-control" href="#myNiceCarousel" data-slide="next">
     		<span class="icon icon-chevron-right"></span>
   		</a>
-
 	</div>
 	<!--轮播图end-->
 
@@ -63,18 +53,11 @@
 		<!--家教信息图片tutor_information_pic-->
 		<div class="tutor_information_pic"><img src="images/tutorinf.png"></div>
 		<!--按钮choose_button-->
-		<div class="btn-group" data-toggle="buttons" id="choose_button">
-  			<label class="btn btn-primary active">
-    			<input type="radio" name="options" id="option1" checked> 家教信息
-  			</label>
-  			<label class="btn btn-primary">
-    			<input type="radio" name="options" id="option2"> 家教课程
-  			</label>
-  			<label class="btn btn-primary">
-    			<input type="radio" name="options" id="option3"> 推荐家教
-  			</label>
-  			<button class="btn" type="button" id="i_wonder_release"><i class="icon icon-pencil"></i>&nbsp;我要发布</button>
-		</div>
+		<div class="btn-group" id="choose_button">
+      <button type="button" class="btn btn-info">兼职家教</button>
+      <button type="button" class="btn btn-info">专职家教</button>
+      <button type="button" class="btn btn-info">推荐家教</button>
+    </div>
 		<!--个人信息personal_information-->
 		<div class="cards cards-borderless" id="personal_information">
   			<div class="col-md-4 col-sm-6 col-lg-3" id="personal_inf">
@@ -139,9 +122,15 @@
   			</div>
 		</div>
 		<!--分页-->
-		<div id="pager">
-			<ul class="pager" data-ride="pager" data-page="2" data-rec-total="89" data-max-nav-count="4" data-elements="prev_icon,nav,next_icon"></ul>
-		</div>		
+		<ul class="pager" id="pager">
+      <li class="previous disabled"><a href="#">«</a></li>
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li class="next"><a href="#">»</a></li>
+    </ul>   		
 	</div>
 	<!--家教信息end-->
 
@@ -150,18 +139,11 @@
 		<!--学习社区图片-->
 		<div class="studycommunity"><img src="images/studycommunity.png"></div>
 		<!--按钮choose_button-->
-		<div class="btn-group" data-toggle="buttons" id="choose_button">
-  			<label class="btn btn-primary active">
-    			<input type="radio" name="options" id="option1" onclick="learning_experienceDis()" checked> 学习经验
-  			</label>
-  			<label class="btn btn-primary">
-    			<input type="radio" name="options" id="option2" onclick="course_questionDis()"> 课程问答
-  			</label>
-  			<label class="btn btn-primary">
-    			<input type="radio" name="options" id="option3" onclick="community_authorDis()"> 社区作者
-  			</label>
-  			<button class="btn" type="button" id="i_wonder_release"><i class="icon icon-pencil"></i>&nbsp;我要发布</button>
-		</div>
+		<div class="btn-group" id="choose_button">
+      <button type="button" class="btn btn-info" id="opt1" onclick="learning_experienceDis()">学习经验</button>
+      <button type="button" class="btn btn-info" onclick="course_questionDis()">课程问答</button>
+      <button type="button" class="btn btn-info" onclick="community_authorDis()">社区作者</button>
+    </div>
 		<!--学习经验-->
 		<div id="learning_experience" class="panel" style="display:block;">
       <div class="items items-hover" id="card">
@@ -411,30 +393,40 @@
       </div>
     </div>
 		<!--分页-->
-		<div id="pager">
-			<ul class="pager" data-ride="pager" data-page="2" data-rec-total="89" data-max-nav-count="4" data-elements="prev_icon,nav,next_icon"></ul>
-		</div>	
+		<ul class="pager" id="pager">
+      <li class="previous disabled"><a href="#">«</a></li>
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li class="next"><a href="#">»</a></li>
+    </ul>	
 	</div>
 	<!--学习社区end-->
 
   <script type="text/javascript">
-    var learning_experience=document.getElementById("learning_experience");
-    var course_question=document.getElementById("course_question");
-    var community_author=document.getElementById("community_author");
+    var learning_experience=document.getElementById('learning_experience').style.display;
+    var course_question=document.getElementById('course_question').style.display;
+    var community_author=document.getElementById('community_author').style.display;
+		console.log(learning_experience);
+		console.log(course_question);
+		console.log(community_author);
     function learning_experienceDis(){
-      learning_experience.style.display=block;
-      course_question.style.display=none;
-      community_author.style.display=none;
-    }
+			learning_experience="block";
+			course_question="none";
+			community_author="none";
+			console.log(learning_experience);
+		}
     function course_questionDis(){
-      learning_experience.style.display=none;
-      course_question.style.display=block;
-      community_author.style.display=none;
+      learning_experience="none";
+      course_question="block";
+      community_author="none";
     }
     function community_authorDis(){
-      learning_experience.style.display=none;
-      course_question.style.display=none;
-      community_author.style.display=block;
+      learning_experience="none";
+      course_question="none";
+      community_author="block";
     }
   </script>
 </body>

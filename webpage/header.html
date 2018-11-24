@@ -4,50 +4,52 @@
 	<title></title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/header.css"/>
-	
 </head>
 <body>
-	<!-- 整体 -->
-	<div id="topBox">
-		<div id="topBox1">
-			<div id="logo">
-				<img src="images/headerlogo.png" alt="logo">
-				<img src="images/nameTop.png" alt="topName" id="logoPic">
+	<div id="header-box">
+		<div id="big-box">
+			<!-- logo -->
+			<div id="top-box">
+				<div id="top-box-logo">
+					<img src="images/headerlogo.png" alt="logo" id="logoPic">
+					<div id="name-pic"><img src="images/nameTop.png" alt="namePic" style="width: 263.3px;height:66px;"></div>
+				</div>
 			</div>
 		</div>
-		<!-- 下拉菜单 -->
-		<div id="topBox2">
-			<ul id="navFont">
-				<li class="navFont1"><a href="#">首页</a></li>
-				<li><a href="#">家教</a>
-					<ul>
-						<li><a href="#">小学</a></li>
-						<li><a href="#">初中</a></li>
-						<li><a href="#">高中</a></li>
-					</ul>
-				</li>
-				<li><a href="#">论坛社区</a>
-					<ul>
-						<li><a href="#">学霸说</a></li>
-						<li><a href="#">资料库</a></li>
-						<li><a href="#">家长岛</a></li>
-					</ul>
-				</li>
-				<li><a href="#">我要提问</a>
-					<ul>
-						<li><a href="#">心理困惑</a></li>
-						<li><a href="#">心理困惑</a></li>
-						<li><a href="#">心理困惑</a></li>
-					</ul>
-				</li>
-				<li><a href="#">个人中心</a></li>
-			</ul>
+			<!-- 下拉菜单 -->
+			<div id="bottom-box">
+				<div id="topBox2">
+					<ul id="navFont">
+					<li class="navFont1"><a href="#">首页</a></li>
+					<li><a href="#">家教</a>
+						<ul>
+							<li><a href="#">小学</a></li>
+							<li><a href="#">初中</a></li>
+							<li><a href="#">高中</a></li>
+						</ul>
+					</li>
+					<li><a href="#">论坛社区</a>
+						<ul>
+							<li><a href="#">学霸说</a></li>
+							<li><a href="#">资料库</a></li>
+							<li><a href="#">家长岛</a></li>
+						</ul>
+					</li>
+					<li><a href="#">我要提问</a>
+						<ul>
+							<li><a href="#">心理困惑</a></li>
+							<li><a href="#">情感问题</a></li>
+							<li><a href="#">学习障碍</a></li>
+						</ul>
+					</li>
+					<li><a href="#">个人中心</a></li>
+				</ul>
 			<!-- 搜索框 -->
 			<div id="searchPart">
 					<form id="partForm">
 						<!-- 待修改搜索的值 -->
 						<input type="text" value="请输入您要搜索的科目" id="partInput" />
-						<input type="submit" id="search_btn" name="heder-submit"  value="搜索" autofocus="autofocus"/>
+						<input type="submit" id="search_btn" name="heder-submit" autofocus="autofocus" value="搜索" />
 								<!-- <img src="images/search_btn.gif" alt="search_btn"> -->
 					</form>
 				</div>
@@ -57,9 +59,11 @@
 					<!-- <span>/</span> -->
 					<span><a href="#">注册</a></span>
 				</div>
-		</div>
+			</div>
+			</div>
+	</div>
 </body>
-<script>
+<script type="text/javascript">
 	var search = document.getElementById("partInput");
   search.onfocus = function(){
       search.value="";

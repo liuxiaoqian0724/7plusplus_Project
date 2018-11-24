@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>家教信息列表</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.staticfile.org/ionicons/2.0.1/css/ionicons.min.css">
+	<!--引入css-->
+   <link rel="stylesheet" href="dist/css/zui.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/tutorlisted.css">
+	<script src="js/jquery-3.2.1.js"></script>
+	<!--引入js-->
+   <script type="text/javascript" src="dist/lib/jquery/jquery.js"></script>
+   <script type="text/javascript" src="dist/js/zui.min.js"></script>
+
+	<script type="text/javascript" src="js/tutorlisted.js"></script>
+
+</head>
+
+
+<body>
+	<div id="header-box">
+		<div id="big-box">
+			<!-- logo -->
+			<div id="top-box">
+				<div id="top-box-logo">
+					<img src="images/headerlogo.png" alt="logo" id="logoPic">
+					<div id="name-pic"><img src="images/nameTop.png" alt="namePic" style="width: 263.3px;height:66px;"></div>
+				</div>
+			</div>
+		</div>
+			<!-- 下拉菜单 -->
+			<div id="bottom-box">
+				<div id="topBox2">
+					<ul id="navFont">
+					<li class="navFont1"><a href="#">首页</a></li>
+					<li><a href="#">家教</a>
+						<ul>
+							<li><a href="#">小学</a></li>
+							<li><a href="#">初中</a></li>
+							<li><a href="#">高中</a></li>
+						</ul>
+					</li>
+					<li><a href="#">论坛社区</a>
+						<ul>
+							<li><a href="#">学霸说</a></li>
+							<li><a href="#">资料库</a></li>
+							<li><a href="#">家长岛</a></li>
+						</ul>
+					</li>
+					<li><a href="#">我要提问</a>
+						<ul>
+							<li><a href="#">心理困惑</a></li>
+							<li><a href="#">情感问题</a></li>
+							<li><a href="#">学习障碍</a></li>
+						</ul>
+					</li>
+					<li><a href="#">个人中心</a></li>
+				</ul>
+			<!-- 搜索框 -->
+			<div id="searchPart">
+					<form id="partForm">
+						<!-- 待修改搜索的值 -->
+						<input type="text" value="请输入您要搜索的科目" id="partInput" />
+						<input type="submit" id="search_btn" name="heder-submit" autofocus="autofocus" value="搜索" />
+								<!-- <img src="images/search_btn.gif" alt="search_btn"> -->
+					</form>
+				</div>
+				<!-- 登录注册 -->
+				<div id="header-login">
+					<span><a href="#">登录</a></span>
+					<!-- <span>/</span> -->
+					<span><a href="#">注册</a></span>
+				</div>
+			</div>
+			</div>
+	</div>
+</body>
+
+<div class="content">
+	<!--条件筛选-->
+	<div class="content-top">
+		<div class="title">
+			<div class="title-title"><h3>全部老师&nbsp;&nbsp;&nbsp;></h3></div>
+			<ul class="title-ul">
+				<!-- <li class="title-condition">一年级 &nbsp;<a href=""><i class="icon1 ion-close" onclick="deleteli()"></i></a></li> -->
+				<!-- <li class="title-line">&nbsp;&nbsp;|</li> -->
+ 				<li class="title-condition">一年级 &nbsp;
+ 					<a href=""><i class="icon1 ion-close"></i></a></li>
+ 				<li class="title-condition">数学 &nbsp;
+ 					<a href=""><i class="icon1 ion-close"></i></a></li>
+				<li id="spe3">清空筛选项</li>
+			</ul>
+
+		</div>		<br>
+		<div class="content-conditions">
+			<ul class="conditions">
+				<li class="con-content">
+					<ul class="con-ul">
+						<li class="spe">
+							授课年级
+						</li>
+						<a href=""><li class="con-li">
+							一年级
+						</li></a>
+						<a href=""><li class="con-li">
+							二年级
+						</li></a>
+						<a href=""><li class="con-li">
+							三年级
+						</li></a>
+						<a href=""><li class="con-li">
+							四年级
+						</li></a>
+						<a href=""><li class="con-li">
+							五年级
+						</li></a>
+						<a href=""><li class="con-li">
+							六年级
+						</li></a>
+					</ul>					
+				</li>
+				<div class="dashed"></div>
+				<li class="con-content">
+					<ul class="con-ul">
+						<li class="spe">
+							教学科目
+						</li>
+						<!--后台循环-->
+						<a href=""><li class="con-li">
+							语文
+						</li></a>
+						<a href=""><li class="con-li">
+							数学
+						</li></a>
+						<a href=""><li class="con-li">
+							英语
+						</li></a>
+						<a href=""><li class="con-li">
+							物理
+						</li></a>
+						<a href=""><li class="con-li">
+							化学
+						</li></a>
+						
+					</ul>
+				</li>
+				<div class="dashed"></div>
+				<li class="con-content">
+					<ul class="con-ul">
+						<li class="spe">
+							上门区域
+						</li>
+						<!--后台循环-->
+						<a href=""><li class="con-li">
+							长安区
+						</li></a>
+						<a href=""><li class="con-li">
+							裕华区
+						</li></a>
+						<a href=""><li class="con-li">
+							新华区
+						</li></a>
+
+					</ul>
+				</li>
+				<div class="dashed"></div>
+				<li class="con-content">
+					<ul class="con-ul">
+						<li class="spe">
+							老师性别
+						</li>
+						<!--后台循环-->
+						<a href=""><li class="con-li">
+							男老师
+						</li></a>
+						<a href=""><li class="con-li">
+							女老师
+						</li></a>
+					</ul>
+				</li>
+				<div class="dashed"></div>
+				<li class="con-content">
+					<ul class="con-ul">
+						<li class="spe">
+							上门方式
+						</li>
+						<!--后台循环-->
+						<a href=""><li class="con-li">
+							老师上门
+						</li></a><a href=""><li class="con-li">
+							学生上门
+						</li></a>
+					</ul>
+				</li>
+				<div class="dashed"></div>
+			</ul>
+		</div>
+	</div>
+	<!--内容中间部分-->
+	<div class="content-middle">
+		<!--内容左半部分——家教展示列表-->
+		<div class="middle-left">
+			<div class="left-top">
+				<ul class="top-ul">
+					<li id="spe1">符合条件老师</li>
+					<a href=""><li class="top-li">智能排序 </li></a>
+					<a href=""><li class="top-li">好评数 </li></a>
+					<a href=""><li class="top-li">价格最高 </li></a>
+					<a href=""><li class="top-li">授课最多 </li></a>
+					<a href=""><li class="top-li">口碑最佳 </li></a>
+					<a href=""><li class="top-li">续课率最高 </li></a>
+					<a href=""><li class="top-li">资料完整度</li></a>
+				</ul>
+			</div>
+			<!--家教列表展示-->
+			<div class="tutorshow">
+				<!--一个家教展示-->
+				<!--foreach循环每个家教的信息-->
+				<a href="">
+				<div class="tutorone">
+					<!--家教头像-->
+					<div class="tutor-photo">
+						<!-- <img src="images/img2.jpg"> -->
+						<img src="http://zui.sexy/docs/img/img1.jpg" width="110px" height="110px" class="img-rounded" alt="圆角图片">
+					</div>
+					<!--家教基本信息-->
+					<div class="tutor-information">
+						<div class="username">
+							家教姓名
+						</div>
+						<!-- <p>家教姓名</p> -->
+						<div class="information">
+							<div class="firline">
+								<div class="star">
+									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
+									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
+									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
+									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
+									<img src="images/empty-star.png" style="width: 20px;height: 20px;">
+								</div>
+								<div class="teachages">教龄17年</div>	
+								<div class="teachhours">授课134小时</div>
+							</div>
+							<div class="tags">
+								<div class="tag">
+									教师资历
+								</div>
+								<div class="tag">
+									学历学位
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--家长评论-->
+					<div class="tutor-comment">&nbsp;<i class="icon2 icon-comment-alt"></i>&nbsp;<span>家长评论&nbsp;264条</span>
+						<p>天天向上661：老师善于引导，课件清晰完整，讲课生动，孩子很喜欢。</p>
+					</div>
+					<div class="separator"></div>
+					<div class="tutor-check">
+						<div class="price"><i class="icon icon-yen"></i>200<span class="spe2">起</span></div>
+						<div class="check">
+							<button class="btn" type="button">立即查看</button>
+						</div>
+					</div>
+				</div>
+				</a>
+				<a href="">
+				<div class="tutorone">
+					<!--家教头像-->
+					<div class="tutor-photo">
+						<!-- <img src="images/img2.jpg"> -->
+						<img src="http://zui.sexy/docs/img/img1.jpg" width="110px" height="110px" class="img-rounded" alt="圆角图片">
+					</div>
+					<!--家教基本信息-->
+					<div class="tutor-information">
+						<div class="username">
+							家教姓名
+						</div>
+						<!-- <p>家教姓名</p> -->
+						<div class="information">
+							<div class="firline">
+								<div class="star">
+									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
+									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
+									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
+									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
+									<img src="images/empty-star.png" style="width: 20px;height: 20px;">
+								</div>
+								<div class="teachages">教龄17年</div>	
+								<div class="teachhours">授课134小时</div>
+							</div>
+							<div class="tags">
+								<div class="tag">
+									教师资历
+								</div>
+								<div class="tag">
+									学历学位
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--家长评论-->
+					<div class="tutor-comment">&nbsp;<i class="icon2 icon-comment-alt"></i>&nbsp;<span>家长评论&nbsp;264条</span>
+						<p>天天向上661：老师善于引导，课件清晰完整，讲课生动，孩子很喜欢。</p>
+					</div>
+					<div class="separator"></div>
+					<div class="tutor-check">
+						<div class="price"><i class="icon icon-yen"></i>200<span class="spe2">起</span></div>
+						<div class="check">
+							<button class="btn" type="button">立即查看</button>
+						</div>
+					</div>
+				</div>
+				</a>
+			</div>
+		</div>
+		<!--内容右半部分 空闲区域-->
+		<div class="middle-right">
+			<div class="right-title">
+				推荐家教
+			</div>
+			<!--foreach循环-->
+			<!--一个家教-->
+			<div class="recommended">
+				<!--照片-->
+				<div class="re-photo">
+					<img src="http://zui.sexy/docs/img/img2.jpg" width="80px" height="80px" class="img-circle" alt="圆形图片">
+				</div>
+				<!--名字-->
+				<div class="re-name">
+					李老师
+				</div>
+				<div class="re-tag">
+					优秀教师
+				</div>
+				<!--介绍-->
+				<div class="re-introduce">
+					家教介绍	:教学经验丰富，课堂生动幽默，综合点拨提高。
+				</div>
+				<div class="re-grade">
+					学员评分:95
+				</div>
+				<!--家教时长-->
+				<div class="re-hour">
+					家教时长：100小时
+				</div>
+				<!--地区-->
+				<!--地区通过数据库查-->
+				<div class="re-region">
+					<i class="icon ion-ios-location"></i>&nbsp;&nbsp;裕华区
+				</div>
+				<div class="re-detail"><a href="">详情</a></div>
+			</div>
+			<div class="recommended">
+				<!--照片-->
+				<div class="re-photo">
+					<img src="http://zui.sexy/docs/img/img2.jpg" width="80px" height="80px" class="img-circle" alt="圆形图片">
+				</div>
+				<!--名字-->
+				<div class="re-name">
+					李老师
+				</div>
+				<div class="re-tag">
+					优秀教师
+				</div>
+				<!--介绍-->
+				<div class="re-introduce">
+					家教介绍	:教学经验丰富，课堂生动幽默。
+				</div>
+				<div class="re-grade">
+					学员评分:95
+				</div>
+				<!--家教时长-->
+				<div class="re-hour">
+					家教时长：100小时
+				</div>
+				<!--地区-->
+				<!--地区通过数据库查-->
+				<div class="re-region">
+					<i class="icon ion-ios-location"></i>&nbsp;&nbsp;裕华区
+				</div>
+				<div class="re-detail"><a href="">详情</a></div>
+			</div>
+		</div>
+	</div>
+</div>
+	<div class="footer">
+		<!-- 关于网页 -->
+		<div class="footer-font">
+			<div id="footer-font-about">
+				<div id="about-title"><h3 class="font-h3">关于青蓝</h3></div>
+				<div id="about-font"><p class="footer-words">
+					青蓝家教旨在为大学生和家长提供真实可靠的家教信息发布、家教过程约束和学情分析平台。大学生家教在平台上注册并发布家教信息，家教在线上记录孩子的每次学习情况用于记录分析，并且可以给孩子提供线上辅导功能，家长可即时查看情况，更加了解孩子的学情。同时平台还为家长和家教提供论坛交流区，用于资料交流和分享。
+				</p></div>
+			</div>
+			<div id="footer-font-a">
+				<div id="a-title"><h3 class="font-h3">链接</h3></div>
+				<div id="a-font">
+					<a href="#" class="footer-words">加入我们</a>
+					<a href="#" class="footer-words">网站须知</a>
+					<a href="#" class="footer-words">意见反馈</a>
+					<a href="#" class="footer-words">免责声明</a>
+				</div>
+			</div>
+			<div id="footer-font-friend">
+				<div id="friend-title"><h3 class="font-h3">鸣谢伙伴</h3></div>
+				<div id="friend-logo">
+					<div id="friend-logo-div1">
+						<i class="icon icon-github icon-3x" ></i>
+						<i class="icon icon-qq icon-3x"></i>
+						<i class="icon icon-wechat icon-3x"></i>
+					</div>
+				</div>
+			</div>
+			<div id="footer-font-img">
+				<div id="footer-font-img-font"><h3>扫码关注我们了解更多</h3></div>
+				<img src="images/code.png" id="QRcode">
+		</div>
+	</div>
+
+	<!-- 权利归属 -->
+		<div id="footer-right">
+			<div id="footer-right-font">
+				<p>
+					<br>
+					<a href="#" id="footer-right-font-a1">Copyright 2018-2020&nbsp;&nbsp;&nbsp;青蓝家教</a>
+					<a href="#" id="footer-right-font-a1">Copyright 2018-2020&nbsp;&nbsp;&nbsp;青蓝家教</a>
+	    			<a href="#" id="footer-right-font-a2">冀ICP备05067795号  冀公网安备110402440008号 </a>
+	    		</p>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
