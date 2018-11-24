@@ -54,24 +54,26 @@ body{
 			margin-top: -30px;
 		}
 		#partInput{
-			border: 2px dotted b6b6b6;
+			/*border: 2px dotted b6b6b6;*/
 			width: 257px;
 			height: 25px;
 			margin-left: 25px;
-			margin-top: 40px;
+			margin-top: 41px;
 			font-size: 14px;
 			border-radius:10px;
 		}
 		#search_btn{
-			border: dotted b6b6b6;
+			/*border: dotted b6b6b6;*/
+			border-radius: 30% 30% 30% 30%;
 			height: 28px;
-			width: 42px;
+			width: 50px;
 			background-color: #ffffff;
-			position: absolute;
-			color: #01DFCE;
+			position: relative;
+			color: #33A6B8;
 			margin-left: -42px;
 			margin-top: 41px;
 			font-weight: bold;
+			font-size: 14px;
 		}
 		#header-login{
 			/*border: 1px solid green;*/
