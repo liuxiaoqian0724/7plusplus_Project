@@ -5,6 +5,7 @@
 }
 .tutor_information{
   width:75%;
+  position: relative;
   margin-top:15px;
   margin-left:170px;
   border:1px solid #e4dfd7;
@@ -37,6 +38,10 @@
 }
 #pager{
   margin-left: 400px;
+}
+.pager a:link{
+	background-color: #FFF;
+	color:#56C9DB;
 }
 #learning_community{
   width:75%;
