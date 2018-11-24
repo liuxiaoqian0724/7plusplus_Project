@@ -83,7 +83,7 @@
   }
   #c1-star{
     height: 160px;
-    width: 100px;
+    width: 180px;
   }
   #c1-star-p1{
     height: 30px;
@@ -107,6 +107,9 @@
       border-radius: 12px;
       border:1px solid #c0c0c0;
       margin-left: 20px;
+  }
+  #c1-star-div input:hover{
+    background-color: #33A6B8;
   }
   #c2{
     width: 1200px;
@@ -139,7 +142,7 @@
   }
   .c2-left-item a:hover{
     text-decoration: none;
-    background-color: #FFAB4C;
+    background-color: #33A6B8;
   }
   .c2-left-item a:visited{
     text-decoration: none;
@@ -159,3 +162,13 @@
     background-color: #c0ffeb;
   }
   
+  #c2-right .panel-body{
+    background-color: #F9F9F9;
+  }
+  #c2-right .panel-body> div{
+    background-color: white;
+    border:1px solid black;
+  }
+  #c2-right .panel-body input:hover{
+    background-color: #33A6B8;
+  }
