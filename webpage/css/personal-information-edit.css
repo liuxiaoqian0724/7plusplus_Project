@@ -44,7 +44,7 @@ body{
 	border:1px solid #c0c0c0;
 }
 #c1 input:hover{
-	background-color: #81C7D4;
+	background-color: #33A6B8;
 }
 #c2{
 	width: 900px;
@@ -188,4 +188,7 @@ body{
 	border-radius: 12px;
 	border:1px solid #c0c0c0;
 	margin-top: 100px;
+}
+#c3 > input:hover{
+	background-color: #33A6B8;
 }
