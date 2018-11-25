@@ -1,4 +1,319 @@
-﻿.provinceCity {
+﻿/*header*/
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-weight: bold;
+	font-family: STXihei, "Microsoft YaHei";
+}
+#header-box{
+	width: 100%;
+	height: 172px;
+}
+#big-box{
+	/*border:1px solid black;*/
+	width: 1200px;
+	margin: 0 auto;
+	height: 90px;
+	text-decoration: none;
+}
+#name-pic{
+	width: 263.3px;
+	height: 66px;
+	/*display: inline;*/
+	margin-top: -80px;
+	margin-left: 70px;
+
+}
+#top-box-logo{
+	/*width: 1200px;*/
+	height: 90px;
+	margin-left: 20px;
+}
+#bottom-box{
+	/*border: 1px solid green;*/
+	margin-top: 0px;
+	width: 100%;
+	height: 52px;
+	background-color: #01DFCE;
+}
+#searchPart{
+			/*border: 1px solid green;*/
+			width: 300px;
+			height: 80px;
+			position: absolute;
+			margin-left:700px;
+			margin-top: -30px;
+		}
+		#partInput{
+			/*border: 2px dotted b6b6b6;*/
+			width: 257px;
+			height: 25px;
+			margin-left: 25px;
+			margin-top: 41px;
+			font-size: 14px;
+			border-radius:10px;
+		}
+		#search_btn{
+			/*border: dotted b6b6b6;*/
+			border-radius: 30% 30% 30% 30%;
+			height: 28px;
+			width: 50px;
+			background-color: #ffffff;
+			position: relative;
+			color: #33A6B8;
+			margin-left: -42px;
+			margin-top: 41px;
+			font-weight: bold;
+			font-size: 14px;
+		}
+		#header-login{
+			/*border: 1px solid green;*/
+			height: 30px;
+			width: 120px;
+			margin-left: 1070px;
+			margin-top: 13px;
+			font-size: 21px;
+			position: absolute;
+		}
+		#header-login a{
+			text-decoration: none;
+			font-size: 20px;
+			color:  #FFFFF0;
+			font-weight: bold;
+			margin-left: 7px;
+		 }
+		#header-login span{
+			/*border:1px solid green;*/
+			position: relative;
+			margin:center;
+		}
+		#header-login span:hover{
+			/*border:1px solid green;*/
+			position: relative;
+			/*background-color:#33A6B8;*/
+			text-decoration: underline;
+		}
+		#search_btn img{
+			margin: 0 auto;
+		}
+		#titleSpan{
+			position: absolute;
+			margin-left: 115px;
+			margin-top: 5px;
+		}
+		.titleFont{
+			color: #fc8237;
+		}
+		#topBox2{
+			/*border:1px solid red;*/
+			width: 1200px;
+			height: 50px;
+			margin: 0 auto;
+			margin-top: 0px;
+			font-size: 21px;
+		}
+		#navFont{
+			text-decoration: none;
+			margin: 0 auto;
+			width: 1200px;
+			float: left;
+			text-align: center;
+			margin-top: 0px;
+			margin-left: -30px;
+			font-weight: bold;
+		}
+		#navFont a{
+			text-decoration: none;
+			display: block;
+			color: #FFFFF0;
+		}
+		#navFont a:hover{
+			color: #ffffff;
+			display: block;
+			background-color: #33A6B8;
+		}
+		#navFont li{
+			text-decoration: none;
+			list-style: none;
+			float: left;
+			width: 108px;
+			height: 50px;
+			text-align: center;
+			line-height: 50px;
+			margin-left: 30px;
+			z-index: 999;
+		}
+		#navFont li:hover{
+			background-color: #33A6B8;
+			z-index: 999;
+		}
+		#navFont li ul li{
+			width:108px;
+			background-color:#2C83DF;
+			line-height: 50px;
+			height: 50px;
+			margin-left: -20px;
+			display: none;
+			/*z-index: 999;*/
+			position: relative;
+
+			font-size: 18px;
+		}
+
+		#navFont li:hover ul li{
+			display: block;
+			z-index: 999;
+		}
+		#navFont ul li:hover{
+			background-color:#2C83DF;
+			z-index: 999;
+
+		}
+/*header结束*/
+
+/*footer*/
+a{
+	text-decoration: none;
+	/*border:1px red solid;*/
+}
+.footer{
+	border:1px #34495E solid;
+	width: 100%;
+	height: 270px;
+	background-color: #222c3c;
+	/*margin-top: -10px;*/
+	color: #fffff0;
+}
+.footer-font{
+	margin: 0 auto;
+	width: 1200px;
+	height: 280px;
+	/*margin-top: 20px;*/
+	margin-top: 15px;
+}
+.font-h3{
+	color: #fffff0;
+	letter-spacing:1px;
+}
+#footer-font-about{
+	width: 420px;
+	height: 200px;
+	margin-left: 0px;
+	margin-top: 10px;
+	float: left;
+}
+#about-font{
+	width: 420px;
+	margin-top: 15px;
+	line-height: 30px;
+}
+#about-font:hover{
+	text-decoration: underline;
+}
+.footer-words{
+	font-weight: normal;
+	color: #6a8380;
+}
+#footer-font-a{
+	/*display: inline;*/
+	width: 120px;
+	height: 240px;
+	margin-left: 55px;
+	float: left;
+	margin-top: 10px;
+}
+#a-title{
+	/*display: inline;*/
+	width: 100px;
+	height: 200px;
+}
+#a-font{
+	width: 100px;
+	/*display: inline;*/
+	margin-top: -163px;
+}
+#a-font a{
+	/*display: block;*/
+	float: left;
+	margin-left: 2px;
+	line-height:30px;
+}
+#footer-font-friend{
+	width: 200px;
+	height: 240px;
+	/*display: inline;*/
+	margin-left: 55px;
+	margin-top: 10px;
+	/*margin-top: -265px;*/
+	float: left;
+}
+#friend-title{
+	width: 200px;
+	/*height: 200px;*/
+}
+#friend-logo{
+	width: 200px;
+	height: 150px;
+	margin-top: 55px;
+	float: left;
+}
+#friend-logo-div1 i{
+	/*margin-left: 10px;*/
+}
+#footer-font-img{
+	/*border: 1px #34495E solid;*/
+	width:170px;
+	height:120px;
+	margin-left: 55px;
+	float: left;
+	margin-top: 10px;
+}
+.footer-font a{
+	margin-left: 60px;
+	font-size: 14px;
+	font-family: '宋体';
+	font-weight: normal;
+	/*color: #fffff0;*/
+}
+.footer-font a:hover{
+	margin-left: 60px;
+	font-size: 14px;
+	font-family: '宋体';
+	color: #fffff0;
+	text-decoration: underline;
+}
+#footer-font-img-font{
+	/*border:1px #34495E solid;*/
+	font-size: 16px;
+	color: #fffff0;
+	font-weight: normal;
+	margin-top: 10px;
+}
+/*权利归属*/
+#footer-right{
+	width: 100%;
+	height: 65px;
+	background-color: #1b222f;
+	margin-top: -32px;
+}
+#footer-right-font{
+	margin:0 auto;
+	width: 1200px;
+	height: 60px;
+	color: #222c3c;
+	/*margin-top: 20px;*/
+}
+#footer-right-font p a{
+	margin:0 auto;
+	margin-left: 150px;
+	color: #816b64;
+
+}
+/*！footer结束*/
+
+.provinceCity {
 	width: 306px;
 	position: absolute;
 	background: #FFF;
