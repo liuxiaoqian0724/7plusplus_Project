@@ -5,12 +5,12 @@
 div{
 	/*border: 1px solid red;*/
 }
-a{
+/*a{
 	text-decoration: none;
-}
-li{
+}*/
+/*li{
 	list-style: none;
-}
+}*/
 body{
 	font-weight: bold;
 	font-family: STXihei, "Microsoft YaHei";
@@ -24,6 +24,7 @@ body{
 	width: 1200px;
 	margin: 0 auto;
 	height: 90px;
+	text-decoration: none;
 }
 #name-pic{
 	width: 263.3px;
@@ -85,6 +86,7 @@ body{
 			position: absolute;
 		}
 		#header-login a{
+			text-decoration: none;
 			font-size: 20px;
 			color:  #FFFFF0;
 			font-weight: bold;
@@ -121,6 +123,7 @@ body{
 			font-size: 21px;
 		}
 		#navFont{
+			text-decoration: none;
 			margin: 0 auto;
 			width: 1200px;
 			float: left;
@@ -130,6 +133,7 @@ body{
 			font-weight: bold;
 		}
 		#navFont a{
+			text-decoration: none;
 			display: block;
 			color: #FFFFF0;
 		}
@@ -139,6 +143,8 @@ body{
 			background-color: #33A6B8;
 		}
 		#navFont li{
+			text-decoration: none;
+			list-style: none;
 			float: left;
 			width: 108px;
 			height: 50px;
