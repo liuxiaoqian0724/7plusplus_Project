@@ -48,16 +48,17 @@
 	</div>
 	<!--轮播图end-->
 
+  <!--家教信息图片tutor_information_pic-->
+  <div class="tutor_information_pic"><img src="images/tutorinf.png"></div>
 	<!--家教信息tutor_information-->
 	<div class="tutor_information">
-		<!--家教信息图片tutor_information_pic-->
-		<div class="tutor_information_pic"><img src="images/tutorinf.png"></div>
 		<!--按钮choose_button-->
 		<div class="btn-group" id="choose_button">
-      <button type="button" class="btn btn-info">兼职家教</button>
-      <button type="button" class="btn btn-info">专职家教</button>
-      <button type="button" class="btn btn-info">推荐家教</button>
-    </div>
+		  <button type="button" class="btn btn-info">兼职家教</button>
+		  <button type="button" class="btn btn-info">专职家教</button>
+		  <button type="button" class="btn btn-info">推荐家教</button>
+      <button class="btn btn-info" type="button" id="i_wonder_release"><i class="icon icon-pencil"></i>我要发布</button>
+		</div>
 		<!--个人信息personal_information-->
 		<div class="cards cards-borderless" id="personal_information">
   			<div class="col-md-4 col-sm-6 col-lg-3" id="personal_inf">
@@ -134,15 +135,16 @@
 	</div>
 	<!--家教信息end-->
 
+  <!--学习社区图片-->
+  <div class="studycommunity"><img src="images/studycommunity.png"></div>
 	<!--学习社区learning_community-->
 	<div id="learning_community" class="panel">
-		<!--学习社区图片-->
-		<div class="studycommunity"><img src="images/studycommunity.png"></div>
 		<!--按钮choose_button-->
 		<div class="btn-group" id="choose_button">
-      <button type="button" class="btn btn-info" id="opt1" onclick="learning_experienceDis()">学习经验</button>
-      <button type="button" class="btn btn-info" onclick="course_questionDis()">课程问答</button>
-      <button type="button" class="btn btn-info" onclick="community_authorDis()">社区作者</button>
+		<button type="button" class="btn btn-info" id="opt1" onclick="learning_experienceDis()">学习经验</button>
+		<button type="button" class="btn btn-info" id="opt2" onclick="course_questionDis()">课程问答</button>
+		<button type="button" class="btn btn-info" id="opt3" onclick="community_authorDis()">社区作者</button>
+    <button class="btn btn-info" type="button" id="i_wonder_release"><i class="icon icon-pencil"></i>我要发布</button>
     </div>
 		<!--学习经验-->
 		<div id="learning_experience" class="panel" style="display:block;">
@@ -324,7 +326,7 @@
     <div id="community_author" style="display:none;">
       <div class="items items-hover" id="author">
         <div class="item">
-          <a href="#"><img src="images/idphotocircle2.png" style="width:18%"></a>
+          <a href="#"><img src="images/idphotocircle1.png" style="width:18%"></a>
           <div class="btn-group btn-group-vertical" style="position: relative; margin-left: 15px; width:100px; margin-top: 10px">
             <button type="button" class="btn">认证家教</button>
             <p></p>
@@ -368,9 +370,9 @@
           <button class="btn btn-mini " type="button" style="position: relative;margin-left:925px; margin-top:-340px;"><i class="icon icon-plus"></i>关注</button>
         </div>
       </div>
-      <div class="items items-hover" id="author">
+      <div class="items items-hover" id="author" style="margin-top:40px;">
         <div class="item">
-          <a href="#"><img src="images/idphotocircle2.png" style="width:18%"></a>
+          <a href="#"><img src="images/idphotocircle3.png" style="width:18%"></a>
           <div class="btn-group btn-group-vertical" style="position: relative; margin-left: 15px; width:100px; margin-top: 10px">
             <button type="button" class="btn">认证家教</button>
             <p></p>
@@ -406,27 +408,23 @@
 	<!--学习社区end-->
 
   <script type="text/javascript">
-    var learning_experience=document.getElementById('learning_experience').style.display;
-    var course_question=document.getElementById('course_question').style.display;
-    var community_author=document.getElementById('community_author').style.display;
-		console.log(learning_experience);
-		console.log(course_question);
-		console.log(community_author);
+    var learning_experience=document.getElementById('learning_experience');
+    var course_question=document.getElementById('course_question');
+    var community_author=document.getElementById('community_author');
     function learning_experienceDis(){
-			learning_experience="block";
-			course_question="none";
-			community_author="none";
-			console.log(learning_experience);
+			learning_experience.style.display="block";
+			course_question.style.display="none";
+			community_author.style.display="none";
 		}
     function course_questionDis(){
-      learning_experience="none";
-      course_question="block";
-      community_author="none";
+      learning_experience.style.display="none";
+      course_question.style.display="block";
+      community_author.style.display="none";
     }
     function community_authorDis(){
-      learning_experience="none";
-      course_question="none";
-      community_author="block";
+      learning_experience.style.display="none";
+      course_question.style.display="none";
+      community_author.style.display="block";
     }
   </script>
 </body>
