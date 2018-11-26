@@ -25,8 +25,8 @@ $(document).ready(function(){
 	$('.con-li').click(function(enent){
 		var content=$(this).html();
 		var $element=$("<li class='title-condition'>"+content+"&nbsp;"+'<i class="icon1 ion-close"></i></li>');
-		alert(content);
-		alert($('.icon').attr('class'));
+		// alert(content);
+		// alert($('.icon').attr('class'));
 		$(".title-ul").prepend($element);
 		// a.push(content);
 		// // $.session.set('conditions', a);
@@ -34,8 +34,8 @@ $(document).ready(function(){
 		// alert(sessionStorage.getItem("conditions")[1]);
 	})
 	$(".icon1").click(function(event){
-		alert(123);
-		alert($(this).parent().attr('class'));
+		// alert(123);
+		// alert($(this).parent().attr('class'));
 		$(this).parent().remove();
 	})
 	var i=0;
