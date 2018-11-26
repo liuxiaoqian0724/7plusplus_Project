@@ -4,6 +4,11 @@
 	<title></title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/header.css"/>
+	<script type="text/javascript" src="dist/js/zui.js"></script>
+	<!-- zui -->
+    <link rel="stylesheet" href="dist/css/zui.css" />
+    <!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
+    <script src="js/jquery-3.2.1.js"></script>
 </head>
 <body>
 	<div id="header-box">
@@ -45,13 +50,21 @@
 					<li><a href="#">个人中心</a></li>
 				</ul>
 			<!-- 搜索框 -->
-			<div id="searchPart">
+			<!-- <div id="searchPart">
 					<form id="partForm">
 						<input type="text" value="请输入您要搜索的科目" id="partInput" autofocus="autofocus" />
 						<input type="submit" id="search_btn" name="heder-submit" value="搜索" />
-				<!-- 		<img src="images/search.png" alt="search_btn" id="search-img" /> -->
 					</form>
-				</div>
+				</div> -->
+				<div class="input-group">
+  					<div class="input-control search-box search-box-circle has-icon-left has-icon-right search-example" id="searchboxExample">
+    					<input id="inputSearchExample3" type="search" class="form-control search-input" placeholder="搜索">
+    					<label for="inputSearchExample3" class="input-control-icon-left search-icon"><i class="icon icon-search"></i></label>
+  					</div>
+  				<span class="input-group-btn">
+    				<button class="btn btn-primary" type="button">搜索</button>
+  				</span>
+			</div>
 				<!-- 登录注册 -->
 				<div id="header-login">
 					<span><a href="#">登录</a></span>

@@ -46,42 +46,48 @@ body{
 	height: 52px;
 	background-color: #01DFCE;
 }
-#searchPart{
-			/*border: 1px solid green;*/
-			width: 300px;
-			height: 80px;
-			position: absolute;
-			margin-left:700px;
-			margin-top: -30px;
-		}
-		#partInput{
-			/*border: 2px dotted b6b6b6;*/
-			width: 257px;
-			height: 25px;
-			margin-left: 25px;
-			margin-top: 41px;
-			font-size: 14px;
-			border-radius:10px;
-		}
-		#search_btn{
-			/*border: dotted b6b6b6;*/
-			border-radius: 30% 30% 30% 30%;
-			height: 28px;
-			width: 50px;
-			background-color: #ffffff;
-			position: relative;
-			color: #33A6B8;
-			margin-left: -42px;
-			margin-top: 41px;
-			font-weight: bold;
-			font-size: 14px;
-		}
+
+/*#searchPart{
+	width: 300px;
+	height: 80px;
+	position: absolute;
+	margin-left:700px;
+	margin-top: -30px;
+}
+#partInput{
+	width: 257px;
+	height: 25px;
+	margin-left: 25px;
+	margin-top: 41px;
+	font-size: 14px;
+	border-radius:10px;
+}
+#search_btn{
+	border-radius: 30% 30% 30% 30%;
+	height: 28px;
+	width: 50px;
+	background-color: #ffffff;
+	position: relative;
+	color: #33A6B8;
+	margin-left: -42px;
+	margin-top: 41px;
+	font-weight: bold;
+	font-size: 14px;
+}*/
+.input-group{
+	/*border: 1px solid red;*/
+	width: 280px;
+	margin-top: -40px;
+	margin-left: 730px;
+	position: relative;
+	float: left;
+}
 		#header-login{
 			/*border: 1px solid green;*/
 			height: 30px;
 			width: 120px;
 			margin-left: 1070px;
-			margin-top: 13px;
+			margin-top: 11px;
 			font-size: 21px;
 			position: absolute;
 		}
@@ -123,9 +129,10 @@ body{
 			font-size: 21px;
 		}
 		#navFont{
+			/*border: 1px solid red;*/
 			text-decoration: none;
 			margin: 0 auto;
-			width: 1200px;
+			width: 900px;
 			float: left;
 			text-align: center;
 			margin-top: 0px;
