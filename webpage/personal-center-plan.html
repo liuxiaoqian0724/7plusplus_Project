@@ -9,11 +9,16 @@
 <link rel="stylesheet" type="text/css" href="css/header.css"/>
 <link rel="stylesheet" type="text/css" href="css/footer.css"/>
 
-<!-- ZUI Javascript 依赖 jQuery -->
-<script src="lib/jquery/jquery.js"></script>
-<!-- ZUI 标准版压缩后的 JavaScript 文件 -->
-<script src="js/zui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="dist/lib/kindeditor/kindeditor.css" />
+<link rel="stylesheet" type="text/css" href="dist/lib/kindeditor/kindeditor.min.css" />
+<!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
+<!-- ZUI Javascript组件 -->
+<script src="dist/lib/kindeditor/kindeditor.min.js"></script>
+<script src="dist/lib/kindeditor/kindeditor.js"></script>
+<script src="dist/lib/kindeditor/plugins/ok.js"></script>
 <meta charset="utf-8">
+
+
 
 </head>
 <body>
@@ -137,14 +142,25 @@
               </div>
               <div id="c2-right-item">
                 <div>
-                  <p>qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq</p>
-                  <span>2018.10.04</span>
+                  <a href="#"><span class="icon icon-times"></span></a>
+                  <a href="javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><span class="icon icon-edit"></span></a>
+                  <p id="c2-right-p1">qqq</p>
+                  <span>2018-08-10</span>
+                  <div id="light" class="white_content"> 
+                    <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"><span class="icon icon-times"></span></a>
+                    <textarea id="c2-right-t1" id="contentSimple" name="content" class="form-control kindeditorSimple" style="width: 1px;"></textarea>
+                   <!-- <textarea id="c2-right-t1"></textarea> -->
+                    <button type="button" value="保存" onclick="aaa()">
+                      保存
+                    </button>
+                  </div>
+                <div id="fade" class="black_overlay"></div> 
                 </div>
-                <div></div>
-                <div></div>
+                  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+                  <script type="text/javascript" src="js/myplan.js"></script>              
               </div>
               <div id="c2-right-edit">
-                <a href="#"><span class="icon icon-edit icon-2x"></span></a>
+                <a href="#"><span class="icon icon-plus icon-2x"></span></a>
               </div>
           </div>
         </div>
@@ -198,4 +214,18 @@
     </div>
   </div>
 </body>
+<script type="text/javascript">
+  KindEditor.create('textarea.kindeditorSimple', {
+    basePath: 'dist/lib/kindeditor/',
+    bodyClass : 'article-content',
+    resizeType : 1,
+    allowPreviewEmoticons : false,
+    allowImageUpload : false,
+    items : [
+        'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+        'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+        'insertunorderedlist', '|', 'emoticons', 'image', 'link'
+    ]
+});
+</script>
 </html>
