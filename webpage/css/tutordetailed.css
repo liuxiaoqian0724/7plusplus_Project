@@ -14,6 +14,23 @@ a{
 	outline: none;
 }
 /*header*/
+*{
+	margin: 0;
+	padding: 0;
+}
+div{
+	/*border: 1px solid red;*/
+}
+/*a{
+	text-decoration: none;
+}*/
+/*li{
+	list-style: none;
+}*/
+body{
+	font-weight: bold;
+	font-family: STXihei, "Microsoft YaHei";
+}
 #header-box{
 	width: 100%;
 	height: 172px;
@@ -23,6 +40,7 @@ a{
 	width: 1200px;
 	margin: 0 auto;
 	height: 90px;
+	text-decoration: none;
 }
 #name-pic{
 	width: 263.3px;
@@ -53,24 +71,26 @@ a{
 			margin-top: -30px;
 		}
 		#partInput{
-			border: 2px dotted b6b6b6;
+			/*border: 2px dotted b6b6b6;*/
 			width: 257px;
 			height: 25px;
 			margin-left: 25px;
-			margin-top: 40px;
+			margin-top: 41px;
 			font-size: 14px;
 			border-radius:10px;
 		}
 		#search_btn{
-			border: dotted b6b6b6;
+			/*border: dotted b6b6b6;*/
+			border-radius: 30% 30% 30% 30%;
 			height: 28px;
-			width: 42px;
+			width: 50px;
 			background-color: #ffffff;
-			position: absolute;
-			color: #01DFCE;
+			position: relative;
+			color: #33A6B8;
 			margin-left: -42px;
 			margin-top: 41px;
 			font-weight: bold;
+			font-size: 14px;
 		}
 		#header-login{
 			/*border: 1px solid green;*/
@@ -82,6 +102,7 @@ a{
 			position: absolute;
 		}
 		#header-login a{
+			text-decoration: none;
 			font-size: 20px;
 			color:  #FFFFF0;
 			font-weight: bold;
@@ -118,6 +139,7 @@ a{
 			font-size: 21px;
 		}
 		#navFont{
+			text-decoration: none;
 			margin: 0 auto;
 			width: 1200px;
 			float: left;
@@ -127,6 +149,7 @@ a{
 			font-weight: bold;
 		}
 		#navFont a{
+			text-decoration: none;
 			display: block;
 			color: #FFFFF0;
 		}
@@ -136,6 +159,8 @@ a{
 			background-color: #33A6B8;
 		}
 		#navFont li{
+			text-decoration: none;
+			list-style: none;
 			float: left;
 			width: 108px;
 			height: 50px;
@@ -170,7 +195,7 @@ a{
 			z-index: 999;
 
 		}
-/*header结束*/
+/*!header结束*/
 .content{
 	margin: 0 auto;
 	height: 1820px;
