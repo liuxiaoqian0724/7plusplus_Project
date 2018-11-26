@@ -1,135 +1,124 @@
 #myNiceCarousel{
-  width:75%;
-  height:75%;
-  margin-left:170px;
+	width:75%;
+	height:75%;
+	margin-left:170px;
 }
 .tutor_information{
-  width:75%;
-  position: relative;
-  margin-top:15px;
-  margin-left:170px;
-  border:1px solid #e4dfd7;
-  background-color:#fcfcfc;
+	width:75%;
+	position: relative;
+	margin-top:15px;
+	margin-left:170px;
+	border:1px solid #e4dfd7;
+	background-color:#fcfcfc;
 }
 .tutor_information_pic img{
-  width:50%;
-  height:50%;
-  position: relative;
-  margin-left:540px;
-  margin-top:30px;
+	width:50%;
+	height:50%;
+	position: relative;
+	margin-left:480px;
+	margin-top:30px;
 }
 #choose_button{
-  margin-left:390px;
-  margin-top:15px;
+	margin-left:300px;
+	margin-top:15px;
 }
 #i_wonder_release{
-  margin-left:290px;
+	position:relative;
+	margin-left:200px;
 }
 #personal_information{
-  margin-left:23px;
-  margin-top:15px;
+	margin-left:23px;
+	margin-top:15px;
 }
 #personal_inf{
-  margin-left:-5px;
-  width:200px;
-  background-color:#fff;
+	width:200px;
+	background-color:#fff;
 }
 #personal_name{
-  height:100px;
-  border:1px solid #e4dfd7;
-  margin-top:5px;
+	height:100px;
+	border:1px solid #e4dfd7;
+	margin-top:5px;
 }
 #pager{
-  margin-left: 400px;
+	margin-left: 310px;
 }
 .pager a:link{
 	background-color: #FFF;
 	color:#56C9DB;
 }
 #learning_community{
-  width:75%;
-  margin-top:15px;
-  margin-left:170px;
-  border:1px solid #e4dfd7;
-  background-color:#fcfcfc;
+	width:75%;
+	margin-top:15px;
+	margin-left:170px;
+	border:1px solid #e4dfd7;
+	background-color:#fcfcfc;
 }
 .studycommunity img{
-  width:50%;
-  height:50%;
-  margin-left:540px;
-  margin-top:30px;
+	width:50%;
+	height:50%;
+	margin-left:480px;
+	margin-top:30px;
 }
 #learning_experience{
-  margin:15px;
-  height:523px;
-}
-#card{
-  height:174px;
+	margin:15px;
+	height:523px;
 }
 .card_keyword{
-  position: relative;
-  padding:10px;
-  width:210px;
-  margin-left: 15px;
+	position: relative;
+	padding:10px;
+	width:210px;
 }
 .cards_article{
-   position: relative;
-   width:730px;
-   margin-left: 240px;
-   margin-top:-170px;
-   padding-top:10px;
-   padding-left:10px;
+	position: relative;
+	width:600px;
+	margin-left: 200px;
+	margin-top:-170px;
+	padding-top:10px;
+	padding-left:10px;
 }
 #course_question{
-  margin-top:15px;
+	margin-top:15px;
 }
 #question_answer{
-  height:523px;
-  position: relative;
-  margin-top:5px;
+	height:523px;
+	position: relative;
+	margin-top:5px;
 }
 #qanda{
-  position: relative;
-  width:600px;
-  margin-left:15px;
-  padding:5px;
+	position: relative;
+	width:600px;
+	margin-left:15px;
+	padding:5px;
 }
 #goodresponder{
-  position: relative;
-  width:375px;
-  margin-left:625px;
-  margin-top:-523px;
+	position: relative;
+	margin-right:15px;
+	margin-left:625px;
+	margin-top:-523px;
 }
 #goodresponder img{
-  width:35%;
-  height:35%;
+	width:35%;
+	height:35%;
 }
 #community_author{
-  position: relative;
-  margin-top:15px;
+	position: relative;
+	margin-top:15px;
 }
 #author{
-  position: relative;
-  margin:15px;
-  padding:-15px;
-  height:190px;
+	position: relative;
+	margin:15px;
+	padding:-15px;
 }
 .personal_introduction{
-  border:1px solid #e4dfd7;
-  width:240px;
-  position: relative;
-  margin-left: 310px;
-  margin-top: -160px;
-  margin-bottom: 30px;
-  padding:5px;
+	width:240px;
+	position: relative;
+	margin-left: 210px;
+	margin-top:-130px;
+	padding:5px;
 }
 .personal_article{
-  border:1px solid #e4dfd7;
-  width:350px;
-  height:150px;
-  position: relative;
-  margin-left: 560px;
-  margin-top:-180px;
-  padding-left: 15px;
-  padding-top: -20px;
+	position: relative;
+	margin-left: 450px;
+	margin-top:-140px;
+	padding-left: 15px;
 }
