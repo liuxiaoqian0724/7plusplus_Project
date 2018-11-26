@@ -9,7 +9,7 @@
     <!-- zui -->
     <link rel="stylesheet" href="dist/css/zui.css" />
     <!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
-    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="dist/js/jquery-3.2.1.js"></script>
     <!-- ZUI Javascript组件 -->
     <script type="text/javascript" src="dist/js/zui.js"></script>
   </head>
@@ -63,7 +63,7 @@
 			<!--个人信息personal_information-->
 			<div class="cards cards-borderless" id="personal_information">
 				<div class="col-md-4 col-sm-6 col-lg-3" id="personal_inf">
-					<a class="card" href="###">
+					<a class="card" href="###" style="position: relative;">
 						<img src="images/idphoto1.jpg" alt="">
 						<div class="caption">中小学优秀英语教师</div>
 						<div class="card-content text-muted"  id="personal_name">
@@ -75,7 +75,7 @@
 					</a>
 				</div>
 				<div class="col-md-4 col-sm-6 col-lg-3" id="personal_inf">
-					<a class="card" href="###">
+					<a class="card" href="###" style="position: relative;">
 						<img src="images/idphoto2.jpg" alt="">
 						<div class="caption">中小学优秀英语教师</div>
 						<div class="card-content text-muted"  id="personal_name">
@@ -87,7 +87,7 @@
 					</a>
 				</div>
 				<div class="col-md-4 col-sm-6 col-lg-3" id="personal_inf">
-					<a class="card" href="###">
+					<a class="card" href="###" style="position: relative;">
 						<img src="images/idphoto3.jpg" alt="">
 						<div class="caption">中小学优秀英语教师</div>
 						<div class="card-content text-muted"  id="personal_name">
@@ -99,7 +99,7 @@
 					</a>
 				</div>
 				<div class="col-md-4 col-sm-6 col-lg-3" id="personal_inf">
-					<a class="card" href="###">
+					<a class="card" href="###" style="position: relative;">
 						<img src="images/idphoto4.jpg" alt="">
 						<div class="caption">中小学优秀英语教师</div>
 						<div class="card-content text-muted"  id="personal_name">
@@ -403,56 +403,70 @@
 		</div>
 		<!--学习社区end-->
 	</div>
-  <script type="text/javascript">
-	//学习社区点击按钮切换界面
-    var learning_experience=document.getElementById('learning_experience');
-    var course_question=document.getElementById('course_question');
-    var community_author=document.getElementById('community_author');
-    function learning_experienceDis(){
-			learning_experience.style.display="block";
-			course_question.style.display="none";
-			community_author.style.display="none";
+	<script type="text/javascript">
+		//学习社区点击按钮切换界面
+		var learning_experience=document.getElementById('learning_experience');
+		var course_question=document.getElementById('course_question');
+		var community_author=document.getElementById('community_author');
+		function learning_experienceDis(){
+				learning_experience.style.display="block";
+				course_question.style.display="none";
+				community_author.style.display="none";
+			}
+		function course_questionDis(){
+		  learning_experience.style.display="none";
+		  course_question.style.display="block";
+		  community_author.style.display="none";
 		}
-    function course_questionDis(){
-      learning_experience.style.display="none";
-      course_question.style.display="block";
-      community_author.style.display="none";
-    }
-    function community_authorDis(){
-      learning_experience.style.display="none";
-      course_question.style.display="none";
-      community_author.style.display="block";
-    }
-	
-	//收藏按钮点击效果
-	function changstars(){
-		var collection=document.getElementById("collection");
-		var collectioncount=document.getElementById("collectioncount").innerText;
-		if(collectioncount==108){
-			console.log(collectioncount);
-			collectioncount=parseInt(collectioncount)+1;
-			collection.innerHTML="<i class='icon icon-star'></i><span id='collectioncount'>"+collectioncount+"</span>";
+		function community_authorDis(){
+		  learning_experience.style.display="none";
+		  course_question.style.display="none";
+		  community_author.style.display="block";
 		}
-		else{
-			console.log(collectioncount);
-			collectioncount=parseInt(collectioncount)-1;
-			collection.innerHTML="<i class='icon icon-star-empty'></i><span id='collectioncount'>"+collectioncount+"</span>";
+		
+		//收藏按钮点击效果
+		function changstars(){
+			var collection=document.getElementById("collection");
+			var collectioncount=document.getElementById("collectioncount").innerText;
+			if(collectioncount==108){
+				console.log(collectioncount);
+				collectioncount=parseInt(collectioncount)+1;
+				collection.innerHTML="<i class='icon icon-star'></i><span id='collectioncount'>"+collectioncount+"</span>";
+			}
+			else{
+				console.log(collectioncount);
+				collectioncount=parseInt(collectioncount)-1;
+				collection.innerHTML="<i class='icon icon-star-empty'></i><span id='collectioncount'>"+collectioncount+"</span>";
+			}
 		}
-	}
-	
-	//点赞按钮点击效果
-	function changegood(){
-		var changegood=document.getElementById("good");
-		var goodcount=document.getElementById("goodcount").innerText;
-		if(goodcount==108){
-			goodcount=parseInt(goodcount)+1;
-			good.innerHTML="<i class='icon icon-thumbs-up'></i><span id='goodcount'>"+goodcount+"</span>";
+		
+		//点赞按钮点击效果
+		function changegood(){
+			var changegood=document.getElementById("good");
+			var goodcount=document.getElementById("goodcount").innerText;
+			if(goodcount==108){
+				goodcount=parseInt(goodcount)+1;
+				good.innerHTML="<i class='icon icon-thumbs-up'></i><span id='goodcount'>"+goodcount+"</span>";
+			}
+			else{
+				goodcount=parseInt(goodcount)-1;
+				good.innerHTML="<i class='icon icon-thumbs-o-up'></i><span id='goodcount'>"+goodcount+"</span>";
+			}
 		}
-		else{
-			goodcount=parseInt(goodcount)-1;
-			good.innerHTML="<i class='icon icon-thumbs-o-up'></i><span id='goodcount'>"+goodcount+"</span>";
+		
+		//图片的划入划出事件
+		var arr = new Array();
+		$(".card").each(function(){
+			arr.push($(this));
+		});
+		for(var i=0;i<4;i++){
+			arr[i].mouseover(function(){
+				$(this).animate({top:'-10px'},"fast");
+			});
+			arr[i].mouseout(function(){
+				$(this).animate({top:'0px'},"fast");
+			});
 		}
-	}
-  </script>
+	</script>
 </body>
 </html>
