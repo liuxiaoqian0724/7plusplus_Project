@@ -169,14 +169,9 @@ a{
 
 		}
 /*header结束*/
-/*.content{
-	margin-left: 100px;
-	margin-right: 100px;
-	height: 1000px;
-	width: 75%;
-	border: 1px black solid;
-	
-}*/
+
+/*更多*/
+
 .content{
 	margin: 0 auto;
 	height: 710px;
@@ -231,9 +226,9 @@ h3{
 	line-height: 100%;
 	/*width: 1000px;*/
 	width: 88%;
-	float: left;
+	float: left
 	margin-left: -35px;
-	margin-top: -1px;
+	margin-top: -4px;
 	text-align: center;
 	font-size: 15px;
 }
@@ -280,12 +275,59 @@ h3{
 	line-height: 35px;
 	margin-left: -25px;
 }
+.hide-con-content{
+	display: none;
+	width: 1000px;
+	/*border: 1px red solid;*/
+	height: 40px;
+	line-height: 35px;
+	margin-left: 80px;
+}
+.hide-con-content1{
+	display: none;
+	width: 1000px;
+	/*border: 1px red solid;*/
+	height: 40px;
+	line-height: 35px;
+	margin-left: 80px;
+}
+.ul{
+	width: 1200px;
+	height: 40px;
+	line-height: 35px;
+	/*margin-left: -25px;*/
+	/*border: 1px black solid;*/
+}
+.hideul{
+	width: 1200px;
+	height: 40px;
+	line-height: 35px;
+	/*margin-left: -25px;*/
+	border: 1px blue solid;
+}
 .con-ul{
+	height: 40px;
 	width: 1200px;
 	/*border: 1px green solid;*/
 	font-size: 15px;
 	text-align: left;
 	margin-left: -15px;
+}
+#more{
+	/*border: 1px solid black;*/
+	width: 50px;
+	text-align: center;
+	margin-right: 20px;
+	float: right;
+	font-size: 14px;
+}
+#more1{
+	/*border: 1px solid black;*/
+	width: 50px;
+	text-align: center;
+	margin-right: 20px;
+	float: right;
+	font-size: 14px;
 }
 .con-ul li{
 	float: left;
@@ -614,6 +656,9 @@ h3{
 	margin-top: 5px;
 }
 .icon{
+	font-size: 20px;
+}
+.icon33{
 	font-size: 20px;
 }
 .icon1{
