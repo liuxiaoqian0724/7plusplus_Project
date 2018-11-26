@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>个人信息修改页</title>
+<!-- ZUI 标准版压缩后的 CSS 文件 -->
+<link rel="stylesheet" href="css/zui.min.css">
+<link rel="stylesheet" type="text/css" href="css/personal-teacher-information-edit.css">
+<link rel="stylesheet" type="text/css" href="css/header.css"/>
+<link rel="stylesheet" type="text/css" href="css/footer.css"/>
+
+<!-- ZUI Javascript 依赖 jQuery -->
+<script src="lib/jquery/jquery.js"></script>
+<!-- ZUI 标准版压缩后的 JavaScript 文件 -->
+<script src="js/zui.min.js"></script>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+<!-- 上传图片，并且放入指定div中 -->
+<script>
+	$(document).ready(function(){
+		 $('#chooseImage').on('change',function(){
+	 	$(this).css("background-color","#FFFFCC");
+	 	console.log("123");
+    	var filePath = $(this).val(),         //获取到input的value，里面是文件的路径
+    		fileFormat = filePath.substring(filePath.lastIndexOf(".")).toLowerCase(),
+    		src = window.URL.createObjectURL(this.files[0]); //转成可以在本地预览的格式
+    	console.log("456");
+    	// 检查是否是图片
+    	if( !fileFormat.match(/.png|.jpg|.jpeg|.bmp/) ) {
+    		alert('上传错误,文件格式必须为：png/jpg/jpeg');
+        	return;  
+        }
+
+        $('#cropedBigImg').attr('src',src);
+ 	 	src = window.URL.createObjectURL(this.files[0]); //转成可以在本地预览的格式
+	});
+	});
+	
+	
+	</script>
+<meta charset="utf-8">
+</head>
+<body>
+<!-- 头部 -->
+	<div id="head">
+	   <div id="big-box">
+			<!-- logo -->
+			<div id="top-box">
+				<div id="top-box-logo">
+					<img src="images/headerlogo.png" alt="logo" id="logoPic">
+					<div id="name-pic"><img src="images/nameTop.png" alt="namePic" style="width: 263.3px;height:66px;"></div>
+				</div>
+			</div>
+		</div>
+			<!-- 下拉菜单 -->
+			<div id="bottom-box">
+				<div id="topBox2">
+					<ul id="navFont">
+					<li class="navFont1"><a href="#">首页</a></li>
+					<li><a href="#">家教</a>
+						<ul>
+							<li><a href="#">小学</a></li>
+							<li><a href="#">初中</a></li>
+							<li><a href="#">高中</a></li>
+						</ul>
+					</li>
+					<li><a href="#">论坛社区</a>
+						<ul>
+							<li><a href="#">学霸说</a></li>
+							<li><a href="#">资料库</a></li>
+							<li><a href="#">家长岛</a></li>
+						</ul>
+					</li>
+					<li><a href="#">我要提问</a>
+						<ul>
+							<li><a href="#">心理困惑</a></li>
+							<li><a href="#">情感问题</a></li>
+							<li><a href="#">学习障碍</a></li>
+						</ul>
+					</li>
+					<li><a href="#">个人中心</a></li>
+				</ul>
+			<!-- 搜索框 -->
+			<div id="searchPart">
+					<form id="partForm">
+						<!-- 待修改搜索的值 -->
+						<input type="text" value="请输入您要搜索的科目" id="partInput" />
+						<input type="submit" id="search_btn" name="heder-submit" autofocus="autofocus" value="搜索" />
+								<!-- <img src="images/search_btn.gif" alt="search_btn"> -->
+					</form>
+				</div>
+				<!-- 登录注册 -->
+				<div id="header-login">
+					<span><a href="#">登录</a></span>
+					<!-- <span>/</span> -->
+					<span><a href="#">注册</a></span>
+				</div>
+			</div>
+			</div>
+  	</div>  
+<script>
+        var search = document.getElementById("partInput");
+        search.onfocus = function(){
+            search.value="";
+        }
+</script>
+<!-- 中部 -->
+	<div id="content">
+		<div id="c1">
+			<div><a href="#"><i class="icon icon-arrow-left icon-1x"></i>返回个人中心</a></div><br>
+			<span class="c1-item">个人信息修改</span>
+			<form action="#" method="post">
+				<input type="submit" name="免费注册" value="免费注册" class="c1-item">
+			</form>
+		</div>
+		<form action="#" method="post" class="form-horizontal">
+			<div id="c2">
+				<div id="c2-left">
+					<span>个人信息验证</span>
+					<div id="c2-left-left" class="c2-left-item">
+						<div class="form-group">
+							<label for="exampleInputAccount4" class="col-sm-2">身份证号</label>
+						    <div class="col-md-6 col-sm-10">
+						      <input type="text" class="form-control" id="exampleInputAccount4" placeholder="单行输入">
+						    </div>
+						</div>
+						<div class="form-group">
+						    <label for="exampleInputPassword4" class="col-sm-2">真实姓名</label>
+						    <div class="col-md-6 col-sm-10">
+						      <input type="password" class="form-control" id="exampleInputPassword4" placeholder="单行输入">
+						    </div>
+						</div>
+						<div id="c2-left-left-photo">
+							<span class="photo">学生证</span>
+							<div class="photo">
+								<img id="cropedBigImg" value='custom' src="images/empty-photo.png" title="学生证照片"/>
+								<input type="file" id="chooseImage" name="file" accept="image/*">
+								<input type="button" name="选择文件" value="选择文件">
+							</div>
+
+						</div>
+					</div>		
+					<div id="c2-left-right"  class="c2-left-item">
+						<img src="images/empty-photo.png" width="150px" height="150px" class="img-circle" alt="圆形图片"><br>
+						<span>我的头像</span>
+						<input type="file" id="chooseImage" name="file" accept="image/*">
+						<input type="button" name="上传头像" value="上传头像">
+					</div>	
+				</div>
+				<div id="c2-right">
+						<img src="images/code.png">
+					<p>扫描二维码获取更多信息</p>	
+				</div>
+			</div>
+			<div id="c3">
+				<span>完善个人信息</span>
+				<div class="form-group">
+					<label for="exampleInputAccount4" class="col-sm-2">我的学校</label>
+					<div class="col-md-6 col-sm-10">
+				 		<input type="text" class="form-control" id="exampleInputAccount4" placeholder="单行输入">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputPassword4" class="col-sm-2">我的年纪</label>
+					<div class="col-md-6 col-sm-10">
+				  		<input type="password" class="form-control" id="exampleInputPassword4" placeholder="单行输入">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputPassword4" class="col-sm-2">我的手机</label>
+					<div class="col-md-6 col-sm-10">
+				  		<input type="password" class="form-control" id="exampleInputPassword4" placeholder="单行输入">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputPassword4" class="col-sm-2">我的地址</label>
+					<div class="col-md-6 col-sm-10">
+				  		<input type="password" class="form-control" id="exampleInputPassword4" placeholder="单行输入">
+					</div>
+				</div>
+				<input type="submit" name="保存信息" value="保存信息">
+			</div>
+		</form>
+		
+	</div>
+	 <div class="footer">
+		<!-- 关于网页 -->
+		<div class="footer-font">
+			<div id="footer-font-about">
+				<div id="about-title"><h3 class="font-h3">关于青蓝</h3></div>
+				<div id="about-font"><p class="footer-words">
+					青蓝家教旨在为大学生和家长提供真实可靠的家教信息发布、家教过程约束和学情分析平台。大学生家教在平台上注册并发布家教信息，家教在线上记录孩子的每次学习情况用于记录分析，并且可以给孩子提供线上辅导功能，家长可即时查看情况，更加了解孩子的学情。同时平台还为家长和家教提供论坛交流区，用于资料交流和分享。
+				</p></div>
+			</div>
+			<div id="footer-font-a">
+				<div id="a-title"><h3 class="font-h3">链接</h3></div>
+				<div id="a-font">
+					<a href="#" class="footer-words">加入我们</a>
+					<a href="#" class="footer-words">网站须知</a>
+					<a href="#" class="footer-words">意见反馈</a>
+					<a href="#" class="footer-words">免责声明</a>
+				</div>
+			</div>
+			<div id="footer-font-friend">
+				<div id="friend-title"><h3 class="font-h3">鸣谢伙伴</h3></div>
+				<div id="friend-logo">
+					<div id="friend-logo-div1">
+						<i class="icon icon-github icon-3x" ></i>
+						<i class="icon icon-qq icon-3x"></i>
+						<i class="icon icon-wechat icon-3x"></i>
+					</div>
+				</div>
+			</div>
+			<div id="footer-font-img">
+				<div id="footer-font-img-font"><h3>扫码关注我们了解更多</h3></div>
+				<img src="images/code.png" id="QRcode">
+		</div>
+	</div>
+
+	<!-- 权利归属 -->
+		<div id="footer-right">
+			<div id="footer-right-font">
+				<p>
+					<br>
+					<a href="#" id="footer-right-font-a1">Copyright 2018-2020&nbsp;&nbsp;&nbsp;青蓝家教</a>
+					<a href="#" id="footer-right-font-a1">Copyright 2018-2020&nbsp;&nbsp;&nbsp;青蓝家教</a>
+	    			<a href="#" id="footer-right-font-a2">冀ICP备05067795号  冀公网安备110402440008号 </a>
+	    		</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

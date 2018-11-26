@@ -169,14 +169,9 @@ a{
 
 		}
 /*header结束*/
-/*.content{
-	margin-left: 100px;
-	margin-right: 100px;
-	height: 1000px;
-	width: 75%;
-	border: 1px black solid;
-	
-}*/
+
+/*更多*/
+
 .content{
 	margin: 0 auto;
 	height: 710px;
@@ -231,9 +226,9 @@ h3{
 	line-height: 100%;
 	/*width: 1000px;*/
 	width: 88%;
-	float: left;
+	float: left
 	margin-left: -35px;
-	margin-top: -1px;
+	margin-top: -4px;
 	text-align: center;
 	font-size: 15px;
 }
@@ -264,11 +259,11 @@ h3{
 .content-conditions{
 	margin-top: 20px;
 	/*height: 300px;*/
-	width: 100%;
+	width: 1182px;
 	/*border: 1px green solid;*/
 }
 .conditions{
-	width: 100%;
+	width: 1182px;
 	/*font-size: 15px;*/
 	/*border: 1px blue solid;*/
 }
@@ -280,12 +275,59 @@ h3{
 	line-height: 35px;
 	margin-left: -25px;
 }
+.hide-con-content{
+	display: none;
+	width: 1000px;
+	/*border: 1px red solid;*/
+	height: 40px;
+	line-height: 35px;
+	margin-left: 80px;
+}
+.hide-con-content1{
+	display: none;
+	width: 1000px;
+	/*border: 1px red solid;*/
+	height: 40px;
+	line-height: 35px;
+	margin-left: 80px;
+}
+.ul{
+	width: 1200px;
+	height: 40px;
+	line-height: 35px;
+	/*margin-left: -25px;*/
+	/*border: 1px black solid;*/
+}
+.hideul{
+	width: 1200px;
+	height: 40px;
+	line-height: 35px;
+	/*margin-left: -25px;*/
+	border: 1px blue solid;
+}
 .con-ul{
+	height: 40px;
 	width: 1200px;
 	/*border: 1px green solid;*/
 	font-size: 15px;
 	text-align: left;
 	margin-left: -15px;
+}
+#more{
+	/*border: 1px solid black;*/
+	width: 50px;
+	text-align: center;
+	margin-right: 20px;
+	float: right;
+	font-size: 14px;
+}
+#more1{
+	/*border: 1px solid black;*/
+	width: 50px;
+	text-align: center;
+	margin-right: 20px;
+	float: right;
+	font-size: 14px;
 }
 .con-ul li{
 	float: left;
@@ -306,6 +348,7 @@ h3{
 	padding: 8px;
 	border: 2px red solid;
 	/*height: 500px;*/
+	margin: 0 auto;
 	border: 1px #FCFCFC solid;
 	border-radius: 3px;
 	background-color: #FCFCFC;
@@ -357,6 +400,7 @@ h3{
 	/*width:90px;*/
 }
 .tutorshow{
+	margin: 0 auto;
 	/*border: 1px black solid;*/
 	/*height: 400px;*/
 	margin-top: 40px;
@@ -366,17 +410,24 @@ h3{
 .tutorone{
 	color: black;
 	border: 1px #ADADAD solid;
+	/*border: 1px black solid;*/
 	border-radius: 4px;
 	/*width: 800px;*/
-	width: 100%;
+	width: 830px;
 	height: 160px;
+	margin: 0 auto;
 	margin-top: 10px;
+}
+.tutorinformation{
+	width: 830px;
+	border: 1px #ADADAD solid;
+	/*border: 1px black solid;*/
+	height: 160px;
 }
 .tutor-photo{
 	/*border: 1px black solid;*/
 	/*width: 15%;*/
 	width: 110px;
-	/*height: 70%;*/
 	height: 110px;
 	/*margin-top: 3%;*/
 	text-align: center;
@@ -388,7 +439,7 @@ h3{
 .tutor-information{
 	float: left;
 	/*border: 1px red solid;*/
-	/*width: 41%;*/
+	/*width: 37%;*/
 	width: 330px;
 	/*height: 76%;*/
 	height: 120px;
@@ -404,6 +455,7 @@ h3{
 	/*border: 1px black solid ;*/
 	float: left;
 	width: 145px;
+	/*width: 17%;*/
 	height: 120px;
 	/*margin-left: 2%;*/
 	margin-left: 12px;
@@ -604,6 +656,9 @@ h3{
 	margin-top: 5px;
 }
 .icon{
+	font-size: 20px;
+}
+.icon33{
 	font-size: 20px;
 }
 .icon1{

@@ -5,7 +5,6 @@
 	var isName = false;
 	var isEmail = false;
 	var isEIdentify = false;
-	
 	function loginDis() {
 		var abc=$(document.body).html();//JQ方式
 		var login = document.getElementById("login");
@@ -16,19 +15,11 @@
 			} else {
 				login.style.display = "block";
 				document.getElementById('fade').style.display='block';
-				abc.css ={"overflow-x":"hidden","overflow-y":"hidden"}
-    
 			}
 			register.style.display = "none";
-			 //禁止滚动条
-			$(document.body).css({
-			   "overflow-x":"hidden",
-			   "overflow-y":"hidden"
-			 });
 
 	}
 	function registDis() {
-		var abc=$(document.body).html();
 		var login = document.getElementById("login");
 		var register = document.getElementById("register");
 			if(register.style.display == "block") {
@@ -37,14 +28,8 @@
 			} else {
 				register.style.display = "block";
 				document.getElementById('fade').style.display='block';
-				abc.css ={"overflow-x":"hidden","overflow-y":"hidden"}
 			}
 			login.style.display = "none";
-			 //禁止滚动条
-			$(document.body).css({
-			   "overflow-x":"hidden",
-			   "overflow-y":"hidden"
-			 });
 		}
 	//注册验证
 	//这里的初始化是滑动&拼图的标志slideVerify
@@ -164,17 +149,11 @@
 	}
 			//关闭弹框
 			function closeframe(){
-				var abc=$(document.body).html();
 				var register=document.getElementById("register");
 				var login=document.getElementById("login");
 	      		register.style.display="none";
 	      		login.style.display="none";
 	      		document.getElementById('fade').style.display='none';
-	      		//启用滚动条
-				 $(document.body).css({
-				   "overflow-x":"auto",
-				   "overflow-y":"auto"
-				 });
 			}
 	
 			//登录验证

@@ -6,7 +6,6 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.staticfile.org/ionicons/2.0.1/css/ionicons.min.css">
 	<!--引入css-->
    <link rel="stylesheet" href="dist/css/zui.min.css">
-
 	<link rel="stylesheet" type="text/css" href="css/tutorlisted.css">
 	<script src="js/jquery-3.2.1.js"></script>
 	<!--引入js-->
@@ -34,11 +33,11 @@
 				<div id="topBox2">
 					<ul id="navFont">
 					<li class="navFont1"><a href="#">首页</a></li>
-					<li><a href="#">家教</a>
+					<li><a href="tutorlisted.html">家教</a>
 						<ul>
-							<li><a href="#">小学</a></li>
-							<li><a href="#">初中</a></li>
-							<li><a href="#">高中</a></li>
+							<li><a href="tutorlisted.html">小学</a></li>
+							<li><a href="tutorlisted.html">初中</a></li>
+							<li><a href="tutorlisted.html">高中</a></li>
 						</ul>
 					</li>
 					<li><a href="#">论坛社区</a>
@@ -55,7 +54,7 @@
 							<li><a href="#">学习障碍</a></li>
 						</ul>
 					</li>
-					<li><a href="#">个人中心</a></li>
+					<li><a href="personal-center-mynews.html">个人中心</a></li>
 				</ul>
 			<!-- 搜索框 -->
 			<div id="searchPart">
@@ -83,12 +82,8 @@
 		<div class="title">
 			<div class="title-title"><h3>全部老师&nbsp;&nbsp;&nbsp;></h3></div>
 			<ul class="title-ul">
-				<!-- <li class="title-condition">一年级 &nbsp;<a href=""><i class="icon1 ion-close" onclick="deleteli()"></i></a></li> -->
-				<!-- <li class="title-line">&nbsp;&nbsp;|</li> -->
- 				<li class="title-condition">一年级 &nbsp;
- 					<a href=""><i class="icon1 ion-close"></i></a></li>
  				<li class="title-condition">数学 &nbsp;
- 					<a href=""><i class="icon1 ion-close"></i></a></li>
+ 					<i class="icon1 ion-close"></i></li>
 				<li id="spe3">清空筛选项</li>
 			</ul>
 
@@ -96,29 +91,58 @@
 		<div class="content-conditions">
 			<ul class="conditions">
 				<li class="con-content">
+					<!-- <div class="ul"> -->
 					<ul class="con-ul">
 						<li class="spe">
 							授课年级
 						</li>
-						<a href=""><li class="con-li">
-							一年级
-						</li></a>
-						<a href=""><li class="con-li">
+						<a href="#"><li class="con-li">一年级</li></a>
+						
+						<a href="#"><li class="con-li">
 							二年级
 						</li></a>
-						<a href=""><li class="con-li">
+						<a href="#"><li class="con-li">
 							三年级
 						</li></a>
-						<a href=""><li class="con-li">
+						<a href="#"><li class="con-li">
 							四年级
 						</li></a>
-						<a href=""><li class="con-li">
+						<a href="#"><li class="con-li">
 							五年级
 						</li></a>
-						<a href=""><li class="con-li">
+						<a href="#"><li class="con-li">
 							六年级
 						</li></a>
-					</ul>					
+						<a href="#"><li class="con-li">
+							初一
+						</li></a>
+						<a href="#"><li class="con-li">
+							初二
+						</li></a>
+						<a href="#"><li class="con-li">
+							初三
+						</li></a>
+						<a href="#"><li id="more">
+							更多<i class="icon11 icon-angle-down"></i>
+						</li></a>
+						
+					</ul>
+					<!-- </div> -->					
+				</li>
+
+				<li class="hide-con-content">
+					<ul class="con-ul">
+						
+						<a href="#"><li class="con-li">
+							高一
+						</li></a>
+						<a href="#"><li class="con-li">
+							高二
+						</li></a>
+						<a href="#"><li class="con-li">
+							高三
+						</li></a>
+					</ul>
 				</li>
 				<div class="dashed"></div>
 				<li class="con-content">
@@ -127,22 +151,46 @@
 							教学科目
 						</li>
 						<!--后台循环-->
-						<a href=""><li class="con-li">
+						<a href="#"><li class="con-li">
 							语文
 						</li></a>
-						<a href=""><li class="con-li">
+						<a href="#"><li class="con-li">
 							数学
 						</li></a>
-						<a href=""><li class="con-li">
+						<a href="#"><li class="con-li">
 							英语
 						</li></a>
-						<a href=""><li class="con-li">
+						<a href="#"><li class="con-li">
 							物理
 						</li></a>
-						<a href=""><li class="con-li">
+						<a href="#"><li class="con-li">
 							化学
 						</li></a>
-						
+						<a href="#"><li class="con-li">
+							政治
+						</li></a>
+						<a href="#"><li class="con-li">
+							历史
+						</li></a>
+						<a href="#"><li class="con-li">
+							生物
+						</li></a>
+						<a href="#"><li class="con-li">
+							地理
+						</li></a>
+						<a href="#"><li id="more1">
+							更多<i class="icon11 icon-angle-down"></i>
+						</li></a>
+					</ul>
+				</li>
+				<li class="hide-con-content1">
+					<ul class="con-ul">
+						<a href="#"><li class="con-li">
+							音乐
+						</li></a>
+						<a href="#"><li class="con-li">
+							美术
+						</li></a>
 					</ul>
 				</li>
 				<div class="dashed"></div>
@@ -152,13 +200,13 @@
 							上门区域
 						</li>
 						<!--后台循环-->
-						<a href=""><li class="con-li">
+						<a href="#"><li class="con-li">
 							长安区
 						</li></a>
-						<a href=""><li class="con-li">
+						<a href="#"><li class="con-li">
 							裕华区
 						</li></a>
-						<a href=""><li class="con-li">
+						<a href="#"><li class="con-li">
 							新华区
 						</li></a>
 
@@ -171,10 +219,10 @@
 							老师性别
 						</li>
 						<!--后台循环-->
-						<a href=""><li class="con-li">
+						<a href="#"><li class="con-li">
 							男老师
 						</li></a>
-						<a href=""><li class="con-li">
+						<a href="#"><li class="con-li">
 							女老师
 						</li></a>
 					</ul>
@@ -186,9 +234,10 @@
 							上门方式
 						</li>
 						<!--后台循环-->
-						<a href=""><li class="con-li">
+						<a href="#"><li class="con-li">
 							老师上门
-						</li></a><a href=""><li class="con-li">
+						</li></a>
+						<a href="#"><li class="con-li">
 							学生上门
 						</li></a>
 					</ul>
@@ -204,21 +253,22 @@
 			<div class="left-top">
 				<ul class="top-ul">
 					<li id="spe1">符合条件老师</li>
-					<a href=""><li class="top-li">智能排序 </li></a>
-					<a href=""><li class="top-li">好评数 </li></a>
-					<a href=""><li class="top-li">价格最高 </li></a>
-					<a href=""><li class="top-li">授课最多 </li></a>
-					<a href=""><li class="top-li">口碑最佳 </li></a>
-					<a href=""><li class="top-li">续课率最高 </li></a>
-					<a href=""><li class="top-li">资料完整度</li></a>
+					<a href="#"><li class="top-li">智能排序 </li></a>
+					<a href="#"><li class="top-li">好评数 </li></a>
+					<a href="#"><li class="top-li">价格最高 </li></a>
+					<a href="#"><li class="top-li">授课最多 </li></a>
+					<a href="#"><li class="top-li">口碑最佳 </li></a>
+					<a href="#"><li class="top-li">续课率最高 </li></a>
+					<a href="#"><li class="top-li">资料完整度</li></a>
 				</ul>
 			</div>
 			<!--家教列表展示-->
 			<div class="tutorshow">
 				<!--一个家教展示-->
 				<!--foreach循环每个家教的信息-->
-				<a href="">
+				<a href="tutordetailed.html">
 				<div class="tutorone">
+					<div class="tutorinformation">
 					<!--家教头像-->
 					<div class="tutor-photo">
 						<!-- <img src="images/img2.jpg"> -->
@@ -258,15 +308,17 @@
 					</div>
 					<div class="separator"></div>
 					<div class="tutor-check">
-						<div class="price"><i class="icon icon-yen"></i>200<span class="spe2">起</span></div>
+						<div class="price"><i class="icon22 icon-yen"></i>200<span class="spe2">起</span></div>
 						<div class="check">
-							<button class="btn" type="button">立即查看</button>
+							<a href="tutordetailed.html"><button class="btn" type="button">立即查看</button></a>
 						</div>
+					</div>
 					</div>
 				</div>
 				</a>
-				<a href="">
+				<a href="tutordetailed.html">
 				<div class="tutorone">
+					<div class="tutorinformation">
 					<!--家教头像-->
 					<div class="tutor-photo">
 						<!-- <img src="images/img2.jpg"> -->
@@ -306,10 +358,11 @@
 					</div>
 					<div class="separator"></div>
 					<div class="tutor-check">
-						<div class="price"><i class="icon icon-yen"></i>200<span class="spe2">起</span></div>
+						<div class="price"><i class="icon22 icon-yen"></i>200<span class="spe2">起</span></div>
 						<div class="check">
-							<button class="btn" type="button">立即查看</button>
+							<a href="tutordetailed.html"><button class="btn" type="button">立即查看</button></a>
 						</div>
+					</div>
 					</div>
 				</div>
 				</a>
@@ -350,7 +403,7 @@
 				<div class="re-region">
 					<i class="icon ion-ios-location"></i>&nbsp;&nbsp;裕华区
 				</div>
-				<div class="re-detail"><a href="">详情</a></div>
+				<div class="re-detail"><a href="tutordetailed.html">详情</a></div>
 			</div>
 			<div class="recommended">
 				<!--照片-->
@@ -380,7 +433,7 @@
 				<div class="re-region">
 					<i class="icon ion-ios-location"></i>&nbsp;&nbsp;裕华区
 				</div>
-				<div class="re-detail"><a href="">详情</a></div>
+				<div class="re-detail"><a href="tutordetailed.html">详情</a></div>
 			</div>
 		</div>
 	</div>
