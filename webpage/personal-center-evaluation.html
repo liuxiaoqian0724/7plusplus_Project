@@ -18,46 +18,46 @@
 </head>
 <body>
 <!-- 头部 -->
-	<div id="head">
-	   <div id="big-box">
-			<!-- logo -->
-			<div id="top-box">
-				<div id="top-box-logo">
-					<img src="images/headerlogo.png" alt="logo" id="logoPic">
-					<div id="name-pic"><img src="images/nameTop.png" alt="namePic" style="width: 263.3px;height:66px;"></div>
-				</div>
-			</div>
-		</div>
-			<!-- 下拉菜单 -->
-			<div id="bottom-box">
-				<div id="topBox2">
-					<ul id="navFont">
-					<li class="navFont1"><a href="#">首页</a></li>
-					<li><a href="#">家教</a>
-						<ul>
-							<li><a href="#">小学</a></li>
-							<li><a href="#">初中</a></li>
-							<li><a href="#">高中</a></li>
-						</ul>
-					</li>
-					<li><a href="#">论坛社区</a>
-						<ul>
-							<li><a href="#">学霸说</a></li>
-							<li><a href="#">资料库</a></li>
-							<li><a href="#">家长岛</a></li>
-						</ul>
-					</li>
-					<li><a href="#">我要提问</a>
-						<ul>
-							<li><a href="#">心理困惑</a></li>
-							<li><a href="#">情感问题</a></li>
-							<li><a href="#">学习障碍</a></li>
-						</ul>
-					</li>
-					<li><a href="#">个人中心</a></li>
-				</ul>
-			<!-- 搜索框 -->
-			<div class="input-group">
+	 <div id="header-box">
+    		<div id="big-box">
+    			<!-- logo -->
+    			<div id="top-box">
+    				<div id="top-box-logo">
+    					<img src="images/headerlogo.png" alt="logo" id="logoPic">
+    					<div id="name-pic"><img src="images/nameTop.png" alt="namePic" style="width: 263.3px;height:66px;"></div>
+    				</div>
+    			</div>
+    		</div>
+    			<!-- 下拉菜单 -->
+    			<div id="bottom-box">
+    				<div id="topBox2">
+    					<ul id="navFont">
+    					<li class="navFont1"><a href="indexedbeat.html">首页</a></li>
+    					<li><a href="tutorlisted.html">家教</a>
+    						<ul>
+    							<li><a href="tutorlisted.html">小学</a></li>
+    							<li><a href="tutorlisted.html">初中</a></li>
+    							<li><a href="tutorlisted.html">高中</a></li>
+    						</ul>
+    					</li>
+    					<li><a href="#">论坛社区</a>
+    						<ul>
+    							<li><a href="#">学霸说</a></li>
+    							<li><a href="#">资料库</a></li>
+    							<li><a href="#">家长岛</a></li>
+    						</ul>
+    					</li>
+    					<li><a href="#">我要提问</a>
+    						<ul>
+    							<li><a href="#">心理困惑</a></li>
+    							<li><a href="#">情感问题</a></li>
+    							<li><a href="#">学习障碍</a></li>
+    						</ul>
+    					</li>
+    					<li><a href="personal-center-evaluation.html">个人中心</a></li>
+    				</ul>
+    			<!-- 搜索框 -->
+    			<div class="input-group">
   					<div class="input-control search-box search-box-circle has-icon-left has-icon-right search-example" id="searchboxExample">
     					<input id="inputSearchExample3" type="search" class="form-control search-input" placeholder="搜索">
     					<label for="inputSearchExample3" class="input-control-icon-left search-icon"><i class="icon icon-search"></i></label>
@@ -66,15 +66,16 @@
     				<button class="btn btn-primary" type="button">搜索</button>
   				</span>
 			</div>
-				<!-- 登录注册 -->
-				<div id="header-login">
-					<span><a href="#">登录</a></span>
-					<!-- <span>/</span> -->
-					<span><a href="#">注册</a></span>
-				</div>
-			</div>
-			</div>
-  	</div>  
+    				<!-- 登录注册 -->
+    				<div id="header-login">
+    					<div class="btn-group">
+                  <button class="btn" id="login_button" onclick="loginDis()">登录</button>
+                  <button class="btn" id="register_button" onclick="registDis()">注册</button>
+              </div>
+    				</div>
+    			</div>
+    			</div>
+    	</div>
 <script>
         var search = document.getElementById("partInput");
         search.onfocus = function(){
@@ -117,12 +118,12 @@
     </div>
     <div id="c2">
       <div class="c2" id="c2-left">
-         <div class="c2-left-item" id="c2-left-news"><a href="#"><i class="icon icon-envelope"></i>&nbsp;我的消息<i class="icon icon-chevron-right"></i></a></div>
-         <div class="c2-left-item" id="c2-left-news"><a href="#"><i class="icon icon-book"></i>&nbsp;我的课程<i class="icon icon-chevron-right"></i></a></div>
-         <div class="c2-left-item" id="c2-left-news"><a href="#"><i class="icon icon-flag"></i>&nbsp;学员评价<i class="icon icon-chevron-right"></i></a></div>
+         <div class="c2-left-item" id="c2-left-news"><a href="personal-center-mynews.html"><i class="icon icon-envelope"></i>&nbsp;我的消息<i class="icon icon-chevron-right"></i></a></div>
+         <div class="c2-left-item" id="c2-left-news"><a href="personal-center-mycourse.html"><i class="icon icon-book"></i>&nbsp;我的课程<i class="icon icon-chevron-right"></i></a></div>
+         <div class="c2-left-item" id="c2-left-news"><a href="personal-center-evaluation.html"><i class="icon icon-flag"></i>&nbsp;学员评价<i class="icon icon-chevron-right"></i></a></div>
          <div class="c2-left-item" id="c2-left-news"><a href="#"><i class="icon icon-newspaper-o"></i>&nbsp;我的文章<i class="icon icon-chevron-right"></i></a></div>
          <div class="c2-left-item" id="c2-left-news"><a href="#"><i class="icon icon-question-sign"></i>&nbsp;我的问答<i class="icon icon-chevron-right"></i></a></div>
-         <div class="c2-left-item" id="c2-left-news"><a href="#"><i class="icon icon-wrench"></i>&nbsp;个人资料<i class="icon icon-chevron-right"></i></a></div>
+         <div class="c2-left-item" id="c2-left-news"><a href="personal-information-edit.html"><i class="icon icon-wrench"></i>&nbsp;个人资料<i class="icon icon-chevron-right"></i></a></div>
          <div class="c2-left-item" id="c2-left-news"><a href="#"><i class="icon icon-stack"></i>&nbsp;我的教案<i class="icon icon-chevron-right"></i></a></div>
          <div class="c2-left-item" id="c2-left-news"><a href="#"><i class="icon icon-file-text-o"></i>&nbsp;我的作业<i class="icon icon-chevron-right"></i></a></div>
       </div>
