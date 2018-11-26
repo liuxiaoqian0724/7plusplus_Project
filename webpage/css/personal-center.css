@@ -144,10 +144,6 @@
     text-decoration: none;
     background-color: #33A6B8;
   }
-  .c2-left-item a:visited{
-    text-decoration: none;
-    background-color: #FFAB4C;
-  }
   .c2-left-item .icon-chevron-right{
     float: right;
     padding-top: 5px;
