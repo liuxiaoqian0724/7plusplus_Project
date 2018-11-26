@@ -20,6 +20,11 @@
     
 			}
 			register.style.display = "none";
+			 //禁止滚动条
+			$(document.body).css({
+			   "overflow-x":"hidden",
+			   "overflow-y":"hidden"
+			 });
 
 	}
 	function registDis() {
@@ -35,6 +40,11 @@
 				abc.css ={"overflow-x":"hidden","overflow-y":"hidden"}
 			}
 			login.style.display = "none";
+			 //禁止滚动条
+			$(document.body).css({
+			   "overflow-x":"hidden",
+			   "overflow-y":"hidden"
+			 });
 		}
 	//注册验证
 	//这里的初始化是滑动&拼图的标志slideVerify
@@ -160,7 +170,11 @@
 	      		register.style.display="none";
 	      		login.style.display="none";
 	      		document.getElementById('fade').style.display='none';
-	      		abc.css={"overflow-x":"auto","overflow-y":"auto"};
+	      		//启用滚动条
+				 $(document.body).css({
+				   "overflow-x":"auto",
+				   "overflow-y":"auto"
+				 });
 			}
 	
 			//登录验证
