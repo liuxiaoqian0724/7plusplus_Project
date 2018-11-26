@@ -1,25 +1,38 @@
 //设置登录、注册按钮的点击效果
-	var login = document.getElementById("login");
-	var register = document.getElementById("register");
 	var identify = false;
 	var isPwd = false;
 	var isRePwd = false;
 	var isName = false;
 	var isEmail = false;
 	var isEIdentify = false;
+	
 	function loginDis() {
-			if(login.style.display == "none") {
-				login.style.display = "block";
-			} else {
+		var abc=$(document.body).html();//JQ方式
+		var login = document.getElementById("login");
+		var register = document.getElementById("register");
+			if(login.style.display == "block") {
 				login.style.display = "none";
+				document.getElementById('fade').style.display='none';
+			} else {
+				login.style.display = "block";
+				document.getElementById('fade').style.display='block';
+				abc.css ={"overflow-x":"hidden","overflow-y":"hidden"}
+    
 			}
 			register.style.display = "none";
+
 	}
 	function registDis() {
-			if(register.style.display == "none") {
-				register.style.display = "block";
-			} else {
+		var abc=$(document.body).html();
+		var login = document.getElementById("login");
+		var register = document.getElementById("register");
+			if(register.style.display == "block") {
 				register.style.display = "none";
+				document.getElementById('fade').style.display='none';
+			} else {
+				register.style.display = "block";
+				document.getElementById('fade').style.display='block';
+				abc.css ={"overflow-x":"hidden","overflow-y":"hidden"}
 			}
 			login.style.display = "none";
 		}
@@ -141,10 +154,13 @@
 	}
 			//关闭弹框
 			function closeframe(){
+				var abc=$(document.body).html();
 				var register=document.getElementById("register");
 				var login=document.getElementById("login");
 	      		register.style.display="none";
 	      		login.style.display="none";
+	      		document.getElementById('fade').style.display='none';
+	      		abc.css={"overflow-x":"auto","overflow-y":"auto"};
 			}
 	
 			//登录验证
@@ -161,4 +177,4 @@
 					show.html("");
 					return true;
 				}
-			}	
+			}
