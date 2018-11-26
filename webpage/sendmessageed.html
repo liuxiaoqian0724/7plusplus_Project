@@ -17,6 +17,8 @@
 		<link rel="stylesheet" href="dist/lib/datetimepicker/datetimepicker.css" />
 		<link rel="stylesheet" href="dist/lib/datetimepicker/datetimepicker.min.css" />
 		<link rel="stylesheet" href="css/cityLayout.css" />
+		<link rel="stylesheet" href="css/header.css"/>
+		<link rel="stylesheet" href="css/footer.css"/>
 		<!--js引入-->
 		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 		<script type="text/javascript" src="dist/js/zui.js"></script>
@@ -56,7 +58,7 @@
 	<body>
 		<!--导航栏开始-->
 		<div id="header-box">
-			<div id="big-box">
+		<div id="big-box">
 			<!-- logo -->
 			<div id="top-box">
 				<div id="top-box-logo">
@@ -94,13 +96,21 @@
 					<li><a href="#">个人中心</a></li>
 				</ul>
 			<!-- 搜索框 -->
-			<div id="searchPart">
+			<!-- <div id="searchPart">
 					<form id="partForm">
 						<input type="text" value="请输入您要搜索的科目" id="partInput" autofocus="autofocus" />
 						<input type="submit" id="search_btn" name="heder-submit" value="搜索" />
-				<!-- 		<img src="images/search.png" alt="search_btn" id="search-img" /> -->
 					</form>
-				</div>
+				</div> -->
+				<div class="input-group">
+  					<div class="input-control search-box search-box-circle has-icon-left has-icon-right search-example" id="searchboxExample">
+    					<input id="inputSearchExample3" type="search" class="form-control search-input" placeholder="搜索">
+    					<label for="inputSearchExample3" class="input-control-icon-left search-icon"><i class="icon icon-search"></i></label>
+  					</div>
+  				<span class="input-group-btn">
+    				<button class="btn btn-primary" type="button">搜索</button>
+  				</span>
+			</div>
 				<!-- 登录注册 -->
 				<div id="header-login">
 					<span><a href="#">登录</a></span>
