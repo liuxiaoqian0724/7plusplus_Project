@@ -367,8 +367,8 @@ h3{
 }
 .tutorone{
 	color: black;
-	/*border: 1px #ADADAD solid;*/
-	border: 1px black solid;
+	border: 1px #ADADAD solid;
+	/*border: 1px black solid;*/
 	border-radius: 4px;
 	/*width: 800px;*/
 	width: 830px;
@@ -378,11 +378,12 @@ h3{
 }
 .tutorinformation{
 	width: 830px;
-	border: 1px black solid;
+	border: 1px #ADADAD solid;
+	/*border: 1px black solid;*/
 	height: 160px;
 }
 .tutor-photo{
-	border: 1px black solid;
+	/*border: 1px black solid;*/
 	/*width: 15%;*/
 	width: 110px;
 	height: 110px;
@@ -395,7 +396,7 @@ h3{
 }
 .tutor-information{
 	float: left;
-	border: 1px red solid;
+	/*border: 1px red solid;*/
 	/*width: 37%;*/
 	width: 330px;
 	/*height: 76%;*/
@@ -409,7 +410,7 @@ h3{
 }
 /*家长评论*/
 .tutor-comment{
-	border: 1px black solid ;
+	/*border: 1px black solid ;*/
 	float: left;
 	width: 145px;
 	/*width: 17%;*/
@@ -436,7 +437,7 @@ h3{
 	margin-top: 5px;
 }
 .tutor-check{
-	border: 1px red solid;
+	/*border: 1px red solid;*/
 	width: 133px;
 	height: 100px;
 	margin-left: 8px;
