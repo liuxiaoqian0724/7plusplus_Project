@@ -6,12 +6,15 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.staticfile.org/ionicons/2.0.1/css/ionicons.min.css">
 	<!--引入css-->
    <link rel="stylesheet" href="dist/css/zui.min.css">
+   <link rel="stylesheet" href="dist/css/zui.css" />
+   <link rel="stylesheet" type="text/css" href="css/header.css"/>
+    <link rel="stylesheet" type="text/css" href="css/footer.css"/>
 	<link rel="stylesheet" type="text/css" href="css/tutorlisted.css">
 	<script src="js/jquery-3.2.1.js"></script>
 	<!--引入js-->
    <script type="text/javascript" src="dist/lib/jquery/jquery.js"></script>
    <script type="text/javascript" src="dist/js/zui.min.js"></script>
-
+   <script type="text/javascript" src="dist/js/zui.js"></script>
 	<script type="text/javascript" src="js/tutorlisted.js"></script>
 
 </head>
@@ -19,63 +22,63 @@
 
 <body>
 	<div id="header-box">
-		<div id="big-box">
-			<!-- logo -->
-			<div id="top-box">
-				<div id="top-box-logo">
-					<img src="images/headerlogo.png" alt="logo" id="logoPic">
-					<div id="name-pic"><img src="images/nameTop.png" alt="namePic" style="width: 263.3px;height:66px;"></div>
-				</div>
+    		<div id="big-box">
+    			<!-- logo -->
+    			<div id="top-box">
+    				<div id="top-box-logo">
+    					<img src="images/headerlogo.png" alt="logo" id="logoPic">
+    					<div id="name-pic"><img src="images/nameTop.png" alt="namePic" style="width: 263.3px;height:66px;"></div>
+    				</div>
+    			</div>
+    		</div>
+    			<!-- 下拉菜单 -->
+    			<div id="bottom-box">
+    				<div id="topBox2">
+    					<ul id="navFont">
+    					<li class="navFont1"><a href="indexedbeat.html">首页</a></li>
+    					<li><a href="tutorlisted.html">家教</a>
+    						<ul>
+    							<li><a href="tutorlisted.html">小学</a></li>
+    							<li><a href="tutorlisted.html">初中</a></li>
+    							<li><a href="tutorlisted.html">高中</a></li>
+    						</ul>
+    					</li>
+    					<li><a href="#">论坛社区</a>
+    						<ul>
+    							<li><a href="#">学霸说</a></li>
+    							<li><a href="#">资料库</a></li>
+    							<li><a href="#">家长岛</a></li>
+    						</ul>
+    					</li>
+    					<li><a href="#">我要提问</a>
+    						<ul>
+    							<li><a href="#">心理困惑</a></li>
+    							<li><a href="#">情感问题</a></li>
+    							<li><a href="#">学习障碍</a></li>
+    						</ul>
+    					</li>
+    					<li><a href="#">个人中心</a></li>
+    				</ul>
+    			<!-- 搜索框 -->
+    			<div class="input-group">
+  					<div class="input-control search-box search-box-circle has-icon-left has-icon-right search-example" id="searchboxExample">
+    					<input id="inputSearchExample3" type="search" class="form-control search-input" placeholder="搜索">
+    					<label for="inputSearchExample3" class="input-control-icon-left search-icon"><i class="icon icon-search"></i></label>
+  					</div>
+  				<span class="input-group-btn">
+    				<button class="btn btn-primary" type="button">搜索</button>
+  				</span>
 			</div>
-		</div>
-			<!-- 下拉菜单 -->
-			<div id="bottom-box">
-				<div id="topBox2">
-					<ul id="navFont">
-					<li class="navFont1"><a href="#">首页</a></li>
-					<li><a href="tutorlisted.html">家教</a>
-						<ul>
-							<li><a href="tutorlisted.html">小学</a></li>
-							<li><a href="tutorlisted.html">初中</a></li>
-							<li><a href="tutorlisted.html">高中</a></li>
-						</ul>
-					</li>
-					<li><a href="#">论坛社区</a>
-						<ul>
-							<li><a href="#">学霸说</a></li>
-							<li><a href="#">资料库</a></li>
-							<li><a href="#">家长岛</a></li>
-						</ul>
-					</li>
-					<li><a href="#">我要提问</a>
-						<ul>
-							<li><a href="#">心理困惑</a></li>
-							<li><a href="#">情感问题</a></li>
-							<li><a href="#">学习障碍</a></li>
-						</ul>
-					</li>
-					<li><a href="personal-center-mynews.html">个人中心</a></li>
-				</ul>
-			<!-- 搜索框 -->
-			<div id="searchPart">
-					<form id="partForm">
-						<!-- 待修改搜索的值 -->
-						<input type="text" value="请输入您要搜索的科目" id="partInput" />
-						<input type="submit" id="search_btn" name="heder-submit" autofocus="autofocus" value="搜索" />
-								<!-- <img src="images/search_btn.gif" alt="search_btn"> -->
-					</form>
-				</div>
-				<!-- 登录注册 -->
-				<div id="header-login">
-					<span><a href="#">登录</a></span>
-					<!-- <span>/</span> -->
-					<span><a href="#">注册</a></span>
-				</div>
-			</div>
-			</div>
-	</div>
-</body>
-
+    				<!-- 登录注册 -->
+    				<div id="header-login">
+    					<div class="btn-group">
+                  <button class="btn" id="login_button" onclick="loginDis()">登录</button>
+                  <button class="btn" id="register_button" onclick="registDis()">注册</button>
+              </div>
+    				</div>
+    			</div>
+    			</div>
+    	</div>
 <div class="content">
 	<!--条件筛选-->
 	<div class="content-top">
@@ -310,7 +313,7 @@
 					<div class="tutor-check">
 						<div class="price"><i class="icon22 icon-yen"></i>200<span class="spe2">起</span></div>
 						<div class="check">
-							<a href="tutordetailed.html"><button class="btn" type="button">立即查看</button></a>
+							<a href="tutordetailed.html"><button class="btn1" type="button">立即查看</button></a>
 						</div>
 					</div>
 					</div>
@@ -360,7 +363,7 @@
 					<div class="tutor-check">
 						<div class="price"><i class="icon22 icon-yen"></i>200<span class="spe2">起</span></div>
 						<div class="check">
-							<a href="tutordetailed.html"><button class="btn" type="button">立即查看</button></a>
+							<a href="tutordetailed.html"><button class="btn1" type="button">立即查看</button></a>
 						</div>
 					</div>
 					</div>
@@ -484,7 +487,5 @@
 			</div>
 		</div>
 	</div>
-
 </body>
-
 </html>
