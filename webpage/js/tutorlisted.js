@@ -24,7 +24,7 @@ $(document).ready(function(){
 	//添加子元素并保存
 	$('.con-li').click(function(enent){
 		var content=$(this).html();
-		var $element=$("<li class='title-condition'>"+content+"&nbsp;"+'<i class="icon1 ion-close"></i></li>');
+		var $element=$("<li class='title-condition'>"+content+"&nbsp;"+"<i class='icon1 ion-close'></i></li>");
 		// alert(content);
 		// alert($('.icon').attr('class'));
 		$(".title-ul").prepend($element);
