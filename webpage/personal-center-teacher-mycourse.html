@@ -14,12 +14,30 @@
 <!-- ZUI 标准版压缩后的 JavaScript 文件 -->
 <script src="js/zui.min.js"></script>
 
+<style type="text/css">
+  #inputSearchExample3{
+    width: 228.67px;
+  }
+  .input-group-btn{
+    display: block;
+    width: 52px;
+    height: 32px;
+  }
+  #header-login > span:first-of-type{
+    margin-left: -10px;
+  }
+  #header-login > span:last-of-type{
+    margin-left: -10px;
+  }
+</style>
+
 <meta charset="utf-8">
 </head>
 <body>
 <!-- 头部 -->
 <div id="head">
-  <div id="big-box">
+    <div id="header-box">
+    <div id="big-box">
       <!-- logo -->
       <div id="top-box">
         <div id="top-box-logo">
@@ -57,22 +75,30 @@
           <li><a href="#">个人中心</a></li>
         </ul>
       <!-- 搜索框 -->
-      <div id="searchPart">
+      <!-- <div id="searchPart">
           <form id="partForm">
-            <!-- 待修改搜索的值 -->
-            <input type="text" value="请输入您要搜索的科目" id="partInput" />
-            <input type="submit" id="search_btn" name="heder-submit" autofocus="autofocus" value="搜索" />
-                <!-- <img src="images/search_btn.gif" alt="search_btn"> -->
+            <input type="text" value="请输入您要搜索的科目" id="partInput" autofocus="autofocus" />
+            <input type="submit" id="search_btn" name="heder-submit" value="搜索" />
           </form>
-        </div>
+        </div> -->
+        <div class="input-group">
+            <div class="input-control search-box search-box-circle has-icon-left has-icon-right search-example" id="searchboxExample">
+              <input id="inputSearchExample3" type="search" class="form-control search-input" placeholder="搜索">
+              <label for="inputSearchExample3" class="input-control-icon-left search-icon"><i class="icon icon-search"></i></label>
+            </div>
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="button">搜索</button>
+          </span>
+      </div>
         <!-- 登录注册 -->
         <div id="header-login">
-          <span><a href="#" style="margin-left: -3px;">登录</a></span>
+          <span><a href="#">登录</a></span>
           <!-- <span>/</span> -->
-          <span><a href="#" style="margin-left: -3px;">注册</a></span>
+          <span><a href="#">注册</a></span>
         </div>
       </div>
       </div>
+  </div>
 </div>
 <script>
         var search = document.getElementById("partInput");
