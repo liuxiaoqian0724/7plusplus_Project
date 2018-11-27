@@ -14,12 +14,6 @@ $(document).ready(function(){
 		$('.title-condition').remove();
 
 	})
-	var search = document.getElementById("partInput");
-	search.onfocus = function(){
-	    search.value="";
-	}
-
-	
 
 	//添加子元素并保存
 	$('.con-li').click(function(enent){
