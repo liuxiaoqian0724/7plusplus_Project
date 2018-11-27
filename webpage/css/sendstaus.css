@@ -6,10 +6,11 @@
 	margin: auto;
 }
 .sendstaus{
-	width: 60%;
+	width: 70%;
 	height: 100%;
 	position: relative;
-	top: -130px;
+	top: -230px;
+	left: 200px;
 	margin: 0 auto;
 }
 .pic{
@@ -23,7 +24,7 @@
 	
 }
 .btn{
-	margin-left: 180px;
+	margin-left: 280px;
 }
 .btn-group button{
 	background: transparent; 

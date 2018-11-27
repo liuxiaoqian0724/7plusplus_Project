@@ -9,21 +9,17 @@
 	width: 60%;
 	height: 100%;
 	position: relative;
-	top: -130px;
+	top: -180px;
+	left: 90px;
 	margin: 0 auto;
 }
-.pic{
-	width: 40%;
-	height: 100%;
-	margin: 0 0;
-}
+
 .btn-group{
 	position: relative;
 	bottom: 0;
-	
 }
 .btn{
-	margin-left: 180px;
+	margin-left: 220px;
 }
 .btn-group button{
 	background: transparent; 
