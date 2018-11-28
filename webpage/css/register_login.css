@@ -29,6 +29,7 @@
 	height:80%;
 }
 #register{
+	margin-top: -100px;
 	width:900px;
 	margin-left:220px;
 	display:none;
