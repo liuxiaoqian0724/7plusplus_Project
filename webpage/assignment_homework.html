@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Homework</title>
+	<link rel="stylesheet" type="text/css" href="css/assignment_homework.css">
+	
+	<!-- zui -->
+	<link rel="stylesheet" href="dist/css/zui.css" />
+	<link rel="stylesheet" href="dist/lib/kindeditor/kindeditor.css" />
+	<link rel="stylesheet" href="dist/lib/kindeditor/kindeditor.min.css" />
+	<link href="dist/lib/datetimepicker/datetimepicker.min.css" rel="stylesheet">
+	<!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
+	<script src="js/jquery-3.2.1.js"></script>
+	<!-- ZUI Javascript组件 -->
+	<script type="text/javascript" src="dist/js/zui.js"></script>
+	<script src="dist/lib/kindeditor/kindeditor.min.js"></script>
+	<script src="dist/lib/kindeditor/kindeditor.js"></script>
+	<script src="dist/lib/kindeditor/kindeditor/plugins.ok.js"></script>
+	<script src="dist/lib/datetimepicker/datetimepicker.min.js"></script>
+
+</head>
+<body>
+	<!--作业布置-->
+	<div class="container-fixed">
+	  <div class="panel-body">
+		<h2>作业布置</h2>
+		<hr/>
+		<!--上半部分左边输入框-->
+		<div id="leftbox">
+			<!--作业完成日期-->
+			<lable>作业完成日期</label>
+			<label>
+				<input type="text" class="form-control form-date" placeholder="选择或者输入一个日期：yyyy-MM-dd" style="width:400px;">
+			</label>
+			<br /><br />
+			<!--作业预计耗时-->
+			<lable>作业预计耗时</label>
+			<label>
+				<input type="text" class="form-control" placeholder="单位为小时,例如'3.5'">
+			</label>
+			<br /><br />
+			<!--作业科目-->
+			<lable>作业科目</label>
+			<label>
+				<input type="text" class="form-control" placeholder="例如'物理'">
+			</label>
+			<br />
+		</div>
+		<!--上半部分右边输入框-->
+		<div id="rightbox">
+			<!--作业题目-->
+			<lable>作业题目</label>
+			<label>
+				<input type="text" class="form-control" placeholder="" style="width:400px;">
+			</label>
+			<br /><br />
+			<!--作业备注-->
+			<lable>作业备注</label>
+			<label>
+				<textarea class="form-control" rows="3" placeholder="可以输入多行文本" style="width:400px; height:100px; position: relative; margin-left:60px; margin-top:-20px;"></textarea>
+			</label>
+			<br />
+		</div>
+		<!--富文本编辑框-->
+		<div id="container">
+			<lable>作业内容</label>
+			<div id="write-box-text"><textarea id="contentSimple" name="content" class="form-control kindeditorSimple"></textarea></div>
+		</div>
+		<br/>
+		<!--按钮-->
+		<div id="choose_button" >
+			<button class="btn" type="button">保存</button>
+			<button class="btn" type="button">预览作业</button>
+			<button class="btn" type="button">提交</button>
+		</div>
+	  </div>
+	</div>
+	
+	<script>
+		// 日期选择
+		$(".form-date").datetimepicker(
+		{
+			language:  "zh-CN",
+			weekStart: 1,
+			todayBtn:  1,
+			autoclose: 1,
+			todayHighlight: 1,
+			startView: 2,
+			minView: 2,
+			forceParse: 0,
+			format: "yyyy-mm-dd"
+		});
+		//富文本编辑框
+		KindEditor.create('textarea.kindeditorSimple', {
+		    basePath: '/dist/lib/kindeditor/',
+		    bodyClass : 'article-content',
+		    resizeType : 1,
+		    allowPreviewEmoticons : false,
+		    allowImageUpload : false,
+		    items : [
+		        'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+		        'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+		        'insertunorderedlist', '|', 'emoticons', 'image', 'link'
+		    ]
+		});
+	</script>
+</body>
+</html>
