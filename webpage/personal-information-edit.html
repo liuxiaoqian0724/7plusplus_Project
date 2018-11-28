@@ -180,11 +180,28 @@
 							<span id="addressError" style="color: red;"></span>
 						</div>
 					</div>
+					<div class="form-group" > 
+						<label for="exampleInputPassword4" class="col-sm-2">我的专业</label>
+						<div class="col-md-6 col-sm-10" id="major">
+							<select name="selectMajor"  placeholder="我的专业" style="height: 30px;width: 80px;">  
+								  <option value="空白" selected="selected" disabled="disabled">选择专业</option> 
+						        <option value="1">理科</option>   
+						        <option value="2">文科</option>
+						      </select>   
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword4" class="col-sm-2">个人简介</label>
+						<div class="col-md-6 col-sm-10">
+							<textarea id="intro" class="form-control" style="resize:none;height: 75px;" placeholder="请输入个人简介(非必须)"  onfocus="isEmpty()"></textarea>
+						</div>
+					</div>
 					<div class="form-group">
 						<div class="col-md-6 col-sm-10">
 							<span id="error" style="color: red;"></span>
 						</div>
 					</div>
+					
 					<input type="submit" name="保存信息" value="保存信息">
 				</div>
 			</form>
@@ -220,7 +237,7 @@
 			</div>
 			<!--图片裁剪框 end-->
 		</div>
-		<div class="footer">
+		<div class="footer" style="margin-top: 150px;">
 			<!-- 关于网页 -->
 			<div class="footer-font">
 				<div id="footer-font-about">

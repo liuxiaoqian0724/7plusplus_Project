@@ -168,6 +168,10 @@
 					addressError.html('');
 				}
 			}
+			function isEmpty(){
+				document.getElementById("intro").placeholder="";
+				
+			}
 			function checkAll(){
 				var errorMsg = $('#error');
 				if(isAddress&&isName&&isPersonId&&isPhoneNum&&isSchoolName&&isStudentId){
