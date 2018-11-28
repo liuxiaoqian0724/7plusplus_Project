@@ -40,8 +40,13 @@
 #register_title{
 	margin-left:100px;
 }
+#sex{
+	margin-left:90px;
+	margin-bottom:10px;
+}
 #role{
-	margin-left:70px;
+	margin-left:90px;
+	margin-bottom:10px;
 }
 #register_qrcode{
 	width:180px;
