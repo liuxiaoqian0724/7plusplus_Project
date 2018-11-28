@@ -9,6 +9,7 @@
     background:rgba(0,0,0,0.4)!important;
 }
 #m-proschool{
+
     width:570px;
     height: 310px;
     background: #fff;
@@ -24,7 +25,7 @@
 }
 #m-proschool {
     display:none;
-    position:absolute;
+    position:fixed;
     width:620px;
     height:310px;
     border:1px solid #37bc9b;
