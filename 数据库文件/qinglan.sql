@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2018/11/28 14:53:55                          */
+/* Created on:     2018/11/28 19:18:01                          */
 /*==============================================================*/
 
 
@@ -86,6 +86,7 @@ create table tbl_myjob
    subject              varchar(30),
    address              varchar(255),
    price                int,
+   teacherage           varchar(10),
    primary key (id)
 );
 
