@@ -18,6 +18,8 @@ body{
 #header-box{
 	width: 100%;
 	height: 172px;
+	/*position: fixed;*/
+	/*z-index: 999;*/
 }
 #big-box{
 	/*border:1px solid black;*/
@@ -25,6 +27,7 @@ body{
 	margin: 0 auto;
 	height: 90px;
 	text-decoration: none;
+	/**/
 }
 #name-pic{
 	width: 263.3px;
@@ -45,8 +48,7 @@ body{
 	width: 100%;
 	height: 52px;
 	background-color: #01DFCE;
-/*	position: fixed;
-	z-index: 999;*/
+	
 }
 
 /*#searchPart{
