@@ -146,16 +146,18 @@
 					studentIdError.html('');
 				}
 			}
+			var i=0;
 			function checkSchoolName() {
 				var schoolName = $('#schoolName').val();
 				var schoolError = $('#schoolError');
-				if(schoolName == "") {
+				if(schoolName == ""&& i!=0) {
 					isStudentName = false;
 					schoolError.html('请选择您的学校！');
 				} else {
 					isStudentName = true;
 					schoolError.html('');
 				}
+				i++;
 			}
 			function checkAddress() {
 				var address = $('#address').val();
@@ -167,10 +169,6 @@
 					isAddress = true;
 					addressError.html('');
 				}
-			}
-			function isEmpty(){
-				document.getElementById("intro").placeholder="";
-				
 			}
 			function checkAll(){
 				var errorMsg = $('#error');
