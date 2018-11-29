@@ -15,7 +15,7 @@ a{
 }
 .content{
 	margin: 0 auto;
-	height: 1820px;
+	height: 1850px;
 	width: 1200px;
 	/*border: 2px black solid;*/
 }
@@ -24,7 +24,8 @@ a{
 	border:1px black solid;
 	width: 1200px;
 	margin: 0 auto;
-	height: 450px;
+	/*height: 450px;*/
+	height: 510px;
 	background-color: #FCFCFC;
 	border: 1px #FCFCFC solid;
 	border-radius: 3px;
@@ -160,12 +161,24 @@ a{
 .de-linetwo{
 	margin-top: 10px;
 	/*border: 1px red solid;*/
-	height: 80px;
+	/*height: 80px;*/
+	height: 40px;
 	/*padding-left: 5px;*/
 	/*font-size: 14px;*/
 }
 .title{
 	width: 60px;
+	height: 40px;
+	line-height: 40px;
+	text-align: left;
+	margin-left: -2px;
+	/*border: 1px black solid;*/
+	font-size: 14px;
+	color: #999;
+	float: left;
+}
+.title1{
+	width: 90px;
 	height: 40px;
 	line-height: 40px;
 	text-align: left;
@@ -241,8 +254,8 @@ a{
 }
 .de-linethree{
 	/*border: 1px red solid;*/
-	height: 100px;
-	margin-top: 10px;
+	height: 80px;
+	margin-top: 5px;
 	padding-left: 5px;
 }
 .grade{
@@ -272,10 +285,24 @@ a{
 }
 
 .de-linefour{
-	margin-top: 10px;
+	/*padding-top: -4px;*/
+	/*margin-top: -15px;*/
+	height: 190px;
+	margin-top: 5px;
 	/*border: 1px green solid;*/
 	padding-left: 5px;
 }
+.de-linefour table{
+	font-size: 10px;
+	/*border: 1px solid black;*/
+	/*margin-top: -10px;*/
+	margin-left: 20px;
+	height: 100px;
+}
+.de-linefour table tr{
+	height: 20px;
+}
+
 .pattern{
 	/*border: 1px green solid;*/
 	width: 85%;
@@ -300,8 +327,9 @@ a{
 }
 .de-linefive{
 	/*border: 1px black solid; */
-	height: 40px;
-	width: 100%;
+	margin-top: 2px;
+	height: 50px;
+	width: 670px;
 }
 .btn1{
 	font-size: 22px;
@@ -309,8 +337,8 @@ a{
 	line-height: 20px;
 	width: 200px;
 	border: 1px black solid;
-	margin-left: 20px;
-	margin-top: 10px;
+	margin-left: 25px;
+	margin-top: -10px;
 	background-color: #56c9db;
 }
 .btn1:hover{
@@ -564,6 +592,9 @@ hr{
 	/*border: 1px red solid;*/
 	width: 100%;
 }
+.similarteachers a{
+	color: black;
+}
 .teacher{
 	/*border: 1px black solid;*/
 	width: 100%;
@@ -592,7 +623,18 @@ hr{
 	padding-left: 10px;
 	/*border: 1px black solid;*/
 }
+.introduce{
+	color: #7B7B7B;
+	padding:5px;
+	margin-top: -5px;
+	margin-left: 5px;
+	margin-bottom: 5px;
+	/*border: 1px solid black;*/
+	width: 480px;
+}
 .info{
+	margin-top: -3px;
+
 	padding-left: 10px;
 	/*border: 1px black solid;*/
 	/*margin-top:-10px;*/
@@ -723,139 +765,3 @@ hr{
 	font-size: 22px;
 	margin-left: 8%;
 }
-/*footer*/
-.footer{
-	border:1px #34495E solid;
-	/*border: 2px red solid;*/
-	width: 100%;
-	height: 330px;
-	background-color: #222c3c;
-	/*margin-top: -10px;*/
-	color: #fffff0;
-}
-.footer-font{
-	margin: 0 auto;
-	width: 1200px;
-	height: 280px;
-	/*margin-top: 20px;*/
-	margin-top: 15px;
-}
-.font-h3{
-	color: #fffff0;
-	letter-spacing:1px;
-}
-#footer-font-about{
-	width: 420px;
-	height: 200px;
-	margin-left: 0px;
-	margin-top: 10px;
-	float: left;
-}
-#about-font{
-	width: 420px;
-	margin-top: 15px;
-	line-height: 30px;
-}
-#about-font:hover{
-	text-decoration: underline;
-}
-.footer-words{
-	font-weight: normal;
-	color: #6a8380;
-}
-#footer-font-a{
-	/*display: inline;*/
-	width: 120px;
-	height: 240px;
-	margin-left: 55px;
-	float: left;
-	margin-top: 10px;
-}
-#a-title{
-	/*display: inline;*/
-	width: 100px;
-	height: 200px;
-}
-#a-font{
-	width: 100px;
-	/*display: inline;*/
-	margin-top: -163px;
-}
-#a-font a{
-	/*display: block;*/
-	float: left;
-	margin-left: 2px;
-	line-height:30px;
-}
-#footer-font-friend{
-	width: 200px;
-	height: 240px;
-	/*display: inline;*/
-	margin-left: 55px;
-	margin-top: 10px;
-	/*margin-top: -265px;*/
-	float: left;
-}
-#friend-title{
-	width: 200px;
-	/*height: 200px;*/
-}
-#friend-logo{
-	width: 200px;
-	height: 150px;
-	margin-top: 55px;
-	float: left;
-}
-#friend-logo-div1 i{
-	/*margin-left: 10px;*/
-}
-#footer-font-img{
-	/*border: 1px #34495E solid;*/
-	width:170px;
-	height:120px;
-	margin-left: 55px;
-	float: left;
-	margin-top: 10px;
-}
-.footer-font a{
-	margin-left: 60px;
-	font-size: 14px;
-	font-family: '宋体';
-	font-weight: normal;
-	/*color: #fffff0;*/
-}
-.footer-font a:hover{
-	margin-left: 60px;
-	font-size: 14px;
-	font-family: '宋体';
-	color: #fffff0;
-	text-decoration: underline;
-}
-#footer-font-img-font{
-	/*border:1px #34495E solid;*/
-	font-size: 16px;
-	color: #fffff0;
-	font-weight: normal;
-	margin-top: 10px;
-}
-/*权利归属*/
-#footer-right{
-	width: 100%;
-	height: 65px;
-	background-color: #1b222f;
-	margin-top: -32px;
-}
-#footer-right-font{
-	margin:0 auto;
-	width: 1200px;
-	height: 60px;
-	color: #222c3c;
-	/*margin-top: 20px;*/
-}
-#footer-right-font p a{
-	margin:0 auto;
-	margin-left: 150px;
-	color: #816b64;
-
-}
-/*footer结束*/
