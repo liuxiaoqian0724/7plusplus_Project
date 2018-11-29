@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2018/11/29 9:59:01                           */
+/* Created on:     2018/11/29 10:30:01                          */
 /*==============================================================*/
 
 
@@ -146,7 +146,7 @@ create table tbl_user
    id                   int not null auto_increment,
    username             varchar(255),
    userpwd              varchar(255),
-   emile                char(255),
+   email                varchar(255),
    role                 char(30),
    regdate              datetime,
    realname             varchar(30),
