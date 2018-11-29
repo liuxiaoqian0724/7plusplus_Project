@@ -1,7 +1,7 @@
 .panel-body > div{
     height: 230px;
     margin-bottom: 20px;
-    border:1px dashed red;
+    /* border:1px dashed red; */
   }
 .panel-body > div > p{
 	font-size: 15px;
