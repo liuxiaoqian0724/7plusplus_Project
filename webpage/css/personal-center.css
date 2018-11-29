@@ -160,6 +160,8 @@
   
   #c2-right .panel-body{
     background-color: #F9F9F9;
+    height: 88%;
+
   }
   #c2-right .panel-body> div{
     background-color: white;
