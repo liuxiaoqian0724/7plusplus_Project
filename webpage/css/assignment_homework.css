@@ -1,6 +1,6 @@
 .container-fixed{
 	border:1px solid #e4dfd7;
-	position: fixed;
+	position: absolute;
 	z-index: 9999;
 	left:100px;
 	top:25px;
@@ -14,21 +14,21 @@
 #rightbox{
 	position: relative;
 	margin-left:600px;
-	margin-top:-250px;
+	margin-top:-220px;
 }
 #container{
 	position:relative;
 	margin-left:50px;
-	margin-top:-80px;
+	margin-top:-40px;
 	width:1010px;
 }
 #choose_button{
 	position:relative;
 	margin-left: 900px;
-	margin-top:-90px;
+	margin-top:-50px;
 }
 #closeframe{
 	position:relative;
-	margin-left:1100px;
+	margin-left:1080px;
 	margin-top:30px;
 }
