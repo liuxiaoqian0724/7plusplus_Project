@@ -1,11 +1,3 @@
-// $(document).ready(function(enent){
-// 	$('.con-li').click(function(){
-// 		// alert(123);
-// 		// alert(this.html());
-// 		var $condition=$("<li class='title-condition'> &nbsp;<a href=''><i class='icon1 ion-close'></i></a></li>");
-// 		$('.title-ul').append($condition);
-// 	})
-// })
 
 $(document).ready(function(){
 	var a = new Array();
@@ -14,14 +6,24 @@ $(document).ready(function(){
 		$('.title-condition').remove();
 
 	})
-
+	var mycars=new Array()
 	//添加子元素并保存
 	$('.con-li').click(function(enent){
 		var content=$(this).html();
-		var $element=$("<li class='title-condition'>"+content+"&nbsp;"+"<i class='icon1 ion-close'></i></li>");
-		// alert(content);
-		// alert($('.icon').attr('class'));
+		for(var i=0;i<mycars.length;i++){
+ 			if(content==mycars[i]){	//已经选过这个选项了
+ 				// alert("Y");
+ 				break;
+ 			}else{
+ 				// alert("N");
+ 				continue;
+ 			}
+		}
+		if(i>=mycars.length){
+			var $element=$("<li class='title-condition'>"+content+"&nbsp;"+"<i class='icon1 ion-close'></i></li>");
+		}
 		$(".title-ul").prepend($element);
+		mycars.push(content);
 		// a.push(content);
 		// // $.session.set('conditions', a);
 		// sessionStorage.setItem('conditions', a);

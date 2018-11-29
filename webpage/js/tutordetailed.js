@@ -37,11 +37,6 @@ $(document).ready(function(event){
 		$(this).css("border","2px #56c9db solid");
 		$('.img-rounded').attr('src',$(this).attr("data-image"));
 	})
-	var search = document.getElementById("partInput");
-	  search.onfocus = function(){
-	      search.value="";
-	  }
-
 });
 
 	// $('.page1').click(function(event){
