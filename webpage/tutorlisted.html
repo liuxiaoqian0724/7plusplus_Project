@@ -8,20 +8,21 @@
    <link rel="stylesheet" href="dist/css/zui.min.css">
    <link rel="stylesheet" href="dist/css/zui.css" />
    <link rel="stylesheet" type="text/css" href="css/header.css"/>
-    <link rel="stylesheet" type="text/css" href="css/footer.css"/>
-	<link rel="stylesheet" type="text/css" href="css/tutorlisted.css">
-	<script src="js/jquery-3.2.1.js"></script>
+   <link rel="stylesheet" type="text/css" href="css/footer.css"/>
+   <link rel="stylesheet" type="text/css" href="css/tutorlisted.css">
+	
 	<!--引入js-->
+   <script src="js/jquery-3.2.1.js"></script>
    <script type="text/javascript" src="dist/lib/jquery/jquery.js"></script>
    <script type="text/javascript" src="dist/js/zui.min.js"></script>
    <script type="text/javascript" src="dist/js/zui.js"></script>
-	<script type="text/javascript" src="js/tutorlisted.js"></script>
+   <script type="text/javascript" src="js/tutorlisted.js"></script>
 
 </head>
 
 
 <body>
-	<div id="header-box">
+<div id="header-box">
     		<div id="big-box">
     			<!-- logo -->
     			<div id="top-box">
@@ -78,7 +79,7 @@
     				</div>
     			</div>
     			</div>
-    	</div>
+</div>
 <div class="content">
 	<!--条件筛选-->
 	<div class="content-top">
@@ -212,6 +213,15 @@
 						<a href="#"><li class="con-li">
 							新华区
 						</li></a>
+						<a href="#"><li class="con-li">
+							桥西区
+						</li></a>
+						<a href="#"><li class="con-li">
+							鹿泉区
+						</li></a>
+						<a href="#"><li class="con-li">
+							井陉矿区
+						</li></a>
 
 					</ul>
 				</li>
@@ -234,14 +244,14 @@
 				<li class="con-content">
 					<ul class="con-ul">
 						<li class="spe">
-							上门方式
+							老师专业
 						</li>
 						<!--后台循环-->
 						<a href="#"><li class="con-li">
-							老师上门
+							文科
 						</li></a>
 						<a href="#"><li class="con-li">
-							学生上门
+							理科
 						</li></a>
 					</ul>
 				</li>
@@ -259,10 +269,8 @@
 					<a href="#"><li class="top-li">智能排序 </li></a>
 					<a href="#"><li class="top-li">好评数 </li></a>
 					<a href="#"><li class="top-li">价格最高 </li></a>
-					<a href="#"><li class="top-li">授课最多 </li></a>
-					<a href="#"><li class="top-li">口碑最佳 </li></a>
-					<a href="#"><li class="top-li">续课率最高 </li></a>
-					<a href="#"><li class="top-li">资料完整度</li></a>
+					<a href="#"><li class="top-li">星级最高 </li></a>
+					<a href="#"><li class="top-li">教过的学生最多 </li></a>
 				</ul>
 			</div>
 			<!--家教列表展示-->
@@ -282,7 +290,9 @@
 						<div class="username">
 							家教姓名
 						</div>
-						<!-- <p>家教姓名</p> -->
+						<div class="introduce">
+							<p>一线教师，物理年级组长，年级主任，心理咨询师。让学生在短期内提高成绩，爱上物理。</p>
+						</div>
 						<div class="information">
 							<div class="firline">
 								<div class="star">
@@ -293,16 +303,17 @@
 									<img src="images/empty-star.png" style="width: 20px;height: 20px;">
 								</div>
 								<div class="teachages">教龄17年</div>	
-								<div class="teachhours">授课134小时</div>
+								<!-- <div class="teachhours">授课134小时</div> -->
 							</div>
-							<div class="tags">
+
+							<!-- <div class="tags">
 								<div class="tag">
 									教师资历
 								</div>
 								<div class="tag">
 									学历学位
 								</div>
-							</div>
+							</div> -->
 						</div>
 					</div>
 					<!--家长评论-->
@@ -332,7 +343,9 @@
 						<div class="username">
 							家教姓名
 						</div>
-						<!-- <p>家教姓名</p> -->
+						<div class="introduce">
+							<p>一线教师，物理年级组长，年级主任，心理咨询师。让学生在短期内提高成绩，爱上物理。</p>
+						</div>
 						<div class="information">
 							<div class="firline">
 								<div class="star">
@@ -343,16 +356,17 @@
 									<img src="images/empty-star.png" style="width: 20px;height: 20px;">
 								</div>
 								<div class="teachages">教龄17年</div>	
-								<div class="teachhours">授课134小时</div>
+								<!-- <div class="teachhours">授课134小时</div> -->
 							</div>
-							<div class="tags">
+
+							<!-- <div class="tags">
 								<div class="tag">
 									教师资历
 								</div>
 								<div class="tag">
 									学历学位
 								</div>
-							</div>
+							</div> -->
 						</div>
 					</div>
 					<!--家长评论-->
@@ -369,6 +383,121 @@
 					</div>
 				</div>
 				</a>
+				<a href="tutordetailed.html">
+				<div class="tutorone">
+					<div class="tutorinformation">
+					<!--家教头像-->
+					<div class="tutor-photo">
+						<!-- <img src="images/img2.jpg"> -->
+						<img src="http://zui.sexy/docs/img/img1.jpg" width="110px" height="110px" class="img-rounded" alt="圆角图片">
+					</div>
+					<!--家教基本信息-->
+					<div class="tutor-information">
+						<div class="username">
+							家教姓名
+						</div>
+						<div class="introduce">
+							<p>一线教师，物理年级组长，年级主任，心理咨询师。让学生在短期内提高成绩，爱上物理。</p>
+						</div>
+						<div class="information">
+							<div class="firline">
+								<div class="star">
+									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
+									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
+									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
+									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
+									<img src="images/empty-star.png" style="width: 20px;height: 20px;">
+								</div>
+								<div class="teachages">教龄17年</div>	
+								<!-- <div class="teachhours">授课134小时</div> -->
+							</div>
+
+							<!-- <div class="tags">
+								<div class="tag">
+									教师资历
+								</div>
+								<div class="tag">
+									学历学位
+								</div>
+							</div> -->
+						</div>
+					</div>
+					<!--家长评论-->
+					<div class="tutor-comment">&nbsp;<i class="icon2 icon-comment-alt"></i>&nbsp;<span>家长评论&nbsp;264条</span>
+						<p>天天向上661：老师善于引导，课件清晰完整，讲课生动，孩子很喜欢。</p>
+					</div>
+					<div class="separator"></div>
+					<div class="tutor-check">
+						<div class="price"><i class="icon22 icon-yen"></i>200<span class="spe2">起</span></div>
+						<div class="check">
+							<a href="tutordetailed.html"><button class="btn1" type="button">立即查看</button></a>
+						</div>
+					</div>
+					</div>
+				</div>
+				</a>
+				<a href="tutordetailed.html">
+				<div class="tutorone">
+					<div class="tutorinformation">
+					<!--家教头像-->
+					<div class="tutor-photo">
+						<!-- <img src="images/img2.jpg"> -->
+						<img src="http://zui.sexy/docs/img/img1.jpg" width="110px" height="110px" class="img-rounded" alt="圆角图片">
+					</div>
+					<!--家教基本信息-->
+					<div class="tutor-information">
+						<div class="username">
+							家教姓名
+						</div>
+						<div class="introduce">
+							<p>一线教师，物理年级组长，年级主任，心理咨询师。让学生在短期内提高成绩，爱上物理。</p>
+						</div>
+						<div class="information">
+							<div class="firline">
+								<div class="star">
+									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
+									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
+									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
+									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
+									<img src="images/empty-star.png" style="width: 20px;height: 20px;">
+								</div>
+								<div class="teachages">教龄17年</div>	
+								<!-- <div class="teachhours">授课134小时</div> -->
+							</div>
+
+							<!-- <div class="tags">
+								<div class="tag">
+									教师资历
+								</div>
+								<div class="tag">
+									学历学位
+								</div>
+							</div> -->
+						</div>
+					</div>
+					<!--家长评论-->
+					<div class="tutor-comment">&nbsp;<i class="icon2 icon-comment-alt"></i>&nbsp;<span>家长评论&nbsp;264条</span>
+						<p>天天向上661：老师善于引导，课件清晰完整，讲课生动，孩子很喜欢。</p>
+					</div>
+					<div class="separator"></div>
+					<div class="tutor-check">
+						<div class="price"><i class="icon22 icon-yen"></i>200<span class="spe2">起</span></div>
+						<div class="check">
+							<a href="tutordetailed.html"><button class="btn1" type="button">立即查看</button></a>
+						</div>
+					</div>
+					</div>
+				</div>
+				</a>
+				<ul class="pager">
+				  <li class="previous"><a href="your/nice/url">«</a></li>
+				  <li><a href="your/nice/url">1</a></li>
+				  <li class="active"><a href="your/nice/url">2</a></li>
+				  <li><a href="your/nice/url">3</a></li>
+				  <li><a href="your/nice/url">4</a></li>
+				  <li><a href="your/nice/url">5</a></li>
+				  <li class="next"><a href="your/nice/url">»</a></li>
+				</ul>
 			</div>
 		</div>
 		<!--内容右半部分 空闲区域-->
@@ -379,64 +508,72 @@
 			<!--foreach循环-->
 			<!--一个家教-->
 			<div class="recommended">
+				<div class="recommend-left">
 				<!--照片-->
-				<div class="re-photo">
-					<img src="http://zui.sexy/docs/img/img2.jpg" width="80px" height="80px" class="img-circle" alt="圆形图片">
+					<div class="re-photo">
+						<img src="http://zui.sexy/docs/img/img2.jpg" width="80px" height="80px" class="img-circle" alt="圆形图片">
+					</div>
+					<!--名字-->
+					<div class="re-name">
+						李老师
+					</div>
 				</div>
-				<!--名字-->
-				<div class="re-name">
-					李老师
-				</div>
-				<div class="re-tag">
+				<!-- <div class="re-tag">
 					优秀教师
+				</div> -->
+				<div class="recommend-right">
+					<!--介绍-->
+					<div class="re-introduce">
+						家教介绍	:教学经验丰富，课堂生动幽默，综合点拨提高。
+					</div>
+					<div class="re-grade">
+						学员评分:95
+					</div>
+					<!--家教时长-->
+					<!-- <div class="re-hour">
+						家教时长：100小时
+					</div> -->
+					<!--地区-->
+					<!--地区通过数据库查-->
+					<div class="re-region">
+						<i class="icon ion-ios-location"></i>&nbsp;&nbsp;裕华区
+					</div>
+					<div class="re-detail"><a href="tutordetailed.html">详情</a></div>
 				</div>
-				<!--介绍-->
-				<div class="re-introduce">
-					家教介绍	:教学经验丰富，课堂生动幽默，综合点拨提高。
-				</div>
-				<div class="re-grade">
-					学员评分:95
-				</div>
-				<!--家教时长-->
-				<div class="re-hour">
-					家教时长：100小时
-				</div>
-				<!--地区-->
-				<!--地区通过数据库查-->
-				<div class="re-region">
-					<i class="icon ion-ios-location"></i>&nbsp;&nbsp;裕华区
-				</div>
-				<div class="re-detail"><a href="tutordetailed.html">详情</a></div>
 			</div>
 			<div class="recommended">
+				<div class="recommend-left">
 				<!--照片-->
-				<div class="re-photo">
-					<img src="http://zui.sexy/docs/img/img2.jpg" width="80px" height="80px" class="img-circle" alt="圆形图片">
+					<div class="re-photo">
+						<img src="http://zui.sexy/docs/img/img2.jpg" width="80px" height="80px" class="img-circle" alt="圆形图片">
+					</div>
+					<!--名字-->
+					<div class="re-name">
+						李老师
+					</div>
 				</div>
-				<!--名字-->
-				<div class="re-name">
-					李老师
-				</div>
-				<div class="re-tag">
+				<!-- <div class="re-tag">
 					优秀教师
+				</div> -->
+				<div class="recommend-right">
+					<!--介绍-->
+					<div class="re-introduce">
+						家教介绍	:教学经验丰富，课堂生动幽默，综合点拨提高。
+					</div>
+					<div class="re-grade">
+						学员评分:95
+					</div>
+					<!--家教时长-->
+					<!-- <div class="re-hour">
+						家教时长：100小时
+					</div> -->
+					<!--地区-->
+					<!--地区通过数据库查-->
+					<div class="re-region">
+						<i class="icon ion-ios-location"></i>&nbsp;&nbsp;裕华区
+					</div>
+					<div class="re-detail"><a href="tutordetailed.html">详情</a></div>
 				</div>
-				<!--介绍-->
-				<div class="re-introduce">
-					家教介绍	:教学经验丰富，课堂生动幽默。
-				</div>
-				<div class="re-grade">
-					学员评分:95
-				</div>
-				<!--家教时长-->
-				<div class="re-hour">
-					家教时长：100小时
-				</div>
-				<!--地区-->
-				<!--地区通过数据库查-->
-				<div class="re-region">
-					<i class="icon ion-ios-location"></i>&nbsp;&nbsp;裕华区
-				</div>
-				<div class="re-detail"><a href="tutordetailed.html">详情</a></div>
 			</div>
 		</div>
 	</div>
