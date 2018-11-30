@@ -160,10 +160,13 @@
   
   #c2-right .panel-body{
     background-color: #F9F9F9;
+    height: 88%;
+
   }
   #c2-right .panel-body> div{
     background-color: white;
     border:1px solid black;
+    margin-bottom: 10px;
   }
   #c2-right .panel-body input:hover{
     background-color: #33A6B8;

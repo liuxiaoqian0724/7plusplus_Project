@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2018/11/28 19:18:01                          */
+/* Created on:     2018/11/29 10:30:01                          */
 /*==============================================================*/
 
 
@@ -59,6 +59,7 @@ create table tbl_homework
    starttime            datetime,
    endtime              datetime,
    score                decimal,
+   status               varchar(20),
    primary key (id)
 );
 
@@ -145,7 +146,7 @@ create table tbl_user
    id                   int not null auto_increment,
    username             varchar(255),
    userpwd              varchar(255),
-   emile                char(255),
+   email                varchar(255),
    role                 char(30),
    regdate              datetime,
    realname             varchar(30),

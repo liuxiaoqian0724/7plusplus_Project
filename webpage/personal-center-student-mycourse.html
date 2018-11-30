@@ -13,6 +13,9 @@
 <script src="lib/jquery/jquery.js"></script>
 <!-- ZUI 标准版压缩后的 JavaScript 文件 -->
 <script src="js/zui.min.js"></script>
+<link href="dist/lib/datetimepicker/datetimepicker.min.css" rel="stylesheet">
+<script src="dist/lib/datetimepicker/datetimepicker.min.js"></script>
+
 <style type="text/css">
   #inputSearchExample3{
     width: 228.67px;
@@ -155,55 +158,83 @@
           <h2>我的课程</h2>
         </div>
         <div class="panel-body">
-           <div>
-            <p>long Time() -- long Time() <span>已进行课时100/200</span></p>
             <div  id="c2-right-item"> 
               <ul>
                 <li id="c2-right-item-l1">
                   <span>科目</span>
-                  <p>物理</p>
                   <p>数学</p>
                 </li>
                 <li id="c2-right-item-l2">
-                  <span>老师</span>
+                  <span>学生</span>
                   <div>
-                    <img src="images/b.jpg" width="105px" height="105px" class="img-circle" alt="圆形图片">
+                    <img src="images/b.jpg" width="115px" height="115px" class="img-circle" alt="圆形图片">
                   </div>
                   <p>李狗蛋</p>
                 </li>
                 <li id="c2-right-item-l3">
                   <span>作业</span><br>
                   <span style="text-align: center; ">已完成：...</span><br><br>
-                  <p>.....作业</p><p>.....作业</p><p>.....作业</p><p>.....作业</p><p>.....作业</p>
+                    <p>.....作业</p><p>.....作业</p><p>.....作业</p><p>.....作业</p><p>.....作业</p><p>.....作业</p><p>.....作业</p><p>.....作业</p>   
                 </li>
                 <li id="c2-right-item-l4">
-                  <span>下次课程时间</span><br><br>
-                  <p>9月16日</p>
-                  <p>14:00~~16：00</p>
+                  <span>课程时间</span><br><br>
+                  <div>
+                    <span id="c2-right-item-l4-sp1">9-11</span>
+                    <span>~~</span>
+                    <span id="c2-right-item-l4-sp2">10-10</span>
+                  </div>
+                  <button type="button">
+                      <a href = "javascript:void(0)" onclick = "buttontime(1)">更改时间</a>
+                  </button>
+                  <div id="light" class="white_content">
+                      <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"><i class="icon icon-times"></i></a><br><br>
+                      开始时间：
+                      <input id="c2-right-item-l4-inp1" type="text" class="form-control form-date" placeholder="选择或者输入一个日期：MM-dd">
+                      结束时间：
+                      <input id="c2-right-item-l4-inp2" type="text" class="form-control form-date" placeholder="选择或者输入一个日期：MM-dd">
+                      <button type="button">
+                          <a href = "javascript:void(0)" onclick = "buttontime(2)">保存</a>
+                      </button>
+                  </div> 
+                  <div id="fade" class="black_overlay"></div> 
+                  <script type="text/javascript"> 
+                      function buttontime(i){
+                        if(i==1){
+                          document.getElementById('c2-right-item-l4-inp1').value=document.getElementById('c2-right-item-l4-sp1').innerHTML;
+                          document.getElementById('c2-right-item-l4-inp2').value=document.getElementById('c2-right-item-l4-sp2').innerHTML;
+                          document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block';
+                        }else{
+                          document.getElementById('c2-right-item-l4-sp1').innerHTML=document.getElementById('c2-right-item-l4-inp1').value;
+                          document.getElementById('c2-right-item-l4-sp2').innerHTML=document.getElementById('c2-right-item-l4-inp2').value;
+                          document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none';
+                        }
+                      }
+                      $(".form-date").datetimepicker(
+                          {
+                              language:  "zh-CN",
+                              weekStart: 1,
+                              todayBtn:  1,
+                              autoclose: 1,
+                              todayHighlight: 1,
+                              startView: 2,
+                              minView: 2,
+                              forceParse: 0,
+                              format: "mm-dd"
+                          });
+                    </script>
                 </li>
                 <li id="c2-right-item-l5">
-                  <span>教案</span>
-                  <p>发顺丰了扩大数据分类康师傅就爱上了咖啡发顺丰了扩大数据分类康师傅就爱上了咖啡发顺丰了扩大数据分类康师傅就爱上了咖啡发顺丰了扩大数据分类康师傅就爱上了咖啡发顺丰了扩大数据分类康师傅就爱上了咖啡</p>
-                   <form action="#" method="post">
+                  <form action="#" method="post">
+                    <input type="submit" name="detail" value="课程反馈">
+                  </form>
+                  <form action="#" method="post">
+                    <input type="submit" name="detail" value="布置作业">
+                  </form>
+                  <form action="#" method="post">
                     <input type="submit" name="detail" value="编辑文案">
                   </form>
                 </li>
-                <li id="c2-right-item-l6">
-                  <form action="#" method="post">
-                    <input type="submit" name="detail" value="查看评价">
-                  </form>
-                  <form action="#" method="post">
-                    <input type="submit" name="detail" value="作出评价">
-                  </form>
-                  <form action="#" method="post">
-                    <input type="submit" name="detail" value="完成作业  ">
-                  </form>
-                  <form action="#" method="post">
-                    <input type="submit" name="detail" value="查看详情">
-                  </form>
-                </li>
               </ul>
-            </div>
           </div>
         </div>
       </div>
