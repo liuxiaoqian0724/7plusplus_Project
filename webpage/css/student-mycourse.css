@@ -3,11 +3,11 @@
     margin-bottom: 20px;
     border:1px dashed red;
   }
-#c2-right-item{
+.c2-right-item{
 	width: 766px;
 	height:200px;
 }
-#c2-right-item li{
+.c2-right-item li{
 	width: 20%;
 	height: 198px;
 	list-style-type: none;
@@ -15,53 +15,53 @@
 	border-width: 2px;
 	border-right:1px solid #C0C0C0;
 }
-#c2-right-item #c2-right-item-l1{
+.c2-right-item li:nth-child(1){
 	margin-left: -20px;
 	width: 16%;
 	word-break:break-word; 
 }
-#c2-right-item #c2-right-item-l1 span{
+.c2-right-item li:nth-child(1) span{
 	padding-left: 10px;
 	font-size: 15px;
 }
-#c2-right-item #c2-right-item-l1 p{
+.c2-right-item li:nth-child(1) p{
 	font-size: 25px;
 	text-align: center;
 	margin-top: 40px;
 }
-#c2-right-item #c2-right-item-l2{
+.c2-right-item li:nth-child(2){
 	width: 20%;
 }
-#c2-right-item #c2-right-item-l2 img{
+.c2-right-item li:nth-child(2) img{
 	margin-top: 10px;
 	margin-left: 17px;
 }
-#c2-right-item #c2-right-item-l2 p{
+.c2-right-item li:nth-child(2) p{
 	text-align: center;
 	font-size: 15px;
 	margin-top: 14px;
 }
-#c2-right-item #c2-right-item-l3{
+.c2-right-item li:nth-child(3){
 	width: 23%;
 	overflow-y: auto;
 }
-#c2-right-item #c2-right-item-l3> p{
+.c2-right-item li:nth-child(3)> p{
 	margin-left: 10px;
 }
-#c2-right-item #c2-right-item-l4{
+.c2-right-item li:nth-child(4){
 	width: 29.52%;
 	word-break:break-word; 
 }
-#c2-right-item #c2-right-item-l4 p{
+.c2-right-item li:nth-child(4) p{
 	text-align: center;
 	font-size: 20px;
 }
-#c2-right-item #c2-right-item-l4 >div{
+.c2-right-item li:nth-child(4) >div{
 	font-size: 20px;
 	margin-top: 25px;
 	margin-left: 40px;
 }
-#c2-right-item #c2-right-item-l4 >button{
+.c2-right-item li:nth-child(4) >button{
 	background-color: white;
 	border:1px solid #c0c0c0;
 	border-radius: 10px;
@@ -70,11 +70,11 @@
 	margin-right: 30px;
 	margin-top: 60px;
 }
-#c2-right-item #c2-right-item-l4  a {
+.c2-right-item li:nth-child(4)  a {
 	text-decoration: none;
 	color: black;
 }
-#c2-right-item #c2-right-item-l4 >button:hover{
+.c2-right-item li:nth-child(4) >button:hover{
 	background-color: #33A6B8;
 }
 .black_overlay{ 
@@ -82,8 +82,8 @@
     position: absolute; 
     top: -30px; 
     left: -40px; 
-    width: 100%; 
-    height: 220%; 
+    width: 103%; 
+    height: 225%; 
     background-color: black; 
     z-index:1001; 
     -moz-opacity: 0.8; 
@@ -103,18 +103,23 @@
     z-index:1002; 
     overflow: auto; 
 }
-#c2-right-item #c2-right-item-l4 #light  a{
+ #light  a{
 	float: right;
 	margin-right: 30px;
+	color: black;
+	text-decoration: none;
 }
-#c2-right-item #c2-right-item-l4 #light input{
+ #light > a:hover{
+ 	color: #33A6B8;
+ }
+ #light input{
 	width: 240px;
 	margin-left: 10px;
 }
-#c2-right-item #c2-right-item-l4 #light	 input:hover{
+ #light	 input:hover{
 	background-color: white;
 }
-#c2-right-item #c2-right-item-l4 #light button{
+ #light button{
 	width: 90px;
 	background-color: white;
 	border-radius: 12px;
@@ -122,15 +127,15 @@
 	font-size: 16px;
 	margin-top: 60px;
 }
-#c2-right-item #c2-right-item-l4 #light button:hover{
+#light button:hover{
 	background-color: #33A6B8;
 }
-#c2-right-item #c2-right-item-l5{
+.c2-right-item li:nth-child(5){
 	width: 98px;
 	border-right: 0px;
 	padding-top: 20px;
 }
-#c2-right-item #c2-right-item-l5 input{
+.c2-right-item li:nth-child(5) input{
 	background-color: white; 
 	color: black;
 	width: 92px;
@@ -141,6 +146,6 @@
 	margin-top: 8px;
 	border:1px solid #c0c0c0;
 }
-#c2-right-item #c2-right-item-l5 input:hover{
+.c2-right-item li:nth-child(5) input:hover{
 	background-color: #33A6B8;
 }
