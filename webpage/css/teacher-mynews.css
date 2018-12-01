@@ -27,35 +27,35 @@
   #c2-right .panel-body > div > div{
     float: left;
   }
-  #c2-right .panel-body #c2-left-item1{
+  #c2-right .panel-body .c2-left-item1{
     width: 180px;
     height: 100%;
     border-right:1px solid gray;
   }
-   #c2-right .panel-body #c2-left-item1 img{
+   #c2-right .panel-body .c2-left-item1 img{
     width: 130px;
     height: 130px;
     border:1px solid #C0C0C0;
     margin-left: 25px;
     margin-top: 10px;
    }
-   #c2-right .panel-body #c2-left-item1 span{
+   #c2-right .panel-body .c2-left-item1 span{
     display: block;
     font-size: 20px;
     text-align: center;
    }
-   #c2-right .panel-body #c2-left-item2{
+   #c2-right .panel-body .c2-left-item2{
     width: 586px;
     height: 85%;
     position: relative;
     word-wrap: break-word;
   }
-  #c2-right .panel-body #c2-left-item2 p{
+  #c2-right .panel-body .c2-left-item2 p{
     height: 95px;
     display: block;
     overflow-y: auto;
   }
-  #c2-right .panel-body #c2-left-item3{
+  #c2-right .panel-body .c2-left-item3{
     width: 80px;
     background-color: white;
     border-radius: 12px;
@@ -63,10 +63,10 @@
     float: right;
     margin-right: 20px;
   }
-  #c2-right .panel-body #c2-left-item3:hover{
+  #c2-right .panel-body .c2-left-item3:hover{
     background-color: #33A6B8;
   }
-  #c2-right .panel-body #c2-left-item3 a{ 
+  #c2-right .panel-body .c2-left-item3 a{ 
     color: black;
     text-decoration: none;
   }
@@ -96,24 +96,24 @@
     z-index:1002; 
     overflow: auto; 
 }
-#c2-right .panel-body #light a{
+ #light a{
   float: right;
   margin-right: 30px;
   background-color: white;
   text-decoration: none;
   color: black;
 }
-#c2-right .panel-body #light{
+ #light{
   word-wrap: break-word;
 }
-#c2-right .panel-body #light a:hover{
+ #light a:hover{
   color: #33A6B8;
 }
-#c2-right .panel-body #light #allnews{
+ #light #allnews{
     height: 250px;
     overflow-y: auto;
 }
-#c2-right .panel-body #light button{
+ #light button{
   width: 90px;
   float: right;
   margin-right: 30px;
@@ -123,9 +123,9 @@
   background-color: white;
   color: black;
 }
-#c2-right .panel-body #light button:hover{
+ #light button:hover{
   background-color: #33A6B8;
 }
-#c2-right .panel-body #light #answer{
+ #light #answer{
     font-size: 20px;
 }
