@@ -11,9 +11,9 @@ body{
 	border-width: 1px;
 	border-color: #c0c0c0;
 	width: 900px;
-	height: 600px;
+	height: 800px;
 	margin-left: 220px;
-	margin-top: 75px;
+	margin-top: 20px;
 }
 #c1{
 	float: left;
@@ -28,7 +28,7 @@ body{
 	font-weight: bold;
 	padding-top: 20px;
 	padding-left: 20px;
-	width: 130px;
+	width: 150px;
 	height: 80px;
 	float: left;
 	font-size: 22px;
@@ -40,7 +40,7 @@ body{
 	margin-left: 40px;
 	padding-top: 6px;
 	width: 100px;
-	height: 23px;
+	height: 30px;
 	text-align: center;
 	border:2px solid #c0c0c0;
 	border-bottom-left-radius:5px;
@@ -50,7 +50,7 @@ body{
 }
 #c4{
 	margin-left: 40px;
-	margin-top: 10px;
+	margin-top: 60px;
 	width: 800px;
 	height: 200px;
 	float: left;
@@ -69,7 +69,20 @@ body{
 	font-size: 22px;
 }
 #c6{
+	line-height: 5px;
 	float: left;
 	width: 800px;
-	margin-left: 80px;
+	margin-left: 47px;
+}
+#c7{
+	float: left;
+	margin-left: 45px;
+	margin-top: 30px;
+	width: 140px;
+}
+#time{
+	margin-left: -70px;
+	margin-top: 23px;
+	border:1px dashed #c0c0c0;
+	width: 47px;
 }

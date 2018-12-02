@@ -2,27 +2,59 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="">
 	<link rel="stylesheet" type="text/css" href="css/work-complete.css">
-	<script type="text/javascript" src="js/work-complete.js"></script>
+	<!-- zui -->
+	<link rel="stylesheet" href="dist/css/zui.css" />
+	<link rel="stylesheet" href="dist/lib/kindeditor/kindeditor.css" />
+	<link rel="stylesheet" href="dist/lib/kindeditor/kindeditor.min.css" />
+	<link href="dist/lib/datetimepicker/datetimepicker.min.css" rel="stylesheet">
+	<!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
+	<script src="dist/lib/jquery/jquery.js"></script>
+	<!-- ZUI Javascript组件 -->
+	<script type="text/javascript" src="dist/js/zui.js"></script>
 	<script src="dist/lib/kindeditor/kindeditor.min.js"></script>
+	<script src="dist/lib/kindeditor/kindeditor.js"></script>
+	<script src="dist/lib/kindeditor/kindeditor/plugins.ok.js"></script>
+	<script src="dist/lib/datetimepicker/datetimepicker.min.js"></script>
+		
+
 </head>
 <body>
 	<div id="d1">
 		<div id="c1"><h2>作业完成</h2></div>
 		<div id="c2">任务一 力学   <br>
-			<p style="font-size: 16px;margin-top:30px;font-weight: normal;width: 500px;">李狗嗨老师 发布于2018年8月6日</p>
+			<p style="font-size: 16px;margin-top:30px;font-weight: normal;width: 500px;">李狗蛋老师 发布于2018年8月6日</p>
 		</div>
 		<div id="c3">待完成</div>
 		<div id="c4">123<br>123<br>123<br></div>
 		<div id="c5">作业内容：</div>
-		<div style="float: left;margin-left: -30px;margin-top: -5px;"><p style="font-size: 13px;margin-top:30px;font-weight: normal;width: 500px;">Tips:请标明作业的题目序号方便老师判卷</p>
+		<div style="float: left;margin-left: -10px;margin-top: -3px;"><p style="font-size: 13px;margin-top:30px;font-weight: normal;width: 500px;">Tips:请标明作业的题目序号方便老师判卷</p>
 		</div>
 		<div id="c6">
-			<textarea id="contentSimple" name="content" class="form-control kindeditorSimple" style="height:80px;width: 600px; resize: none;"></textarea>
+			<form>
+			<textarea id="contentSimple" name="content" class="form-control kindeditorSimple" style="overflow-y:auto;
+				overflow-x: hidden;height:200px;resize: none;" >
+			</textarea>
+			<div id="c7">作业耗时</div>
+			<input type="text" name="time" id="time" />小时  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 作业疑问
+			</form>
 		</div>
 	</div>
-	
+<script>
+		
+	KindEditor.create('textarea.kindeditorSimple', {
+    basePath: '/dist/lib/kindeditor/',
+    bodyClass : 'article-content',
+    resizeType : 1,
+    allowPreviewEmoticons : false,
+    allowImageUpload : false,
+    items : [
+        'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+        'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+        'insertunorderedlist', '|', 'emoticons', 'image', 'link'
+    ]
+});
+	</script>	
 </body>
 
 </html>
