@@ -58,3 +58,18 @@ body{
 	overflow-x: hidden;
 	border:1px solid #c0c0c0;
 }
+#c5{
+	margin-left: 20px;
+	font-weight: bold;
+	padding-top: 20px;
+	padding-left: 20px;
+	width: 140px;
+	height: 80px;
+	float: left;
+	font-size: 22px;
+}
+#c6{
+	float: left;
+	width: 800px;
+	margin-left: 80px;
+}
