@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>作业查看</title>
+		<link rel="stylesheet" href="css/job_view.css" />
+		<link rel="stylesheet" type="text/css" href="css/header.css"/>
+		<link rel="stylesheet" type="text/css" href="css/footer.css"/>
+		<!-- zui -->
+		<link rel="stylesheet" href="dist/css/zui.css" />
+		<!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
+		<script src="js/jquery-3.2.1.js"></script>
+		<!-- ZUI Javascript组件 -->
+		<script type="text/javascript" src="dist/js/zui.js"></script>
+	</head>
+	<body>
+		<!-- 头部 -->
+		<div id="head">
+		    <div id="header-box">
+		    <div id="big-box">
+		      <!-- logo -->
+		      <div id="top-box">
+		        <div id="top-box-logo">
+		          <img src="images/headerlogo.png" alt="logo" id="logoPic">
+		          <div id="name-pic"><img src="images/nameTop.png" alt="namePic" style="width: 263.3px;height:66px;"></div>
+		        </div>
+		      </div>
+		    </div>
+		      <!-- 下拉菜单 -->
+		      <div id="bottom-box">
+		        <div id="topBox2">
+		          <ul id="navFont">
+		          <li class="navFont1"><a href="#">首页</a></li>
+		          <li><a href="#">家教</a>
+		            <ul>
+		              <li><a href="#">小学</a></li>
+		              <li><a href="#">初中</a></li>
+		              <li><a href="#">高中</a></li>
+		            </ul>
+		          </li>
+		          <li><a href="#">论坛社区</a>
+		            <ul>
+		              <li><a href="#">学霸说</a></li>
+		              <li><a href="#">资料库</a></li>
+		              <li><a href="#">家长岛</a></li>
+		            </ul>
+		          </li>
+		          <li><a href="#">我要提问</a>
+		            <ul>
+		              <li><a href="#">心理困惑</a></li>
+		              <li><a href="#">情感问题</a></li>
+		              <li><a href="#">学习障碍</a></li>
+		            </ul>
+		          </li>
+		          <li><a href="#">个人中心</a></li>
+		        </ul>
+		      <!-- 搜索框 -->
+		      <!-- <div id="searchPart">
+		          <form id="partForm">
+		            <input type="text" value="请输入您要搜索的科目" id="partInput" autofocus="autofocus" />
+		            <input type="submit" id="search_btn" name="heder-submit" value="搜索" />
+		          </form>
+		        </div> -->
+		        <div class="input-group">
+		            <div class="input-control search-box search-box-circle has-icon-left has-icon-right search-example" id="searchboxExample">
+		              <input id="inputSearchExample3" type="search" class="form-control search-input" placeholder="搜索">
+		              <label for="inputSearchExample3" class="input-control-icon-left search-icon"><i class="icon icon-search"></i></label>
+		            </div>
+		          <span class="input-group-btn">
+		            <button class="btn btn-primary" type="button">搜索</button>
+		          </span>
+		      </div>
+		        <!-- 登录注册 -->
+		        <div id="header-login">
+		          <span><a href="#">登录</a></span>
+		          <!-- <span>/</span> -->
+		          <span><a href="#">注册</a></span>
+		        </div>
+		      </div>
+		      </div>
+		  </div>
+		</div>
+		<script>
+		        var search = document.getElementById("partInput");
+		        search.onfocus = function(){
+		            search.value="";
+		        }
+		</script>
+		
+		
+		<div  class="container-fixed">
+			<h1>作业查看</h1><hr/>
+			<div id="subject_teacher">
+				<h3 style="display: inline;">任务一&nbsp;&nbsp;&nbsp;力学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+				<div id="state" class="img-rounded" style="display:inline;">已批阅</div>
+				<p></p>
+				<div id="issue_info">
+					<span>杨蔚霞</span>老师&nbsp;&nbsp;&nbsp;发布于<span>2018年8月6日</span>
+				</div>
+				<p></p>
+				<div id="homework_time">
+					作业耗时&nbsp;&nbsp;&nbsp;<div id="hour" class="img-rounded" style="display:inline;">3.5</div>&nbsp;&nbsp;&nbsp;小时
+				</div>
+				<p></p>
+				<div id="finish_state">
+					完成情况&nbsp;&nbsp;&nbsp;<div id="completion" class="img-rounded" style="display:inline;">优秀</div>
+				</div>
+				<div id="question_teacher" class="img-rounded">
+					<span class="questions">1.&nbsp;如图所示，光滑水平面上，一小球在穿过O孔的绳子的拉力作用下沿一圆周匀速运动，当绳的拉力为F时，圆周半径为R，当绳的拉力增大到8F时，小球恰可沿半径为R／2的圆周匀速运动在上述增大拉力的过程中，绳的拉力对球做的功为________.<br/><br/></span>
+					<span class="questions">2.&nbsp;如图所示，质量为M的楔形物块固定在水平地面上，其斜面的倾角为θ。斜面上有一质量为m的小物块，小物块与斜面之间存在摩擦。用恒力F沿斜面向上拉小物块，使之以加速度a匀加速上滑。在小物块的运动过程中，地面对楔形物块的支持力为________.<br/><br/></span>
+					<span class="questions">3.&nbsp;如图所示,m=2kg,M=3kg,m和M之间、M和地面之间的动摩擦因数相同，绳子质量和滑轮摩擦忽略不计，作用在M右端的水平拉力F=18N，m、M保持匀速直线运动，求绳子拉力T和动摩擦因数μ。<br/><br/></span>
+					<span class="questions">4.&nbsp;如图所示，球重为G，半径为R，紧靠在竖直墙上，木块重为W，厚为h，放在球边，当对木块施以水平推力F后，球刚好对地面压力为零，如不计一切摩擦，求:(1)F的大小；(2)木块对地面的压力.<br/><br/></span>
+					<span class="questions">5.&nbsp;上方弹簧的劲度系数为k1、下方弹簧的劲度系数为k2。上方木块的质量为m1。下方木块的质量为m2。若在上方施加一拉力。求当拉力大小为多少时下方木块刚好离开地面？<br/><br/></span>
+				</div>
+			</div>
+			<div id="subject_student">
+				<h3>作业内容</h3>
+				<div id="finish_info">
+					<span>张三</span>&nbsp;&nbsp;&nbsp;完成于<span>2018年8月6日</span>
+				</div>
+				<div id="answer_student">
+					<span class="answers">1.&nbsp;1.5FR<br/><br/></span>
+					<span class="answers">2.&nbsp;根据平衡条件，竖直方向：N+Fsinθ=（M+m）g,水平方向：f=Fcosθ,得：N=（M+m）g-Fsinθ，f=Fcosθ<br/><br/></span>
+					<span class="answers">3.&nbsp;设绳的拉力为T，动摩擦因素μ。对上面一个物块m分析，m保持匀速直线运动，也就意味着，它处于平衡状态，那么它就受到M给它的水平向左的摩擦力和水平向右绳的拉力，这二者大小相等，方向相反。所以可得T=μmg=20μ<br/><br/></span>
+					<span class="answers">4.&nbsp;f=μmg/2 w=FS=fXs=(μmg/2)L<br/><br/></span>
+					<span class="answers">5.&nbsp;拉力等于（m1+m2)g ，高中的物理中弹簧只是传递力，不消耗力<br/><br/></span>
+				</div>
+			</div>
+		</div>
+		
+		 <div class="footer">
+		    <!-- 关于网页 -->
+		    <div class="footer-font">
+		      <div id="footer-font-about">
+		        <div id="about-title"><h3 class="font-h3">关于青蓝</h3></div>
+		        <div id="about-font"><p class="footer-words">
+		          青蓝家教旨在为大学生和家长提供真实可靠的家教信息发布、家教过程约束和学情分析平台。大学生家教在平台上注册并发布家教信息，家教在线上记录孩子的每次学习情况用于记录分析，并且可以给孩子提供线上辅导功能，家长可即时查看情况，更加了解孩子的学情。同时平台还为家长和家教提供论坛交流区，用于资料交流和分享。
+		        </p></div>
+		      </div>
+		      <div id="footer-font-a">
+		        <div id="a-title"><h3 class="font-h3">链接</h3></div>
+		        <div id="a-font">
+		          <a href="#" class="footer-words">加入我们</a>
+		          <a href="#" class="footer-words">网站须知</a>
+		          <a href="#" class="footer-words">意见反馈</a>
+		          <a href="#" class="footer-words">免责声明</a>
+		        </div>
+		      </div>
+		      <div id="footer-font-friend">
+		        <div id="friend-title"><h3 class="font-h3">鸣谢伙伴</h3></div>
+		        <div id="friend-logo">
+		          <div id="friend-logo-div1">
+		            <i class="icon icon-github icon-3x" ></i>
+		            <i class="icon icon-qq icon-3x"></i>
+		            <i class="icon icon-wechat icon-3x"></i>
+		          </div>
+		        </div>
+		      </div>
+		      <div id="footer-font-img">
+		        <div id="footer-font-img-font"><h3>扫码关注我们了解更多</h3></div>
+		        <img src="images/code.png" id="QRcode">
+		    </div>
+		  </div>
+		
+		  <!-- 权利归属 -->
+		    <div id="footer-right">
+		      <div id="footer-right-font">
+		        <p>
+		          <br>
+		          <a href="#" id="footer-right-font-a1">Copyright 2018-2020&nbsp;&nbsp;&nbsp;青蓝家教</a>
+		          <a href="#" id="footer-right-font-a1">Copyright 2018-2020&nbsp;&nbsp;&nbsp;青蓝家教</a>
+		            <a href="#" id="footer-right-font-a2">冀ICP备05067795号  冀公网安备110402440008号 </a>
+		          </p>
+		      </div>
+		    </div>
+		  </div>
+	</body>
+</html>
