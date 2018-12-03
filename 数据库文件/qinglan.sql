@@ -98,6 +98,7 @@ create table tbl_myjobtime
    id                   int not null auto_increment,
    tid                  int,
    time                 varchar(30),
+   teachplanId          int,
    primary key (id)
 );
 
