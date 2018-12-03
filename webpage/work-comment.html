@@ -21,14 +21,14 @@
 </head>
 <body>
 	<!-- 作业完成页面 -->
-	<div id="d1" style="height: 1300px;">
+	<div id="d1" style="height: 1100px;">
 		<div id="c1"><h2>作业评价</h2></div>
 		<div id="c2">任务一 力学   <br>
-			<p style="font-size: 16px;margin-top:30px;font-weight: normal;width: 500px;">李狗蛋老师 发布于2018年8月6日</p>
+			<p style="font-size: 16px;margin-top:10px;font-weight: normal;width: 500px;">李狗蛋老师 发布于2018年8月6日</p>
 		</div>
 		<div id="c3">待完成</div>
 		<div id="c4">1.题目<br>2.题目<br>3.题目<br>4.题目<br>5.题目<br>6.题目<br></div>
-		<div id="c5">作业内容：</div>
+		<div class="c5">作业内容：</div>
 		<p style="font-size: 13px;margin-top:60px;margin-left:-110px;font-weight: normal;width: 500px;float: left;">张三完成于2018年8月6日</p>
 		
 
@@ -36,21 +36,28 @@
 		<div  style="	width: 800px;height: 200px;float: left;overflow-y:auto;overflow-x: hidden;
 				border:1px solid #c0c0c0;margin-left: 47px;"></div>
 		<!-- 作业疑问 -->
-		<div id="c5" style="margin-left: 27px;">作业疑问：</div>
+		<div  class="c5" style="margin-left: 27px;">作业疑问：</div>
 		<div  style="width: 800px;height: 110px;float: left;overflow-y:auto;overflow-x: hidden;
 					border:1px solid #c0c0c0;margin-top: -15px;margin-left: 47px;"></div>		
-				
 		
-		<div style="float: left;" >
-			<div id="c7">作业耗时</div>
-				<div id="time"> </div>小时
-			<form action="" method="post">
-				<textarea style="resize: none;width: 230px;height: 75px;"></textarea>
-				<input type="submit" value="提交"  class="btn" />
-
+			<!-- 作业耗时与完成情况 -->
+			<div id="time1" > 
+				<div  class="c7" style="height: 20px;width: 75px;">作业耗时</div>
+				<div  class="t2" ></div>
+				<div style="float: left;margin-left: 190px;margin-top:-20px;width: 50px;"><p>小时</p></div>
+				<div  class="c7" style="height: 20px;width: 75px;margin-top: 20px;">完成情况</div>
+				<div  class="t2" >优秀</div>		
+			</div>
+			
+		<!-- 	作业评语表单提交 -->
+			<form action="" method="post"  >
+				<div  class="c7" style="margin-left: 170px;">作业评语</div>
+				<textarea style="resize: none;width: 430px;height: 125px;margin-left:-80px ;margin-top: 40px;float: left;border:1px dashed #c0c0c0;"></textarea>
+				<input type="submit" value="提交"  class="btn" style="float: right;margin-right: 47px;margin-top: -28px;" />
 			</form>
-		</div>
+		
 	</div>
+
 <!-- <script>
 	// 富文本编辑框js代码
 	KindEditor.create('textarea.kindeditorSimple', {
