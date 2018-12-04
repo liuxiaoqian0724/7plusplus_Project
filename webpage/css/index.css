@@ -72,9 +72,10 @@
 }
 #course_question{
 	margin-top:15px;
+	background-color:#fff;
 }
 #question_answer{
-	height:523px;
+	
 	position: relative;
 	margin-top:5px;
 }
@@ -83,12 +84,15 @@
 	width:800px;
 	margin-left:25px;
 	padding:5px;
+	background-color:#fff;
 }
 #goodresponder{
 	position: relative;
 	margin-right:15px;
 	margin-left:845px;
 	margin-top:-523px;
+	background-color:#fff;
+	border:1px solid #e4dfd7;
 }
 #goodresponder img{
 	width:39%;

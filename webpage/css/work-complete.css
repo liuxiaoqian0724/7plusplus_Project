@@ -35,7 +35,7 @@ body{
 	border-top: 1px solid red;
 }
 #c3{
-	
+	font-weight: bold;
 	float: left;
 	margin-top: 16px;
 	margin-left: 40px;
@@ -70,7 +70,7 @@ body{
 	font-size: 22px;
 }
 #c6{
-	line-height: 5px;
+	
 	float: left;
 	width: 800px;
 	margin-left: 47px;
