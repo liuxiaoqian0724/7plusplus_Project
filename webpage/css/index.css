@@ -1,14 +1,9 @@
 #myNiceCarousel{
-	width:75%;
-	height:75%;
 	position: relative;
-	margin-left:170px;
 }
 .tutor_information{
-	width:75%;
 	position: relative;
 	margin-top:15px;
-	margin-left:170px;
 	border:1px solid #e4dfd7;
 	background-color:#fcfcfc;
 }
@@ -20,19 +15,20 @@
 	margin-top:30px;
 }
 #choose_button{
-	margin-left:300px;
+	position: relative;
+	margin-left:460px;
 	margin-top:15px;
 }
 #i_wonder_release{
 	position:relative;
-	margin-left:200px;
+	margin-left:300px;
 }
 #personal_information{
-	margin-left:23px;
+	margin-left:15px;
 	margin-top:15px;
 }
 #personal_inf{
-	width:200px;
+	width:222px;
 	background-color:#fff;
 }
 #personal_name{
@@ -41,16 +37,14 @@
 	margin-top:5px;
 }
 #pager{
-	margin-left: 310px;
+	margin-left: 460px;
 }
 .pager a:link{
 	background-color: #FFF;
 	color:#56C9DB;
 }
 #learning_community{
-	width:75%;
 	margin-top:15px;
-	margin-left:170px;
 	border:1px solid #e4dfd7;
 	background-color:#fcfcfc;
 }
@@ -71,7 +65,6 @@
 }
 .cards_article{
 	position: relative;
-	width:600px;
 	margin-left: 200px;
 	margin-top:-170px;
 	padding-top:10px;
@@ -87,19 +80,19 @@
 }
 #qanda{
 	position: relative;
-	width:600px;
-	margin-left:15px;
+	width:800px;
+	margin-left:25px;
 	padding:5px;
 }
 #goodresponder{
 	position: relative;
 	margin-right:15px;
-	margin-left:625px;
+	margin-left:845px;
 	margin-top:-523px;
 }
 #goodresponder img{
-	width:35%;
-	height:35%;
+	width:39%;
+	height:39%;
 }
 #community_author{
 	position: relative;
@@ -107,19 +100,19 @@
 }
 #author{
 	position: relative;
-	margin:15px;
-	padding:-15px;
+	margin:25px;
 }
 .personal_introduction{
-	width:240px;
+	width:400px;
+	height:120px;
 	position: relative;
-	margin-left: 210px;
+	margin-left: 280px;
 	margin-top:-130px;
 	padding:5px;
 }
 .personal_article{
 	position: relative;
-	margin-left: 450px;
-	margin-top:-140px;
+	margin-left: 700px;
+	margin-top:-120px;
 	padding-left: 15px;
 }
