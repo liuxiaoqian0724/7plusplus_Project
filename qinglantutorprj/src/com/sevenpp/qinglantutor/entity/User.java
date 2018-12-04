@@ -46,8 +46,7 @@ public class User  implements java.io.Serializable {
      private String publickey;	//公钥
      private String privatekey;	//私钥
      
-     private List<Msg> msgs1= new ArrayList<Msg>();	//用户表和消息表是双向一对多的关系
-     private List<Msg> msg2 = new ArrayList<Msg>(); 
+     private List<Msg> msgs= new ArrayList<Msg>();	//用户表和消息表是双向一对多的关系
    //  private MyJob myjob=new MyJob();	//用户表和求职信息表是双向一对一的关系
     // private MyJob myJob=null;
      private List<MyJob> myJobs=new ArrayList<MyJob>();
@@ -176,25 +175,23 @@ public class User  implements java.io.Serializable {
 	public void setPrivatekey(String privatekey) {
 		this.privatekey = privatekey;
 	}
-	@OneToMany(mappedBy="receiveUser",
+	@OneToMany(mappedBy="user",
 			targetEntity=Msg.class,
 			cascade= {CascadeType.REMOVE})
-	public List<Msg> getMsgs1() {
-		return msgs1;
+	public List<Msg> getMsgs() {
+		return msgs;
 	}
-	public void setMsgs1(List<Msg> msgs1) {
-		this.msgs1 = msgs1;
-	}
-	@OneToMany(mappedBy="sendUser",
-			targetEntity=Msg.class,
-			cascade= {CascadeType.REMOVE})
-	public List<Msg> getMsg2() {
-		return msg2;
-	}
-	public void setMsg2(List<Msg> msg2) {
-		this.msg2 = msg2;
+	public void setMsgs(List<Msg> msgs) {
+		this.msgs = msgs;
 	}
 	
+//	@OneToOne(mappedBy = "user")
+//	public MyJob getMyjob() {
+//		return myjob;
+//	}
+//	public void setMyjob(MyJob myjob) {
+//		this.myjob = myjob;
+//	}
 	
 	@OneToMany(mappedBy="user",
 			targetEntity=MyJob.class,
@@ -202,7 +199,6 @@ public class User  implements java.io.Serializable {
 	public List<MyJob> getMyJobs() {
 		return myJobs;
 	}
-	
 	public void setMyJobs(List<MyJob> myJobs) {
 		this.myJobs = myJobs;
 	}

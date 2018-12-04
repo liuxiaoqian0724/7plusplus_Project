@@ -33,8 +33,8 @@ public class Msg  implements java.io.Serializable {
      private String content;	//内容
      private Date sendTime;
      private Integer status;	//收件人的消息状态，同意还是拒绝
-     private User receiveUser;	//收件人
-     private User sendUser;		//消息表和用户表是双向多对一的关系（发件人）
+     
+     private User user;		//消息表和用户表是双向多对一的关系
 
      @Id
      @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -73,26 +73,13 @@ public class Msg  implements java.io.Serializable {
 	@ManyToOne()
 	@JoinColumn(name="receiveid")
 	@NotFound(action=NotFoundAction.IGNORE)
-	public User getReceiveUser() {
-		return receiveUser;
+	public User getUser() {
+		return user;
 	}
 
-	public void setReceiveUser(User receiveUser) {
-		this.receiveUser = receiveUser;
+	public void setUser(User user) {
+		this.user = user;
 	}
-
-	@ManyToOne()
-	@JoinColumn(name="sendid")
-	@NotFound(action=NotFoundAction.IGNORE)
-	public User getSendUser() {
-		return sendUser;
-	}
-
-	public void setSendUser(User sendUser) {
-		this.sendUser = sendUser;
-	}
-
-	
      
      
     
