@@ -30,7 +30,8 @@ public class Grade  implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 	private Integer gid;	//年级id
      private String gname;	//年级名
-     
+     private String schoolType;
+
      private Set<MyJob> myJobs=new HashSet<MyJob>();
 
      @Id
@@ -47,7 +48,12 @@ public class Grade  implements java.io.Serializable {
 	public void setGname(String gname) {
 		this.gname = gname;
 	}
-	
+	public String getSchooltype() {
+		return schoolType;
+	}
+	public void setSchooltype(String schooltype) {
+		this.schoolType = schooltype;
+	}
 	@ManyToMany(mappedBy="grades") 
 	public Set<MyJob> getMyJobs() {
 		return myJobs;

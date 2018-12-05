@@ -42,6 +42,8 @@ public class TeachRelation implements java.io.Serializable {
 	private List<TeachPlan> teachPlans = new ArrayList<TeachPlan>();//教课关系表和教案表是双向一对多的关系
 	private User user;	//教课关系表和用户表是多对一的关系
 	private Course course;	//教课关系表和课程表是多对一的关系
+	private String startTime;
+	private String endTime;
 	private List<ClassRelation> classRelation=new ArrayList<ClassRelation>();	//教课关系表和上课关系表是一对多的关系
 	
 	@Id
@@ -73,6 +75,19 @@ public class TeachRelation implements java.io.Serializable {
 		this.teachPlans = teachPlans;
 	}
 	
+	
+	public String getStartTime() {
+		return startTime;
+	}
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+	public String getEndTime() {
+		return endTime;
+	}
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
 	@ManyToOne()
 	@JoinColumn(name="cid")	//课程id（cid）是外键
 	@NotFound(action=NotFoundAction.IGNORE)
