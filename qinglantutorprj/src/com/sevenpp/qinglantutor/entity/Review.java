@@ -24,7 +24,11 @@ import javax.persistence.Table;
 public class Review  implements java.io.Serializable {
 
 
-     private Integer rid;	//评价id
+     /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Integer rid;	//评价id
      private Date reviewTime;	//评价时间
      private String reviewContent;	//评价时间
      private Integer reviewStar;	//评价星级	

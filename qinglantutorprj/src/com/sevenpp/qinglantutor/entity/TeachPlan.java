@@ -26,7 +26,11 @@ import org.hibernate.annotations.NotFoundAction;
 public class TeachPlan  implements java.io.Serializable {
 
 
-     private Integer id;
+     /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Integer id;
      private String content;	//教案内容
      private Date time;
      

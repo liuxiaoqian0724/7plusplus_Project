@@ -23,9 +23,14 @@ import javax.persistence.Table;
 public class Grade  implements java.io.Serializable {
 
 
-     private Integer gid;	//年级id
-     private String gname;	//年级名
-     
+     /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Integer gid;	//年级id
+    private String gname;	//年级名
+    private String schooltype;	 
+    
      private Set<MyJob> myJobs=new HashSet<MyJob>();
 
      @Id

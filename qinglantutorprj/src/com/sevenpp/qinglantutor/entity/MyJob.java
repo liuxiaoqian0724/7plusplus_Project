@@ -1,10 +1,8 @@
 package com.sevenpp.qinglantutor.entity;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,7 +11,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.NotFound;
@@ -32,7 +29,11 @@ import org.hibernate.annotations.NotFoundAction;
 public class MyJob  implements java.io.Serializable {
 
 
-     private Integer jid;	//求职信息id
+     /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Integer jid;	//求职信息id
 //     private Integer tid;	//老师id
      private String address;
      private Integer price;

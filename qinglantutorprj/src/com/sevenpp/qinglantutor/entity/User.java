@@ -25,7 +25,11 @@ import javax.persistence.Table;
 @Table(name="tbl_user")
 public class User  implements java.io.Serializable {
 
-     private Integer id;//主键
+     /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Integer id;//主键
      private String userName;
      private String userPwd;
      private String email;
@@ -45,6 +49,10 @@ public class User  implements java.io.Serializable {
      private Integer status;//状态位，是否发布家教信息，1=发布，0未发布
      private String publickey;	//公钥
      private String privatekey;	//私钥
+     private String img1;
+     private String img2;
+     private String img3;
+     private String img4;
      
      private List<Msg> msgs= new ArrayList<Msg>();	//用户表和消息表是双向一对多的关系
    //  private MyJob myjob=new MyJob();	//用户表和求职信息表是双向一对一的关系

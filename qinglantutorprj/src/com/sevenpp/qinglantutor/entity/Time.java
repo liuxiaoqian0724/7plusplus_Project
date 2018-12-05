@@ -23,6 +23,10 @@ import javax.persistence.Table;
 @Table(name="tbl_time")
 public class Time implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer tid;	
 	private String time;
 	

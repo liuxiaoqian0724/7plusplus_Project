@@ -26,6 +26,10 @@ import javax.persistence.Table;
 @Table(name="tbl_course")
 public class Course  implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer cid;	//课程id
 	private String cname;	//课程名
 	

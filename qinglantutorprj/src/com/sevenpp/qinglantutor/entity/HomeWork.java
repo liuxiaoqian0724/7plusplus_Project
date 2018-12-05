@@ -27,7 +27,11 @@ import org.hibernate.annotations.NotFoundAction;
 public class HomeWork  implements java.io.Serializable {
 
 
-     private Integer hid;
+     /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Integer hid;
      private String tcontent;	//老师留的作业内容
      private String scontent;	//学生交的作业内容
      private Date tstartTime;	//老师留作业的时间
