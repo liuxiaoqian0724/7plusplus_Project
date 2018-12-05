@@ -27,7 +27,7 @@ import org.hibernate.annotations.NotFoundAction;
  */
 
 @Entity
-@Table(name="tbl_time")
+@Table(name="tbl_teach")
 public class TeachRelation implements java.io.Serializable {
 	
 	private Integer trid;	//教课关系id

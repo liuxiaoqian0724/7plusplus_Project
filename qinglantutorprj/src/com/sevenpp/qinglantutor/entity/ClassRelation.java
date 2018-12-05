@@ -26,7 +26,7 @@ import org.hibernate.annotations.NotFoundAction;
  */
 
 @Entity
-@Table(name="tbl_course")
+@Table(name="tbl_classrelation")
 public class ClassRelation {
 	
 	private Integer crid;	//上课关系id
