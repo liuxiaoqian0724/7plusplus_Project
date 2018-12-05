@@ -10,8 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 
 /**
  * 
@@ -25,7 +25,12 @@ import javax.persistence.Table;
 @Table(name="tbl_user")
 public class User  implements java.io.Serializable {
 
-     private Integer id;//主键
+     /** 
+			* @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么) 
+			*/
+		
+	private static final long serialVersionUID = 1L;
+	private Integer id;//主键
      private String userName;
      private String userPwd;
      private String email;
@@ -47,8 +52,6 @@ public class User  implements java.io.Serializable {
      private String privatekey;	//私钥
      
      private List<Msg> msgs= new ArrayList<Msg>();	//用户表和消息表是双向一对多的关系
-   //  private MyJob myjob=new MyJob();	//用户表和求职信息表是双向一对一的关系
-    // private MyJob myJob=null;
      private List<MyJob> myJobs=new ArrayList<MyJob>();
      private List<TeachRelation> teachRelations=new ArrayList<TeachRelation>();	//用户表和教课关系表是一对多的关系
      private List<ClassRelation> classRelation = new ArrayList<ClassRelation>();	//用户表和上课关系表是一对多的关系
@@ -185,13 +188,6 @@ public class User  implements java.io.Serializable {
 		this.msgs = msgs;
 	}
 	
-//	@OneToOne(mappedBy = "user")
-//	public MyJob getMyjob() {
-//		return myjob;
-//	}
-//	public void setMyjob(MyJob myjob) {
-//		this.myjob = myjob;
-//	}
 	
 	@OneToMany(mappedBy="user",
 			targetEntity=MyJob.class,
@@ -221,79 +217,7 @@ public class User  implements java.io.Serializable {
 	public void setClassRelation(List<ClassRelation> classRelation) {
 		this.classRelation = classRelation;
 	}	
-	
-	
-     
-	
-     
-     
-//     private MyJob myjob;//求职表一对一映射
-//     private List<Teachplan> teachPlanList;//一对多
-//     private List<Msg> msgList;//一对多
-//     private List<Course> courseList;//一对多
-//     private List<HomeWork> homeWorkList;//一对多
-//     private List<Review> reviewList;//一对多
-   
-   
-    //与myjob表一对一
-//    @OneToOne(mappedBy="myjob",targetEntity=MyJob.class)
-//	public MyJob getMyjob() {
-//		return myjob;
-//	}
-//
-//	public void setMyjob(MyJob myjob) {
-//		this.myjob = myjob;
-//	}
 
-	
-
-//	//teachPlan表一对多
-//	@OneToMany(mappedBy="user",targetEntity=Teachplan.class,cascade=CascadeType.ALL)
-//	public List<Teachplan> getTeachPlan() {
-//		return teachPlanList;
-//	}
-//
-//	public void setTeachPlan(List<Teachplan> teachPlan) {
-//		this.teachPlanList = teachPlan;
-//	}
-
-	
-//	//msg一对多
-//	@OneToMany(mappedBy="user",targetEntity=Msg.class,cascade=CascadeType.ALL)
-//	public List<Msg> getMsgList() {
-//		return msgList;
-//	}
-//
-//	public void setMsgList(List<Msg> msgList) {
-//		this.msgList = msgList;
-//	}
-//	//course一对多
-//	@OneToMany(mappedBy="user",targetEntity=Course.class,cascade=CascadeType.ALL)
-//	public List<Course> getCourseList() {
-//		return courseList;
-//	}
-//
-//	public void setCourseList(List<Course> courseList) {
-//		this.courseList = courseList;
-//	}
-//	//homework一对多
-//	@OneToMany(mappedBy="user",targetEntity=HomeWork.class,cascade=CascadeType.ALL)
-//	public List<HomeWork> getHomeWorkList() {
-//		return homeWorkList;
-//	}
-//
-//	public void setHomeWorkList(List<HomeWork> homeWorkList) {
-//		this.homeWorkList = homeWorkList;
-//	}
-//	//review一对多
-//	@OneToMany(mappedBy="user",targetEntity=Review.class,cascade=CascadeType.ALL)
-//	public List<Review> getReviewList() {
-//		return reviewList;
-//	}
-//
-//	public void setReviewList(List<Review> reviewList) {
-//		this.reviewList = reviewList;
-//	}
 
 	
 	

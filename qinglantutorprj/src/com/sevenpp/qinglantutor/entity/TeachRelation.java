@@ -27,12 +27,16 @@ import org.hibernate.annotations.NotFoundAction;
  */
 
 @Entity
-@Table(name="tbl_time")
+@Table(name="tbl_teach")
 public class TeachRelation implements java.io.Serializable {
 	
+	/** 
+			* @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么) 
+			*/
+		
+	private static final long serialVersionUID = 1L;
+
 	private Integer trid;	//教课关系id
-//	private Integer tid;	//老师id
-//	private Integer cid;	//课程id
 	
 	private List<HomeWork> homeworks=new ArrayList<HomeWork>();		//教课关系表和作业表是双向一对多的关系
 	private List<TeachPlan> teachPlans = new ArrayList<TeachPlan>();//教课关系表和教案表是双向一对多的关系
@@ -48,18 +52,6 @@ public class TeachRelation implements java.io.Serializable {
 	public void setTrid(Integer trid) {
 		this.trid = trid;
 	}
-//	public Integer getTid() {
-//		return tid;
-//	}
-//	public void setTid(Integer tid) {
-//		this.tid = tid;
-//	}
-//	public Integer getCid() {
-//		return cid;
-//	}
-//	public void setCid(Integer cid) {
-//		this.cid = cid;
-//	}
 	
 	@OneToMany(mappedBy="teachRelation",
 			targetEntity=HomeWork.class,

@@ -32,8 +32,12 @@ import org.hibernate.annotations.NotFoundAction;
 public class MyJob  implements java.io.Serializable {
 
 
-     private Integer jid;	//求职信息id
-//     private Integer tid;	//老师id
+     /** 
+			* @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么) 
+			*/
+		
+	private static final long serialVersionUID = 1L;
+	private Integer jid;	//求职信息id
      private String address;
      private Integer price;
      private String teacherAge;	//教龄
@@ -69,9 +73,6 @@ public class MyJob  implements java.io.Serializable {
 	public void setTeacherAge(String teacherAge) {
 		this.teacherAge = teacherAge;
 	}
-	
-//	@OneToOne(cascade=CascadeType.ALL)
-//	@JoinColumn(name = "tid")	//tid是外键
 	
 	@ManyToOne()
 	@JoinColumn(name="tid")	//老师id(tid)是外键

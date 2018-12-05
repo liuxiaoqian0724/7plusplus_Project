@@ -23,7 +23,12 @@ import javax.persistence.Table;
 public class Grade  implements java.io.Serializable {
 
 
-     private Integer gid;	//年级id
+     /** 
+			* @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么) 
+			*/
+		
+	private static final long serialVersionUID = 1L;
+	private Integer gid;	//年级id
      private String gname;	//年级名
      
      private Set<MyJob> myJobs=new HashSet<MyJob>();
@@ -51,26 +56,6 @@ public class Grade  implements java.io.Serializable {
 		this.myJobs = myJobs;
 	}	
      
-     
-	
-    
-   
-    
-    
-    
-//    @ManyToOne
-//    @JoinColumn(name="tId")
-//	public MyJob getMyJob() {
-//		return myJob;
-//	}
-//
-//	public void setMyJob(MyJob myJob) {
-//		this.myJob = myJob;
-//	}
-
-
-	
-  
 
 
 }
