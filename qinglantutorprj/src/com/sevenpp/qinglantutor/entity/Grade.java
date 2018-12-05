@@ -25,6 +25,7 @@ public class Grade  implements java.io.Serializable {
 
      private Integer gid;	//年级id
      private String gname;	//年级名
+     private String schooltype;
      
      private Set<MyJob> myJobs=new HashSet<MyJob>();
 
@@ -49,8 +50,15 @@ public class Grade  implements java.io.Serializable {
 	}
 	public void setMyJobs(Set<MyJob> myJobs) {
 		this.myJobs = myJobs;
+	}
+	public String getSchooltype() {
+		return schooltype;
+	}
+	public void setSchooltype(String schooltype) {
+		this.schooltype = schooltype;
 	}	
-     
+    
+	
      
 	
     

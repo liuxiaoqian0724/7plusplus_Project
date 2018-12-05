@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,12 +28,12 @@ import org.hibernate.annotations.NotFoundAction;
  */
 
 @Entity
-@Table(name="tbl_time")
+@Table(name="tbl_teach")
 public class TeachRelation implements java.io.Serializable {
 	
 	private Integer trid;	//教课关系id
 //	private Integer tid;	//老师id
-//	private Integer cid;	//课程id
+//	private Integer cid;	//课程id	
 	
 	private List<HomeWork> homeworks=new ArrayList<HomeWork>();		//教课关系表和作业表是双向一对多的关系
 	private List<TeachPlan> teachPlans = new ArrayList<TeachPlan>();//教课关系表和教案表是双向一对多的关系
@@ -40,6 +41,8 @@ public class TeachRelation implements java.io.Serializable {
 	private Course course;	//教课关系表和课程表是多对一的关系
 	private List<ClassRelation> classRelation=new ArrayList<ClassRelation>();	//教课关系表和上课关系表是一对多的关系
 	
+	private String startTime;
+	private String endTime;
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
 	public Integer getTrid() {
@@ -109,6 +112,18 @@ public class TeachRelation implements java.io.Serializable {
 	}
 	public void setClassRelation(List<ClassRelation> classRelation) {
 		this.classRelation = classRelation;
+	}
+	public String getStartTime() {
+		return startTime;
+	}
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+	public String getEndTime() {
+		return endTime;
+	}
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 	
 	
