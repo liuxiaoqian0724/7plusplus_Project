@@ -1,22 +1,22 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 本机Mysql数据库
-Source Server Version : 50506
+Source Server         : hy
+Source Server Version : 50532
 Source Host           : localhost:3306
 Source Database       : qinglandb
 
 Target Server Type    : MYSQL
-Target Server Version : 50506
+Target Server Version : 50532
 File Encoding         : 65001
 
-Date: 2018-12-05 08:32:10
+Date: 2018-12-05 14:14:01
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for tbl_classrelation
+-- Table structure for `tbl_classrelation`
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_classrelation`;
 CREATE TABLE `tbl_classrelation` (
@@ -24,14 +24,18 @@ CREATE TABLE `tbl_classrelation` (
   `sid` int(11) DEFAULT NULL,
   `trid` int(11) DEFAULT NULL,
   PRIMARY KEY (`crid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tbl_classrelation
 -- ----------------------------
+INSERT INTO `tbl_classrelation` VALUES ('1', '3', '1');
+INSERT INTO `tbl_classrelation` VALUES ('2', '3', '4');
+INSERT INTO `tbl_classrelation` VALUES ('3', '4', '2');
+INSERT INTO `tbl_classrelation` VALUES ('4', '4', '3');
 
 -- ----------------------------
--- Table structure for tbl_course
+-- Table structure for `tbl_course`
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_course`;
 CREATE TABLE `tbl_course` (
@@ -54,7 +58,7 @@ INSERT INTO `tbl_course` VALUES ('8', '政治');
 INSERT INTO `tbl_course` VALUES ('9', '历史');
 
 -- ----------------------------
--- Table structure for tbl_grade
+-- Table structure for `tbl_grade`
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_grade`;
 CREATE TABLE `tbl_grade` (
@@ -80,7 +84,7 @@ INSERT INTO `tbl_grade` VALUES ('11', '高二');
 INSERT INTO `tbl_grade` VALUES ('12', '高三');
 
 -- ----------------------------
--- Table structure for tbl_homework
+-- Table structure for `tbl_homework`
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_homework`;
 CREATE TABLE `tbl_homework` (
@@ -95,14 +99,18 @@ CREATE TABLE `tbl_homework` (
   `crid` int(11) DEFAULT NULL,
   `trid` int(11) DEFAULT NULL,
   PRIMARY KEY (`hid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tbl_homework
 -- ----------------------------
+INSERT INTO `tbl_homework` VALUES ('0', '老师留的作业内容', '学生交的作业内容', '2018-11-13 14:05:33', '2018-12-06 14:05:45', '90', '已完成', '未查看', '1', '1');
+INSERT INTO `tbl_homework` VALUES ('2', '老师留的作业内容', '学生交的作业内容', '2018-11-13 14:05:33', '2018-12-06 14:05:45', null, '未完成', '未查看', '2', '4');
+INSERT INTO `tbl_homework` VALUES ('3', '老师留的作业内容', '学生交的作业内容', '2018-11-13 14:05:33', '2018-12-06 14:05:45', '90', '已完成', '未查看', '3', '2');
+INSERT INTO `tbl_homework` VALUES ('4', '老师留的作业内容', '学生交的作业内容', '2018-11-13 14:05:33', '2018-12-06 14:05:45', '90', '已完成', '未查看', '4', '3');
 
 -- ----------------------------
--- Table structure for tbl_msg
+-- Table structure for `tbl_msg`
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_msg`;
 CREATE TABLE `tbl_msg` (
@@ -113,14 +121,18 @@ CREATE TABLE `tbl_msg` (
   `sendtime` datetime DEFAULT NULL,
   `status` int(11) DEFAULT NULL,
   PRIMARY KEY (`mid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tbl_msg
 -- ----------------------------
+INSERT INTO `tbl_msg` VALUES ('1', '3', '1', '李四发给张三的', '2018-08-09 10:43:54', '2');
+INSERT INTO `tbl_msg` VALUES ('2', '3', '2', '李四发给王五的', '2018-07-12 10:44:18', '0');
+INSERT INTO `tbl_msg` VALUES ('3', '4', '1', '小明发给张三的', '2018-11-16 10:45:49', '1');
+INSERT INTO `tbl_msg` VALUES ('4', '4', '2', '小明发给李四的', '2018-12-01 10:46:06', '0');
 
 -- ----------------------------
--- Table structure for tbl_myjob
+-- Table structure for `tbl_myjob`
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_myjob`;
 CREATE TABLE `tbl_myjob` (
@@ -130,14 +142,16 @@ CREATE TABLE `tbl_myjob` (
   `price` int(11) DEFAULT NULL,
   `teacherage` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`jid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tbl_myjob
 -- ----------------------------
+INSERT INTO `tbl_myjob` VALUES ('1', '1', '河北师范大学', '110', '1年');
+INSERT INTO `tbl_myjob` VALUES ('2', '2', '河北师范大学', '100', '2年');
 
 -- ----------------------------
--- Table structure for tbl_myjobcourse
+-- Table structure for `tbl_myjobcourse`
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_myjobcourse`;
 CREATE TABLE `tbl_myjobcourse` (
@@ -145,14 +159,16 @@ CREATE TABLE `tbl_myjobcourse` (
   `cid` int(11) DEFAULT NULL,
   `jid` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tbl_myjobcourse
 -- ----------------------------
+INSERT INTO `tbl_myjobcourse` VALUES ('1', '2', '2');
+INSERT INTO `tbl_myjobcourse` VALUES ('2', '3', '1');
 
 -- ----------------------------
--- Table structure for tbl_myjobgrade
+-- Table structure for `tbl_myjobgrade`
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_myjobgrade`;
 CREATE TABLE `tbl_myjobgrade` (
@@ -160,14 +176,16 @@ CREATE TABLE `tbl_myjobgrade` (
   `gid` int(11) DEFAULT NULL,
   `jid` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tbl_myjobgrade
 -- ----------------------------
+INSERT INTO `tbl_myjobgrade` VALUES ('1', '4', '2');
+INSERT INTO `tbl_myjobgrade` VALUES ('2', '7', '1');
 
 -- ----------------------------
--- Table structure for tbl_myjobtime
+-- Table structure for `tbl_myjobtime`
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_myjobtime`;
 CREATE TABLE `tbl_myjobtime` (
@@ -175,14 +193,16 @@ CREATE TABLE `tbl_myjobtime` (
   `timeid` int(11) DEFAULT NULL,
   `jid` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tbl_myjobtime
 -- ----------------------------
+INSERT INTO `tbl_myjobtime` VALUES ('1', '2', '1');
+INSERT INTO `tbl_myjobtime` VALUES ('2', '3', '2');
 
 -- ----------------------------
--- Table structure for tbl_review
+-- Table structure for `tbl_review`
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_review`;
 CREATE TABLE `tbl_review` (
@@ -192,14 +212,18 @@ CREATE TABLE `tbl_review` (
   `reviewstart` int(11) DEFAULT NULL,
   `crid` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tbl_review
 -- ----------------------------
+INSERT INTO `tbl_review` VALUES ('1', '2018-12-19 11:07:05', '李四对张三的评价', '90', '1');
+INSERT INTO `tbl_review` VALUES ('2', '2018-12-14 11:08:25', '李四对王五的评价', '90', '2');
+INSERT INTO `tbl_review` VALUES ('3', '2018-12-22 11:11:22', '小明对张三的评价', '80', '3');
+INSERT INTO `tbl_review` VALUES ('4', '2018-12-18 11:11:38', '小明对王五的评价', '85', '4');
 
 -- ----------------------------
--- Table structure for tbl_teach
+-- Table structure for `tbl_teach`
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_teach`;
 CREATE TABLE `tbl_teach` (
@@ -208,14 +232,18 @@ CREATE TABLE `tbl_teach` (
   `cid` int(11) DEFAULT NULL,
   `classtime` int(11) DEFAULT NULL,
   PRIMARY KEY (`trid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tbl_teach
 -- ----------------------------
+INSERT INTO `tbl_teach` VALUES ('1', '1', '2', '3');
+INSERT INTO `tbl_teach` VALUES ('2', '1', '3', '4');
+INSERT INTO `tbl_teach` VALUES ('3', '2', '2', '3');
+INSERT INTO `tbl_teach` VALUES ('4', '2', '3', '4');
 
 -- ----------------------------
--- Table structure for tbl_teachplan
+-- Table structure for `tbl_teachplan`
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_teachplan`;
 CREATE TABLE `tbl_teachplan` (
@@ -224,14 +252,18 @@ CREATE TABLE `tbl_teachplan` (
   `time` datetime DEFAULT NULL,
   `trid` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tbl_teachplan
 -- ----------------------------
+INSERT INTO `tbl_teachplan` VALUES ('1', '1-1', '2018-12-06 10:51:31', '1');
+INSERT INTO `tbl_teachplan` VALUES ('2', '1-2', '2018-12-05 10:52:19', '1');
+INSERT INTO `tbl_teachplan` VALUES ('3', '2-1', '2018-12-11 10:52:40', '2');
+INSERT INTO `tbl_teachplan` VALUES ('4', '2-2', '2018-12-16 10:52:59', '2');
 
 -- ----------------------------
--- Table structure for tbl_time
+-- Table structure for `tbl_time`
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_time`;
 CREATE TABLE `tbl_time` (
@@ -263,7 +295,7 @@ INSERT INTO `tbl_time` VALUES ('17', '周日下午');
 INSERT INTO `tbl_time` VALUES ('18', '周日晚上');
 
 -- ----------------------------
--- Table structure for tbl_user
+-- Table structure for `tbl_user`
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_user`;
 CREATE TABLE `tbl_user` (
@@ -288,8 +320,12 @@ CREATE TABLE `tbl_user` (
   `publickey` varchar(255) DEFAULT NULL,
   `privatekey` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tbl_user
 -- ----------------------------
+INSERT INTO `tbl_user` VALUES ('1', '张三', '123', 'zhangsan@qq.com', '老师', '2018-11-02 10:29:39', '张三', '430621200001015432', '男', null, null, '河北师范大学', '18级', '110', '河北师范大学', '我是张三', '软件', '1', null, null);
+INSERT INTO `tbl_user` VALUES ('2', '王五', '123', 'wangwu@', '老师', '2018-12-10 10:34:30', '王五', '430621199901012222', '男', null, null, '河北师范大学', '17级', '130', '河北大学', '我是王武', '数信', '1', null, null);
+INSERT INTO `tbl_user` VALUES ('3', '李四', '123', 'lisi@qq.com', '学生', '2018-11-14 10:29:30', '李四', '430621198501013456', '男', null, null, null, null, '120', '河北工业大学', '我是李四', null, null, null, null);
+INSERT INTO `tbl_user` VALUES ('4', '小明', '123', 'xiaoming@', '学生', '2018-12-02 10:36:31', '小明', '430621201001013345', '男', null, null, null, null, '140', '天津大学', '我是小明', null, null, null, null);
