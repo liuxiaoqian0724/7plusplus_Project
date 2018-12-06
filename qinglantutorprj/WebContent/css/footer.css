@@ -1,0 +1,148 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+div{
+	/*border:1px red solid;*/
+}
+body{
+	font-family: STXihei, "Microsoft YaHei";
+	font-weight: bold;
+}
+a{
+	text-decoration: none;
+	/*border:1px red solid;*/
+}
+.footer{
+	border:1px #34495E solid;
+	width: 100%;
+	height: 270px;
+	background-color: #222c3c;
+	/*margin-top: -10px;*/
+	color: #fffff0;
+}
+.footer-font{
+	margin: 0 auto;
+	width: 1200px;
+	height: 280px;
+	/*margin-top: 20px;*/
+	margin-top: 15px;
+}
+.font-h3{
+	color: #fffff0;
+	letter-spacing:1px;
+}
+#footer-font-about{
+	width: 420px;
+	height: 200px;
+	margin-left: 0px;
+	margin-top: 10px;
+	float: left;
+}
+#about-font{
+	width: 420px;
+	margin-top: 15px;
+	line-height: 30px;
+}
+#about-font:hover{
+	text-decoration: underline;
+}
+.footer-words{
+	font-weight: normal;
+	color: #6a8380;
+}
+#footer-font-a{
+	/*display: inline;*/
+	width: 120px;
+	height: 240px;
+	margin-left: 55px;
+	float: left;
+	margin-top: 10px;
+}
+#a-title{
+	/*display: inline;*/
+	width: 100px;
+	height: 200px;
+}
+#a-font{
+	width: 100px;
+	/*display: inline;*/
+	margin-top: -163px;
+}
+#a-font a{
+	/*display: block;*/
+	float: left;
+	margin-left: 2px;
+	line-height:30px;
+}
+#footer-font-friend{
+	width: 200px;
+	height: 240px;
+	/*display: inline;*/
+	margin-left: 55px;
+	margin-top: 10px;
+	/*margin-top: -265px;*/
+	float: left;
+}
+#friend-title{
+	width: 200px;
+	/*height: 200px;*/
+}
+#friend-logo{
+	width: 200px;
+	height: 150px;
+	margin-top: 55px;
+	float: left;
+}
+#friend-logo-div1 i{
+	/*margin-left: 10px;*/
+}
+#footer-font-img{
+	/*border: 1px #34495E solid;*/
+	width:170px;
+	height:120px;
+	margin-left: 55px;
+	float: left;
+	margin-top: 10px;
+}
+.footer-font a{
+	margin-left: 60px;
+	font-size: 14px;
+	font-family: '宋体';
+	font-weight: normal;
+	/*color: #fffff0;*/
+}
+.footer-font a:hover{
+	margin-left: 60px;
+	font-size: 14px;
+	font-family: '宋体';
+	color: #fffff0;
+	text-decoration: underline;
+}
+#footer-font-img-font{
+	/*border:1px #34495E solid;*/
+	font-size: 16px;
+	color: #fffff0;
+	font-weight: normal;
+	margin-top: 10px;
+}
+/*权利归属*/
+#footer-right{
+	width: 100%;
+	height: 65px;
+	background-color: #1b222f;
+	margin-top: -32px;
+}
+#footer-right-font{
+	margin:0 auto;
+	width: 1200px;
+	height: 60px;
+	color: #222c3c;
+	/*margin-top: 20px;*/
+}
+#footer-right-font p a{
+	margin:0 auto;
+	margin-left: 150px;
+	color: #816b64;
+
+}

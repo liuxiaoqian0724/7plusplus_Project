@@ -27,7 +27,7 @@ import org.hibernate.annotations.NotFoundAction;
  */
 
 @Entity
-@Table(name="tbl_time")
+@Table(name="tbl_teach")
 public class TeachRelation implements java.io.Serializable {
 	
 	private Integer trid;	//教课关系id
@@ -82,7 +82,7 @@ public class TeachRelation implements java.io.Serializable {
 	}
 	
 	@ManyToOne()
-	@JoinColumn(name="cid")	//课程id（cid）是外键
+	@JoinColumn(name="tid")	//课程id（cid）是外键
 	@NotFound(action=NotFoundAction.IGNORE)
 	public User getUser() {
 		return user;
@@ -92,7 +92,7 @@ public class TeachRelation implements java.io.Serializable {
 	}
 	
 	@ManyToOne()
-	@JoinColumn(name="tid")	//老师id（tid）是外键
+	@JoinColumn(name="cid")	//老师id（tid）是外键
 	@NotFound(action=NotFoundAction.IGNORE)
 	public Course getCourse() {
 		return course;

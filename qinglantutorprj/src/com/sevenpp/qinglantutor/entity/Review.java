@@ -3,6 +3,7 @@ package com.sevenpp.qinglantutor.entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -29,7 +30,7 @@ public class Review  implements java.io.Serializable {
      private String reviewContent;	//评价时间
      private Integer reviewStar;	//评价星级	
 
-     private ClassRelation classRelation=new ClassRelation();	//评价表和上课关系表是双向多对一的关系
+     private ClassRelation classRelation;	//评价表和上课关系表是双向多对一的关系
 
      @Id
  	 @GeneratedValue(strategy=GenerationType.IDENTITY)
