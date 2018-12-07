@@ -23,7 +23,8 @@
    <script type="text/javascript" src="dist/js/zui.lite.js"></script>
 	
 	<script src="js/jquery-3.2.1.js"></script>
-	<script type="text/javascript" src="js/tutordetailed.js"></script>
+	<script src="js/tutordetailed.js" type="text/javascript"></script>
+	<script src="json/json2.js" type="text/javascript"></script>
 </head>
 <body>
 <!--header-->
