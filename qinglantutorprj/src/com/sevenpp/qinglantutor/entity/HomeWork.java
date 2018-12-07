@@ -27,7 +27,12 @@ import org.hibernate.annotations.NotFoundAction;
 public class HomeWork  implements java.io.Serializable {
 
 
-     private Integer hid;
+     /** 
+			* @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么) 
+			*/
+		
+	private static final long serialVersionUID = 1L;
+	private Integer hid;
      private String tcontent;	//老师留的作业内容
      private String scontent;	//学生交的作业内容
      private Date tstartTime;	//老师留作业的时间
@@ -109,25 +114,6 @@ public class HomeWork  implements java.io.Serializable {
 	public void setTeachRelation(TeachRelation teachRelation) {
 		this.teachRelation = teachRelation;
 	}
-     
-     
-     
-   
-
-    
-
-//    @ManyToOne
-//    @JoinColumn(name="tid")
-//	public User getUser() {
-//		return user;
-//	}
-//
-//	public void setUser(User user) {
-//		this.user = user;
-//	}
-
-    
-
 
 }
 
