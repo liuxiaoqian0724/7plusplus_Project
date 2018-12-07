@@ -19,9 +19,9 @@
 		* 项目名称：qinglantutorprj
 		* 类名称：TutorListServiceImpl
 		* 类描述：
-		* 创建人：rain
+		* 创建人：cuishan
 		* 创建时间：2018年12月5日 下午4:23:50
-		* 修改人：rain
+		* 修改人：cuishan
 		* 修改时间：2018年12月5日 下午4:23:50
 		* 修改备注：
 		* @version
@@ -46,7 +46,7 @@
 			 * @version V1.0   
 			 */
 			public List<Grade> grades(){
-				return this.conditionsDaoImpl.grades();
+				return this.conditionsDaoImpl.findGrades();
 			}
 			
 			/**
@@ -62,7 +62,7 @@
 			 * @version V1.0   
 			 */
 			public List<Grade> gradesBySchoolType(String schoolType){
-				return this.conditionsDaoImpl.gradesBySchoolType(schoolType);
+				return this.conditionsDaoImpl.findGradesBySchoolType(schoolType);
 			}
 			
 			/**
@@ -71,13 +71,13 @@
 			 * @Description: 查询所有课程 
 			 * @param @return 
 			 * @return List<Course>
-			 * @author （作者） 
+			 * @author cuishan
 			 * @throws	
 			 * @date 2018年12月5日 下午3:30:44 
 			 * @version V1.0   
 			 */
 			public List<Course> courses(){
-				return this.conditionsDaoImpl.courses();
+				return this.conditionsDaoImpl.findCourses();
 			}
 			
 			

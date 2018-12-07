@@ -39,9 +39,9 @@ public class TeachRelation implements java.io.Serializable {
 	private String starttime;
 	private String endtime;
 	
+	private User user;	
 	private List<HomeWork> homeworks=new ArrayList<HomeWork>();	
 	private List<TeachPlan> teachPlans = new ArrayList<TeachPlan>();
-	private User user;	
 	private Course course;	
 	private List<ClassRelation> classRelation=new ArrayList<ClassRelation>();
 	
@@ -53,6 +53,18 @@ public class TeachRelation implements java.io.Serializable {
 	}
 	public void setTrid(Integer trid) {
 		this.trid = trid;
+	}
+	public String getStarttime() {
+		return starttime;
+	}
+	public void setStarttime(String starttime) {
+		this.starttime = starttime;
+	}
+	public String getEndtime() {
+		return endtime;
+	}
+	public void setEndtime(String endtime) {
+		this.endtime = endtime;
 	}
 	
 	@OneToMany(mappedBy="teachRelation",
@@ -76,7 +88,7 @@ public class TeachRelation implements java.io.Serializable {
 	}
 	
 	@ManyToOne()
-	@JoinColumn(name="cid")	//璇剧▼id锛坈id锛夋槸澶栭敭
+	@JoinColumn(name="tid")
 	@NotFound(action=NotFoundAction.IGNORE)
 	public User getUser() {
 		return user;
@@ -86,7 +98,7 @@ public class TeachRelation implements java.io.Serializable {
 	}
 	
 	@ManyToOne()
-	@JoinColumn(name="tid")	//鑰佸笀id锛坱id锛夋槸澶栭敭
+	@JoinColumn(name="cid")
 	@NotFound(action=NotFoundAction.IGNORE)
 	public Course getCourse() {
 		return course;
@@ -104,8 +116,6 @@ public class TeachRelation implements java.io.Serializable {
 	public void setClassRelation(List<ClassRelation> classRelation) {
 		this.classRelation = classRelation;
 	}
-	
-	
 	
 }
 

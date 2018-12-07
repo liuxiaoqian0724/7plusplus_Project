@@ -32,6 +32,7 @@ import com.sevenpp.qinglantutor.entity.Grade;
 			@Resource
 			private SessionFactory sessionFactory;
 			
+			@Override
 			/**
 			 * 
 			 * @Title: grades 
@@ -43,12 +44,13 @@ import com.sevenpp.qinglantutor.entity.Grade;
 			 * @date 2018年12月5日 下午3:25:17 
 			 * @version V1.0   
 			 */
-			public List<Grade> grades(){
+			public List<Grade> findGrades(){
 				Session session = this.sessionFactory.getCurrentSession();
 				Query q = session.createQuery("from Grade");
 				return q.list();
 			}
 			
+			@Override
 			/**
 			 * 
 			 * @Title: courses 
@@ -60,7 +62,7 @@ import com.sevenpp.qinglantutor.entity.Grade;
 			 * @date 2018年12月5日 下午3:30:44 
 			 * @version V1.0   
 			 */
-			public List<Course> courses(){
+			public List<Course> findCourses(){
 				Session session = this.sessionFactory.getCurrentSession();
 				Query q = session.createQuery("from Course");
 				return q.list();
@@ -79,7 +81,7 @@ import com.sevenpp.qinglantutor.entity.Grade;
 			 * @date 2018年12月5日 下午4:48:55 
 			 * @version V1.0   
 			 */
-			public List<Grade> gradesBySchoolType(String schoolType) {
+			public List<Grade> findGradesBySchoolType(String schoolType) {
 				Session session=this.sessionFactory.getCurrentSession();
 				Query q=null;
 				if(schoolType.equals("xiaoxue")) {	//显示小学的年级
