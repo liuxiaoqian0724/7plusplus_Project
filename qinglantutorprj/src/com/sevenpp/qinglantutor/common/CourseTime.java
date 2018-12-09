@@ -1,4 +1,8 @@
 package com.sevenpp.qinglantutor.common;
+
+import java.io.Serializable;
+import java.util.List;
+
 /**
 *
 * 项目名称：qinglantutorprj
@@ -13,25 +17,46 @@ package com.sevenpp.qinglantutor.common;
 *
 */
 
-public class CourseTime {
+public class CourseTime implements Serializable {
+	
 	
 	private String startTime;
-	private String endTime;
+	private String  endTime;
+
 	
+
+
 	public String getStartTime() {
 		return startTime;
 	}
+
+
+
+
 	public void setStartTime(String startTime) {
 		this.startTime = startTime;
 	}
+
+
+
+
 	public String getEndTime() {
 		return endTime;
 	}
+
+
+
+
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
 	}
-	
-	
+
+
+
+
+	public CourseTime() {
+		super();
+	}
 }
 
 	

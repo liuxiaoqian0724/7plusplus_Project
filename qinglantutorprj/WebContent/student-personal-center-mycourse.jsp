@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -15,7 +20,7 @@
 		<link href="dist/lib/datetimepicker/datetimepicker.min.css" rel="stylesheet">
 		
 		<!-- ZUI Javascript 依赖 jQuery -->
-		<script src="dist/lib/jquery/jquery.js"></script>
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
 		<!-- ZUI 标准版压缩后的 JavaScript 文件 -->
 		<script src="dist/js/zui.min.js"></script>
 		<link href="dist/lib/datetimepicker/datetimepicker.min.css" rel="stylesheet">
@@ -344,20 +349,17 @@
             function coursetime(){
             	var startTime = document.getElementById('c2-right-item-l4-inp1').value;
             	var endTime = document.getElementById('c2-right-item-l4-inp2').value;
-            	var json={
-            			"startTime":startTime,
-            			"endTime":endTime
-            	};
-            	//var postdata = JSON.stringify(json);
-            	///alert(postdata);
+            	var courseTime = startTime + "===" + endTime;
+            	alert(courseTime);
             	$.ajax({
             		type:"POST",
-            		contentType:"application/json;charset=UTF-8",
+            		//contentType : "application/json",
             		url:"test",
-            		dataType:"json",
-            		data: json,
-            		success:function(data){
-            			alert(data.startTime+"~~"+data.endTime);
+            		dataType:"json", 
+            		data:{"courseTime":courseTime,"ab":"23"},
+            		success:function(postdata){
+            			alert(postdata);
+            			//alert(postdata.coursetime);
             			alert("success");
             		},
             		error:function(){

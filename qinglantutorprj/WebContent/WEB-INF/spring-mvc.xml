@@ -23,6 +23,8 @@
 		<property name="prefix" value="/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
+	
+	
 	<!--文件上传的配置 -->
 	<!--SpringMVC上传文件时，需要配置MultipartResolver处理器处理器 -->
 	<bean id="MultipartResolver"
