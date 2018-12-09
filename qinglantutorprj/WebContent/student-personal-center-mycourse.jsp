@@ -29,6 +29,12 @@
 		<script src="dist/lib/kindeditor/kindeditor/plugins.ok.js"></script>
 		<script src="dist/lib/datetimepicker/datetimepicker.min.js"></script>
 		
+		<script type="text/javascript" charset="utf-8" src="textarea/ueditor.config.js"></script>
+    	<script type="text/javascript" charset="utf-8" src="textarea/ueditor.all.min.js"> </script>
+    	<!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+    	<!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+    	<script type="text/javascript" charset="utf-8" src="textarea/lang/zh-cn/zh-cn.js"></script>
+		
 		<style type="text/css">
 		  #inputSearchExample3{
 		    width: 228.67px;
@@ -220,7 +226,7 @@
     <div id="c2">
       <div class="c2" id="c2-left">
          <div class="c2-left-item" id="c2-left-news"><a href="#"><i class="icon icon-envelope"></i>&nbsp;我的消息<i class="icon icon-chevron-right"></i></a></div>
-         <div class="c2-left-item" id="c2-left-news"><a href="#"><i class="icon icon-book"></i>&nbsp;我的课程<i class="icon icon-chevron-right"></i></a></div>
+         <div class="c2-left-item" id="c2-left-news"><a href="#"><i class="i2con icon-book"></i>&nbsp;我的课程<i class="icon icon-chevron-right"></i></a></div>
          <div class="c2-left-item" id="c2-left-news"><a href="#"><i class="icon icon-flag"></i>&nbsp;学员评价<i class="icon icon-chevron-right"></i></a></div>
          <div class="c2-left-item" id="c2-left-news"><a href="#"><i class="icon icon-newspaper-o"></i>&nbsp;我的文章<i class="icon icon-chevron-right"></i></a></div>
          <div class="c2-left-item" id="c2-left-news"><a href="#"><i class="icon icon-question-sign"></i>&nbsp;我的问答<i class="icon icon-chevron-right"></i></a></div>
@@ -264,13 +270,13 @@
                 </li>
                 <li>
                   <form action="#" method="post">
-                    <input type="submit" name="detail" value="课程反馈">
+                    <input type="button" name="detail" value="课程反馈" onclick="document.getElementById('review').style.display='block';document.getElementById('fade').style.display='block';">
                   </form>
                   <form action="#" method="post">
                     <input type="button" name="detail" value="布置作业" onclick="homework()">
                   </form>
                   <form action="#" method="post">
-                    <input type="submit" name="detail" value="编辑文案">
+                    <input type="submit" name="detail" value="查看文案">
                   </form>
                 </li>
               </ul>
@@ -312,13 +318,13 @@
                     <input type="button" name="detail" value="布置作业" onclick="homework()">
                   </form>
                   <form action="#" method="post">
-                    <input type="submit" name="detail" value="编辑文案">
+                    <input type="submit" name="detail" value="查看文案">
                   </form>
                 </li>
               </ul>
           </div>
         </div>
-        <div id="light" class="white_content">
+       	<div id="light" class="white_content">
               <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"><i class="icon icon-times"></i></a><br><br>
               开始时间：
               <input id="c2-right-item-l4-inp1" type="text" class="form-control form-date" placeholder="选择或者输入一个日期：MM-dd">
@@ -328,6 +334,10 @@
                   <a href = "javascript:void(0)" onclick = "buttontime(0)">保存</a>
               </button>
         </div> 
+        <div id="review" class="white_content" style="width: 1000px;">
+        	<a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"><i class="icon icon-times"></i></a><br><br>
+		   	<script id="editor" type="text/plain" style="width:600px;height:300px;"></script>
+        </div>
         <div id="fade" class="black_overlay"></div> 
         <script type="text/javascript">
             var a = 0;
@@ -480,6 +490,39 @@
 			assign.style.display="none";
 			fade.style.display="none";
 		}
+		
+		 var ue = UE.getEditor('editor',{
+		    	toolbars:[
+		    		[
+		    			 'bold', //加粗
+		    			  'indent', //首行缩进
+				        'italic', //斜体
+				        'underline', //下划线
+				        'strikethrough', //删除线
+				        'justifyleft', //居左对齐
+				        'justifyright', //居右对齐
+				        'justifycenter', //居中对齐
+				        'justifyjustify', //两端对齐
+				        'imagecenter', //居中
+				        'forecolor', //字体颜色
+				        'backcolor', //背景色
+				        'subscript', //下标
+				        'fontborder', //字符边框
+				        'superscript', //上标
+				        'fontfamily', //字体
+				        'fontsize', //字号
+				        'pasteplain', //纯文本粘贴模式
+				        'selectall', //全选
+				         'horizontal', //分隔线
+				        'removeformat', //清除格式
+				        'time', //时间
+				        'date', //日期
+				        'link', //超链接
+				        'emotion', //表情
+				        'spechars', //特殊字符
+				  ]
+			  ]
+		});
 	</script>
 	
 </body>
