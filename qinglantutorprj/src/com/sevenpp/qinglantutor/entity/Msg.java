@@ -27,7 +27,12 @@ import org.hibernate.annotations.NotFoundAction;
 public class Msg  implements java.io.Serializable {
 
 
-     private Integer mid;	//消息id
+     /** 
+			* @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么) 
+			*/
+		
+	private static final long serialVersionUID = 839921564274320405L;
+	private Integer mid;	//消息id
 //     private Integer receiveId;	//收件人id
 //     private Integer sendid;	//发件人id
      private String content;	//内容

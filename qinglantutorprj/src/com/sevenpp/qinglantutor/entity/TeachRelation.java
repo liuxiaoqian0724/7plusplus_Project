@@ -27,9 +27,15 @@ import org.hibernate.annotations.NotFoundAction;
  */
 
 @Entity
-@Table(name="tbl_time")
+@Table(name="tbl_relation")
 public class TeachRelation implements java.io.Serializable {
 	
+	/** 
+			* @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么) 
+			*/
+		
+	private static final long serialVersionUID = 6080989745277934465L;
+
 	private Integer trid;	//教课关系id
 //	private Integer tid;	//老师id
 //	private Integer cid;	//课程id

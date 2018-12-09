@@ -23,9 +23,14 @@ import javax.persistence.Table;
 public class Grade  implements java.io.Serializable {
 
 
-     private Integer gid;	//年级id
+     /** 
+			* @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么) 
+			*/
+		
+	private static final long serialVersionUID = 697244878980934427L;
+	private Integer gid;	//年级id
      private String gname;	//年级名
-     
+     private String schooltype;
      private Set<MyJob> myJobs=new HashSet<MyJob>();
 
      @Id
@@ -49,30 +54,13 @@ public class Grade  implements java.io.Serializable {
 	}
 	public void setMyJobs(Set<MyJob> myJobs) {
 		this.myJobs = myJobs;
+	}
+	public String getSchooltype() {
+		return schooltype;
+	}
+	public void setSchooltype(String schooltype) {
+		this.schooltype = schooltype;
 	}	
-     
-     
-	
-    
-   
-    
-    
-    
-//    @ManyToOne
-//    @JoinColumn(name="tId")
-//	public MyJob getMyJob() {
-//		return myJob;
-//	}
-//
-//	public void setMyJob(MyJob myJob) {
-//		this.myJob = myJob;
-//	}
-
-
-	
-  
-
-
 }
 
 
