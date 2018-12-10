@@ -27,9 +27,8 @@ public class reviewDaoImpl {
 		Session session=this.sessionFactory.getCurrentSession();
 		/*此处查询方式等待修改*/
 		Query q=session.createQuery("from Review");
-		System.out.println("数据库读取成功");
+		System.out.println("review数据库读取成功");
 		return q.list();
-		
 	}
 
 }
