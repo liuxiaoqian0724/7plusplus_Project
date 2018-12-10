@@ -119,30 +119,137 @@
 			rePwdError.html('');
 		}
 	}
+	function switchMSG(times, ele, txt) {
+	    ele.attr('disabled', true)
+	    var idT = setInterval(function() {
+	        if(times < 1) {
+	        	ele.html(txt)
+	            ele.attr('disabled', false)
+	            clearInterval(idT)
+	        } else {
+	        	ele.html('  '+times+' s')
+	            times--
+	        }
+	    }, 1000)
+	}
+	function sendEmail(){
+		var btn = $('#send');
+		var EmailError =$('#emailError');
+		var info ={
+      			"email":$("#email").val()
+      		}
+      		$.ajax({
+                type: "post",
+                url: "emailreg/send",
+                data: JSON.stringify(info),
+                datatype: "json",
+                contentType: "application/json;charset=UTF-8",
+                success: function (data) {
+                    if (data == "ok") {
+                    	switchMSG(59, btn, "重新发送")
+                    	EmailError.html("邮件发送成功！！");
+                    }else{
+                    	$("#send").attr("disabled", false); 
+            			EmailError.html('邮件发送失败，点击重新发送！');
+                    }
+                }
+     
+            });
+		
+	}
 	function checkEmail(){
 		var email = $('#email').val();
 		var EmailError =$('#emailError');
 		var mailReg = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
 		if(email == ""){
 			isEmail = false;
+			$("#send").attr("disabled", true); 
 			EmailError.html('邮箱不能为空！');
 		}else if(!email.match(mailReg)){
 			isEmail = false;
+			$("#send").attr("disabled", true); 
 			EmailError.html('邮箱格式不正确');
-		}else{
-			isEmail = true;
-			EmailError.html('');
+		}else {
+      		var info ={
+      			"email":$("#email").val()
+      		}
+      		$.ajax({
+                type: "post",
+                url: "emailreg/check",
+                data: JSON.stringify(info),
+                datatype: "json",
+                contentType: "application/json;charset=UTF-8",
+                success: function (data) {
+                    if (data == "ok") {
+                    	isEmail = true;
+                    	$("#send").attr("disabled",false);
+            			EmailError.html('');
+                    }else{
+                    	isEmail = false;
+                    	$("#send").attr("disabled", true); 
+            			EmailError.html('该邮箱已经被注册！');
+                    }
+                }
+     
+            });
 		}
 	}
+	function submitData(){
+ 		var info ={
+  			"username":$("#username").val(),
+  			"sex":$("input[name='sex']:checked").val(),
+  			"password":$("#password").val(),
+  			"email":$("#email").val(),
+  			"roles":$("input[name='roles']:checked").val()
+  		}
+  		$.ajax({
+            type: "post",
+            url: "user/regist",
+            data: JSON.stringify(info),
+            datatype: "json",
+            contentType: "application/json;charset=UTF-8",
+            success: function (data) {
+                if (data == "ok") {
+                	if($("input[name='roles']:checked").val()=="家长"){
+                		window.location.href="student-personal-center-evaluation.jsp"
+                	}else{
+                		window.location.href="teacher-personal-center-evaluation.jsp"
+                	}
+                }
+            }
+ 
+        });
+  	}
 	function checkEIdentify(){
 		var EIdentify = $('#EIdentify').val();
 		var EIdentifyError =$('#EIdentifyError');
 		if(EIdentify == ""){
 			isEIdentify = false;
-			EIdentify.html('验证码不能为空');
+			EIdentifyError.html('验证码不能为空');
 		}else{
-			isEIdentify = true;
-			EIdentify.html('');
+				var info ={
+		      			"email":$("#email").val(),
+		      			"authCode":$('#EIdentify').val(),
+		      			"type":"reg"
+		      		}
+		      		$.ajax({
+		                type: "post",
+		                url: "authcode/verify",
+		                data: JSON.stringify(info),
+		                datatype: "json",
+		                contentType: "application/json;charset=UTF-8",
+		                success: function (data) {
+		                    if (data == "succeed") {
+		                    	EIdentifyError.html('验证码正确');
+		                    	isEIdentify = true;
+		                    }else{
+		                    	EIdentifyError.html('验证码错误');
+		                    	isEIdentify = false;
+		                    }
+		                }
+		     
+		            });
+			
 		}
 	}
 	function checkRegist(){

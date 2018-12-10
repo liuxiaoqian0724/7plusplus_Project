@@ -100,34 +100,6 @@
       			<p>扫描二维码获得更多动态信息</p>
       		</div>
       	</div>
-      
-      	<!--注册register-->
-      	<script>
-      	function submitData(){
-      		alert("aaaa")
-      		var info ={
-      			"username":$("#username").val(),
-      			"sex":$("input[name='sex']:checked").val(),
-      			"password":$("#password").val(),
-      			"email":$("#email").val(),
-      			"roles":$("input[name='roles']:checked").val()
-      		}
-      		alert(JSON.stringify(info))
-      		$.ajax({
-                type: "post",
-                url: "<%=basePath%>/user/regist",
-                data: JSON.stringify(info),
-                datatype: "json",
-                contentType: "application/json;charset=UTF-8",
-                success: function (data) {
-                    if (data.res == "ok") {
-                    	console.log("注册成功！")
-                    }
-                }
-     
-            });
-      	}
-      	</script>
       	<div class="panel" id="register"style="display:none;">
       		<div id="register_title">
       			<h1>会员注册</h1>
@@ -142,7 +114,8 @@
         				<div class="form-group">
           				<label for="exampleInputAccount4" class="col-sm-2">用户名</label>
           				<div class="col-md-6 col-sm-10">
-            					<input type="text" class="form-control" id="username" placeholder="请输入1-6位的汉字、英文、数字、下划线" onblur="checkName()"><span id="nameError" style="color: red;font-size: 17px;">
+            					<input type="text" class="form-control" id="username" placeholder="请输入1-6位的汉字、英文、数字、下划线" onblur="checkName()">
+            					<span id="nameError" style="color: red;font-size: 17px;">
             					</span>
           				</div>
         				</div>
@@ -181,7 +154,7 @@
             					<input type="text" class="form-control" id="email" placeholder="邮箱名" style="width:320px;"onblur="checkEmail()">
             					<span id="emailError" style="color: red;font-size: 17px;">
             					</span>
-            					<button class="btn btn-info" type="button" style="float:right; margin-top:-32px;">发送验证码</button>
+            					<button class="btn btn-info" type="button" style="float:right; margin-top:-32px;width:20%;" id="send" onclick="sendEmail()" disabled="true">发送验证码</button>
           				</div>
         				</div>
         				<!--图形验证-->

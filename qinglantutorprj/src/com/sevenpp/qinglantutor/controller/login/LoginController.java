@@ -72,8 +72,12 @@ public class LoginController {
 			jessionid.setMaxAge(3600);
 			response.addCookie(jessionid);
 			response.addCookie(EMAIL);
-			request.setAttribute("errorMsg","");
-			return "student-personal-center-evaluation";
+			if (loginServiceImpl.getRole(email).equals("家长")) {
+				return "student-personal-center-evaluation";
+				
+			}else {
+				return "teacher-personal-center-evaluation";
+			}
 		}else {
 			request.setAttribute("errorMsg","账户或者密码不正确");
 			return "index";

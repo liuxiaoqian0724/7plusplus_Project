@@ -99,4 +99,18 @@ public class LogInDaoImpl implements LogInDao {
 				.setParameter(0, email).uniqueResult());
 	}
 
+	@Override
+	public String getRole(String email) {
+				/**
+				* getRole(获取角色)
+				* @param name
+				* @param @return 设定文件
+				* @return String DOM对象
+				* @Exception 异常对象
+				* @since CodingExample Ver(编码范例查看) 1.1
+				*/
+		return ((String) this.getSession().createQuery("select role from User where email=?")
+				.setParameter(0, email).uniqueResult());
+	}
+
 }

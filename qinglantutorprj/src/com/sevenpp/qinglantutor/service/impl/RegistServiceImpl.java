@@ -55,9 +55,9 @@ public class RegistServiceImpl implements RegistService {
 			if (!registDaoImpl.existEmail(map.get("email"))) {
 				
 			try {
-				RSAEncrypt.genKeyPair();
-				String publicKey = RSAEncrypt.keyMap.get(0);
-				String privateKey = RSAEncrypt.keyMap.get(1);
+				RSAEncrypt rsaEncrypt = new RSAEncrypt();
+				String publicKey = rsaEncrypt.getPublickey();
+				String privateKey = rsaEncrypt.getPrivatekey();
 				String userPwd;
 				userPwd = RSAEncrypt.encrypt(map.get("password"), publicKey);
 				User user = new User();

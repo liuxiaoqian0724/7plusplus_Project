@@ -1,5 +1,7 @@
 package com.sevenpp.qinglantutor.controller.regist;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -48,12 +50,13 @@ public class RegistController {
 	@Resource
 	private RegistServiceImpl RegistServiceImpl;
 	@RequestMapping(value="/regist", method=RequestMethod.POST)
-	public String regist(@RequestBody Map<String, String>map,HttpServletResponse response,HttpServletRequest request) {
+	public void regist(@RequestBody Map<String, String>map,HttpServletResponse response,HttpServletRequest request) {
 		response.setHeader("Access-Control-Allow-Origin", "*");
 		response.setHeader("Access-Control-Allow-Methods", "POST");
 		response.setHeader("Access-Control-Allow-Headers","x-requested-with,content-type");
 		response.setContentType("text/html;charset=utf-8");
 		response.setCharacterEncoding("utf-8");
+		PrintWriter writer;
 		if (RegistServiceImpl.regist(map)) {
 			String JSESSIONID = request.getRequestedSessionId();
 			Cookie jessionid = new Cookie("JESSIONID",JSESSIONID);
@@ -61,10 +64,24 @@ public class RegistController {
 			jessionid.setMaxAge(3600);
 			response.addCookie(jessionid);
 			response.addCookie(EMAIL);
-			return "student-personal-center-evaluation";
+			try {
+				writer = response.getWriter();
+				writer.write("ok");
+				writer.flush();
+				writer.close();
+			} catch (IOException e) {
+				
+			}
+			
 		}else {
-			request.setAttribute("errorMsg","注册出现问题！");
-			return "index";
+			try {
+				writer = response.getWriter();
+				writer.write("error");
+				writer.flush();
+				writer.close();
+			} catch (IOException e) {
+					
+			}
 		}
 	}
 	

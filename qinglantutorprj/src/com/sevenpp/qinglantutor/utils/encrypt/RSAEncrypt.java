@@ -10,8 +10,6 @@ import java.security.interfaces.RSAPublicKey;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.Base64;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.crypto.Cipher;
 /**
@@ -23,8 +21,20 @@ import javax.crypto.Cipher;
 		* @version V1.0 
  */
 public class RSAEncrypt {
-	  public static Map<Integer, String> keyMap = new HashMap<Integer, String>();  //用于封装随机产生的公钥与私钥
-
+		private String publickey;
+		private String privatekey;
+		public String getPublickey() {
+			return publickey;
+		}
+		public void setPublickey(String publickey) {
+			this.publickey = publickey;
+		}
+		public String getPrivatekey() {
+			return privatekey;
+		}
+		public void setPrivatekey(String privatekey) {
+			this.privatekey = privatekey;
+		}
 	/**
 	 * 
 			* @Title: genKeyPair 
@@ -36,7 +46,7 @@ public class RSAEncrypt {
 			* @date 2018年12月3日 下午3:40:53 
 			* @version V1.0   
 	 */
-	public static void genKeyPair() throws NoSuchAlgorithmException {  
+	public void genKeyPair() throws NoSuchAlgorithmException {  
 		// KeyPairGenerator类用于生成公钥和私钥对，基于RSA算法生成对象  
 		KeyPairGenerator keyPairGen = KeyPairGenerator.getInstance("RSA");  
 		// 初始化密钥对生成器，密钥大小为96-1024位  
@@ -49,9 +59,16 @@ public class RSAEncrypt {
 		// 得到私钥字符串  
 		String privateKeyString = new String(Base64.getEncoder().encodeToString((privateKey.getEncoded())));  
 		// 将公钥和私钥保存到Map
-		keyMap.put(0,publicKeyString);  //0表示公钥
-		keyMap.put(1,privateKeyString);  //1表示私钥
+		setPrivatekey(privateKeyString);  //0表示公钥
+		setPublickey(publicKeyString);  //1表示私钥
 	}  
+	public RSAEncrypt() {
+		try {
+			genKeyPair();
+		} catch (NoSuchAlgorithmException e) {
+				
+		}
+	}
 	/** 
 	 * RSA公钥加密 
 	 *  
