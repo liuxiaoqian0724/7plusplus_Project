@@ -37,7 +37,20 @@
 	
 	<!--对所有静态资源放行  -->
 	<mvc:default-servlet-handler/>
-	<mvc:annotation-driven/>
+	<mvc:annotation-driven>
+    <mvc:message-converters register-defaults="true">
+        <bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+            <!--<property name="supportedMediaTypes" value="application/json;charset=UTF-8"/>
+            <property name="features">
+                <array>
+                    <value>WriteMapNullValue</value>
+                    <value>WriteNullStringAsEmpty</value>
+                </array>
+            </property>-->
+        </bean>
+    </mvc:message-converters>
+</mvc:annotation-driven>
+
        
 	
 	<!--proxy-target-class属性值决定是基于接口的还是基于类的代理被创建。如果proxy-target-class 属性值被设置为true，那么基于类的代理将起作用（这时需要cglib库）。 

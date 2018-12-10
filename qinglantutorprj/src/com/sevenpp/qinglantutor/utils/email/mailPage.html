@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>来自青蓝的问候</title>
+	<meta charset="utf-8" />
+	<style type="text/css">
+		#header{
+			width: 100%;
+			height: 22px;
+			text-align: right;
+			font-size: 18px;
+			margin: 0 auto; 
+		}
+		#mainbox{
+			width: 100%;
+			height: 550px;
+			background-color:#FCFCFC;
+			margin: 0 auto; 
+			border: 3px dashed #BBBBBB;
+		}
+		#welcome{
+			padding-top: 20px;
+			width: 100%;
+			text-align: center;
+			font-size: 30px;
+		}
+		#title{
+			padding-top: 5px;
+			width: 100%;
+			text-align: center;
+			font-size: 30px;
+		}
+		.colorText{
+			color: rgb(0, 139, 209);
+		}
+		.redText{
+			color:#E51C23; 
+		}
+		#nameCheck{
+			padding-top: 30px;
+			width: 100%;
+			padding-left: 5px;
+			text-align: left;
+			font-size: 20px;
+		}
+		#codeCheck{
+			margin: 0 auto; 
+			padding-top: 5px;
+			padding-left: 5px;
+			width: 100%;
+			text-align: left;
+			font-size: 20px;
+		}
+		#code{
+			padding-top: 10px;
+			width: 100%;
+			text-align: center;
+			font-size: 500%;
+		}
+		#code{
+			padding-top: 10px;
+			width: 100%;
+			text-align: center;
+			font-size: 60px;
+		}
+		#codeWarning{
+			padding-top: 5px;
+			text-align: center;
+			font-size: 15px;
+		}
+		.inform{
+			padding-top: 5px;
+			text-align: left;
+			margin: 0 auto; 
+			color: #828282;
+			width: 90%;
+		}
+		#jumpToindex a:link {color: rgb(0, 139, 209);text-decoration:none;}
+		#jumpToindex{
+			padding-top: 10px;
+			font-size: 20px;
+			text-align:center;
+		}
+		#footer{
+			width: 40%;
+			margin: 0 auto;
+			text-align:center;
+			color: gray;
+		}
+		#footer a:link {color: rgb(0, 139, 209);text-decoration:none;}
+	</style>
+</head>
+<body>
+<div id="header">来自青蓝的问候</div>
+<div id="mainbox">
+	<div id="welcome">亲爱的用户 您好!</div>
+	<div id="title">欢迎使用<a class="colorText">青蓝家教</a></div>
+	<div id="nameCheck">请核对您的用户名:<a class="colorText">$(userName)</a></div>
+	<div id="codeCheck">您的<a class="redText">$(type)</a>验证码是:</div>
+	<div id="code"><a class="redText">$(captcha)</a></div>
+	<div id="codeWarning">(请在10分钟内输入验证码以完成注册，验证码十分钟后失效)</div>
+	<hr width=90% style="border:3px dashed gray; margin-top: 10px;">
+	<div class="inform">若这封验证邮件并非应您要求寄发，请您忽略不须予以理会</div>
+	<div class="inform">这不会对您的邮箱安全造成任何影响。</div>
+	<div id="jumpToindex">如果仍有问题，请登录我们的官网:<a href="#" id="colorText">青蓝家教</a></div>
+</div>
+<div id="footer">2018青蓝家教·<a href="#">新浪微博</a>·<a href="#">微信公众号</a></div>
+
+</body>
+</html>
