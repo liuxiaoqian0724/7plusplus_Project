@@ -1,12 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<%
+ String appContext = request.getContextPath();
+ String basePath= request.getScheme()+"://"+request.getServerName()+":"+ request.getServerPort() + appContext+"/";
+%>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>家教详情</title>
 	<meta charset="utf-8">
+	<base href="<%=basePath%>">
    <!--引入css-->
    <link rel="stylesheet" href="dist/css/zui.min.css">
    <link rel="stylesheet" href="dist/css/zui.css">
@@ -40,7 +44,7 @@
          <ol class="breadcrumb">
            <li><a href="indexed.html"><i class="icon icon-home"></i>&nbsp;Home</a></li>
            <li><a href="tutorlisted.html">石家庄家教老师</a></li>
-           <li class="active">张娴</li>
+           <li class="active">${user.realName}</li>
          </ol>
    		<!--个人信息-->
    		<div class="information">
@@ -48,24 +52,23 @@
    			<div class="in-photo">
    				<div class="bigimg">
                   <div class="img">
-                     <img src="images/big-img4.jpg" width="320px" height="320px" class="img-rounded" alt="圆角图片">
+                     <img src="${user.img1}" width="320px" height="320px" class="img-rounded" alt="圆角图片">
                   </div>
-   					
    				</div>
    				<div class="imgs">
    					<ul>
    						<!--数据库循环-->
    						<li><!-- <img data-toggle="lightbox" src="images/img4.jpg" data-image="images/big-img4.jpg" data-caption="小图看大图" class="img-thumbnail" id="img-spc" alt="" width="60"> -->
-                     <img src="images/img4.jpg" class="img-thumbnail" id="img-spc" width="60" data-image="images/big-img4.jpg">            
+                     <img src="${user.img2}" class="img-thumbnail" id="img-spc" width="60" data-image="images/big-img4.jpg">            
                      </li>
                      <li><!-- <img data-toggle="lightbox" src="images/img3.jpg" data-image="images/big-img3.jpg" data-caption="小图看大图" class="img-thumbnail" alt="" width="60px" height="60px"> -->
-                     <img src="images/img3.jpg" class="img-thumbnail" id="img-spc" width="60" data-image="images/big-img3.jpg">
+                     <img src="${user.img3}" class="img-thumbnail" id="img-spc" width="60" data-image="images/big-img3.jpg">
                      </li>
    						<li><!-- <img data-toggle="lightbox" src="images/img5.jpg" data-image="images/big-img5.jpg" data-caption="小图看大图" class="img-thumbnail" alt="" width="60"> -->
-                     <img src="images/img5.jpg" class="img-thumbnail" id="img-spc" width="60" data-image="images/big-img5.jpg">            
+                     <img src="${user.img4}" class="img-thumbnail" id="img-spc" width="60" data-image="images/big-img5.jpg">            
                      </li>
                      <li><!-- <img data-toggle="lightbox" src="images/img3.jpg" data-image="images/big-img3.jpg" data-caption="小图看大图" class="img-thumbnail" alt="" width="60"> -->
-                     <img src="images/img3.jpg" class="img-thumbnail" id="img-spc" width="60" data-image="images/big-img3.jpg">
+                     <img src="${user.img4}" class="img-thumbnail" id="img-spc" width="60" data-image="images/big-img3.jpg">
                      </li>
    					</ul>
    				</div>
@@ -74,23 +77,26 @@
    			<div class="in-detail">
                <!--家教名-->
    				<div class="de-name">
-   					<b>张娴</b>
+   					<b>${user.realName}</b>
    				</div>
    				<div class="de-lineone">
-   					教龄：11年&nbsp;&nbsp;|&nbsp;&nbsp;  好评数48条 
+   					教龄：${user.myJobs[0].teacherAge}年&nbsp;&nbsp;|&nbsp;&nbsp;  评价数48条 
    				</div>
    				<div class="de-linetwo">
    					<div class="one">
    						<!--数据库查询-->
-   						<span class="title">课酬</span>
-                     <span class="price"><i class="icon icon-yen"></i>&nbsp;221</span>
+   						<span class="title">课时费：</span>
+                     <span class="price"><i class="icon icon-yen"></i>&nbsp;${user.myJobs[0].price}</span>
                      <span class="hour">/小时</span>
+                     <!--根据数据库评价星级展示星星  -->
    						<span class="star">
-                        <img src="images/fill-star.png" style="width: 20px;height: 20px;">
-                        <img src="images/fill-star.png" style="width: 20px;height: 20px;">
-                        <img src="images/fill-star.png" style="width: 20px;height: 20px;">
-                        <img src="images/fill-star.png" style="width: 20px;height: 20px;">
-                        <img src="images/empty-star.png" style="width: 20px;height: 20px;">            
+   							<c:forEach begin="0" end="${user.classRelation[0].reviews[0].reviewStar}">
+   								<c:out value="${user.classRelation[0].reviews[0].reviewStar}"></c:out>
+   								<img src="images/fill-star.png" style="width: 20px;height: 20px;">
+   							</c:forEach>
+   							<c:forEach begin="${user.classRelation[0].reviews[0].reviewStar}" end="3">
+                        		<img src="images/empty-star.png" style="width: 20px;height: 20px;">
+                        	</c:forEach>         
                      </span>
                      <div class="separator1"></div> 
                      <span class="comment">

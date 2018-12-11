@@ -32,7 +32,7 @@ import com.sevenpp.qinglantutor.entity.User;
 		*/
 		public interface TutorDetailService {
 			
-			public User getTutorDetail(int id);
+			public User getTutorDetail(Integer id);
 
 }
 

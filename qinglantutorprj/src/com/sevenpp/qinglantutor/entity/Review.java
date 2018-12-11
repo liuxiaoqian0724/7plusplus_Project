@@ -1,6 +1,6 @@
 package com.sevenpp.qinglantutor.entity;
 
-
+import java.beans.Transient;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -13,31 +13,26 @@ import javax.persistence.Table;
 
 /**
  * 
- * @ClassName:  TblReview   
+ * @ClassName: TblReview
  * @Description:评论表
  * @author: liuxiaoqian
- * @date:   2018年11月30日 下午2:58:40   
+ * @date: 2018年11月30日 下午2:58:40
  *
  */
 @Entity
-@Table(name="tbl_review")
-public class Review  implements java.io.Serializable {
+@Table(name = "tbl_review")
+public class Review implements java.io.Serializable {
 
-
-     /** 
-			* @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么) 
-			*/
-		
 	private static final long serialVersionUID = 1L;
-	private Integer rid;	//评价id
-     private Date reviewTime;	//评价时间
-     private String reviewContent;	//评价时间
-     private Integer reviewStar;	//评价星级	
-
-     private ClassRelation classRelation=new ClassRelation();	//评价表和上课关系表是双向多对一的关系
-
-     @Id
- 	 @GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Integer rid; // 评价id
+	private Date reviewTime; // 评价时间
+	private String reviewContent; // 评价时间
+	private Integer reviewStar; // 评价星级
+	private ClassRelation classRelation = new ClassRelation(); // 评价表和上课关系表是双向多对一的关系
+	
+	private Integer reviewCount;//获取评论数
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer getRid() {
 		return rid;
 	}
@@ -71,18 +66,25 @@ public class Review  implements java.io.Serializable {
 	}
 
 	@ManyToOne()
-	@JoinColumn(name="crid")	//上课关系crid是外键
+	@JoinColumn(name = "crid") // 上课关系crid是外键
 	public ClassRelation getClassRelation() {
 		return classRelation;
 	}
 
 	public void setClassRelation(ClassRelation classRelation) {
 		this.classRelation = classRelation;
-	}	
-     
-    
+	}
 
+	//非数据库字段，统计评论条数
+	@Transient
+	public Integer getReviewCount() {
+		return reviewCount;
+	}
 
+	public void setReviewCount(Integer reviewCount) {
+		this.reviewCount = reviewCount;
+	}
+
+	
+	
 }
-
-

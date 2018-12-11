@@ -12,9 +12,10 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.alibaba.fastjson.JSONObject;
+import com.sevenpp.qinglantutor.entity.User;
 import com.sevenpp.qinglantutor.service.impl.TutorDetailServiceImpl;
 
 /**
@@ -49,20 +50,16 @@ import com.sevenpp.qinglantutor.service.impl.TutorDetailServiceImpl;
 					* @Description: 根据请求显示相应家教的基本信息
 					* @param @return    入参
 					* @return String    返回类型
-					* @author （作者） 
+					* @author lxq
 					* @throws
 					* @date 2018年12月5日 下午5:29:09 
 					* @version V1.0   
 			 */
-			@RequestMapping(value="/showtutorDetail")
-			public String showTutorDetail(HttpServletRequest request) {
-				/**
-				 * 获取request json对象中id信息
-				 */
-				String jsonStr=request.getParameter("jsonUser");
-				
-				
-				
+			@RequestMapping(value="/showtutorDetail/{id}")
+			public String showTutorDetail(HttpServletRequest request,@PathVariable Integer id) {
+				System.out.println(id);
+				User user=tutorDetailServiceImpl.getTutorDetail(id);
+				request.setAttribute("user",user);
 				return "tutordetailed";
 			}
 }
