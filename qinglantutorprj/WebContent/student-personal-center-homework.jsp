@@ -38,71 +38,7 @@
 </head>
 <body>
 <!-- 头部 -->
-<div id="head">
-    <div id="header-box">
-    <div id="big-box">
-      <!-- logo -->
-      <div id="top-box">
-        <div id="top-box-logo">
-          <img src="images/headerlogo.png" alt="logo" id="logoPic">
-          <div id="name-pic"><img src="images/nameTop.png" alt="namePic" style="width: 263.3px;height:66px;"></div>
-        </div>
-      </div>
-    </div>
-      <!-- 下拉菜单 -->
-      <div id="bottom-box">
-        <div id="topBox2">
-          <ul id="navFont">
-          <li class="navFont1"><a href="#">首页</a></li>
-          <li><a href="#">家教</a>
-            <ul>
-              <li><a href="#">小学</a></li>
-              <li><a href="#">初中</a></li>
-              <li><a href="#">高中</a></li>
-            </ul>
-          </li>
-          <li><a href="#">论坛社区</a>
-            <ul>
-              <li><a href="#">学霸说</a></li>
-              <li><a href="#">资料库</a></li>
-              <li><a href="#">家长岛</a></li>
-            </ul>
-          </li>
-          <li><a href="#">我要提问</a>
-            <ul>
-              <li><a href="#">心理困惑</a></li>
-              <li><a href="#">情感问题</a></li>
-              <li><a href="#">学习障碍</a></li>
-            </ul>
-          </li>
-          <li><a href="#">个人中心</a></li>
-        </ul>
-      <!-- 搜索框 -->
-      <!-- <div id="searchPart">
-          <form id="partForm">
-            <input type="text" value="请输入您要搜索的科目" id="partInput" autofocus="autofocus" />
-            <input type="submit" id="search_btn" name="heder-submit" value="搜索" />
-          </form>
-        </div> -->
-        <div class="input-group">
-            <div class="input-control search-box search-box-circle has-icon-left has-icon-right search-example" id="searchboxExample">
-              <input id="inputSearchExample3" type="search" class="form-control search-input" placeholder="搜索">
-              <label for="inputSearchExample3" class="input-control-icon-left search-icon"><i class="icon icon-search"></i></label>
-            </div>
-          <span class="input-group-btn">
-            <button class="btn btn-primary" type="button">搜索</button>
-          </span>
-      </div>
-        <!-- 登录注册 -->
-        <div id="header-login">
-          <span><a href="#">登录</a></span>
-          <!-- <span>/</span> -->
-          <span><a href="#">注册</a></span>
-        </div>
-      </div>
-      </div>
-  </div>
-</div>
+<jsp:include page="header.jsp"></jsp:include>
 <script>
         var search = document.getElementById("partInput");
         search.onfocus = function(){
@@ -160,14 +96,18 @@
         </div>
         
         <div class="panel-body">
-        <c:forEach items="${homework }" var="h">
+      
+       		
+        	<c:forEach  items="${homework }" var="h">
            <div>
+           	 <c:forEach items="${teachers }" var="t">
            	
               <div class="c2-right-left">
-                  <img src="images/b.jpg" width="115px" height="115px" class="img-circle" alt="圆形图片">
-                  <p>李老师</p>
+                  <img src="${t.userImg}" width="115px" height="115px" class="img-circle" alt="圆形图片">
+                  <p>${t.userName}</p>
                   <button>待完成</button>
               </div>
+             	
               
               <div class="c2-right-right">
                   <div>
@@ -178,9 +118,11 @@
                   <button type="button"><a href="#">查看详情</a></button>
                    <button type="button"><a href="#">完成作业</a></button>
               </div>
-              
+              </c:forEach>
            </div>
-          </c:forEach>
+           </c:forEach >
+           
+       
         </div>
         
       </div>
