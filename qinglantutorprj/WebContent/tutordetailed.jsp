@@ -91,7 +91,6 @@
                      <!--根据数据库评价星级展示星星  -->
    						<span class="star">
    							<c:forEach begin="0" end="${user.classRelation[0].reviews[0].reviewStar}">
-   								<c:out value="${user.classRelation[0].reviews[0].reviewStar}"></c:out>
    								<img src="images/fill-star.png" style="width: 20px;height: 20px;">
    							</c:forEach>
    							<c:forEach begin="${user.classRelation[0].reviews[0].reviewStar}" end="3">
