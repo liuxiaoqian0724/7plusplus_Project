@@ -96,6 +96,11 @@ public class ClassRelation {
 
 	public void setTeachRelation(TeachRelation teachRelation) {
 		this.teachRelation = teachRelation;
+	}
+
+	public String toString() {
+		return "ClassRelation [crid=" + crid + ", reviews=" + reviews + ", homeWorks=" + homeWorks + ", user=" + user
+				+ ", teachRelation=" + teachRelation + "]";
 	}	
 	
 	

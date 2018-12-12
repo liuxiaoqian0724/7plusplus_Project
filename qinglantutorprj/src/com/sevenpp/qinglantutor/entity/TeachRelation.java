@@ -85,7 +85,7 @@ public class TeachRelation implements java.io.Serializable {
 	}
 	
 	@ManyToOne()
-	@JoinColumn(name="cid")	//课程id（cid）是外键
+	@JoinColumn(name="tid")	//课程id（cid）是外键
 	@NotFound(action=NotFoundAction.IGNORE)
 	public User getUser() {
 		return user;
@@ -95,7 +95,7 @@ public class TeachRelation implements java.io.Serializable {
 	}
 	
 	@ManyToOne()
-	@JoinColumn(name="tid")	//老师id（tid）是外键
+	@JoinColumn(name="cid")	//老师id（tid）是外键
 	@NotFound(action=NotFoundAction.IGNORE)
 	public Course getCourse() {
 		return course;
@@ -124,6 +124,11 @@ public class TeachRelation implements java.io.Serializable {
 	}
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
+	}
+	public String toString() {
+		return "TeachRelation [trid=" + trid + ", homeworks=" + homeworks + ", teachPlans=" + teachPlans + ", user="
+				+ user + ", course=" + course + ", classRelation=" + classRelation + ", startTime=" + startTime
+				+ ", endTime=" + endTime + "]";
 	}
 	
 	

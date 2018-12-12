@@ -1,25 +1,16 @@
 package com.sevenpp.qinglantutor.controller;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
-import javax.servlet.http.HttpServletResponse;
-
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.alibaba.fastjson.JSONObject;
 import com.sevenpp.qinglantutor.common.CourseTime;
-import com.sevenpp.qinglantutor.entity.Course;
+import com.sevenpp.qinglantutor.entity.CourseInformation;
+
 /**
 *
 * 项目名称：qinglantutorprj
@@ -43,11 +34,14 @@ public class test {
 	
 	@RequestMapping(value="/test",method=RequestMethod.POST)
 	@ResponseBody
-	public String setCourseTime(@RequestParam(value="courseTime",required=false) String courseTime,
-			@RequestParam(value="ab",required=false) String ad) {
-		System.out.println("test.java"+"~~"+courseTime+"~"+ad);
+	public String setCourseTime(@RequestBody CourseTime courseTime) {
+		System.out.println(courseTime.toString());
 		
 		return "{\"coursetime\":\"123\"}";
+	}
+	
+	public static void main(String[] args) {
+		
 	}
 }
 

@@ -109,6 +109,12 @@ public class HomeWork  implements java.io.Serializable {
 	public void setTeachRelation(TeachRelation teachRelation) {
 		this.teachRelation = teachRelation;
 	}
+	public String toString() {
+		return "HomeWork [hid=" + hid + ", tcontent=" + tcontent + ", scontent=" + scontent + ", tstartTime="
+				+ tstartTime + ", sfinishTime=" + sfinishTime + ", score=" + score + ", sstatus=" + sstatus
+				+ ", tstatus=" + tstatus + ", classRelation=" + classRelation + ", teachRelation=" + teachRelation
+				+ "]";
+	}
      
      
      

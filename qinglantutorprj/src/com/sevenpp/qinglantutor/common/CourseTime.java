@@ -19,7 +19,7 @@ import java.util.List;
 
 public class CourseTime implements Serializable {
 	
-	
+	private String ed;
 	private String startTime;
 	private String  endTime;
 
@@ -51,12 +51,34 @@ public class CourseTime implements Serializable {
 		this.endTime = endTime;
 	}
 
+	
+
+
+	public String getEd() {
+		return ed;
+	}
+
+
+
+
+	public void setEd(String ed) {
+		this.ed = ed;
+	}
+
+	
+
+
+	public String toString() {
+		return "CourseTime [ed=" + ed + ", startTime=" + startTime + ", endTime=" + endTime + "]";
+	}
+
 
 
 
 	public CourseTime() {
 		super();
 	}
+	
 }
 
 	

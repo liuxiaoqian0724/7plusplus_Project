@@ -50,6 +50,9 @@ public class Time implements java.io.Serializable {
 	public void setMyJobs(Set<MyJob> myJobs) {
 		this.myJobs = myJobs;
 	}
+	public String toString() {
+		return "Time [tid=" + tid + ", time=" + time + ", myJobs=" + myJobs + "]";
+	}
 	
 	
 	

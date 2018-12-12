@@ -56,6 +56,9 @@ public class Grade  implements java.io.Serializable {
 	}
 	public void setSchooltype(String schooltype) {
 		this.schooltype = schooltype;
+	}
+	public String toString() {
+		return "Grade [gid=" + gid + ", gname=" + gname + ", schooltype=" + schooltype + ", myJobs=" + myJobs + "]";
 	}	
     
 	

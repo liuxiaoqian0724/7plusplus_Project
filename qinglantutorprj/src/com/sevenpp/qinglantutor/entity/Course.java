@@ -70,8 +70,11 @@ public class Course  implements java.io.Serializable {
 		this.teachRelations = teachRelations;
 	}
 
-	
-	
+	public String toString() {
+		return "Course [cid=" + cid + ", cname=" + cname + ", myJobs=" + myJobs + ", teachRelations=" + teachRelations
+				+ "]";
+	}
+
      
 
 

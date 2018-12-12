@@ -80,6 +80,11 @@ public class Msg  implements java.io.Serializable {
 	public void setUser(User user) {
 		this.user = user;
 	}
+
+	public String toString() {
+		return "Msg [mid=" + mid + ", content=" + content + ", sendTime=" + sendTime + ", status=" + status + ", user="
+				+ user + "]";
+	}
      
      
     

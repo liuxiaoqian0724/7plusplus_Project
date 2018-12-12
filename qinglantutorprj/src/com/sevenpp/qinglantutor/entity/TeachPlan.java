@@ -68,8 +68,13 @@ public class TeachPlan  implements java.io.Serializable {
 	 public void setTeachRelation(TeachRelation teachRelation) {
 	 	this.teachRelation = teachRelation;
 	 }
+
+	public String toString() {
+		return "TeachPlan [id=" + id + ", content=" + content + ", time=" + time + ", teachRelation=" + teachRelation
+				+ "]";
+	}
      
-    
+	 
    
 
 

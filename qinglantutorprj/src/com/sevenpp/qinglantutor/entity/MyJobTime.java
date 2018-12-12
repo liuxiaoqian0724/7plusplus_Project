@@ -51,6 +51,11 @@ public class MyJobTime  implements java.io.Serializable {
         this.time = time;
     }
 
+	public String toString() {
+		return "MyJobTime [id=" + id + ", time=" + time + "]";
+	}
+
+    
 //	@ManyToOne
 //	@JoinColumn(name="teachplanId")
 //	public MyJob getMyjob() {

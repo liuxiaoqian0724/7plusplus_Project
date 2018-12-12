@@ -26,8 +26,8 @@ public class Review  implements java.io.Serializable {
 
      private Integer rid;	//评价id
      private Date reviewTime;	//评价时间
-     private String reviewContent;	//评价时间
-     private Integer reviewStar;	//评价星级	
+     private String reviewContent;	//评价内容
+     private Integer reviewStar;	//评价星级
 
      private ClassRelation classRelation=new ClassRelation();	//评价表和上课关系表是双向多对一的关系
 
@@ -73,6 +73,11 @@ public class Review  implements java.io.Serializable {
 
 	public void setClassRelation(ClassRelation classRelation) {
 		this.classRelation = classRelation;
+	}
+
+	public String toString() {
+		return "Review [rid=" + rid + ", reviewTime=" + reviewTime + ", reviewContent=" + reviewContent
+				+ ", reviewStar=" + reviewStar + ", classRelation=" + classRelation + "]";
 	}	
      
     

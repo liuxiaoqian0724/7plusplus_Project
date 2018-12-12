@@ -126,12 +126,6 @@
       </div>
   </div>
 </div>
-<script>
-        var search = document.getElementById("partInput");
-        search.onfocus = function(){
-            search.value="";
-        }
-</script>
 
 	<!--作业布置-->
 	<div id="assign">
@@ -287,49 +281,7 @@
                 </li>
               </ul>
           </div>
-          <div  class="c2-right-item"> 
-              <ul>
-                <li>
-                  <span>科目</span>
-                  <p>数学</p>
-                </li>
-                <li>
-                  <span>学生</span>
-                  <div>
-                    <img src="images/b.jpg" width="115px" height="115px" class="img-circle" alt="圆形图片">
-                  </div>
-                  <p>李狗蛋</p>
-                </li>
-                <li>
-                  <span>作业</span><br>
-                  <span style="text-align: center; ">已完成：...</span><br><br>
-                    <p>.....作业</p><p>.....作业</p><p>.....作业</p><p>.....作业</p><p>.....作业</p><p>.....作业</p><p>.....作业</p><p>.....作业</p>   
-                </li>
-                <li>
-                  <span>课程时间</span><br><br>
-                  <div id="">
-                    <span class="course-time2">9-11</span>
-                    <span>~~</span>
-                    <span class="course-time2">10-10</span>
-                  </div>
-                  <button type="button">
-                      <a href = "javascript:void(0)" onclick = "buttontime(2)">更改时间</a>
-                  </button>
-                </li>
-                <li>
-                  <form action="#" method="post">
-                    <input type="submit" name="detail" value="课程反馈">
-                  </form>
-                  <form action="#" method="post">
-                    <input type="button" name="detail" value="布置作业" onclick="homework()">
-                  </form>
-                  <form action="#" method="post">
-                    <input type="submit" name="detail" value="编辑文案">
-                  </form>
-                </li>
-              </ul>
-          </div>
-        </div>
+		</div>
         <div id="light" class="white_content">
               <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"><i class="icon icon-times"></i></a><br><br>
               开始时间：

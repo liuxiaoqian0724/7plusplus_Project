@@ -114,6 +114,10 @@ public class MyJob  implements java.io.Serializable {
 	public void setTimes(Set<Time> times) {
 		this.times = times;
 	}
+	public String toString() {
+		return "MyJob [jid=" + jid + ", address=" + address + ", price=" + price + ", teacherAge=" + teacherAge
+				+ ", user=" + user + ", courses=" + courses + ", grades=" + grades + ", times=" + times + "]";
+	}
 	
 	
      
