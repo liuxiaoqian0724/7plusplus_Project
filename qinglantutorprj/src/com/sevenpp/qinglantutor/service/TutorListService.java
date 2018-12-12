@@ -7,7 +7,7 @@ import javax.annotation.Resource;
 
 		import org.springframework.stereotype.Service;
 
-		import com.sevenpp.qinglantutor.dao.impl.ConditionsDaoImpl;
+		import com.sevenpp.qinglantutor.dao.impl.TutorListDaoImpl;
 import com.sevenpp.qinglantutor.entity.Course;
 import com.sevenpp.qinglantutor.entity.Grade;
 
@@ -26,11 +26,11 @@ import com.sevenpp.qinglantutor.entity.Grade;
 		*/
 		public interface TutorListService {
 			
-			public List<Grade> grades();
+			public List<Object[]> grades();
 			
-			public List<Grade> gradesBySchoolType(String schoolType);
+			public List<Object[]> gradesBySchoolType(String schoolType);
 			
-			public List<Course> courses();
+			public List<Object[]> courses();
 			
 }
 

@@ -8,7 +8,7 @@
 		import org.springframework.stereotype.Service;
 
 		import com.sevenpp.qinglantutor.dao.TutorListDao;
-		import com.sevenpp.qinglantutor.dao.impl.ConditionsDaoImpl;
+		import com.sevenpp.qinglantutor.dao.impl.TutorListDaoImpl;
 		import com.sevenpp.qinglantutor.entity.Course;
 		import com.sevenpp.qinglantutor.entity.Grade;
 		import com.sevenpp.qinglantutor.service.TutorListService;
@@ -32,7 +32,7 @@
 		public class TutorListServiceImpl implements TutorListService {
 			
 			@Resource
-			private ConditionsDaoImpl conditionsDaoImpl;
+			private TutorListDaoImpl tutorlistDaoImpl;
 			
 			/**
 			 * 
@@ -45,8 +45,8 @@
 			 * @date 2018年12月5日 下午3:25:17 
 			 * @version V1.0   
 			 */
-			public List<Grade> grades(){
-				return this.conditionsDaoImpl.findGrades();
+			public List<Object[]> grades(){
+				return this.tutorlistDaoImpl.findGrades();
 			}
 			
 			/**
@@ -61,8 +61,8 @@
 			 * @date 2018年12月5日 下午4:48:55 
 			 * @version V1.0   
 			 */
-			public List<Grade> gradesBySchoolType(String schoolType){
-				return this.conditionsDaoImpl.findGradesBySchoolType(schoolType);
+			public List<Object[]> gradesBySchoolType(String schoolType){
+				return this.tutorlistDaoImpl.findGradesBySchoolType(schoolType);
 			}
 			
 			/**
@@ -76,11 +76,14 @@
 			 * @date 2018年12月5日 下午3:30:44 
 			 * @version V1.0   
 			 */
-			public List<Course> courses(){
-				return this.conditionsDaoImpl.findCourses();
+			public List<Object[]> courses(){
+				return this.tutorlistDaoImpl.findCourses();
 			}
 			
 			
+			public List<Object[]> find(){
+				return this.tutorlistDaoImpl.find();
+			}
 
 }
 

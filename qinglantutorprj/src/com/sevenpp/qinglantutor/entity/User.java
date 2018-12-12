@@ -64,7 +64,7 @@ public class User  implements java.io.Serializable {
      @Id
      @GeneratedValue(strategy=GenerationType.IDENTITY)
 	public Integer getId() {
-		return id;
+    	 return id;
 	}
 	public void setId(Integer id) {
 		this.id = id;

@@ -28,18 +28,32 @@ public class Grade  implements java.io.Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	private Integer gid;	//年级id
+//	private int gid;
     private String gname;	//年级名
     private String schooltype;	 
     
      private Set<MyJob> myJobs=new HashSet<MyJob>();
 
+     
      @Id
      @GeneratedValue(strategy=GenerationType.IDENTITY)
+//     public int getGid() {
+//		return gid;
+//	}
+//	public void setGid(int gid) {
+//		this.gid = gid;
+//	}
 	public Integer getGid() {
 		return gid;
 	}
 	public void setGid(Integer gid) {
 		this.gid = gid;
+	}
+	public String getSchooltype() {
+		return schooltype;
+	}
+	public void setSchooltype(String schooltype) {
+		this.schooltype = schooltype;
 	}
 	public String getGname() {
 		return gname;
@@ -55,28 +69,7 @@ public class Grade  implements java.io.Serializable {
 	public void setMyJobs(Set<MyJob> myJobs) {
 		this.myJobs = myJobs;
 	}	
-     
-     
-	
     
-   
-    
-    
-    
-//    @ManyToOne
-//    @JoinColumn(name="tId")
-//	public MyJob getMyJob() {
-//		return myJob;
-//	}
-//
-//	public void setMyJob(MyJob myJob) {
-//		this.myJob = myJob;
-//	}
-
-
-	
-  
-
 
 }
 

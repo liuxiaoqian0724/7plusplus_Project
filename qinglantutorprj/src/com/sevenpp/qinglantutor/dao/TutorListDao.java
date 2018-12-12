@@ -31,7 +31,7 @@
 			 * @date 2018年12月5日 下午4:30:27 
 			 * @version V1.0   
 			 */
-			public List<Grade> findGrades();
+			public List<Object[]> findGrades();
 			
 			/**
 			 * 
@@ -45,7 +45,7 @@
 			 * @date 2018年12月5日 下午4:48:55 
 			 * @version V1.0   
 			 */
-			public List<Grade> findGradesBySchoolType(String schoolType);
+			public List<Object[]> findGradesBySchoolType(String schoolType);
 				
 			/**
 			 * 
@@ -58,7 +58,7 @@
 			 * @date 2018年12月5日 下午3:30:44 
 			 * @version V1.0   
 			 */
-			public List<Course> findCourses();
+			public List<Object[]> findCourses();
 			
 }
 

@@ -1,36 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%
-  String path = request.getContextPath();
-  String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path;
-%>
-
 <!DOCTYPE html>
 <html>
 <head>
 	<title>家教信息列表</title>
 	<meta charset="utf-8">
-	<!--  <base href="<%=basePath%>"></base>-->
 	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.staticfile.org/ionicons/2.0.1/css/ionicons.min.css">
 	<!--引入css-->
-   <link rel="stylesheet" href="<%=basePath%>/dist/css/zui.min.css">
-   <link rel="stylesheet" href="<%=basePath%>/dist/css/zui.css" />
-   <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/header.css"/>
-   <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/footer.css"/>
-   <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/tutorlisted.css">
+   <link rel="stylesheet" href="dist/css/zui.min.css">
+   <link rel="stylesheet" href="dist/css/zui.css" />
+   <link rel="stylesheet" type="text/css" href="css/header.css"/>
+   <link rel="stylesheet" type="text/css" href="css/footer.css"/>
+   <link rel="stylesheet" type="text/css" href="css/tutorlisted.css">
 	
 	<!--引入js-->
-   <script src="<%=basePath%>/js/jquery-3.2.1.js"></script>
-   <script type="text/javascript" src="<%=basePath%>/dist/lib/jquery/jquery.js"></script>
-   <script type="text/javascript" src="<%=basePath%>/dist/js/zui.min.js"></script>
-   <script type="text/javascript" src="<%=basePath%>/dist/js/zui.js"></script>
-   <script type="text/javascript" src="<%=basePath%>/js/tutorlisted.js"></script>
-
+   <script src="js/jquery-3.2.1.js"></script>
+   <script type="text/javascript" src="dist/lib/jquery/jquery.js"></script>
+   <script type="text/javascript" src="dist/js/zui.min.js"></script>
+   <script type="text/javascript" src="dist/js/zui.js"></script>
+   <script type="text/javascript" src="js/tutorlisted.js"></script>
 </head>
 <body>
 <!-- header -->
-<jsp:include page="header.jsp"/>
+<%@ include file="header.jsp" %>
 <!-- //header -->
 <div class="content">
 	<!--条件筛选-->
@@ -38,33 +31,9 @@
 		<div class="title">
 			<div class="title-title"><h3>全部老师&nbsp;&nbsp;&nbsp;></h3></div>
 			<ul class="title-ul">
- 				<!-- <li class="title-condition">数学 &nbsp;
- 					<i class="icon1 ion-close"></i></li> -->
- 				<c:forEach items="${conditions}" var="condition" varStatus="status">
-  				 	<c:if test="${condition!='0'}" >
- 						<c:if test="${status.index==1}">
-	 						<li class="title-condition">${condition} &nbsp;
-	 						<a href="/qinglantutorprj/change/deleteconditions/0/1/1/1/1"><i class="icon1 ion-close"></i></a></li>
- 						</c:if>
- 						<c:if test="${status.index==2}">
-	 						<li class="title-condition">${condition} &nbsp;
-	 						<a href="/qinglantutorprj/change/deleteconditions/1/0/1/1/1"><i class="icon1 ion-close"></i></a></li>
- 						</c:if>
- 						<c:if test="${status.index==3}">
-	 						<li class="title-condition">${condition} &nbsp;
-	 						<a href="/qinglantutorprj/change/deleteconditions/1/1/0/1/1"><i class="icon1 ion-close"></i></a></li>
- 						</c:if>
- 						<c:if test="${status.index==4}">
-	 						<li class="title-condition">${condition} &nbsp;
-	 						<a href="/qinglantutorprj/change/deleteconditions/1/1/1/0/1"><i class="icon1 ion-close"></i></a></li>
- 						</c:if>
- 						<c:if test="${status.index==5}">
-	 						<li class="title-condition">${condition} &nbsp;
-	 						<a href="/qinglantutorprj/change/deleteconditions/1/1/1/1/0"><i class="icon1 ion-close"></i></a></li>
- 						</c:if>
- 					</c:if>
- 				</c:forEach>
-				<a href="/qinglantutorprj/change/deleteconditions/0/0/0/0/0"><li id="spe3">清空筛选项</li></a>
+ 				<li class="title-condition">数学 &nbsp;
+ 					<i class="icon1 ion-close"></i></li>
+				<li id="spe3">清空筛选项</li>
 			</ul>
 
 		</div>		<br>
@@ -76,12 +45,33 @@
 						<li class="spe">
 							授课年级
 						</li>
-						<c:forEach items="${grades}" var="grade">
-							<a href="/qinglantutorprj/change/addconditions/${grade[1]}/0/0/0/0">
-							<li class="con-li">
-								${grade[1]}
-							</li></a>
-						</c:forEach>
+						<a href="#"><li class="con-li">
+							一年级
+						</li></a>
+						<a href="#"><li class="con-li">
+							二年级
+						</li></a>
+						<a href="#"><li class="con-li">
+							三年级
+						</li></a>
+						<a href="#"><li class="con-li">
+							四年级
+						</li></a>
+						<a href="#"><li class="con-li">
+							五年级
+						</li></a>
+						<a href="#"><li class="con-li">
+							六年级
+						</li></a>
+						<a href="#"><li class="con-li">
+							初一
+						</li></a>
+						<a href="#"><li class="con-li">
+							初二
+						</li></a>
+						<a href="#"><li class="con-li">
+							初三
+						</li></a>
 						<a href="#"><li id="more">
 							更多<i class="icon11 icon-angle-down"></i>
 						</li></a>
@@ -92,6 +82,7 @@
 
 				<li class="hide-con-content">
 					<ul class="con-ul">
+						
 						<a href="#"><li class="con-li">
 							高一
 						</li></a>
@@ -110,12 +101,33 @@
 							教学科目
 						</li>
 						<!--后台循环-->
-						<c:forEach items="${courses}" var="course">
-							<a href="/qinglantutorprj/change/addconditions/0/${course[1]}/0/0/0">
-							<li class="con-li">
-							${course[1]}
-							</li></a>
-						</c:forEach> 
+						<a href="#"><li class="con-li">
+							语文
+						</li></a>
+						<a href="#"><li class="con-li">
+							数学
+						</li></a>
+						<a href="#"><li class="con-li">
+							英语
+						</li></a>
+						<a href="#"><li class="con-li">
+							物理
+						</li></a>
+						<a href="#"><li class="con-li">
+							化学
+						</li></a>
+						<a href="#"><li class="con-li">
+							政治
+						</li></a>
+						<a href="#"><li class="con-li">
+							历史
+						</li></a>
+						<a href="#"><li class="con-li">
+							生物
+						</li></a>
+						<a href="#"><li class="con-li">
+							地理
+						</li></a>
 						<a href="#"><li id="more1">
 							更多<i class="icon11 icon-angle-down"></i>
 						</li></a>
@@ -138,22 +150,22 @@
 							上门区域
 						</li>
 						<!--后台循环-->
-						<a href="/qinglantutorprj/change/addconditions/0/0/长安区/0/0"><li class="con-li">
+						<a href="#"><li class="con-li">
 							长安区
 						</li></a>
-						<a href="/qinglantutorprj/change/addconditions/0/0/裕华区/0/0"><li class="con-li">
+						<a href="#"><li class="con-li">
 							裕华区
 						</li></a>
-						<a href="/qinglantutorprj/change/addconditions/0/0/新华区/0/0"><li class="con-li">
+						<a href="#"><li class="con-li">
 							新华区
 						</li></a>
-						<a href="/qinglantutorprj/change/addconditions/0/0/桥西区/0/0"><li class="con-li">
+						<a href="#"><li class="con-li">
 							桥西区
 						</li></a>
-						<a href="/qinglantutorprj/change/addconditions/0/0/鹿泉区/0/0"><li class="con-li">
+						<a href="#"><li class="con-li">
 							鹿泉区
 						</li></a>
-						<a href="/qinglantutorprj/change/addconditions/0/0/井陉矿区/0/0"><li class="con-li">
+						<a href="#"><li class="con-li">
 							井陉矿区
 						</li></a>
 
@@ -166,10 +178,10 @@
 							老师性别
 						</li>
 						<!--后台循环-->
-						<a href="/qinglantutorprj/change/addconditions/0/0/0/男老师/0"><li class="con-li">
+						<a href="#"><li class="con-li">
 							男老师
 						</li></a>
-						<a href="/qinglantutorprj/change/addconditions/0/0/0/女老师/0"><li class="con-li">
+						<a href="#"><li class="con-li">
 							女老师
 						</li></a>
 					</ul>
@@ -181,10 +193,10 @@
 							老师专业
 						</li>
 						<!--后台循环-->
-						<a href="/qinglantutorprj/change/addconditions/0/0/0/0/文科"><li class="con-li">
+						<a href="#"><li class="con-li">
 							文科
 						</li></a>
-						<a href="/qinglantutorprj/change/addconditions/0/0/0/0/理科"><li class="con-li">
+						<a href="#"><li class="con-li">
 							理科
 						</li></a>
 					</ul>
@@ -230,11 +242,11 @@
 						<div class="information">
 							<div class="firline">
 								<div class="star">
-									<img src="<%=basePath%>/images/fill-star.png" style="width: 20px;height: 20px;">
-									<img src="<%=basePath%>/images/fill-star.png" style="width: 20px;height: 20px;">
-									<img src="<%=basePath%>/images/fill-star.png" style="width: 20px;height: 20px;">
-									<img src="<%=basePath%>/images/fill-star.png" style="width: 20px;height: 20px;">
-									<img src="<%=basePath%>/images/empty-star.png" style="width: 20px;height: 20px;">
+									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
+									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
+									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
+									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
+									<img src="images/empty-star.png" style="width: 20px;height: 20px;">
 								</div>
 								<div class="teachages">教龄17年</div>	
 								<!-- <div class="teachhours">授课134小时</div> -->
@@ -512,8 +524,5 @@
 		</div>
 	</div>
 </div>
-<!-- header -->
-<jsp:include page="footer.jsp"/>
-<!-- //header -->
 </body>
 </html>
