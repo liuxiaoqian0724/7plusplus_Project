@@ -40,15 +40,15 @@ public class CourseServiceImpl implements CourseService {
 		@Resource
 		private  CourseDaoImpl courseDaoImpl;
 		
-		/**
-		* getCourseInfor	把从数据库中查找出来的信息组成集合传给前端 
-		* @param name
-		* @param @return 设定文件
-		* @return String DOM对象
-		* @Exception 异常对象
-		* @since CodingExample Ver(编码范例查看) 1.1
-		*/
 		public List<CourseInformation> getCourseInfor(String email) {			
+			/**
+			 * getCourseInfor	把从数据库中查找出来的信息组成集合传给前端 
+			 * @param name
+			 * @param @return 设定文件
+			 * @return String DOM对象
+			 * @Exception 异常对象
+			 * @since CodingExample Ver(编码范例查看) 1.1
+			 */
 			User user = this.courseDaoImpl.getUserByEmail(email);
 			List<CourseInformation> list = new ArrayList<CourseInformation>();
 			/**
@@ -115,6 +115,7 @@ public class CourseServiceImpl implements CourseService {
 							}
 							
 							CourseInformation courseInformation = new CourseInformation();
+							courseInformation.setCrid(classRelationList.get(j).getCrid());
 							courseInformation.setSubject(course.getCname());
 							courseInformation.setImg(student.getUserImg());
 							courseInformation.setName(student.getRealName());
@@ -130,20 +131,20 @@ public class CourseServiceImpl implements CourseService {
 			return list;
 		}
 		
-		/**
-		* @Title: insertReview 
-		* @Description: 插入评论
-		* @param @param reviewTime
-		* @param @param reviewContent
-		* @param @param reviewStar
-		* @param @param classRelation    入参
-		* @return void    返回类型
-		* @author （作者） 
-		* @throws
-		* @date 2018年12月12日 上午10:28:59 
-		* @version V1.0   
-		 */
 		public void  insertReview(Date reviewTime, String reviewContent, Integer reviewStar, Integer classRelationId) {
+			/**
+			 * @Title: insertReview 
+			 * @Description: 插入评论
+			 * @param @param reviewTime
+			 * @param @param reviewContent
+			 * @param @param reviewStar
+			 * @param @param classRelation    入参
+			 * @return void    返回类型
+			 * @author （作者） 
+			 * @throws
+			 * @date 2018年12月12日 上午10:28:59 
+			 * @version V1.0   
+			 */
 			ClassRelation classRelation = this.courseDaoImpl.getClassRelationByCrid(classRelationId);
 			this.courseDaoImpl.insertReview(reviewTime, reviewContent, reviewStar, classRelation);
 		}
@@ -160,4 +161,19 @@ public class CourseServiceImpl implements CourseService {
 			return this.courseDaoImpl.getUserByEmail(email).getRole();
 				
 		}
+
+		public void changeCourseTime(String startTime, String endTime, Integer crid) {
+			/**
+			* changeCourseTime	修改课程的时间
+			* @param name
+			* @param @return 设定文件
+			* @return String DOM对象
+			* @Exception 异常对象
+			* @since CodingExample Ver(编码范例查看) 1.1
+			*/
+			ClassRelation classRelation = this.courseDaoImpl.getClassRelationByCrid(crid);
+			this.courseDaoImpl.changeCourseTime(startTime, endTime, classRelation.getTeachRelation().getTrid());
+		}
+
+
 }	

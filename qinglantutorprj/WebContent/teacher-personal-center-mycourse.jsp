@@ -147,7 +147,7 @@
 					<!--作业完成日期-->
 					<lable>作业完成日期</label>
 						<label>
-							<input type="text" class="form-control form-date" placeholder="选择或者输入一个日期：yyyy-MM-dd" style="width:400px;">
+							<input type="text" class="form-control form-date1 form-date" placeholder="选择或者输入一个日期：yyyy-MM-dd" style="width:400px;">
 						</label>
 						<br /><br />
 						<!--作业预计耗时-->
@@ -268,18 +268,19 @@
 		                <li>
 		                  <span>课程时间</span><br><br>
 		                  <div id="">
-		                     <span class="course-time1">${courseInformation.startTime }</span>
+		                     <span class="course-time${courseInformation.crid }">${courseInformation.startTime }</span>
 		                    <span>~~</span>
-		                    <span class="course-time1">${courseInformation.endTime }</span>
+		                    <span class="course-time${courseInformation.crid }">${courseInformation.endTime }</span>
 		                  </div>
 		                  <button type="button">
-		                      <a href = "javascript:void(0)" onclick = "buttontime(1)">更改时间</a>
+		                      <a href = "javascript:void(0)" onclick = "buttonTimeOpen(${courseInformation.crid})">更改时间</a>
 		                  </button>
 		                </li>
 		                <li>
+		       <script type="text/javascript" src="js/stumycourse.js"></script> 
 		                  <form action="#" method="post">
-		                    <input type="submit" name="detail" value="课程反馈">
-		                  </form>
+		                    <input type="button" name="detail" value="课程反馈" onclick="reviewClick(${courseInformation.crid})" />
+		                 </form>
 		                  <form action="#" method="post">
 		                    <input type="button" name="detail" value="布置作业" onclick="homework()">
 		                  </form>
@@ -298,39 +299,24 @@
               结束时间：
               <input id="c2-right-item-l4-inp2" type="text" class="form-control form-date" placeholder="选择或者输入一个日期：MM-dd">
               <button type="button">
-                  <a href = "javascript:void(0)" onclick = "buttontime(0)">保存</a>
+                  <a href = "javascript:void(0)" onclick = "buttonTimeSubmit()">保存</a>
               </button>
         </div> 
+        <div id="review" class="white_content">
+        	<a href = "javascript:void(0)" onclick = "reviewClose()"><i class="icon icon-times"></i></a><br><br>
+		   	<div>
+		   		<span>评价星级： </span>
+		   		<a href="javascript:click(1)"><img src="images/empty-star.png" id="star1" onMouseOver="over(1)" onMouseOut="out(1)"/></a>
+				<a href="javascript:click(2)"><img src="images/empty-star.png" id="star2" onMouseOver="over(2)" onMouseOut="out(2)" /></a>
+				<a href="javascript:click(3)"><img src="images/empty-star.png" id="star3" onMouseOver="over(3)" onMouseOut="out(3)" /></a>
+				<a href="javascript:click(4)"><img src="images/empty-star.png" id="star4" onMouseOver="over(4)" onMouseOut="out(4)"/></a>
+				<a href="javascript:click(5)"><img src="images/empty-star.png" id="star5" onMouseOver="over(5)" onMouseOut="out(5)"/></a>
+		   	</div>
+		   	<textarea rows="7" cols="70"></textarea>
+			<span>请评价星级</span>
+			<button type="button" onclick="reviewSubmit()">发出评价</button>
+        </div>
         <div id="fade" class="black_overlay"></div> 
-        <script type="text/javascript">
-            var a = 0;
-            var b = 0;
-            function buttontime(i){
-              if(i==0){
-                document.getElementsByClassName(b)[0].innerHTML=document.getElementById('c2-right-item-l4-inp1').value;
-                document.getElementsByClassName(b)[1].innerHTML=document.getElementById('c2-right-item-l4-inp2').value;
-                document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none';
-              }else{
-                a=i;
-                b ='course-time'+a;
-                document.getElementById('c2-right-item-l4-inp1').value=document.getElementsByClassName(b)[0].innerHTML;
-                document.getElementById('c2-right-item-l4-inp2').value=document.getElementsByClassName(b)[1].innerHTML;
-                document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block';
-              }
-            }
-            $(".form-date").datetimepicker(
-                {
-                    language:  "zh-CN",
-                    weekStart: 1,
-                    todayBtn:  1,
-                    autoclose: 1,
-                    todayHighlight: 1,
-                    startView: 2,
-                    minView: 2,
-                    forceParse: 0,
-                    format: "mm-dd"
-                });
-        </script> 
       </div>
     </div>
 </div>
@@ -380,58 +366,8 @@
       </div>
     </div>
   </div>
-	
-	<script>
-		// 日期选择
-		$(".form-date").datetimepicker(
-		{
-			language:  "zh-CN",
-			weekStart: 1,
-			todayBtn:  1,
-			autoclose: 1,
-			todayHighlight: 1,
-			startView: 2,
-			minView: 2,
-			forceParse: 0,
-			format: "yyyy-mm-dd"
-		});
-		
-		//富文本编辑框
-		KindEditor.create('textarea.kindeditorSimple', {
-			basePath: '/dist/lib/kindeditor/',
-			bodyClass : 'article-content',
-			resizeType : 1,
-			allowPreviewEmoticons : false,
-			allowImageUpload : false,
-			items : [
-				'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
-				'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
-				'insertunorderedlist', '|', 'emoticons', 'image', 'link'
-			]
-		});
-		
-		//布置作业按钮点击效果
-		var assign=document.getElementById("assign");
-		assign.style.display="none";
-		function homework(){
-			var fade=document.getElementById("fade");
-			if(assign.style.display=="none"){
-				assign.style.display="block";
-				fade.style.display="block";
-			}
-			else{
-				assign.style.display="none";
-				fade.style.display="none";
-			}
-		}
-		
-		//关闭布置作业弹框
-		function closeframe(){
-			var fade=document.getElementById("fade");
-			assign.style.display="none";
-			fade.style.display="none";
-		}
-	</script>
+  
+  <script type="text/javascript" src="js/teamycourse.js"></script>
 	
 </body>
 </html>

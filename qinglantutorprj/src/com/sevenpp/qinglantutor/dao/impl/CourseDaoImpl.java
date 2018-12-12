@@ -91,6 +91,24 @@ public class CourseDaoImpl implements CourseDao {
 		List<ClassRelation> list = query.list();
 		return list.get(0);
 	}
+
+
+	public void changeCourseTime(String startTime, String endTime, Integer trid) {
+		/**
+		* changeCourseTime	修改课程时间
+		* @param name
+		* @param @return 设定文件
+		* @return String DOM对象
+		* @Exception 异常对象
+		* @since CodingExample Ver(编码范例查看) 1.1
+		*/
+		Session session = this.sessionFactory.getCurrentSession();
+		Query query = session.createQuery("update TeachRelation tea set tea.startTime = ? , tea.endTime = ?  where trid = ?");
+		query.setString(0, startTime);
+		query.setString(1, endTime);
+		query.setInteger(2, trid);
+		query.executeUpdate();
+	}
 	
 }
 

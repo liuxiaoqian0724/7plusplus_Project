@@ -192,10 +192,10 @@
 		                  </div>
 		                </li>
 		                <li>
-		               	<script type="text/javascript" src="js/mycourse.js"></script> 
+		  <script type="text/javascript" src="js/stumycourse.js"></script> 
 		                  <form action="#" method="post">
 		                    <input type="button" name="detail" value="课程反馈" onclick="reviewClick(${courseInformation.crid})" />
-		                  </form>
+		                 </form>
 		                  <form action="HomeWorkShow" method="post">
 		                    <input type="button" name="detail" value="查看作业">
 		                  </form>

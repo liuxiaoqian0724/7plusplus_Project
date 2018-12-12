@@ -66,6 +66,21 @@ public interface CourseDao {
 			* @version V1.0   
 	 */
 	public void insertReview(Date reviewTime, String reviewContent, Integer reviewStar,ClassRelation classRelation);
+	
+	/**
+	 * 
+			* @Title: changeCourseTime 
+			* @Description: 	更新课程时间
+			* @param @param startTime
+			* @param @param endTime
+			* @param @param trid    入参
+			* @return void    返回类型
+			* @author （作者） 
+			* @throws
+			* @date 2018年12月12日 下午6:27:18 
+			* @version V1.0   
+	 */
+	public void changeCourseTime(String startTime,String endTime,Integer trid);
 }
 
 	

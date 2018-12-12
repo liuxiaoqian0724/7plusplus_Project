@@ -8,6 +8,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -51,10 +52,18 @@ public class CourseController {
 	@RequestMapping("courseReview")
 	@ResponseBody
 	public String stuCourseReview(@RequestParam(value="classRelationId")Integer classRelationId
-			,@RequestParam(value="reviewContent")String reviewContent,@RequestParam(value="reviewStar")Integer reviewStar) {
+			,@RequestParam(value="reviewContent")String reviewContent,@RequestParam(value="reviewStar")Integer reviewStar){
 		Date reviewTime = new Date();
 		this.courseServiceImpl.insertReview(reviewTime, reviewContent, reviewStar, classRelationId);
 		return "反馈成功";
+	}
+	
+	@RequestMapping("courseTime")
+	@ResponseBody
+	public String courseTime(@RequestBody CourseInformation courseInformation) {
+		this.courseServiceImpl.changeCourseTime(courseInformation.getStartTime(), courseInformation.getEndTime()
+				, courseInformation.getCrid());
+		return "添加成功";
 	}
 }
 

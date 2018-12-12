@@ -62,6 +62,21 @@ public interface CourseService {
 	 		* @version V1.0   
 	  */
 	 public void  insertReview(Date reviewTime, String reviewContent, Integer reviewStar, Integer id);
+	 
+	 /**
+	  * 
+	 		* @Title: changeCourseTime 
+	 		* @Description: 修改课程时间
+	 		* @param @param startTime
+	 		* @param @param endTime
+	 		* @param @param crid    入参
+	 		* @return void    返回类型
+	 		* @author （作者） 
+	 		* @throws
+	 		* @date 2018年12月12日 下午6:24:25 
+	 		* @version V1.0   
+	  */
+	 public void changeCourseTime(String startTime,String endTime,Integer crid);
 }
 
 	
