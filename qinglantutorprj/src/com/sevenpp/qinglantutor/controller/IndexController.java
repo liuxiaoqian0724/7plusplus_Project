@@ -8,8 +8,12 @@
 		*/
 		package com.sevenpp.qinglantutor.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
@@ -17,11 +21,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.sevenpp.qinglantutor.entity.User;
 import com.sevenpp.qinglantutor.service.Impl.IndexServiceImpl;
-import com.sevenpp.qinglantutor.util.PageBean;
 
 /**
 		*
@@ -61,19 +66,27 @@ public class IndexController {
 		System.out.println(schooltype);
 		return "tutorlist";
 	}
-	@RequestMapping("findAllUserWithPage.do")
-	public ModelAndView findAllStudentWithPage(HttpServletRequest request, HttpServletResponse response){
+	@RequestMapping("/teacherdetail/{teacherid}")
+	public String teacherDetail(@PathVariable String teacherid,Model model) {
+		model.addAttribute("teacherid", teacherid);
+		System.out.println(teacherid);
+		return "teacherdetail";
+	}
+	@RequestMapping("/indexfile")
+	public void findAllUser(HttpServletResponse response){
 		System.out.println("IndexController");
-		String pageNum = request.getParameter("pageNum");
-		if(pageNum == null){
-			pageNum="1";
+		List<User> list=new ArrayList<User>();
+		list=service.findAllUser();
+		String str = JSON.toJSONString(list); 
+		response.setCharacterEncoding("UTF-8");
+		try {
+			PrintWriter writer=response.getWriter();
+			writer.write(str);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+					e.printStackTrace();
 		}
-		PageBean<User> pb = service.findAllUserWithPage(Integer.parseInt(pageNum),25);
-		ModelAndView model = new ModelAndView();
-		model.addObject("pageBean", pb);
-		System.out.println(pb.getPageSize());
-		model.setViewName("index");
-		return model;
+		
 	}
 
 }

@@ -1,15 +1,17 @@
-/**   
-		* @Title: IndexDao.java 
-		* @Package com.sevenpp.qinglantutor.dao 
-		* @Description: TODO(用一句话描述该文件做什么) 
-		* @author （作者）  
-		* @date 2018年12月7日 下午7:27:33 
-		* @version V1.0   
+/**   
+		* @Title: IndexDao.java 
+		* @Package com.sevenpp.qinglantutor.dao 
+		* @Description: TODO(用一句话描述该文件做什么) 
+		* @author （作者）  
+		* @date 2018年12月7日 下午7:27:33 
+		* @version V1.0   
 		*/
 	
 package com.sevenpp.qinglantutor.dao;
 
 import java.util.List;
+
+import org.springframework.stereotype.Component;
 
 import com.sevenpp.qinglantutor.entity.User;
 
@@ -26,17 +28,14 @@ import com.sevenpp.qinglantutor.entity.User;
 		* @version
 		*
 		*/
-		/** 
-		* @ClassName: IndexDao 
-		* @Description: TODO(这里用一句话描述这个类的作用) 
-		* @author (作者)  
-		* @date 2018年12月7日 下午7:27:33 
-		* @version V1.0 
+		/** 
+		* @ClassName: IndexDao 
+		* @Description: TODO(这里用一句话描述这个类的作用) 
+		* @author (作者)  
+		* @date 2018年12月7日 下午7:27:33 
+		* @version V1.0 
 		*/
-	
+@Component
 public interface IndexDao {
-	public List<User> findAll(int startIndex, int pageSize);
 	public List<User> queryAll();
 }
-
-	

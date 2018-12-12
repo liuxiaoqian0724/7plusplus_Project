@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%
-	String basePath = request.getContextPath();
-%>
+<%String basePath = request.getContextPath();%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -25,8 +23,9 @@
     <script src="js/verify.js"></script>
     <script src="js/verify.min.js"></script>
    <!--  js功能代码 -->
+   
    </head>  
-
+	
   <body>
     <div id="header-box">
     		<div id="big-box">
@@ -286,71 +285,50 @@
 				</div>
 				<!--个人信息personal_information-->
 				<div class="cards cards-borderless" id="personal_information">
-					<c:forEach items="${requestScope.pageBean.list }" var="li" begin="${requestScope.pageBean.pageNum*5 }" end="${requestScope.pageBean.pageNum+4 }">
-						<div class="col-md-4 col-sm-6 col-lg-3" id="personal_inf">
-							<a class="card" href="###" style="position: relative;">
-								<img src="${li.userImg }" alt="">
-								<div class="caption">中小学优秀英语教师</div>
-								<div class="card-content text-muted"  id="personal_name">
-									<p></p>
-									<p>&nbsp;&nbsp;&nbsp;姓名：${li.realName }</p>
-									<p>&nbsp;&nbsp;&nbsp;学校：${li.address }</p>
-									<p>&nbsp;&nbsp;&nbsp;简介：${li.introduce }</p>
-								</div>
-							</a>
-						</div>
-					</c:forEach>
+					<!-- script输出 -->
 				<!--分页-->
+				
+					
+				</div>
+				<script>
+					$(document).ready(function(data){
+						$.ajax({
+							type:'post',
+							url:'indexfile',
+							contentType:'application/json;charset=UTF-8',
+							dataType:'json',
+							success:function(data){
+								$.each(data,function(index,res){
+									teacherinf='<div class="col-md-4 col-sm-6 col-lg-3" id="personal_inf">'
+										+'<a class="card" href="#" style="position: relative;">'
+										+'<img src="'+res.userImg+'" alt="">'
+										+'<div class="caption">中小学优秀英语教师</div>'
+										+'<div class="card-content text-muted"  id="personal_name">'
+										+'<p></p>'
+										+'<p>&nbsp;&nbsp;&nbsp;姓名：'+res.realName+'</p>'
+										+'<p>&nbsp;&nbsp;&nbsp;学校：'+res.school+'</p>'
+										+'<p>&nbsp;&nbsp;&nbsp;简介：'+res.introduce+'</p>'
+										+'</div>'
+										+'</a>'
+										+'</div>'
+									$("#personal_information").append(teacherinf);
+									$("#personal_inf").addClass("index.css");
+								}) 
+								console.log(data)
+							}
+						});
+					})
+				</script>
+				<!-- 分页器 -->
 				<ul class="pager" id="pager">
-					<%--如果当前页为第一页时，就没有上一页这个超链接显示 --%>
-					<c:if test="${requestScope.pageBean.pageNum =='1'}">
-						<c:forEach begin="${requestScope.pageBean.start}"
-							end="${requestScope.pageBean.end}" step="1" var="i">
-							<c:if test="${requestScope.pageBean.pageNum == i}">
-				                        <li>${i+1}</li>
-				            </c:if>
-							<c:if test="${requestScope.pageBean.pageNum != i}">
-								<li><a
-									href="${pageContext.request.contextPath}/findAllUserWithPage.do?pageNum=${i}">${i+1}</a></li>
-							</c:if>
-						</c:forEach>
-						<li class="next"><a
-							href="${pageContext.request.contextPath}/findAllUserWithPage.do?pageNum=${requestScope.pageBean.pageNum+1}">»</a></li>
-					</c:if>
-					<%--如果当前页不是第一页也不是最后一页，则有上一页和下一页这个超链接显示 --%>
-					<c:if
-						test="${requestScope.pageBean.pageNum > 1 && requestScope.pageBean.pageNum < requestScope.pageBean.totalPage}">
-						<li class="previous"><a href="${pageContext.request.contextPath}/findAllUserWithPage.do?pageNum=${requestScope.pageBean.pageNum-1}">«</a></li>
-						<c:forEach begin="${requestScope.pageBean.start}"
-							end="${requestScope.pageBean.end}" step="1" var="i">
-							<c:if test="${requestScope.pageBean.pageNum == i}">
-				                        <li>${i+1}</li>
-				            </c:if>
-							<c:if test="${requestScope.pageBean.pageNum != i}">
-								<li><a
-									href="${pageContext.request.contextPath}/findAllUserWithPage.do?pageNum=${i}">${i+1}</a></li>
-							</c:if>
-						</c:forEach>
-						<li class="next"><a	href="${pageContext.request.contextPath}/findAllUserWithPage.do?pageNum=${requestScope.pageBean.pageNum+1}">»</a></li>
-					</c:if>
-					<%-- 如果当前页是最后一页，则只有上一页这个超链接显示，下一页没有 --%>
-					<c:if
-						test="${requestScope.pageBean.pageNum == requestScope.pageBean.totalPage}">
-						<li class="previous"><a
-							href="${pageContext.request.contextPath}/findAllUserWithPage.do?pageNum=${requestScope.pageBean.pageNum-1}">«</a></li>
-						<c:forEach begin="${requestScope.pageBean.start}"
-							end="${requestScope.pageBean.end}" step="1" var="i">
-							<c:if test="${requestScope.pageBean.pageNum == i}">
-				                        <li>${i+1}</li>
-				                    </c:if>
-							<c:if test="${requestScope.pageBean.pageNum != i}">
-								<li><a
-									href="${pageContext.request.contextPath}/findAllUserWithPage.do?pageNum=${i}">${i+1}</a></li>
-							</c:if>
-						</c:forEach>
-						<li class="next disabled"><a	href="${pageContext.request.contextPath}/findAllUserWithPage.do?pageNum=${requestScope.pageBean.pageNum+1}">»</a></li>
-					</c:if>
-				</ul>   		
+					<li class="previous disabled"><a href="#">«</a></li>
+					<li><a href="#">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li class="next"><a href="#">»</a></li>
+				</ul> 		
 			</div>
 			<!--家教信息end-->
 	
