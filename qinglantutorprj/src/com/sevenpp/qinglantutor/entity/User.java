@@ -228,6 +228,16 @@ public class User  implements java.io.Serializable {
 	}
 	public void setClassRelation(List<ClassRelation> classRelation) {
 		this.classRelation = classRelation;
+	}
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", userName=" + userName + ", userPwd=" + userPwd + ", email=" + email + ", role="
+				+ role + ", regDate=" + regDate + ", realName=" + realName + ", idNumber=" + idNumber + ", sex=" + sex
+				+ ", stuImg=" + stuImg + ", userImg=" + userImg + ", school=" + school + ", grade=" + grade
+				+ ", phoneNumber=" + phoneNumber + ", address=" + address + ", introduce=" + introduce + ", major="
+				+ major + ", status=" + status + ", publickey=" + publickey + ", privatekey=" + privatekey + ", img1="
+				+ img1 + ", img2=" + img2 + ", img3=" + img3 + ", img4=" + img4 + ", msgs=" + msgs + ", myJobs="
+				+ myJobs + ", teachRelations=" + teachRelations + ", classRelation=" + classRelation + "]";
 	}	
 	
 	
