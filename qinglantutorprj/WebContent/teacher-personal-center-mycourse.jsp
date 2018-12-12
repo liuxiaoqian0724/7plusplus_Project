@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -239,48 +244,52 @@
           <h2>我的课程</h2>
         </div>
         <div class="panel-body">
-          <div  class="c2-right-item"> 
-              <ul>
-                <li>
-                  <span>科目</span>
-                  <p>数学</p>
-                </li>
-                <li>
-                  <span>学生</span>
-                  <div>
-                    <img src="images/b.jpg" width="115px" height="115px" class="img-circle" alt="圆形图片">
-                  </div>
-                  <p>李狗蛋</p>
-                </li>
-                <li>
-                  <span>作业</span><br>
-                  <span style="text-align: center; ">已完成：...</span><br><br>
-                    <p>.....作业</p><p>.....作业</p><p>.....作业</p><p>.....作业</p><p>.....作业</p><p>.....作业</p><p>.....作业</p><p>.....作业</p>   
-                </li>
-                <li>
-                  <span>课程时间</span><br><br>
-                  <div id="">
-                    <span class="course-time1">9-11</span>
-                    <span>~~</span>
-                    <span class="course-time1">10-10</span>
-                  </div>
-                  <button type="button">
-                      <a href = "javascript:void(0)" onclick = "buttontime(1)">更改时间</a>
-                  </button>
-                </li>
-                <li>
-                  <form action="#" method="post">
-                    <input type="submit" name="detail" value="课程反馈">
-                  </form>
-                  <form action="#" method="post">
-                    <input type="button" name="detail" value="布置作业" onclick="homework()">
-                  </form>
-                  <form action="#" method="post">
-                    <input type="submit" name="detail" value="编辑文案">
-                  </form>
-                </li>
-              </ul>
-          </div>
+       		<c:forEach items="${courseDetailList }" var="courseInformation">
+       			<div  class="c2-right-item"> 
+		              <ul>
+		                <li>
+		                  <span>科目</span>
+		                  <p>${courseInformation.subject }</p>
+		                </li>
+		                <li>
+		                  <span>学生</span>
+		                  <div>
+		                    <img src="${courseInformation.img }" width="115px" height="115px" class="img-circle" alt="圆形图片">
+		                  </div>
+		                  <p>${courseInformation.name }</p>
+		                </li>
+		                <li>
+		                	<span>未完成作业</span><br>
+		                  	<span style="text-align: center; ">老师发布时间</span><br><br>
+		                  	<c:forEach items="${courseInformation.homework }" var="homeworkTime">
+		                  		<p>${homeworkTime }</p>
+		                  	</c:forEach> 
+		                </li>
+		                <li>
+		                  <span>课程时间</span><br><br>
+		                  <div id="">
+		                     <span class="course-time1">${courseInformation.startTime }</span>
+		                    <span>~~</span>
+		                    <span class="course-time1">${courseInformation.endTime }</span>
+		                  </div>
+		                  <button type="button">
+		                      <a href = "javascript:void(0)" onclick = "buttontime(1)">更改时间</a>
+		                  </button>
+		                </li>
+		                <li>
+		                  <form action="#" method="post">
+		                    <input type="submit" name="detail" value="课程反馈">
+		                  </form>
+		                  <form action="#" method="post">
+		                    <input type="button" name="detail" value="布置作业" onclick="homework()">
+		                  </form>
+		                  <form action="#" method="post">
+		                    <input type="submit" name="detail" value="编辑文案">
+		                  </form>
+		                </li>
+		             </ul>
+          		</div>
+       		</c:forEach>
 		</div>
         <div id="light" class="white_content">
               <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"><i class="icon icon-times"></i></a><br><br>

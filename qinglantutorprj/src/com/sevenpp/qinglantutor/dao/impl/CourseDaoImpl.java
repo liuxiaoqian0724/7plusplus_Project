@@ -10,7 +10,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
-import com.sevenpp.qinglantutor.dao.StuCourseDao;
+import com.sevenpp.qinglantutor.dao.CourseDao;
 import com.sevenpp.qinglantutor.entity.ClassRelation;
 import com.sevenpp.qinglantutor.entity.Course;
 import com.sevenpp.qinglantutor.entity.HomeWork;
@@ -31,7 +31,7 @@ import com.sevenpp.qinglantutor.entity.User;
 *
 */
 @Repository
-public class StuCourseDaoImpl implements StuCourseDao {
+public class CourseDaoImpl implements CourseDao {
 
 	@Resource
 	private SessionFactory sessionFactory;

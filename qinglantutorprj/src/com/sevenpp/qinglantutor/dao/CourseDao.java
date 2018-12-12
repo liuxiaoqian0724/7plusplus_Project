@@ -22,7 +22,7 @@ import com.sevenpp.qinglantutor.entity.User;
 *
 */
 	
-public interface StuCourseDao {
+public interface CourseDao {
 	/**
 	 * 
 			* @Title: getUserByEmail 

@@ -13,8 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sevenpp.qinglantutor.entity.CourseInformation;
-import com.sevenpp.qinglantutor.entity.User;
-import com.sevenpp.qinglantutor.service.impl.StuCourseServiceImpl;
+import com.sevenpp.qinglantutor.service.impl.CourseServiceImpl;
 
 /**
 *
@@ -30,17 +29,23 @@ import com.sevenpp.qinglantutor.service.impl.StuCourseServiceImpl;
 *
 */
 @Controller
-public class StuCourseController {
+public class CourseController {
 	
 	@Resource
-	private StuCourseServiceImpl stuCourseServiceImpl;
+	private CourseServiceImpl courseServiceImpl;
+	
 	
 	@RequestMapping("/courseInformation")
 	public String stuCourse(HttpServletRequest request) {
-		String email = new String("wangwu@qq.com");
-		List<CourseInformation> list = this.stuCourseServiceImpl.getCourseInfor(email);
+		String email = new String("lisi@qq.com");
+		List<CourseInformation> list = this.courseServiceImpl.getCourseInfor(email);		
 		request.setAttribute("courseDetailList", list);
-		return "student-personal-center-mycourse";
+		
+		if(this.courseServiceImpl.getRoleByEmail(email).startsWith("老师")) {
+			return "teacher-personal-center-mycourse";
+		}else {
+			return "student-personal-center-mycourse";
+		}
 	}
 	
 	@RequestMapping("courseReview")
@@ -48,7 +53,7 @@ public class StuCourseController {
 	public String stuCourseReview(@RequestParam(value="classRelationId")Integer classRelationId
 			,@RequestParam(value="reviewContent")String reviewContent,@RequestParam(value="reviewStar")Integer reviewStar) {
 		Date reviewTime = new Date();
-		this.stuCourseServiceImpl.insertReview(reviewTime, reviewContent, reviewStar, classRelationId);
+		this.courseServiceImpl.insertReview(reviewTime, reviewContent, reviewStar, classRelationId);
 		return "反馈成功";
 	}
 }
