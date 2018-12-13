@@ -1,4 +1,6 @@
-var a = 0;
+
+//修改课程时间
+var cridTime = 0;
 var b = 0;
 function buttonTimeSubmit(){
     document.getElementsByClassName(b)[0].innerHTML=document.getElementById('c2-right-item-l4-inp1').value;
@@ -9,7 +11,7 @@ function buttonTimeSubmit(){
     var json = {
     		"startTime":startTime,
     		"endTime":endTime,
-    		"crid":a
+    		"crid":cridTime
     }
     $.ajax({
     	type:"post",
@@ -27,8 +29,8 @@ function buttonTimeSubmit(){
     });
 }    
 function buttonTimeOpen(param){
-    a=param;
-    b ='course-time'+a;
+	cridTime=param;
+    b ='course-time'+cridTime;
     document.getElementById('c2-right-item-l4-inp1').value=document.getElementsByClassName(b)[0].innerHTML;
     document.getElementById('c2-right-item-l4-inp2').value=document.getElementsByClassName(b)[1].innerHTML;
     document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block';
@@ -62,41 +64,78 @@ $(".form-date").datetimepicker(
 	        format: "mm-dd"
 });
 
-//富文本编辑框
-KindEditor.create('textarea.kindeditorSimple', {
-	basePath: '/dist/lib/kindeditor/',
-	bodyClass : 'article-content',
-	resizeType : 1,
-	allowPreviewEmoticons : false,
-	allowImageUpload : false,
-	items : [
-		'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
-		'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
-		'insertunorderedlist', '|', 'emoticons', 'image', 'link'
-	]
-});
 
 //布置作业按钮点击效果
-var assign=document.getElementById("assign");
-assign.style.display="none";
-function homework(){
-	var fade=document.getElementById("fade");
-	if(assign.style.display=="none"){
-		assign.style.display="block";
-		fade.style.display="block";
-	}
-	else{
-		assign.style.display="none";
-		fade.style.display="none";
-	}
+
+var cridHomework = 0;
+function homeworkOpen(param){
+	cridHomework = param;
+	$("#fade").css("display","block");
+	$("#course").css("display","block");
 }
 
 //关闭布置作业弹框
-function closeframe(){
-	var fade=document.getElementById("fade");
-	assign.style.display="none";
-	fade.style.display="none";
+function homeworkClose(){
+	$("#fade").css("display","none");
+	$("#course").css("display","none");
+}
+
+function homeworkSubmit(){
+	var arr = [];
+    arr.push(UE.getEditor("editor").getContent());
+    var content = arr.join("\n");
+    var time = $("#coursedeadtime").val();
+    console.log(cridHomework);
+    console.log(content);
+    console.log(time);
+    $.ajax({
+    	type:"post",
+    	url:"courseHomework",
+    	dataType:"json",
+    	data:{"crid":cridHomework,"content":content,"deadlinetime":time},
+    	success:function(data){
+    		alert(data);
+    	},
+    	error:function(){
+    		alert("error");
+    	}
+    });
+    $("#fade").css("display","none");
+	$("#course").css("display","none");
 }
 
 
+//富文本编辑框
+var ue = UE.getEditor('editor',{
+	toolbars:[
+		[
+			 'bold', //加粗
+			  'indent', //首行缩进
+	        'italic', //斜体
+	        'underline', //下划线
+	        'strikethrough', //删除线
+	        'justifyleft', //居左对齐
+	        'justifyright', //居右对齐
+	        'justifycenter', //居中对齐
+	        'justifyjustify', //两端对齐
+	        'forecolor', //字体颜色
+	        'backcolor', //背景色
+	        'subscript', //下标
+	        'fontborder', //字符边框
+	        'superscript', //上标
+	        'fontfamily', //字体
+	        'fontsize', //字号
+	        'pasteplain', //纯文本粘贴模式
+	        'selectall', //全选
+	         'horizontal', //分隔线
+	        'removeformat', //清除格式
+	        'time', //时间
+	        'date', //日期
+	        'link', //超链接
+	        'emotion', //表情
+	        'spechars', //特殊字符
+	        'simpleupload', //单图上传
+		]
+	]
+});
 

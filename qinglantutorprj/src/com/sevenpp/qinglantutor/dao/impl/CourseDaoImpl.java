@@ -15,6 +15,7 @@ import com.sevenpp.qinglantutor.entity.ClassRelation;
 import com.sevenpp.qinglantutor.entity.Course;
 import com.sevenpp.qinglantutor.entity.HomeWork;
 import com.sevenpp.qinglantutor.entity.Review;
+import com.sevenpp.qinglantutor.entity.TeachRelation;
 import com.sevenpp.qinglantutor.entity.User;
 
 /**
@@ -108,6 +109,29 @@ public class CourseDaoImpl implements CourseDao {
 		query.setString(1, endTime);
 		query.setInteger(2, trid);
 		query.executeUpdate();
+	}
+
+
+	public void insertHomework(Date deadlineTime, String tcontent, ClassRelation classRelation,
+			TeachRelation teachRelation) {
+		/**
+		* insertHomework	颁布作业插入表
+		* @param name
+		* @param @return 设定文件
+		* @return String DOM对象
+		* @Exception 异常对象
+		* @since CodingExample Ver(编码范例查看) 1.1
+		*/
+		Session session = this.sessionFactory.getCurrentSession();
+		Date tstartTime = new Date();
+		HomeWork homework = new HomeWork();
+		homework.setDeadlineTime(deadlineTime);
+		homework.setTstartTime(tstartTime);
+		homework.setClassRelation(classRelation);
+		homework.setTcontent(tcontent);	
+		homework.setTeachRelation(teachRelation);
+		homework.setSstatus("未完成");
+		session.save(homework);
 	}
 	
 }

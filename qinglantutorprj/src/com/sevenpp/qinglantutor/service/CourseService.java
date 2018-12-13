@@ -77,6 +77,21 @@ public interface CourseService {
 	 		* @version V1.0   
 	  */
 	 public void changeCourseTime(String startTime,String endTime,Integer crid);
+	 
+	 /**
+	  * 
+	 		* @Title: insertHomework 
+	 		* @Description: 	插入作业
+	 		* @param @param crid
+	 		* @param @param content
+	 		* @param @param time    入参
+	 		* @return void    返回类型
+	 		* @author （作者） 
+	 		* @throws
+	 		* @date 2018年12月13日 下午8:48:14 
+	 		* @version V1.0   
+	  */
+	 public void insertHomework(Integer crid,String content,String time);
 }
 
 	

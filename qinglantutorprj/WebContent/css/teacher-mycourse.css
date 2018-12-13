@@ -2,6 +2,9 @@
     height: 200px;
     margin-bottom: 20px;
   }
+  input{
+  outline:none;
+  }
 .c2-right-item{
 	width: 766px;
 	height:200px;
@@ -89,8 +92,21 @@
     opacity:.30; 
     filter: alpha(opacity=88); 
 } 
-.white_content { 
+#light{ 
     display: none; 
+    position: fixed; 
+    top: 16%; 
+    left: 32%; 
+    width: 500px; 
+    height: 300px; 
+    padding: 20px; 
+    border: 1px solid #C0C0C0; 
+    background-color: white; 
+    z-index:1002; 
+    overflow: auto; 
+}
+#review{
+	display: none; 
     position: fixed; 
     top: 16%; 
     left: 28%; 
@@ -100,7 +116,7 @@
     border: 1px solid #C0C0C0; 
     background-color: white; 
     z-index:1002; 
-    overflow: auto; 
+    overflow: auto;
 }
 #review a{
 	margin-right:10px;
@@ -144,6 +160,42 @@
 }
 #review > #noStarButton:hover{
 	background-color:white;
+}
+
+#course{
+	display: none; 
+    position: fixed; 
+    top: 8%; 
+    left: 23%; 
+    width: 800px; 
+    height: 500px; 
+    padding: 20px; 
+    border: 1px solid #C0C0C0; 
+    background-color: white; 
+    z-index:1002; 
+}
+#course > div > span{
+	font-size:20px;
+}
+#course > div > input{
+	float:right;
+	margin-right:300px;
+}
+#course > span{
+	display:none;
+	font-size:20px;
+	color:red;
+	float:right;
+	margin-top:52px;
+	margin-right:120px;
+}
+#course > button{
+	position:absolute;
+	bottom:30px;
+	right:32px;
+}
+#course > p {
+	font-size:25px;
 }
 .white_content  a{
 	float: right;

@@ -182,7 +182,7 @@
         <!-- 富文本编辑框 -->
         <div id="light" class="white_content"> 
             <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display ='none'"><span class="icon icon-times"></span></a><br>
-           <script id="editor" type="text/plain" style="width:840px;height:200px;"></script>
+           <script id="editor" type="text/plain" style="width:750px;height:200px;"></script>
             <button type="button" value="保存" onclick="getContent()">确定</button>
         </div>
       	<div id="fade" class="black_overlay"></div>

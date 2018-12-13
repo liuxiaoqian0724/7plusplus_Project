@@ -5,6 +5,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %> 
+<%-- <%
+	String rootpath=application.getRealPath("/");
+	System.out.println(rootpath);
+%> --%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,20 +18,20 @@
 	<link rel="stylesheet" type="text/css" href="css/teacher-mycourse.css">
 	<link rel="stylesheet" type="text/css" href="css/header.css"/>
 	<link rel="stylesheet" type="text/css" href="css/footer.css"/>
-	<link rel="stylesheet" type="text/css" href="css/assignment_homework.css">
+	
+	<script type="text/javascript" charset="utf-8" src="textarea/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="textarea/ueditor.all.min.js"> </script>
+    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+    <script type="text/javascript" charset="utf-8" src="textarea/lang/zh-cn/zh-cn.js"></script>
 
 <!-- zui -->
 	<link rel="stylesheet" href="dist/css/zui.css" />
-	<link rel="stylesheet" href="dist/lib/kindeditor/kindeditor.css" />
-	<link rel="stylesheet" href="dist/lib/kindeditor/kindeditor.min.css" />
 	<link href="dist/lib/datetimepicker/datetimepicker.min.css" rel="stylesheet">
 	<!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
 	<script src="dist/lib/jquery/jquery.js"></script>
 	<!-- ZUI Javascript组件 -->
 	<script type="text/javascript" src="dist/js/zui.js"></script>
-	<script src="dist/lib/kindeditor/kindeditor.min.js"></script>
-	<script src="dist/lib/kindeditor/kindeditor.js"></script>
-	<script src="dist/lib/kindeditor/kindeditor/plugins.ok.js"></script>
 	<script src="dist/lib/datetimepicker/datetimepicker.min.js"></script>
 	<style type="text/css">
 		*{
@@ -132,68 +136,6 @@
   </div>
 </div>
 
-	<!--作业布置-->
-	<div id="assign">
-		<div class="container-fixed">
-			<div id="closeframe">
-				<button id="closebutton" onclick="closeframe()" class="btn"><i class="icon icon-times"></i></button>
-			</div>
-			<br />
-			<div class="panel-body">
-				<h2>作业布置</h2>
-				<hr />
-				<!--上半部分左边输入框-->
-				<div id="leftbox">
-					<!--作业完成日期-->
-					<lable>作业完成日期</label>
-						<label>
-							<input type="text" class="form-control form-date1 form-date" placeholder="选择或者输入一个日期：yyyy-MM-dd" style="width:400px;">
-						</label>
-						<br /><br />
-						<!--作业预计耗时-->
-						<lable>作业预计耗时</label>
-							<label>
-								<input type="text" class="form-control" placeholder="单位为小时,例如'3.5'">
-							</label>
-							<br /><br />
-							<!--作业科目-->
-							<lable>作业科目</label>
-								<label>
-									<input type="text" class="form-control" placeholder="例如'物理'">
-								</label>
-								<br />
-				</div>
-				<!--上半部分右边输入框-->
-				<div id="rightbox">
-					<!--作业题目-->
-					<lable>作业题目</label>
-						<label>
-							<input type="text" class="form-control" placeholder="" style="width:400px;">
-						</label>
-						<br /><br />
-						<!--作业备注-->
-						<lable>作业备注</label>
-							<label>
-								<textarea class="form-control" rows="3" placeholder="可以输入多行文本" style="width:400px; height:100px; position: relative; margin-left:60px; margin-top:-20px;"></textarea>
-							</label>
-							<br />
-				</div>
-				<!--富文本编辑框-->
-				<div id="container">
-					<lable>作业内容</label>
-						<div id="write-box-text"><textarea id="contentSimple" name="content" class="form-control kindeditorSimple"></textarea></div>
-				</div>
-				<br />
-				<!--按钮-->
-				<div id="choose_button">
-					<button class="btn btn-primary " type="button">保存</button>
-					<button class="btn " type="button">预览</button>
-					<button class="btn btn-primary " type="button">提交</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
 <!-- 中部 -->
 <div id="content">
     <div id="c1">
@@ -282,7 +224,7 @@
 		                    <input type="button" name="detail" value="课程反馈" onclick="reviewClick(${courseInformation.crid})" />
 		                 </form>
 		                  <form action="#" method="post">
-		                    <input type="button" name="detail" value="布置作业" onclick="homework()">
+		                    <input type="button" name="detail" value="布置作业" onclick="homeworkOpen(${courseInformation.crid})">
 		                  </form>
 		                  <form action="#" method="post">
 		                    <input type="submit" name="detail" value="编辑文案">
@@ -315,6 +257,17 @@
 		   	<textarea rows="7" cols="70"></textarea>
 			<span>请评价星级</span>
 			<button type="button" onclick="reviewSubmit()">发出评价</button>
+        </div>
+        <div id="course" class="white_content">
+        	<a href = "javascript:void(0)" onclick = "homeworkClose()"><i class="icon icon-times"></i></a><br><br>
+        	<div>
+	        	<span>请选择作业截止时间：</span>
+			   	<input id="coursedeadtime" type="text" class="form-control form-date" placeholder="选择或者输入一个日期：MM-dd">
+        	</div>        
+		   	<p>作业内容：</p>
+		   	<script id="editor" type="text/plain" style="width:760px;height:200px;"></script>
+			<span>请将时间或内容填上</span>
+			<button type="button" onclick="homeworkSubmit()">发出评价</button>
         </div>
         <div id="fade" class="black_overlay"></div> 
       </div>

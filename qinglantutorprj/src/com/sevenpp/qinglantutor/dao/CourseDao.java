@@ -6,6 +6,7 @@ import java.util.List;
 import com.sevenpp.qinglantutor.entity.ClassRelation;
 import com.sevenpp.qinglantutor.entity.Course;
 import com.sevenpp.qinglantutor.entity.HomeWork;
+import com.sevenpp.qinglantutor.entity.TeachRelation;
 import com.sevenpp.qinglantutor.entity.User;
 
 /**
@@ -81,6 +82,22 @@ public interface CourseDao {
 			* @version V1.0   
 	 */
 	public void changeCourseTime(String startTime,String endTime,Integer trid);
+	
+	/**
+	 * 
+			* @Title: insertHomework 
+			* @Description: 	老师颁布作业，插入作业表
+			* @param @param deadlineTime
+			* @param @param tcontent
+			* @param @param classRelation
+			* @param @param teachRelation    入参
+			* @return void    返回类型
+			* @author （作者） 
+			* @throws
+			* @date 2018年12月13日 下午8:32:28 
+			* @version V1.0   
+	 */
+	public void insertHomework(Date deadlineTime,String tcontent,ClassRelation classRelation,TeachRelation teachRelation);
 }
 
 	

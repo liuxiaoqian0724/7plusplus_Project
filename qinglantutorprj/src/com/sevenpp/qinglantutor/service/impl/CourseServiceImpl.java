@@ -1,5 +1,6 @@
 package com.sevenpp.qinglantutor.service.impl;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -173,6 +174,26 @@ public class CourseServiceImpl implements CourseService {
 			*/
 			ClassRelation classRelation = this.courseDaoImpl.getClassRelationByCrid(crid);
 			this.courseDaoImpl.changeCourseTime(startTime, endTime, classRelation.getTeachRelation().getTrid());
+		}
+
+		public void insertHomework(Integer crid, String content, String time) {
+			/**
+			* insertHomework 	插入作业表数据
+			* @param name
+			* @param @return 设定文件
+			* @return String DOM对象
+			* @Exception 异常对象
+			* @since CodingExample Ver(编码范例查看) 1.1
+			*/
+			ClassRelation classRelation = this.courseDaoImpl.getClassRelationByCrid(crid);
+			SimpleDateFormat format = new SimpleDateFormat("MM-dd");
+			Date deadlineTime = new Date();
+			try {
+				deadlineTime = format.parse(time);
+			} catch (ParseException e) {
+						e.printStackTrace();
+			}
+			this.courseDaoImpl.insertHomework(deadlineTime, content, classRelation,classRelation.getTeachRelation());
 		}
 
 

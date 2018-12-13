@@ -1,6 +1,5 @@
 package com.sevenpp.qinglantutor.controller.course;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -38,7 +37,7 @@ public class CourseController {
 	
 	@RequestMapping("/courseInformation")
 	public String stuCourse(HttpServletRequest request) {
-		String email = new String("lisi@qq.com");
+		String email = new String("wangwu@qq.com");
 		List<CourseInformation> list = this.courseServiceImpl.getCourseInfor(email);		
 		request.setAttribute("courseDetailList", list);
 		
@@ -49,7 +48,7 @@ public class CourseController {
 		}
 	}
 	
-	@RequestMapping("courseReview")
+	@RequestMapping("/courseReview")
 	@ResponseBody
 	public String stuCourseReview(@RequestParam(value="classRelationId")Integer classRelationId
 			,@RequestParam(value="reviewContent")String reviewContent,@RequestParam(value="reviewStar")Integer reviewStar){
@@ -58,12 +57,22 @@ public class CourseController {
 		return "反馈成功";
 	}
 	
-	@RequestMapping("courseTime")
+	@RequestMapping("/courseTime")
 	@ResponseBody
 	public String courseTime(@RequestBody CourseInformation courseInformation) {
 		this.courseServiceImpl.changeCourseTime(courseInformation.getStartTime(), courseInformation.getEndTime()
 				, courseInformation.getCrid());
 		return "添加成功";
+	}
+	
+	@RequestMapping("/courseHomework")
+	@ResponseBody
+	public String courseHomeWork(@RequestParam(value="crid")Integer crid,@RequestParam(value="content")String content
+			,@RequestParam(value="deadlinetime")String deadlinetime) {
+		System.out.println("~~~~"+crid);
+		System.out.println(content);
+		//this.courseServiceImpl.insertHomework(crid, content, deadlinetime);
+		return "{\"data\":\"添加成功\"}";
 	}
 }
 

@@ -1,11 +1,11 @@
 .container-fixed{
 	border:1px solid #e4dfd7;
-	
 	z-index: 9999;
-	left:100px;
-	top:25px;
+	left:10%;
+	top:5%;
 	background-color: #ffffff;
-	height:600px;
+	width:800px;
+	height:500px;	
 	position: fixed;
 }
 #leftbox{

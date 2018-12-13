@@ -82,7 +82,7 @@ public class MyJob  implements java.io.Serializable {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	@ManyToMany
+	@ManyToMany(cascade=CascadeType.ALL)
 	@JoinTable(name="tbl_myjobcourse", //第三张表
 		joinColumns=@JoinColumn(name="jid"),
 		inverseJoinColumns=@JoinColumn(name="cid"))
