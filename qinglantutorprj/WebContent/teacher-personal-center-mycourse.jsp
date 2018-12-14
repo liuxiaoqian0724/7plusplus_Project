@@ -254,10 +254,11 @@
 				<a href="javascript:click(4)"><img src="images/empty-star.png" id="star4" onMouseOver="over(4)" onMouseOut="out(4)"/></a>
 				<a href="javascript:click(5)"><img src="images/empty-star.png" id="star5" onMouseOver="over(5)" onMouseOut="out(5)"/></a>
 		   	</div>
-		   	<textarea rows="7" cols="70"></textarea>
+		   	<textarea rows="7" cols="70" onclick="reviewTextarea()"></textarea>
 			<span>请评价星级</span>
 			<button type="button" onclick="reviewSubmit()">发出评价</button>
         </div>
+        
         <div id="course" class="white_content">
         	<a href = "javascript:void(0)" onclick = "homeworkClose()"><i class="icon icon-times"></i></a><br><br>
         	<div>
@@ -267,9 +268,10 @@
 		   	<p>作业内容：</p>
 		   	<script id="editor" type="text/plain" style="width:760px;height:200px;"></script>
 			<span>请将时间或内容填上</span>
-			<button type="button" onclick="homeworkSubmit()">发出评价</button>
+			<button type="button" onclick="homeworkSubmit()">上传内容</button>
         </div>
         <div id="fade" class="black_overlay"></div> 
+        <script type="text/javascript" src="js/teamycourse.js"></script>
       </div>
     </div>
 </div>
@@ -320,7 +322,6 @@
     </div>
   </div>
   
-  <script type="text/javascript" src="js/teamycourse.js"></script>
 	
 </body>
 </html>

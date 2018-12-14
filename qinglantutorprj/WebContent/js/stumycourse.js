@@ -7,8 +7,16 @@ function reviewClick(a){
 	classRelationId = a;
 	$("#review").css("display","block");
 	$("#fade").css("display","block");
+	$("#review > span").css("display","none");
+	$("#review > button").attr("disabled",false);
+	$("#review > button").mouseover(function () {
+        $(this).css("background", "#33a6b8");
+    }).mouseout(function () {
+        $(this).css("background", "white");
+    });
 };
 
+//点击课程反馈弹出框上的  × 按钮
 function reviewClose(){
 	$("#review").css("display","none");
 	$("#fade").css("display","none");
@@ -20,13 +28,25 @@ function reviewClose(){
 	$("#review > textarea").val("");
 }
 
+//要是输入了星级没输入内容 改变样式
+function reviewTextarea(){
+	$("#review > button").attr("disabled",false);
+	$("#review > button").mouseover(function () {
+        $(this).css("background", "#33a6b8");
+    }).mouseout(function () {
+        $(this).css("background", "white");
+    });
+	$("#review > span").css("display","none");
+}
+
+//提交评价
 function reviewSubmit(){
-	if(check==0){
+	var content =$("#review > textarea").val();
+	if(check==0 || content.length==0){
 		$("#review > button").attr("disabled",true);
-		$("#review > button").attr("id","noStarButton");
+		$("#review > button").css("background","white");
 		$("#review > span").css("display","block");
 	}else{
-		var content =$("#review > textarea").val();
 		$.ajax({
 			type:"post",
 			//contentType:"application/json",
@@ -50,7 +70,11 @@ function click(param){
 	check = param;//记录当前打分
 	out();//设置星星数
 	$("#review > button").attr("disabled",false);
-	$("#review > button").removeAttr("id");
+	$("#review > button").mouseover(function () {
+        $(this).css("background", "#33a6b8");
+    }).mouseout(function () {
+        $(this).css("background", "white");
+    });
 	$("#review > span").css("display","none");
 }
 

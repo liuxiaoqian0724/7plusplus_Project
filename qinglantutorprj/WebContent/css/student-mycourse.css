@@ -148,9 +148,6 @@ input{
 	bottom:70px;
 	right:32px;
 }
-#review > #noStarButton:hover{
-	background-color:white;
-}
  .white_content  a{
 	float: right;
 	margin-right: 30px;

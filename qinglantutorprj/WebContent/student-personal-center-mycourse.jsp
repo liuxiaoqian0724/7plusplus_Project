@@ -218,7 +218,7 @@
 				<a href="javascript:click(4)"><img src="images/empty-star.png" id="star4" onMouseOver="over(4)" onMouseOut="out(4)"/></a>
 				<a href="javascript:click(5)"><img src="images/empty-star.png" id="star5" onMouseOver="over(5)" onMouseOut="out(5)"/></a>
 		   	</div>
-		   	<textarea rows="7" cols="70"></textarea>
+		   	<textarea rows="7" cols="70" onclick="reviewTextarea()"></textarea>
 			<span>请评价星级</span>
 			<button type="button" onclick="reviewSubmit()">发出评价</button>
         </div>

@@ -72,36 +72,47 @@ function homeworkOpen(param){
 	cridHomework = param;
 	$("#fade").css("display","block");
 	$("#course").css("display","block");
-}
+	$("#course > span").css("display","none");
+	$("#course > button").attr("disabled",false);
+	$("#course > button").mouseover(function () {
+        $(this).css("background", "#33a6b8");
+    }).mouseout(function () {
+        $(this).css("background", "white");
+    });
+};
 
 //关闭布置作业弹框
 function homeworkClose(){
 	$("#fade").css("display","none");
 	$("#course").css("display","none");
 }
-
+//作业提交页面
 function homeworkSubmit(){
 	var arr = [];
     arr.push(UE.getEditor("editor").getContent());
     var content = arr.join("\n");
-    var time = $("#coursedeadtime").val();
-    console.log(cridHomework);
-    console.log(content);
-    console.log(time);
-    $.ajax({
-    	type:"post",
-    	url:"courseHomework",
-    	dataType:"json",
-    	data:{"crid":cridHomework,"content":content,"deadlinetime":time},
-    	success:function(data){
-    		alert(data);
-    	},
-    	error:function(){
-    		alert("error");
-    	}
-    });
-    $("#fade").css("display","none");
-	$("#course").css("display","none");
+    var deadlinetime = $("#coursedeadtime").val();
+    if(content.length==0 || deadlinetime.length == 0){
+    	$("#course > span").css("display","block");
+    	$("#course > button").attr("disabled",true);
+    	$("#course > button").css("background","white");
+    }else{
+    	$.ajax({
+        	type:"post",
+        	url:"courseHomework",
+        	dataType:"json",
+        	data:{"cridHomework":cridHomework,"content":content,"deadlinetime":deadlinetime},
+        	success:function(data){
+        		alert(data);
+        	},
+        	error:function(){
+        		alert("error");
+        	}
+        });
+    	UE.getEditor("editor").setContent("");
+    	$("#coursedeadtime").val("");
+    	homeworkClose();
+    }
 }
 
 

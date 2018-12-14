@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -35,7 +36,7 @@ public class CourseController {
 	private CourseServiceImpl courseServiceImpl;
 	
 	
-	@RequestMapping("/courseInformation")
+	@RequestMapping("courseInformation")
 	public String stuCourse(HttpServletRequest request) {
 		String email = new String("wangwu@qq.com");
 		List<CourseInformation> list = this.courseServiceImpl.getCourseInfor(email);		
@@ -67,11 +68,9 @@ public class CourseController {
 	
 	@RequestMapping("/courseHomework")
 	@ResponseBody
-	public String courseHomeWork(@RequestParam(value="crid")Integer crid,@RequestParam(value="content")String content
+	public String courseHomework(@RequestParam(value="cridHomework")Integer cridHomework,@RequestParam(value="content")String content
 			,@RequestParam(value="deadlinetime")String deadlinetime) {
-		System.out.println("~~~~"+crid);
-		System.out.println(content);
-		//this.courseServiceImpl.insertHomework(crid, content, deadlinetime);
+		this.courseServiceImpl.insertHomework(cridHomework, content, deadlinetime);
 		return "{\"data\":\"添加成功\"}";
 	}
 }
