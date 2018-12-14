@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 import com.sevenpp.qinglantutor.dao.Impl.IndexDaoImpl;
 import com.sevenpp.qinglantutor.entity.User;
 import com.sevenpp.qinglantutor.service.IndexService;
+import com.sevenpp.qinglantutor.util.Userinf;
 
 /**
 		*
@@ -43,12 +44,25 @@ import com.sevenpp.qinglantutor.service.IndexService;
 public class IndexServiceImpl implements IndexService {
 	@Resource
 	private IndexDaoImpl idi;
+	
+	private Userinf userinf;
 	@Override
-	public List<User> findAllUser(){
+	public List<Userinf> findAllUser(){
 		System.out.println("IndexServiceImpl");
 		List<User> userList = new ArrayList<User>();
+		List<Userinf> userlist=new ArrayList<Userinf>();
 		userList=idi.queryAll();
-		return userList;
+		userinf=new Userinf();
+		for(int i=0;i<userList.size();i++) {
+			userinf=new Userinf();
+			userinf.setId(userList.get(i).getId());
+			userinf.setIntroduce(userList.get(i).getIntroduce());
+			userinf.setRealName(userList.get(i).getRealName());
+			userinf.setSchool(userList.get(i).getSchool());
+			userinf.setUserImg(userList.get(i).getUserImg());
+			userlist.add(userinf);
+		}
+		return userlist;
 	}
 
 }

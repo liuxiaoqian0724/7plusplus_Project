@@ -285,10 +285,14 @@
 				</div>
 				<!--个人信息personal_information-->
 				<div class="cards cards-borderless" id="personal_information">
-					<!-- script输出 -->
-				<!--分页-->
-				
+					<!-- 教师简介 -->
+					<div id="personal_name_introduce_school">
+						
+					</div>
+					<!-- 分页器 -->
+					<ul class="pager" id="pager">
 					
+					</ul> 
 				</div>
 				<script>
 					$(document).ready(function(data){
@@ -298,37 +302,79 @@
 							contentType:'application/json;charset=UTF-8',
 							dataType:'json',
 							success:function(data){
+								var currentpage=1;
+								var totalpage=Math.ceil(data.length/5);
+								console.log(totalpage);
+								//中间页的页码
+								var temp="";
+								for(var i=1;i<=totalpage;i++){
+									temp=temp+'<li><a class="pagecount">'+i+'</a></li>';
+								}
+								//当前页为第一页时
+								if(currentpage==1){
+									$("#pager").html("");
+									devicepage='<li class="previous disabled"><a>«</a></li>'
+										+temp
+										+'<li class="next"><a id="next">»</a></li>';
+									$("#pager").append(devicepage);
+								}
+								//当前页为最后一页时
+								if(currentpage==totalpage){
+									$("#pager").html("");
+									devicepage='<li class="previous"><a id="previous">«</a></li>'
+										+temp
+										+'<li class="next disabled"><a>»</a></li>';
+									$("#pager").append(devicepage);
+								}
+								//当前页为中间页时
+								if(currentpage>1&&currentpage<totalpage){
+									$("#pager").html("");
+									devicepage='<li class="previous"><a id="previous">«</a></li>'
+										+temp
+										+'<li class="next"><a id="next">»</a></li>';
+									$("#pager").append(devicepage);
+								}
+								//点击中间页时
+								$(".pagecount").each(function(){
+									$(this).on("click",function(){
+											currentpage=$(".pagecount").index(this)+1;
+											console.log(currentpage);
+										})
+								});
+								//点击previous时
+								$("#pager").on("click","#previous",function(){
+									currentpage=currentpage-1;
+									console.log(currentpage);
+								});
+								//点击next时
+								$("#pager").on("click","#next",function(){
+									currentpage=currentpage+1;
+									console.log(currentpage);
+								});
+								//传值
+								$("#personal_name_introduce_school").html("");
 								$.each(data,function(index,res){
-									teacherinf='<div class="col-md-4 col-sm-6 col-lg-3" id="personal_inf">'
-										+'<a class="card" href="#" style="position: relative;">'
-										+'<img src="'+res.userImg+'" alt="">'
-										+'<div class="caption">中小学优秀英语教师</div>'
-										+'<div class="card-content text-muted"  id="personal_name">'
-										+'<p></p>'
-										+'<p>&nbsp;&nbsp;&nbsp;姓名：'+res.realName+'</p>'
-										+'<p>&nbsp;&nbsp;&nbsp;学校：'+res.school+'</p>'
-										+'<p>&nbsp;&nbsp;&nbsp;简介：'+res.introduce+'</p>'
-										+'</div>'
-										+'</a>'
-										+'</div>'
-									$("#personal_information").append(teacherinf);
-									$("#personal_inf").addClass("index.css");
-								}) 
-								console.log(data)
+									if(index>=(currentpage-1)*5&&index<=currentpage*5-1){
+										teacherinf='<div class="col-md-4 col-sm-6 col-lg-3" id="personal_inf">'
+											+'<a class="card" href="#" style="position: relative;">'
+											+'<img src="'+res.userImg+'" alt="">'
+											+'<div class="caption">中小学优秀英语教师</div>'
+											+'<div class="card-content text-muted"  id="personal_name">'
+											+'<p></p>'
+											+'<p>&nbsp;&nbsp;&nbsp;姓名：'+res.realName+'</p>'
+											+'<p>&nbsp;&nbsp;&nbsp;学校：'+res.school+'</p>'
+											+'<p>&nbsp;&nbsp;&nbsp;简介：'+res.introduce+'</p>'
+											+'</div>'
+											+'</a>'
+											+'</div>'
+										$("#personal_name_introduce_school").append(teacherinf);	
+										console.log(currentpage+"ajax")
+									}
+								})
 							}
 						});
 					})
-				</script>
-				<!-- 分页器 -->
-				<ul class="pager" id="pager">
-					<li class="previous disabled"><a href="#">«</a></li>
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li class="next"><a href="#">»</a></li>
-				</ul> 		
+				</script>		
 			</div>
 			<!--家教信息end-->
 	

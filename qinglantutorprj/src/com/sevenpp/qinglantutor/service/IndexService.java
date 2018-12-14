@@ -14,6 +14,7 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 import com.sevenpp.qinglantutor.entity.User;
+import com.sevenpp.qinglantutor.util.Userinf;
 
 /**
 		*
@@ -37,5 +38,5 @@ import com.sevenpp.qinglantutor.entity.User;
 		*/
 @Component
 public interface IndexService {
-	public List<User> findAllUser();
+	public List<Userinf> findAllUser();
 }

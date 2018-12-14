@@ -25,8 +25,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.sevenpp.qinglantutor.entity.User;
 import com.sevenpp.qinglantutor.service.Impl.IndexServiceImpl;
+import com.sevenpp.qinglantutor.util.Userinf;
 
 /**
 		*
@@ -75,9 +77,9 @@ public class IndexController {
 	@RequestMapping("/indexfile")
 	public void findAllUser(HttpServletResponse response){
 		System.out.println("IndexController");
-		List<User> list=new ArrayList<User>();
+		List<Userinf> list=new ArrayList<Userinf>();
 		list=service.findAllUser();
-		String str = JSON.toJSONString(list); 
+		String str = JSON.toJSONString(list,SerializerFeature.DisableCircularReferenceDetect);
 		response.setCharacterEncoding("UTF-8");
 		try {
 			PrintWriter writer=response.getWriter();
