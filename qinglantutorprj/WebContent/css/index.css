@@ -36,13 +36,6 @@
 	border:1px solid #e4dfd7;
 	margin-top:5px;
 }
-#pager{
-	margin-left: 460px;
-}
-.pager a:link{
-	background-color: #FFF;
-	color:#56C9DB;
-}
 #learning_community{
 	margin-top:15px;
 	border:1px solid #e4dfd7;
@@ -75,7 +68,6 @@
 	background-color:#fff;
 }
 #question_answer{
-	
 	position: relative;
 	margin-top:5px;
 }

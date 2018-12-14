@@ -284,15 +284,15 @@
 					<button class="btn btn-info" type="button" id="i_wonder_release" onclick="window.location.href='sendmessage.jsp'"><i class="icon icon-pencil"></i>我要发布</button>
 				</div>
 				<!--个人信息personal_information-->
-				<div class="cards cards-borderless" id="personal_information">
-					<!-- 教师简介 -->
-					<div id="personal_name_introduce_school">
+				<div class="cards cards-borderless" id="personal_information" style="width:100%">
+				<!-- 教师简介 -->
+					<div id="personal_name_introduce_school" style="width:1305px;">
 						
 					</div>
 					<!-- 分页器 -->
-					<ul class="pager" id="pager">
-					
-					</ul> 
+					<ul class="pager" id="pager" style="float:right; position:relative; margin-right:45%;">
+						
+					</ul>
 				</div>
 				<script>
 				var currentpage=1;
@@ -302,20 +302,9 @@
 					$(document).ready(function(data){
 						datashow(currentpage);
 						topage(currentpage);
-						
 					});
 					//页码
 					function topage(currentpage){
-						//点击中间页时
-						console.log(pagetemp);
-						pagetemp.each(function(){
-							console.log(1);
-							$(this).on("click",function(){
-									currentpage=pagetemp.index(this)+1;
-									datashow(currentpage);
-									console.log(currentpage);
-								})
-						});
 						//点击previous时
 						$("#pager").on("click","#previous",function(){
 							currentpage=currentpage-1;
@@ -358,16 +347,11 @@
 										console.log(currentpage+"ajax")
 									}
 								})
-								//中间页的页码
-								var temp="";
-								for(var i=1;i<=totalpage;i++){
-									temp=temp+'<li><a class="pagecount">'+i+'</a></li>';
-								}
 								//当前页为第一页时
 								if(currentpage==1){
 									$("#pager").html("");
-									devicepage='<li class="previous disabled"><a>«</a></li>'
-										+temp
+									devicepage='<li class="previous disabled"><a id="previous">«</a></li>'
+										+'<li><span style="border:0px;">第&nbsp;&nbsp;&nbsp;'+currentpage+'/'+totalpage+'&nbsp;&nbsp;&nbsp;页</span></li>'
 										+'<li class="next"><a id="next">»</a></li>';
 									$("#pager").append(devicepage);
 								}
@@ -375,19 +359,18 @@
 								if(currentpage==totalpage){
 									$("#pager").html("");
 									devicepage='<li class="previous"><a id="previous">«</a></li>'
-										+temp
-										+'<li class="next disabled"><a>»</a></li>';
+										+'<li><span style="border:0px;">第&nbsp;&nbsp;&nbsp;'+currentpage+'/'+totalpage+'&nbsp;&nbsp;&nbsp;页</span></li>'
+										+'<li class="next disabled"><a id="next">»</a></li>';
 									$("#pager").append(devicepage);
 								}
 								//当前页为中间页时
 								if(currentpage>1&&currentpage<totalpage){
 									$("#pager").html("");
 									devicepage='<li class="previous"><a id="previous">«</a></li>'
-										+temp
+										+'<li><span style="border:0px;">第&nbsp;&nbsp;&nbsp;'+currentpage+'/'+totalpage+'&nbsp;&nbsp;&nbsp;页</span></li>'
 										+'<li class="next"><a id="next">»</a></li>';
 									$("#pager").append(devicepage);
 								}
-								pagetemp=$(".pagecount");
 							}
 						});
 					}
@@ -685,14 +668,8 @@
 					</div>
 				</div>
 				<!--分页-->
-				<ul class="pager" id="pager">
-					<li class="previous disabled"><a href="#">«</a></li>
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li class="next"><a href="#">»</a></li>
+				<ul class="pager" id="pager" data-ride="pager" data-page="2" data-rec-total="89" data-max-nav-count="4" data-elements="prev_icon,page_of_total_text,next_icon" style="margin-left:500px;">
+					
 				</ul>	
 			</div>
 			<!--学习社区end-->
