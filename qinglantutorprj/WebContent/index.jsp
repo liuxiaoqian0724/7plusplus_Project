@@ -295,16 +295,69 @@
 					</ul> 
 				</div>
 				<script>
+				var currentpage=1;
+				var totalpage=1;
+				var pagetemp=new Array();
+				console.log(totalpage);
 					$(document).ready(function(data){
+						datashow(currentpage);
+						topage(currentpage);
+						
+					});
+					//页码
+					function topage(currentpage){
+						//点击中间页时
+						console.log(pagetemp);
+						pagetemp.each(function(){
+							console.log(1);
+							$(this).on("click",function(){
+									currentpage=pagetemp.index(this)+1;
+									datashow(currentpage);
+									console.log(currentpage);
+								})
+						});
+						//点击previous时
+						$("#pager").on("click","#previous",function(){
+							currentpage=currentpage-1;
+							datashow(currentpage);
+							console.log(currentpage);
+						});
+						//点击next时
+						$("#pager").on("click","#next",function(){
+							currentpage=currentpage+1;
+							datashow(currentpage);
+							console.log(currentpage);
+						});
+					}
+					//展示数据
+					function datashow(currentpage){
 						$.ajax({
 							type:'post',
 							url:'indexfile',
 							contentType:'application/json;charset=UTF-8',
 							dataType:'json',
+							async:false,
 							success:function(data){
-								var currentpage=1;
-								var totalpage=Math.ceil(data.length/5);
-								console.log(totalpage);
+								totalpage=Math.ceil(data.length/5);
+								$("#personal_name_introduce_school").html("");
+								$.each(data,function(index,res){
+									if(index>=(currentpage-1)*5&&index<=currentpage*5-1){
+										teacherinf='<div class="col-md-4 col-sm-6 col-lg-3" id="personal_inf">'
+											+'<a class="card" href="#" style="position: relative;">'
+											+'<img src="'+res.userImg+'" alt="">'
+											+'<div class="caption">中小学优秀英语教师</div>'
+											+'<div class="card-content text-muted"  id="personal_name">'
+											+'<p></p>'
+											+'<p>&nbsp;&nbsp;&nbsp;姓名：'+res.realName+'</p>'
+											+'<p>&nbsp;&nbsp;&nbsp;学校：'+res.school+'</p>'
+											+'<p>&nbsp;&nbsp;&nbsp;简介：'+res.introduce+'</p>'
+											+'</div>'
+											+'</a>'
+											+'</div>'
+										$("#personal_name_introduce_school").append(teacherinf);	
+										console.log(currentpage+"ajax")
+									}
+								})
 								//中间页的页码
 								var temp="";
 								for(var i=1;i<=totalpage;i++){
@@ -334,46 +387,10 @@
 										+'<li class="next"><a id="next">»</a></li>';
 									$("#pager").append(devicepage);
 								}
-								//点击中间页时
-								$(".pagecount").each(function(){
-									$(this).on("click",function(){
-											currentpage=$(".pagecount").index(this)+1;
-											console.log(currentpage);
-										})
-								});
-								//点击previous时
-								$("#pager").on("click","#previous",function(){
-									currentpage=currentpage-1;
-									console.log(currentpage);
-								});
-								//点击next时
-								$("#pager").on("click","#next",function(){
-									currentpage=currentpage+1;
-									console.log(currentpage);
-								});
-								//传值
-								$("#personal_name_introduce_school").html("");
-								$.each(data,function(index,res){
-									if(index>=(currentpage-1)*5&&index<=currentpage*5-1){
-										teacherinf='<div class="col-md-4 col-sm-6 col-lg-3" id="personal_inf">'
-											+'<a class="card" href="#" style="position: relative;">'
-											+'<img src="'+res.userImg+'" alt="">'
-											+'<div class="caption">中小学优秀英语教师</div>'
-											+'<div class="card-content text-muted"  id="personal_name">'
-											+'<p></p>'
-											+'<p>&nbsp;&nbsp;&nbsp;姓名：'+res.realName+'</p>'
-											+'<p>&nbsp;&nbsp;&nbsp;学校：'+res.school+'</p>'
-											+'<p>&nbsp;&nbsp;&nbsp;简介：'+res.introduce+'</p>'
-											+'</div>'
-											+'</a>'
-											+'</div>'
-										$("#personal_name_introduce_school").append(teacherinf);	
-										console.log(currentpage+"ajax")
-									}
-								})
+								pagetemp=$(".pagecount");
 							}
 						});
-					})
+					}
 				</script>		
 			</div>
 			<!--家教信息end-->
