@@ -11,6 +11,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
-	<a href="courseInformation">123</a>
+	<a href="courseInformation">课程</a>
+	<a href="teachPlanInformation">教案</a>
 </body>
 </html>

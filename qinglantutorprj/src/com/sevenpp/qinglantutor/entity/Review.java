@@ -78,7 +78,9 @@ public class Review  implements java.io.Serializable {
 	public String toString() {
 		return "Review [rid=" + rid + ", reviewTime=" + reviewTime + ", reviewContent=" + reviewContent
 				+ ", reviewStar=" + reviewStar + ", classRelation=" + classRelation + "]";
-	}	
+	}
+
+	
      
     
 

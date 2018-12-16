@@ -12,7 +12,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<title>老师，我的教案</title>
+	<title>学生，我的教案</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<base href="<%=basePath%>">
 	<link rel="stylesheet" href="dist/css/zui.min.css">
@@ -163,21 +163,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		              </div>
 		              <div class="c2-right-items">
 		                  <div>
-                  			<div class="c2-right-item" id="addPlan-${teachPlanInformation.trid}">
+                  			<div class="c2-right-item">
                   				<c:forEach items="${teachPlanInformation.planDetailMap }" var="planDetail">
-			                        <div id="plan-${planDetail.planId }">
-			                            <a href="javascript:void(0)"  onclick="deletePlan(${planDetail.planId })"><span class="icon icon-times"></span></a>
-			                            <a href="javascript:void(0)" onclick = "contentOpen(${planDetail.planId})"><span class="icon icon-edit"></span></a>
-			                            <div id="content-${planDetail.planId }">${planDetail.content }</div>
-			                            <span id="time-${planDetail.planId }">${planDetail.time }</span>
+			                        <div>
+			                            <div>${planDetail.content }</div>
+			                            <span>${planDetail.time }</span>
 			                        </div>
 		                  		</c:forEach>
 		                     </div>
-		                      <div class="c2-right-edit">
-		                        <a href="javascript:void(0)" onclick="addTeachPlan(${teachPlanInformation.trid})">
-		                        	<span class="icon icon-plus icon-2x"></span>
-		                        </a>
-		                      </div>
 		                  </div>
 		              </div>
 		          </div>
@@ -185,29 +178,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           
         </div>
 
-        <!-- 富文本编辑框 -->
-        <div id="light" class="white_content"> 
-           <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display ='none'"><span class="icon icon-times"></span></a><br>
-           <div>
-           	 <span>教案备用时间:</span>
-          	 <input type="text" class="form-control form-date" placeholder="选择或者输入一个日期：MM-dd">
-           </div>
-           <script id="editor" type="text/plain" style="width:750px;height:200px;"></script>
-           <span>请输入教案内容</span>
-           <button type="button" value="保存" onclick="getContent()">确定</button>
-        </div>
-        <div id="addPlan" class="white_content"> 
-           <a href = "javascript:void(0)" onclick = "document.getElementById('addPlan').style.display='none';document.getElementById('fade').style.display ='none'"><span class="icon icon-times"></span></a><br>
-           <div>
-           	 <span>教案备用时间:</span>
-          	 <input type="text" class="form-control form-date" placeholder="选择或者输入一个日期：MM-dd">
-           </div>
-           <script id="editor-2" type="text/plain" style="width:750px;height:200px;"></script>
-           <span>请输入教案内容</span>
-           <button type="button" value="保存" onclick="addTeachPlanInfor()">确定</button>
-        </div>
-      	<div id="fade" class="black_overlay"></div>
-        <script type="text/javascript" src="js/myplan.js"></script>
       </div>
     </div>
 </div>
@@ -259,6 +229,5 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </div>
  
 </body>
-
 
 </html>
