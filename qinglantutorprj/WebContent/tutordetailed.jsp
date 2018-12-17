@@ -32,7 +32,7 @@
 </head>
 <body>
 <!--header-->
-	<%@ include file="header.jsp"%>
+	<jsp:include page="header.jsp"></jsp:include>
 <!--//header结束  -->
 
 
@@ -542,7 +542,7 @@
 	</div>
 </div>
 <!--footer-->
-	<%@ include file="footer.jsp"%>
+	<jsp:include page="footer.jsp"></jsp:include>
 <!--//footer结束  -->
 </body>
 </html>

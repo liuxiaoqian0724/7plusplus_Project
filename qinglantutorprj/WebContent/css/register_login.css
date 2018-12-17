@@ -30,12 +30,13 @@
 }
 #register{
 	width:900px;
+	margin:0 auto;
 	margin-left:220px;
 	display:none;
 	position: absolute;
 	z-index: 9999;
 	background-color: #F9F9F9;
-	margin-top: -120px;
+	/* margin-top: -100px; */
 }
 #register_title{
 	margin-left:100px;

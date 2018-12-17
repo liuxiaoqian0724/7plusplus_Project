@@ -1,7 +1,6 @@
 package com.sevenpp.qinglantutor.entity;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -13,7 +12,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.NotFound;
@@ -37,14 +35,13 @@ public class MyJob implements java.io.Serializable {
 	 * @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么) 
 	 */
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -6244406112934286586L;
 	private Integer jid; // 求职信息id
 	private String address;
 	private Integer price;
 	private String teacherAge; // 教龄
 	private String myExperience;
-	private String sucesses;
-
+	private String success;
 	private User user = new User(); // 求职信息表和用户表是双向一对一的关系
 	private Set<Course> courses = new HashSet<Course>(); // 求职信息表和课程表多对多的关系
 	private Set<Grade> grades = new HashSet<Grade>(); // 求职关系表和年级表多对多的关系
@@ -83,21 +80,6 @@ public class MyJob implements java.io.Serializable {
 	public void setTeacherAge(String teacherAge) {
 		this.teacherAge = teacherAge;
 	}
-	public String getMyExperience() {
-		return myExperience;
-	}
-
-	public void setMyExperience(String myExperience) {
-		this.myExperience = myExperience;
-	}
-
-	public String getSucesses() {
-		return sucesses;
-	}
-
-	public void setSucesses(String sucesses) {
-		this.sucesses = sucesses;
-	}
 
 	@ManyToOne()
 	@JoinColumn(name = "tid") // 老师id(tid)是外键
@@ -110,7 +92,7 @@ public class MyJob implements java.io.Serializable {
 		this.user = user;
 	}
 
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "tbl_myjobcourse", // 第三张表
 			joinColumns = @JoinColumn(name = "jid"), inverseJoinColumns = @JoinColumn(name = "cid"))
 	public Set<Course> getCourses() {
@@ -121,7 +103,7 @@ public class MyJob implements java.io.Serializable {
 		this.courses = courses;
 	}
 
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "tbl_myjobgrade", // 第三张表
 			joinColumns = @JoinColumn(name = "jid"), inverseJoinColumns = @JoinColumn(name = "gid"))
 	public Set<Grade> getGrades() {
@@ -143,12 +125,22 @@ public class MyJob implements java.io.Serializable {
 		this.times = times;
 	}
 
-	@Override
-	public String toString() {
-		return "MyJob [jid=" + jid + ", address=" + address + ", price=" + price + ", teacherAge=" + teacherAge
-				+ ", user=" + user + ", courses=" + courses + ", grades=" + grades + ", times=" + times + "]";
+	
+
+	public String getMyExperience() {
+		return myExperience;
 	}
-	
-	
+
+	public void setMyExperience(String myExperience) {
+		this.myExperience = myExperience;
+	}
+
+	public String getSuccess() {
+		return success;
+	}
+
+	public void setSuccess(String success) {
+		this.success = success;
+	}
 
 }

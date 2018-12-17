@@ -1,7 +1,7 @@
 package com.sevenpp.qinglantutor.entity;
 
 import java.beans.Transient;
-import java.util.Date;
+import java.sql.Timestamp;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,12 +25,10 @@ public class Review implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private Integer rid; // 评价id
-	private Date reviewTime; // 评价时间
+	private Timestamp reviewTime; // 评价时间
 	private String reviewContent; // 评价时间
 	private Integer reviewStar; // 评价星级
 	private ClassRelation classRelation = new ClassRelation(); // 评价表和上课关系表是双向多对一的关系
-	
-	private Integer reviewCount;//获取评论数
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer getRid() {
@@ -41,11 +39,11 @@ public class Review implements java.io.Serializable {
 		this.rid = rid;
 	}
 
-	public Date getReviewTime() {
+	public Timestamp getReviewTime() {
 		return reviewTime;
 	}
 
-	public void setReviewTime(Date reviewTime) {
+	public void setReviewTime(Timestamp reviewTime) {
 		this.reviewTime = reviewTime;
 	}
 
@@ -75,15 +73,6 @@ public class Review implements java.io.Serializable {
 		this.classRelation = classRelation;
 	}
 
-	//非数据库字段，统计评论条数
-	@Transient
-	public Integer getReviewCount() {
-		return reviewCount;
-	}
-
-	public void setReviewCount(Integer reviewCount) {
-		this.reviewCount = reviewCount;
-	}
 
 	
 	

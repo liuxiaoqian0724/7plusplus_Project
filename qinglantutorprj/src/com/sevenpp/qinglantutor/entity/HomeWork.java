@@ -2,7 +2,7 @@ package com.sevenpp.qinglantutor.entity;
 
 
 import java.util.Date;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,12 +27,7 @@ import org.hibernate.annotations.NotFoundAction;
 public class HomeWork  implements java.io.Serializable {
 
 
-     /** 
-			* @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么) 
-			*/
-		
-	private static final long serialVersionUID = 1L;
-	private Integer hid;
+     private Integer hid;
      private String tcontent;	//老师留的作业内容
      private String scontent;	//学生交的作业内容
      private Date tstartTime;	//老师留作业的时间
@@ -40,6 +35,10 @@ public class HomeWork  implements java.io.Serializable {
      private Integer score;	
      private String sstatus;	//学生的作业状态（已完成或未完成）
      private String tstatus;
+     private String question;
+     private String workReview;
+     private Date deadlineTime;
+     
      
      private ClassRelation classRelation=new ClassRelation();	//作业表和上课关系表是双向多对一的关系
      private TeachRelation teachRelation=new TeachRelation();	//作业表和教课关系表是双向多对一的关系
@@ -114,6 +113,44 @@ public class HomeWork  implements java.io.Serializable {
 	public void setTeachRelation(TeachRelation teachRelation) {
 		this.teachRelation = teachRelation;
 	}
+     
+	public String getQuestion() {
+		return question;
+	}
+	public void setQuestion(String question) {
+		this.question = question;
+	}
+	public String getWorkReview() {
+		return workReview;
+	}
+	public void setWorkReview(String workReview) {
+		this.workReview = workReview;
+	}
+	
+	public Date getDeadlineTime() {
+		return deadlineTime;
+	}
+	public void setDeadlineTime(Date deadlineTime) {
+		this.deadlineTime = deadlineTime;
+	}
+	
+     
+   
+
+    
+
+//    @ManyToOne
+//    @JoinColumn(name="tid")
+//	public User getUser() {
+//		return user;
+//	}
+//
+//	public void setUser(User user) {
+//		this.user = user;
+//	}
+
+    
+
 
 }
 
