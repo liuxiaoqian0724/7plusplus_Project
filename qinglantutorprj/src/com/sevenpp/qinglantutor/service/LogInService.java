@@ -26,4 +26,5 @@ package com.sevenpp.qinglantutor.service;
 public interface LogInService {
 	Boolean isPassword(String email,String password);
 	String getRole(String email);
+	String getUserName(String email);
 }

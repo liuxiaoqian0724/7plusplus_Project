@@ -62,4 +62,17 @@ public class LoginServiceImpl implements LogInService {
 				*/
 			return logInDaoImpl.getRole(email);
 	}
+
+	@Override
+	public String getUserName(String email) {
+				/**
+				* getUserName(查询用户名)
+				* @param name
+				* @param @return 设定文件
+				* @return String DOM对象
+				* @Exception 异常对象
+				* @since CodingExample Ver(编码范例查看) 1.1
+				*/
+		return logInDaoImpl.getUserName(email);
+	}
 }

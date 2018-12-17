@@ -1,16 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%
-  String path = request.getContextPath();
-  String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path;
-%>
+    pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path;%>
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>index</title>
+    <title>Index</title>
     <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/index.css">
     <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/header.css"/>
     <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/footer.css"/>
@@ -26,8 +25,9 @@
     <script src="<%=basePath%>/js/verify.min.js"></script>
    <!--  js功能代码 -->
    </head>  
+	
   <body>
-   <jsp:include page="header.jsp"></jsp:include>
+   <jsp:include page="header.jsp"/>
 	<div class="container-fixed">
 			<!--轮播图myNiceCarousel-->
 			<div id="myNiceCarousel" class="carousel slide" data-ride="carousel" style="position: relative; margin-top: 15px;">
@@ -40,15 +40,15 @@
 				<!-- 轮播项目 -->
 				<div class="carousel-inner">
 					<div class="item active">
-						<img alt="First slide" src="<%=basePath%>/images/banner1.jpg">
+						<img alt="First slide" src="<%=basePath%>/images/banner1.png">
 						<div class="carousel-caption"></div>
 					</div>
 					<div class="item">
-						<img alt="Second slide" src="<%=basePath%>/images/banner2.jpg">
+						<img alt="Second slide" src="<%=basePath%>/images/banner2.png">
 						<div class="carousel-caption"></div>
 					</div>
 					<div class="item">
-						<img alt="Third slide" src="<%=basePath%>/images/banner3.jpg">
+						<img alt="Third slide" src="<%=basePath%>/images/banner3.png">
 						<div class="carousel-caption"></div>
 					</div>
 				</div>
@@ -75,81 +75,19 @@
 					<button type="button" class="btn btn-info">兼职家教</button>
 					<button type="button" class="btn btn-info">专职家教</button>
 					<button type="button" class="btn btn-info">推荐家教</button>
-					<button class="btn btn-info" type="button" id="i_wonder_release"><i class="icon icon-pencil"></i>我要发布</button>
+					<button class="btn btn-info" type="button" id="i_wonder_release" onclick="window.location.href='<%=basePath%>/sendmessageed.jsp'"><i class="icon icon-pencil"></i>我要发布</button>
 				</div>
 				<!--个人信息personal_information-->
-				<div class="cards cards-borderless" id="personal_information">
-					<div class="col-md-4 col-sm-6 col-lg-3" id="personal_inf">
-						<a class="card" href="###" style="position: relative;">
-							<img src="<%=basePath%>/images/idphoto1.jpg" alt="">
-							<div class="caption">中小学优秀英语教师</div>
-							<div class="card-content text-muted"  id="personal_name">
-								<p></p>
-								<p>&nbsp;&nbsp;&nbsp;姓名：</p>
-								<p>&nbsp;&nbsp;&nbsp;学历：</p>
-								<p>&nbsp;&nbsp;&nbsp;简介：</p>
-							</div>
-						</a>
+				<div class="cards cards-borderless" id="personal_information" style="width:100%">
+				<!-- 教师简介 -->
+					<div id="personal_name_introduce_school" style="width:1305px;">
+						
 					</div>
-					<div class="col-md-4 col-sm-6 col-lg-3" id="personal_inf">
-						<a class="card" href="###" style="position: relative;">
-							<img src="<%=basePath%>/images/idphoto2.jpg" alt="">
-							<div class="caption">中小学优秀英语教师</div>
-							<div class="card-content text-muted"  id="personal_name">
-								<p></p>
-								<p>&nbsp;&nbsp;&nbsp;姓名：</p>
-								<p>&nbsp;&nbsp;&nbsp;学历：</p>
-								<p>&nbsp;&nbsp;&nbsp;简介：</p>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 col-sm-6 col-lg-3" id="personal_inf">
-						<a class="card" href="###" style="position: relative;">
-							<img src="<%=basePath%>/images/idphoto3.jpg" alt="">
-							<div class="caption">中小学优秀英语教师</div>
-							<div class="card-content text-muted"  id="personal_name">
-								<p></p>
-								<p>&nbsp;&nbsp;&nbsp;姓名：</p>
-								<p>&nbsp;&nbsp;&nbsp;学历：</p>
-								<p>&nbsp;&nbsp;&nbsp;简介：</p>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 col-sm-6 col-lg-3" id="personal_inf">
-						<a class="card" href="###" style="position: relative;">
-							<img src="<%=basePath%>/images/idphoto4.jpg" alt="">
-							<div class="caption">中小学优秀英语教师</div>
-							<div class="card-content text-muted"  id="personal_name">
-								<p></p>
-								<p>&nbsp;&nbsp;&nbsp;姓名：</p>
-								<p>&nbsp;&nbsp;&nbsp;学历：</p>
-								<p>&nbsp;&nbsp;&nbsp;简介：</p>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 col-sm-6 col-lg-3" id="personal_inf">
-						<a class="card" href="###" style="position: relative;">
-							<img src="<%=basePath%>/images/idphoto1.jpg" alt="">
-							<div class="caption">中小学优秀英语教师</div>
-							<div class="card-content text-muted"  id="personal_name">
-								<p></p>
-								<p>&nbsp;&nbsp;&nbsp;姓名：</p>
-								<p>&nbsp;&nbsp;&nbsp;学历：</p>
-								<p>&nbsp;&nbsp;&nbsp;简介：</p>
-							</div>
-						</a>
-					</div>
+					<!-- 分页器 -->
+					<ul class="pager" id="pager" style="float:right; position:relative; margin-right:45%;">
+						
+					</ul>
 				</div>
-				<!--分页-->
-				<ul class="pager" id="pager">
-					<li class="previous disabled"><a href="#">«</a></li>
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li class="next"><a href="#">»</a></li>
-				</ul>   		
 			</div>
 			<!--家教信息end-->
 	
@@ -166,7 +104,7 @@
 					<button type="button" class="btn btn-info" id="opt1" onclick="learning_experienceDis()">学习经验</button>
 					<button type="button" class="btn btn-info" id="opt2" onclick="course_questionDis()">课程问答</button>
 					<button type="button" class="btn btn-info" id="opt3" onclick="community_authorDis()">社区作者</button>
-					<button class="btn btn-info" type="button" id="i_wonder_release"><i class="icon icon-pencil"></i>我要发布</button>
+					<button class="btn btn-info" type="button" id="i_wonder_release" onclick="window.location.href='sendmessage.jsp'"><i class="icon icon-pencil"></i>我要发布</button>
 				</div>
 				<!--学习经验-->
 				<div id="learning_experience" class="panel" style="display:block;">
@@ -443,85 +381,15 @@
 					</div>
 				</div>
 				<!--分页-->
-				<ul class="pager" id="pager">
-					<li class="previous disabled"><a href="#">«</a></li>
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li class="next"><a href="#">»</a></li>
+				<ul class="pager" id="pager" data-ride="pager" data-page="2" data-rec-total="89" data-max-nav-count="4" data-elements="prev_icon,page_of_total_text,next_icon" style="margin-left:500px;">
+					
 				</ul>	
 			</div>
 			<!--学习社区end-->
 		</div>
-		<script type="text/javascript">
-			//学习社区点击按钮切换界面
-			var learning_experience=document.getElementById('learning_experience');
-			var course_question=document.getElementById('course_question');
-			var community_author=document.getElementById('community_author');
-			function learning_experienceDis(){
-					learning_experience.style.display="block";
-					course_question.style.display="none";
-					community_author.style.display="none";
-				}
-			function course_questionDis(){
-			  learning_experience.style.display="none";
-			  course_question.style.display="block";
-			  community_author.style.display="none";
-			}
-			function community_authorDis(){
-			  learning_experience.style.display="none";
-			  course_question.style.display="none";
-			  community_author.style.display="block";
-			}
-			
-			//收藏按钮点击效果
-			function changstars(){
-				var collection=document.getElementById("collection");
-				var collectioncount=document.getElementById("collectioncount").innerText;
-				if(collectioncount==108){
-					console.log(collectioncount);
-					collectioncount=parseInt(collectioncount)+1;
-					collection.innerHTML="<i class='icon icon-star'></i><span id='collectioncount'>"+collectioncount+"</span>";
-				}
-				else{
-					console.log(collectioncount);
-					collectioncount=parseInt(collectioncount)-1;
-					collection.innerHTML="<i class='icon icon-star-empty'></i><span id='collectioncount'>"+collectioncount+"</span>";
-				}
-			}
-			
-			//点赞按钮点击效果
-			function changegood(){
-				var changegood=document.getElementById("good");
-				var goodcount=document.getElementById("goodcount").innerText;
-				if(goodcount==108){
-					goodcount=parseInt(goodcount)+1;
-					good.innerHTML="<i class='icon icon-thumbs-up'></i><span id='goodcount'>"+goodcount+"</span>";
-				}
-				else{
-					goodcount=parseInt(goodcount)-1;
-					good.innerHTML="<i class='icon icon-thumbs-o-up'></i><span id='goodcount'>"+goodcount+"</span>";
-				}
-			}
-			
-			//图片的划入划出事件
-			var arr = new Array();
-			$(".card").each(function(){
-				arr.push($(this));
-			});
-			for(var i=0;i<5;i++){
-				arr[i].mouseover(function(){
-					$(this).animate({top:'-10px'},"fast");
-				});
-				arr[i].mouseout(function(){
-					$(this).animate({top:'0px'},"fast");
-				});
-			}
-		</script>
-			
-		<jsp:include page="footer.jsp"/>
+	</div>
+	<script type="text/javascript" src="<%=basePath%>/js/index.js"></script>
+	<jsp:include page="footer.jsp" />
 	<script type="text/javascript" src="<%=basePath%>/js/checkLogin_regist.js"></script>
 </body>
 </html>

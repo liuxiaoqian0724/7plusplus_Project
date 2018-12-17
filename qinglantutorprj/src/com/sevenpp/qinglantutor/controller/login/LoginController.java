@@ -49,8 +49,8 @@ import com.sevenpp.qinglantutor.service.impl.LoginServiceImpl;
 /**
  * @CrossOrigin 跨域请求开启
  */
-@CrossOrigin
 @RequestMapping("/user")
+@CrossOrigin
 @SessionAttributes("errorMsg")
 public class LoginController {
 	@Resource
@@ -69,17 +69,26 @@ public class LoginController {
 			String JSESSIONID = request.getRequestedSessionId();
 			Cookie jessionid = new Cookie("JESSIONID",JSESSIONID);
 			Cookie EMAIL = new Cookie("EMAIL",email);
-			jessionid.setMaxAge(3600);
+			Cookie USERNAME = new Cookie("USERNAME",loginServiceImpl.getUserName(email));
+			Cookie ROLE = new Cookie("ROLE",loginServiceImpl.getRole(email));
+			jessionid.setPath(request.getContextPath()+"/");
+			EMAIL.setPath(request.getContextPath()+"/");
+			USERNAME.setPath(request.getContextPath()+"/");
+			ROLE.setPath(request.getContextPath()+"/");
+			jessionid.setMaxAge(24*60*60);
+			EMAIL.setMaxAge(24*60*60);
+			USERNAME.setMaxAge(24*60*60);
+			ROLE.setMaxAge(24*60*60);
 			response.addCookie(jessionid);
 			response.addCookie(EMAIL);
+			response.addCookie(USERNAME);
+			response.addCookie(ROLE);
 			if (loginServiceImpl.getRole(email).equals("家长")) {
 				return "student-personal-center-evaluation";
-				
 			}else {
-				return "teacher-personal-center-evaluation";
+				return "index";
 			}
 		}else {
-			request.setAttribute("errorMsg","账户或者密码不正确");
 			return "index";
 		}
 	}

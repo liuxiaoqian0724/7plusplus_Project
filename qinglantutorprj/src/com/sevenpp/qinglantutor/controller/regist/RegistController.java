@@ -61,9 +61,20 @@ public class RegistController {
 			String JSESSIONID = request.getRequestedSessionId();
 			Cookie jessionid = new Cookie("JESSIONID",JSESSIONID);
 			Cookie EMAIL = new Cookie("EMAIL",map.get("email"));
-			jessionid.setMaxAge(3600);
+			Cookie USERNAME = new Cookie("USERNAME",map.get("username"));
+			Cookie ROLE = new Cookie("ROLE",map.get("role"));
+			jessionid.setPath(request.getContextPath()+"/");
+			EMAIL.setPath(request.getContextPath()+"/");
+			USERNAME.setPath(request.getContextPath()+"/");
+			ROLE.setPath(request.getContextPath()+"/");
+			jessionid.setMaxAge(24*60*60);
+			EMAIL.setMaxAge(24*60*60);
+			USERNAME.setMaxAge(24*60*60);
+			ROLE.setMaxAge(24*60*60);
 			response.addCookie(jessionid);
 			response.addCookie(EMAIL);
+			response.addCookie(USERNAME);
+			response.addCookie(ROLE);
 			try {
 				writer = response.getWriter();
 				writer.write("ok");

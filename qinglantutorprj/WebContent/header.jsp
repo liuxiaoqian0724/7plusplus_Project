@@ -4,6 +4,53 @@
   String path = request.getContextPath();
   String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path;
 %>
+<script>
+$(document).ready(function(){
+	var username="";
+	username=getCookie("USERNAME");
+	if(username==""){
+		$("#header-login").html("");
+		var buttons='<div class="btn-group">'
+	                  +'<button class="btn" id="login_button" onclick="loginDis()">登录</button>'
+	                  +'<button class="btn" id="register_button" onclick="registDis()">注册</button>'
+	                  +'</div>';
+		$("#header-login").append(buttons);
+	}
+	else{
+		$("#header-login").html("");
+		$("#header-login").append('<span style="text-decoration:none; font-size:18px; color:#ddf4df;">hello,'+username+'！</span>'
+							+'<button class="btn btn-info" id="login_button" style="text-decoration:none; font-size:14px;position:relative;top:-34px;left:150px;" onclick="deleteCookie('+username+')">退出</button>');
+	}
+	datashow(currentpage);
+	topage(currentpage);
+});
+		//页码
+		//登录保持
+	//获取指定名称的cookie的值 
+	function getCookie(name) {
+		var strCookie = document.cookie;
+		var arrCookie = strCookie.split("; ");
+		for (var i = 0; i < arrCookie.length; i++) {
+			var arr = arrCookie[i].split("=");
+			if (arr[0] == name)
+				return arr[1];
+		}
+		return "";
+	} 
+	
+	//删除cookie并添加按钮
+	function deleteCookie(name){ 
+	  var date=new Date(); 
+	  date.setTime(date.getTime()-10000); 
+	  document.cookie=name+"=v; expires="+date.toGMTString();
+	  $("#header-login").html("");
+		var buttons='<div class="btn-group">'
+	                +'<button class="btn" id="login_button" onclick="loginDis()">登录</button>'
+	                +'<button class="btn" id="register_button" onclick="registDis()">注册</button>'
+	                +'</div>';
+		$("#header-login").append(buttons);
+} 
+				</script>
  <div id="header-box">
     		<div id="big-box">
     			<!-- logo -->
@@ -19,11 +66,11 @@
     				<div id="topBox2">
     					<ul id="navFont">
     					<li class="navFont1"><a href="#">首页</a></li>
-    					<li><a href="#">家教</a>
+    					<li><a href="search/家教">家教</a>
     						<ul>
-    							<li><a href="#">小学</a></li>
-    							<li><a href="#">初中</a></li>
-    							<li><a href="#">高中</a></li>
+    							<li><a href="search/小学">小学</a></li>
+    							<li><a href="search/初中">初中</a></li>
+    							<li><a href="search/高中">高中</a></li>
     						</ul>
     					</li>
     					<li><a href="#">论坛社区</a>
@@ -49,15 +96,15 @@
     					<label for="inputSearchExample3" class="input-control-icon-left search-icon"><i class="icon icon-search"></i></label>
   					</div>
   				<span class="input-group-btn">
-    				<button class="btn btn-primary" type="button">搜索</button>
+    				<button class="btn btn-info" type="submit">搜索</button>
   				</span>
 			</div>
     				<!-- 登录注册 -->
     				<div id="header-login">
     					<div class="btn-group">
-                  <button class="btn" id="login_button" onclick="loginDis()">登录</button>
-                  <button class="btn" id="register_button" onclick="registDis()">注册</button>
-              </div>
+                  			<button class="btn" id="login_button" onclick="loginDis()">登录</button>
+                  			<button class="btn" id="register_button" onclick="registDis()">注册</button>
+              			</div>
     				</div>
     			</div>
     			</div>
@@ -73,7 +120,7 @@
       		<div id="closeframe">
       			<button id="closebutton" onclick="closeframe()"><i class="icon icon-times"></i></button>
       		</div>
-      		<form id="login_form" onsubmit="return logincheck()" method="post" action="<%=basePath%>/user/login">
+      		<form id="login_form" onsubmit="return logincheck()" method="post" action="user/login">
       			<!--邮箱-->
       			<div class="input-control has-icon-left" style="width:361px">
       				<input id="login_useremail" type="text" class="form-control" placeholder="邮箱" name="email">

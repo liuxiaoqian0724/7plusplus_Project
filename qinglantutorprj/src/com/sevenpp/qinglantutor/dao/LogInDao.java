@@ -66,4 +66,5 @@ public interface LogInDao {
 	 */
 	String getUserPwd(String email);
 	String getRole(String email);
+	String getUserName(String email);
 }
