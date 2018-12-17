@@ -1,21 +1,20 @@
-//设置登录、注册按钮的点击效果
 	var identify = false;
 	var isPwd = false;
 	var isRePwd = false;
 	var isName = false;
 	var isEmail = false;
 	var isEIdentify = false;
-	
+	//登录弹出效果
 	function loginDis() {
 		var abc=$(document.body).html();//JQ方式
 		var login = document.getElementById("login");
 		var register = document.getElementById("register");
 			if(login.style.display == "block") {
 				login.style.display = "none";
-				document.getElementById('fade').style.display='none';
+				document.getElementById('fade').style.display="none";
 			} else {
 				login.style.display = "block";
-				document.getElementById('fade').style.display='block';
+				document.getElementById('fade').style.display="block";
 				abc.css ={"overflow-x":"hidden","overflow-y":"hidden"}
     
 			}
@@ -27,16 +26,17 @@
 			 });
 
 	}
+	//注册弹出效果
 	function registDis() {
 		var abc=$(document.body).html();
 		var login = document.getElementById("login");
 		var register = document.getElementById("register");
 			if(register.style.display == "block") {
 				register.style.display = "none";
-				document.getElementById('fade').style.display='none';
+				document.getElementById('fade').style.display="none";
 			} else {
 				register.style.display = "block";
-				document.getElementById('fade').style.display='block';
+				document.getElementById('fade').style.display="block";
 				abc.css ={"overflow-x":"hidden","overflow-y":"hidden"}
 			}
 			login.style.display = "none";
@@ -85,7 +85,7 @@
 			nameError.html('用户名不能为空！');
 			isName = false;
 		}else{
-			nameError.html('');
+			nameError.html("<img alt='' href='images/icon/ok.png'>");
 			isName = true;
 		}
 	}
@@ -100,7 +100,7 @@
 			isPwd = false;
 			pwdError.html('您的密码不符合格式要求！');
 		}else{
-			pwdError.html('');
+			pwdError.html("<img alt='' href='images/icon/ok.png'>");
 			isPwd = true;
 		}
 	}
@@ -116,7 +116,7 @@
 			rePwdError.html('两次密码不一致！');
 		}else{
 			isRePwd = true;
-			rePwdError.html('');
+			rePwdError.html("<img alt='' href='images/icon/ok.png'>");
 		}
 	}
 	function checkEmail(){
@@ -131,7 +131,7 @@
 			EmailError.html('邮箱格式不正确');
 		}else{
 			isEmail = true;
-			EmailError.html('');
+			EmailError.html("<img alt='' href='images/icon/ok.png'>");
 		}
 	}
 	function checkEIdentify(){
@@ -142,7 +142,7 @@
 			EIdentify.html('验证码不能为空');
 		}else{
 			isEIdentify = true;
-			EIdentify.html('');
+			EIdentify.html("<img alt='' href='images/icon/ok.png'>");
 		}
 	}
 	function checkRegist(){
@@ -150,7 +150,7 @@
 		var principle = $('#principle');
 		if (isName&&isPwd&&isRePwd&&isEmail&&isEIdentify&&identify) {
 			if(principle.prop('checked')){
-				allError.html('');
+				allError.html("<img alt='' href='images/icon/ok.png'>");
 				return true;
 			}else{
 				allError.html('注册需要您接受本网站协议！');
@@ -181,14 +181,14 @@
 			function logincheck(){
 				var useremail=$("#login_email").val();
 				var password=$("#login_password").val();
-				var show=$("#show");
+				var show=$("#loginshow");
 				if(useremail==""||password==""){
 					show.html("邮箱或密码为空！");
 					console.log(1);
 					return false;
 				}
 				else{
-					show.html("");
+					show.html("<img alt='' href='images/icon/ok.png'>");
 					return true;
 				}
 			}

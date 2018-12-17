@@ -94,7 +94,8 @@
       			<button class="btn btn-info" type="button" style="margin-left:200px">免费注册</button>
       			<h5></h5>
       			<button class="btn btn-info" type="submit" style="width:361px" id="loginnow">立即登录</button>
-      			<br/><span id="show" style="color:red; font-size='15px';">${errorMsg}</span>
+      			<br/>
+      			<span id="loginshow" style="color:red; font-size='15px';">${errorMsg}</span>
       		</form>
       		<!--二维码-->
       		<div id="login_qrcode">
@@ -103,6 +104,8 @@
       			<p>扫描二维码获得更多动态信息</p>
       		</div>
       	</div>
+      	
+      	<!-- 注册 -->
       	<div class="panel" id="register"style="display:none;">
       		<div id="register_title">
       			<h1>会员注册</h1>

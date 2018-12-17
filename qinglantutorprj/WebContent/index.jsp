@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%String basePath = request.getContextPath();%>
+<%	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path;%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,21 +10,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Index</title>
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" type="text/css" href="css/header.css"/>
-    <link rel="stylesheet" type="text/css" href="css/footer.css"/>
-    <link rel="stylesheet" type="text/css" href="css/register_login.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/index.css">
+    <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/header.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/footer.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/register_login.css"/>
     <!-- zui -->
-    <link rel="stylesheet" href="dist/css/zui.css" />
-    <link rel="stylesheet" href="css/verify.css" />
+    <link rel="stylesheet" href="<%=basePath%>/dist/css/zui.css" />
+    <link rel="stylesheet" href="<%=basePath%>/css/verify.css" />
     <!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
     <script src="js/jquery-3.2.1.js"></script>
     <!-- ZUI Javascript组件 -->
-    <script type="text/javascript" src="dist/js/zui.js"></script>
-    <script src="js/verify.js"></script>
-    <script src="js/verify.min.js"></script>
+    <script type="text/javascript" src="<%=basePath%>/dist/js/zui.js"></script>
+    <script src="<%=basePath%>/js/verify.js"></script>
+    <script src="<%=basePath%>/js/verify.min.js"></script>
    <!--  js功能代码 -->
-   
    </head>  
 	
   <body>
@@ -40,15 +40,15 @@
 				<!-- 轮播项目 -->
 				<div class="carousel-inner">
 					<div class="item active">
-						<img alt="First slide" src="images/banner1.png">
+						<img alt="First slide" src="<%=basePath%>/images/banner1.png">
 						<div class="carousel-caption"></div>
 					</div>
 					<div class="item">
-						<img alt="Second slide" src="images/banner2.png">
+						<img alt="Second slide" src="<%=basePath%>/images/banner2.png">
 						<div class="carousel-caption"></div>
 					</div>
 					<div class="item">
-						<img alt="Third slide" src="images/banner3.png">
+						<img alt="Third slide" src="<%=basePath%>/images/banner3.png">
 						<div class="carousel-caption"></div>
 					</div>
 				</div>
@@ -64,9 +64,9 @@
 	
 			<!--家教信息图片tutor_information_pic-->
 			<div class="tutor_information_pic">
-				<img src="images/hr.png" style="position:relative; width:408px; margin-left:0px; margin-top:50px; display:inline;"/>
-				<img src="images/tutorinf.png" style="position:relative; margin-top:25px; margin-left:50px;"/>
-				<img src="images/hr.png" style="position:relative; width:408px; margin-left:730px; margin-top:-70px;"/>
+				<img src="<%=basePath%>/images/hr.png" style="position:relative; width:408px; margin-left:0px; margin-top:50px; display:inline;"/>
+				<img src="<%=basePath%>/images/tutorinf.png" style="position:relative; margin-top:25px; margin-left:50px;"/>
+				<img src="<%=basePath%>/images/hr.png" style="position:relative; width:408px; margin-left:730px; margin-top:-70px;"/>
 			</div>
 			<!--家教信息tutor_information-->
 			<div class="tutor_information">
@@ -174,9 +174,9 @@
 	
 			<!--学习社区图片-->
 			<div class="studycommunity">
-				<img src="images/hr.png" style="position:relative; width:408px; margin-left:0px; margin-top:50px; display:inline;"/>
-				<img src="images/studycommunity.png" style="position:relative; margin-top:25px; margin-left:50px;"/>
-				<img src="images/hr.png" style="position:relative; width:408px; margin-left:730px; margin-top:-70px;"/>
+				<img src="<%=basePath%>/images/hr.png" style="position:relative; width:408px; margin-left:0px; margin-top:50px; display:inline;"/>
+				<img src="<%=basePath%>/images/studycommunity.png" style="position:relative; margin-top:25px; margin-left:50px;"/>
+				<img src="<%=basePath%>/images/hr.png" style="position:relative; width:408px; margin-left:730px; margin-top:-70px;"/>
 			</div>
 			<!--学习社区learning_community-->
 			<div id="learning_community" class="panel">
@@ -534,54 +534,7 @@
 				});
 			}
 		</script>
-			
-			
-		<div class="footer">
-				<!-- 关于网页 -->
-				<div class="footer-font">
-					<div id="footer-font-about">
-						<div id="about-title"><h3 class="font-h3">关于青蓝</h3></div>
-						<div id="about-font"><p class="footer-words">
-							青蓝家教旨在为大学生和家长提供真实可靠的家教信息发布、家教过程约束和学情分析平台。大学生家教在平台上注册并发布家教信息，家教在线上记录孩子的每次学习情况用于记录分析，并且可以给孩子提供线上辅导功能，家长可即时查看情况，更加了解孩子的学情。同时平台还为家长和家教提供论坛交流区，用于资料交流和分享。
-						</p></div>
-					</div>
-					<div id="footer-font-a">
-						<div id="a-title"><h3 class="font-h3">链接</h3></div>
-						<div id="a-font">
-							<a href="#" class="footer-words">加入我们</a>
-							<a href="#" class="footer-words">网站须知</a>
-							<a href="#" class="footer-words">意见反馈</a>
-							<a href="#" class="footer-words">免责声明</a>
-						</div>
-					</div>
-					<div id="footer-font-friend">
-						<div id="friend-title"><h3 class="font-h3">鸣谢伙伴</h3></div>
-						<div id="friend-logo">
-							<div id="friend-logo-div1">
-								<i class="icon icon-github icon-3x" ></i>
-								<i class="icon icon-qq icon-3x"></i>
-								<i class="icon icon-wechat icon-3x"></i>
-							</div>
-						</div>
-					</div>
-					<div id="footer-font-img">
-						<div id="footer-font-img-font"><h3>扫码关注我们了解更多</h3></div>
-						<img src="images/code.png" id="QRcode">
-				</div>
-			</div>
-		
-			<!-- 权利归属 -->
-				<div id="footer-right">
-					<div id="footer-right-font">
-						<p>
-							<br>
-							<a href="#" id="footer-right-font-a1">Copyright 2018-2020&nbsp;&nbsp;&nbsp;青蓝家教</a>
-							<a href="#" id="footer-right-font-a1">Copyright 2018-2020&nbsp;&nbsp;&nbsp;青蓝家教</a>
-			    			<a href="#" id="footer-right-font-a2">冀ICP备05067795号  冀公网安备110402440008号 </a>
-			    		</p>
-					</div>
-				</div>
-			</div>
+	<jsp:include page="footer.jsp" />
 	<script type="text/javascript" src="js/checkLogin_regist.js"></script>
 </body>
 </html>
