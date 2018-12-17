@@ -89,10 +89,11 @@
 					</ul>
 				</div>
 				<script>
-				var currentpage=1;
-				var totalpage=1;
-				var pagetemp=new Array();
-				console.log(totalpage);
+					var currentpage=1;
+					var totalpage=1;
+					var pagetemp=new Array();
+					console.log(totalpage);
+					//调用
 					$(document).ready(function(data){
 						datashow(currentpage);
 						topage(currentpage);
@@ -168,6 +169,7 @@
 							}
 						});
 					}
+	
 				</script>		
 			</div>
 			<!--家教信息end-->
