@@ -46,6 +46,19 @@ public interface TutorDetailDao {
 	 * @version V1.0   
 	 */
 	public User findTutorDetail(Integer id);
-	
+	/**
+	 * 
+			* @Title: addInquireMsg 
+			* @Description: 向数据库插入用户向家教咨询的用户ID和所选择的的科目
+			* @param @param id 发送请求的用户id
+			* @param @param chosenGrade 用户所选择的咨询科目
+			* @param @return    入参
+			* @return boolean    是否向数据库更新成功
+			* @author lxq
+			* @throws
+			* @date 2018年12月13日 上午10:40:18 
+			* @version V1.0   
+	 */
+//	public boolean addInquireMsg(Integer id,String chosenGrade);
 
 }

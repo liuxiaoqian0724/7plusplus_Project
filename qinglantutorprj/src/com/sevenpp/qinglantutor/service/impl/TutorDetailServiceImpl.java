@@ -12,6 +12,7 @@
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.sevenpp.qinglantutor.dao.impl.TutorDetailDaoImpl;
 import com.sevenpp.qinglantutor.entity.User;
@@ -37,6 +38,7 @@ import com.sevenpp.qinglantutor.service.TutorDetailService;
 		* @version V1.0 
 		*/
 		@Service
+		@Transactional
 		public class TutorDetailServiceImpl implements TutorDetailService {
 			
 			@Resource

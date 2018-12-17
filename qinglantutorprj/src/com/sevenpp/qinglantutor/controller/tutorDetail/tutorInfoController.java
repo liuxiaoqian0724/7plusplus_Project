@@ -13,7 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sevenpp.qinglantutor.entity.User;
 import com.sevenpp.qinglantutor.service.impl.TutorDetailServiceImpl;
@@ -57,11 +60,29 @@ import com.sevenpp.qinglantutor.service.impl.TutorDetailServiceImpl;
 			 */
 			@RequestMapping(value="/showtutorDetail/{id}")
 			public String showTutorDetail(HttpServletRequest request,@PathVariable Integer id) {
-				System.out.println(id);
 				User user=tutorDetailServiceImpl.getTutorDetail(id);
 				request.setAttribute("user",user);
 				return "tutordetailed";
 			}
+			
+			/**
+			 * 
+					* @Title: sendMsgToTutor 
+					* @Description: 家长点击按钮后系统给家教发送提醒信息
+					* @param @return    入参
+					* @return boolean    返回类型
+					* @author lxq
+					* @throws
+					* @date 2018年12月12日 上午9:58:57 
+					* @version V1.0   
+			 */
+//			@RequestMapping(value="/showtutorDetail/inquire",method=RequestMethod.POST)
+//			public @ResponseBody String sendMsgToTutor(@RequestBody String userId,@RequestBody String gradeChosen) {
+//				
+//				
+//				
+//				
+//			}
 }
 
 	

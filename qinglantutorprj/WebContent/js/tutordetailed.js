@@ -1,10 +1,11 @@
 $(document).ready(function(event){
 	$('.gradeli').click(function(){
+		$('.gradeli').attr('id','chosenLi');
 		$('.gradeli').css('background-color','#f9f9f9');
 		$(this).css('background-color','#81C7D4');
 		// $(this).css('border','1px blue solid');
 	})
-
+v
 	$('.patternli').click(function(){
 		// alert(123);
 		$('.patternli').css('background-color','#f9f9f9');
@@ -38,6 +39,19 @@ $(document).ready(function(event){
 		$('.img-rounded').attr('src',$(this).attr("data-image"));
 	})
 });
+//li点击事件，给被点击的li添加新的类名
+var foo=function(){
+	$(this).addClass('chosenLi');
+	alert($('.chosenLi').html());
+}
+$(".gradeli").on('click', foo);
+
+
+
+
+
+
+
 
 	// $('.page1').click(function(event){
 	// 	alert(123);

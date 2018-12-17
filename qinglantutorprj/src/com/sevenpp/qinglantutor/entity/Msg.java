@@ -1,7 +1,8 @@
 package com.sevenpp.qinglantutor.entity;
 
 
-import java.util.Date;
+
+import java.sql.Timestamp;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -34,7 +35,7 @@ public class Msg  implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 	private Integer mid;	//消息id
      private String content;	//内容
-     private Date sendTime;
+     private Timestamp sendTime;
      private Integer status;	//收件人的消息状态，同意还是拒绝
      
      private User user;		//消息表和用户表是双向多对一的关系
@@ -57,11 +58,13 @@ public class Msg  implements java.io.Serializable {
 		this.content = content;
 	}
 
-	public Date getSendTime() {
+	
+
+	public Timestamp getSendTime() {
 		return sendTime;
 	}
 
-	public void setSendTime(Date sendTime) {
+	public void setSendTime(Timestamp sendTime) {
 		this.sendTime = sendTime;
 	}
 

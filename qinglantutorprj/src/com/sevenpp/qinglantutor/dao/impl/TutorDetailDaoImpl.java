@@ -62,6 +62,11 @@ public class TutorDetailDaoImpl implements TutorDetailDao {
 		 */
 	}
 	
-	
+//	@Override
+//	public boolean addInquireMsg(Integer id,String chosenGrade) {
+//		
+//		
+//		
+//	}
 
 }

@@ -1,22 +1,22 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost_3306
-Source Server Version : 50532
+Source Server         : 本机Mysql数据库
+Source Server Version : 50506
 Source Host           : localhost:3306
 Source Database       : qinglandb
 
 Target Server Type    : MYSQL
-Target Server Version : 50532
+Target Server Version : 50506
 File Encoding         : 65001
 
-Date: 2018-12-06 17:12:31
+Date: 2018-12-12 09:19:34
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `tbl_classrelation`
+-- Table structure for tbl_classrelation
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_classrelation`;
 CREATE TABLE `tbl_classrelation` (
@@ -35,7 +35,7 @@ INSERT INTO `tbl_classrelation` VALUES ('3', '4', '2');
 INSERT INTO `tbl_classrelation` VALUES ('4', '4', '3');
 
 -- ----------------------------
--- Table structure for `tbl_course`
+-- Table structure for tbl_course
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_course`;
 CREATE TABLE `tbl_course` (
@@ -47,18 +47,18 @@ CREATE TABLE `tbl_course` (
 -- ----------------------------
 -- Records of tbl_course
 -- ----------------------------
-INSERT INTO `tbl_course` VALUES ('1', '');
-INSERT INTO `tbl_course` VALUES ('2', '');
-INSERT INTO `tbl_course` VALUES ('3', 'Ӣ');
-INSERT INTO `tbl_course` VALUES ('4', '');
-INSERT INTO `tbl_course` VALUES ('5', '');
-INSERT INTO `tbl_course` VALUES ('6', '');
-INSERT INTO `tbl_course` VALUES ('7', '');
-INSERT INTO `tbl_course` VALUES ('8', '');
-INSERT INTO `tbl_course` VALUES ('9', '');
+INSERT INTO `tbl_course` VALUES ('1', '语文');
+INSERT INTO `tbl_course` VALUES ('2', '数学');
+INSERT INTO `tbl_course` VALUES ('3', '英语');
+INSERT INTO `tbl_course` VALUES ('4', '物理');
+INSERT INTO `tbl_course` VALUES ('5', '化学');
+INSERT INTO `tbl_course` VALUES ('6', '生物');
+INSERT INTO `tbl_course` VALUES ('7', '地理');
+INSERT INTO `tbl_course` VALUES ('8', '政治');
+INSERT INTO `tbl_course` VALUES ('9', '历史');
 
 -- ----------------------------
--- Table structure for `tbl_grade`
+-- Table structure for tbl_grade
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_grade`;
 CREATE TABLE `tbl_grade` (
@@ -71,25 +71,25 @@ CREATE TABLE `tbl_grade` (
 -- ----------------------------
 -- Records of tbl_grade
 -- ----------------------------
-INSERT INTO `tbl_grade` VALUES ('1', 'һ', 'Сѧ');
-INSERT INTO `tbl_grade` VALUES ('2', '', 'Сѧ');
-INSERT INTO `tbl_grade` VALUES ('3', '', 'Сѧ');
-INSERT INTO `tbl_grade` VALUES ('4', '', 'Сѧ');
-INSERT INTO `tbl_grade` VALUES ('5', '', 'Сѧ');
-INSERT INTO `tbl_grade` VALUES ('6', '', 'Сѧ');
-INSERT INTO `tbl_grade` VALUES ('7', '', '');
-INSERT INTO `tbl_grade` VALUES ('8', '', '');
-INSERT INTO `tbl_grade` VALUES ('9', '', '');
-INSERT INTO `tbl_grade` VALUES ('10', '', '');
-INSERT INTO `tbl_grade` VALUES ('11', '', '');
-INSERT INTO `tbl_grade` VALUES ('12', '', '');
-INSERT INTO `tbl_grade` VALUES ('13', '', '');
-INSERT INTO `tbl_grade` VALUES ('14', '', '');
-INSERT INTO `tbl_grade` VALUES ('15', '', '');
-INSERT INTO `tbl_grade` VALUES ('16', '', '');
+INSERT INTO `tbl_grade` VALUES ('1', '一年级', '小学');
+INSERT INTO `tbl_grade` VALUES ('2', '二年级', '小学');
+INSERT INTO `tbl_grade` VALUES ('3', '三年级', '小学');
+INSERT INTO `tbl_grade` VALUES ('4', '四年级', '小学');
+INSERT INTO `tbl_grade` VALUES ('5', '五年级', '小学');
+INSERT INTO `tbl_grade` VALUES ('6', '六年级', '小学');
+INSERT INTO `tbl_grade` VALUES ('7', '初一', '初中');
+INSERT INTO `tbl_grade` VALUES ('8', '初二', '初中');
+INSERT INTO `tbl_grade` VALUES ('9', '初三', '初中');
+INSERT INTO `tbl_grade` VALUES ('10', '高一', '高中');
+INSERT INTO `tbl_grade` VALUES ('11', '高二', '高中');
+INSERT INTO `tbl_grade` VALUES ('12', '高三', '高中');
+INSERT INTO `tbl_grade` VALUES ('13', '大一', '大学');
+INSERT INTO `tbl_grade` VALUES ('14', '大二', '大学');
+INSERT INTO `tbl_grade` VALUES ('15', '大三', '大学');
+INSERT INTO `tbl_grade` VALUES ('16', '大四', '大学');
 
 -- ----------------------------
--- Table structure for `tbl_homework`
+-- Table structure for tbl_homework
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_homework`;
 CREATE TABLE `tbl_homework` (
@@ -115,7 +115,7 @@ INSERT INTO `tbl_homework` VALUES ('4', '', 'ѧ', '2018-11-13 14:05:33', '2018-1
 INSERT INTO `tbl_homework` VALUES ('5', '', 'ѧ', '2018-11-13 14:05:33', '2018-12-06 14:05:45', '90', '', 'δ', '1', '1');
 
 -- ----------------------------
--- Table structure for `tbl_msg`
+-- Table structure for tbl_msg
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_msg`;
 CREATE TABLE `tbl_msg` (
@@ -137,7 +137,7 @@ INSERT INTO `tbl_msg` VALUES ('3', '4', '1', 'С', '2018-11-16 10:45:49', '1');
 INSERT INTO `tbl_msg` VALUES ('4', '4', '2', 'С', '2018-12-01 10:46:06', '0');
 
 -- ----------------------------
--- Table structure for `tbl_myjob`
+-- Table structure for tbl_myjob
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_myjob`;
 CREATE TABLE `tbl_myjob` (
@@ -156,7 +156,7 @@ INSERT INTO `tbl_myjob` VALUES ('1', '1', '', '110', '1');
 INSERT INTO `tbl_myjob` VALUES ('2', '2', '', '100', '2');
 
 -- ----------------------------
--- Table structure for `tbl_myjobcourse`
+-- Table structure for tbl_myjobcourse
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_myjobcourse`;
 CREATE TABLE `tbl_myjobcourse` (
@@ -173,7 +173,7 @@ INSERT INTO `tbl_myjobcourse` VALUES ('1', '2', '2');
 INSERT INTO `tbl_myjobcourse` VALUES ('2', '3', '1');
 
 -- ----------------------------
--- Table structure for `tbl_myjobgrade`
+-- Table structure for tbl_myjobgrade
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_myjobgrade`;
 CREATE TABLE `tbl_myjobgrade` (
@@ -190,7 +190,7 @@ INSERT INTO `tbl_myjobgrade` VALUES ('1', '4', '2');
 INSERT INTO `tbl_myjobgrade` VALUES ('2', '7', '1');
 
 -- ----------------------------
--- Table structure for `tbl_myjobtime`
+-- Table structure for tbl_myjobtime
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_myjobtime`;
 CREATE TABLE `tbl_myjobtime` (
@@ -207,7 +207,7 @@ INSERT INTO `tbl_myjobtime` VALUES ('1', '2', '1');
 INSERT INTO `tbl_myjobtime` VALUES ('2', '3', '2');
 
 -- ----------------------------
--- Table structure for `tbl_review`
+-- Table structure for tbl_review
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_review`;
 CREATE TABLE `tbl_review` (
@@ -228,7 +228,7 @@ INSERT INTO `tbl_review` VALUES ('3', '2018-12-22 11:11:22', 'С', '80', '3');
 INSERT INTO `tbl_review` VALUES ('4', '2018-12-18 11:11:38', 'С', '85', '4');
 
 -- ----------------------------
--- Table structure for `tbl_teach`
+-- Table structure for tbl_teach
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_teach`;
 CREATE TABLE `tbl_teach` (
@@ -249,7 +249,7 @@ INSERT INTO `tbl_teach` VALUES ('3', '2', '2', '9-11', '9-20');
 INSERT INTO `tbl_teach` VALUES ('4', '2', '3', '9-11', '9-20');
 
 -- ----------------------------
--- Table structure for `tbl_teachplan`
+-- Table structure for tbl_teachplan
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_teachplan`;
 CREATE TABLE `tbl_teachplan` (
@@ -269,13 +269,13 @@ INSERT INTO `tbl_teachplan` VALUES ('3', '2-1', '2018-12-11 10:52:40', '2');
 INSERT INTO `tbl_teachplan` VALUES ('4', '2-2', '2018-12-16 10:52:59', '2');
 
 -- ----------------------------
--- Table structure for `tbl_time`
+-- Table structure for tbl_time
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_time`;
 CREATE TABLE `tbl_time` (
-  `timeid` int(11) NOT NULL AUTO_INCREMENT,
+  `tid` int(11) NOT NULL AUTO_INCREMENT,
   `time` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`timeid`)
+  PRIMARY KEY (`tid`)
 ) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -301,7 +301,7 @@ INSERT INTO `tbl_time` VALUES ('17', '');
 INSERT INTO `tbl_time` VALUES ('18', '');
 
 -- ----------------------------
--- Table structure for `tbl_user`
+-- Table structure for tbl_user
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_user`;
 CREATE TABLE `tbl_user` (

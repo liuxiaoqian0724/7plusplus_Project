@@ -42,6 +42,8 @@ public class MyJob implements java.io.Serializable {
 	private String address;
 	private Integer price;
 	private String teacherAge; // 教龄
+	private String myExperience;
+	private String sucesses;
 
 	private User user = new User(); // 求职信息表和用户表是双向一对一的关系
 	private Set<Course> courses = new HashSet<Course>(); // 求职信息表和课程表多对多的关系
@@ -80,6 +82,21 @@ public class MyJob implements java.io.Serializable {
 
 	public void setTeacherAge(String teacherAge) {
 		this.teacherAge = teacherAge;
+	}
+	public String getMyExperience() {
+		return myExperience;
+	}
+
+	public void setMyExperience(String myExperience) {
+		this.myExperience = myExperience;
+	}
+
+	public String getSucesses() {
+		return sucesses;
+	}
+
+	public void setSucesses(String sucesses) {
+		this.sucesses = sucesses;
 	}
 
 	@ManyToOne()

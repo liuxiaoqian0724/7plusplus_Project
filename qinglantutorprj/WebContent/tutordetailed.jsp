@@ -59,16 +59,16 @@
    					<ul>
    						<!--数据库循环-->
    						<li><!-- <img data-toggle="lightbox" src="images/img4.jpg" data-image="images/big-img4.jpg" data-caption="小图看大图" class="img-thumbnail" id="img-spc" alt="" width="60"> -->
-                     <img src="${user.img2}" class="img-thumbnail" id="img-spc" width="60" data-image="images/big-img4.jpg">            
+                     <img src="${user.img1}" class="img-thumbnail" id="img-spc" width="60" data-image="${user.img1}">            
                      </li>
                      <li><!-- <img data-toggle="lightbox" src="images/img3.jpg" data-image="images/big-img3.jpg" data-caption="小图看大图" class="img-thumbnail" alt="" width="60px" height="60px"> -->
-                     <img src="${user.img3}" class="img-thumbnail" id="img-spc" width="60" data-image="images/big-img3.jpg">
+                     <img src="${user.img2}" class="img-thumbnail" id="img-spc" width="60" data-image="${user.img2}">
                      </li>
    						<li><!-- <img data-toggle="lightbox" src="images/img5.jpg" data-image="images/big-img5.jpg" data-caption="小图看大图" class="img-thumbnail" alt="" width="60"> -->
-                     <img src="${user.img4}" class="img-thumbnail" id="img-spc" width="60" data-image="images/big-img5.jpg">            
+                     <img src="${user.img3}" class="img-thumbnail" id="img-spc" width="60" data-image="${user.img3}">            
                      </li>
                      <li><!-- <img data-toggle="lightbox" src="images/img3.jpg" data-image="images/big-img3.jpg" data-caption="小图看大图" class="img-thumbnail" alt="" width="60"> -->
-                     <img src="${user.img4}" class="img-thumbnail" id="img-spc" width="60" data-image="images/big-img3.jpg">
+                     <img src="${user.img4}" class="img-thumbnail" id="img-spc" width="60" data-image="${user.img4}">
                      </li>
    					</ul>
    				</div>
@@ -127,114 +127,130 @@
                                  <th>周日</th>
                               </tr>
                            </thead>
+                           <!--循环输出家教可上课的时间，？？？问题待解决  -->
                            <tbody>
                               <tr>
                                  <th>上午</th>
-                                 <td data-id="1">
-                                    <img src="images/icon/ok.png" alt=" ">
-                                 </td>
-                                 <td data-id="4 ">
-                                    <img src="images/icon/error.png" alt=" ">
-                                 </td>
-                                 <td data-id="7 ">
-                                    <img src="images/icon/ok.png" alt=" ">
-                                 </td>
-                                 <td data-id="10 ">
-                                    <img src="images/icon/ok.png" alt=" ">
-                                 </td>
-                                 <td data-id="13 ">
-                                    <img src="images/icon/error.png" alt=" ">
-                                 </td>
-                                 <td data-id="16 ">
-                                    <img src="images/icon/error.png" alt=" ">
-                                 </td>
-                                 <td data-id="19 ">
-                                    <img src="images/icon/ok.png" alt=" ">
-                                 </td>
+                                 <c:forEach var="count" begin="1" step="3" end="19">
+                                 	<c:set var="flag" value="0"></c:set>
+                                 	<c:forEach items="${user.myJobs[0].times}" var="mytime">
+                                 		<c:choose>
+                                 			<c:when test="${flag==0}">
+                                 			<td data-id="${count}">
+                                 				<c:if test="${count==mytime.tid}">
+                                    				<img src="images/icon/ok.png" alt=" ">
+                                    				<c:set var="flag" value="1"></c:set>
+                                    			</c:if>
+                                    			<c:if test="${count!=mytime.tid}">
+                                    				<img src="images/icon/error.png" alt=" ">
+                                    				<c:set var="flag" value="1"></c:set>
+                                    			</c:if>
+                                 			</td>
+                                 			</c:when>
+                                    	</c:choose>
+                                 	</c:forEach>	
+                                 	<c:set var="flag" value="1"></c:set>
+                         		</c:forEach>
                               </tr>
-                              <tr>
+                             <tr>
                                  <th>下午</th>
-                                 <td data-id="2 ">
-                                    <img src="images/icon/error.png" alt=" ">
-                                 </td>
-                                 <td data-id="5 ">
-                                    <img src="images/icon/error.png" alt=" ">
-                                 </td>
-                                 <td data-id="8 ">
-                                    <img src="images/icon/ok.png" alt=" ">
-                                 </td>
-                                 <td data-id="11 ">
-                                    <img src="images/icon/error.png" alt=" ">
-                                 </td>
-                                 <td data-id="14 ">
-                                    <img src="images/icon/ok.png" alt=" ">
-                                 </td> 
-                                 <td data-id="17 ">
-                                    <img src="images/icon/error.png" alt=" ">
-                                 </td>
-                                 <td data-id="20 ">
-                                    <img src="images/icon/ok.png" alt=" ">
-                                 </td>
+                                 <c:forEach var="count" begin="2" step="3" end="21">
+                                 	<c:set var="flag" value="0"></c:set>
+                                 	<c:forEach items="${user.myJobs[0].times}" var="mytime">
+                                 		<c:choose>
+                                 			<c:when test="${flag==0}">
+                                 			<td data-id="${count}">
+                                 				<c:if test="${count==mytime.tid}">
+                                    				<img src="images/icon/ok.png" alt=" ">
+                                    				<c:set var="flag" value="1"></c:set>
+                                    			</c:if>
+                                    			<c:if test="${count!=mytime.tid}">
+                                    				<img src="images/icon/error.png" alt=" ">
+                                    				<c:set var="flag" value="1"></c:set>
+                                    			</c:if>
+                                 			</td>
+                                 			</c:when>
+                                    	</c:choose>
+                                 	</c:forEach>	
+                                 	<c:set var="flag" value="1"></c:set>
+                         		</c:forEach>
                               </tr>
                               <tr>
-                                 <th>晚上</th>
-                                 <td data-id="3 ">
-                                    <img src="images/icon/ok.png" alt=" ">
-                                 </td>
-                                 <td data-id="6 ">
-                                    <img src="images/icon/error.png" alt=" ">
-                                 </td>
-                                 <td data-id="9 ">
-                                    <img src="images/icon/ok.png " alt=" ">
-                                 </td>
-                                 <td data-id="12 ">
-                                    <img src="images/icon/ok.png" alt=" ">
-                                 </td> 
-                                 <td data-id="15 ">
-                                    <img src="images/icon/error.png" alt=" ">
-                                 </td>
-                                 <td data-id="18 ">
-                                    <img src="images/icon/error.png" alt=" ">
-                                 </td>
-                                 <td data-id="21 ">
-                                    <img src="images/icon/error.png" alt=" ">
-                                 </td>
+                                 <th>上午</th>
+                                 <c:forEach var="count" begin="3" step="3" end="22">
+                                 	<c:set var="flag" value="0"></c:set>
+                                 	<c:forEach items="${user.myJobs[0].times}" var="mytime">
+                                 		<c:choose>
+                                 			<c:when test="${flag==0}">
+                                 			<td data-id="${count}">
+                                 				<c:if test="${count==mytime.tid}">
+                                    				<img src="images/icon/ok.png" alt=" ">
+                                    				<c:set var="flag" value="1"></c:set>
+                                    			</c:if>
+                                    			<c:if test="${count!=mytime.tid}">
+                                    				<img src="images/icon/error.png" alt=" ">
+                                    				<c:set var="flag" value="1"></c:set>
+                                    			</c:if>
+                                 			</td>
+                                 			</c:when>
+                                    	</c:choose>
+                                 	</c:forEach>	
+                                 	<c:set var="flag" value="1"></c:set>
+                         		</c:forEach>
                               </tr>
                            </tbody>
                         </table>
                </div>
+               <!--根据数据库查询老师可以教授的年级  -->
+               <form method="post" id="inquire-teacher">
    				<div class="de-linethree">
    					<span class="title">授课年级</span>
    					<div class="grade">
    						<ul>
-   							<li class="gradeli">一年级</li>
-   							<li class="gradeli">一年级</li>
-   							<li class="gradeli">一年级</li>
-   							<li class="gradeli">一年级</li>
-   							<li class="gradeli">一年级</li>
-   							<li class="gradeli">一年级</li>
-   							<li class="gradeli">一年级</li>
-   							<li class="gradeli">一年级</li>
+   						<c:forEach items="${user.myJobs[0].grades}" var="grade">
+   							<li class="gradeli" value="${grade.gname}">${grade.gname}</li>
+   						</c:forEach>
    						</ul>
+   						<!--隐藏域获取用户信息 -->
+   						<input type="hidden" value="${user.id}" id="hidden-UserId">
    					</div>
    				</div>
-   				<!-- <div class="de-linefour">
-   					<span class="title">授课方式</span>
-   					<div class="pattern">
-   						<ul>
-   							<li class="patternli">老师上门</li>
-   							<li class="patternli">学生上门</li>
-   						</ul>
-   					</div>
-   				</div> -->
-               
                <!--按钮-->
    				<div class="de-linefive">
+                  <button class="btn1 btn-lg" type="button" id="inquire">联系ta</button>
+                 </form>
+                 <!--ajax向数据库增添用户消息 -->
+                 <script type="text/javascript">
+                 $(document).ready(function(){
+                     $("#inquire").click(function(){
+                         //序列化表单元素，返回json数据
+                        /*  var params = $("#inquire-teacher").serializeArray(); */
+                        var gradeChosen=$(".chosenLi").html();
+                        var userId=$("#hidden-UserId").val();
+                        var params={"userId":userId,"gradeChosen":gradeChosen};
+                         $.ajax({
+                             type:"POST",
+                             contentType : 'application/json;charset=utf-8',
+                             url:"tutorDetail/showtutorDetail/inquire",
+                             data:JSON.stringify(params),
+                             dataType : 'json',
+                             success:function(date){
+                                 alert("已向家教发送信息咨询信息");
+                             },
+                             error:function(e) {
+                                 alert("出错："+e);
+                             }
+                         });
+                     });
+                 });
+                 </script>
+                 <!--//结束  ajax向数据库增添用户消息 -->
+                 
+                 <!-- <form action="tutorDetail/showtutorDetail" method="post"> -->
                   <button class="btn1 btn-lg" type="button">预约</button>
-                  <button class="btn1 btn-lg" type="button">咨询</button>
+                <!--  </form> -->
                </div>
    			</div>
-
    		</div>
 	</div>
 	<!--内容的中间部分-->
