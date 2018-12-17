@@ -205,6 +205,7 @@
 			</div>
 		</form>
 
+
 		<!--图片裁剪框 start-->
 		<div style="display: none" class="tailoring-container">
 			<div class="black-cloth" onclick="closeTailor(this)"></div>
@@ -236,6 +237,8 @@
 		</div>
 		<!--图片裁剪框 end-->
 	</div>
+	
+	<!-- 底部 -->
 	<div class="footer" style="margin-top: 150px;">
 		<!-- 关于网页 -->
 		<div class="footer-font">
