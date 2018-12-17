@@ -31,7 +31,7 @@ public class HomeWork  implements java.io.Serializable {
 			* @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么) 
 			*/
 		
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -1977848976953951549L;
 	private Integer hid;
      private String tcontent;	//老师留的作业内容
      private String scontent;	//学生交的作业内容
@@ -41,60 +41,7 @@ public class HomeWork  implements java.io.Serializable {
      private String sstatus;	//学生的作业状态（已完成或未完成）
      private String tstatus;
      
-     private String question;   //作业疑问
-     private String workReview; //作业评语
-     private Date deadlineTime; //截止时间
-     
-     /** 
-			* @return serialversionuid 
-			*/
-	
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-	/** 
-			* @return question 
-			*/
-	
-	public String getQuestion() {
-		return question;
-	}
-	/** 
-			* @return workReview 
-			*/
-	
-	public String getWorkReview() {
-		return workReview;
-	}
-	/** 
-			* @return deadlineTime 
-			*/
-	
-	public Date getDeadlineTime() {
-		return deadlineTime;
-	}
-	/** 
-			* @param question 要设置的 question 
-			*/
-	
-	public void setQuestion(String question) {
-		this.question = question;
-	}
-	/** 
-			* @param workReview 要设置的 workReview 
-			*/
-	
-	public void setWorkReview(String workReview) {
-		this.workReview = workReview;
-	}
-	/** 
-			* @param deadlineTime 要设置的 deadlineTime 
-			*/
-	
-	public void setDeadlineTime(Date deadlineTime) {
-		this.deadlineTime = deadlineTime;
-	}
-	private ClassRelation classRelation=new ClassRelation();	//作业表和上课关系表是双向多对一的关系
+     private ClassRelation classRelation=new ClassRelation();	//作业表和上课关系表是双向多对一的关系
      private TeachRelation teachRelation=new TeachRelation();	//作业表和教课关系表是双向多对一的关系
      
      @Id
@@ -167,6 +114,25 @@ public class HomeWork  implements java.io.Serializable {
 	public void setTeachRelation(TeachRelation teachRelation) {
 		this.teachRelation = teachRelation;
 	}
+     
+     
+     
+   
+
+    
+
+//    @ManyToOne
+//    @JoinColumn(name="tid")
+//	public User getUser() {
+//		return user;
+//	}
+//
+//	public void setUser(User user) {
+//		this.user = user;
+//	}
+
+    
+
 
 }
 

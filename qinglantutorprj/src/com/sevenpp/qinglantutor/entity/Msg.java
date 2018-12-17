@@ -31,8 +31,10 @@ public class Msg  implements java.io.Serializable {
 			* @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么) 
 			*/
 		
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 839921564274320405L;
 	private Integer mid;	//消息id
+//     private Integer receiveId;	//收件人id
+//     private Integer sendid;	//发件人id
      private String content;	//内容
      private Date sendTime;
      private Integer status;	//收件人的消息状态，同意还是拒绝

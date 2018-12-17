@@ -28,7 +28,7 @@ public class Review  implements java.io.Serializable {
 			* @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么) 
 			*/
 		
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -2680925421605862805L;
 	private Integer rid;	//评价id
      private Date reviewTime;	//评价时间
      private String reviewContent;	//评价时间

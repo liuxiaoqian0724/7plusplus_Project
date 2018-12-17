@@ -30,7 +30,7 @@ public class Course  implements java.io.Serializable {
 			* @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么) 
 			*/
 		
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -7354653066170432844L;
 	private Integer cid;	//课程id
 	private String cname;	//课程名
 	

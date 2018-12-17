@@ -12,7 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-
 /**
  * 
  * @ClassName:  TblUser   
@@ -25,11 +24,21 @@ import javax.persistence.Table;
 @Table(name="tbl_user")
 public class User  implements java.io.Serializable {
 
-     /** 
+     @Override
+	public String toString() {
+		return "User [id=" + id + ", userName=" + userName + ", userPwd=" + userPwd + ", email=" + email + ", role="
+				+ role + ", regDate=" + regDate + ", realName=" + realName + ", idNumber=" + idNumber + ", sex=" + sex
+				+ ", stuImg=" + stuImg + ", userImg=" + userImg + ", school=" + school + ", grade=" + grade
+				+ ", phoneNumber=" + phoneNumber + ", address=" + address + ", introduce=" + introduce + ", major="
+				+ major + ", status=" + status + ", publicKey=" + publicKey + ", privateKey=" + privateKey + ", img1="
+				+ img1 + ", img2=" + img2 + ", img3=" + img3 + ", img4=" + img4 + ", msgs=" + msgs + ", myJobs="
+				+ myJobs + ", teachRelations=" + teachRelations + ", classRelation=" + classRelation + "]";
+	}
+	/** 
 			* @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么) 
 			*/
 		
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -1467644222903393721L;
 	private Integer id;//主键
      private String userName;
      private String userPwd;
@@ -41,10 +50,6 @@ public class User  implements java.io.Serializable {
      private String sex;
      private String stuImg;	//身份证照片
      private String userImg;	//用户头像
-     private String img1;
-     private String img2;
-     private String img3;
-     private String img4;
      private String school;
      private String grade;
      private String phoneNumber;
@@ -52,10 +57,42 @@ public class User  implements java.io.Serializable {
      private String introduce;//个人简介
      private String major;
      private Integer status;//状态位，是否发布家教信息，1=发布，0未发布
-     private String publickey;	//公钥
-     private String privatekey;	//私钥
-
-     private List<Msg> msgs= new ArrayList<Msg>();	//用户表和消息表是双向一对多的关系
+     private String publicKey;	//公钥
+     private String privateKey;	//私钥
+     private String img1;
+     private String img2;
+     private String img3;
+     private String img4;
+     public String getImg1() {
+		return img1;
+	}
+	public void setImg1(String img1) {
+		this.img1 = img1;
+	}
+	public String getImg2() {
+		return img2;
+	}
+	public void setImg2(String img2) {
+		this.img2 = img2;
+	}
+	public String getImg3() {
+		return img3;
+	}
+	public void setImg3(String img3) {
+		this.img3 = img3;
+	}
+	public String getImg4() {
+		return img4;
+	}
+	public void setImg4(String img4) {
+		this.img4 = img4;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	private List<Msg> msgs= new ArrayList<Msg>();	//用户表和消息表是双向一对多的关系
+   //  private MyJob myjob=new MyJob();	//用户表和求职信息表是双向一对一的关系
+    // private MyJob myJob=null;
      private List<MyJob> myJobs=new ArrayList<MyJob>();
      private List<TeachRelation> teachRelations=new ArrayList<TeachRelation>();	//用户表和教课关系表是一对多的关系
      private List<ClassRelation> classRelation = new ArrayList<ClassRelation>();	//用户表和上课关系表是一对多的关系
@@ -128,31 +165,6 @@ public class User  implements java.io.Serializable {
 	public void setUserImg(String userImg) {
 		this.userImg = userImg;
 	}
-	
-	public String getImg1() {
-		return img1;
-	}
-	public void setImg1(String img1) {
-		this.img1 = img1;
-	}
-	public String getImg2() {
-		return img2;
-	}
-	public void setImg2(String img2) {
-		this.img2 = img2;
-	}
-	public String getImg3() {
-		return img3;
-	}
-	public void setImg3(String img3) {
-		this.img3 = img3;
-	}
-	public String getImg4() {
-		return img4;
-	}
-	public void setImg4(String img4) {
-		this.img4 = img4;
-	}
 	public String getSchool() {
 		return school;
 	}
@@ -195,17 +207,18 @@ public class User  implements java.io.Serializable {
 	public void setStatus(Integer status) {
 		this.status = status;
 	}
-	public String getPublickey() {
-		return publickey;
+
+	public String getPublicKey() {
+		return publicKey;
 	}
-	public void setPublickey(String publickey) {
-		this.publickey = publickey;
+	public void setPublicKey(String publicKey) {
+		this.publicKey = publicKey;
 	}
-	public String getPrivatekey() {
-		return privatekey;
+	public String getPrivateKey() {
+		return privateKey;
 	}
-	public void setPrivatekey(String privatekey) {
-		this.privatekey = privatekey;
+	public void setPrivateKey(String privateKey) {
+		this.privateKey = privateKey;
 	}
 	@OneToMany(mappedBy="user",
 			targetEntity=Msg.class,
@@ -246,7 +259,10 @@ public class User  implements java.io.Serializable {
 	public void setClassRelation(List<ClassRelation> classRelation) {
 		this.classRelation = classRelation;
 	}	
-
+	
+	
+     
+	
 
 	
 	

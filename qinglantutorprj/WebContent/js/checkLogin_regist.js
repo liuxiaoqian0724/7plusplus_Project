@@ -61,10 +61,10 @@ $('#mpanel1').slideVerify(
 			vOffset : 5,
 			vSpace : 5,
 			explain : '向右滑动完成验证',
-			imgUrl : 'images/',
-			imgName : [ '1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg',
-					'7.jpg', '8.jpg', '9.jpg', '10.jpg', '11.jpg', '12.jpg',
-					'13.jpg' ],
+			imgUrl : '<%=basePath%>/images/',
+			imgName : [ '1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg',
+					'7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg',
+					'13.jpg'],
 			imgSize : {
 				width : '422px',
 				height : '200px',
@@ -214,7 +214,6 @@ function submitData() {
 			"email" : $("#email").val(),
 			"roles" : $("input[name='roles']:checked").val()
 		}
-		
 		$.ajax({
 			type : "post",
 			url : "user/regist",
@@ -312,47 +311,6 @@ function logincheck() {
 	}
 }
 
-//登录保持
-//获取指定名称的cookie的值 
-function getCookie(name) {
-	var strCookie = document.cookie;
-	var arrCookie = strCookie.split("; ");
-	for (var i = 0; i < arrCookie.length; i++) {
-		var arr = arrCookie[i].split("=");
-		if (arr[0] == name)
-			return arr[1];
-	}
-	return "";
-} 
 
-//删除cookie并添加按钮
-function deleteCookie(name){ 
-    var date=new Date(); 
-    date.setTime(date.getTime()-10000); 
-    document.cookie=name+"=v; expires="+date.toGMTString();
-    $("#header-login").html("");
-	var buttons='<div class="btn-group">'
-                  +'<button class="btn" id="login_button" onclick="loginDis()">登录</button>'
-                  +'<button class="btn" id="register_button" onclick="registDis()">注册</button>'
-                  +'</div>';
-	$("#header-login").append(buttons);
-} 
 
-$(document).ready(function(){
-	document.cookie="USERNAME=123";
-	var USERNAME=getCookie("USERNAME");
-	console.log(USERNAME);
-	if(USERNAME==""){
-		$("#header-login").html("");
-		var buttons='<div class="btn-group">'
-	                  +'<button class="btn" id="login_button" onclick="loginDis()">登录</button>'
-	                  +'<button class="btn" id="register_button" onclick="registDis()">注册</button>'
-	                  +'</div>';
-		$("#header-login").append(buttons);
-	}
-	else{
-		$("#header-login").html("");
-		$("#header-login").append('<span style="text-decoration:none; font-size:10px; color:#ddf4df;">hello,'+USERNAME+'！</span>'
-							+'<button class="btn btn-info" id="login_button" onclick="deleteCookie('+USERNAME+')">退出</button>');
-	}
-});
+ 

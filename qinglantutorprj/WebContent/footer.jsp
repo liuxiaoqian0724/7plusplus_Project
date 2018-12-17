@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<div class="footer">
+<%
+  String path = request.getContextPath();
+  String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path;
+%>	
+		<div class="footer">
 				<!-- 关于网页 -->
 				<div class="footer-font">
 					<div id="footer-font-about">
@@ -30,7 +34,7 @@
 					</div>
 					<div id="footer-font-img">
 						<div id="footer-font-img-font"><h3>扫码关注我们了解更多</h3></div>
-						<img src="images/code.png" id="QRcode">
+						<img src="<%=basePath%>/images/code.png" id="QRcode">
 				</div>
 			</div>
 		

@@ -6,9 +6,7 @@
 		* @date 2018年12月7日 上午11:12:26 
 		* @version V1.0   
 		*/
-		package com.sevenpp.qinglantutor.dao.Impl;
-
-import java.util.ArrayList;
+package com.sevenpp.qinglantutor.dao.impl;
 
 import java.util.List;
 

@@ -1,12 +1,5 @@
-/**   
-		* @Title: IndexServiceImpl.java 
-		* @Package com.sevenpp.qinglantutor.service.Impl 
-		* @Description: TODO(用一句话描述该文件做什么) 
-		* @author （作者）  
-		* @date 2018年12月7日 上午11:09:41 
-		* @version V1.0   
-		*/
-		package com.sevenpp.qinglantutor.service.Impl;
+
+package com.sevenpp.qinglantutor.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,10 +8,10 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.sevenpp.qinglantutor.dao.Impl.IndexDaoImpl;
+import com.sevenpp.qinglantutor.dao.impl.IndexDaoImpl;
 import com.sevenpp.qinglantutor.entity.User;
+import com.sevenpp.qinglantutor.entity.Userinf;
 import com.sevenpp.qinglantutor.service.IndexService;
-import com.sevenpp.qinglantutor.util.Userinf;
 
 /**
 		*
@@ -33,28 +26,29 @@ import com.sevenpp.qinglantutor.util.Userinf;
 		* @version
 		*
 		*/
-		/** 
-		* @ClassName: IndexServiceImpl 
-		* @Description: TODO(这里用一句话描述这个类的作用) 
-		* @author (作者)  
-		* @date 2018年12月7日 上午11:09:41 
-		* @version V1.0 
-		*/
+/**
+ * @ClassName: IndexServiceImpl
+ * @Description: TODO(这里用一句话描述这个类的作用)
+ * @author (作者)
+ * @date 2018年12月7日 上午11:09:41
+ * @version V1.0
+ */
 @Service
 public class IndexServiceImpl implements IndexService {
 	@Resource
 	private IndexDaoImpl idi;
-	
+
 	private Userinf userinf;
+
 	@Override
-	public List<Userinf> findAllUser(){
+	public List<Userinf> findAllUser() {
 		System.out.println("IndexServiceImpl");
 		List<User> userList = new ArrayList<User>();
-		List<Userinf> userlist=new ArrayList<Userinf>();
-		userList=idi.queryAll();
-		userinf=new Userinf();
-		for(int i=0;i<userList.size();i++) {
-			userinf=new Userinf();
+		List<Userinf> userlist = new ArrayList<Userinf>();
+		userList = idi.queryAll();
+		userinf = new Userinf();
+		for (int i = 0; i < userList.size(); i++) {
+			userinf = new Userinf();
 			userinf.setId(userList.get(i).getId());
 			userinf.setIntroduce(userList.get(i).getIntroduce());
 			userinf.setRealName(userList.get(i).getRealName());

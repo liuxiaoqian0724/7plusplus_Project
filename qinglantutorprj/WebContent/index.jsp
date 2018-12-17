@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="<%=basePath%>/dist/css/zui.css" />
     <link rel="stylesheet" href="<%=basePath%>/css/verify.css" />
     <!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
-    <script src="js/jquery-3.2.1.js"></script>
+    <script src="<%=basePath%>/js/jquery-3.2.1.js"></script>
     <!-- ZUI Javascript组件 -->
     <script type="text/javascript" src="<%=basePath%>/dist/js/zui.js"></script>
     <script src="<%=basePath%>/js/verify.js"></script>
@@ -75,7 +75,7 @@
 					<button type="button" class="btn btn-info">兼职家教</button>
 					<button type="button" class="btn btn-info">专职家教</button>
 					<button type="button" class="btn btn-info">推荐家教</button>
-					<button class="btn btn-info" type="button" id="i_wonder_release" onclick="window.location.href='sendmessage.jsp'"><i class="icon icon-pencil"></i>我要发布</button>
+					<button class="btn btn-info" type="button" id="i_wonder_release" onclick="window.location.href='<%=basePath%>/sendmessageed.jsp'"><i class="icon icon-pencil"></i>我要发布</button>
 				</div>
 				<!--个人信息personal_information-->
 				<div class="cards cards-borderless" id="personal_information" style="width:100%">
@@ -88,89 +88,6 @@
 						
 					</ul>
 				</div>
-				<script>
-					var currentpage=1;
-					var totalpage=1;
-					var pagetemp=new Array();
-					console.log(totalpage);
-					//调用
-					$(document).ready(function(data){
-						datashow(currentpage);
-						topage(currentpage);
-					});
-					//页码
-					function topage(currentpage){
-						//点击previous时
-						$("#pager").on("click","#previous",function(){
-							currentpage=currentpage-1;
-							datashow(currentpage);
-							console.log(currentpage);
-						});
-						//点击next时
-						$("#pager").on("click","#next",function(){
-							currentpage=currentpage+1;
-							datashow(currentpage);
-							console.log(currentpage);
-						});
-					}
-					//展示数据
-					function datashow(currentpage){
-						$.ajax({
-							type:'post',
-							url:'indexfile',
-							contentType:'application/json;charset=UTF-8',
-							dataType:'json',
-							async:false,
-							success:function(data){
-								totalpage=Math.ceil(data.length/5);
-								$("#personal_name_introduce_school").html("");
-								$.each(data,function(index,res){
-									if(index>=(currentpage-1)*5&&index<=currentpage*5-1){
-										teacherinf='<div class="col-md-4 col-sm-6 col-lg-3" id="personal_inf">'
-											+'<a class="card" href="#" style="position: relative;">'
-											+'<img src="'+res.userImg+'" alt="">'
-											+'<div class="caption">中小学优秀英语教师</div>'
-											+'<div class="card-content text-muted"  id="personal_name">'
-											+'<p></p>'
-											+'<p>&nbsp;&nbsp;&nbsp;姓名：'+res.realName+'</p>'
-											+'<p>&nbsp;&nbsp;&nbsp;学校：'+res.school+'</p>'
-											+'<p>&nbsp;&nbsp;&nbsp;简介：'+res.introduce+'</p>'
-											+'</div>'
-											+'</a>'
-											+'</div>'
-										$("#personal_name_introduce_school").append(teacherinf);	
-										console.log(currentpage+"ajax")
-									}
-								})
-								//当前页为第一页时
-								if(currentpage==1){
-									$("#pager").html("");
-									devicepage='<li class="previous disabled"><a id="previous">«</a></li>'
-										+'<li><span style="border:0px;">第&nbsp;&nbsp;&nbsp;'+currentpage+'/'+totalpage+'&nbsp;&nbsp;&nbsp;页</span></li>'
-										+'<li class="next"><a id="next">»</a></li>';
-									$("#pager").append(devicepage);
-								}
-								//当前页为最后一页时
-								if(currentpage==totalpage){
-									$("#pager").html("");
-									devicepage='<li class="previous"><a id="previous">«</a></li>'
-										+'<li><span style="border:0px;">第&nbsp;&nbsp;&nbsp;'+currentpage+'/'+totalpage+'&nbsp;&nbsp;&nbsp;页</span></li>'
-										+'<li class="next disabled"><a id="next">»</a></li>';
-									$("#pager").append(devicepage);
-								}
-								//当前页为中间页时
-								if(currentpage>1&&currentpage<totalpage){
-									$("#pager").html("");
-									devicepage='<li class="previous"><a id="previous">«</a></li>'
-										+'<li><span style="border:0px;">第&nbsp;&nbsp;&nbsp;'+currentpage+'/'+totalpage+'&nbsp;&nbsp;&nbsp;页</span></li>'
-										+'<li class="next"><a id="next">»</a></li>';
-									$("#pager").append(devicepage);
-								}
-							}
-						});
-					}
-	
-				</script>		
 			</div>
 			<!--家教信息end-->
 	
@@ -214,7 +131,7 @@
 									<h4><a href="###">巧解物理难题——中考冲刺经验分享</a></h4>
 								</div>
 								<div class="item-content">
-									<div class="media pull-right"><img src="images/physics.jpg" alt="" style="height:75%; width:75%;margin-top:-20px; margin-left:15px;"></div>
+									<div class="media pull-right"><img src="<%=basePath%>/images/physics.jpg" alt="" style="height:75%; width:75%;margin-top:-20px; margin-left:15px;"></div>
 									<div class="text">作为考生，首先要知道中考物理的命题方向，各省、市中考题都要遵循既利于选拔，又利于初中物理教学，突出自主学习的主旋律的原则，所以在命题中有80%都是基础题和中等难度题，只有20%的题较有难度。只要同学们调整好心态，认真复习，中考一定会考出好成绩。首先要重视……</div>
 								</div>
 								<div class="item-footer">
@@ -247,7 +164,7 @@
 									<h4><a href="###">学霸传授——高考数学偷分技巧</a></h4>
 								</div>
 								<div class="item-content">
-									<div class="media pull-right"><img src="images/maths.jpg" alt="" style="height:75%; width:75%;margin-top:-20px; margin-left:15px;"></div>
+									<div class="media pull-right"><img src="<%=basePath%>/images/maths.jpg" alt="" style="height:75%; width:75%;margin-top:-20px; margin-left:15px;"></div>
 									<div class="text">数学作为三大主课之一，所占的分量相当的重，很多学生也明白如果数学学不好的话想要考上理想的大学是天方夜谭，但是苦于无学习之法，那么高中数学都有哪些学习方法呢?今天我们就给大家整理出来一些高考数学“偷分技巧”……</div>
 								</div>
 								<div class="item-footer">
@@ -279,7 +196,7 @@
 									<h4><a href="###">中考英语完形填空三大技巧分享</a></h4>
 								</div>
 								<div class="item-content">
-									<div class="media pull-right"><img src="images/english.jpg" alt="" style="height:75%; width:75%;margin-top:-20px; margin-left:15px;"></div>
+									<div class="media pull-right"><img src="<%=basePath%>/images/english.jpg" alt="" style="height:75%; width:75%;margin-top:-20px; margin-left:15px;"></div>
 									<div class="text">完形填空题以其内容广泛和知识、能力有机结合而备受命题者的青睐，它也是各类英语测试和竞赛中的重点题。且多数同学认为完形填空题是较难的题型 之一。金华龙文教育个性化辅导教师认为，完形填空题难主要有两个原因：一是它所测试的内容几乎是无所不包：单词……</div>
 								</div>
 								<div class="item-footer">
@@ -374,17 +291,17 @@
 					<div class="panel" id="goodresponder">
 						<div class="panel-body">
 							<h3>优秀回答者</h3>
-							<a href="#"><img src="images/idphotocircle1.png" style="position: relative;margin-left: 10px;"></a>
-							<a href="#" style="position: relative;margin-left: 36px;"><img src="images/idphotocircle2.png"></a>
+							<a href="#"><img src="<%=basePath%>/images/idphotocircle1.png" style="position: relative;margin-left: 10px;"></a>
+							<a href="#" style="position: relative;margin-left: 36px;"><img src="<%=basePath%>/images/idphotocircle2.png"></a>
 							<p></p>
-							<a href="#"><img src="images/idphotocircle3.png" style="position: relative;margin-left: 10px;"></a>
-							<a href="#" style="position: relative;margin-left: 36px;"><img src="images/idphotocircle1.png"></a>
+							<a href="#"><img src="<%=basePath%>/images/idphotocircle3.png" style="position: relative;margin-left: 10px;"></a>
+							<a href="#" style="position: relative;margin-left: 36px;"><img src="<%=basePath%>/images/idphotocircle1.png"></a>
 							<p></p>
-							<a href="#"><img src="images/idphotocircle2.png" style="position: relative;margin-left: 10px;"></a>
-							<a href="#" style="position: relative;margin-left: 36px;"><img src="images/idphotocircle3.png"></a>
+							<a href="#"><img src="<%=basePath%>/images/idphotocircle2.png" style="position: relative;margin-left: 10px;"></a>
+							<a href="#" style="position: relative;margin-left: 36px;"><img src="<%=basePath%>/images/idphotocircle3.png"></a>
 							<p></p>
-							<a href="#"><img src="images/idphotocircle3.png" style="position: relative;margin-left: 10px;"></a>
-							<a href="#" style="position: relative;margin-left: 36px;"><img src="images/idphotocircle1.png"></a>
+							<a href="#"><img src="<%=basePath%>/images/idphotocircle3.png" style="position: relative;margin-left: 10px;"></a>
+							<a href="#" style="position: relative;margin-left: 36px;"><img src="<%=basePath%>/images/idphotocircle1.png"></a>
 						</div>
 					</div>
 				</div>
@@ -392,7 +309,7 @@
 				<div id="community_author" style="display:none;">
 					<div class="items items-hover" id="author">
 						<div class="item">
-							<a href="#"><img src="images/idphotocircle1.png" style="width:12%; margin-left:15px;"></a>
+							<a href="#"><img src="<%=basePath%>/images/idphotocircle1.png" style="width:12%; margin-left:15px;"></a>
 							<div class="btn-group btn-group-vertical" style="position: relative; margin-left: 25px; width:80px; margin-top: 10px">
 								<button type="button" class="btn">认证家教</button>
 								<p></p>
@@ -416,7 +333,7 @@
 					</div>
 					<div class="items items-hover" id="author">
 						<div class="item">
-							<a href="#"><img src="images/idphotocircle2.png" style="width:12%; margin-left:15px;"></a>
+							<a href="#"><img src="<%=basePath%>/images/idphotocircle2.png" style="width:12%; margin-left:15px;"></a>
 							<div class="btn-group btn-group-vertical" style="position: relative; margin-left: 25px; width:80px; margin-top: 10px">
 								<button type="button" class="btn">认证家教</button>
 								<p></p>
@@ -440,7 +357,7 @@
 					</div>
 					<div class="items items-hover" id="author">
 						<div class="item">
-							<a href="#"><img src="images/idphotocircle3.png" style="width:12%; margin-left:15px;"></a>
+							<a href="#"><img src="<%=basePath%>/images/idphotocircle3.png" style="width:12%; margin-left:15px;"></a>
 							<div class="btn-group btn-group-vertical" style="position: relative; margin-left: 25px; width:80px; margin-top: 10px">
 								<button type="button" class="btn">认证家教</button>
 								<p></p>
@@ -471,72 +388,8 @@
 			<!--学习社区end-->
 		</div>
 	</div>
-		<script type="text/javascript">
-			//学习社区点击按钮切换界面
-			var learning_experience=document.getElementById('learning_experience');
-			var course_question=document.getElementById('course_question');
-			var community_author=document.getElementById('community_author');
-			function learning_experienceDis(){
-					learning_experience.style.display="block";
-					course_question.style.display="none";
-					community_author.style.display="none";
-				}
-			function course_questionDis(){
-			  learning_experience.style.display="none";
-			  course_question.style.display="block";
-			  community_author.style.display="none";
-			}
-			function community_authorDis(){
-			  learning_experience.style.display="none";
-			  course_question.style.display="none";
-			  community_author.style.display="block";
-			}
-			
-			//收藏按钮点击效果
-			function changstars(){
-				var collection=document.getElementById("collection");
-				var collectioncount=document.getElementById("collectioncount").innerText;
-				if(collectioncount==108){
-					console.log(collectioncount);
-					collectioncount=parseInt(collectioncount)+1;
-					collection.innerHTML="<i class='icon icon-star'></i><span id='collectioncount'>"+collectioncount+"</span>";
-				}
-				else{
-					console.log(collectioncount);
-					collectioncount=parseInt(collectioncount)-1;
-					collection.innerHTML="<i class='icon icon-star-empty'></i><span id='collectioncount'>"+collectioncount+"</span>";
-				}
-			}
-			
-			//点赞按钮点击效果
-			function changegood(){
-				var changegood=document.getElementById("good");
-				var goodcount=document.getElementById("goodcount").innerText;
-				if(goodcount==108){
-					goodcount=parseInt(goodcount)+1;
-					good.innerHTML="<i class='icon icon-thumbs-up'></i><span id='goodcount'>"+goodcount+"</span>";
-				}
-				else{
-					goodcount=parseInt(goodcount)-1;
-					good.innerHTML="<i class='icon icon-thumbs-o-up'></i><span id='goodcount'>"+goodcount+"</span>";
-				}
-			}
-			
-			//图片的划入划出事件
-			var arr = new Array();
-			$(".card").each(function(){
-				arr.push($(this));
-			});
-			for(var i=0;i<5;i++){
-				arr[i].mouseover(function(){
-					$(this).animate({top:'-10px'},"fast");
-				});
-				arr[i].mouseout(function(){
-					$(this).animate({top:'0px'},"fast");
-				});
-			}
-		</script>
+	<script type="text/javascript" src="<%=basePath%>/js/index.js"></script>
 	<jsp:include page="footer.jsp" />
-	<script type="text/javascript" src="js/checkLogin_regist.js"></script>
+	<script type="text/javascript" src="<%=basePath%>/js/checkLogin_regist.js"></script>
 </body>
 </html>
