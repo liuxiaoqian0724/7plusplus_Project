@@ -35,6 +35,7 @@ public class Msg  implements java.io.Serializable {
      private Integer status;	//收件人的消息状态，同意还是拒绝
      
      private User user;		//消息表和用户表是双向多对一的关系
+     private Integer sendId;
 
      @Id
      @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -79,6 +80,14 @@ public class Msg  implements java.io.Serializable {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public Integer getSendId() {
+		return sendId;
+	}
+
+	public void setSendId(Integer sendId) {
+		this.sendId = sendId;
 	}
      
      
