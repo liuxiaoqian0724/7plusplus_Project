@@ -8,6 +8,7 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
 	<!--静态资源自动识别 -->
 	<mvc:default-servlet-handler/>
 	<mvc:annotation-driven />
@@ -42,4 +43,5 @@
 		如果proxy-target-class属值被设置为false或者这个属性被省略，那么标准的JDK 基于接口的代理 -->
 	<tx:annotation-driven
 		transaction-manager="transactionManager" proxy-target-class="true" />
+		
 </beans>
