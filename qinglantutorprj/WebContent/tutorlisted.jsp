@@ -211,218 +211,52 @@
 			<div class="tutorshow">
 				<!--一个家教展示-->
 				<!--foreach循环每个家教的信息-->
-				<a href="tutordetailed.html">
-				<div class="tutorone">
-					<div class="tutorinformation">
-					<!--家教头像-->
-					<div class="tutor-photo">
-						<!-- <img src="images/img2.jpg"> -->
-						<img src="http://zui.sexy/docs/img/img1.jpg" width="110px" height="110px" class="img-rounded" alt="圆角图片">
-					</div>
-					<!--家教基本信息-->
-					<div class="tutor-information">
-						<div class="username">
-							家教姓名
+				<c:forEach items="${tutors}" var="tutor">
+					<a href="tutordetailed.html">
+					<div class="tutorone">
+						<div class="tutorinformation">
+						<!--家教头像-->
+						<div class="tutor-photo">
+							<img src="<%=basePath%>/images/${tutor[2]}" width="110px" height="110px" class="img-rounded" alt="圆角图片">
 						</div>
-						<div class="introduce">
-							<p>一线教师，物理年级组长，年级主任，心理咨询师。让学生在短期内提高成绩，爱上物理。</p>
-						</div>
-						<div class="information">
-							<div class="firline">
-								<div class="star">
-									<img src="<%=basePath%>/images/fill-star.png" style="width: 20px;height: 20px;">
-									<img src="<%=basePath%>/images/fill-star.png" style="width: 20px;height: 20px;">
-									<img src="<%=basePath%>/images/fill-star.png" style="width: 20px;height: 20px;">
-									<img src="<%=basePath%>/images/fill-star.png" style="width: 20px;height: 20px;">
-									<img src="<%=basePath%>/images/empty-star.png" style="width: 20px;height: 20px;">
-								</div>
-								<div class="teachages">教龄17年</div>	
-								<!-- <div class="teachhours">授课134小时</div> -->
+						<!--家教基本信息-->
+						<div class="tutor-information">
+							<div class="username">
+								${tutor[1]}
 							</div>
-
-							<!-- <div class="tags">
-								<div class="tag">
-									教师资历
-								</div>
-								<div class="tag">
-									学历学位
-								</div>
-							</div> -->
-						</div>
-					</div>
-					<!--家长评论-->
-					<div class="tutor-comment">&nbsp;<i class="icon2 icon-comment-alt"></i>&nbsp;<span>家长评论&nbsp;264条</span>
-						<p>天天向上661：老师善于引导，课件清晰完整，讲课生动，孩子很喜欢。</p>
-					</div>
-					<div class="separator"></div>
-					<div class="tutor-check">
-						<div class="price"><i class="icon22 icon-yen"></i>200<span class="spe2">起</span></div>
-						<div class="check">
-							<a href="tutordetailed.html"><button class="btn1" type="button">立即查看</button></a>
-						</div>
-					</div>
-					</div>
-				</div>
-				</a>
-				<a href="tutordetailed.html">
-				<div class="tutorone">
-					<div class="tutorinformation">
-					<!--家教头像-->
-					<div class="tutor-photo">
-						<!-- <img src="images/img2.jpg"> -->
-						<img src="http://zui.sexy/docs/img/img1.jpg" width="110px" height="110px" class="img-rounded" alt="圆角图片">
-					</div>
-					<!--家教基本信息-->
-					<div class="tutor-information">
-						<div class="username">
-							家教姓名
-						</div>
-						<div class="introduce">
-							<p>一线教师，物理年级组长，年级主任，心理咨询师。让学生在短期内提高成绩，爱上物理。</p>
-						</div>
-						<div class="information">
-							<div class="firline">
-								<div class="star">
-									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
-									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
-									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
-									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
-									<img src="images/empty-star.png" style="width: 20px;height: 20px;">
-								</div>
-								<div class="teachages">教龄17年</div>	
-								<!-- <div class="teachhours">授课134小时</div> -->
+							<div class="introduce">
+								<p>${tutor[3]}</p>
 							</div>
-
-							<!-- <div class="tags">
-								<div class="tag">
-									教师资历
+							<div class="information">
+								<div class="firline">
+									<div class="star">
+										<img src="<%=basePath%>/images/fill-star.png" style="width: 20px;height: 20px;">
+										<img src="<%=basePath%>/images/fill-star.png" style="width: 20px;height: 20px;">
+										<img src="<%=basePath%>/images/fill-star.png" style="width: 20px;height: 20px;">
+										<img src="<%=basePath%>/images/fill-star.png" style="width: 20px;height: 20px;">
+										<img src="<%=basePath%>/images/empty-star.png" style="width: 20px;height: 20px;">
+									</div>
+									<div class="teachages">教龄${tutor[5]}年</div>	
+									<!-- <div class="teachhours">授课134小时</div> -->
 								</div>
-								<div class="tag">
-									学历学位
-								</div>
-							</div> -->
-						</div>
-					</div>
-					<!--家长评论-->
-					<div class="tutor-comment">&nbsp;<i class="icon2 icon-comment-alt"></i>&nbsp;<span>家长评论&nbsp;264条</span>
-						<p>天天向上661：老师善于引导，课件清晰完整，讲课生动，孩子很喜欢。</p>
-					</div>
-					<div class="separator"></div>
-					<div class="tutor-check">
-						<div class="price"><i class="icon22 icon-yen"></i>200<span class="spe2">起</span></div>
-						<div class="check">
-							<a href="tutordetailed.html"><button class="btn1" type="button">立即查看</button></a>
-						</div>
-					</div>
-					</div>
-				</div>
-				</a>
-				<a href="tutordetailed.html">
-				<div class="tutorone">
-					<div class="tutorinformation">
-					<!--家教头像-->
-					<div class="tutor-photo">
-						<!-- <img src="images/img2.jpg"> -->
-						<img src="http://zui.sexy/docs/img/img1.jpg" width="110px" height="110px" class="img-rounded" alt="圆角图片">
-					</div>
-					<!--家教基本信息-->
-					<div class="tutor-information">
-						<div class="username">
-							家教姓名
-						</div>
-						<div class="introduce">
-							<p>一线教师，物理年级组长，年级主任，心理咨询师。让学生在短期内提高成绩，爱上物理。</p>
-						</div>
-						<div class="information">
-							<div class="firline">
-								<div class="star">
-									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
-									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
-									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
-									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
-									<img src="images/empty-star.png" style="width: 20px;height: 20px;">
-								</div>
-								<div class="teachages">教龄17年</div>	
-								<!-- <div class="teachhours">授课134小时</div> -->
 							</div>
-
-							<!-- <div class="tags">
-								<div class="tag">
-									教师资历
-								</div>
-								<div class="tag">
-									学历学位
-								</div>
-							</div> -->
 						</div>
-					</div>
-					<!--家长评论-->
-					<div class="tutor-comment">&nbsp;<i class="icon2 icon-comment-alt"></i>&nbsp;<span>家长评论&nbsp;264条</span>
-						<p>天天向上661：老师善于引导，课件清晰完整，讲课生动，孩子很喜欢。</p>
-					</div>
-					<div class="separator"></div>
-					<div class="tutor-check">
-						<div class="price"><i class="icon22 icon-yen"></i>200<span class="spe2">起</span></div>
-						<div class="check">
-							<a href="tutordetailed.html"><button class="btn1" type="button">立即查看</button></a>
+						<!--家长评论-->
+						<div class="tutor-comment">&nbsp;<i class="icon2 icon-comment-alt"></i>&nbsp;<span>家长评论&nbsp;${tutor[7]}条</span>
+							<p>${tutor[8]}</p>
 						</div>
-					</div>
-					</div>
-				</div>
-				</a>
-				<a href="tutordetailed.html">
-				<div class="tutorone">
-					<div class="tutorinformation">
-					<!--家教头像-->
-					<div class="tutor-photo">
-						<!-- <img src="images/img2.jpg"> -->
-						<img src="http://zui.sexy/docs/img/img1.jpg" width="110px" height="110px" class="img-rounded" alt="圆角图片">
-					</div>
-					<!--家教基本信息-->
-					<div class="tutor-information">
-						<div class="username">
-							家教姓名
-						</div>
-						<div class="introduce">
-							<p>一线教师，物理年级组长，年级主任，心理咨询师。让学生在短期内提高成绩，爱上物理。</p>
-						</div>
-						<div class="information">
-							<div class="firline">
-								<div class="star">
-									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
-									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
-									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
-									<img src="images/fill-star.png" style="width: 20px;height: 20px;">
-									<img src="images/empty-star.png" style="width: 20px;height: 20px;">
-								</div>
-								<div class="teachages">教龄17年</div>	
-								<!-- <div class="teachhours">授课134小时</div> -->
+						<div class="separator"></div>
+						<div class="tutor-check">
+							<div class="price"><i class="icon22 icon-yen"></i>${tutor[4]}<span class="spe2">起</span></div>
+							<div class="check">
+								<a href="tutordetailed.html"><button class="btn1" type="button">立即查看</button></a>
 							</div>
-
-							<!-- <div class="tags">
-								<div class="tag">
-									教师资历
-								</div>
-								<div class="tag">
-									学历学位
-								</div>
-							</div> -->
+						</div>
 						</div>
 					</div>
-					<!--家长评论-->
-					<div class="tutor-comment">&nbsp;<i class="icon2 icon-comment-alt"></i>&nbsp;<span>家长评论&nbsp;264条</span>
-						<p>天天向上661：老师善于引导，课件清晰完整，讲课生动，孩子很喜欢。</p>
-					</div>
-					<div class="separator"></div>
-					<div class="tutor-check">
-						<div class="price"><i class="icon22 icon-yen"></i>200<span class="spe2">起</span></div>
-						<div class="check">
-							<a href="tutordetailed.html"><button class="btn1" type="button">立即查看</button></a>
-						</div>
-					</div>
-					</div>
-				</div>
-				</a>
+					</a>
+				</c:forEach>	
+				
 				<ul class="pager">
 				  <li class="previous"><a href="your/nice/url">«</a></li>
 				  <li><a href="your/nice/url">1</a></li>

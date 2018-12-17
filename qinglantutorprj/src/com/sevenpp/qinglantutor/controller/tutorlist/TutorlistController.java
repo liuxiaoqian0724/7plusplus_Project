@@ -1,21 +1,21 @@
 		
 		package com.sevenpp.qinglantutor.controller.tutorlist;
 
-		import java.util.ArrayList;
-import java.util.List;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.sevenpp.qinglantutor.entity.Conditions;
-import com.sevenpp.qinglantutor.service.impl.TutorListServiceImpl;
+		
+		import java.util.List;
+		
+		import javax.annotation.Resource;
+		import javax.servlet.http.HttpServletRequest;
+		import javax.servlet.http.HttpServletResponse;
+		import javax.servlet.http.HttpSession;
+		
+		import org.springframework.stereotype.Controller;
+		import org.springframework.ui.Model;
+		import org.springframework.web.bind.annotation.PathVariable;
+		import org.springframework.web.bind.annotation.RequestMapping;
+		
+		import com.sevenpp.qinglantutor.entity.Conditions;
+		import com.sevenpp.qinglantutor.service.impl.TutorListServiceImpl;
 		
 		/**
 		*
@@ -66,11 +66,6 @@ import com.sevenpp.qinglantutor.service.impl.TutorListServiceImpl;
 				
 				request.setAttribute("courses", courses);
 				request.setAttribute("grades", grades);
-
-				//实验
-				List<Object[]> shiyan=this.tutorListServiceImpl.find();
-				
-				session.setAttribute("shiyan", shiyan);
 				System.out.println();
 				
 				//创建json对象，并写入数据

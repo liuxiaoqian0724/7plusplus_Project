@@ -3,6 +3,8 @@
 		import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -13,8 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.sevenpp.qinglantutor.entity.Conditions;
-import com.sevenpp.qinglantutor.entity.User;
+import com.sevenpp.qinglantutor.service.impl.ConditionsServiceImpl;
 
 /**
 		*
@@ -32,10 +33,16 @@ import com.sevenpp.qinglantutor.entity.User;
 		@Controller
 		@RequestMapping("/change")
 		public class ConditionsController {
+			
+			@Resource
+			private ConditionsServiceImpl conditionsServiceImpl;
+			
 			@RequestMapping(value="/addconditions/{grade}/{subject}/{department}/{sex}/{major}")
 			public ModelAndView addConditions(HttpServletRequest request,HttpServletResponse response,
 					Model model,@PathVariable String grade,@PathVariable String subject,
 					@PathVariable String department,@PathVariable String sex,@PathVariable String major)  {
+				
+				System.out.println(grade+subject+department+sex+major);
 				//得到session
 				HttpSession session=request.getSession();
 				//创建条件对象
@@ -65,9 +72,27 @@ import com.sevenpp.qinglantutor.entity.User;
 					conditions.set(5, major);
 				session.setAttribute("conditions", conditions);
 //				System.out.println("department:"+conditions.getDepartment());
+				
+				//将conditions中的gname,cname换成gid,cid;
+				int gid=0;
+				int cid=0;
+				if(!grade.equals("0")) {
+					gid=this.conditionsServiceImpl.findGidByGname(grade);
+				}
+				if(!subject.equals("0")) {
+					cid=this.conditionsServiceImpl.findCidByCname(subject);
+				}
+//				System.out.println("gid:"+gid);
+//				System.out.println("cid:"+cid);
+				
 				//得到schooltype
 				String schooltype=(String) session.getAttribute("schooltype");
 				System.out.println("schooltype:"+schooltype);
+				
+				//得到符合条件的老师列表
+				List tutors=new ArrayList();
+				tutors=this.conditionsServiceImpl.findTutorByAllConditions(gid, cid, department, sex, major);
+				session.setAttribute("tutors", tutors);
 				return new ModelAndView("redirect:/tutorlist/conditions/"+schooltype);
 			}
 			
@@ -90,11 +115,9 @@ import com.sevenpp.qinglantutor.entity.User;
 					conditions.set(5, "0");
 				session.setAttribute("conditions", conditions);
 				
-				//得到符合条件的老师列表
-				
-				
 				//得到schooltype
 				String schooltype=(String) session.getAttribute("schooltype");
+				System.out.println("schoolty:"+schooltype);
 				return new ModelAndView("redirect:/tutorlist/conditions/"+schooltype);
 			}
 }

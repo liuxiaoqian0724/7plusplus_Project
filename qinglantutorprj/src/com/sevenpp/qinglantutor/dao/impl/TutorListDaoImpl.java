@@ -100,6 +100,7 @@ import com.sevenpp.qinglantutor.entity.Grade;
 				return q.list();	
 			}
 			
+			
 			public List<Object[]> find(){
 				Session session=this.sessionFactory.getCurrentSession();
 				//Query q=session.createQuery("select id,username,teacherage from User as user inner join fetch user.myJobs as job inner join fetch job.grades as grade"
