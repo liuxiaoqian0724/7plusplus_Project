@@ -88,6 +88,7 @@ public class SendMessageServiceImpl implements SendMessageService {
 			time2.setTid(Integer.parseInt(myTimes[i]));
 			times.add(time2);
 		}
+		myJob.setTimes(times);
 		int id = sendMessageDaoImpl.findId(email);
 		myJob.getUser().setId(id);
 		return sendMessageDaoImpl.sendMessage(myJob);
