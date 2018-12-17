@@ -7,6 +7,7 @@
 <title>jump</title>
 </head>
 <body>
-	<a href="jumptoReview?userid=1">用户id授予</a>
+	<a href="jumptoReview?userid=1">跳往review 用户id授予</a>
+	<a href="jumptoNews?email=zhangsan@qq.com">跳往news 用户Email授予</a>
 </body>
 </html>
