@@ -82,10 +82,10 @@
 		var username = $('#username').val();
 		var nameError =$('#nameError');
 		if(username == ""){
-			nameError.html('用户名不能为空！');
+			nameError.html('用户名不能为空！<label class="input-control-icon-right"><img alt="" src="images/icon/error.png" style="width:20px; height:20px; position:relative; margin-left:-15px;"></label>');
 			isName = false;
 		}else{
-			nameError.html("<img alt='' href='images/icon/ok.png'>");
+			nameError.html('<label class="input-control-icon-right"><img alt="" src="images/icon/ok.png" style="width:20px; height:20px; position:relative; margin-left:-15px;"></label>');
 			isName = true;
 		}
 	}
@@ -95,12 +95,12 @@
 		var reg = /^[A-Za-z0-9]{6,16}$/;
 		if(pwd == ""){
 			isPwd = false;
-			pwdError.html('密码不能为空！');
+			pwdError.html('密码不能为空！<label class="input-control-icon-right"><img alt="" src="images/icon/error.png" style="width:20px; height:20px; position:relative; margin-left:-15px;"></label>');
 		}else if(!pwd.match(reg)){
 			isPwd = false;
-			pwdError.html('您的密码不符合格式要求！');
+			pwdError.html('您的密码不符合格式要求！<label class="input-control-icon-right"><img alt="" src="images/icon/error.png" style="width:20px; height:20px; position:relative; margin-left:-15px;"></label>');
 		}else{
-			pwdError.html("<img alt='' href='images/icon/ok.png'>");
+			pwdError.html('<label class="input-control-icon-right"><img alt="" src="images/icon/ok.png" style="width:20px; height:20px; position:relative; margin-left:-15px;"></label>');
 			isPwd = true;
 		}
 	}
@@ -110,13 +110,13 @@
 		var rePwdError =$('#rePwdError');
 		if(rePwd==""){
 			isRePwd = false;
-			rePwdError.html('密码不能为空！');
+			rePwdError.html('密码不能为空！<label class="input-control-icon-right"><img alt="" src="images/icon/error.png" style="width:20px; height:20px; position:relative; margin-left:-15px;"></label>');
 		}else if(rePwd!=pwd){
 			isRePwd = false;
-			rePwdError.html('两次密码不一致！');
+			rePwdError.html('两次密码不一致！<label class="input-control-icon-right"><img alt="" src="images/icon/error.png" style="width:20px; height:20px; position:relative; margin-left:-15px;"></label>');
 		}else{
 			isRePwd = true;
-			rePwdError.html("<img alt='' href='images/icon/ok.png'>");
+			rePwdError.html('<label class="input-control-icon-right"><img alt="" src="images/icon/ok.png" style="width:20px; height:20px; position:relative; margin-left:-15px;"></label>');
 		}
 	}
 	function checkEmail(){
@@ -125,13 +125,13 @@
 		var mailReg = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
 		if(email == ""){
 			isEmail = false;
-			EmailError.html('邮箱不能为空！');
+			EmailError.html('邮箱不能为空！<label class="input-control-icon-right"><img alt="" src="images/icon/error.png" style="width:20px; height:20px; position:relative; margin-left:-230px;"></label>');
 		}else if(!email.match(mailReg)){
 			isEmail = false;
-			EmailError.html('邮箱格式不正确');
+			EmailError.html('邮箱格式不正确！<label class="input-control-icon-right"><img alt="" src="images/icon/error.png" style="width:20px; height:20px; position:relative; margin-left:-230px;"></label>');
 		}else{
 			isEmail = true;
-			EmailError.html("<img alt='' href='images/icon/ok.png'>");
+			EmailError.html('<label class="input-control-icon-right"><img alt="" src="images/icon/ok.png" style="width:20px; height:20px; position:relative; margin-left:-230px;"></label>');
 		}
 	}
 	function checkEIdentify(){
@@ -139,10 +139,10 @@
 		var EIdentifyError =$('#EIdentifyError');
 		if(EIdentify == ""){
 			isEIdentify = false;
-			EIdentify.html('验证码不能为空');
+			EIdentify.html('验证码不能为空<label class="input-control-icon-right"><img alt="" src="images/icon/error.png" style="width:20px; height:20px; position:relative; margin-left:-15px;"></label>');
 		}else{
 			isEIdentify = true;
-			EIdentify.html("<img alt='' href='images/icon/ok.png'>");
+			EIdentify.html('<label class="input-control-icon-right"><img alt="" src="images/icon/ok.png" style="width:20px; height:20px; position:relative; margin-left:-15px;"></label>');
 		}
 	}
 	function checkRegist(){
@@ -150,15 +150,15 @@
 		var principle = $('#principle');
 		if (isName&&isPwd&&isRePwd&&isEmail&&isEIdentify&&identify) {
 			if(principle.prop('checked')){
-				allError.html("<img alt='' href='images/icon/ok.png'>");
+				allError.html('<label class="input-control-icon-right"><img alt="" src="images/icon/ok.png" style="width:20px; height:20px; position:relative; margin-left:-15px;"></label>');
 				return true;
 			}else{
-				allError.html('注册需要您接受本网站协议！');
+				allError.html('注册需要您接受本网站协议！<label class="input-control-icon-right"><img alt="" src="images/icon/error.png" style="width:20px; height:20px; position:relative; margin-left:-15px;"></label>');
 				return false;
 			}
 
 		} else{
-			allError.html('请确保您的信息完整，请认真填写！');
+			allError.html('请确保您的信息完整，请认真填写！<label class="input-control-icon-right"><img alt="" src="images/icon/error.png" style="width:20px; height:20px; position:relative; margin-left:-15px;"></label>');
 			return false;
 		}
 	}
@@ -188,7 +188,7 @@
 					return false;
 				}
 				else{
-					show.html("<img alt='' href='images/icon/ok.png'>");
+					show.html("");
 					return true;
 				}
 			}
