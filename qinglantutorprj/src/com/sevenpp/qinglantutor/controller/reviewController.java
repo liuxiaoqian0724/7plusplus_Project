@@ -1,7 +1,15 @@
 package com.sevenpp.qinglantutor.controller;
+import com.sevenpp.qinglantutor.dao.reviewDaoImpl;
 import com.sevenpp.qinglantutor.service.reviewServiceImpl;
+import com.sevenpp.qinglantutor.service.personalServiceImpl;
+import com.sevenpp.qinglantutor.entity.ClassRelation;
+import com.sevenpp.qinglantutor.entity.NewsPage;
 import com.sevenpp.qinglantutor.entity.Review;
+import com.sevenpp.qinglantutor.entity.TeachRelation;
+import com.sevenpp.qinglantutor.entity.User;
 
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -27,14 +35,79 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class reviewController {
 	@Resource
 	private reviewServiceImpl reviewServiceImpl;
-	
-	@RequestMapping("/jumptoReview")
-	public String review(String userid,HttpServletRequest request) {
-		List<Review> list=this.reviewServiceImpl.list();
-		request.getServletContext().setAttribute("review", list);
+	@Resource
+	private personalServiceImpl personalServiceImpl;
+	@Resource
+	private reviewDaoImpl reviewDaoImpl;
+	@RequestMapping(value = "/jumptoReview",produces = "text/html; charset=utf-8")
+	public String review(String userid,HttpServletRequest request,HttpServletRequest response) throws UnsupportedEncodingException  {
+		/*request.setCharacterEncoding("UTF-8");*/
+		System.out.println(request.getCharacterEncoding());
+		Integer xid;
+		xid=Integer.valueOf(userid);
+		/*个人中心top部分*/
+		List<User> listUser =this.personalServiceImpl.list(xid);
+		request.getServletContext().setAttribute("personal", listUser);
+		System.out.println(listUser.get(0).getSchool());
+		
+		/*评价部分*/
+		User user=this.reviewDaoImpl.findurid(xid);
+		List<TeachRelation> listTR=this.reviewDaoImpl.findtridByTid(user);
+		int i=listTR.size();
+		int x=1;
+		int Star=0;
+		int reviewnum=0;
+		
+		List<Review> listRe = new ArrayList<Review>();
+		List<NewsPage> listpage=new ArrayList<NewsPage>();
+			for(x=i;x>0;x--) {
+				int z=x-1;
+				TeachRelation trx=listTR.get(z);
+				List<ClassRelation> listCr=trx.getClassRelation();
+				/*ClassRelation cr=this.reviewDaoImpl.findCrid(trx);*/
+					int a=listCr.size();
+					int y=1;
+					for (y=a;y>0;y--) {
+						int b=y-1;
+						ClassRelation crx=listCr.get(b);
+						List<Review> list2=this.reviewServiceImpl.list(crx);
+						listRe.addAll(list2);
+						
+						int reviewstar=list2.get(0).getReviewStar();
+						Star=Star+reviewstar;
+						reviewnum++;
+						/*获得星星的方法，将在reviewService里打包*/
+						int finalstar1;
+						List<String>starfulllist=new ArrayList<String>();
+						for (finalstar1=reviewstar;finalstar1>0;finalstar1--) {
+							starfulllist.add("fill-star");
+						}
+						double finalstar2;
+						for(finalstar2=5-reviewstar;finalstar2>0;finalstar2--) {
+							starfulllist.add("empty-star");
+						}
+						
+						NewsPage newspage =new NewsPage();
+						newspage.setReview(list2);
+						newspage.setStar(starfulllist);
+						listpage.add(newspage);
+						
+					}
+			}
+			/*获得平均分 每位用户只能有一个平均分*/
+			double AVGstar=Star/reviewnum;
+			double finalstar=Math.floor(AVGstar);
+			
+		request.getServletContext().setAttribute("listpage",listpage);
+		/*request.getServletContext().setAttribute("review", listRe);*/
+		request.getServletContext().setAttribute("finalstar", finalstar);
 		return "student-personal-center-evaluation";
+		/*TeachRelation tr=this.reviewDaoImpl.findTrid(user);
+		ClassRelation cr=this.reviewDaoImpl.findCrid(tr);
+		request.getServletContext().setAttribute("review", list3);*/
 		
 	}
+	
 	
 
 }

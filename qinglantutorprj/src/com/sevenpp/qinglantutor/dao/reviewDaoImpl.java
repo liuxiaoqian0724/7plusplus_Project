@@ -5,7 +5,12 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 import java.util.List;
+import java.util.stream.Collectors;
+
+import com.sevenpp.qinglantutor.entity.ClassRelation;
 import com.sevenpp.qinglantutor.entity.Review;
+import com.sevenpp.qinglantutor.entity.TeachRelation;
+import com.sevenpp.qinglantutor.entity.User;
 /**
 *
 * 项目名称：qinglantutorprj
@@ -23,14 +28,65 @@ import com.sevenpp.qinglantutor.entity.Review;
 public class reviewDaoImpl {
 	@Resource
 	private SessionFactory sessionFactory;
-	public List<Review> findAll(){
+	
+	/**
+	 * 使用urid(int)在user表查询得到Tid
+	 * */
+	public User findurid(int urid){
 		Session session=this.sessionFactory.getCurrentSession();
-		/*此处查询方式等待修改*/
-		Query q=session.createQuery("from Review");
+		Query q=session.createQuery("from User ur where ur.id=:id");
+		q.setParameter("id", urid);
+		List<User> list=q.list();
+		User user=list.get(0);
+		return user;
+	}
+	/**查询教课关系表，下一步上课关系 需要user类参数*/
+	public List<TeachRelation> findtridByTid(User user){
+		Session session=this.sessionFactory.getCurrentSession();
+		Query q=session.createQuery("from TeachRelation tr where tr.user=:user");
+		q.setParameter("user", user);
+		List<TeachRelation> list=q.list();
+		/*List<Integer> trids=list.stream().map(TeachRelation::getTrid).collect(Collectors.toList());*/
+		return list;
+	}
+	/**查询评价表需要CLASSRELATION类的参数*/
+	public List<Review> findAll(ClassRelation cr){
+		Session session=this.sessionFactory.getCurrentSession();
+		Query q=session.createQuery("from Review re where re.classRelation=:cr");
+		q.setParameter("cr", cr);
 		System.out.println("review数据库读取成功");
 		return q.list();
 	}
+	
+	/*过时方法
+	 * public ClassRelation findCrid(TeachRelation trx){
+		Session session=this.sessionFactory.getCurrentSession();
+		Query q=session.createQuery("from ClassRelation cr where cr.teachRelation=:tr");
+		q.setParameter("tr", trx);
+		List<ClassRelation> list=q.list();
+		ClassRelation cr=list.get(0);
+		return cr;
+	}*/
+	
+	/*过时方法
+	 * public List<ClassRelation> findcridByTrid(TeachRelation tr) {
+		Session session=this.sessionFactory.getCurrentSession();
+		Query q=session.createQuery("from ClassRelation cr where cr.teachRelation=:tr");
+		q.setParameter("tr", tr);
+		List<ClassRelation> list=q.list();
+		List<Integer> crids=list.stream().map(ClassRelation::getCrid).collect(Collectors.toList());
+		return list;
+	}*/
 
+	/*过时方法
+	 * public TeachRelation findTrid(User user){
+	Session session=this.sessionFactory.getCurrentSession();
+	Query q=session.createQuery("from TeachRelation tr where tr.user=:user");
+	q.setParameter("user", user);
+	List<TeachRelation> list=q.list();
+	TeachRelation tr=list.get(0);
+	return tr;
+}*/
 }
 
 	
