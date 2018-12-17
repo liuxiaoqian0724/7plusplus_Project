@@ -111,7 +111,6 @@
 			function checkPersonId() {
 				var personId = $('#personId').val();
 				var personIdError = $('#personIdError');
-				console.log(personId)
 				if(personId == "") {
 					isPersonId= false;
 					personIdError.html('身份证号码不能为空！');

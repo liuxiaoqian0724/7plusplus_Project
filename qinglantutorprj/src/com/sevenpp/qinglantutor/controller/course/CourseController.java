@@ -4,7 +4,9 @@ import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sevenpp.qinglantutor.entity.CourseInformation;
 import com.sevenpp.qinglantutor.service.impl.CourseServiceImpl;
+import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 
 /**
 *
@@ -37,8 +40,18 @@ public class CourseController {
 	
 	
 	@RequestMapping("courseInformation")
-	public String stuCourse(HttpServletRequest request) {
-		String email = new String("wangwu@qq.com");
+	public String stuCourse(HttpServletRequest request,HttpServletResponse response) {
+		response.setHeader("Access-Control-Allow-Origin", "*");
+		response.setHeader("Access-Control-Allow-Methods", "POST");
+		response.setHeader("Access-Control-Allow-Headers","x-requested-with,content-type");
+		response.setHeader("Access-Control-Allow-Credentials","true");
+		response.setContentType("text/html;charset=utf-8");
+		response.setCharacterEncoding("utf-8");
+		Cookie[]cookies = request.getCookies();
+		System.out.println(cookies.length);
+		String SESSIONID = CookieUtils.getCookieFromCookies(cookies,"JSESSIONID").getValue();
+		String email = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
+		
 		List<CourseInformation> list = this.courseServiceImpl.getCourseInfor(email);		
 		request.setAttribute("courseDetailList", list);
 		

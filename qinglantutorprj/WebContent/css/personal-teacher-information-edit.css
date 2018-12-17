@@ -48,11 +48,14 @@ body{
 }
 #c2{
 	width: 900px;
-	height: 400px;
+	height: 600px;
 	margin-left: 150px;
 }
 #c2 > div{
 	float: left;
+}
+#c2-left {
+	height:100%;
 }
 #c2-left > span{
 	display: block;
