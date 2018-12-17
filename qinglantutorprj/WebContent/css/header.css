@@ -190,3 +190,17 @@ body{
 			z-index: 999;
 
 		}
+		#inputSearchExample3{
+	    width: 228.67px;
+	  }
+	  .input-group-btn{
+	    display: block;
+	    width: 52px;
+	    height: 32px;
+	  }
+	  #header-login > span:first-of-type{
+	    margin-left: -10px;
+	  }
+	  #header-login > span:last-of-type{
+	    margin-left: -10px;
+	  }

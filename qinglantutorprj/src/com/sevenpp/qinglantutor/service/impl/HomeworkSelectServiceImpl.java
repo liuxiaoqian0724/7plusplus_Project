@@ -8,7 +8,6 @@ import com.sevenpp.qinglantutor.service.HomeworkSelectService;
 import java.util.List;
 import com.sevenpp.qinglantutor.entity.TeachRelation;
 import javax.annotation.Resource;
-import org.hibernate.procedure.spi.CallableStatementSupport;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 @Service

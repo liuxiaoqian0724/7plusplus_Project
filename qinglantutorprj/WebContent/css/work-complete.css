@@ -1,0 +1,118 @@
+body{
+	height: 1000px;
+	list-style:none;
+	line-height: 16px;
+	font-family: STXihei, "Microsoft YaHei";
+	font-size: 16px;
+	
+}
+#d1{
+
+	border-style: solid;
+	border-width: 1px;
+	border-color: #c0c0c0;
+	width: 900px;
+	height: 800px;
+	margin: auto;
+}
+#c1{
+	float: left;
+	margin-left: 20px;
+	margin-top: 12px;
+	width: 800px;
+	height: 50px;
+	border-bottom: 1px solid #c0c0c0;
+}
+#c2{
+	margin-left: 20px;
+	font-weight: bold;
+	padding-top: 20px;
+	padding-left: 20px;
+	width: 150px;
+	height: 80px;
+	float: left;
+	font-size: 22px;
+	border-top: 1px solid red;
+}
+#c3{
+	font-weight: bold;
+	float: left;
+	margin-top: 16px;
+	margin-left: 40px;
+	padding-top: 6px;
+	width: 100px;
+	height: 30px;
+	text-align: center;
+	border:2px solid #56c9db;
+	border-bottom-left-radius:5px;
+	border-top-left-radius:5px;
+	border-bottom-right-radius:5px;
+	border-top-right-radius:5px;
+}
+#c4{
+	margin-left: 40px;
+	margin-top: 30px;
+	width: 800px;
+	height: 230px;
+	float: left;
+	overflow-y:auto;
+	overflow-x: hidden;
+	border:1px solid #c0c0c0;
+}
+.c5{
+	margin-left: 20px;
+	font-weight: bold;
+	padding-top: 20px;
+	padding-left: 20px;
+	width: 140px;
+	height: 80px;
+	float: left;
+	font-size: 22px;
+}
+#c6{
+	
+	float: left;
+	width: 800px;
+	margin-left: 47px;
+}
+.c7{
+	float: left;
+	margin-left: 45px;
+	margin-top: 40px;
+	width: 140px;
+	height: 20px;
+}
+
+#time{
+	margin-left: -210px;
+	margin-top: 13px;
+	border:1px dashed #c0c0c0;
+	width: 47px;
+
+}
+#question{
+	float: left;
+	width: 80px;
+	margin-left: 60px;
+	margin-top: 37px;
+}
+.btn-submit{
+	height: 30px;
+	width: 80px;
+	margin-left: 145px;
+	margin-top: 60px;
+}
+#time1{
+	float: left;
+	width: 78px;
+
+}
+.t2{
+	
+	height: 20px; 
+	margin-left: 130px;
+	margin-top: -20px;
+	float: left;
+	width: 47px;
+	text-align: center;
+}

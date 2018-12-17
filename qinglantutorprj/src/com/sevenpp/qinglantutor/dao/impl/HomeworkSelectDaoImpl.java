@@ -15,6 +15,8 @@ public class HomeworkSelectDaoImpl implements com.sevenpp.qinglantutor.dao.Homew
 	@Resource
 	private SessionFactory sessionFactory;
 	
+	
+//	作业查询
 	@Override
 	public List<HomeWork> HomeWorkShow() {
 		// TODO Auto-generated method stub
@@ -22,18 +24,22 @@ public class HomeworkSelectDaoImpl implements com.sevenpp.qinglantutor.dao.Homew
 		Query q=session.createQuery("from HomeWork )");
 		return q.list();
 	}
+	
+//	老师查询功能
 	public List<User> TeacherShow() {
 		// TODO Auto-generated method stub
 		Session session=this.sessionFactory.getCurrentSession();
 		Query q=session.createQuery("from User WHERE role='老师'");
 		return q.list();
 	}
+//	关系查询
 	public List<ClassRelation> ClassRelation() {
 		// TODO Auto-generated method stub
 		Session session=this.sessionFactory.getCurrentSession();
 		Query q=session.createQuery("from ClassRelation");
 		return q.list();
 	}
+//	教学关系查询
 	public List<TeachRelation> TeachRelation(){
 		Session session=this.sessionFactory.getCurrentSession();
 		Query q=session.createQuery("from TeachRelation");

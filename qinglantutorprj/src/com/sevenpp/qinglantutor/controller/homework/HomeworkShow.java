@@ -22,17 +22,19 @@ public class HomeworkShow {
 	public String show(HttpServletRequest request) {
 //		String sid=request.getParameter("id");
 //		String role=request.getParameter("role");
-		String sid="3";
+		String sid="4";
 		String role="学生";
 		int id=Integer.parseInt(sid);
 		if(role=="学生") {
-			
+//			导入需要的DAO
 			List<ClassRelation> relation =homeworkSelectServiceImpl.ClassRelation();
 			List<HomeWork> list=homeworkSelectServiceImpl.HomeworkShow();
 			List<User> user=homeworkSelectServiceImpl.TeacherShow();
 			List<TeachRelation> trelation=homeworkSelectServiceImpl.TeachRelation();
 			List<HomeWork> show=new ArrayList();
 			List<User> timg=new ArrayList();
+			List<TeachRelation> list1=new ArrayList();
+			//判断学生的id查找对应的homework
 			for (ClassRelation  c : relation) {
 				if(id==c.getUser().getId()) {
 					for (HomeWork h : list) {
@@ -42,8 +44,9 @@ public class HomeworkShow {
 								if(t.getTrid()==h.getTeachRelation().getTrid())
 									for (User u : user) {
 										if(t.getUser().getId()-1==u.getId()) {
-											
 											timg.add(u);
+											
+											
 									}
 								}	
 							}		
@@ -51,6 +54,11 @@ public class HomeworkShow {
 					}
 				}
 			}
+			for (TeachRelation teachRelation : list1) {
+				list1.add(teachRelation);
+			}
+//			设置el初始值
+			request.setAttribute("relation", list1);
 			request.setAttribute("homework", show);
 			request.setAttribute("teachers", timg);	
 			return "student-personal-center-homework";}

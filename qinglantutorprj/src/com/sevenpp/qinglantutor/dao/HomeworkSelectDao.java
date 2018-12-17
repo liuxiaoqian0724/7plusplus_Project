@@ -12,4 +12,5 @@ public interface HomeworkSelectDao {
 	abstract public List<User> TeacherShow() ;
 	abstract public List<ClassRelation> ClassRelation() ;
 	abstract public List<TeachRelation> TeachRelation() ;
+	
 }
