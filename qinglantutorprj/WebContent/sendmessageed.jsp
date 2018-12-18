@@ -48,28 +48,36 @@
 						<!--科目选择-->
 						<li class="list-group-item"><label>科目（点击加号即可添加）*</label><br />
 							<label>
-								<button class="btn color-success" onclick="addSub(this)">语文<span class="label label-badge"
+								<button class="btn color-success" onclick="addSub(this)">
+									语文<span class="label label-badge"
 										style="background-color: #CCCCCC">+</span>
 								</button>
-								<button class="btn color-success" onclick="addSub(this)">数学<span class="label label-badge"
+								<button class="btn color-success" onclick="addSub(this)">
+									数学<span class="label label-badge"
 										style="background-color: #CCCCCC">+</span>
 								</button>
-								<button class="btn color-success" onclick="addSub(this)">英语<span class="label label-badge"
+								<button class="btn color-success" onclick="addSub(this)">
+									英语<span class="label label-badge"
 										style="background-color: #CCCCCC">+</span>
 								</button>
-								<button class="btn color-success" onclick="addSub(this)">历史<span class="label label-badge"
+								<button class="btn color-success" onclick="addSub(this)">
+									历史<span class="label label-badge"
 										style="background-color: #CCCCCC">+</span>
 								</button>
-								<button class="btn color-success" onclick="addSub(this)">地理<span class="label label-badge"
+								<button class="btn color-success" onclick="addSub(this)">
+									地理<span class="label label-badge"
 										style="background-color: #CCCCCC">+</span>
 								</button>
-								<button class="btn color-success" onclick="addSub(this)">化学<span class="label label-badge"
+								<button class="btn color-success" onclick="addSub(this)">
+									化学<span class="label label-badge"
 										style="background-color: #CCCCCC">+</span>
 								</button>
-								<button class="btn color-success" onclick="addSub(this)">生物<span class="label label-badge"
+								<button class="btn color-success" onclick="addSub(this)">
+									生物<span class="label label-badge"
 										style="background-color: #CCCCCC">+</span>
 								</button>
-								<button class="btn color-success" onclick="addSub(this)">音乐<span class="label label-badge"
+								<button class="btn color-success" onclick="addSub(this)">
+									音乐<span class="label label-badge"
 										style="background-color: #CCCCCC">+</span>
 								</button>
 						</label> <input type="text" name="subject" class="form-control"
@@ -78,42 +86,54 @@
 						<!--授课年级-->
 						<li class="list-group-item"><label>授课年级（点击加号即可添加）*</label><br />
 							<label> <span>小学：</span>
-								<button class="btn color-success" onclick="addGra(this)">一年级<span class="label label-badge"
+								<button class="btn color-success" onclick="addGra(this)">
+									一年级<span class="label label-badge"
 										style="background-color: #CCCCCC">+</span>
 								</button>
-								<button class="btn color-success" onclick="addGra(this)">二年级<span class="label label-badge"
+								<button class="btn color-success" onclick="addGra(this)">
+									二年级<span class="label label-badge"
 										style="background-color: #CCCCCC">+</span>
 								</button>
-								<button class="btn color-success" onclick="addGra(this)">三年级<span class="label label-badge"
+								<button class="btn color-success" onclick="addGra(this)">
+									三年级<span class="label label-badge"
 										style="background-color: #CCCCCC">+</span>
 								</button>
-								<button class="btn color-success" onclick="addGra(this)">四年级<span class="label label-badge"
+								<button class="btn color-success" onclick="addGra(this)">
+									四年级<span class="label label-badge"
 										style="background-color: #CCCCCC">+</span>
 								</button>
-								<button class="btn color-success" onclick="addGra(this)">五年级<span class="label label-badge"
+								<button class="btn color-success" onclick="addGra(this)">
+									五年级<span class="label label-badge"
 										style="background-color: #CCCCCC">+</span>
 								</button>
-								<button class="btn color-success" onclick="addGra(this)">六年级<span class="label label-badge"
+								<button class="btn color-success" onclick="addGra(this)">
+									六年级<span class="label label-badge"
 										style="background-color: #CCCCCC">+</span>
 								</button>
 						</label> <br /> <label> <span>初中：</span>
-								<button class="btn color-success" onclick="addGra(this)">初一 <span class="label label-badge"
+								<button class="btn color-success" onclick="addGra(this)">
+									初一 <span class="label label-badge"
 										style="background-color: #CCCCCC">+</span>
 								</button>
-								<button class="btn color-success" onclick="addGra(this)">初二 <span class="label label-badge"
+								<button class="btn color-success" onclick="addGra(this)">
+									初二 <span class="label label-badge"
 										style="background-color: #CCCCCC">+</span>
 								</button>
-								<button class="btn color-success" onclick="addGra(this)">初三 <span class="label label-badge"
+								<button class="btn color-success" onclick="addGra(this)">
+									初三 <span class="label label-badge"
 										style="background-color: #CCCCCC">+</span>
 								</button>
 						</label> <br /> <label> <span>高中：</span>
-								<button class="btn color-success" onclick="addGra(this)">高一 <span class="label label-badge"
+								<button class="btn color-success" onclick="addGra(this)">
+									高一 <span class="label label-badge"
 										style="background-color: #CCCCCC">+</span>
 								</button>
-								<button class="btn color-success" onclick="addGra(this)">高二 <span class="label label-badge"
+								<button class="btn color-success" onclick="addGra(this)">
+									高二 <span class="label label-badge"
 										style="background-color: #CCCCCC">+</span>
 								</button>
-								<button class="btn color-success" onclick="addGra(this)">高三 <span class="label label-badge"
+								<button class="btn color-success" onclick="addGra(this)">
+									高三 <span class="label label-badge"
 										style="background-color: #CCCCCC">+</span>
 								</button>
 						</label> <input type="text" class="form-control" id="grade"

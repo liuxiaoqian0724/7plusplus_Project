@@ -1,114 +1,135 @@
-#myNiceCarousel{
+#myNiceCarousel {
 	position: relative;
 }
-.tutor_information{
+
+.tutor_information {
 	position: relative;
-	margin-top:15px;
-	border:1px solid #e4dfd7;
-	background-color:#fcfcfc;
+	margin-top: 15px;
+	border: 1px solid #e4dfd7;
+	background-color: #fcfcfc;
 }
-.tutor_information_pic img{
-	width:50%;
-	height:50%;
+
+.tutor_information_pic img {
+	width: 50%;
+	height: 50%;
 	position: relative;
-	margin-left:480px;
-	margin-top:30px;
+	margin-left: 480px;
+	margin-top: 30px;
 }
-#choose_button{
+
+#choose_button {
 	position: relative;
-	margin-left:460px;
-	margin-top:15px;
+	margin-left: 460px;
+	margin-top: 15px;
 }
-#i_wonder_release{
-	position:relative;
-	margin-left:300px;
-}
-#personal_information{
-	margin-left:15px;
-	margin-top:15px;
-}
-#personal_inf{
-	width:222px;
-	background-color:#fff;
-}
-#personal_name{
-	height:100px;
-	border:1px solid #e4dfd7;
-	margin-top:5px;
-}
-#learning_community{
-	margin-top:15px;
-	border:1px solid #e4dfd7;
-	background-color:#fcfcfc;
-}
-.studycommunity img{
-	width:50%;
-	height:50%;
-	margin-left:480px;
-	margin-top:30px;
-}
-#learning_experience{
-	margin:15px;
-	height:534px;
-}
-.card_keyword{
+
+#i_wonder_release {
 	position: relative;
-	padding:10px;
-	width:210px;
+	margin-left: 300px;
 }
-.cards_article{
+
+#personal_information {
+	margin-left: 15px;
+	margin-top: 15px;
+}
+
+#personal_inf {
+	width: 222px;
+	background-color: #fff;
+}
+
+#personal_name {
+	height: 100px;
+	border: 1px solid #e4dfd7;
+	margin-top: 5px;
+}
+
+#learning_community {
+	margin-top: 15px;
+	border: 1px solid #e4dfd7;
+	background-color: #fcfcfc;
+}
+
+.studycommunity img {
+	width: 50%;
+	height: 50%;
+	margin-left: 480px;
+	margin-top: 30px;
+}
+
+#learning_experience {
+	margin: 15px;
+	height: 534px;
+}
+
+.card_keyword {
+	position: relative;
+	padding: 10px;
+	width: 210px;
+}
+
+.cards_article {
 	position: relative;
 	margin-left: 200px;
-	margin-top:-170px;
-	padding-top:10px;
-	padding-left:10px;
+	margin-top: -170px;
+	padding-top: 10px;
+	padding-left: 10px;
 }
-#course_question{
-	margin-top:15px;
-	background-color:#fff;
+
+#course_question {
+	margin-top: 15px;
+	background-color: #fff;
 }
-#question_answer{
+
+#question_answer {
 	position: relative;
-	margin-top:5px;
+	margin-top: 5px;
 }
-#qanda{
+
+#qanda {
 	position: relative;
-	width:800px;
-	margin-left:25px;
-	padding:5px;
-	background-color:#fff;
+	width: 800px;
+	margin-left: 25px;
+	padding: 5px;
+	background-color: #fff;
 }
-#goodresponder{
+
+#goodresponder {
 	position: relative;
-	margin-right:15px;
-	margin-left:845px;
-	margin-top:-523px;
-	background-color:#fff;
-	border:1px solid #e4dfd7;
+	margin-right: 15px;
+	margin-left: 845px;
+	margin-top: -523px;
+	background-color: #fff;
+	border: 1px solid #e4dfd7;
 }
-#goodresponder img{
-	width:39%;
-	height:39%;
+
+#goodresponder img {
+	width: 39%;
+	height: 39%;
 }
-#community_author{
+
+#community_author {
 	position: relative;
-	margin-top:15px;
+	margin-top: 15px;
 }
-#author{
+
+#author {
 	position: relative;
-	margin:25px;
+	margin: 25px;
 }
-.personal_introduction{
-	width:400px;
-	height:120px;
+
+.personal_introduction {
+	width: 400px;
+	height: 120px;
 	position: relative;
 	margin-left: 280px;
-	margin-top:-130px;
-	padding:5px;
+	margin-top: -130px;
+	padding: 5px;
 }
-.personal_article{
+
+.personal_article {
 	position: relative;
 	margin-left: 700px;
-	margin-top:-120px;
+	margin-top: -120px;
 	padding-left: 15px;
 }

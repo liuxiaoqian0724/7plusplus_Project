@@ -6,69 +6,82 @@
 %>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<link rel="stylesheet" href="<%=basePath%>/dist/css/zui-theme.css" />
-		<link rel="stylesheet" href="<%=basePath%>/dist/css/zui-theme.min.css" />
-		<link rel="stylesheet" href="<%=basePath%>/dist/css/zui.css" />
-		<link rel="stylesheet" href="<%=basePath%>/dist/css/zui.lite.css" />
-		<link rel="stylesheet" href="<%=basePath%>/dist/css/zui.lite.min.css" />
-		<link rel="stylesheet" href="<%=basePath%>/dist/css/zui.min.css" />
-		<link rel="stylesheet" href="<%=basePath%>/dist/lib/board/zui.board.css" />
-		<link rel="stylesheet" href="<%=basePath%>/dist/lib/board/zui.board.min.css" />
-		<link rel="stylesheet" href="<%=basePath%>/dist/lib/bootbox/bootbox.css" />
-		<link rel="stylesheet" href="<%=basePath%>/dist/lib/bootbox/bootbox.min.css" />
-		<link rel="stylesheet" href="<%=basePath%>/dist/lib/datetimepicker/datetimepicker.css" />
-		<link rel="stylesheet" href="<%=basePath%>/dist/lib/datetimepicker/datetimepicker.min.css" />
-		<link rel="stylesheet" href="<%=basePath%>/css/sendstaused.css" />
-		<link rel="stylesheet" type="text/css" href="<%=basePath%>/css/header.css"/>
-		<link rel="stylesheet" type="text/css" href="<%=basePath%>/css/footer.css"/>
-		<!--js引入-->
-		<script type="text/javascript" src="<%=basePath%>/js/jquery-3.2.1.js"></script>
-		<script type="text/javascript" src="<%=basePath%>/dist/js/zui.js"></script>
-		<script type="text/javascript" src="<%=basePath%>/dist/js/zui.lite.js"></script>
-		<script type="text/javascript" src="<%=basePath%>/dist/js/zui.lite.min.js"></script>
-		<script type="text/javascript" src="<%=basePath%>/dist/js/zui.min.js"></script>
-		<script type="text/javascript" src="<%=basePath%>/dist/lib/datetimepicker/datetimepicker.js"></script>
-		<script type="text/javascript" src="<%=basePath%>/dist/lib/datetimepicker/datetimepicker.min.js"></script>
-		<title>信息发布审核</title>
-	</head>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="<%=basePath%>/dist/css/zui-theme.css" />
+<link rel="stylesheet" href="<%=basePath%>/dist/css/zui-theme.min.css" />
+<link rel="stylesheet" href="<%=basePath%>/dist/css/zui.css" />
+<link rel="stylesheet" href="<%=basePath%>/dist/css/zui.lite.css" />
+<link rel="stylesheet" href="<%=basePath%>/dist/css/zui.lite.min.css" />
+<link rel="stylesheet" href="<%=basePath%>/dist/css/zui.min.css" />
+<link rel="stylesheet" href="<%=basePath%>/dist/lib/board/zui.board.css" />
+<link rel="stylesheet"
+	href="<%=basePath%>/dist/lib/board/zui.board.min.css" />
+<link rel="stylesheet" href="<%=basePath%>/dist/lib/bootbox/bootbox.css" />
+<link rel="stylesheet"
+	href="<%=basePath%>/dist/lib/bootbox/bootbox.min.css" />
+<link rel="stylesheet"
+	href="<%=basePath%>/dist/lib/datetimepicker/datetimepicker.css" />
+<link rel="stylesheet"
+	href="<%=basePath%>/dist/lib/datetimepicker/datetimepicker.min.css" />
+<link rel="stylesheet" href="<%=basePath%>/css/sendstaused.css" />
+<link rel="stylesheet" type="text/css"
+	href="<%=basePath%>/css/header.css" />
+<link rel="stylesheet" type="text/css"
+	href="<%=basePath%>/css/footer.css" />
+<!--js引入-->
+<script type="text/javascript" src="<%=basePath%>/js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="<%=basePath%>/dist/js/zui.js"></script>
+<script type="text/javascript" src="<%=basePath%>/dist/js/zui.lite.js"></script>
+<script type="text/javascript"
+	src="<%=basePath%>/dist/js/zui.lite.min.js"></script>
+<script type="text/javascript" src="<%=basePath%>/dist/js/zui.min.js"></script>
+<script type="text/javascript"
+	src="<%=basePath%>/dist/lib/datetimepicker/datetimepicker.js"></script>
+<script type="text/javascript"
+	src="<%=basePath%>/dist/lib/datetimepicker/datetimepicker.min.js"></script>
+<title>信息发布审核</title>
+</head>
 
-	<body>
-		<!--导航栏开始-->
-			<jsp:include page="header.jsp"></jsp:include>
-		<!-- 导航栏END-->
-		<div class="container-fixed-md">
-			<div class="panel panel-info">
-				<div class="panel-heading">
-					<h2>发布状态</h2>
-				</div>
-				<div class="panel-body">
-					<div class="main">
-						<div class="pic">
-							<img src="<%=basePath%>/images/zhuangyuan.png" style="width: 30%;height: 60%;" />
-						</div>
-						<div>
-							<div class="sendstaus">
-								<h1>您的信息发布成功，正在进行审核</h2>
+<body>
+	<!--导航栏开始-->
+	<jsp:include page="header.jsp"></jsp:include>
+	<!-- 导航栏END-->
+	<div class="container-fixed-md">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h2>发布状态</h2>
+			</div>
+			<div class="panel-body">
+				<div class="main">
+					<div class="pic">
+						<img src="<%=basePath%>/images/zhuangyuan.png"
+							style="width: 30%; height: 60%;" />
+					</div>
+					<div>
+						<div class="sendstaus">
+							<h1>
+								您的信息发布成功，正在进行审核
+								</h2>
+								<p>预计在3个工作日内审核完毕，请您关注站内信息。</p>
 								<p>
-								预计在3个工作日内审核完毕，请您关注站内信息。
+									页面将在<span id="totalSecond" style="color: red; font-size: 25px;">5</span>s内跳转到个人中心，如未跳转请单击按钮。
 								</p>
-								<p>页面将在<span id="totalSecond" style="color: red; font-size: 25px;">5</span>s内跳转到个人中心，如未跳转请单击按钮。</p>
-							</div>
-							<div class="btn-group">
-								<a href="<%=basePath%>/personal-center-evaluation.jsp"><button class="btn btn-lg ">返回个人中心</button></a>
-								<a href="<%=basePath%>/index.jsp"><button class="btn btn-lg">返回首页</button></a>
-							</div>
+						</div>
+						<div class="btn-group">
+							<a href="<%=basePath%>/personal-center-evaluation.jsp"><button
+									class="btn btn-lg ">返回个人中心</button></a> <a
+								href="<%=basePath%>/index.jsp"><button class="btn btn-lg">返回首页</button></a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- footer -->
-		<jsp:include page="footer.jsp"></jsp:include>
-		<!-- //footer结束 -->
-	</body>
+	</div>
+	<!-- footer -->
+	<jsp:include page="footer.jsp"></jsp:include>
+	<!-- //footer结束 -->
+</body>
 <script language="javascript" type="text/javascript"> 
 	var second = totalSecond.innerText;
    	setInterval("redirect()", 1000);

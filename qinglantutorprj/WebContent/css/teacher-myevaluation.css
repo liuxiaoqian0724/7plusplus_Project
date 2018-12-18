@@ -1,49 +1,57 @@
-.panel-body > div{
+.panel-body>div {
 	float: left;
 	width: 95%;
 	height: 180px;
-	border:1px dashed red;
+	border: 1px dashed red;
 	margin-left: 15px;
 	margin-bottom: 30px;
 }
-.panel-body > div >div{
+
+.panel-body>div>div {
 	float: left;
 }
-.panel-body .c2-right-left{
+
+.panel-body .c2-right-left {
 	height: 100%;
-	width:  24%;
+	width: 24%;
 	border-right: 1px solid #c0c0c0;
 }
-.panel-body .c2-right-left img{
+
+.panel-body .c2-right-left img {
 	margin-top: 10px;
 	margin-left: 25px;
 }
-.panel-body .c2-right-left p{
+
+.panel-body .c2-right-left p {
 	text-align: center;
 	font-size: 17px;
 	margin-top: 10px;
 }
-.panel-body .c2-right-right{
+
+.panel-body .c2-right-right {
 	width: 76%;
 	height: 100%;
 	word-wrap: break-word;
 	position: relative;
 }
-.panel-body .c2-right-right > div{
+
+.panel-body .c2-right-right>div {
 	width: 100%;
 	margin-top: 8px;
 	margin-left: 10px;
 	margin-bottom: 10px;
 }
-.panel-body .c2-right-right >p{
+
+.panel-body .c2-right-right>p {
 	display: block;
-	overflow-y: auto; 
+	overflow-y: auto;
 	height: 100px;
 	font-size: 18px;
 	margin-left: 7px;
 	margin-right: 7px;
 }
-.panel-body .c2-right-right > span{
+
+.panel-body .c2-right-right>span {
 	font-size: 16px;
 	position: absolute;
 	bottom: 6px;

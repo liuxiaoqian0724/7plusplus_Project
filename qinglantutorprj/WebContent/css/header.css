@@ -1,17 +1,21 @@
-*{
+* {
 	margin: 0;
 	padding: 0;
 }
-div{
+
+div {
 	/*border: 1px solid red;*/
+	
 }
-#header-box{
+
+#header-box {
 	width: 100%;
 	height: 172px;
 	/*position: fixed;*/
 	/*z-index: 999;*/
 }
-#big-box{
+
+#big-box {
 	/*border:1px solid black;*/
 	width: 1200px;
 	margin: 0 auto;
@@ -19,30 +23,30 @@ div{
 	text-decoration: none;
 	/**/
 }
-#name-pic{
+
+#name-pic {
 	width: 263.3px;
 	height: 66px;
 	/*display: inline;*/
 	margin-top: -80px;
 	margin-left: 70px;
-
 }
-#top-box-logo{
+
+#top-box-logo {
 	/*width: 1200px;*/
 	height: 90px;
 	margin-left: 20px;
 }
-#bottom-box{
+
+#bottom-box {
 	/*border: 1px solid green;*/
 	margin-top: 0px;
 	width: 100%;
 	height: 52px;
 	background-color: #01DFCE;
-	
 }
 
-
-.input-group{
+.input-group {
 	/*border: 1px solid red;*/
 	width: 280px;
 	margin-top: -40px;
@@ -50,107 +54,120 @@ div{
 	position: relative;
 	float: left;
 }
-		#header-login{
-			/*border: 1px solid green;*/
-			height: 30px;
-			width: 120px;
-			margin-left: 1070px;
-			margin-top: 11px;
-			font-size: 21px;
-			position: absolute;
-		}
-		#header-login a{
-			text-decoration: none;
-			font-size: 20px;
-			color:  #FFFFF0;
-			font-weight: bold;
-			margin-left: 7px;
-		 }
-		#header-login span{
-			/*border:1px solid green;*/
-			position: relative;
-			margin:center;
-		}
-		#header-login span:hover{
-			/*border:1px solid green;*/
-			position: relative;
-			/*background-color:#33A6B8;*/
-			text-decoration: underline;
-		}
-		#search_btn img{
-			margin: 0 auto;
-		}
-		#titleSpan{
-			position: absolute;
-			margin-left: 115px;
-			margin-top: 5px;
-		}
-		.titleFont{
-			color: #fc8237;
-		}
-		#topBox2{
-			/*border:1px solid red;*/
-			width: 1200px;
-			height: 50px;
-			margin: 0 auto;
-			margin-top: 0px;
-			font-size: 21px;
-		}
-		#navFont{
-			/*border: 1px solid red;*/
-			text-decoration: none;
-			margin: 0 auto;
-			width: 900px;
-			float: left;
-			text-align: center;
-			margin-top: 0px;
-			margin-left: -30px;
-			font-weight: bold;
-		}
-		#navFont a{
-			text-decoration: none;
-			display: block;
-			color: #FFFFF0;
-		}
-		#navFont a:hover{
-			color: #ffffff;
-			display: block;
-			background-color: #33A6B8;
-		}
-		#navFont li{
-			text-decoration: none;
-			list-style: none;
-			float: left;
-			width: 108px;
-			height: 50px;
-			text-align: center;
-			line-height: 50px;
-			margin-left: 30px;
-			z-index: 999;
-		}
-		#navFont li:hover{
-			background-color: #33A6B8;
-			z-index: 999;
-		}
-		#navFont li ul li{
-			width:108px;
-			background-color:#2C83DF;
-			line-height: 50px;
-			height: 50px;
-			margin-left: -20px;
-			display: none;
-			/*z-index: 999;*/
-			position: relative;
 
-			font-size: 18px;
-		}
+#header-login {
+	/*border: 1px solid green;*/
+	height: 30px;
+	width: 120px;
+	margin-left: 1070px;
+	margin-top: 11px;
+	font-size: 21px;
+	position: absolute;
+}
 
-		#navFont li:hover ul li{
-			display: block;
-			z-index: 999;
-		}
-		#navFont ul li:hover{
-			background-color:#2C83DF;
-			z-index: 999;
+#header-login a {
+	text-decoration: none;
+	font-size: 20px;
+	color: #FFFFF0;
+	font-weight: bold;
+	margin-left: 7px;
+}
 
-		}
+#header-login span {
+	/*border:1px solid green;*/
+	position: relative;
+	margin: center;
+}
+
+#header-login span:hover {
+	/*border:1px solid green;*/
+	position: relative;
+	/*background-color:#33A6B8;*/
+	text-decoration: underline;
+}
+
+#search_btn img {
+	margin: 0 auto;
+}
+
+#titleSpan {
+	position: absolute;
+	margin-left: 115px;
+	margin-top: 5px;
+}
+
+.titleFont {
+	color: #fc8237;
+}
+
+#topBox2 {
+	/*border:1px solid red;*/
+	width: 1200px;
+	height: 50px;
+	margin: 0 auto;
+	margin-top: 0px;
+	font-size: 21px;
+}
+
+#navFont {
+	/*border: 1px solid red;*/
+	text-decoration: none;
+	margin: 0 auto;
+	width: 900px;
+	float: left;
+	text-align: center;
+	margin-top: 0px;
+	margin-left: -30px;
+	font-weight: bold;
+}
+
+#navFont a {
+	text-decoration: none;
+	display: block;
+	color: #FFFFF0;
+}
+
+#navFont a:hover {
+	color: #ffffff;
+	display: block;
+	background-color: #33A6B8;
+}
+
+#navFont li {
+	text-decoration: none;
+	list-style: none;
+	float: left;
+	width: 108px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	margin-left: 30px;
+	z-index: 999;
+}
+
+#navFont li:hover {
+	background-color: #33A6B8;
+	z-index: 999;
+}
+
+#navFont li ul li {
+	width: 108px;
+	background-color: #2C83DF;
+	line-height: 50px;
+	height: 50px;
+	margin-left: -20px;
+	display: none;
+	/*z-index: 999;*/
+	position: relative;
+	font-size: 18px;
+}
+
+#navFont li:hover ul li {
+	display: block;
+	z-index: 999;
+}
+
+#navFont ul li:hover {
+	background-color: #2C83DF;
+	z-index: 999;
+}

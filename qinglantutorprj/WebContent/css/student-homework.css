@@ -1,58 +1,69 @@
-#c2-right .panel-body > div{
+#c2-right .panel-body>div {
 	height: 210px;
 }
-#c2-right .panel-body > div > div{
+
+#c2-right .panel-body>div>div {
 	float: left;
 }
-#c2-right .panel-body .c2-right-left{
+
+#c2-right .panel-body .c2-right-left {
 	height: 100%;
 	width: 20%;
 	border-right: 1px solid #c0c0c0;
 }
-#c2-right .panel-body .c2-right-left img{
+
+#c2-right .panel-body .c2-right-left img {
 	margin-top: 10px;
 	margin-left: 20px;
 }
-#c2-right .panel-body .c2-right-left p{
+
+#c2-right .panel-body .c2-right-left p {
 	font-size: 16px;
 	text-align: center;
 	margin-top: 10px;
 }
-#c2-right .panel-body .c2-right-left > button{
+
+#c2-right .panel-body .c2-right-left>button {
 	margin-left: 38px;
 	width: 80px;
 	background-color: white;
 	border-radius: 1px;
-	border:1px solid #c0c0c0;
+	border: 1px solid #c0c0c0;
 }
-#c2-right .panel-body .c2-right-right{
+
+#c2-right .panel-body .c2-right-right {
 	width: 80%;
 	height: 100%;
 }
-#c2-right .panel-body .c2-right-right > div{
+
+#c2-right .panel-body .c2-right-right>div {
 	width: 100%;
 	height: 75%;
 	padding-left: 10px;
 	position: relative;
 }
-#c2-right .panel-body .c2-right-right > div span{
+
+#c2-right .panel-body .c2-right-right>div span {
 	position: absolute;
 	bottom: 5px;
 	left: 83%;
 }
-#c2-right .panel-body .c2-right-right > button{
+
+#c2-right .panel-body .c2-right-right>button {
 	float: right;
 	margin-right: 30px;
 	width: 80px;
 	background-color: white;
 	border-radius: 1px;
-	border:1px solid #c0c0c0;
+	border: 1px solid #c0c0c0;
 	margin-top: 5px;
 }
-#c2-right .panel-body .c2-right-right > button:hover{
+
+#c2-right .panel-body .c2-right-right>button:hover {
 	background-color: #33a6b8;
 }
-#c2-right .panel-body .c2-right-right > button a{
+
+#c2-right .panel-body .c2-right-right>button a {
 	color: black;
 	text-decoration: none;
 }

@@ -1,36 +1,40 @@
-body{
+body {
 	margin: 0 auto;
 }
-ul{
-	list-style:none;
+
+ul {
+	list-style: none;
 }
-li{
-	list-style:none;
+
+li {
+	list-style: none;
 }
-a{
+
+a {
 	text-decoration-line: none;
 	outline: none;
 }
-.header{
+
+.header {
 	border: 1px red solid;
 	height: 60px;
-
 }
-.content{
+
+.content {
 	margin: 0 auto;
 	width: 85%;
 	/*height: 1000px;*/
 	border: 1px black solid;
 }
 /*内容的上半部分*/
-.content-top{
+.content-top {
 	width: 100%;
 	margin: 0 auto;
 	height: 450px;
 	border: 1px red solid;
 }
 /*内容的中间部分*/
-.content-middle{
+.content-middle {
 	width: 100%;
 	margin: 0 auto;
 	border: 1px black solid;
@@ -38,19 +42,21 @@ a{
 	/*height: 500px;*/
 }
 /*中间部分的左半部分*/
-.middle-left{
+.middle-left {
 	width: 71%;
 	border: 1px green solid;
 	/*height: 300px;*/
 	float: left;
 }
-.middle-right{
+
+.middle-right {
 	width: 28%;
 	border: 1px blue solid;
 	float: right;
 	/*height: 300px;*/
 }
-.content-bottom{
+
+.content-bottom {
 	width: 71%;
 	float: left;
 	border: 1px black solid;
@@ -58,36 +64,42 @@ a{
 }
 
 /*面包屑*/
-.crumb{
+.crumb {
 	border: 30px;
 	border: 1px black solid;
 }
-.crumb ul{
+
+.crumb ul {
 	float: left;
 }
-.crumb ul li{
+
+.crumb ul li {
 	/*border: 1px red solid; */
 	margin-left: 3px;
 	float: left;
 	font-size: 15px;
 	/*font-family: "宋体";*/
 }
-.icon{
+
+.icon {
 	margin-left: 2px;
 }
-.information{
+
+.information {
 	border: 1px black solid;
 	width: 100%;
 	height: 410px;
 	margin-top: 40px;
 }
-.in-photo{
+
+.in-photo {
 	width: 43%;
 	border: 1px red solid;
 	height: 410px;
 	/*float: left;*/
 }
-.in-detail{
+
+.in-detail {
 	width: 53%;
 	border: 1px green solid;
 	height: 410px;
@@ -95,7 +107,7 @@ a{
 	margin-top: -410px;
 }
 /*图片居中*/
-.bigimg{
+.bigimg {
 	width: 77%;
 	border: 1px gold solid;
 	height: 400px;
@@ -106,28 +118,33 @@ a{
 	display: flex;
 	align-items: center;
 }
-.imgs{
+
+.imgs {
 	float: left;
 	width: 22%;
 	border: 1px gold solid;
 	height: 400px;
 }
-.imgs ul{
+
+.imgs ul {
 	border: 1px black solid;
 	text-align: center;
 	margin-top: 5px;
 }
-.imgs ul li{
+
+.imgs ul li {
 	border: 1px red solid;
 	margin-left: -35px;
 }
-.de-name{
+
+.de-name {
 	border: 1px red solid;
 	height: 40px;
 	font-size: 22px;
 	line-height: 40px;
 }
-.de-lineone{
+
+.de-lineone {
 	/*margin-top: 10px;*/
 	border: 1px red solid;
 	height: 20px;
@@ -135,55 +152,66 @@ a{
 	line-height: 20px;
 	padding-left: 4px;
 }
-.de-linetwo{
+
+.de-linetwo {
 	margin-top: 10px;
 	border: 1px red solid;
 	height: 80px;
 	padding-left: 5px;
 	/*font-size: 14px;*/
 }
-.title{
+
+.title {
 	font-size: 15px;
 }
-.aa{
+
+.aa {
 	font-size: 14px;
 }
-.one{
+
+.one {
 	border: 1px red solid;
 	height: 40px;
 	padding-left: 4px;
 }
-.price{
+
+.price {
 	font-size: 25px;
 }
-.star{
+
+.star {
 	margin-left: 150px;
 	font-size: 16px;
 }
-.two{
+
+.two {
 	height: 40px;
 	line-height: 40px;
 	padding-left: 4px;
 }
-.de-linethree{
+
+.de-linethree {
 	border: 1px red solid;
 	height: 100px;
 	margin-top: 10px;
 	padding-left: 5px;
 }
-.grade{
+
+.grade {
 	border: 1px green solid;
 	width: 85%;
 	float: right;
 	height: 100px;
 }
-.grade ul{
+
+.grade ul {
 	border: 1px red solid;
 	height: 100px;
 	margin-top: -10px;
 	margin-left: -10px;
 }
-.grade ul li{ 
+
+.grade ul li {
 	border: 1px green solid;
 	float: left;
 	width: 80px;
@@ -192,19 +220,22 @@ a{
 	margin-top: 10px;
 	cursor: pointer;
 }
-.pattern{
+
+.pattern {
 	border: 1px green solid;
 	width: 85%;
 	float: right;
 	height: 50px;
 }
-.pattern ul{
+
+.pattern ul {
 	border: 1px red solid;
 	height: 50px;
 	margin-top: -10px;
 	margin-left: -10px;
 }
-.pattern ul li{ 
+
+.pattern ul li {
 	border: 1px green solid;
 	float: left;
 	width: 80px;
@@ -213,25 +244,29 @@ a{
 	margin-top: 10px;
 	cursor: pointer;
 }
-.icon{
+
+.icon {
 	font-size: 18px;
 }
-.comment{
+
+.comment {
 	border: 1px blue solid;
 	width: 100px;
 	float: right;
 	margin-right: 50px;
-
 }
-.star{
+
+.star {
 	border: 1px orange solid;
 }
-.de-linefour{
+
+.de-linefour {
 	margin-top: 10px;
 	border: 1px green solid;
 	padding-left: 5px;
 }
-.btn1{
+
+.btn1 {
 	font-size: 18px;
 	height: 40px;
 	width: 200px;
@@ -240,8 +275,9 @@ a{
 	margin-top: 10px;
 	background-color: white;
 }
-.de-linefive{
-	border: 1px black solid; 
+
+.de-linefive {
+	border: 1px black solid;
 	height: 50px;
 	width: 100%;
 	/*text-align: center;*/
@@ -250,22 +286,26 @@ a{
 	padding-left: 5px;
 	margin-left: -15px;
 }
-.nav li{
+
+.nav li {
 	font-size: 16px;
 }
-.tabone-top{
+
+.tabone-top {
 	/*border: 1px blue solid;*/
 	height: 160px;
 	width: 100%;
 }
-.top-left{
+
+.top-left {
 	width: 28%;
 	/*border: 1px green solid;*/
 	float: left;
 	height: 160px;
 	text-align: center;
 }
-.top-left p{
+
+.top-left p {
 	border: 1px red solid;
 	width: 80px;
 	text-align: center;
@@ -274,7 +314,8 @@ a{
 	/*margin-top: 30px;
 	margin-left: 50px;*/
 }
-.top-left span{
+
+.top-left span {
 	font-size: 36px;
 }
 /*.star{
@@ -282,21 +323,23 @@ a{
 	width: 80px;
 	height: 20px;
 }*/
-.separator{
+.separator {
 	float: left;
 	width: 1px;
 	height: 110px;
 	background: #BEBEBE;
 	margin-top: 28px;
 }
-.top-right{
+
+.top-right {
 	width: 71%;
 	/*border: 1px red solid;*/
 	float: right;
 	height: 160px;
 }
-.top-right p{
-	border: 1px red solid; 
+
+.top-right p {
+	border: 1px red solid;
 	width: 100px;
 	font-size: 15px;
 	height: 25px;
@@ -304,39 +347,46 @@ a{
 	margin-top: 22px;
 	margin-left: 30px;
 }
-.right-tab{
+
+.right-tab {
 	border: 1px red solid;
 	height: 80px;
 	width: 85%;
 	margin-left: 1%;
 }
-.right-tab ul{
 
+.right-tab ul {
+	
 }
-.right-tab ul li{
+
+.right-tab ul li {
 	border: 1px green solid;
 	height: 23px;
 	width: 85px;
 	text-align: center;
 	line-height: 23px;
-	border-radius:10px;
+	border-radius: 10px;
 	float: left;
 	margin-left: 10px;
 }
-hr{
+
+hr {
 	margin-top: 5px;
 	/*color: red;*/
 }
-.comment-conditions{
+
+.comment-conditions {
 	/*border: 1px red solid;*/
 	height: 30px;
 	margin-left: -40px;
 	margin-top: -16px;
 }
-.comment-conditions ul{
 
+.comment-conditions ul {
+	
 }
-.comment-conditions ul li{
+
+.comment-conditions ul li {
 	float: left;
 	/*border: 1px black solid ;*/
 	width: 15%;
@@ -345,12 +395,14 @@ hr{
 	text-align: center;
 	font-size: 15px;
 }
-.comments{
-	border: 1px green solid; 
+
+.comments {
+	border: 1px green solid;
 	/*height: 100px;*/
 	margin-top: -20px;
 }
-.user-comment{
+
+.user-comment {
 	/*margin-left: 100px;*/
 	/*border: 1px blue solid;*/
 	height: 140px;
@@ -358,7 +410,8 @@ hr{
 	/*position: relative;*/
 	/*margin-top: 2px;*/
 }
-.user-photo{
+
+.user-photo {
 	border: 1px green solid;
 	width: 7.2%;
 	height: 39%;
@@ -366,33 +419,39 @@ hr{
 	margin-left: 2.5%;
 	float: left;
 }
-.user-info{
+
+.user-info {
 	border: 1px green solid;
 	width: 85%;
 	float: right;
-	height: 70%;	
-	margin-top:3%;
+	height: 70%;
+	margin-top: 3%;
 }
-.username{
+
+.username {
 	font-size: 13px;
 	color: #ADADAD;
 }
-.usercomment{
+
+.usercomment {
 	font-size: 16px;
 }
-.usertime{
+
+.usertime {
 	color: #ADADAD;
 	font-size: 13px;
 }
-.dashed{
+
+.dashed {
 	width: 96%;
 	margin-left: 2%;
 	text-align: center;
-	border-top: #ADADAD 2px dashed; 
-	overflow: hidden; 
+	border-top: #ADADAD 2px dashed;
+	overflow: hidden;
 	height: 1px;
 }
-.page{
+
+.page {
 	border: 2px red solid;
 	height: 50px;
 	line-height: 50px;
@@ -401,31 +460,38 @@ hr{
 	/*padding-top: -20px;*/
 	padding-left: 30%;
 }
-.pager{
+
+.pager {
 	border-top: 2px black solid;
 	/*height: 80px;*/
 }
-.successcase{
+
+.successcase {
 	border: 1px red solid;
 	/*height: 300px;*/
 }
-.successtitle{
+
+.successtitle {
 	padding-left: 10px;
 	font-size: 20px;
 }
-.icon2{
+
+.icon2 {
 	font-size: 20px;
 }
-.cases{
+
+.cases {
 	border: 1px black solid;
 	width: 100%;
 	/*height: 260px;*/
 	/*overflow: hidden;*/
 }
-.hidecase{
+
+.hidecase {
 	display: none;
 }
-.case{
+
+.case {
 	border: 1px red solid;
 	width: 100%;
 	padding-left: 9px;
@@ -434,72 +500,84 @@ hr{
 	margin-top: 10px;
 }
 
-.ca-title{
+.ca-title {
 	font-size: 15px;
 	/*border: 1px blue solid;*/
 	color: #ADADAD;
 }
-.ca-content{
+
+.ca-content {
 	/*border: 1px green solid;*/
 	width: 100%;
 	font-size: 14px;
 }
+
 .box {
-  height: 40px;
-  width: 100%;
-  padding-left: 2%;
-  padding-right: 2%;
-  /*background-color: wheat;*/
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+	height: 40px;
+	width: 100%;
+	padding-left: 2%;
+	padding-right: 2%;
+	/*background-color: wheat;*/
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
+
 .line {
-  height: 1px;
-  flex-grow: 1;
-  background-color: #d0d0d0;
+	height: 1px;
+	flex-grow: 1;
+	background-color: #d0d0d0;
 }
-.text{
-	cursor:pointer;
+
+.text {
+	cursor: pointer;
 	font-size: 13px;
 }
-.teaextitle{
+
+.teaextitle {
 	padding-left: 10px;
 	font-size: 20px;
 }
-.teacase{
+
+.teacase {
 	margin-top: 10px;
 	border: 1px black solid;
 	padding-left: 10px;
 	height: 110px;
 }
-.teaextime{
-	color: #ADADAD;
-	font-size: 15px;
-}
-.teaextag{
-	font-size: 15px;
-	color: #ADADAD;
-}
-.teaexwork{
-	font-size: 14px;
 
+.teaextime {
+	color: #ADADAD;
+	font-size: 15px;
 }
-.similartitle{
+
+.teaextag {
+	font-size: 15px;
+	color: #ADADAD;
+}
+
+.teaexwork {
+	font-size: 14px;
+}
+
+.similartitle {
 	padding-left: 10px;
 	font-size: 20px;
 }
-.similarteachers{
+
+.similarteachers {
 	/*border: 1px red solid;*/
 	width: 100%;
 }
-.teacher{
+
+.teacher {
 	/*border: 1px black solid;*/
 	width: 100%;
 	height: 150px;
 	margin-top: 10px;
 }
-.teaphoto{
+
+.teaphoto {
 	/*border: 1px black solid;*/
 	width: 14%;
 	margin-top: 3%;
@@ -508,7 +586,8 @@ hr{
 	height: 70%;
 	float: left;
 }
-.teainfo{
+
+.teainfo {
 	float: left;
 	/*border: 1px black solid;*/
 	height: 70%;
@@ -516,23 +595,28 @@ hr{
 	margin-top: 3%;
 	margin-left: 3%;
 }
-.teaname{
+
+.teaname {
 	font-size: 19px;
 	/*border: 1px black solid;*/
 }
-.info{
+
+.info {
 	/*border: 1px black solid;*/
-	margin-top:-10px;
-	font-size: 14px; 
+	margin-top: -10px;
+	font-size: 14px;
 }
-.teatag{
+
+.teatag {
 	/*border: 1px black solid;*/
 	height: 20px;
 }
-.teatag ul{
+
+.teatag ul {
 	margin-left: -5%;
 }
-.teatag ul li{
+
+.teatag ul li {
 	/*border: 1px black solid;*/
 	margin-left: 10px;
 	width: 15%;
@@ -542,55 +626,64 @@ hr{
 	background-color: #F0F0F0;
 	text-align: center;
 }
-.teaprice{
+
+.teaprice {
 	width: 17%;
-	float :right;
+	float: right;
 	/*border: 1px black solid;*/
 	height: 70%;
 	margin-top: 3%;
-	text-align:center;
+	text-align: center;
 }
-.icon3{
+
+.icon3 {
 	font-size: 24px;
 }
-.qi{
+
+.qi {
 	font-size: 16px;
 }
-.price1{
+
+.price1 {
 	font-size: 32px;
 }
-.teaprice p{
+
+.teaprice p {
 	text-align: center;
 	margin-top: 10%;
 }
-.btn2{
+
+.btn2 {
 	font-size: 16px;
 	border-radius: 16px;
 	/*border: 1px black solid;*/
 	/*margin-bottom: 35px;*/
 	margin-top: -10%;
 }
-.address{
-	border :1px black solid;
+
+.address {
+	border: 1px black solid;
 	height: 280px;
 }
-.icon4{
+
+.icon4 {
 	font-size: 26px;
 }
 
-
-.address p{
+.address p {
 	margin-top: 20px;
 	font-size: 22px;
 	/*padding-left: 20px;*/
 	margin-left: 8%;
 }
-.feature{
-	border:1px black solid;
+
+.feature {
+	border: 1px black solid;
 	margin-top: 20px;
 	height: 280px;
 }
-.feature p{
+
+.feature p {
 	margin-top: 20px;
 	font-size: 22px;
 	/*padding-left: 20px;*/
