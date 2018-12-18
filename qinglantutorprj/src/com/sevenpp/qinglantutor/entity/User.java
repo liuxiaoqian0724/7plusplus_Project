@@ -1,7 +1,7 @@
 package com.sevenpp.qinglantutor.entity;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -44,7 +44,7 @@ public class User  implements java.io.Serializable {
      private String userPwd;
      private String email;
      private String role;
-     private Date regDate;//注册时间
+     private Timestamp regDate;//注册时间
      private String realName;
      private String idNumber;//身份证号码
      private String sex;
@@ -129,10 +129,10 @@ public class User  implements java.io.Serializable {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	public Date getRegDate() {
+	public Timestamp getRegDate() {
 		return regDate;
 	}
-	public void setRegDate(Date regDate) {
+	public void setRegDate(Timestamp regDate) {
 		this.regDate = regDate;
 	}
 	public String getRealName() {

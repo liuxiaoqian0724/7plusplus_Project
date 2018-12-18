@@ -1,4 +1,3 @@
-
 package com.sevenpp.qinglantutor.controller.index;
 
 import java.io.IOException;
@@ -18,27 +17,27 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.sevenpp.qinglantutor.entity.Userinf;
-import com.sevenpp.qinglantutor.service.Impl.IndexServiceImpl;
+import com.sevenpp.qinglantutor.service.impl.IndexServiceImpl;
 
 /**
 		*
-		* 椤圭洰鍚嶇О锛歲inglantutorprj
-		* 绫诲悕绉帮細IndexController
-		* 绫绘弿杩帮細鎺у埗棣栭〉
-		* 鍒涘缓浜猴細rain
-		* 鍒涘缓鏃堕棿锛�2018骞�12鏈�6鏃� 涓嬪崍4:47:50
-		* 淇敼浜猴細rain
-		* 淇敼鏃堕棿锛�2018骞�12鏈�6鏃� 涓嬪崍4:47:50
-		* 淇敼澶囨敞锛�
+		* 项目名称：qinglantutorprj
+		* 类名称：IndexController
+		* 类描述：控制首页
+		* 创建人：rain
+		* 创建时间：2018年12月6日 下午4:47:50
+		* 修改人：rain
+		* 修改时间：2018年12月6日 下午4:47:50
+		* 修改备注：
 		* @version
 		*
 		*/
-		/**聽
-		* @ClassName: IndexController聽
-		* @Description: TODO(杩欓噷鐢ㄤ竴鍙ヨ瘽鎻忚堪杩欎釜绫荤殑浣滅敤)聽
-		* @author (浣滆��) 聽
-		* @date 2018骞�12鏈�6鏃� 涓嬪崍4:47:50聽
-		* @version V1.0聽
+		/** 
+		* @ClassName: IndexController 
+		* @Description: TODO(这里用一句话描述这个类的作用) 
+		* @author (作者)  
+		* @date 2018年12月6日 下午4:47:50 
+		* @version V1.0 
 		*/
 @Controller
 public class IndexController {
@@ -82,5 +81,3 @@ public class IndexController {
 	}
 
 }
-
-	

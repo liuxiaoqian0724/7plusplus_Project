@@ -1,4 +1,5 @@
-﻿.provinceCity {
+﻿
+.provinceCity {
 	width: 306px;
 	position: absolute;
 	background: #FFF;
@@ -17,7 +18,7 @@
 	width: 76px
 }
 
-.provinceCity .tabs li a, .provinceCity .tabs li a:visited {
+.provinceCity .tabs li a,.provinceCity .tabs li a:visited {
 	display: block;
 	height: 28px;
 	color: #777777;
@@ -29,7 +30,7 @@
 	background: url(../images/bg_mc_0113_2.png) right center no-repeat
 }
 
-.provinceCity .tabs li a.current, .provinceCity .tabs li a.current:visited
+.provinceCity .tabs li a.current,.provinceCity .tabs li a.current:visited
 	{
 	background: url(../images/bg_mc_0113_3.png) right center no-repeat;
 	color: #FFF
@@ -46,19 +47,19 @@
 	
 }
 
-.provinceCity .province .pre a, .provinceCity .province .pre a:visited {
+.provinceCity .province .pre a,.provinceCity .province .pre a:visited {
 	float: left;
 	width: 29px;
 	height: 109px;
 	background: url(../images/bg_mc_0113_4.png) left center no-repeat
 }
 
-.provinceCity .province .pre a.can, .provinceCity .province .pre a.can:visited
+.provinceCity .province .pre a.can,.provinceCity .province .pre a.can:visited
 	{
 	background: url(../images/bg_mc_0113_4.png) -87px center no-repeat
 }
 
-.provinceCity .province .next a, .provinceCity .province .next a:visited
+.provinceCity .province .next a,.provinceCity .province .next a:visited
 	{
 	float: right;
 	width: 29px;
@@ -66,7 +67,7 @@
 	background: url(images/bg_mc_0113_4.png) -58px center no-repeat
 }
 
-.provinceCity .province .next a.can, .provinceCity .province .next a.can:visited
+.provinceCity .province .next a.can,.provinceCity .province .next a.can:visited
 	{
 	background: url(../images/bg_mc_0113_4.png) -29px center no-repeat
 }
@@ -85,12 +86,12 @@
 	padding: 3px 0
 }
 
-.provinceCity .province .list li a, .provinceCity .province .list li a:visited
+.provinceCity .province .list li a,.provinceCity .province .list li a:visited
 	{
 	color: #777777
 }
 
-.provinceCity .province .list li a.current, .provinceCity .province .list li a.current:visited
+.provinceCity .province .list li a.current,.provinceCity .province .list li a.current:visited
 	{
 	color: #ff6c00
 }
@@ -109,11 +110,11 @@
 	padding: 3px 0
 }
 
-.provinceCity .city li a, .provinceCity .city li a:visited {
+.provinceCity .city li a,.provinceCity .city li a:visited {
 	color: #777777
 }
 
-.provinceCity .city li a.current, .provinceCity .city li a.current:visited
+.provinceCity .city li a.current,.provinceCity .city li a.current:visited
 	{
 	color: #ff6c00
 }
@@ -132,11 +133,11 @@
 	padding: 3px 0
 }
 
-.provinceCity .county li a, .provinceCity .city li a:visited {
+.provinceCity .county li a,.provinceCity .city li a:visited {
 	color: #777777
 }
 
-.provinceCity .county li a.current, .provinceCity .city li a.current:visited
+.provinceCity .county li a.current,.provinceCity .city li a.current:visited
 	{
 	color: #ff6c00
 }
@@ -145,25 +146,25 @@
 	z-index: 2
 }
 
-.provinceCity .city .pre a, .provinceCity .city .pre a:visited {
+.provinceCity .city .pre a,.provinceCity .city .pre a:visited {
 	float: left;
 	width: 29px;
 	height: 109px;
 	background: url(../images/bg_mc_0113_4.png) left center no-repeat
 }
 
-.provinceCity .city .pre a.can, .provinceCity .city .pre a.can:visited {
+.provinceCity .city .pre a.can,.provinceCity .city .pre a.can:visited {
 	background: url(../images/bg_mc_0113_4.png) -87px center no-repeat
 }
 
-.provinceCity .city .next a, .provinceCity .city .next a:visited {
+.provinceCity .city .next a,.provinceCity .city .next a:visited {
 	float: right;
 	width: 29px;
 	height: 109px;
 	background: url(../images/bg_mc_0113_4.png) -58px center no-repeat
 }
 
-.provinceCity .city .next a.can, .provinceCity .city .next a.can:visited
+.provinceCity .city .next a.can,.provinceCity .city .next a.can:visited
 	{
 	background: url(../images/bg_mc_0113_4.png) -29px center no-repeat
 }
@@ -182,12 +183,12 @@
 	padding: 3px 0
 }
 
-.provinceCity .city .list li a input, .provinceCity .city .list li a input:visited
+.provinceCity .city .list li a input,.provinceCity .city .list li a input:visited
 	{
 	color: #777777
 }
 
-.provinceCity .city .list li a input.current, .provinceCity .city .list li a input.current:visited
+.provinceCity .city .list li a input.current,.provinceCity .city .list li a input.current:visited
 	{
 	color: #ff6c00
 }
@@ -206,11 +207,11 @@
 	padding: 3px 0
 }
 
-.provinceCity .hotCity li a input, .provinceCity .hotCity li a:visited {
+.provinceCity .hotCity li a input,.provinceCity .hotCity li a:visited {
 	color: #777777
 }
 
-.provinceCity .hotCity li a input.current, .provinceCity .hotCity li a input.current:visited
+.provinceCity .hotCity li a input.current,.provinceCity .hotCity li a input.current:visited
 	{
 	color: #ff6c00
 }
@@ -229,12 +230,12 @@
 	padding: 3px 0
 }
 
-.provinceCity .county .list li a input, .provinceCity .province .list li a input:visited
+.provinceCity .county .list li a input,.provinceCity .province .list li a input:visited
 	{
 	color: #777777
 }
 
-.provinceCity .county .list li a input.current, .provinceCity .province .list li a input.current:visited
+.provinceCity .county .list li a input.current,.provinceCity .province .list li a input.current:visited
 	{
 	color: #ff6c00
 }
@@ -243,26 +244,26 @@
 	
 }
 
-.provinceCity .county .pre a, .provinceCity .county .pre a:visited {
+.provinceCity .county .pre a,.provinceCity .county .pre a:visited {
 	float: left;
 	width: 29px;
 	height: 109px;
 	background: url(../images/bg_mc_0113_4.png) left center no-repeat
 }
 
-.provinceCity .county .pre a.can, .provinceCity .county .pre a.can:visited
+.provinceCity .county .pre a.can,.provinceCity .county .pre a.can:visited
 	{
 	background: url(../images/bg_mc_0113_4.png) -87px center no-repeat
 }
 
-.provinceCity .county .next a, .provinceCity .county .next a:visited {
+.provinceCity .county .next a,.provinceCity .county .next a:visited {
 	float: right;
 	width: 29px;
 	height: 109px;
 	background: url(../images/bg_mc_0113_4.png) -58px center no-repeat
 }
 
-.provinceCity .county .next a.can, .provinceCity .county .next a.can:visited
+.provinceCity .county .next a.can,.provinceCity .county .next a.can:visited
 	{
 	background: url(../images/bg_mc_0113_4.png) -29px center no-repeat
 }
@@ -287,7 +288,7 @@
 	float: left;
 }
 
-.provinceCityAll .tabs li a, .provinceCity .tabs li a:visited {
+.provinceCityAll .tabs li a,.provinceCity .tabs li a:visited {
 	display: block;
 	height: 28px;
 	color: #777777;
@@ -300,7 +301,7 @@
 	/* background: url(../images/bg_mc_0113_2.png) right center no-repeat; */
 }
 
-.provinceCityAll .tabs li a.current, .provinceCity .tabs li a.current:visited
+.provinceCityAll .tabs li a.current,.provinceCity .tabs li a.current:visited
 	{
 	background: url(../images/bg_mc_0113_3.png) center center repeat;
 	color: #FFF
@@ -320,7 +321,7 @@
 	
 }
 
-.provinceCityAll .provinceAll .pre a, .provinceCityAll .provinceAll .pre a:visited
+.provinceCityAll .provinceAll .pre a,.provinceCityAll .provinceAll .pre a:visited
 	{
 	float: left;
 	width: 29px;
@@ -329,12 +330,12 @@
 	cursor: pointer;
 }
 
-.provinceCityAll .provinceAll .pre a.can, .provinceCityAll .provinceAll .pre a.can:visited
+.provinceCityAll .provinceAll .pre a.can,.provinceCityAll .provinceAll .pre a.can:visited
 	{
 	background: url(../images/bg_mc_0113_4.png) -87px center no-repeat
 }
 
-.provinceCityAll .provinceAll .next a, .provinceCityAll .provinceAll .next a:visited
+.provinceCityAll .provinceAll .next a,.provinceCityAll .provinceAll .next a:visited
 	{
 	float: right;
 	width: 29px;
@@ -343,7 +344,7 @@
 	cursor: pointer;
 }
 
-.provinceCityAll .provinceAll .next a.can, .provinceCityAll .provinceAll .next a.can:visited
+.provinceCityAll .provinceAll .next a.can,.provinceCityAll .provinceAll .next a.can:visited
 	{
 	background: url(../images/bg_mc_0113_4.png) -29px center no-repeat
 }
@@ -351,7 +352,7 @@
 .provinceCityAll .provinceAll .list {
 	float: left;
 	width: 225px;
-	margin: auto 35px;
+	margin:auto 35px;
 }
 
 .provinceCityAll .provinceAll .list li {
@@ -362,12 +363,12 @@
 	padding: 3px 0
 }
 
-.provinceCityAll .provinceAll .list li a, .provinceCityAll .provinceAll .list li a:visited
+.provinceCityAll .provinceAll .list li a,.provinceCityAll .provinceAll .list li a:visited
 	{
 	color: #777777
 }
 
-.provinceCityAll .provinceAll .list li a.current, .provinceCityAll .provinceAll .list li a.current:visited
+.provinceCityAll .provinceAll .list li a.current,.provinceCityAll .provinceAll .list li a.current:visited
 	{
 	color: #ff6c00
 }
@@ -386,11 +387,11 @@
 	padding: 3px 0
 }
 
-.provinceCityAll .cityAll li a, .provinceCityAll .cityAll li a:visited {
+.provinceCityAll .cityAll li a,.provinceCityAll .cityAll li a:visited {
 	color: #777777
 }
 
-.provinceCityAll .cityAll li a.current, .provinceCityAll .cityAll li a.current:visited
+.provinceCityAll .cityAll li a.current,.provinceCityAll .cityAll li a.current:visited
 	{
 	color: #ff6c00
 }
@@ -409,25 +410,21 @@
 	padding: 3px 0
 }
 
-.provinceCityAll .countyAll li a, .provinceCityAll .cityAll li a:visited
+.provinceCityAll .countyAll li a,.provinceCityAll .cityAll li a:visited
 	{
-	color: #777777;
-	display: block;
+	color: #777777; display:block;
 }
-
-.provinceAll .list li:hover {
-	background-color: #FFE4D2
+.provinceAll .list li:hover
+	{
+	background-color:#FFE4D2
 }
-
-.cityAll .list li:hover {
-	background-color: #FFE4D2
+.cityAll .list li:hover{
+	background-color:#FFE4D2
 }
-
-.countyAll li a:hover {
-	background-color: #FFE4D2
+.countyAll li a:hover{
+	background-color:#FFE4D2
 }
-
-.provinceCityAll .countyAll li a.current, .provinceCityAll .cityAll li a.current:visited
+.provinceCityAll .countyAll li a.current,.provinceCityAll .cityAll li a.current:visited
 	{
 	color: #ff6c00
 }
@@ -436,7 +433,7 @@
 	z-index: 2
 }
 
-.provinceCityAll .cityAll .pre a, .provinceCityAll .cityAll .pre a:visited
+.provinceCityAll .cityAll .pre a,.provinceCityAll .cityAll .pre a:visited
 	{
 	float: left;
 	width: 29px;
@@ -444,12 +441,12 @@
 	background: url(../images/bg_mc_0113_4.png) left center no-repeat
 }
 
-.provinceCityAll .cityAll .pre a.can, .provinceCityAll .cityAll .pre a.can:visited
+.provinceCityAll .cityAll .pre a.can,.provinceCityAll .cityAll .pre a.can:visited
 	{
 	background: url(../images/bg_mc_0113_4.png) -87px center no-repeat
 }
 
-.provinceCityAll .cityAll .next a, .provinceCityAll .cityAll .next a:visited
+.provinceCityAll .cityAll .next a,.provinceCityAll .cityAll .next a:visited
 	{
 	float: right;
 	width: 29px;
@@ -457,7 +454,7 @@
 	background: url(../images/bg_mc_0113_4.png) -58px center no-repeat
 }
 
-.provinceCityAll .cityAll .next a.can, .provinceCityAll .cityAll .next a.can:visited
+.provinceCityAll .cityAll .next a.can,.provinceCityAll .cityAll .next a.can:visited
 	{
 	background: url(../images/bg_mc_0113_4.png) -29px center no-repeat
 }
@@ -476,12 +473,12 @@
 	padding: 3px 0
 }
 
-.provinceCityAll .cityAll .list li a input, .provinceCityAll .cityAll .list li a input:visited
+.provinceCityAll .cityAll .list li a input,.provinceCityAll .cityAll .list li a input:visited
 	{
 	color: #777777
 }
 
-.provinceCityAll .cityAll .list li a input.current, .provinceCityAll .cityAll .list li a input.current:visited
+.provinceCityAll .cityAll .list li a input.current,.provinceCityAll .cityAll .list li a input.current:visited
 	{
 	color: #ff6c00
 }
@@ -500,12 +497,12 @@
 	padding: 3px 0
 }
 
-.provinceCityAll .hotCityAll li a input, .provinceCityAll .hotCityAll li a:visited
+.provinceCityAll .hotCityAll li a input,.provinceCityAll .hotCityAll li a:visited
 	{
 	color: #777777
 }
 
-.provinceCityAll .hotCityAll li a input.current, .provinceCityAll .hotCityAll li a input.current:visited
+.provinceCityAll .hotCityAll li a input.current,.provinceCityAll .hotCityAll li a input.current:visited
 	{
 	color: #ff6c00
 }
@@ -524,12 +521,12 @@
 	padding: 3px 0
 }
 
-.provinceCityAll .countyAll .list li a input, .provinceCityAll .provinceAll .list li a input:visited
+.provinceCityAll .countyAll .list li a input,.provinceCityAll .provinceAll .list li a input:visited
 	{
 	color: #777777
 }
 
-.provinceCityAll .countyAll .list li a input.current, .provinceCityAll .provinceAll .list li a input.current:visited
+.provinceCityAll .countyAll .list li a input.current,.provinceCityAll .provinceAll .list li a input.current:visited
 	{
 	color: #ff6c00
 }
@@ -538,7 +535,7 @@
 	
 }
 
-.provinceCityAll .countyAll .pre a, .provinceCityAll .countyAll .pre a:visited
+.provinceCityAll .countyAll .pre a,.provinceCityAll .countyAll .pre a:visited
 	{
 	float: left;
 	width: 29px;
@@ -546,12 +543,12 @@
 	background: url(../images/bg_mc_0113_4.png) left center no-repeat
 }
 
-.provinceCityAll .countyAll .pre a.can, .provinceCityAll .countyAll .pre a.can:visited
+.provinceCityAll .countyAll .pre a.can,.provinceCityAll .countyAll .pre a.can:visited
 	{
 	background: url(../images/bg_mc_0113_4.png) -87px center no-repeat
 }
 
-.provinceCityAll .countyAll .next a, .provinceCityAll .countyAll .next a:visited
+.provinceCityAll .countyAll .next a,.provinceCityAll .countyAll .next a:visited
 	{
 	float: right;
 	width: 29px;
@@ -559,7 +556,7 @@
 	background: url(../images/bg_mc_0113_4.png) -58px center no-repeat
 }
 
-.provinceCityAll .countyAll .next a.can, .provinceCityAll .countyAll .next a.can:visited
+.provinceCityAll .countyAll .next a.can,.provinceCityAll .countyAll .next a.can:visited
 	{
 	background: url(../images/bg_mc_0113_4.png) -29px center no-repeat
 }
@@ -571,7 +568,7 @@
 	display: none
 }
 
-#dimCityQuery li a, #dimCityQuery li a:visited {
+#dimCityQuery li a,#dimCityQuery li a:visited {
 	display: block;
 	height: 26px;
 	padding: 0 15px;
@@ -580,7 +577,7 @@
 	text-decoration: none
 }
 
-#dimCityQuery li.current a, #dimCityQuery li.current a:visited {
+#dimCityQuery li.current a,#dimCityQuery li.current a:visited {
 	background: #ff6c00;
 	color: #FFF
 }
@@ -599,7 +596,7 @@
 	background: url(../images/ts-indexcity.png) no-repeat;
 	line-height: 35px;
 	margin-top: 5px;
-	text-indent: 5px;
+	text-indent: 5px; 
 	background: url(../images/ts-indexcity.png) no-repeat right center;
 	cursor: pointer;
 }
@@ -620,7 +617,7 @@
 	vertical-align: middle
 }
 
-.provinceCityAll a, .provinceCityAll a:visited {
+.provinceCityAll a,.provinceCityAll a:visited {
 	font-size: 12px;
 	color: #000;
 	text-decoration: none;
@@ -631,7 +628,7 @@
 	color: #333
 }
 
-.provinceCityAll a, .provinceCityAll a:hover {
+.provinceCityAll a,.provinceCityAll a:hover {
 	text-decoration: none
 }
 
@@ -719,13 +716,13 @@
 	background: url(logo.png) no-repeat;
 }
 
-.provinceCityAll h1.title a:link, .provinceCityAll h1.title a:visited,
-	.provinceCityAll h1.title a:hover {
+.provinceCityAll h1.title a:link,.provinceCityAll h1.title a:visited,.provinceCityAll h1.title a:hover
+	{
 	color: #000;
 	text-decoration: none;
 }
 
-.provinceCityAll li, .provinceCityAll .next, .provinceCityAll .pre {
+.provinceCityAll li , .provinceCityAll .next, .provinceCityAll .pre {
 	cursor: pointer;
 }
 

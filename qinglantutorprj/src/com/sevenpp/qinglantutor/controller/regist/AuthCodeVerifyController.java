@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.sevenpp.qinglantutor.utils.email.EmailUtil;
+import com.sevenpp.qinglantutor.util.email.EmailUtil;
 
 /**
 *code is far away from bug with the animal protecting

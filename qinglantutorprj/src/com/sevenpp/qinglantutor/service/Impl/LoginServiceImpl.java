@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.sevenpp.qinglantutor.dao.impl.LogInDaoImpl;
 import com.sevenpp.qinglantutor.service.LogInService;
-import com.sevenpp.qinglantutor.utils.encrypt.RSAEncrypt;
+import com.sevenpp.qinglantutor.util.encrypt.RSAEncrypt;
 
 /**
  * code is far away from bug with the animal protecting ┏┓ ┏┓ ┏┛┻━━━┛┻┓ ┃ ┃ ┃ ━
