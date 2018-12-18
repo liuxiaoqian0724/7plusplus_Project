@@ -79,7 +79,7 @@ public class SendMessageServiceImpl implements SendMessageService {
 			grades.add(grade2);
 		}
 		myJob.setGrades(grades);
-		myJob.setMyExperience(map.get("experience"));
+		myJob.setExperience(map.get("experience"));
 		myJob.setSuccess(map.get("successCase"));
 		String time = map.get("times");
 		String[] myTimes = time.substring(0,time.length()).split(",");
@@ -88,6 +88,7 @@ public class SendMessageServiceImpl implements SendMessageService {
 			time2.setTid(Integer.parseInt(myTimes[i]));
 			times.add(time2);
 		}
+		myJob.setTimes(times);
 		int id = sendMessageDaoImpl.findId(email);
 		myJob.getUser().setId(id);
 		return sendMessageDaoImpl.sendMessage(myJob);

@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/index.css">
     <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/header.css"/>
     <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/footer.css"/>
-	<link rel="stylesheet" type="text/css" href="<%=basePath%>/css/register_login.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/register_login.css"/>
     <!-- zui -->
     <link rel="stylesheet" href="<%=basePath%>/dist/css/zui.css" />
     <link rel="stylesheet" href="<%=basePath%>/css/verify.css" />
@@ -23,6 +23,7 @@
     <script type="text/javascript" src="<%=basePath%>/dist/js/zui.js"></script>
     <script src="<%=basePath%>/js/verify.js"></script>
     <script src="<%=basePath%>/js/verify.min.js"></script>
+    <script src="<%=basePath%>/js/header.js"></script>
    <!--  js功能代码 -->
    </head>  
 	
@@ -391,5 +392,5 @@
 	<script type="text/javascript" src="<%=basePath%>/js/index.js"></script>
 	<jsp:include page="footer.jsp" />
 	<script type="text/javascript" src="<%=basePath%>/js/checkLogin_regist.js"></script>
-</body> 
+</body>
 </html>

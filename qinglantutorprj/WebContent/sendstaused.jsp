@@ -74,7 +74,7 @@
    	setInterval("redirect()", 1000);
    	function redirect() {
    		totalSecond.innerText = --second;
-   		if(second <= 0) location.href = 'teacher-personal-center-evaluation.jsp';
+   		if(second <= 0) location.href = 'index.jsp';
    	}
 	</script>
 </html>

@@ -1,6 +1,5 @@
 package com.sevenpp.qinglantutor.entity;
 
-import java.beans.Transient;
 import java.sql.Timestamp;
 
 import javax.persistence.Entity;

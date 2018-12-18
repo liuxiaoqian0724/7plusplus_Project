@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sevenpp.qinglantutor.service.impl.TeachPlanServiceImpl;
-import com.sevenpp.qinglantutor.util.cookie.CookieUtils;
+import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 
 /**
 *

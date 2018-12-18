@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sevenpp.qinglantutor.dao.impl.RegistDaoImpl;
-import com.sevenpp.qinglantutor.util.email.MailSenderPool;
-import com.sevenpp.qinglantutor.util.email.MailSenderReg;
+import com.sevenpp.qinglantutor.utils.email.MailSenderPool;
+import com.sevenpp.qinglantutor.utils.email.MailSenderReg;
 
 /**
 *code is far away from bug with the animal protecting

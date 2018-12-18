@@ -4,53 +4,7 @@
   String path = request.getContextPath();
   String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path;
 %>
-<script>
-$(document).ready(function(){
-	var username="";
-	username=getCookie("USERNAME");
-	if(username==""){
-		$("#header-login").html("");
-		var buttons='<div class="btn-group">'
-	                  +'<button class="btn" id="login_button" onclick="loginDis()">登录</button>'
-	                  +'<button class="btn" id="register_button" onclick="registDis()">注册</button>'
-	                  +'</div>';
-		$("#header-login").append(buttons);
-	}
-	else{
-		$("#header-login").html("");
-		$("#header-login").append('<span style="text-decoration:none; font-size:18px; color:#ddf4df;">hello,'+username+'！</span>'
-							+'<button class="btn btn-info" id="login_button" style="text-decoration:none; font-size:14px;position:relative;top:-34px;left:150px;" onclick="deleteCookie('+username+')">退出</button>');
-	}
-	datashow(currentpage);
-	topage(currentpage);
-});
-		//页码
-		//登录保持
-	//获取指定名称的cookie的值 
-	function getCookie(name) {
-		var strCookie = document.cookie;
-		var arrCookie = strCookie.split("; ");
-		for (var i = 0; i < arrCookie.length; i++) {
-			var arr = arrCookie[i].split("=");
-			if (arr[0] == name)
-				return arr[1];
-		}
-		return "";
-	} 
-	
-	//删除cookie并添加按钮
-	function deleteCookie(name){ 
-	  var date=new Date(); 
-	  date.setTime(date.getTime()-10000); 
-	  document.cookie=name+"=v; expires="+date.toGMTString();
-	  $("#header-login").html("");
-		var buttons='<div class="btn-group">'
-	                +'<button class="btn" id="login_button" onclick="loginDis()">登录</button>'
-	                +'<button class="btn" id="register_button" onclick="registDis()">注册</button>'
-	                +'</div>';
-		$("#header-login").append(buttons);
-} 
-				</script>
+
  <div id="header-box">
     		<div id="big-box">
     			<!-- logo -->
@@ -65,7 +19,7 @@ $(document).ready(function(){
     			<div id="bottom-box">
     				<div id="topBox2">
     					<ul id="navFont">
-    					<li class="navFont1"><a href="#">首页</a></li>
+    					<li class="navFont1"><a href="<%=basePath%>/index.jsp">首页</a></li>
     					<li><a href="search/家教">家教</a>
     						<ul>
     							<li><a href="search/小学">小学</a></li>
@@ -120,7 +74,7 @@ $(document).ready(function(){
       		<div id="closeframe">
       			<button id="closebutton" onclick="closeframe()"><i class="icon icon-times"></i></button>
       		</div>
-      		<form id="login_form" onsubmit="return logincheck()" method="post" action="user/login">
+      		<form id="login_form">
       			<!--邮箱-->
       			<div class="input-control has-icon-left" style="width:361px">
       				<input id="login_useremail" type="text" class="form-control" placeholder="邮箱" name="email">
@@ -137,8 +91,8 @@ $(document).ready(function(){
       			<button class="btn btn-info" type="button">忘记密码</button>
       			<button class="btn btn-info" type="button" style="margin-left:200px">免费注册</button>
       			<h5></h5>
-      			<button class="btn btn-info" type="submit" style="width:361px" id="loginnow">立即登录</button>
-      			<br/><span id="show" style="color:red; font-size='15px';">${errorMsg}</span>
+      			<button class="btn btn-info"style="width:361px" id="loginnow" onclick='loginCheck()'>立即登录</button>
+      			<br/><span id="show" style="color:red; font-size='15px';"></span>
       		</form>
       		<!--二维码-->
       		<div id="login_qrcode">
@@ -254,6 +208,4 @@ $(document).ready(function(){
       			<img src="<%=basePath%>/images/qrcode.jpg">
       			<p>扫描二维码获得更多动态信息</p>
       		</div>
-</div>
-<div id="fade" class="black_overlay"></div> 
-<script type="text/javascript" src="<%=basePath%>/js/checkLogin_regist.js"></script> 
+      	</div>

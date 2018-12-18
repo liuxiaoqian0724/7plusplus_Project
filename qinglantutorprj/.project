@@ -1415,16 +1415,6 @@
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
-			<name>src/com/sevenpp/qinglantutor/util/email</name>
-			<type>2</type>
-			<locationURI>PARENT-2-PROJECT_LOC/%E5%A4%A7%E5%AD%A6/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD/%E4%B8%AD%E6%9C%9F%E5%B1%95%E7%A4%BA/qinglantutorprj/src/com/sevenpp/qinglantutor/utils/email</locationURI>
-		</link>
-		<link>
-			<name>src/com/sevenpp/qinglantutor/util/encrypt</name>
-			<type>2</type>
-			<locationURI>PARENT-2-PROJECT_LOC/%E5%A4%A7%E5%AD%A6/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%AE%AD/%E4%B8%AD%E6%9C%9F%E5%B1%95%E7%A4%BA/qinglantutorprj/src/com/sevenpp/qinglantutor/utils/encrypt</locationURI>
-		</link>
-		<link>
 			<name>WebContent/dist/lib/kindeditor/__MACOSX/plugins/._.DS_Store</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/webpage/dist/lib/kindeditor/__MACOSX/plugins/._.DS_Store</locationURI>

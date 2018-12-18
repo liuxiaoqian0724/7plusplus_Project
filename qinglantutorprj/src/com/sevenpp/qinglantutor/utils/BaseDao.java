@@ -1,4 +1,4 @@
-package com.sevenpp.qinglantutor.util;
+package com.sevenpp.qinglantutor.utils;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;

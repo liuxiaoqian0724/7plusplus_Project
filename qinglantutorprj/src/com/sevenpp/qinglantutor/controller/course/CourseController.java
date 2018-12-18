@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sevenpp.qinglantutor.entity.CourseInformation;
 import com.sevenpp.qinglantutor.service.impl.CourseServiceImpl;
-import com.sevenpp.qinglantutor.util.cookie.CookieUtils;
+import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 
 /**
 *

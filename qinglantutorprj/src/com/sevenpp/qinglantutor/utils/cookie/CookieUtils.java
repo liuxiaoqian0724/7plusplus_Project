@@ -1,4 +1,4 @@
-package com.sevenpp.qinglantutor.util.cookie;
+package com.sevenpp.qinglantutor.utils.cookie;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;

@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sevenpp.qinglantutor.service.impl.SendMessageServiceImpl;
-import com.sevenpp.qinglantutor.util.cookie.CookieUtils;
+import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 
 /**
 *code is far away from bug with the animal protecting
