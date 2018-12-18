@@ -8,29 +8,24 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="<%=basePath%>/dist/css/zui-theme.css" />
-		<link rel="stylesheet" href="<%=basePath%>/dist/css/zui-theme.min.css" />
 		<link rel="stylesheet" href="<%=basePath%>/dist/css/zui.css" />
-		<link rel="stylesheet" href="<%=basePath%>/dist/css/zui.lite.css" />
-		<link rel="stylesheet" href="<%=basePath%>/dist/css/zui.lite.min.css" />
-		<link rel="stylesheet" href="<%=basePath%>/dist/css/zui.min.css" />
-		<link rel="stylesheet" href="<%=basePath%>/dist/lib/board/zui.board.css" />
-		<link rel="stylesheet" href="<%=basePath%>/dist/lib/board/zui.board.min.css" />
-		<link rel="stylesheet" href="<%=basePath%>/dist/lib/bootbox/bootbox.css" />
-		<link rel="stylesheet" href="<%=basePath%>/dist/lib/bootbox/bootbox.min.css" />
 		<link rel="stylesheet" href="<%=basePath%>/dist/lib/datetimepicker/datetimepicker.css" />
 		<link rel="stylesheet" href="<%=basePath%>/dist/lib/datetimepicker/datetimepicker.min.css" />
 		<link rel="stylesheet" href="<%=basePath%>/css/sendstaused.css" />
-		<link rel="stylesheet" type="text/css" href="<%=basePath%>/css/header.css"/>
-		<link rel="stylesheet" type="text/css" href="<%=basePath%>/css/footer.css"/>
+		  <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/header.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/footer.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/register_login.css"/>
+    <!-- zui -->
+    <link rel="stylesheet" href="<%=basePath%>/css/verify.css" />
 		<!--js引入-->
 		<script type="text/javascript" src="<%=basePath%>/js/jquery-3.2.1.js"></script>
 		<script type="text/javascript" src="<%=basePath%>/dist/js/zui.js"></script>
-		<script type="text/javascript" src="<%=basePath%>/dist/js/zui.lite.js"></script>
-		<script type="text/javascript" src="<%=basePath%>/dist/js/zui.lite.min.js"></script>
-		<script type="text/javascript" src="<%=basePath%>/dist/js/zui.min.js"></script>
 		<script type="text/javascript" src="<%=basePath%>/dist/lib/datetimepicker/datetimepicker.js"></script>
 		<script type="text/javascript" src="<%=basePath%>/dist/lib/datetimepicker/datetimepicker.min.js"></script>
+		<script type="text/javascript" src="<%=basePath%>/dist/js/zui.js"></script>
+    <script src="<%=basePath%>/js/verify.js"></script>
+    <script src="<%=basePath%>/js/verify.min.js"></script>
+    <script src="<%=basePath%>/js/header.js"></script>
 		<title>信息发布审核</title>
 	</head>
 
@@ -67,6 +62,7 @@
 		</div>
 		<!-- footer -->
 		<jsp:include page="footer.jsp"></jsp:include>
+		<script type="text/javascript" src="<%=basePath%>/js/checkLogin_regist.js"></script>
 		<!-- //footer结束 -->
 	</body>
 <script language="javascript" type="text/javascript"> 

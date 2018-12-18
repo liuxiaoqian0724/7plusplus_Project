@@ -24,6 +24,7 @@
     <script src="<%=basePath%>/js/verify.js"></script>
     <script src="<%=basePath%>/js/verify.min.js"></script>
     <script src="<%=basePath%>/js/header.js"></script>
+
    <!--  js功能代码 -->
    </head>  
 	
@@ -389,8 +390,8 @@
 			<!--学习社区end-->
 		</div>
 	</div>
+	<script type="text/javascript" src="<%=basePath%>/js/checkLogin_regist.js"></script>
 	<script type="text/javascript" src="<%=basePath%>/js/index.js"></script>
 	<jsp:include page="footer.jsp" />
-	<script type="text/javascript" src="<%=basePath%>/js/checkLogin_regist.js"></script>
 </body>
 </html>

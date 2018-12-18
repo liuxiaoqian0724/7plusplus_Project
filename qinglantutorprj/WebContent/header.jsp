@@ -91,7 +91,7 @@
       			<button class="btn btn-info" type="button">忘记密码</button>
       			<button class="btn btn-info" type="button" style="margin-left:200px">免费注册</button>
       			<h5></h5>
-      			<button class="btn btn-info"style="width:361px" id="loginnow" onclick='loginCheck()'>立即登录</button>
+      			<button class="btn btn-info" type="button" style="width:361px" id="loginnow" onclick='logInNow()'>立即登录</button>
       			<br/><span id="show" style="color:red; font-size='15px';"></span>
       		</form>
       		<!--二维码-->
