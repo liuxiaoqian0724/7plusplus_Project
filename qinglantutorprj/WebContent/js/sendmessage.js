@@ -83,6 +83,7 @@
 						if (data == "ok") {
 							window.location.href = "sendstaused.jsp"
 						}else {
+							alert("您的登录已经失效,请重新登录！")
 							window.location.href = "index.jsp"
 						}
 					}

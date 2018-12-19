@@ -34,7 +34,6 @@ public class CookieUtils {
                 cookie = cookies[i];
             }
         }
-
         return cookie;
     }
     /**

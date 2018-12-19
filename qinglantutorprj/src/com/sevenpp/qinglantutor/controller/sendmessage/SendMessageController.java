@@ -50,46 +50,49 @@ import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 public class SendMessageController {
 	@Resource
 	private SendMessageServiceImpl sendMessageServiceImpl;
-	@RequestMapping(value="/send", method=RequestMethod.POST)
-	public void send(@RequestBody Map<String,String>map,HttpServletRequest request,HttpServletResponse response){
+	private PrintWriter writer;
+
+	@RequestMapping(value = "/send", method = RequestMethod.POST)
+	public void send(@RequestBody Map<String, String> map, HttpServletRequest request, HttpServletResponse response) {
 		response.setHeader("Access-Control-Allow-Origin", "*");
 		response.setHeader("Access-Control-Allow-Methods", "POST");
-		response.setHeader("Access-Control-Allow-Headers","x-requested-with,content-type");
-		response.setHeader("Access-Control-Allow-Credentials","true");
+		response.setHeader("Access-Control-Allow-Headers", "x-requested-with,content-type");
+		response.setHeader("Access-Control-Allow-Credentials", "true");
 		response.setContentType("text/html;charset=utf-8");
 		response.setCharacterEncoding("utf-8");
-		Cookie[]cookies = request.getCookies();
-		String SESSIONID = CookieUtils.getCookieFromCookies(cookies,"JSESSIONID").getValue();
-		String EMAIL = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
-		if (SESSIONID==""||SESSIONID==null||EMAIL==""||EMAIL==null) {
-			PrintWriter writer = null;
-			try {
-				writer = response.getWriter();
-				writer.write("logout");
-				writer.flush();
-				writer.close();
-			} catch (IOException e) {
-			}
-		}else {
-			if (sendMessageServiceImpl.sendMessage(map,EMAIL)) {
+		try {
+			writer = response.getWriter();
+		} catch (IOException e1) {
+
+		}
+		Cookie[] cookies = request.getCookies();
+		String EMAIL = "";
+		if (CookieUtils.getCookieFromCookies(cookies, "EMAIL") != null) {
+			EMAIL = CookieUtils.getCookieFromCookies(cookies, "EMAIL").getValue();
+			if (EMAIL == "" || EMAIL == null) {
 				PrintWriter writer = null;
 				try {
 					writer = response.getWriter();
+					writer.write("logout");
+					writer.flush();
+					writer.close();
+				} catch (IOException e) {
+				}
+			} else {
+				if (sendMessageServiceImpl.sendMessage(map, EMAIL)) {
 					writer.write("ok");
 					writer.flush();
 					writer.close();
-				} catch (IOException e) {
-				}
-			}else {
-				PrintWriter writer = null;
-				try {
-					writer = response.getWriter();
+				} else {
 					writer.write("error");
 					writer.flush();
 					writer.close();
-				} catch (IOException e) {
 				}
 			}
+		} else {
+			writer.write("error");
+			writer.flush();
+			writer.close();
 		}
 	}
 }

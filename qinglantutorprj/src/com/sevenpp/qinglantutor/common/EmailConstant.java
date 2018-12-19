@@ -8,7 +8,7 @@ package com.sevenpp.qinglantutor.common;
  * @date 2018年12月3日 上午9:04:14 
  * @version V1.0 
  */
-public class Constant {
+public class EmailConstant {
 	public final static String HOST = "smtp.exmail.qq.com";
 	public final static String FROMNAME = "qinglan@javafan.club";
 	public final static String PASSWORD = "Renjiahua12345@";
