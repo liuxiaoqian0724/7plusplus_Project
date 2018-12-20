@@ -14,54 +14,12 @@
 		<context:include-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> a5df4409c2b24d3a926bce9a28091aa8ed267097
-=======
->>>>>>> a5df4409c2b24d3a926bce9a28091aa8ed267097
-	<!-- 对指定目录下的静态资源放行 -->
-	<!-- <mvc:resources location="/images/" mapping="/images/**"/>
-	<mvc:resources location="/css/" mapping="/css/**"/>
-	<mvc:resources location="/js/" mapping="/js/**"/>  -->  
-	<!--对所有静态资源放行  -->
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> a5df4409c2b24d3a926bce9a28091aa8ed267097
-=======
->>>>>>> a5df4409c2b24d3a926bce9a28091aa8ed267097
-=======
->>>>>>> a5df4409c2b24d3a926bce9a28091aa8ed267097
 	<mvc:default-servlet-handler/>
 	<mvc:annotation-driven />
 	<!--json  -->
 	<mvc:annotation-driven>
     <mvc:message-converters register-defaults="true">
         <bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> a5df4409c2b24d3a926bce9a28091aa8ed267097
-=======
->>>>>>> a5df4409c2b24d3a926bce9a28091aa8ed267097
-            <!--<property name="supportedMediaTypes" value="application/json;charset=UTF-8"/>
-            <property name="features">
-                <array>
-                    <value>WriteMapNullValue<alue>
-                    <value>WriteNullStringAsEmpty<alue>
-                </array>
-            </property>-->
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> a5df4409c2b24d3a926bce9a28091aa8ed267097
-=======
->>>>>>> a5df4409c2b24d3a926bce9a28091aa8ed267097
-=======
->>>>>>> a5df4409c2b24d3a926bce9a28091aa8ed267097
         </bean>
     </mvc:message-converters>
 </mvc:annotation-driven>

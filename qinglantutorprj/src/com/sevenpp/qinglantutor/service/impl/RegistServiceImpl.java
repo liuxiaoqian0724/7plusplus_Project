@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.sevenpp.qinglantutor.dao.impl.RegistDaoImpl;
 import com.sevenpp.qinglantutor.entity.User;
 import com.sevenpp.qinglantutor.service.RegistService;
-import com.sevenpp.qinglantutor.util.encrypt.RSAEncrypt;
+import com.sevenpp.qinglantutor.utils.encrypt.RSAEncrypt;
 
 /**
 *code is far away from bug with the animal protecting

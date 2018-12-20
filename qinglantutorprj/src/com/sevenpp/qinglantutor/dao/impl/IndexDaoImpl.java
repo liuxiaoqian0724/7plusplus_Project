@@ -38,13 +38,6 @@ import com.sevenpp.qinglantutor.entity.User;
 		* @version
 		*
 		*/
-		/** 
-		* @ClassName: IndexDaoImpl 
-		* @Description: TODO(这里用一句话描述这个类的作用) 
-		* @author (作者)  
-		* @date 2018年12月7日 上午11:12:26 
-		* @version V1.0 
-		*/
 @Repository
 public class IndexDaoImpl implements IndexDao {
 	@Resource

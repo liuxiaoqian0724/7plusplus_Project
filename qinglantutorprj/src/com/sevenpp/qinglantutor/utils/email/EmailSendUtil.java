@@ -18,7 +18,7 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
-import com.sevenpp.qinglantutor.common.Constant;
+import com.sevenpp.qinglantutor.common.EmailConstant;
 import com.sevenpp.qinglantutor.entity.mail.EmailMailInfo;
 import com.sun.mail.util.MailSSLSocketFactory;
 /**
@@ -43,12 +43,12 @@ public class EmailSendUtil {
 			* @version V1.0   
 	 */
 	public static void sendHtmlMail(EmailMailInfo info) throws Exception {
-		info.setHost(Constant.HOST);
-		info.setFormName(Constant.FROMNAME);
-		info.setFormPassword(Constant.PASSWORD); 
-		info.setReplyAddress(Constant.REPLYADDRESS);
-		info.setPort(Constant.PORT);
-		info.setProtocol(Constant.PROTOCOL);
+		info.setHost(EmailConstant.HOST);
+		info.setFormName(EmailConstant.FROMNAME);
+		info.setFormPassword(EmailConstant.PASSWORD); 
+		info.setReplyAddress(EmailConstant.REPLYADDRESS);
+		info.setPort(EmailConstant.PORT);
+		info.setProtocol(EmailConstant.PROTOCOL);
 		Message message = getMessage(info);
 		// MiniMultipart类是一个容器类，包含MimeBodyPart类型的对象
 		Multipart mainPart = new MimeMultipart();
@@ -110,10 +110,10 @@ public class EmailSendUtil {
 	 */
 	public static void sendTextMail(EmailMailInfo info) throws Exception {
 
-		info.setHost(Constant.HOST);
-		info.setFormName(Constant.FROMNAME);
-		info.setFormPassword(Constant.PASSWORD);
-		info.setReplyAddress(Constant.REPLYADDRESS);
+		info.setHost(EmailConstant.HOST);
+		info.setFormName(EmailConstant.FROMNAME);
+		info.setFormPassword(EmailConstant.PASSWORD);
+		info.setReplyAddress(EmailConstant.REPLYADDRESS);
 		Message message = getMessage(info);
 		// 消息发送的内容
 		message.setText(info.getContent());
@@ -154,7 +154,7 @@ public class EmailSendUtil {
 			prop.put("mail.smtp.ssl.socketFactory", sslSocketFactory);
 			// 创建邮件会话（注意，如果要在一个进程中切换多个邮箱账号发信，应该用 Session.getInstance）
 			Session session = Session.getDefaultInstance(prop,
-					new MyAuthenticator(Constant.FROMNAME,Constant.PASSWORD));
+					new MyAuthenticator(EmailConstant.FROMNAME,EmailConstant.PASSWORD));
 			// 开启调试模式（生产环境中请不要开启此项）
 			session.setDebug(true);
 			try {

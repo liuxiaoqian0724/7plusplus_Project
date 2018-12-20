@@ -16,11 +16,12 @@
 <link rel="stylesheet" href="<%=basePath%>/css/header.css" />
 <link rel="stylesheet" href="<%=basePath%>/css/footer.css" />
 <link rel="stylesheet" href="<%=basePath%>/css/sendmessageed.css" />
-<link rel="stylesheet" type="text/css"
-	href="<%=basePath%>/css/register_login.css" />
+<link rel="stylesheet" type="text/css" href="<%=basePath%>/css/register_login.css" />
 <link rel="stylesheet" href="<%=basePath%>/css/verify.css" />
+<link rel="stylesheet" href="<%=basePath%>/Semantic/components/button.css" />
 <!--js引入-->
 <script type="text/javascript" src="<%=basePath%>/js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="<%=basePath%>/Semantic/components/button.js"></script>
 <script type="text/javascript" src="<%=basePath%>/dist/js/zui.js"></script>
 <script type="text/javascript" src="<%=basePath%>/js/cityselect.js"></script>
 <script src="<%=basePath%>/js/verify.js"></script>
@@ -34,10 +35,9 @@
 	<!--导航栏开始-->
 	<jsp:include page="header.jsp"></jsp:include>
 	<!--导航栏结束-->
-
 	<!--面板开始-->
 	<div class="container-fixed">
-		<div class="panel panel-success">
+		<div class="panel">
 			<div class="panel-heading">
 				<h2>求职信息发布</h2>
 			</div>
@@ -45,78 +45,45 @@
 				<div class="panel-body">
 					<ul class="list-group">
 						<!--科目选择-->
-						<li class="list-group-item"><label>科目（点击加号即可添加）*</label><br />
-							<label>
-								<button class="btn color-success" onclick="addSub(this)">语文<span class="label label-badge"
-										style="background-color: #CCCCCC">+</span>
-								</button>
-								<button class="btn color-success" onclick="addSub(this)">数学<span class="label label-badge"
-										style="background-color: #CCCCCC">+</span>
-								</button>
-								<button class="btn color-success" onclick="addSub(this)">英语<span class="label label-badge"
-										style="background-color: #CCCCCC">+</span>
-								</button>
-								<button class="btn color-success" onclick="addSub(this)">历史<span class="label label-badge"
-										style="background-color: #CCCCCC">+</span>
-								</button>
-								<button class="btn color-success" onclick="addSub(this)">地理<span class="label label-badge"
-										style="background-color: #CCCCCC">+</span>
-								</button>
-								<button class="btn color-success" onclick="addSub(this)">化学<span class="label label-badge"
-										style="background-color: #CCCCCC">+</span>
-								</button>
-								<button class="btn color-success" onclick="addSub(this)">生物<span class="label label-badge"
-										style="background-color: #CCCCCC">+</span>
-								</button>
-								<button class="btn color-success" onclick="addSub(this)">音乐<span class="label label-badge"
-										style="background-color: #CCCCCC">+</span>
-								</button>
-						</label> <input type="text" name="subject" class="form-control"
-							id="subject" placeholder="例如数学，多个科目用;隔开" disabled="true">
+						<li class="list-group-item"><label>科目（点击按钮即可添加）*</label><br />
+						<button class="ui mini mini teal basic button" onclick="addSub(this)">语文</button>
+						<button class="ui mini mini teal basic button" onclick="addSub(this)">数学</button>
+						<button class="ui mini mini teal basic button" onclick="addSub(this)">英语</button>
+						<button class="ui mini mini teal basic button" onclick="addSub(this)">物理</button>
+						<button class="ui mini mini teal basic button" onclick="addSub(this)">化学</button>
+						<button class="ui mini mini teal basic button" onclick="addSub(this)">生物</button>
+						<button class="ui mini mini teal basic button" onclick="addSub(this)">地理</button>
+						<button class="ui mini mini teal basic button" onclick="addSub(this)">音乐</button>
+						<button class="ui mini mini teal basic button" onclick="addSub(this)">美术</button>
+						<button class="ui mini mini teal basic button" onclick="addSub(this)">历史</button>
+						</li>
+						<li class="list-group-item">
+							<input type="text" name="subject" class="form-control"
+							id="subject" placeholder="例如数学，多个科目用;隔开" disabled="true"/>
 						</li>
 						<!--授课年级-->
 						<li class="list-group-item"><label>授课年级（点击加号即可添加）*</label><br />
 							<label> <span>小学：</span>
-								<button class="btn color-success" onclick="addGra(this)">一年级<span class="label label-badge"
-										style="background-color: #CCCCCC">+</span>
-								</button>
-								<button class="btn color-success" onclick="addGra(this)">二年级<span class="label label-badge"
-										style="background-color: #CCCCCC">+</span>
-								</button>
-								<button class="btn color-success" onclick="addGra(this)">三年级<span class="label label-badge"
-										style="background-color: #CCCCCC">+</span>
-								</button>
-								<button class="btn color-success" onclick="addGra(this)">四年级<span class="label label-badge"
-										style="background-color: #CCCCCC">+</span>
-								</button>
-								<button class="btn color-success" onclick="addGra(this)">五年级<span class="label label-badge"
-										style="background-color: #CCCCCC">+</span>
-								</button>
-								<button class="btn color-success" onclick="addGra(this)">六年级<span class="label label-badge"
-										style="background-color: #CCCCCC">+</span>
-								</button>
+								<button class="ui mini mini teal basic button" onclick="addGra(this)">一年级</button>
+								<button class="ui mini mini teal basic button" onclick="addGra(this)">二年级</button>
+								<button class="ui mini mini teal basic button" onclick="addGra(this)">三年级</button>
+								<button class="ui mini mini teal basic button" onclick="addGra(this)">四年级</button>
+								<button class="ui mini mini teal basic button" onclick="addGra(this)">五年级</button>
+								<button class="ui mini mini teal basic button" onclick="addGra(this)">六年级</button>
 						</label> <br /> <label> <span>初中：</span>
-								<button class="btn color-success" onclick="addGra(this)">初一 <span class="label label-badge"
-										style="background-color: #CCCCCC">+</span>
-								</button>
-								<button class="btn color-success" onclick="addGra(this)">初二 <span class="label label-badge"
-										style="background-color: #CCCCCC">+</span>
-								</button>
-								<button class="btn color-success" onclick="addGra(this)">初三 <span class="label label-badge"
-										style="background-color: #CCCCCC">+</span>
-								</button>
-						</label> <br /> <label> <span>高中：</span>
-								<button class="btn color-success" onclick="addGra(this)">高一 <span class="label label-badge"
-										style="background-color: #CCCCCC">+</span>
-								</button>
-								<button class="btn color-success" onclick="addGra(this)">高二 <span class="label label-badge"
-										style="background-color: #CCCCCC">+</span>
-								</button>
-								<button class="btn color-success" onclick="addGra(this)">高三 <span class="label label-badge"
-										style="background-color: #CCCCCC">+</span>
-								</button>
-						</label> <input type="text" class="form-control" id="grade"
-							placeholder="例如初三，多个年级用;隔开" disabled="true"></li>
+								<button class="ui mini mini teal basic button" onclick="addGra(this)">初一 </button>
+								<button class="ui mini mini teal basic button" onclick="addGra(this)">初二 </button>
+								<button class="ui mini mini teal basic button" onclick="addGra(this)">初三 </button>
+						</label><br />
+							<label> <span>高中：</span>	
+								<button class="ui mini mini teal basic button" onclick="addGra(this)">高一 </button>
+								<button class="ui mini mini teal basic button" onclick="addGra(this)">高二 </button>
+								<button class="ui mini mini teal basic button" onclick="addGra(this)">高三 </button>
+						</label> 
+						</li>
+						<li class="list-group-item">
+							<input type="text" class="form-control" id="grade" placeholder="例如初三，多个年级用;隔开" disabled="true"/>
+							</li>
 						<!--授课时间表格-->
 						<li class="list-group-item"><label>授课时间（点击表格选择）*</label>
 							<table class="time_table png_img table table-bordered"
