@@ -29,6 +29,16 @@ public class Userinf {
 	private String realName;
 	private String school;
 	private String introduce;
+	private String teachAge;
+	
+
+	public String getTeachAge() {
+		return teachAge;
+	}
+
+	public void setTeachAge(String teachAge) {
+		this.teachAge = teachAge;
+	}
 
 	/**
 	 *  

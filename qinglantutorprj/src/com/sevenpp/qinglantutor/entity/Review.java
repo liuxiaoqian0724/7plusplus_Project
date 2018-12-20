@@ -1,6 +1,17 @@
 package com.sevenpp.qinglantutor.entity;
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 import java.beans.Transient;
+>>>>>>> a5df4409c2b24d3a926bce9a28091aa8ed267097
+=======
+import java.beans.Transient;
+>>>>>>> a5df4409c2b24d3a926bce9a28091aa8ed267097
+=======
+import java.beans.Transient;
+>>>>>>> a5df4409c2b24d3a926bce9a28091aa8ed267097
 import java.sql.Timestamp;
 
 import javax.persistence.Entity;
