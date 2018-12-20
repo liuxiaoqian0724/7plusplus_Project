@@ -49,13 +49,13 @@ public class IndexController {
 	public String indexSearchBox(@RequestParam("keyword") String keyword,Model model) {
 		model.addAttribute("keyword",keyword);
 		System.out.println(keyword);
-		return "tutorlist";
+		return "tutorlisted";
 	}
 	@RequestMapping("/search/{schooltype}")
 	public String schoolType(@PathVariable String schooltype,Model model) {
 		model.addAttribute("schooltype", schooltype);
 		System.out.println(schooltype);
-		return "tutorlist";
+		return "tutorlisted";
 	}
 	@RequestMapping("/teacherdetail/{teacherid}")
 	public String teacherDetail(@PathVariable String teacherid,Model model) {
