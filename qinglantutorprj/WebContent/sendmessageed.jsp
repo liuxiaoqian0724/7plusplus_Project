@@ -25,9 +25,8 @@
 <script type="text/javascript" src="<%=basePath%>/js/cityselect.js"></script>
 <script src="<%=basePath%>/js/verify.js"></script>
 <script src="<%=basePath%>/js/verify.min.js"></script>
-<script type="text/javascript"
-	src="<%=basePath%>/js/checkLogin_regist.js"></script>
-
+<script type="text/javascript" src="<%=basePath%>/js/checkLogin_regist.js"></script>
+<script src="<%=basePath%>/js/header.js"></script>
 <title>求职信息发布</title>
 </head>
 
@@ -246,6 +245,7 @@
 	<!-- footer开始 -->
 
 	<jsp:include page="footer.jsp"></jsp:include>
+	<script type="text/javascript" src="<%=basePath%>/js/checkLogin_regist.js"></script>
 	<script type="text/javascript" src="<%=basePath%>/js/sendmessage.js"></script>
 	<!-- footer结束 -->
 </body>

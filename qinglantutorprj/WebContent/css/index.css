@@ -1,11 +1,16 @@
+*{
+	
+}
 #myNiceCarousel{
 	position: relative;
 }
 .tutor_information{
 	position: relative;
 	margin-top:15px;
-	border:1px solid #e4dfd7;
+	border:1px solid #8abcd1;
 	background-color:#fcfcfc;
+	height:auto;
+	border-radius:5px;
 }
 .tutor_information_pic img{
 	width:50%;
@@ -24,21 +29,23 @@
 	margin-left:300px;
 }
 #personal_information{
-	margin-left:15px;
+	margin-left:23px;
 	margin-top:15px;
 }
 #personal_inf{
-	width:222px;
+	width:200px;
 	background-color:#fff;
 }
 #personal_name{
-	height:100px;
-	border:1px solid #e4dfd7;
+	width:262px; 
+	height:90px;
+	font-size:12px;
 	margin-top:5px;
+	color:#2d2e36;
 }
 #learning_community{
 	margin-top:15px;
-	border:1px solid #e4dfd7;
+	border:1px solid #8abcd1;
 	background-color:#fcfcfc;
 }
 .studycommunity img{

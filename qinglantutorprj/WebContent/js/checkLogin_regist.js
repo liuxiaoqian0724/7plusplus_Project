@@ -61,7 +61,7 @@ $('#mpanel1').slideVerify(
 			vOffset : 5,
 			vSpace : 5,
 			explain : '向右滑动完成验证',
-			imgUrl : '<%=basePath%>/images/',
+			imgUrl : 'images/',
 			imgName : [ '1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg',
 					'7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg',
 					'13.jpg'],
@@ -91,9 +91,12 @@ $('#mpanel1').slideVerify(
 function checkName(){
 		var username = $('#username').val();
 		var nameError =$('#nameError');
+		var reg=/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,12}$/
 		if(username == ""){
 			nameError.html('用户名不能为空！<label class="input-control-icon-right"><img alt="" src="images/icon/error.png" style="width:20px; height:20px; position:relative; margin-left:-15px;"></label>');
 			isName = false;
+		}else if(!username.match(reg)){
+			nameError.html('密码必须为6-12位的数字和字母的组合！<label class="input-control-icon-right"><img alt="" src="images/icon/error.png" style="width:20px; height:20px; position:relative; margin-left:-15px;"></label>')
 		}else{
 			nameError.html('<label class="input-control-icon-right"><img alt="" src="images/icon/ok.png" style="width:20px; height:20px; position:relative; margin-left:-15px;"></label>');
 			isName = true;
@@ -222,11 +225,9 @@ function submitData() {
 			contentType : "application/json;charset=UTF-8",
 			success : function(data) {
 				if (data == "ok") {
-					if ($("input[name='roles']:checked").val() == "家长") {
-						window.location.href = "student-personal-center-evaluation.jsp"
-					} else {
-						window.location.href = "teacher-personal-center-evaluation.jsp"
-					}
+						window.location.href = "sendstaused.jsp"
+				}else {
+						window.location.href = "index.jsp"
 				}
 			}
 
@@ -265,6 +266,7 @@ function checkEIdentify() {
 
 	}
 }
+
 function checkRegist() {
 	var allError = $('#allError');
 	var principle = $('#principle');
@@ -273,12 +275,12 @@ function checkRegist() {
 			allError.html('');
 			return true;
 		} else {
-			allError.html('注册需要您接受本网站协议！<label class="input-control-icon-right"><img alt="" src="images/icon/error.png" style="width:20px; height:20px; position:relative; margin-left:-15px;"></label>');
+			allError.html('注册需要您接受本网站协议');
 			return false;
 		}
 
 	} else {
-		allError.html('请确保您的信息完整，请认真填写！<label class="input-control-icon-right"><img alt="" src="images/icon/error.png" style="width:20px; height:20px; position:relative; margin-left:-15px;"></label>');
+		allError.html('请确保您的信息完整，请认真填写');
 		return false;
 	}
 }
@@ -298,19 +300,41 @@ function closeframe() {
 }
 
 //登录验证
-function logincheck() {
-	var useremail = $("#login_email").val();
+function loginCheck() {
+	var useremail = $("#login_useremail").val();
 	var password = $("#login_password").val();
 	var show = $("#show");
 	if (useremail == "" || password == "") {
 		show.html("邮箱或密码为空！");
 		return false;
 	} else {
-		show.html("");
 		return true;
 	}
 }
-
+function logInNow() {
+	if (loginCheck()) {
+		var show = $("#show");
+		var info = {
+			"email" : $("#login_useremail").val(),
+			"password" : $("#login_password").val()
+		}
+		$.ajax({
+			type : "post",
+			url : "user/login",
+			data : JSON.stringify(info),
+			datatype : "json",
+			contentType : "application/json;charset=UTF-8",
+			success : function(data) {
+				if (data == "ok") {
+					show.html('');
+					window.location.reload();
+				} else {
+					show.html('邮箱或密码错误');
+				}
+			}
+		});
+	}
+}
 
 
  

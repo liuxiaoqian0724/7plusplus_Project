@@ -2,8 +2,7 @@ var currentpage = 1;
 var totalpage = 1;
 var pagetemp = new Array();
 console.log(totalpage);
-// 调用
-
+//页码
 function topage(currentpage) {
 	// 点击previous时
 	$("#pager").on("click", "#previous", function() {
@@ -27,75 +26,74 @@ function datashow(currentpage) {
 		dataType : 'json',
 		async : false,
 		success : function(data) {
-			totalpage = Math.ceil(data.length / 5);
+			totalpage = Math.ceil(data.length / 8);
 			$("#personal_name_introduce_school").html("");
-			$
-					.each(
-							data,
-							function(index, res) {
-								if (index >= (currentpage - 1) * 5
-										&& index <= currentpage * 5 - 1) {
-									teacherinf = '<div class="col-md-4 col-sm-6 col-lg-3" id="personal_inf">'
-											+ '<a class="card" href="#" style="position: relative;">'
-											+ '<img src="<%=basePath%>/'
-											+ res.userImg
-											+ '" alt="">'
-											+ '<div class="caption">中小学优秀英语教师</div>'
-											+ '<div class="card-content text-muted"  id="personal_name">'
-											+ '<p></p>'
-											+ '<p>&nbsp;&nbsp;&nbsp;姓名：'
-											+ res.realName
-											+ '</p>'
-											+ '<p>&nbsp;&nbsp;&nbsp;学校：'
-											+ res.school
-											+ '</p>'
-											+ '<p>&nbsp;&nbsp;&nbsp;简介：'
-											+ res.introduce
-											+ '</p>'
-											+ '</div>'
-											+ '</a>'
-											+ '</div>'
-									$("#personal_name_introduce_school")
-											.append(teacherinf);
-									console.log(currentpage + "ajax")
-								}
-							})
-			// 当前页为第一页时
-			if (currentpage == 1) {
-				$("#pager").html("");
-				devicepage = '<li class="previous disabled"><a id="previous">«</a></li>'
-						+ '<li><span style="border:0px;">第&nbsp;&nbsp;&nbsp;'
-						+ currentpage
-						+ '/'
-						+ totalpage
-						+ '&nbsp;&nbsp;&nbsp;页</span></li>'
-						+ '<li class="next"><a id="next">»</a></li>';
-				$("#pager").append(devicepage);
-			}
-			// 当前页为最后一页时
-			if (currentpage == totalpage) {
-				$("#pager").html("");
-				devicepage = '<li class="previous"><a id="previous">«</a></li>'
-						+ '<li><span style="border:0px;">第&nbsp;&nbsp;&nbsp;'
-						+ currentpage
-						+ '/'
-						+ totalpage
-						+ '&nbsp;&nbsp;&nbsp;页</span></li>'
-						+ '<li class="next disabled"><a id="next">»</a></li>';
-				$("#pager").append(devicepage);
-			}
-			// 当前页为中间页时
-			if (currentpage > 1 && currentpage < totalpage) {
-				$("#pager").html("");
-				devicepage = '<li class="previous"><a id="previous">«</a></li>'
-						+ '<li><span style="border:0px;">第&nbsp;&nbsp;&nbsp;'
-						+ currentpage
-						+ '/'
-						+ totalpage
-						+ '&nbsp;&nbsp;&nbsp;页</span></li>'
-						+ '<li class="next"><a id="next">»</a></li>';
-				$("#pager").append(devicepage);
-			}
+			$.each(data,function(index, res) {
+				// 当前页为第一页时
+				if (currentpage == 1) {
+					$("#pager").html("");
+					devicepage = '<li class="previous disabled"><a id="previous">«</a></li>'
+							+ '<li><span style="border:0px;">第&nbsp;&nbsp;&nbsp;'
+							+ currentpage
+							+ '/'
+							+ totalpage
+							+ '&nbsp;&nbsp;&nbsp;页</span></li>'
+							+ '<li class="next"><a id="next">»</a></li>';
+					$("#pager").append(devicepage);
+				}
+				// 当前页为最后一页时
+				if (currentpage == totalpage) {
+					$("#pager").html("");
+					devicepage = '<li class="previous"><a id="previous">«</a></li>'
+							+ '<li><span style="border:0px;">第&nbsp;&nbsp;&nbsp;'
+							+ currentpage
+							+ '/'
+							+ totalpage
+							+ '&nbsp;&nbsp;&nbsp;页</span></li>'
+							+ '<li class="next disabled"><a id="next">»</a></li>';
+					$("#pager").append(devicepage);
+				}
+				// 当前页为中间页时
+				if (currentpage > 1 && currentpage < totalpage) {
+					$("#pager").html("");
+					devicepage = '<li class="previous"><a id="previous">«</a></li>'
+							+ '<li><span style="border:0px;">第&nbsp;&nbsp;&nbsp;'
+							+ currentpage
+							+ '/'
+							+ totalpage
+							+ '&nbsp;&nbsp;&nbsp;页</span></li>'
+							+ '<li class="next"><a id="next">»</a></li>';
+					$("#pager").append(devicepage);
+				}
+				if (index >= (currentpage - 1) * 8
+						&& index <= currentpage * 8 - 1) {
+					var str=res.introduce;
+		            if(str.length>27){
+		            	introduce=str.substr(0,30)+'……';
+		            }
+		            else{
+		            	introduce=str;
+		            }
+					teacherinf = '<div class="card"  style="position: relative; width:262px; height:300px;">'
+							    +'<div class="image">'
+								+'<img src="'+res.userImg+'">'
+								+'</div>'
+								+'<div class="content">'
+								+'<div class="header">'+res.realName+'</div>'
+								+'<div class="meta">'
+								+'<a>'+res.school+'</a>'
+								+'</div>'
+								+'<div class="description">'+introduce+'</div>'
+								+'</div>'
+								+'<div class="extra content">'
+								+'<span class="right floated">'+res.teachAge+'年教龄 </span>'
+								+'<span><i class="icon-heart-empty"></i> 520 人喜欢</span>'
+								+'</div>'
+								+'</div>'
+					$("#personal_name_introduce_school")
+							.append(teacherinf);
+				}
+			})
 		}
 	});
 }
@@ -149,22 +147,4 @@ function changegood() {
 		good.innerHTML = "<i class='icon icon-thumbs-o-up'></i><span id='goodcount'>"
 				+ goodcount + "</span>";
 	}
-}
-
-// 图片的划入划出事件
-var arr = new Array();
-$(".card").each(function() {
-	arr.push($(this));
-});
-for (var i = 0; i < 5; i++) {
-	arr[i].mouseover(function() {
-		$(this).animate({
-			top : '-10px'
-		}, "fast");
-	});
-	arr[i].mouseout(function() {
-		$(this).animate({
-			top : '0px'
-		}, "fast");
-	});
 }
