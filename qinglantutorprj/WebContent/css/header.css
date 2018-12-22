@@ -1,0 +1,134 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+html,*,body,div,ul,ol,li,h1,h2,h3,h4,h5,h6,p,span {
+	margin: 0;
+	padding: 0;
+}
+#top_bg a img,
+ :link img,
+ :visited img {
+	border: 0;
+}
+#top_bg a:link,
+#top_bg a:visited {
+	text-decoration: none;
+	color: #666666;
+}
+#top_bg a:hover,
+#top_bg a:focus {
+	text-decoration: underline;
+	color: #0573bd;
+	text-decoration: none;
+}
+#top_bg ul,
+#top_bg ul li {
+	list-style-type: none;
+}
+#top_bg {
+	height: 40px;
+	width: 100%;
+	background:#01DFCE;
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+	box-shadow: 1px 1px 7px #999;
+	position: fixed;
+	z-index: 999;
+	font-size: 16px;
+	border-bottom: #C6C6C6 solid 1px;
+}
+.top {
+	width: 1300px;
+	height: 40px;
+	margin: 0 auto;
+}
+.top .logo_l {
+	width: 40px;
+	height: 40px;
+	float: left;
+	background: url(../images/icon.png) no-repeat left;
+	background-size:cover;
+}
+.top .logo_n {
+	width: 135px;
+	height: 40px;
+	float: left;
+	background: url(../images/nameTop.png) no-repeat left;
+	background-size:cover;
+}
+.nav_z {
+	width: auto!important;
+	height: 40px;
+	float: left;
+	position: relative;
+	z-index: 999;
+}
+#navul li {
+	float: left;
+	width: 120px;
+	height: 40px;
+	position: relative;
+	text-align: center;
+	line-height: 40px;
+}
+
+#navul li a:link,
+#navul li a:visited {
+	color: #FFF;
+	font-weight:500;
+	letter-spacing:2px;
+}
+
+#navul li ul {
+	display: none;
+	position: absolute;
+	z-index: 999;
+	background: #2C83DF;
+	border-bottom: none;
+	left: 5px;
+}
+
+#navul li ul li {
+	display: block;
+	width: 100px;
+	float: none;
+	height: 35px;
+	position: relative;
+	line-height: 35px;
+	font-size: 12px;
+	text-align:center;
+	overflow: hidden
+}
+
+#navul li.navmoon {
+	background:#33A6B8;
+	width: 120px;
+	height: 38px;
+	line-height: 38px;
+}
+
+
+#navul li.navhome a:hover {
+	color: #FCFF00;
+}
+
+#navul li.navmoon ul {
+	display: block;
+}
+
+#navul li.navmoon ul a {
+	display: block;
+	width: 100px;
+	height: 35px;
+	line-height: 35px;
+}
+
+#navul li.navmoon ul a:hover {
+	width:100%;
+	color:black;
+	font-size: 14px;
+	background: #FFF;
+}
+#login_regist.navmoon{
+	background:#01DFCE !important;
+}
