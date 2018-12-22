@@ -87,5 +87,6 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/qcloudsms-1.0.6-javadoc.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/qcloudsms-1.0.6-sources.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/qcloudsms-1.0.6.jar"/>
+	<classpathentry kind="lib" path="D:/项目/7plusplus_Project/qinglantutorprj/WebContent/WEB-INF/lib/servlet-api.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
