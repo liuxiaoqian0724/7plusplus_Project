@@ -3,10 +3,11 @@
 }
 #myNiceCarousel{
 	position: relative;
+	top:100px;
 }
 .tutor_information{
 	position: relative;
-	margin-top:15px;
+	top:115px;
 	border:1px solid #8abcd1;
 	background-color:#fcfcfc;
 	height:auto;
@@ -17,7 +18,7 @@
 	height:50%;
 	position: relative;
 	margin-left:480px;
-	margin-top:30px;
+	margin-top:180px;
 }
 #choose_button{
 	position: relative;
@@ -47,12 +48,15 @@
 	margin-top:15px;
 	border:1px solid #8abcd1;
 	background-color:#fcfcfc;
+	position:relative; 
+	top:100px;
 }
 .studycommunity img{
 	width:50%;
 	height:50%;
-	margin-left:480px;
-	margin-top:30px;
+	position:relative; 
+	top:115px; 
+	z-index:999;
 }
 #learning_experience{
 	margin:15px;

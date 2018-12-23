@@ -6,33 +6,33 @@
 %>
 <div id="top_bg">
 	<div class="top">
-		<a class="logo_l" href="index.jsp" title="返回首页"></a>
-		<a class="logo_n" href="index.jsp" title="返回首页"></a>
+		<a class="logo_l" href="<%=basePath%>/index.jsp" title="返回首页"></a>
+		<a class="logo_n" href="<%=basePath%>/index.jsp" title="返回首页"></a>
 		<!--导航开始-->
 		<div class="nav_z">
 			<ul id="navul" class="cl" >
 				<li>
-					<a href="idnex.jsp" style="font-weight:800;">首页</a>
+					<a href="<%=basePath%>/index.jsp" style="font-weight:800;">首页</a>
 				</li>
 				<li><a href="search/家教">家教</a>
 					<ul>
-						<li><a href="search/小学">小学</a></li>
-						<li><a href="search/初中">初中</a></li>
-						<li><a href="search/高中">高中</a></li>
+						<span><a href="search/小学">小学</a></span>
+						<span><a href="search/初中">初中</a></span>
+						<span><a href="search/高中">高中</a></span>
 					</ul>
 				</li>
 				<li><a href="#">论坛社区</a>
 					<ul>
-						<li><a href="#">学霸说</a></li>
-						<li><a href="#">资料库</a></li>
-						<li><a href="#">家长岛</a></li>
+						<span><a href="#">学霸说</a></span>
+						<span><a href="#">资料库</a></span>
+						<span><a href="#">家长岛</a></span>
 					</ul>
 				</li>
 				<li><a href="#">我要提问</a>
 					<ul>
-						<li><a href="#">心理困惑</a></li>
-						<li><a href="#">情感问题</a></li>
-						<li><a href="#">学习障碍</a></li>
+						<span><a href="#">心理困惑</a></span>
+						<span><a href="#">情感问题</a></span>
+						<span><a href="#">学习障碍</a></span>
 					</ul>
 				</li>
 				<li><a href="#">个人中心</a></li>

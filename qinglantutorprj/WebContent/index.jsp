@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/header.css"/>
     <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/footer.css"/>
     <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/register_login.css"/>
+    <link>
     <!-- zui -->
     <link rel="stylesheet" href="<%=basePath%>/dist/css/zui.css" />
     <link rel="stylesheet" href="<%=basePath%>/css/verify.css" />
@@ -25,8 +26,8 @@
     <!--  js功能代码 -->
     <script src="<%=basePath%>/js/header.js"></script>
     <script src="<%=basePath%>/js/nav.js"></script>
+    <script type="text/javascript" src="<%=basePath%>/js/index.js"></script>
     <!-- semantic -->
-    <link rel="stylesheet" type="text/css" href="<%=basePath%>/Semantic/components/card.css"/>
     <link rel="stylesheet" type="text/css" href="<%=basePath%>/Semantic/components/card.css"/>
     <link rel="stylesheet" type="text/css" href="<%=basePath%>/Semantic/components/input.css"/>
    </head>  
@@ -68,7 +69,7 @@
 			<!--轮播图end-->
 	
 			<!--家教信息图片tutor_information_pic-->
-			<div class="tutor_information_pic">
+			<div class="tutor_information_pic" style="position:relative; top:100px; z-index:999;">
 				<img src="<%=basePath%>/images/hr.png" style="position:relative; width:408px; margin-left:0px; margin-top:50px; display:inline;"/>
 				<img src="<%=basePath%>/images/tutorinf.png" style="position:relative; margin-top:25px; margin-left:50px;"/>
 				<img src="<%=basePath%>/images/hr.png" style="position:relative; width:408px; margin-left:730px; margin-top:-70px;"/>
@@ -84,7 +85,7 @@
 				<!--个人信息personal_information-->
 				<div class="cards cards-borderless" id="personal_information" style="width:100%; height:auto;">
 					<!-- 教师简介 -->
-					<div class="ui link cards" id="personal_name_introduce_school" style="width:1305px;">
+					<div class="ui link cards" id="personal_name_introduce_school">
 					  
 					</div>
 					<!-- 分页器 -->

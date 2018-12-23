@@ -16,6 +16,8 @@ a{
 	background-color: #222c3c;
 	/*margin-top: -10px;*/
 	color: #fffff0;
+	position:relative;
+	top:100px;
 }
 .footer-font{
 	margin: 0 auto;
