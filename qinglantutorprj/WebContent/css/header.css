@@ -2,10 +2,12 @@
 
 /* CSS Document */
 
-html,*,body,div,ul,ol,li,h1,h2,h3,h4,h5,h6,p,span {
-	margin: 0;
-	padding: 0;
+body{
+	transform:none;
+	display：inline;
+	z-index:0;
 }
+
 #top_bg a img,
  :link img,
  :visited img {

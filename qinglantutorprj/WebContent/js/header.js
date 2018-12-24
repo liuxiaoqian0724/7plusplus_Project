@@ -2,24 +2,16 @@ $(document).ready(function(){
 	var username=getCookie("USERNAME");
 	if(username==0){
 		$("#login_regist").html("");
-		var buttons='<a href="javascipt:void(0)" onclick="loginDis()" style="text-decoration:none; color:#fff;">登录</a>'
+		var buttons='<a href="javascript:void(0)" onclick="loginDis()" style="text-decoration:none; color:#fff;">登录</a>'
 	                  +'<a href="javascript:void(0)" onclick="registDis()" style="text-decoration:none; color:#fff;">/注册</a>'
 		$("#login_regist").append(buttons);
 	}
 	else{
 		$("#login_regist").html("");
-		$("#login_regist").append('<span style="text-decoration:none; font-size:14px; color:#ddf4df;white-space:nowrap;"><i>Hello</i>,'+'<strong style="font-size:16px;">'+username+'</strong>！<a href="javascipt:void(0)" onclick="logout()" style="text-decoration:none; color:#fff;"><i class="icon icon-signout" style="font-size:20px;"></i></a></span>');
+		$("#login_regist").append('<span style="text-decoration:none; font-size:14px; color:#ddf4df;white-space:nowrap;"><i>Hello</i>,&nbsp;&nbsp;'+'<strong style="font-size:16px;">'+username+'</strong>&nbsp;&nbsp;&nbsp;<a href="javascipt:void(0)" onclick="logout()" style="text-decoration:none; color:#fff;"><i class="icon icon-signout" style="font-size:20px;"></i></a></span>');
 	}
-	var role=getCookie("ROLE");
-	if(role=="老师"){
-		$("#choose_button").append('<button class="btn btn-info" type="button" id="i_wonder_release" onclick="window.location.href=\'<%=basePath%>/sendmessageed.jsp\'"><i class="icon icon-pencil"></i>我要发布</button>');
-	}
-	// 调用
-	datashow(currentpage);
-	topage(currentpage);
+	
 });
-		// 页码
-		// 登录保持
 	// 获取指定名称的cookie的值
 	function getCookie(name) {
 		var strCookie = document.cookie;

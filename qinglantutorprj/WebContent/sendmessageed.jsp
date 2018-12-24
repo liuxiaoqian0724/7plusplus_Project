@@ -21,13 +21,13 @@
 <link rel="stylesheet" href="<%=basePath%>/Semantic/components/button.css" />
 <!--js引入-->
 <script type="text/javascript" src="<%=basePath%>/js/jquery-3.2.1.js"></script>
-<script type="text/javascript" src="<%=basePath%>/Semantic/components/button.js"></script>
 <script type="text/javascript" src="<%=basePath%>/dist/js/zui.js"></script>
 <script type="text/javascript" src="<%=basePath%>/js/cityselect.js"></script>
 <script src="<%=basePath%>/js/verify.js"></script>
 <script src="<%=basePath%>/js/verify.min.js"></script>
 <script type="text/javascript" src="<%=basePath%>/js/checkLogin_regist.js"></script>
 <script src="<%=basePath%>/js/header.js"></script>
+<script src="<%=basePath%>/js/nav.js"></script>
 <title>求职信息发布</title>
 </head>
 
@@ -36,7 +36,7 @@
 	<jsp:include page="header.jsp"></jsp:include>
 	<!--导航栏结束-->
 	<!--面板开始-->
-	<div class="container-fixed">
+	<div class="container-fixed" style="position:relative; top:80px;">
 		<div class="panel">
 			<div class="panel-heading">
 				<h2>求职信息发布</h2>

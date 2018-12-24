@@ -1,6 +1,3 @@
-*{
-	
-}
 #myNiceCarousel{
 	position: relative;
 	top:100px;
@@ -9,7 +6,8 @@
 	position: relative;
 	top:115px;
 	border:1px solid #8abcd1;
-	background-color:#fcfcfc;
+	background-image:url(../images/tutorinformationbg.png);
+	background-repeat:repeat-x;
 	height:auto;
 	border-radius:5px;
 }

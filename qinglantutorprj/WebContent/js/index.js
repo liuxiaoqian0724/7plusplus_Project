@@ -1,3 +1,12 @@
+$(document).ready(function(){
+	var role=getCookie("ROLE");
+	if(role=="老师"){
+		$("#choose_button").append('<button class="btn btn-info" type="button" id="i_wonder_release" onclick="window.location.href=\'sendmessageed.jsp\'"><i class="icon icon-pencil"></i>我要发布</button>');
+	}
+	// 调用
+	datashow(currentpage);
+	topage(currentpage);
+})
 var currentpage = 1;
 var totalpage = 1;
 var pagetemp = new Array();
@@ -87,7 +96,7 @@ function datashow(currentpage) {
 								+'</div>'
 								+'<div class="extra content">'
 								+'<span class="right floated">'+res.teachAge+'年教龄 </span>'
-								+'<span><i class="icon-heart-empty"></i> 520 人喜欢</span>'
+								+'<span><i class="icon-heart-empty" style="color:red;"></i> 520 人喜欢</span>'
 								+'</div>'
 								+'</div>'
 					$("#personal_name_introduce_school")

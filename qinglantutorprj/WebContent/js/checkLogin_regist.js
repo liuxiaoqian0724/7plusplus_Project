@@ -93,12 +93,12 @@ function checkName(){
 		var nameError =$('#nameError');
 		var reg=/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,12}$/
 		if(username == ""){
-			nameError.html('用户名不能为空！<label class="input-control-icon-right"><img alt="" src="images/icon/error.png" style="width:20px; height:20px; position:relative; margin-left:-15px;"></label>');
+			nameError.html('<label class="input-control-icon-right"style=" position:relative; left:-4%;"><img alt="" src="images/icon/error.png" style="width:20px; height:20px;"></label><lable class="ui red message" style="display:inline; height:auto; width:auto; font-size:12px; padding:5px;">用户名不能为空</lable>');
 			isName = false;
 		}else if(!username.match(reg)){
-			nameError.html('密码必须为6-12位的数字和字母的组合！<label class="input-control-icon-right"><img alt="" src="images/icon/error.png" style="width:20px; height:20px; position:relative; margin-left:-15px;"></label>')
+			nameError.html('<label class="input-control-icon-right"style=" position:relative; left:-4%;"><img alt="" src="images/icon/error.png" style="width:20px; height:20px;"></label><lable class="ui red message" style="display:inline; height:auto; width:auto; font-size:12px; padding:5px;">密码必须为6-12位字母和数字的组合</lable>')
 		}else{
-			nameError.html('<label class="input-control-icon-right"><img alt="" src="images/icon/ok.png" style="width:20px; height:20px; position:relative; margin-left:-15px;"></label>');
+			nameError.html('<label class="input-control-icon-right"style=" position:relative; left:-4%;"><img alt="" src="images/icon/ok.png" style="width:20px; height:20px;"></label>');
 			isName = true;
 		}
 	}
@@ -108,12 +108,12 @@ function checkPwd(){
 		var reg = /^[A-Za-z0-9]{6,16}$/;
 		if(pwd == ""){
 			isPwd = false;
-			pwdError.html('密码不能为空！<label class="input-control-icon-right"><img alt="" src="images/icon/error.png" style="width:20px; height:20px; position:relative; margin-left:-15px;"></label>');
+			pwdError.html('<label class="input-control-icon-right"style=" position:relative; left:-4%;"><img alt="" src="images/icon/error.png" style="width:20px; height:20px;"></label><lable class="ui red message" style="display:inline; height:auto; width:auto; font-size:12px; padding:5px;">密码不能为空</lable>');
 		}else if(!pwd.match(reg)){
 			isPwd = false;
-			pwdError.html('您的密码不符合格式要求！<label class="input-control-icon-right"><img alt="" src="images/icon/error.png" style="width:20px; height:20px; position:relative; margin-left:-15px;"></label>');
+			pwdError.html('<label class="input-control-icon-right"style=" position:relative; left:-4%;"><img alt="" src="images/icon/error.png" style="width:20px; height:20px;"></label><lable class="ui red message" style="display:inline; height:auto; width:auto; font-size:12px; padding:5px;">您的密码格式不符合要求</lable>');
 		}else{
-			pwdError.html('<label class="input-control-icon-right"><img alt="" src="images/icon/ok.png" style="width:20px; height:20px; position:relative; margin-left:-15px;"></label>');
+			pwdError.html('<label class="input-control-icon-right"style=" position:relative; left:-4%;"><img alt="" src="images/icon/ok.png" style="width:20px; height:20px;"></label>');
 			isPwd = true;
 		}
 	}
@@ -123,13 +123,13 @@ function checkRePwd(){
 		var rePwdError =$('#rePwdError');
 		if(rePwd==""){
 			isRePwd = false;
-			rePwdError.html('密码不能为空！<label class="input-control-icon-right"><img alt="" src="images/icon/error.png" style="width:20px; height:20px; position:relative; margin-left:-15px;"></label>');
+			rePwdError.html('<label class="input-control-icon-right"style=" position:relative; left:-4%;"><img alt="" src="images/icon/error.png" style="width:20px; height:20px;"></label><lable class="ui red message" style="display:inline; height:auto; width:auto; font-size:12px; padding:5px;">密码不能为空</lable>');
 		}else if(rePwd!=pwd){
 			isRePwd = false;
-			rePwdError.html('两次密码不一致！<label class="input-control-icon-right"><img alt="" src="images/icon/error.png" style="width:20px; height:20px; position:relative; margin-left:-15px;"></label>');
+			rePwdError.html('<label class="input-control-icon-right"style=" position:relative; left:-4%;"><img alt="" src="images/icon/error.png" style="width:20px; height:20px;"></label><lable class="ui red message" style="display:inline; height:auto; width:auto; font-size:12px; padding:5px;">两次密码不一致</lable>');
 		}else{
 			isRePwd = true;
-			rePwdError.html('<label class="input-control-icon-right"><img alt="" src="images/icon/ok.png" style="width:20px; height:20px; position:relative; margin-left:-15px;"></label>');
+			rePwdError.html('<label class="input-control-icon-right"style=" position:relative; left:-4%;"><img alt="" src="images/icon/ok.png" style="width:20px; height:20px;"></label>');
 		}
 	}
 function switchMSG(times, ele, txt) {
@@ -160,10 +160,10 @@ function sendEmail() {
 		success : function(data) {
 			if (data == "ok") {
 				switchMSG(59, btn, "重新发送")
-				EmailError.html("邮件发送成功！");
+				EmailError.html('<label class="input-control-icon-right"style=" position:relative; left:-4%;"><img alt="" src="images/icon/ok.png" style="width:20px; height:20px;"></label><lable class="ui green message" style="display:inline; height:auto; width:auto; font-size:12px; padding:5px; left:25%;">邮件发送成功</lable>');
 			} else {
 				$("#send").attr("disabled", false);
-				EmailError.html('邮件发送失败，点击重新发送！');
+				EmailError.html('<label class="input-control-icon-right"style=" position:relative; left:-4%;"><img alt="" src="images/icon/error.png" style="width:20px; height:20px;"></label><lable class="ui red message" style="display:inline; height:auto; width:auto; font-size:12px; padding:5px; left:25%;">邮件发送失败，点击重新发送</lable>');
 			}
 		}
 
@@ -177,11 +177,11 @@ function checkEmail() {
 	if (email == "") {
 		isEmail = false;
 		$("#send").attr("disabled",true);
-		EmailError.html('邮箱不能为空！<label class="input-control-icon-right"><img alt="" src="images/icon/error.png" style="width:20px; height:20px; position:relative; margin-left:-230px;"></label>');
+		EmailError.html('<label class="input-control-icon-right"style=" position:relative; left:-4%;"><img alt="" src="images/icon/error.png" style="width:20px; height:20px;"></label><lable class="ui red message" style="display:inline; height:auto; width:auto; font-size:12px; padding:5px; left:25%;">邮箱不能为空</lable>');
 	} else if (!email.match(mailReg)) {
 		isEmail = false;
 		$("#send").attr("disabled", true);
-		EmailError.html('邮箱格式不正确！<label class="input-control-icon-right"><img alt="" src="images/icon/error.png" style="width:20px; height:20px; position:relative; margin-left:-230px;"></label>');
+		EmailError.html('<label class="input-control-icon-right"style=" position:relative; left:-4%;"><img alt="" src="images/icon/error.png" style="width:20px; height:20px;"></label><lable class="ui red message" style="display:inline; height:auto; width:auto; font-size:12px; padding:5px; left:25%;">邮箱格式不正确</lable>');
 	} else {
 		var info = {
 			"email" : $("#email").val()
@@ -196,11 +196,11 @@ function checkEmail() {
 				if (data == "ok") {
 					isEmail = true;
 					$("#send").attr("disabled", false);
-					EmailError.html('<label class="input-control-icon-right"><img alt="" src="images/icon/ok.png" style="width:20px; height:20px; position:relative; margin-left:-230px;"></label>');
+					EmailError.html('<label class="input-control-icon-right"style=" position:relative; left:-4%;"><img alt="" src="images/icon/ok.png" style="width:20px; height:20px;"></label>');
 				} else {
 					isEmail = false;
 					$("#send").attr("disabled", true);
-					EmailError.html('该邮箱已经被注册！<label class="input-control-icon-right"><img alt="" src="images/icon/error.png" style="width:20px; height:20px; position:relative; margin-left:-230px;"></label>');
+					EmailError.html('<label class="input-control-icon-right"style=" position:relative; left:-4%;"><img alt="" src="images/icon/error.png" style="width:20px; height:20px;"></label><lable class="ui red message" style="display:inline; height:auto; width:auto; font-size:12px; padding:5px;">该邮箱已被注册</lable>');
 				}
 			}
 
@@ -224,13 +224,8 @@ function submitData() {
 			datatype : "json",
 			contentType : "application/json;charset=UTF-8",
 			success : function(data) {
-				if (data == "ok") {
-						window.location.href = "sendstaused.jsp"
-				}else {
-						window.location.href = "index.jsp"
-				}
+				window.location.href = "index.jsp"
 			}
-
 		});
 	}
 }
@@ -239,7 +234,7 @@ function checkEIdentify() {
 	var EIdentifyError = $('#EIdentifyError');
 	if (EIdentify == "") {
 		isEIdentify = false;
-		EIdentifyError.html('验证码不能为空！');
+		EIdentifyError.html('<label class="input-control-icon-right"style=" position:relative; left:-4%;"><img alt="" src="images/icon/error.png" style="width:20px; height:20px;"></label><lable class="ui red message" style="display:inline; height:auto; width:auto; font-size:12px; padding:5px;">验证码不能为空</lable>');
 	} else {
 		var info = {
 			"email" : $("#email").val(),
@@ -254,10 +249,10 @@ function checkEIdentify() {
 			contentType : "application/json;charset=UTF-8",
 			success : function(data) {
 				if (data == "succeed") {
-					EIdentifyError.html('验证码正确<label class="input-control-icon-right"><img alt="" src="images/icon/ok.png" style="width:20px; height:20px; position:relative; margin-left:-15px;"></label>');
+					EIdentifyError.html('<label class="input-control-icon-right"style=" position:relative; left:-4%;"><img alt="" src="images/icon/ok.png" style="width:20px; height:20px;"></label><lable class="ui green message" style="display:inline; height:auto; width:auto; font-size:12px; padding:5px;">验证码正确</lable>');
 					isEIdentify = true;
 				} else {
-					EIdentifyError.html('验证码错误<label class="input-control-icon-right"><img alt="" src="images/icon/error.png" style="width:20px; height:20px; position:relative; margin-left:-15px;"></label>');
+					EIdentifyError.html('<label class="input-control-icon-right"style=" position:relative; left:-4%;"><img alt="" src="images/icon/error.png" style="width:20px; height:20px;"></label><lable class="ui red message" style="display:inline; height:auto; width:auto; font-size:12px; padding:5px;">验证码错误</lable>');
 					isEIdentify = false;
 				}
 			}
@@ -275,12 +270,12 @@ function checkRegist() {
 			allError.html('');
 			return true;
 		} else {
-			allError.html('注册需要您接受本网站协议');
+			allError.html('<label class="input-control-icon-right"style=" position:relative; left:-4%;"><img alt="" src="images/icon/error.png" style="width:20px; height:20px;"></label><lable class="ui red message" style="display:inline; height:auto; width:auto; font-size:12px; padding:5px;">注册需要您接受本网站协议</lable>');
 			return false;
 		}
 
 	} else {
-		allError.html('请确保您的信息完整，请认真填写');
+		allError.html('<lable class="ui red message" style="display:inline; height:auto; width:auto; font-size:16px; padding:5px; margin-bottom:10px;">请确保您的信息完整，请认真填写</lable>');
 		return false;
 	}
 }
