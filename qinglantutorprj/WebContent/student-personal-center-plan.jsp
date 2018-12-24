@@ -43,31 +43,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <!-- 中部 -->
 <div id="content">
-    <div id="c1">
+     <div id="c1">
       <ul>
         <li id="c1-img">
-          <div><img src="http://zui.sexy/docs/img/img2.jpg" width="120px" height="120px" class="img-circle" alt="圆形图片"></div>
-          <p>积分：1024</p>
+          <div><img src="${map.user.userImg }" width="120px" height="120px" class="img-circle" alt="圆形图片"></div>
         </li>
         <li id="c1-about">
-          <p>狗蛋</p>
-          <span class="label label-badge">认证家教</span>
-          <span class="label label-badge">大三</span>
+          <p>${map.user.userName }</p>
+          <c:if test="${map.user.role eq '老师' }">
+          		<span class="label label-badge">${map.user.school }</span>
+          		<span class="label label-badge">${map.user.grade }</span>
+          </c:if>
         </li>
         <li id="c1-person">
           <p id="c1-person-p1">个人介绍</p>
           <p id="c1-person-p2">
-            &nbsp;&nbsp;123123123123123fjhakjfhadjfhakjfhfjhlllllllllllllllllllaaaaa
+            &nbsp;&nbsp;${map.user.introduce }
           </p>
         </li>
         <li id="c1-star">
-          <p id="c1-star-p1">学员评分</p>
+          <p id="c1-star-p1">评分${map.grade }</p>
           <div id=c1-star-div>
-            <img src="images/fill-star.png" style="width: 25px;height: 25px;">
-            <img src="images/fill-star.png" style="width: 25px;height: 25px;">
-            <img src="images/fill-star.png" style="width: 25px;height: 25px;">
-            <img src="images/fill-star.png" style="width: 25px;height: 25px;">
-            <img src="images/empty-star.png" style="width: 25px;height: 25px;">
+            <img src="images/${map.star1 }.png" style="width: 25px;height: 25px;">
+            <img src="images/${map.star2 }.png" style="width: 25px;height: 25px;">
+            <img src="images/${map.star3 }.png" style="width: 25px;height: 25px;">
+            <img src="images/${map.star4 }.png" style="width: 25px;height: 25px;">
+            <img src="images/${map.star5 }.png" style="width: 25px;height: 25px;">
             <form>
               <input type="submit" name="查看详情" value="查看详情">
             </form>

@@ -47,7 +47,6 @@ public class TeachPlanController {
 		response.setContentType("text/html;charset=utf-8");
 		response.setCharacterEncoding("utf-8");
 		Cookie[]cookies = request.getCookies();
-		System.out.println(cookies.length);
 		String SESSIONID = CookieUtils.getCookieFromCookies(cookies,"JSESSIONID").getValue();
 		//String email = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
 		String email = "zhangsan@qq.com";
@@ -65,7 +64,10 @@ public class TeachPlanController {
 				list1.add(list.get(i));
 			}
 		}
-
+		
+		Map<String, Object> map = this.teachPlanServiceImpl.getPersonalDetail(email);
+		
+		request.setAttribute("map", map);
 		request.setAttribute("pageTotal", pageTotal);
 		request.setAttribute("page", page);
 		request.setAttribute("teachPlanInformationList", list1);		

@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.Cookie;
@@ -53,7 +54,7 @@ public class CourseController {
 		Cookie[]cookies = request.getCookies();
 		String SESSIONID = CookieUtils.getCookieFromCookies(cookies,"JSESSIONID").getValue();
 		//String email = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
-		String email = "zhangsan@qq.com";
+		String email = "wangwu@qq.com";
 		
 		list = this.courseServiceImpl.getCourseInfor(email);
 		List<CourseInformation> list1 = new ArrayList<>();
@@ -68,6 +69,9 @@ public class CourseController {
 				list1.add(list.get(i));
 			}
 		}
+		Map<String, Object> map = this.courseServiceImpl.getPersonalDetail(email);
+		
+		request.setAttribute("map", map);
 		request.setAttribute("courseDetailList", list1);
 		request.setAttribute("page", page);
 		request.setAttribute("pageTotal", pageTotal);
