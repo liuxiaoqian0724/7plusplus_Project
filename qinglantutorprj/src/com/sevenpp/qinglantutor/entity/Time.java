@@ -23,6 +23,11 @@ import javax.persistence.Table;
 @Table(name="tbl_time")
 public class Time implements java.io.Serializable {
 
+	/** 
+			* @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么) 
+			*/
+		
+	private static final long serialVersionUID = 1L;
 	private Integer tid;	
 	private String time;
 	
@@ -50,6 +55,7 @@ public class Time implements java.io.Serializable {
 	public void setMyJobs(Set<MyJob> myJobs) {
 		this.myJobs = myJobs;
 	}
+	@Override
 	public String toString() {
 		return "Time [tid=" + tid + ", time=" + time + ", myJobs=" + myJobs + "]";
 	}

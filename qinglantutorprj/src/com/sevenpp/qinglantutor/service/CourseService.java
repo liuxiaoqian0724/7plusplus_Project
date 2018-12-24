@@ -1,5 +1,6 @@
 package com.sevenpp.qinglantutor.service;
 
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
@@ -61,7 +62,7 @@ public interface CourseService {
 	 		* @date 2018年12月12日 下午2:38:18 
 	 		* @version V1.0   
 	  */
-	 public void  insertReview(Date reviewTime, String reviewContent, Integer reviewStar, Integer id);
+	 public void  insertReview(Timestamp reviewTime, String reviewContent, Integer reviewStar, Integer id);
 	 
 	 /**
 	  * 

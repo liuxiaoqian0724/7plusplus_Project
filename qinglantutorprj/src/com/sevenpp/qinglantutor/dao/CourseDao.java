@@ -1,5 +1,6 @@
 package com.sevenpp.qinglantutor.dao;
 
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
@@ -66,7 +67,7 @@ public interface CourseDao {
 			* @date 2018年12月12日 上午10:18:29 
 			* @version V1.0   
 	 */
-	public void insertReview(Date reviewTime, String reviewContent, Integer reviewStar,ClassRelation classRelation);
+	public void insertReview(Timestamp reviewTime, String reviewContent, Integer reviewStar,ClassRelation classRelation);
 	
 	/**
 	 * 

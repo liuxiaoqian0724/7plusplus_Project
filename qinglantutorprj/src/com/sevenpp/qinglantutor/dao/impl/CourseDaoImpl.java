@@ -1,5 +1,6 @@
 package com.sevenpp.qinglantutor.dao.impl;
 
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
@@ -54,7 +55,7 @@ public class CourseDaoImpl implements CourseDao {
 	}
 
 
-	public void insertReview(Date reviewTime, String reviewContent, Integer reviewStar, ClassRelation classRelation) {
+	public void insertReview(Timestamp reviewTime, String reviewContent, Integer reviewStar, ClassRelation classRelation) {
 		/**
 		* insertReview	插入评论
 		* @param name

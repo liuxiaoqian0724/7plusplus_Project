@@ -1,5 +1,6 @@
 package com.sevenpp.qinglantutor.service.impl;
 
+import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -132,7 +133,7 @@ public class CourseServiceImpl implements CourseService {
 			return list;
 		}
 		
-		public void  insertReview(Date reviewTime, String reviewContent, Integer reviewStar, Integer classRelationId) {
+		public void  insertReview(Timestamp reviewTime, String reviewContent, Integer reviewStar, Integer classRelationId) {
 			/**
 			 * @Title: insertReview 
 			 * @Description: 插入评论

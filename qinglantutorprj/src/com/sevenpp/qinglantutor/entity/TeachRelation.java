@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -31,18 +30,22 @@ import org.hibernate.annotations.NotFoundAction;
 @Table(name="tbl_teach")
 public class TeachRelation implements java.io.Serializable {
 	
+	/** 
+			* @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么) 
+			*/
+		
+	private static final long serialVersionUID = 1L;
+
 	private Integer trid;	//教课关系id
-//	private Integer tid;	//老师id
-//	private Integer cid;	//课程id	
 	
 	private List<HomeWork> homeworks=new ArrayList<HomeWork>();		//教课关系表和作业表是双向一对多的关系
 	private List<TeachPlan> teachPlans = new ArrayList<TeachPlan>();//教课关系表和教案表是双向一对多的关系
 	private User user;	//教课关系表和用户表是多对一的关系
 	private Course course;	//教课关系表和课程表是多对一的关系
-	private List<ClassRelation> classRelation=new ArrayList<ClassRelation>();	//教课关系表和上课关系表是一对多的关系
-	
 	private String startTime;
 	private String endTime;
+	private List<ClassRelation> classRelation=new ArrayList<ClassRelation>();	//教课关系表和上课关系表是一对多的关系
+	
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
 	public Integer getTrid() {
@@ -51,18 +54,6 @@ public class TeachRelation implements java.io.Serializable {
 	public void setTrid(Integer trid) {
 		this.trid = trid;
 	}
-//	public Integer getTid() {
-//		return tid;
-//	}
-//	public void setTid(Integer tid) {
-//		this.tid = tid;
-//	}
-//	public Integer getCid() {
-//		return cid;
-//	}
-//	public void setCid(Integer cid) {
-//		this.cid = cid;
-//	}
 	
 	@OneToMany(mappedBy="teachRelation",
 			targetEntity=HomeWork.class,
@@ -84,6 +75,19 @@ public class TeachRelation implements java.io.Serializable {
 		this.teachPlans = teachPlans;
 	}
 	
+	
+	public String getStartTime() {
+		return startTime;
+	}
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+	public String getEndTime() {
+		return endTime;
+	}
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
 	@ManyToOne()
 	@JoinColumn(name="tid")	//课程id（cid）是外键
 	@NotFound(action=NotFoundAction.IGNORE)
@@ -112,23 +116,6 @@ public class TeachRelation implements java.io.Serializable {
 	}
 	public void setClassRelation(List<ClassRelation> classRelation) {
 		this.classRelation = classRelation;
-	}
-	public String getStartTime() {
-		return startTime;
-	}
-	public void setStartTime(String startTime) {
-		this.startTime = startTime;
-	}
-	public String getEndTime() {
-		return endTime;
-	}
-	public void setEndTime(String endTime) {
-		this.endTime = endTime;
-	}
-	public String toString() {
-		return "TeachRelation [trid=" + trid + ", homeworks=" + homeworks + ", teachPlans=" + teachPlans + ", user="
-				+ user + ", course=" + course + ", classRelation=" + classRelation + ", startTime=" + startTime
-				+ ", endTime=" + endTime + "]";
 	}
 	
 	

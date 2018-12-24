@@ -102,52 +102,76 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div class="panel-heading">
           <h2>我的课程</h2>
         </div>
-        <div class="panel-body">
-        	<c:forEach items="${courseDetailList }" var="courseInformation">		          
-        		<div  class="c2-right-item"> 
-		              <ul>
-		                <li>
-		                  <span>科目</span>
-		                  <p>${courseInformation.subject }</p>
-		                </li>
-		                <li>
-		                  <span>老师</span>
-		                  <div>
-		                    <img src="${courseInformation.img }" width="115px" height="115px" class="img-circle" alt="圆形图片">
-		                  </div>
-		                  <p>${courseInformation.name }</p>
-		                </li>
-		                <li>
-		                  <span>未完成作业</span><br>
-		                  <span style="text-align: center; ">老师发布时间</span><br><br>
-		                  	<c:forEach items="${courseInformation.homework }" var="homeworkTime">
-		                  		<p>${homeworkTime }</p>
-		                  	</c:forEach> 
-		                </li>
-		                <li>
-		                  <span>课程时间</span><br><br>
-		                  <div>
-		                    <span class="course-time1">${courseInformation.startTime }</span>
-		                    <span>~~</span>
-		                    <span class="course-time1">${courseInformation.endTime }</span>
-		                  </div>
-		                </li>
-		                <li>
-		  <script type="text/javascript" src="js/stumycourse.js"></script> 
-		                  <form action="#" method="post">
-		                    <input type="button" name="detail" value="课程反馈" onclick="reviewClick(${courseInformation.crid})" />
-		                 </form>
-		                  <form action="HomeWorkShow" method="post">
-		                    <input type="button" name="detail" value="查看作业">
-		                  </form>
-		                  <form action="#" method="post">
-		                    <input type="submit" name="detail" value="查看文案">
-		                  </form>
-		                </li>
-		              </ul>
-		          </div>
-        	</c:forEach>
-          
+        <div class="panel-body" style="position:relative;">
+        	<div>
+        		<script type="text/javascript" src="js/stumycourse.js"></script> 
+	        	<c:forEach items="${courseDetailList }" var="courseInformation">		          
+	        		<div  class="c2-right-item"> 
+			              <ul>
+			                <li>
+			                  <span>科目</span>
+			                  <p>${courseInformation.subject }</p>
+			                </li>
+			                <li>
+			                  <span>老师</span>
+			                  <div>
+			                    <img src="${courseInformation.img }" width="115px" height="115px" class="img-circle" alt="圆形图片">
+			                  </div>
+			                  <p>${courseInformation.name }</p>
+			                </li>
+			                <li>
+			                  <span>未完成作业</span><br>
+			                  <span style="text-align: center; ">老师发布时间</span><br><br>
+			                  	<c:forEach items="${courseInformation.homework }" var="homeworkTime">
+			                  		<p>${homeworkTime }</p>
+			                  	</c:forEach> 
+			                </li>
+			                <li>
+			                  <span>课程时间</span><br><br>
+			                  <div>
+			                    <span class="course-time1">${courseInformation.startTime }</span>
+			                    <span>~~</span>
+			                    <span class="course-time1">${courseInformation.endTime }</span>
+			                  </div>
+			                </li>
+			                <li>
+			  
+			                 <form action="#" method="post">
+			                  	<input type="button" name="detail" value="课程反馈" onclick="reviewClick(${courseInformation.crid })" />
+			                 </form>
+			                  <form action="HomeWorkShow" method="post">
+			                    <input type="button" name="detail" value="查看作业">
+			                  </form>
+			                  <form action="#" method="post">
+			                    <input type="submit" name="detail" value="查看文案">
+			                  </form>
+			                </li>
+			              </ul>
+			          </div>
+	        	</c:forEach>
+          	</div>
+          	
+          	<ul class="pager" style="position:absolute;bottom:0;left:300px;" data-max-nav-count="6" data-elements="nav">
+       			<c:choose>
+       				<c:when test="${page == 1 }">
+       					<li class="previous disabled"><a href="jump">«</a></li>
+       				</c:when>
+       				<c:otherwise>
+       					<li class="previous"><a href="courseJump?page=${page-1 }">«</a></li>
+       				</c:otherwise>
+       			</c:choose>
+			  	<li><div style="width:105px;height:30px;text-align:center;padding-top:2px;font-size:18px;">第${page }/${pageTotal }页</div></li>
+			  	<c:choose>
+       				<c:when test="${page == pageTotal}">
+       					<li class="previous disabled"><a href="jump">»</a></li>
+       				</c:when>
+       				<c:otherwise>
+       					<li class="next"><a href="courseJump?page=${page+1 }">»</a></li>
+       				</c:otherwise>
+       			</c:choose>
+			  
+			</ul>
+          	
         </div>
         <div id="review" class="white_content">
         	<a href = "javascript:void(0)" onclick = "reviewClose()"><i class="icon icon-times"></i></a><br><br>

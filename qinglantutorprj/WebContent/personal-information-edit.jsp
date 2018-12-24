@@ -33,17 +33,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script type="text/javascript" src="dist/js/zui.js"></script>
 	<script src="js/cropper.min.js"></script>
 	<script src="js/jquery-school-seletor.min.js"></script>
-	<script>
-		$(function() {
-			$("#schoolName").proschool();
-		})
-		$(function() {    
-			$('#choosePhoto').change(function() {    
-				$filePath = URL.createObjectURL(this.files[0]);    
-				$('#photo').attr('src', $filePath);    
-			})  
-		})
-	</script>
 </head>
 
 <body>
@@ -57,7 +46,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div><br>
 			<span class="c1-item">个人信息</span>
 		</div>
-		<form action="#" method="post" class="form-horizontal" onsubmit="return checkAll()">
+		<form action="" target="nm_iframe" method="post" class="form-horizontal" onsubmit="return checkAll('${user.role }')">
 			<div id="c2">
 				<div id="c2-left">
 					<span>个人信息验证</span>
@@ -65,34 +54,61 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="form-group">
 							<label for="exampleInputPassword4" class="col-sm-2" >真实姓名</label>
 							<div class="col-md-6 col-sm-10">
-								<input type="text" class="form-control" id="personName" placeholder="姓名需与学生证一致" onblur="checkName()">
+								<input type="text" class="form-control" id="personName" placeholder="姓名需与学生证一致" onblur="checkName()" value="${user.realName }">
 								<span id="personNameError" style="color: red;"></span>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="exampleInputAccount4" class="col-sm-2" >身份证号</label>
 							<div class="col-md-6 col-sm-10">
-								<input type="text" class="form-control" id="personId" placeholder="18位身份证号" onblur="checkPersonId()">
+								<input type="text" class="form-control" id="personId" placeholder="18位身份证号" onblur="checkPersonId()" value="${user.idNumber }">
 								<span id="personIdError" style="color: red;"></span>
 							</div>
-						</div>
+					</div>
 
-						<div style="margin-left: 30px;">
-							<span class="photo">学生证</span>
-
+						<div style="margin-left: 15px;">
+							<label for="exampleInputAccount4" class="col-sm-2">身份证</label>
 							<div style="width: 200px;height: 200px;border:1px solid #c0c0c0;padding: 5px;margin-top: 10px;margin-left: 70px;">
-								<img id="finalImg" src="" width="100%">
+								<img id="finalImg"  width="100%" height="100%" style="margin-top:-18px;" src="${user.stuImg }">
 							</div>
-							<!--<button id="replaceImg" class="l-btn">上传学生证</button>-->
-							<input type="button" name="上传头像" value="上传学生证" id="replaceImg" class="my-btn" onblur="checkStudentId()">
+							<!--<button id="replaceImg" class="l-btn">上传身份证</button>-->
+							<input type="button" name="上传头像" value="上传身份证" id="replaceImg" class="my-btn" onblur="checkStudentId()" style="outline:none;">
 							<span id="studentIdError" style="color: red;"></span>
 						</div>
-						<div >
-							
+						<div id="myphoto">
+							<div style="width:80px;height:200px;">
+								<label for="exampleInputAccount4" class="col-sm-2" >我的照片</label>
+							</div>
+							<div id="photos">
+								<div id="img1">
+									<button type="button" onclick="photoremove('img1')"><i class="icon icon-times icon-2x"></i></button>
+									<img alt="" src="${user.img1 }" width="100%" height="100%">
+									<input type="file" name="file"  class="img1" onchange="photosupload('img1')">
+									<input type="button" name="上传头像" value="">
+								</div>
+								<div id="img2">
+									<button type="button" onclick="photoremove('img2')"><i class="icon icon-times icon-2x"></i></button>
+									<img alt="" src="${user.img2 }" width="100%" height="100%">
+									<input type="file" name="file"  class="img2" onchange="photosupload('img2')">
+									<input type="button" name="上传头像" value="">
+								</div>
+								<div id="img3">
+									<button type="button" onclick="photoremove('img3')"><i class="icon icon-times icon-2x"></i></button>
+									<img alt="" src="${user.img3 }" width="100%" height="100%">
+									<input type="file" name="file"  class="img3" onchange="photosupload('img3')">
+									<input type="button" name="上传头像" value="">
+								</div>
+								<div id="img4">
+									<button type="button" onclick="photoremove('img4')"><i class="icon icon-times icon-2x"></i></button>
+									<img alt="" src="${user.img4 }" width="100%" height="100%">
+									<input type="file" name="file"  class="img4" onchange="photosupload('img4')">
+									<input type="button" name="上传头像" value="">
+								</div>
+							</div>
 						</div>
 					</div>
 					<div id="c2-left-right" class="c2-left-item">
-						<img src="images/default.jpg" width="150px" height="150px" class="img-circle" alt="圆形图片" id="photo"><br>
+						<img src="${user.userImg }" width="150px" height="150px" class="img-circle" alt="圆形图片" id="photo"><br>
 						<span>我的头像</span>
 						<input type="file" id="choosePhoto" name="file" accept="image/*">
 						<input type="button" name="上传头像" value="上传头像">
@@ -103,64 +119,100 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<p>扫描二维码获取更多信息</p>
 				</div>
 			</div>
-			<div id="c3">
+			<div id="c3" style="position:relative;">
 				<span>完善个人信息</span>
-				<div class="form-group">
-					<label class="col-sm-2">我的学校</label>
-					<div class="col-md-6 col-sm-10">
-						<input type="text" id="schoolName" class="form-control" placeholder="点击选择学校" onblur="checkSchoolName()"/>
-						<span id="schoolError" style="color: red;"></span>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="exampleInputPassword4" class="col-sm-2">选择年级</label>
-					<select class="form-control" style="margin-left: 103px;">
-						<option value="">大一</option>
-						<option value="apple">大二</option>
-						<option value="banana">大三</option>
-						<option value="orange">大四</option>
-					</select>
-				</div>
-				<div class="form-group">
-					<label for="exampleInputPassword4" class="col-sm-2">手机号</label>
-					<div class="col-md-6 col-sm-10">
-						<input type="text" class="form-control" id="phoneNum" placeholder="11位手机号" onblur="checkPhoneNum()">
-						<span id="phoneNumError" style="color: red;"></span>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="exampleInputPassword4" class="col-sm-2">我的地址</label>
-					<div class="col-md-6 col-sm-10">
-						<input type="text" class="form-control" id="address" placeholder="请输入地址" onblur="checkAddress()">
-						<span id="addressError" style="color: red;"></span>
-					</div>
-				</div>
-				<div class="form-group" > 
-					<label for="exampleInputPassword4" class="col-sm-2">我的专业</label>
-					<div class="col-md-6 col-sm-10" id="major">
-						<select name="selectMajor"  placeholder="我的专业" style="height: 30px;width: 80px;">  
-							  <option value="空白" selected="selected" disabled="disabled">选择专业</option> 
-					        <option value="1">理科</option>   
-					        <option value="2">文科</option>
-					      </select>   
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="exampleInputPassword4" class="col-sm-2">个人简介</label>
-					<div class="col-md-6 col-sm-10">
-						<textarea id="intro" class="form-control" style="resize:none;height: 75px;" placeholder="请输入个人简介(非必须)"></textarea>
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="col-md-6 col-sm-10">
-						<span id="error" style="color: red;"></span>
-					</div>
-				</div>
+				<c:choose>
+					<c:when test="${user.role == '学生' }">
+						<div class="form-group">
+							<label for="exampleInputPassword4" class="col-sm-2">手机号</label>
+							<div class="col-md-6 col-sm-10">
+								<input type="text" class="form-control" id="phoneNum" value="${user.phoneNumber }" placeholder="11位手机号" onblur="checkPhoneNum()">
+								<span id="phoneNumError" style="color: red;"></span>
+							</div>
+						</div>
+					</c:when>
+					<c:otherwise>
+						<div class="form-group">
+							<label class="col-sm-2">我的学校</label>
+							<div class="col-md-6 col-sm-10">
+								<input type="text" id="schoolName" value="${user.school }" class="form-control" placeholder="点击选择学校" onblur="checkSchoolName()"/>
+								<span id="schoolError" style="color: red;"></span>
+							</div>
+						</div>
+						<div class="form-group" id="grade">
+							<label for="exampleInputPassword4" class="col-sm-2">选择年级</label>
+							<select class="form-control" style="margin-left: 103px;">
+								<option value="大一">大一</option>
+								<option value="大二">大二</option>
+								<option value="大三">大三</option>
+								<option value="大四">大四</option>
+								<option value="研一">研一</option>
+								<option value="研二">研二</option>
+								<option value="研三">研三</option>
+							</select>
+						<script type="text/javascript">
+							$(function() {  
+								if(${empty user.grade }){
+									$("#grade > select").get(0).value = '大一';	
+								}else{
+									$("#grade > select").get(0).value = '${user.grade }';	
+								}
+							})
+						</script>		
+						</div>
+						<div class="form-group">
+							<label for="exampleInputPassword4" class="col-sm-2">手机号</label>
+							<div class="col-md-6 col-sm-10">
+								<input type="text" class="form-control" id="phoneNum" value="${user.phoneNumber }" placeholder="11位手机号" onblur="checkPhoneNum()">
+								<span id="phoneNumError" style="color: red;"></span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="exampleInputPassword4" class="col-sm-2">我的地址</label>
+							<div class="col-md-6 col-sm-10">
+								<input type="text" class="form-control" id="address" value="${user.address }" placeholder="请输入地址" onblur="checkAddress()">
+								<span id="addressError" style="color: red;"></span>
+							</div>
+						</div>
+						<div class="form-group" > 
+							<label for="exampleInputPassword4" class="col-sm-2">我的专业</label>
+							<div class="col-md-6 col-sm-10" id="major">
+								<c:choose>
+									<c:when test="${user.major == '理科' }">
+										<select name="selectMajor"  placeholder="我的专业" style="height: 30px;width: 80px;">
+											<option value="理科" selected="selected">理科</option>
+											<option value="文科">文科</option>
+										</select>
+									</c:when>
+									<c:otherwise>
+										<select name="selectMajor"  placeholder="我的专业" style="height: 30px;width: 80px;">
+											<option value="理科">理科</option>   
+											<option value="文科" selected="selected">文科</option>
+										</select>
+									</c:otherwise>
+								</c:choose>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="exampleInputPassword4" class="col-sm-2">个人简介</label>
+							<div class="col-md-6 col-sm-10">
+								<textarea id="intro" class="form-control" 
+								style="resize:none;height: 75px;" placeholder="请输入个人简介(非必须)">${user.introduce }</textarea>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-6 col-sm-10">
+								<span id="error" style="color: red;"></span>
+							</div>
+						</div>
+					</c:otherwise>
+				</c:choose>
 				
-				<input type="submit" name="保存信息" value="保存信息">
+				<input type="submit" name="保存信息" value="保存信息" style="position:absolute;bottom:60px;">
 			</div>
 		</form>
-
+		
+		<iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
 
 		<!--图片裁剪框 start-->
 		<div style="display: none" class="tailoring-container">

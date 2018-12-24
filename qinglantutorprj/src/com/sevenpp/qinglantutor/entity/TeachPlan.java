@@ -26,7 +26,12 @@ import org.hibernate.annotations.NotFoundAction;
 public class TeachPlan  implements java.io.Serializable {
 
 
-     private Integer id;
+     /** 
+			* @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么) 
+			*/
+		
+	private static final long serialVersionUID = 1L;
+	private Integer id;
      private String content;	//教案内容
      private Date time;
      
@@ -68,13 +73,8 @@ public class TeachPlan  implements java.io.Serializable {
 	 public void setTeachRelation(TeachRelation teachRelation) {
 	 	this.teachRelation = teachRelation;
 	 }
-
-	public String toString() {
-		return "TeachPlan [id=" + id + ", content=" + content + ", time=" + time + ", teachRelation=" + teachRelation
-				+ "]";
-	}
      
-	 
+    
    
 
 

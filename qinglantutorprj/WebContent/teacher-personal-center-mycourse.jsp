@@ -125,7 +125,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div class="panel-heading">
           <h2>我的课程</h2>
         </div>
-        <div class="panel-body">
+        <div class="panel-body" style="position:relative;"> 
+        	<div style="height:93%;width:100%;">
+        <script type="text/javascript" src="js/stumycourse.js"></script> 
        		<c:forEach items="${courseDetailList }" var="courseInformation">
        			<div  class="c2-right-item"> 
 		              <ul>
@@ -159,7 +161,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		                  </button>
 		                </li>
 		                <li>
-		       <script type="text/javascript" src="js/stumycourse.js"></script> 
+		       
 		                  <form action="#" method="post">
 		                    <input type="button" name="detail" value="课程反馈" onclick="reviewClick(${courseInformation.crid})" />
 		                 </form>
@@ -172,7 +174,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		                </li>
 		             </ul>
           		</div>
+          		
+          		
        		</c:forEach>
+       		</div>
+       		
+       		<ul class="pager" style="position:absolute;bottom:0;left:300px;" data-max-nav-count="6" data-elements="nav">
+       			<c:choose>
+       				<c:when test="${page == 1 }">
+       					<li class="previous disabled"><a href="jump">«</a></li>
+       				</c:when>
+       				<c:otherwise>
+       					<li class="previous"><a href="courseJump?page=${page-1 }">«</a></li>
+       				</c:otherwise>
+       			</c:choose>
+			  	<li><div style="width:105px;height:30px;text-align:center;padding-top:2px;font-size:18px;">第${page }/${pageTotal }页</div></li>
+			  	<c:choose>
+       				<c:when test="${page == pageTotal}">
+       					<li class="previous disabled"><a href="jump">»</a></li>
+       				</c:when>
+       				<c:otherwise>
+       					<li class="next"><a href="courseJump?page=${page+1 }">»</a></li>
+       				</c:otherwise>
+       			</c:choose>
+			  
+			</ul>
 		</div>
         <div id="light" class="white_content">
               <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"><i class="icon icon-times"></i></a><br><br>
@@ -217,6 +243,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 <!-- 底部 -->
 <jsp:include page="footer.jsp"></jsp:include>
-	
+
+
+
 </body>
 </html>

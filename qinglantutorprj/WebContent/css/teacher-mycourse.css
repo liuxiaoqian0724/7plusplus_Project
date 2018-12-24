@@ -5,6 +5,9 @@
   input{
   outline:none;
   }
+button{
+	outline:none;
+}
 .c2-right-item{
 	width: 766px;
 	height:200px;

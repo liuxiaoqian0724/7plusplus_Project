@@ -2,7 +2,7 @@ package com.sevenpp.qinglantutor.entity;
 
 
 import java.util.Date;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -34,11 +34,11 @@ public class HomeWork  implements java.io.Serializable {
      private Date sfinishTime;	//学生完成作业的时间
      private Integer score;	
      private String sstatus;	//学生的作业状态（已完成或未完成）
-     private String tstatus;	//老师的作业状态（已检查或未检查）
+     private String tstatus;
+     private String question;
+     private String workReview;
+     private Date deadlineTime;
      
-     private String question;	//作业疑问
-     private String workReview;		//作业评语
-     private Date deadlineTime;	//截止时间
      
      private ClassRelation classRelation=new ClassRelation();	//作业表和上课关系表是双向多对一的关系
      private TeachRelation teachRelation=new TeachRelation();	//作业表和教课关系表是双向多对一的关系
@@ -92,24 +92,6 @@ public class HomeWork  implements java.io.Serializable {
 	}
 	public void setTstatus(String tstatus) {
 		this.tstatus = tstatus;
-	}	
-	public String getQuestion() {
-		return question;
-	}
-	public void setQuestion(String question) {
-		this.question = question;
-	}
-	public String getWorkReview() {
-		return workReview;
-	}
-	public void setWorkReview(String workReview) {
-		this.workReview = workReview;
-	}
-	public Date getDeadlineTime() {
-		return deadlineTime;
-	}
-	public void setDeadlineTime(Date deadlineTime) {
-		this.deadlineTime = deadlineTime;
 	}
 	
 	@ManyToOne()
@@ -131,14 +113,27 @@ public class HomeWork  implements java.io.Serializable {
 	public void setTeachRelation(TeachRelation teachRelation) {
 		this.teachRelation = teachRelation;
 	}
-	public String toString() {
-		return "HomeWork [hid=" + hid + ", tcontent=" + tcontent + ", scontent=" + scontent + ", tstartTime="
-				+ tstartTime + ", sfinishTime=" + sfinishTime + ", score=" + score + ", sstatus=" + sstatus
-				+ ", tstatus=" + tstatus + ", classRelation=" + classRelation + ", teachRelation=" + teachRelation
-				+ "]";
+     
+	public String getQuestion() {
+		return question;
 	}
-     
-     
+	public void setQuestion(String question) {
+		this.question = question;
+	}
+	public String getWorkReview() {
+		return workReview;
+	}
+	public void setWorkReview(String workReview) {
+		this.workReview = workReview;
+	}
+	
+	public Date getDeadlineTime() {
+		return deadlineTime;
+	}
+	public void setDeadlineTime(Date deadlineTime) {
+		this.deadlineTime = deadlineTime;
+	}
+	
      
    
 

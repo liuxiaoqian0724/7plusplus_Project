@@ -46,7 +46,7 @@ public interface TeachPlanDao {
 			* @date 2018年12月15日 下午7:56:59 
 			* @version V1.0   
 	 */
-	public void editTeachPlan(Integer id ,String content, Date time);
+	public void changeTeachPlan(Integer id ,String content, Date time);
 	
 	/**
 	 * 

@@ -116,6 +116,8 @@ function homeworkSubmit(){
 }
 
 
+
+
 //富文本编辑框
 var ue = UE.getEditor('editor',{
 	toolbars:[

@@ -147,7 +147,7 @@ public class TeachPlanServiceImpl implements TeachPlanService {
 			System.out.println("我的教案编辑， 时间转换错误");
 			e.printStackTrace();
 		}
-		this.teachPlanDaoImpl.editTeachPlan(id, content, date);
+		this.teachPlanDaoImpl.changeTeachPlan(id, content, date);
 	}
 
 	public void deleteTeachPlan(Integer id) {

@@ -26,6 +26,11 @@ import javax.persistence.Table;
 @Table(name="tbl_course")
 public class Course  implements java.io.Serializable {
 
+	/** 
+			* @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么) 
+			*/
+		
+	private static final long serialVersionUID = 1L;
 	private Integer cid;	//课程id
 	private String cname;	//课程名
 	
@@ -70,11 +75,8 @@ public class Course  implements java.io.Serializable {
 		this.teachRelations = teachRelations;
 	}
 
-	public String toString() {
-		return "Course [cid=" + cid + ", cname=" + cname + ", myJobs=" + myJobs + ", teachRelations=" + teachRelations
-				+ "]";
-	}
-
+	
+	
      
 
 

@@ -89,35 +89,55 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div class="panel-heading">
           <h2>我的教案</h2>
         </div>
-        <div class="panel-body">
+        <div class="panel-body" style="position:relative;">
+        	<div>
         	<c:forEach items="${teachPlanInformationList }" var="teachPlanInformation">
-        			<div>
-		              <div class="c2-right-img">
-		                <img src="${teachPlanInformation.img }" width="100px" height="100px" class="img-circle" alt="圆形图片">
-		                <p>${teachPlanInformation.name }</p>
-		              </div>
-		              <div class="c2-right-items">
-		                  <div>
-                  			<div class="c2-right-item" id="addPlan-${teachPlanInformation.trid}">
-                  				<c:forEach items="${teachPlanInformation.planDetailMap }" var="planDetail">
-			                        <div id="plan-${planDetail.planId }">
-			                            <a href="javascript:void(0)"  onclick="deletePlan(${planDetail.planId })"><span class="icon icon-times"></span></a>
-			                            <a href="javascript:void(0)" onclick = "contentOpen(${planDetail.planId})"><span class="icon icon-edit"></span></a>
-			                            <div id="content-${planDetail.planId }">${planDetail.content }</div>
-			                            <span id="time-${planDetail.planId }">${planDetail.time }</span>
-			                        </div>
-		                  		</c:forEach>
-		                     </div>
-		                      <div class="c2-right-edit">
-		                        <a href="javascript:void(0)" onclick="addTeachPlan(${teachPlanInformation.trid})">
-		                        	<span class="icon icon-plus icon-2x"></span>
-		                        </a>
-		                      </div>
-		                  </div>
-		              </div>
-		          </div>
+	              <div class="c2-right-img">
+	                <img src="${teachPlanInformation.img }" width="100px" height="100px" class="img-circle" alt="圆形图片">
+	                <p>${teachPlanInformation.name }</p>
+	              </div>
+	              <div class="c2-right-items">
+	                  <div>
+                 			<div class="c2-right-item" id="addPlan-${teachPlanInformation.trid}">
+                 				<c:forEach items="${teachPlanInformation.planDetailMap }" var="planDetail">
+		                        <div id="plan-${planDetail.planId }">
+		                            <a href="javascript:void(0)"  onclick="deletePlan(${planDetail.planId })"><span class="icon icon-times"></span></a>
+		                            <a href="javascript:void(0)" onclick = "contentOpen(${planDetail.planId})"><span class="icon icon-edit"></span></a>
+		                            <div id="content-${planDetail.planId }">${planDetail.content }</div>
+		                            <span id="time-${planDetail.planId }">${planDetail.time }</span>
+		                        </div>
+	                  		</c:forEach>
+	                     </div>
+	                      <div class="c2-right-edit">
+	                        <a href="javascript:void(0)" onclick="addTeachPlan(${teachPlanInformation.trid})">
+	                        	<span class="icon icon-plus icon-2x"></span>
+	                        </a>
+	                      </div>
+	                  </div>
+	              </div>
         	</c:forEach>
+          </div>
           
+          <ul class="pager" style="position:absolute;bottom:0;left:300px;" data-max-nav-count="6" data-elements="nav">
+       			<c:choose>
+       				<c:when test="${page == 1 }">
+       					<li class="previous disabled"><a href="jump">«</a></li>
+       				</c:when>
+       				<c:otherwise>
+       					<li class="previous"><a href="teachPlanJump?page=${page-1 }">«</a></li>
+       				</c:otherwise>
+       			</c:choose>
+			  	<li><div style="width:105px;height:30px;text-align:center;padding-top:2px;font-size:18px;">第${page }/${pageTotal }页</div></li>
+			  	<c:choose>
+       				<c:when test="${page == pageTotal}">
+       					<li class="previous disabled"><a href="jump">»</a></li>
+       				</c:when>
+       				<c:otherwise>
+       					<li class="next"><a href="teachPlanJump?page=${page+1 }">»</a></li>
+       				</c:otherwise>
+       			</c:choose>
+			  
+			</ul>
         </div>
 
         <!-- 富文本编辑框 -->
@@ -145,8 +165,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <script type="text/javascript" src="js/myplan.js"></script>
       </div>
     </div>
+	</div>
 </div>
-
 <!-- 底部 -->
 <jsp:include page="footer.jsp"></jsp:include>
  

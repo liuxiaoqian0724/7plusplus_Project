@@ -23,6 +23,11 @@ import javax.persistence.Table;
 public class MyJobTime  implements java.io.Serializable {
 
 
+	/** 
+			* @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么) 
+			*/
+		
+	private static final long serialVersionUID = 1L;
 	private Integer id;
     private String time;
     //private MyJob myJob;//多对一
@@ -50,26 +55,7 @@ public class MyJobTime  implements java.io.Serializable {
     public void setTime(String time) {
         this.time = time;
     }
-
-	public String toString() {
-		return "MyJobTime [id=" + id + ", time=" + time + "]";
-	}
-
-    
-//	@ManyToOne
-//	@JoinColumn(name="teachplanId")
-//	public MyJob getMyjob() {
-//		return myJob;
-//	}
-//
-//	public void setMyjob(MyJob myjob) {
-//		this.myJob = myjob;
-//	}
-
-    
-
-    
-
+  
 
 }
 

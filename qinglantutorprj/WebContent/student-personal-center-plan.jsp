@@ -90,9 +90,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div class="panel-heading">
           <h2>我的教案</h2>
         </div>
-        <div class="panel-body">
+        <div class="panel-body" style="position:relative;">
+        	<div>
         	<c:forEach items="${teachPlanInformationList }" var="teachPlanInformation">
-        			<div>
 		              <div class="c2-right-img">
 		                <img src="${teachPlanInformation.img }" width="100px" height="100px" class="img-circle" alt="圆形图片">
 		                <p>${teachPlanInformation.name }</p>
@@ -109,9 +109,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		                     </div>
 		                  </div>
 		              </div>
-		          </div>
         	</c:forEach>
-          
+        	
+        	<ul class="pager" style="position:absolute;bottom:0;left:300px;" data-max-nav-count="6" data-elements="nav">
+       			<c:choose>
+       				<c:when test="${page == 1 }">
+       					<li class="previous disabled"><a href="jump">«</a></li>
+       				</c:when>
+       				<c:otherwise>
+       					<li class="previous"><a href="teachPlanJump?page=${page-1 }">«</a></li>
+       				</c:otherwise>
+       			</c:choose>
+			  	<li><div style="width:105px;height:30px;text-align:center;padding-top:2px;font-size:18px;">第${page }/${pageTotal }页</div></li>
+			  	<c:choose>
+       				<c:when test="${page == pageTotal}">
+       					<li class="previous disabled"><a href="jump">»</a></li>
+       				</c:when>
+       				<c:otherwise>
+       					<li class="next"><a href="teachPlanJump?page=${page+1 }">»</a></li>
+       				</c:otherwise>
+       			</c:choose>
+			  
+			</ul>
+        	
+        	
+          	</div>
         </div>
 
       </div>
