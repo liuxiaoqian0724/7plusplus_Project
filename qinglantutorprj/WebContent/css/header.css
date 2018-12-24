@@ -27,7 +27,7 @@ html,*,body,div,ul,ol,li,h1,h2,h3,h4,h5,h6,p,span {
 	list-style-type: none;
 }
 #top_bg {
-	height: 40px;
+	height: 50px;
 	width: 100%;
 	background:#01DFCE;
 	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
@@ -38,37 +38,37 @@ html,*,body,div,ul,ol,li,h1,h2,h3,h4,h5,h6,p,span {
 }
 .top {
 	width: 1300px;
-	height: 40px;
+	height: 50px;
 	margin: 0 auto;
 }
 .top .logo_l {
-	width: 40px;
-	height: 40px;
+	width: 50px;
+	height: 50px;
 	float: left;
 	background: url(../images/icon.png) no-repeat left;
 	background-size:cover;
 }
 .top .logo_n {
-	width: 135px;
-	height: 40px;
+	width: 160px;
+	height: 48px;
 	float: left;
 	background: url(../images/nameTop.png) no-repeat left;
 	background-size:cover;
 }
 .nav_z {
 	width: auto!important;
-	height: 40px;
+	height: 50px;
 	float: left;
 	position: relative;
 	z-index: 999;
 }
 #navul li {
 	float: left;
-	width: 120px;
-	height: 40px;
+	width: 100px;
+	height: 50px;
 	position: relative;
 	text-align: center;
-	line-height: 40px;
+	line-height: 50px;
 }
 
 #navul li a:link,
@@ -84,12 +84,11 @@ html,*,body,div,ul,ol,li,h1,h2,h3,h4,h5,h6,p,span {
 	z-index: 999;
 	background: #2C83DF;
 	border-bottom: none;
-	left: 5px;
 }
 
 #navul li ul li {
 	display: block;
-	width: 120px;
+	width: 100px;
 	float: none;
 	height: 35px;
 	position: relative;
@@ -102,9 +101,9 @@ html,*,body,div,ul,ol,li,h1,h2,h3,h4,h5,h6,p,span {
 
 #navul li.navmoon {
 	background:#33A6B8;
-	width: 120px;
-	height: 38px;
-	line-height: 38px;
+	width: 100px;
+	height: 48px;
+	line-height: 48px;
 }
 
 
@@ -130,6 +129,4 @@ html,*,body,div,ul,ol,li,h1,h2,h3,h4,h5,h6,p,span {
 	background:white;
 	overflow: hidden
 }
-#login_regist.navmoon{
-	background:#01DFCE !important;
-}
+

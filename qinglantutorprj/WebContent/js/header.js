@@ -1,14 +1,14 @@
 $(document).ready(function(){
 	var username=getCookie("USERNAME");
 	if(username==0){
-		$("#header-login").html("");
-		var buttons='<a href="javascipt:void(0)" onclick="loginDis()">登录</a>'
-	                  +'<a href="javascript:void(0)" onclick="registDis()">/注册</a>'
-		$("#header-login").append(buttons);
+		$("#login_regist").html("");
+		var buttons='<a href="javascipt:void(0)" onclick="loginDis()" style="text-decoration:none; color:#fff;">登录</a>'
+	                  +'<a href="javascript:void(0)" onclick="registDis()" style="text-decoration:none; color:#fff;">/注册</a>'
+		$("#login_regist").append(buttons);
 	}
 	else{
-		$("#header-login").html("");
-		$("#header-login").append('<span style="text-decoration:none; font-size:14px; color:#ddf4df;white-space:nowrap;"><i>Hello</i>,'+'<strong style="font-size:16px;">'+username+'</strong>！</span><button class="btn btn-info" id="login_button" style="text-decoration:none; width:50px; font-size:12px; position:relative; left:5%; top:-5%;" onclick="logout()">退出</button>');
+		$("#login_regist").html("");
+		$("#login_regist").append('<span style="text-decoration:none; font-size:14px; color:#ddf4df;white-space:nowrap;"><i>Hello</i>,'+'<strong style="font-size:16px;">'+username+'</strong>！<a href="javascipt:void(0)" onclick="logout()" style="text-decoration:none; color:#fff;"><i class="icon icon-signout" style="font-size:20px;"></i></a></span>');
 	}
 	var role=getCookie("ROLE");
 	if(role=="老师"){

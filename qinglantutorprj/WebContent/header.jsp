@@ -16,41 +16,42 @@
 				</li>
 				<li><a href="search/家教">家教</a>
 					<ul>
-						<span><a href="search/小学">小学</a></span>
-						<span><a href="search/初中">初中</a></span>
-						<span><a href="search/高中">高中</a></span>
+						<li><a href="search/小学">小学</a></li>
+						<li><a href="search/初中">初中</a></li>
+						<li><a href="search/高中">高中</a></li>
 					</ul>
 				</li>
 				<li><a href="#">论坛社区</a>
 					<ul>
-						<span><a href="#">学霸说</a></span>
-						<span><a href="#">资料库</a></span>
-						<span><a href="#">家长岛</a></span>
+						<li><a href="#">学霸说</a></li>
+						<li><a href="#">资料库</a></li>
+						<li><a href="#">家长岛</a></li>
 					</ul>
 				</li>
 				<li><a href="#">我要提问</a>
 					<ul>
-						<span><a href="#">心理困惑</a></span>
-						<span><a href="#">情感问题</a></span>
-						<span><a href="#">学习障碍</a></span>
+						<li><a href="#">心理困惑</a></li>
+						<li><a href="#">情感问题</a></li>
+						<li><a href="#">学习障碍</a></li>
 					</ul>
 				</li>
 				<li><a href="#">个人中心</a></li>
-				<li id="login_regist" style="font-size: 12px; width: 100px;"><a
-					href="javascipt:void(0)" onclick="loginDis()">登录</a> <a
-					href="javascript:void(0)" onclick="registDis()">/注册</a>
-				</li>
+				
 				<!--可在此处直接添加导航-->
 			</ul>
 		</div>
-		<div class="input-group" style="width:250px;top:3px;left:80px">
-  					<div class="input-control search-box search-box-circle has-icon-left has-icon-right search-example" id="searchboxExample">
-    					<input id="inputSearchExample3" type="search" class="form-control search-input" placeholder="搜索">
-    					<label for="inputSearchExample3" class="input-control-icon-left search-icon"><i class="icon icon-search"></i></label>
-  					</div>
-  				<span class="input-group-btn">
-    				<button class="btn btn-info" type="submit">搜索</button>
-  				</span>
+		<div class="input-group" style="width:250px;top:9px;left:30px">
+			<div class="input-control search-box search-box-circle has-icon-left has-icon-right search-example" id="searchboxExample">
+				<input id="inputSearchExample3" type="search" class="form-control search-input" placeholder="搜索">
+				<label for="inputSearchExample3" class="input-control-icon-left search-icon"><i class="icon icon-search"></i></label>
+			</div>
+			<span class="input-group-btn">
+ 				<button class="btn btn-info" type="submit">搜索</button>
+			</span>
+		</div>
+		<div id="login_regist" style="font-size: 14px; width: 100px; position:absolute; left:1070px; top:13px;">
+			<a href="javascipt:void(0)" onclick="loginDis()" style="text-decoration:none; color:#fff;">登录</a> 
+			<a href="javascript:void(0)" onclick="registDis()" style="text-decoration:none; color:#fff;">/注册</a>
 		</div>
 		<!--导航结束-->
 		<script type="text/javascript">
