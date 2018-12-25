@@ -1,15 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%	String path = request.getContextPath();
-	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path;%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path;
+%>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Index</title>
+    <!-- css -->
     <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/index.css">
     <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/header.css"/>
     <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/footer.css"/>
@@ -23,14 +24,21 @@
     <script type="text/javascript" src="<%=basePath%>/dist/js/zui.js"></script>
     <script src="<%=basePath%>/js/verify.js"></script>
     <script src="<%=basePath%>/js/verify.min.js"></script>
-   <!--  js功能代码 -->
+    <!--  js功能代码 -->
+    <script src="<%=basePath%>/js/header.js"></script>
+    <script src="<%=basePath%>/js/nav.js"></script>
+    <script type="text/javascript" src="<%=basePath%>/js/index.js"></script>
+    <!-- semantic -->
+    <link rel="stylesheet" type="text/css" href="<%=basePath%>/Semantic/components/card.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=basePath%>/Semantic/components/input.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=basePath%>/Semantic/components/message.css"/>
    </head>  
 	
   <body>
    <jsp:include page="header.jsp"/>
 	<div class="container-fixed">
 			<!--轮播图myNiceCarousel-->
-			<div id="myNiceCarousel" class="carousel slide" data-ride="carousel" style="position: relative; margin-top: 15px;">
+			<div id="myNiceCarousel" class="carousel slide" data-ride="carousel" style="margin-top:-38px;">
 				<!-- 圆点指示器 -->
 				<ol class="carousel-indicators">
 					<li data-target="#myNiceCarousel" data-slide-to="0" class="active"></li>
@@ -63,7 +71,7 @@
 			<!--轮播图end-->
 	
 			<!--家教信息图片tutor_information_pic-->
-			<div class="tutor_information_pic">
+			<div class="tutor_information_pic" style="position:relative; top:100px; z-index:999;">
 				<img src="<%=basePath%>/images/hr.png" style="position:relative; width:408px; margin-left:0px; margin-top:50px; display:inline;"/>
 				<img src="<%=basePath%>/images/tutorinf.png" style="position:relative; margin-top:25px; margin-left:50px;"/>
 				<img src="<%=basePath%>/images/hr.png" style="position:relative; width:408px; margin-left:730px; margin-top:-70px;"/>
@@ -75,16 +83,15 @@
 					<button type="button" class="btn btn-info">兼职家教</button>
 					<button type="button" class="btn btn-info">专职家教</button>
 					<button type="button" class="btn btn-info">推荐家教</button>
-					<button class="btn btn-info" type="button" id="i_wonder_release" onclick="window.location.href='<%=basePath%>/sendmessageed.jsp'"><i class="icon icon-pencil"></i>我要发布</button>
 				</div>
 				<!--个人信息personal_information-->
-				<div class="cards cards-borderless" id="personal_information" style="width:100%">
-				<!-- 教师简介 -->
-					<div id="personal_name_introduce_school" style="width:1305px;">
-						
+				<div class="cards cards-borderless" id="personal_information" style="width:100%; height:auto;">
+					<!-- 教师简介 -->
+					<div class="ui link cards" id="personal_name_introduce_school">
+					  
 					</div>
 					<!-- 分页器 -->
-					<ul class="pager" id="pager" style="float:right; position:relative; margin-right:45%;">
+					<ul class="pager" id="pager" style="width:300px; position:relative; left:41%;">
 						
 					</ul>
 				</div>
@@ -388,8 +395,7 @@
 			<!--学习社区end-->
 		</div>
 	</div>
-	<script type="text/javascript" src="<%=basePath%>/js/index.js"></script>
-	<jsp:include page="footer.jsp" />
 	<script type="text/javascript" src="<%=basePath%>/js/checkLogin_regist.js"></script>
+	<jsp:include page="footer.jsp" />
 </body>
 </html>

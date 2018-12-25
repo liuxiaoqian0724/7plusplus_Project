@@ -30,9 +30,6 @@ import org.hibernate.annotations.NotFoundAction;
 public class ClassRelation {
 	
 	private Integer crid;	//上课关系id
-//	private Integer sid;	//学生id
-//	private Integer trid;	//教课关系id	外键
-	
 	private List<Review> reviews= new ArrayList<Review>();	//上课关系表和评价表是双向一对多的关系
 	private List<HomeWork> homeWorks = new ArrayList<HomeWork>();	//上课关系表和作业表是双向一对多的关系
 	private User user;	//上课关系表和用户表是多对一的关系
@@ -48,12 +45,6 @@ public class ClassRelation {
 		this.crid = crid;
 	}
 
-//	public Integer getSid() {
-//		return sid;
-//	}
-//	public void setSid(Integer sid) {
-//		this.sid = sid;
-//	}
 	@OneToMany(mappedBy="classRelation",
 			targetEntity=Review.class,
 			cascade= {CascadeType.REMOVE})

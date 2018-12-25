@@ -9,6 +9,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.sevenpp.qinglantutor.dao.impl.IndexDaoImpl;
+import com.sevenpp.qinglantutor.entity.Course;
 import com.sevenpp.qinglantutor.entity.User;
 import com.sevenpp.qinglantutor.entity.Userinf;
 import com.sevenpp.qinglantutor.service.IndexService;
@@ -45,7 +46,9 @@ public class IndexServiceImpl implements IndexService {
 		System.out.println("IndexServiceImpl");
 		List<User> userList = new ArrayList<User>();
 		List<Userinf> userlist = new ArrayList<Userinf>();
-		userList = idi.queryAll();
+		List teachagelist=new ArrayList();
+		userList = idi.queryUser();
+		teachagelist=idi.queryTeachage();
 		userinf = new Userinf();
 		for (int i = 0; i < userList.size(); i++) {
 			userinf = new Userinf();
@@ -55,6 +58,9 @@ public class IndexServiceImpl implements IndexService {
 			userinf.setSchool(userList.get(i).getSchool());
 			userinf.setUserImg(userList.get(i).getUserImg());
 			userlist.add(userinf);
+		}
+		for(int i=0;i<teachagelist.size();i++) {
+			userlist.get(i).setTeachAge(teachagelist.get(i).toString());
 		}
 		return userlist;
 	}

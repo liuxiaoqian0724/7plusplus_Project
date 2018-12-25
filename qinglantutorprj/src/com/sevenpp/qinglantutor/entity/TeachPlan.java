@@ -30,7 +30,7 @@ public class TeachPlan  implements java.io.Serializable {
 			* @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么) 
 			*/
 		
-	private static final long serialVersionUID = 5323474661777896372L;
+	private static final long serialVersionUID = 1L;
 	private Integer id;
      private String content;	//教案内容
      private Date time;

@@ -114,7 +114,7 @@ public class MyJob implements java.io.Serializable {
 		this.grades = grades;
 	}
 
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany
 	@JoinTable(name = "tbl_myjobtime", // 第三张表
 			joinColumns = @JoinColumn(name = "jid"), inverseJoinColumns = @JoinColumn(name = "timeid"))
 	public Set<Time> getTimes() {
