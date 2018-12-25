@@ -3,6 +3,9 @@ $(document).ready(function(){
 	if(role=="老师"){
 		$("#choose_button").append('<button class="btn btn-info" type="button" id="i_wonder_release" onclick="window.location.href=\'sendmessageed.jsp\'"><i class="icon icon-pencil"></i>我要发布</button>');
 	}
+	else{
+		$("#choose_button").append('');
+	}
 	// 调用
 	datashow(currentpage);
 	topage(currentpage);

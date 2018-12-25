@@ -396,7 +396,6 @@
 		</div>
 	</div>
 	<script type="text/javascript" src="<%=basePath%>/js/checkLogin_regist.js"></script>
-	<script type="text/javascript" src="<%=basePath%>/js/index.js"></script>
 	<jsp:include page="footer.jsp" />
 </body>
 </html>
