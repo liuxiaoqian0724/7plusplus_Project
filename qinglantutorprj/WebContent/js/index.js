@@ -85,7 +85,7 @@ function datashow(currentpage) {
 		            }
 					teacherinf = '<div class="card"  style="position: relative; width:262px; height:300px;">'
 							    +'<div class="image">'
-								+'<img src="'+res.userImg+'">'
+								+'<img src="'+res.userImg+'" style="width:263px; height:148px;">'
 								+'</div>'
 								+'<div class="content">'
 								+'<div class="header">'+res.realName+'</div>'

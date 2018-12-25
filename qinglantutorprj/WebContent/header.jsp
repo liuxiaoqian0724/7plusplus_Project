@@ -98,7 +98,7 @@
 		<span id="show" style="color: red;"></span>
 	</form>
 	<!--二维码-->
-	<img alt="" src="images/kid.png" style="position:relative; left:55%; top:-225px; height:250px; width:250px;">
+	<img alt="" src="images/kid.png" style="position:relative; left:51%; top:-225px; height:250px; width:300px;">
 </div>
 
 <!-- 注册 -->

@@ -26,6 +26,7 @@
     <script src="<%=basePath%>/js/verify.js"></script>
     <script src="<%=basePath%>/js/verify.min.js"></script>
     <script src="<%=basePath%>/js/header.js"></script>
+    <script src="<%=basePath%>/js/nav.js"></script>
 		<title>信息发布审核</title>
 	</head>
 
@@ -33,7 +34,7 @@
 		<!--导航栏开始-->
 			<jsp:include page="header.jsp"></jsp:include>
 		<!-- 导航栏END-->
-		<div class="container-fixed-md">
+		<div class="container-fixed-md" style="position:relative; top:100px;">
 			<div class="panel panel-info">
 				<div class="panel-heading">
 					<h2>发布状态</h2>
