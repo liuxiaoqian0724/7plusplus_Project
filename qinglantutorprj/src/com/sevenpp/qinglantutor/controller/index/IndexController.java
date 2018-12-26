@@ -46,7 +46,7 @@ public class IndexController {
 	private IndexServiceImpl service;
 	
 	@RequestMapping("/search")
-	public String indexSearchBox(@RequestParam("keyword") String keyword,Model model) {
+	public String indexSearchBox(@RequestParam("grade") String keyword,Model model) {
 		model.addAttribute("keyword",keyword);
 		System.out.println(keyword);
 		return "tutorlisted";

@@ -26,7 +26,7 @@
    <script type="text/javascript" src="<%=basePath%>/dist/js/zui.min.js"></script>
    <script type="text/javascript" src="<%=basePath%>/dist/js/zui.js"></script>
    <script type="text/javascript" src="<%=basePath%>/js/tutorlisted.js"></script>
-
+	<script type="text/javascript" src="<%=basePath%>/js/nav.js"></script>
 </head>
 <body>
 <!-- header -->

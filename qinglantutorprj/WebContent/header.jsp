@@ -14,11 +14,11 @@
 				<li>
 					<a href="<%=basePath%>/index.jsp" style="font-weight:800;">首页</a>
 				</li>
-				<li><a href="search/家教">家教</a>
+				<li><a href="<%=basePath%>/search?grade=家教">家教</a>
 					<ul>
-						<li><a href="search/小学">小学</a></li>
-						<li><a href="search/初中">初中</a></li>
-						<li><a href="search/高中">高中</a></li>
+						<li><a href="<%=basePath%>/search?grade=小学">小学</a></li>
+						<li><a href="<%=basePath%>/search?grade=初中">初中</a></li>
+						<li><a href="<%=basePath%>/search?grade=高中">高中</a></li>
 					</ul>
 				</li>
 				<li><a href="#">论坛社区</a>
