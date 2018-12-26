@@ -14,6 +14,16 @@
 		<context:include-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
+	<mvc:default-servlet-handler/>
+	<mvc:annotation-driven />
+	<!--json  -->
+	<mvc:annotation-driven>
+    <mvc:message-converters register-defaults="true">
+        <bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+        </bean>
+    </mvc:message-converters>
+</mvc:annotation-driven>
+	
 	<!--定义jsp文件的位置 -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

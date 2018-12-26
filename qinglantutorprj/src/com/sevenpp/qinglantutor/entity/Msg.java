@@ -1,7 +1,7 @@
 package com.sevenpp.qinglantutor.entity;
 
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -31,10 +31,11 @@ public class Msg  implements java.io.Serializable {
 //     private Integer receiveId;	//收件人id
 //     private Integer sendid;	//发件人id
      private String content;	//内容
-     private Date sendTime;
+     private Timestamp sendTime;
      private Integer status;	//收件人的消息状态，同意还是拒绝
      
      private User user;		//消息表和用户表是双向多对一的关系
+     private Integer sendId;
 
      @Id
      @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -54,11 +55,11 @@ public class Msg  implements java.io.Serializable {
 		this.content = content;
 	}
 
-	public Date getSendTime() {
+	public Timestamp getSendTime() {
 		return sendTime;
 	}
 
-	public void setSendTime(Date sendTime) {
+	public void setSendTime(Timestamp sendTime) {
 		this.sendTime = sendTime;
 	}
 
@@ -79,6 +80,14 @@ public class Msg  implements java.io.Serializable {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public Integer getSendId() {
+		return sendId;
+	}
+
+	public void setSendId(Integer sendId) {
+		this.sendId = sendId;
 	}
      
      

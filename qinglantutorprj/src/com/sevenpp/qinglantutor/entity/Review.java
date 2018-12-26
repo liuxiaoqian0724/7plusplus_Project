@@ -1,7 +1,6 @@
 package com.sevenpp.qinglantutor.entity;
 
-
-import java.util.Date;
+import java.sql.Timestamp;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,26 +12,24 @@ import javax.persistence.Table;
 
 /**
  * 
- * @ClassName:  TblReview   
+ * @ClassName: TblReview
  * @Description:评论表
  * @author: liuxiaoqian
- * @date:   2018年11月30日 下午2:58:40   
+ * @date: 2018年11月30日 下午2:58:40
  *
  */
 @Entity
-@Table(name="tbl_review")
-public class Review  implements java.io.Serializable {
+@Table(name = "tbl_review")
+public class Review implements java.io.Serializable {
 
-
-     private Integer rid;	//评价id
-     private Date reviewTime;	//评价时间
-     private String reviewContent;	//评价时间
-     private Integer reviewStar;	//评价星级	
-
-     private ClassRelation classRelation=new ClassRelation();	//评价表和上课关系表是双向多对一的关系
-
-     @Id
- 	 @GeneratedValue(strategy=GenerationType.IDENTITY)
+	private static final long serialVersionUID = 1L;
+	private Integer rid; // 评价id
+	private Timestamp reviewTime; // 评价时间
+	private String reviewContent; // 评价时间
+	private Integer reviewStar; // 评价星级
+	private ClassRelation classRelation = new ClassRelation(); // 评价表和上课关系表是双向多对一的关系
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer getRid() {
 		return rid;
 	}
@@ -41,11 +38,11 @@ public class Review  implements java.io.Serializable {
 		this.rid = rid;
 	}
 
-	public Date getReviewTime() {
+	public Timestamp getReviewTime() {
 		return reviewTime;
 	}
 
-	public void setReviewTime(Date reviewTime) {
+	public void setReviewTime(Timestamp reviewTime) {
 		this.reviewTime = reviewTime;
 	}
 
@@ -66,18 +63,16 @@ public class Review  implements java.io.Serializable {
 	}
 
 	@ManyToOne()
-	@JoinColumn(name="crid")	//上课关系crid是外键
+	@JoinColumn(name = "crid") // 上课关系crid是外键
 	public ClassRelation getClassRelation() {
 		return classRelation;
 	}
 
 	public void setClassRelation(ClassRelation classRelation) {
 		this.classRelation = classRelation;
-	}	
-     
-    
+	}
 
 
+	
+	
 }
-
-
