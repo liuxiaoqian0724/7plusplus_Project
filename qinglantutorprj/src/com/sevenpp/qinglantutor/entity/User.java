@@ -1,7 +1,7 @@
 package com.sevenpp.qinglantutor.entity;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -10,7 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -25,12 +24,27 @@ import javax.persistence.Table;
 @Table(name="tbl_user")
 public class User  implements java.io.Serializable {
 
-     private Integer id;//主键
+     @Override
+	public String toString() {
+		return "User [id=" + id + ", userName=" + userName + ", userPwd=" + userPwd + ", email=" + email + ", role="
+				+ role + ", regDate=" + regDate + ", realName=" + realName + ", idNumber=" + idNumber + ", sex=" + sex
+				+ ", stuImg=" + stuImg + ", userImg=" + userImg + ", school=" + school + ", grade=" + grade
+				+ ", phoneNumber=" + phoneNumber + ", address=" + address + ", introduce=" + introduce + ", major="
+				+ major + ", status=" + status + ", publicKey=" + publicKey + ", privateKey=" + privateKey + ", img1="
+				+ img1 + ", img2=" + img2 + ", img3=" + img3 + ", img4=" + img4 + ", msgs=" + msgs + ", myJobs="
+				+ myJobs + ", teachRelations=" + teachRelations + ", classRelation=" + classRelation + "]";
+	}
+	/** 
+			* @Fields serialVersionUID : TODO(用一句话描述这个变量表示什么) 
+			*/
+		
+	private static final long serialVersionUID = -1467644222903393721L;
+	private Integer id;//主键
      private String userName;
      private String userPwd;
      private String email;
      private String role;
-     private Date regDate;//注册时间
+     private Timestamp regDate;//注册时间
      private String realName;
      private String idNumber;//身份证号码
      private String sex;
@@ -43,10 +57,40 @@ public class User  implements java.io.Serializable {
      private String introduce;//个人简介
      private String major;
      private Integer status;//状态位，是否发布家教信息，1=发布，0未发布
-     private String publickey;	//公钥
-     private String privatekey;	//私钥
-     
-     private List<Msg> msgs= new ArrayList<Msg>();	//用户表和消息表是双向一对多的关系
+     private String publicKey;	//公钥
+     private String privateKey;	//私钥
+     private String img1;
+     private String img2;
+     private String img3;
+     private String img4;
+     public String getImg1() {
+		return img1;
+	}
+	public void setImg1(String img1) {
+		this.img1 = img1;
+	}
+	public String getImg2() {
+		return img2;
+	}
+	public void setImg2(String img2) {
+		this.img2 = img2;
+	}
+	public String getImg3() {
+		return img3;
+	}
+	public void setImg3(String img3) {
+		this.img3 = img3;
+	}
+	public String getImg4() {
+		return img4;
+	}
+	public void setImg4(String img4) {
+		this.img4 = img4;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	private List<Msg> msgs= new ArrayList<Msg>();	//用户表和消息表是双向一对多的关系
    //  private MyJob myjob=new MyJob();	//用户表和求职信息表是双向一对一的关系
     // private MyJob myJob=null;
      private List<MyJob> myJobs=new ArrayList<MyJob>();
@@ -85,10 +129,10 @@ public class User  implements java.io.Serializable {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	public Date getRegDate() {
+	public Timestamp getRegDate() {
 		return regDate;
 	}
-	public void setRegDate(Date regDate) {
+	public void setRegDate(Timestamp regDate) {
 		this.regDate = regDate;
 	}
 	public String getRealName() {
@@ -163,17 +207,18 @@ public class User  implements java.io.Serializable {
 	public void setStatus(Integer status) {
 		this.status = status;
 	}
-	public String getPublickey() {
-		return publickey;
+
+	public String getPublicKey() {
+		return publicKey;
 	}
-	public void setPublickey(String publickey) {
-		this.publickey = publickey;
+	public void setPublicKey(String publicKey) {
+		this.publicKey = publicKey;
 	}
-	public String getPrivatekey() {
-		return privatekey;
+	public String getPrivateKey() {
+		return privateKey;
 	}
-	public void setPrivatekey(String privatekey) {
-		this.privatekey = privatekey;
+	public void setPrivateKey(String privateKey) {
+		this.privateKey = privateKey;
 	}
 	@OneToMany(mappedBy="user",
 			targetEntity=Msg.class,
@@ -185,13 +230,6 @@ public class User  implements java.io.Serializable {
 		this.msgs = msgs;
 	}
 	
-//	@OneToOne(mappedBy = "user")
-//	public MyJob getMyjob() {
-//		return myjob;
-//	}
-//	public void setMyjob(MyJob myjob) {
-//		this.myjob = myjob;
-//	}
 	
 	@OneToMany(mappedBy="user",
 			targetEntity=MyJob.class,
@@ -225,75 +263,6 @@ public class User  implements java.io.Serializable {
 	
      
 	
-     
-     
-//     private MyJob myjob;//求职表一对一映射
-//     private List<Teachplan> teachPlanList;//一对多
-//     private List<Msg> msgList;//一对多
-//     private List<Course> courseList;//一对多
-//     private List<HomeWork> homeWorkList;//一对多
-//     private List<Review> reviewList;//一对多
-   
-   
-    //与myjob表一对一
-//    @OneToOne(mappedBy="myjob",targetEntity=MyJob.class)
-//	public MyJob getMyjob() {
-//		return myjob;
-//	}
-//
-//	public void setMyjob(MyJob myjob) {
-//		this.myjob = myjob;
-//	}
-
-	
-
-//	//teachPlan表一对多
-//	@OneToMany(mappedBy="user",targetEntity=Teachplan.class,cascade=CascadeType.ALL)
-//	public List<Teachplan> getTeachPlan() {
-//		return teachPlanList;
-//	}
-//
-//	public void setTeachPlan(List<Teachplan> teachPlan) {
-//		this.teachPlanList = teachPlan;
-//	}
-
-	
-//	//msg一对多
-//	@OneToMany(mappedBy="user",targetEntity=Msg.class,cascade=CascadeType.ALL)
-//	public List<Msg> getMsgList() {
-//		return msgList;
-//	}
-//
-//	public void setMsgList(List<Msg> msgList) {
-//		this.msgList = msgList;
-//	}
-//	//course一对多
-//	@OneToMany(mappedBy="user",targetEntity=Course.class,cascade=CascadeType.ALL)
-//	public List<Course> getCourseList() {
-//		return courseList;
-//	}
-//
-//	public void setCourseList(List<Course> courseList) {
-//		this.courseList = courseList;
-//	}
-//	//homework一对多
-//	@OneToMany(mappedBy="user",targetEntity=HomeWork.class,cascade=CascadeType.ALL)
-//	public List<HomeWork> getHomeWorkList() {
-//		return homeWorkList;
-//	}
-//
-//	public void setHomeWorkList(List<HomeWork> homeWorkList) {
-//		this.homeWorkList = homeWorkList;
-//	}
-//	//review一对多
-//	@OneToMany(mappedBy="user",targetEntity=Review.class,cascade=CascadeType.ALL)
-//	public List<Review> getReviewList() {
-//		return reviewList;
-//	}
-//
-//	public void setReviewList(List<Review> reviewList) {
-//		this.reviewList = reviewList;
-//	}
 
 	
 	

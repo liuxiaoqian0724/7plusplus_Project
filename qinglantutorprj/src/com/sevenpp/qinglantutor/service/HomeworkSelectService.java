@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface HomeworkSelectService {
 	abstract public List<HomeWork> HomeworkShow();
-	abstract public List<User> TeacherShow();
 	abstract public List<ClassRelation> ClassRelation();
 	abstract public List<TeachRelation> TeachRelation();
+	abstract public User getUserByEmail(String email);
 }

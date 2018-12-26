@@ -2,11 +2,13 @@
  body{
   margin: 0 auto;
  }
-
+ a:hover{
+ 	color:black;
+ }
  #content{
     /*width: 93.5%;*/
     width: 1200px;
-    height: 800px;
+    height: 1030px;
     z-index: -1;
     margin: 0 auto;
   }
@@ -128,11 +130,12 @@
   .c2-left-item{
     width: 180px;
     height: 43px;
+    padding-bottom:50px;
   }
   .c2-left-item a{
     display: block;
     width: 160px;
-    height: 35px;
+    height: 40px;
     color: black;
     font-size: 17px;
     padding-left: 15px;
@@ -141,6 +144,7 @@
     text-decoration: none;
   }
   .c2-left-item a:hover{
+  	color:black;
     text-decoration: none;
     background-color: #33A6B8;
   }
@@ -160,10 +164,10 @@
   
   #c2-right .panel-body{
     background-color: #F9F9F9;
-    height: 88%;
+    height: 90.9%;
 
   }
-  #c2-right .panel-body> div{
+  #c2-right .panel-body> div> div{
     background-color: white;
     border:1px solid black;
     margin-bottom: 10px;
