@@ -1,5 +1,5 @@
 
-package com.sevenpp.qinglantutor.service;
+package com.sevenpp.qinglantutor.service.impl;
 import com.sevenpp.qinglantutor.entity.ClassRelation;
 import com.sevenpp.qinglantutor.entity.NewsPage;
 import com.sevenpp.qinglantutor.entity.Review;

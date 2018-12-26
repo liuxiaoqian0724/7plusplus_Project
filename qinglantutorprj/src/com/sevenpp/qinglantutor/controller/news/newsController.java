@@ -13,10 +13,10 @@ import com.sevenpp.qinglantutor.entity.Msg;
 import com.sevenpp.qinglantutor.entity.NewsPage;
 import com.sevenpp.qinglantutor.entity.Review;
 import com.sevenpp.qinglantutor.entity.User;
-import com.sevenpp.qinglantutor.service.personalServiceImpl;
 import com.sevenpp.qinglantutor.dao.reviewDaoImpl;
-import com.sevenpp.qinglantutor.service.newsServiceImpl;
-import com.sevenpp.qinglantutor.service.reviewServiceImpl;
+import com.sevenpp.qinglantutor.service.impl.newsServiceImpl;
+import com.sevenpp.qinglantutor.service.impl.personalServiceImpl;
+import com.sevenpp.qinglantutor.service.impl.reviewServiceImpl;
 
 /**
 		*

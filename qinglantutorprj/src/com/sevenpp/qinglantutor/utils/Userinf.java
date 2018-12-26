@@ -7,7 +7,7 @@
 		* @version V1.0   
 		*/
 
-		package com.sevenpp.qinglantutor.util;
+		package com.sevenpp.qinglantutor.utils;
 		/**
 		*
 		* 项目名称：qinglantutorprj
