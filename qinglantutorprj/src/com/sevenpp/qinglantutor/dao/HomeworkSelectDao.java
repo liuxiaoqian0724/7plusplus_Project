@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface HomeworkSelectDao {
 	abstract public List<HomeWork> HomeWorkShow() ;
-	abstract public List<User> TeacherShow() ;
+
 	abstract public List<ClassRelation> ClassRelation() ;
 	abstract public List<TeachRelation> TeachRelation() ;
 	

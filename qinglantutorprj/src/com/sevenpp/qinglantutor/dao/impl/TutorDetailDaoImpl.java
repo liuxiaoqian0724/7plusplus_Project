@@ -105,8 +105,10 @@ public class TutorDetailDaoImpl implements TutorDetailDao {
 	 */
 	public User findUserByEmail(String email) {
 		Session session=this.sessionFactory.getCurrentSession();
-		Query q=session.createQuery("from User u where u.email=:var1");
-		q.setString(1, email);
+		//Query q=session.createQuery("from User u where u.email=:var1");
+		Query q=session.createQuery("from User u where u.email=?");
+//		q.setString(1, email);
+		q.setParameter(0, email);
 		List<User> uList=q.list();
 		return uList.get(0);
 	}

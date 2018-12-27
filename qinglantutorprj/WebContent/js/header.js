@@ -12,6 +12,15 @@ $(document).ready(function(){
 	}
 	
 });
+
+function persoanlNews(){
+	var useremail=getCookie("EMAIL");
+	if(useremail == ""){
+		alert("请先登录");
+	}else{
+		$("#personalNews").attr("href","jumptoNews");
+	}	
+}
 	// 获取指定名称的cookie的值
 	function getCookie(name) {
 		var strCookie = document.cookie;

@@ -11,21 +11,29 @@
 <head>
 	<title>家教信息列表</title>
 	<meta charset="utf-8">
-	<!--  <base href="<%=basePath%>"></base>-->
+    <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/header.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/footer.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/register_login.css"/>
+    <!-- zui -->
+    <link rel="stylesheet" href="<%=basePath%>/dist/css/zui.css" />
+    <link rel="stylesheet" href="<%=basePath%>/csserify.css" />
+    <!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
+    <script src="<%=basePath%>/js/jquery-3.2.1.js"></script>
+    <!-- ZUI Javascript组件 -->
+    <script type="text/javascript" src="<%=basePath%>/dist/js/zui.js"></script>
+    <script src="<%=basePath%>/jserify.js"></script>
+    <script src="<%=basePath%>/jserify.min.js"></script>
+    <!--  js功能代码 -->
+    <script src="<%=basePath%>/js/header.js"></script>
+    <script src="<%=basePath%>/js/nav.js"></script>
+    <!-- semantic -->
+    <link rel="stylesheet" type="text/css" href="<%=basePath%>/Semantic/components/message.css"/>
 	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.staticfile.org/ionicons/2.0.1/css/ionicons.min.css">
 	<!--引入css-->
-   <link rel="stylesheet" href="<%=basePath%>/dist/css/zui.min.css">
-   <link rel="stylesheet" href="<%=basePath%>/dist/css/zui.css" />
-   <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/header.css"/>
-   <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/footer.css"/>
    <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/tutorlisted.css">
-	
 	<!--引入js-->
-   <script src="<%=basePath%>/js/jquery-3.2.1.js"></script>
-   <script type="text/javascript" src="<%=basePath%>/dist/lib/jquery/jquery.js"></script>
-   <script type="text/javascript" src="<%=basePath%>/dist/js/zui.min.js"></script>
-   <script type="text/javascript" src="<%=basePath%>/dist/js/zui.js"></script>
    <script type="text/javascript" src="<%=basePath%>/js/tutorlisted.js"></script>
+   
 
 </head>
 <body>
@@ -82,23 +90,28 @@
 								${grade[1]}
 							</li></a>
 						</c:forEach>
-						<a href="#"><li id="more">
+						<a href="#" id="moremore"><li id="more">
 							更多<i class="icon11 icon-angle-down"></i>
 						</li></a>
 						
 					</ul>
 					<!-- </div> -->					
 				</li>
-
+				<c:if test="${schooltype!='0'}">
+					<script>
+						$("#moremore").css('display','none');
+					</script>
+				</c:if>
+				
 				<li class="hide-con-content">
 					<ul class="con-ul">
-						<a href="#"><li class="con-li">
+						<a href="/qinglantutorprj/change/addconditions/高一/0/0/0/0"><li class="con-li">
 							高一
 						</li></a>
-						<a href="#"><li class="con-li">
+						<a href="/qinglantutorprj/change/addconditions/高二/0/0/0/0"><li class="con-li">
 							高二
 						</li></a>
-						<a href="#"><li class="con-li">
+						<a href="/qinglantutorprj/change/addconditions/高三/0/0/0/0"><li class="con-li">
 							高三
 						</li></a>
 					</ul>
@@ -200,71 +213,71 @@
 			<div class="left-top">
 				<ul class="top-ul">
 					<li id="spe1">符合条件老师</li>
-					<a href="#"><li class="top-li">智能排序 </li></a>
-					<a href="#"><li class="top-li">好评数 </li></a>
-					<a href="#"><li class="top-li">价格最高 </li></a>
-					<a href="#"><li class="top-li">星级最高 </li></a>
-					<a href="#"><li class="top-li">教过的学生最多 </li></a>
+					<a href="/qinglantutorprj/tutorlist/conditions/${schooltype}/intellgence""><li class="top-li">智能排序 </li></a>
+					<a href="/qinglantutorprj/tutorlist/conditions/${schooltype}/reviewsum"><li class="top-li">好评数 </li></a>
+					<a href="/qinglantutorprj/tutorlist/conditions/${schooltype}/price"><li class="top-li">价格最低 </li></a>
+					<a href="/qinglantutorprj/tutorlist/conditions/${schooltype}/reviewstar"><li class="top-li">星级最高 </li></a>
+					<!-- <a href="#"><li class="top-li">教过的学生最多 </li></a> -->
 				</ul>
 			</div>
 			<!--家教列表展示-->
-			<div class="tutorshow">
+			<div class="tutorshow" >
 				<!--一个家教展示-->
 				<!--foreach循环每个家教的信息-->
-				<c:forEach items="${tutors}" var="tutor">
-					<a href="tutordetailed.html">
-					<div class="tutorone">
-						<div class="tutorinformation">
-						<!--家教头像-->
-						<div class="tutor-photo">
-							<img src="<%=basePath%>/${tutor[2]}" width="110px" height="110px" class="img-rounded" alt="圆角图片">
-						</div>
-						<!--家教基本信息-->
-						<div class="tutor-information">
-							<div class="username">
-								${tutor[1]}
+				<c:forEach items="${pagetutors.list}" var="tutor">
+					<a href="/qinglantutorprj/tutorDetail/showtutorDetail/${tutor.id}">
+						<div class="tutorone">
+							<div class="tutorinformation">
+							<!--家教头像-->
+							<div class="tutor-photo">
+								<img src="<%=basePath%>/${tutor.userimg}" width="110px" height="110px" class="img-rounded" alt="圆角图片">
 							</div>
-							<div class="introduce">
-								<p>${tutor[3]}</p>
-							</div>
-							<div class="information">
-								<div class="firline">
-									<div class="star">
-										<img src="<%=basePath%>/images/fill-star.png" style="width: 20px;height: 20px;">
-										<img src="<%=basePath%>/images/fill-star.png" style="width: 20px;height: 20px;">
-										<img src="<%=basePath%>/images/fill-star.png" style="width: 20px;height: 20px;">
-										<img src="<%=basePath%>/images/fill-star.png" style="width: 20px;height: 20px;">
-										<img src="<%=basePath%>/images/empty-star.png" style="width: 20px;height: 20px;">
+							<!--家教基本信息-->  
+							<div class="tutor-information">
+								<div class="username">
+									${tutor.username}
+								</div>
+								<div class="introduce"> 
+									<p>${tutor.introduce}</p>
+								</div>
+								<div class="information">
+									<div class="firline">
+										<div class="star">
+											<!-- ${tutor.reviewstar} -->
+											<c:forEach begin="1" end="${tutor.reviewstar}">
+												<img src="<%=basePath%>/images/fill-star.png" style="width: 20px;height: 20px;">
+											</c:forEach>
+											<c:forEach begin="${tutor.reviewstar}" end="4">
+												<img src="<%=basePath%>/images/empty-star.png" style="width: 20px;height: 20px;">
+											</c:forEach>
+										</div>
+										<div class="teachages">教龄${tutor.teacherage}年</div>	
+										<!-- <div class="teachhours">授课134小时</div> -->
 									</div>
-									<div class="teachages">教龄${tutor[5]}年</div>	
-									<!-- <div class="teachhours">授课134小时</div> -->
 								</div>
 							</div>
-						</div>
-						<!--家长评论-->
-						<div class="tutor-comment">&nbsp;<i class="icon2 icon-comment-alt"></i>&nbsp;<span>家长评论&nbsp;${tutor[7]}条</span>
-							<p>${tutor[8]}</p>
-						</div>
-						<div class="separator"></div>
-						<div class="tutor-check">
-							<div class="price"><i class="icon22 icon-yen"></i>${tutor[4]}<span class="spe2">起</span></div>
-							<div class="check">
-								<a href="tutordetailed.html"><button class="btn1" type="button">立即查看</button></a>
+							<!--家长评论-->
+							<div class="tutor-comment">&nbsp;<i class="icon2 icon-comment-alt"></i>&nbsp;<span>家长评论&nbsp;${tutor.reviewsum}条</span>
+								<p>${tutor.reviewcontent}</p>
+							</div>
+							<div class="separator"></div>
+							<div class="tutor-check">
+								<div class="price"><i class="icon22 icon-yen"></i>${tutor.price}<span class="spe2">起</span></div>
+								<div class="check">
+									<a href="/qinglantutorprj/tutorDetail/showtutorDetail/${tutor.id}"><button class="btn1" type="button">立即查看</button></a>
+								</div>
+							</div>
 							</div>
 						</div>
-						</div>
-					</div>
 					</a>
 				</c:forEach>	
-				
 				<ul class="pager">
-				  <li class="previous"><a href="your/nice/url">«</a></li>
-				  <li><a href="your/nice/url">1</a></li>
-				  <li class="active"><a href="your/nice/url">2</a></li>
-				  <li><a href="your/nice/url">3</a></li>
-				  <li><a href="your/nice/url">4</a></li>
-				  <li><a href="your/nice/url">5</a></li>
-				  <li class="next"><a href="your/nice/url">»</a></li>
+				  <li class="previous"><a href="/qinglantutorprj/tutorlist/page/${pagetutors.prePageNum}">«</a></li>
+				  <c:forEach var="i" begin="1" end="${pagetutors.totalPageNum}">
+					<li><a href="/qinglantutorprj/tutorlist/page/${i}">${i}</a></li>
+				  </c:forEach>
+				  <li class="next"><a href="/qinglantutorprj/tutorlist/page/${pagetutors.nextPageNum}">»</a></li>
+				  
 				</ul>
 			</div>
 		</div>
@@ -347,6 +360,7 @@
 	</div>
 </div>
 <!-- header -->
+<script type="text/javascript" src="<%=basePath%>/js/checkLogin_regist.js"></script>
 <jsp:include page="footer.jsp"/>
 <!-- //header -->
 </body>

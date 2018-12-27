@@ -26,11 +26,11 @@ import com.sevenpp.qinglantutor.entity.Grade;
 		*/
 		public interface TutorListService {
 			
-			public List<Object[]> grades();
+			public List<Object[]> findAllGrades();
 			
-			public List<Object[]> gradesBySchoolType(String schoolType);
+			public List<Object[]> findGradesBySchoolType(String schoolType);
 			
-			public List<Object[]> courses();
+			public List<Object[]> findAllCourses();
 			
 }
 

@@ -1,7 +1,8 @@
 
 		package com.sevenpp.qinglantutor.dao.impl;
 
-		import java.util.List;
+		import java.util.Collections;
+import java.util.List;
 
 import javax.annotation.Resource;
 
@@ -11,8 +12,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
 import com.sevenpp.qinglantutor.dao.TutorListDao;
-import com.sevenpp.qinglantutor.entity.Course;
-import com.sevenpp.qinglantutor.entity.Grade;
+import com.sevenpp.qinglantutor.entity.UserInfo;
 
 		/**
  		*	
@@ -44,10 +44,10 @@ import com.sevenpp.qinglantutor.entity.Grade;
 			 * @date 2018年12月5日 下午3:25:17 
 			 * @version V1.0   
 			 */
-			public List<Object[]> findGrades(){
+			public List<Object[]> findAllGrades(){
 				Session session = this.sessionFactory.getCurrentSession();
 				Query q = session.createQuery("select gid,gname from Grade where schooltype != '大学' ");
-				q.setFirstResult(0).setMaxResults(9);
+//				q.setFirstResult(0).setMaxResults(9);
 				return q.list();
 			}
 			
@@ -63,7 +63,7 @@ import com.sevenpp.qinglantutor.entity.Grade;
 			 * @date 2018年12月5日 下午3:30:44 
 			 * @version V1.0   
 			 */
-			public List<Object[]> findCourses(){
+			public List<Object[]> findAllCourses(){
 				Session session = this.sessionFactory.getCurrentSession();
 				Query q = session.createQuery("select cid,cname from Course");
 				q.setFirstResult(0).setMaxResults(9);
@@ -98,16 +98,6 @@ import com.sevenpp.qinglantutor.entity.Grade;
 				}
 				q.setFirstResult(0).setMaxResults(9);
 				return q.list();	
-			}
-			
-			
-			public List<Object[]> find(){
-				Session session=this.sessionFactory.getCurrentSession();
-				//Query q=session.createQuery("select id,username,teacherage from User as user inner join fetch user.myJobs as job inner join fetch job.grades as grade"
-				//	+ " where grade.gid=4");
-				Query q=session.createSQLQuery("select a.id,username,teacherage from tbl_user a,tbl_myjob b,tbl_myjobgrade c where a.id=b.tid and b.jid=c.jid"
-						+ " and gid=4");
-				return q.list();
 			}
 }
 	

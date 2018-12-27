@@ -39,5 +39,20 @@ public class WorkCompleteDaoImpl implements WorkCompleteDao {
 		Query q=session.createQuery("from HomeWork )");
 		return q.list();
 	}
-
+	public Boolean CommentInsert(int hid,Integer score,String workreview) {
+		// TODO Auto-generated method stub
+		String hql = "update HomeWork h set h.score=:sc ,h.workReview=:wr,h.tstatus='已评价'   where h.hid=:id"; 
+		Session session=this.sessionFactory.openSession();
+		
+		Transaction tx = session.beginTransaction();
+		Query query = session.createQuery(hql);
+		query.setParameter("sc",score );
+		query.setParameter("wr", workreview);
+		query.setParameter("id", hid);
+		query.executeUpdate();
+		tx.commit();
+		
+		return true;
+		
+	}
 }

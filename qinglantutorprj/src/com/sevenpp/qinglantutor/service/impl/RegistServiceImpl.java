@@ -64,6 +64,7 @@ public class RegistServiceImpl implements RegistService {
 				user.setUserName(map.get("username"));
 				user.setSex(map.get("sex"));
 				user.setUserPwd(userPwd);
+				user.setUserImg("images/default.jpg");
 				user.setEmail(map.get("email"));
 				user.setPublicKey(publicKey);
 				user.setPrivateKey(privateKey);

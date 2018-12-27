@@ -18,12 +18,14 @@ import java.util.List;
 		*
 		*/
 public class NewsPage {
+	private int mid;
 	private User Rid;
 	private int Sid;
 	private String content;
 	private Date sendtime;
 	private int status;
 	private String username;
+	private String givername;
 	private String userimg;
 	private String cutContent;
 	private List<Review> review;
@@ -88,6 +90,18 @@ public class NewsPage {
 	}
 	public void setStar(List<String> star) {
 		this.star = star;
+	}
+	public int getMid() {
+		return mid;
+	}
+	public void setMid(int mid) {
+		this.mid = mid;
+	}
+	public String getGivername() {
+		return givername;
+	}
+	public void setGivername(String givername) {
+		this.givername = givername;
 	}
 	
 

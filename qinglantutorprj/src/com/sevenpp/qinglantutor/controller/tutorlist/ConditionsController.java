@@ -1,6 +1,7 @@
 
 		package com.sevenpp.qinglantutor.controller.tutorlist;
-		import java.util.ArrayList;
+		import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -41,83 +42,79 @@ import com.sevenpp.qinglantutor.service.impl.ConditionsServiceImpl;
 			public ModelAndView addConditions(HttpServletRequest request,HttpServletResponse response,
 					Model model,@PathVariable String grade,@PathVariable String subject,
 					@PathVariable String department,@PathVariable String sex,@PathVariable String major)  {
-				
+				response.setContentType("text/html;charset=utf-8");
+				response.setCharacterEncoding("utf-8");
+				try {
+					request.setCharacterEncoding("UTF-8");
+				} catch (UnsupportedEncodingException e) {
+					System.out.println("request乱码");		
+					e.printStackTrace();
+				}
 				System.out.println(grade+subject+department+sex+major);
-				//得到session
 				HttpSession session=request.getSession();
-				//创建条件对象
-//				Object[] conditions = null;
+				if(subject.equals("yuwen"))
+					subject="语文";
+				if(subject.equals("shuxue"))
+					subject="数学";
+				if(subject.equals("yingyu"))
+					subject="英语";
+				if(subject.equals("wuli"))
+					subject="物理";
+				if(subject.equals("huaxue"))
+					subject="化学";
+				if(subject.equals("shengwu"))
+					subject="生物";
+				if(subject.equals("dili"))
+					subject="地理";
+				if(subject.equals("zhengzhi"))
+					subject="政治";
+				if(subject.equals("lishi"))
+					subject="历史";
 				List conditions=null;
 				if(session.getAttribute("conditions")!=null) {
 					conditions=(List) session.getAttribute("conditions");
 				}else {
 					conditions=new ArrayList();
-					conditions.add("0");
-					conditions.add("0");
-					conditions.add("0");
-					conditions.add("0");
-					conditions.add("0");
-					conditions.add("0");
+					for(int i=0;i<6;i++) 
+						conditions.add("0");
 				}
-				//不为0就改变数组值，为0就不改变数组值
-				if(!grade.equals("0"))
-					conditions.set(1, grade);
-				if(!subject.equals("0"))
-					conditions.set(2, subject);
-				if(!department.equals("0"))
-					conditions.set(3, department);
-				if(!sex.equals("0"))
-					conditions.set(4, sex);
-				if(!major.equals("0"))
-					conditions.set(5, major);
+				conditions=this.conditionsServiceImpl.addConditions(conditions, grade, subject, department, sex, major);
 				session.setAttribute("conditions", conditions);
-//				System.out.println("department:"+conditions.getDepartment());
-				
-				//将conditions中的gname,cname换成gid,cid;
-				int gid=0;
-				int cid=0;
-				if(!grade.equals("0")) {
-					gid=this.conditionsServiceImpl.findGidByGname(grade);
-				}
-				if(!subject.equals("0")) {
-					cid=this.conditionsServiceImpl.findCidByCname(subject);
-				}
-//				System.out.println("gid:"+gid);
-//				System.out.println("cid:"+cid);
-				
-				//得到schooltype
-				String schooltype=(String) session.getAttribute("schooltype");
+				String sortcondition="0";
+				if(session.getAttribute("sortcondition")!=null) 
+					sortcondition=(String) session.getAttribute("sortcondition");
+				String schooltype="0";
+				if(session.getAttribute("schooltype")!=null) 
+					schooltype=(String) session.getAttribute("schooltype");
 				System.out.println("schooltype:"+schooltype);
-				
-				//得到符合条件的老师列表
-				List tutors=new ArrayList();
-				tutors=this.conditionsServiceImpl.findTutorByAllConditions(gid, cid, department, sex, major);
-				session.setAttribute("tutors", tutors);
-				return new ModelAndView("redirect:/tutorlist/conditions/"+schooltype);
+				String schoolType="0";
+				if(schooltype.equals("小学"))
+					schoolType="xiaoxue";
+				if(schooltype.equals("初中"))
+					schoolType="chuzhong";
+				if(schooltype.equals("高中"))
+					schoolType="gaozhong";
+				return new ModelAndView("redirect:/tutorlist/conditions/"+schoolType+"/"+sortcondition);
 			}
 			
 			@RequestMapping(value="/deleteconditions/{grade}/{subject}/{department}/{sex}/{major}")
 			public ModelAndView deleteconditions(HttpServletRequest request,HttpServletResponse response,
 					Model model,@PathVariable String grade,@PathVariable String subject,
 					@PathVariable String department,@PathVariable String sex,@PathVariable String major) {
-				//0代表要删掉，其他是1
 				HttpSession session=request.getSession();
 				List conditions=(List)request.getSession().getAttribute("conditions");
-				if(grade.equals("0"))
-					conditions.set(1, "0");
-				if(subject.equals("0"))
-					conditions.set(2, "0");
-				if(department.equals("0")) 
-					conditions.set(3, "0");
-				if(sex.equals("0"))
-					conditions.set(4, "0");
-				if(major.equals("0"))
-					conditions.set(5, "0");
+				conditions=this.conditionsServiceImpl.deleteConditions(conditions, grade, subject, department, sex, major);
 				session.setAttribute("conditions", conditions);
-				
-				//得到schooltype
+				String sortcondition=(String) session.getAttribute("sortcondition");
 				String schooltype=(String) session.getAttribute("schooltype");
+				String schoolType="0";
+				if(schooltype.equals("小学"))
+					schoolType="xiaoxue";
+				if(schooltype.equals("初中"))
+					schoolType="chuzhong";
+				if(schooltype.equals("高中"))
+					schoolType="gaozhong";
 				System.out.println("schoolty:"+schooltype);
-				return new ModelAndView("redirect:/tutorlist/conditions/"+schooltype);
+				return new ModelAndView("redirect:/tutorlist/conditions/"+schoolType+"/"+sortcondition);
 			}
 }

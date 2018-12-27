@@ -3,6 +3,7 @@ package com.sevenpp.qinglantutor.service;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import com.sevenpp.qinglantutor.entity.CourseInformation;
 
@@ -23,7 +24,7 @@ public interface CourseService {
 	/**
 	 * 
 			* @Title: getCourseInfor 
-			* @Description: 查找出老师，我的课程  所需要的数据
+			* @Description: 查找出 我的课程  所需要的数据
 			* @param @param email
 			* @param @return    入参
 			* @return List<CourseInformation>    返回类型
@@ -33,6 +34,19 @@ public interface CourseService {
 			* @version V1.0   
 	 */
 	 public List<CourseInformation> getCourseInfor(String email);
+	 
+	 /**
+	  * 
+	 		* @Title: getPersonalDetail 
+	 		* @Description:		得到个人中心个人信息学院评分那部分资料
+	 		* @param @return    入参
+	 		* @return Map<String,Object>    返回类型
+	 		* @author （作者） 
+	 		* @throws
+	 		* @date 2018年12月24日 上午10:02:44 
+	 		* @version V1.0   
+	  */
+	 public Map<String, Object> getPersonalDetail(String email);
 	 
 	 /**
 	  * 
