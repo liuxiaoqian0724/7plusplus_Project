@@ -34,6 +34,19 @@ public interface TeachPlanService {
 	 */
 	public List<Object> getTeachPlanInfor(String email);
 	
+	 /**
+	  * 
+	 		* @Title: getPersonalDetail 
+	 		* @Description:		得到个人中心个人信息学院评分那部分资料
+	 		* @param @return    入参
+	 		* @return Map<String,Object>    返回类型
+	 		* @author （作者） 
+	 		* @throws
+	 		* @date 2018年12月24日 上午10:02:44 
+	 		* @version V1.0   
+	  */
+	 public Map<String, Object> getPersonalDetail(String email);
+	
 	/**
 	 * 
 			* @Title: getRoleByEmail 

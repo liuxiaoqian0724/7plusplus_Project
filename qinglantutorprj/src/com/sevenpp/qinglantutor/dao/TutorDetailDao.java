@@ -9,6 +9,7 @@
 
 package com.sevenpp.qinglantutor.dao;
 
+
 import com.sevenpp.qinglantutor.entity.User;
 
 /**
@@ -59,6 +60,33 @@ public interface TutorDetailDao {
 			* @date 2018年12月13日 上午10:40:18 
 			* @version V1.0   
 	 */
-//	public boolean addInquireMsg(Integer id,String chosenGrade);
+	public void addInquireMsg(Integer id,Integer inquireId,String grade);
 
+	/**
+	 * 
+			* @Title: findTeacherReview 
+			* @Description: 获取老师教课学生的评论
+			* @param @param id 用户id
+			* @param @return    入参
+			* @return ClassRelation    返回类型
+			* @author lxq 
+			* @throws
+			* @date 2018年12月18日 下午3:00:56 
+			* @version V1.0   
+	 */
+	public Integer findTutorReviewCount(Integer id);
+	
+	/**
+	 * 
+			* @Title: findUserByEmail 
+			* @Description: 通过用户email查找用户
+			* @param @param email
+			* @param @return    入参
+			* @return User    返回类型
+			* @author lxq
+			* @throws
+			* @date 2018年12月26日 下午2:27:46 
+			* @version V1.0   
+	 */
+	public User findUserByEmail(String email);
 }

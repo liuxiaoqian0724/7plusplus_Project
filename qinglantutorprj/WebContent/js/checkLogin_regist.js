@@ -200,7 +200,7 @@ function checkEmail() {
 				} else {
 					isEmail = false;
 					$("#send").attr("disabled", true);
-					EmailError.html('<label class="input-control-icon-right"style=" position:relative; left:-4%;"><img alt="" src="images/icon/error.png" style="width:20px; height:20px;"></label><lable class="ui red message" style="display:inline; height:auto; width:auto; font-size:12px; padding:5px;">该邮箱已被注册</lable>');
+					EmailError.html('<label class="input-control-icon-right"style=" position:relative; left:-4%;"><img alt="" src="images/icon/error.png" style="width:20px; height:20px;"></label><lable class="ui red message" style="display:inline; height:auto; width:auto; font-size:12px; padding:5px; left:25%;">该邮箱已被注册</lable>');
 				}
 			}
 
@@ -224,7 +224,13 @@ function submitData() {
 			datatype : "json",
 			contentType : "application/json;charset=UTF-8",
 			success : function(data) {
-				window.location.href = "index.jsp"
+				if($("input[name='roles']:checked").val()=='老师'){
+					$("#choose_button").append('<button class="btn btn-info" type="button" id="i_wonder_release" onclick="window.location.href=\'sendmessageed.jsp\'"><i class="icon icon-pencil"></i>我要发布</button>');
+				}
+				else{
+					$("#choose_button").append('');
+				}
+				window.location.href = "index.jsp";
 			}
 		});
 	}
@@ -331,5 +337,3 @@ function logInNow() {
 	}
 }
 
-
- 

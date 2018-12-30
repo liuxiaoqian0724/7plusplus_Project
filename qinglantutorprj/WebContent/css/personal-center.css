@@ -2,18 +2,20 @@
  body{
   margin: 0 auto;
  }
-
+ a:hover{
+ 	color:black;
+ }
  #content{
     /*width: 93.5%;*/
     width: 1200px;
-    height: 800px;
+    height: 1030px;
     z-index: -1;
     margin: 0 auto;
   }
   #c1{
     width: 1200px;
     height: 20%;
-    margin-top: -10px;
+    padding-top:50px;
   }
   #c1 ul li{
     float: left;
@@ -55,7 +57,7 @@
   }
   #c1-about span{
     /*displasy: block;*/
-    width: 100px;
+    width: 140px;
     height: 30px;
     background-color: white;
     border:1px solid #c0c0c0;
@@ -69,6 +71,7 @@
   #c1-person{
     height: 160px;
     width: 380px;
+    margin-left:35px;
   }
   #c1-person-p1{
     height: 30px;
@@ -117,7 +120,7 @@
   }
   .c2{
     float: left;
-    overflow-y: auto;
+  /*   overflow-y: auto; */
   }
   #c2-left{
     height: 100%;
@@ -128,11 +131,12 @@
   .c2-left-item{
     width: 180px;
     height: 43px;
+    padding-bottom:50px;
   }
   .c2-left-item a{
     display: block;
     width: 160px;
-    height: 35px;
+    height: 40px;
     color: black;
     font-size: 17px;
     padding-left: 15px;
@@ -141,6 +145,7 @@
     text-decoration: none;
   }
   .c2-left-item a:hover{
+  	color:black;
     text-decoration: none;
     background-color: #33A6B8;
   }
@@ -160,10 +165,9 @@
   
   #c2-right .panel-body{
     background-color: #F9F9F9;
-    height: 88%;
-
+    height: 90.9%;
   }
-  #c2-right .panel-body> div{
+  #c2-right .panel-body> div> div{
     background-color: white;
     border:1px solid black;
     margin-bottom: 10px;

@@ -15,5 +15,7 @@ public class WorkCompleteServiceImpl implements WorkCompleteService {
 		// TODO Auto-generated method stub
 		return this.workCompleteDaoImpl.HomeworkInsert(scontent, hid,question);
 	}
-
+	public Boolean CommentInsert(int hid,Integer score,String workreview) {
+		return this.workCompleteDaoImpl.CommentInsert(hid,score, workreview);
+	}
 }

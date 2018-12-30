@@ -14,11 +14,11 @@
 				<li>
 					<a href="<%=basePath%>/index.jsp" style="font-weight:800;">首页</a>
 				</li>
-				<li><a href="<%=basePath%>/search?grade=家教">家教</a>
+				<li><a href="<%=basePath%>/tutorlist/conditions/0/0">家教</a>
 					<ul>
-						<li><a href="<%=basePath%>/search?grade=小学">小学</a></li>
-						<li><a href="<%=basePath%>/search?grade=初中">初中</a></li>
-						<li><a href="<%=basePath%>/search?grade=高中">高中</a></li>
+						<li><a href="<%=basePath%>/tutorlist/conditions/小学/0">小学</a></li>
+						<li><a href="<%=basePath%>/tutorlist/conditions/初中/0">初中</a></li>
+						<li><a href="<%=basePath%>/tutorlist/conditions/高中/0">高中</a></li>
 					</ul>
 				</li>
 				<li><a href="#">论坛社区</a>
@@ -35,20 +35,21 @@
 						<li><a href="#">学习障碍</a></li>
 					</ul>
 				</li>
-				<li><a href="#">个人中心</a></li>
+				<li><a href="javascript:void(0)" onclick="persoanlNews()" id="personalNews">个人中心</a></li>
+				
 				
 				<!--可在此处直接添加导航-->
 			</ul>
 		</div>
-		<div class="input-group" style="width:250px;top:9px;left:30px">
+		<form class="input-group" style="width:250px;top:9px;left:30px" action="<%=basePath%>/searchsubject">
 			<div class="input-control search-box search-box-circle has-icon-left has-icon-right search-example" id="searchboxExample">
-				<input id="inputSearchExample3" type="search" class="form-control search-input" placeholder="搜索">
+				<input id="inputSearchExample3" type="search" class="form-control search-input" placeholder="请输入要搜索的科目" name="subject">
 				<label for="inputSearchExample3" class="input-control-icon-left search-icon"><i class="icon icon-search"></i></label>
 			</div>
 			<span class="input-group-btn">
  				<button class="btn btn-info" type="submit">搜索</button>
 			</span>
-		</div>
+		</form>
 		<div id="login_regist" style="font-size: 15px; width: 100px; position:relative; left:1070px; top:-36px;">
 			<a href="javascipt:void(0)" onclick="loginDis()" style="text-decoration:none; color:#fff;">登录</a> 
 			<a href="javascript:void(0)" onclick="registDis()" style="text-decoration:none; color:#fff;">/注册</a>

@@ -52,7 +52,7 @@ public class TeachPlanDaoImpl implements TeachPlanDao {
 		return list.get(0);
 	}
 
-	public void editTeachPlan(Integer id, String content, Date time) {
+	public void changeTeachPlan(Integer id, String content, Date time) {
 		/**
 		* editTeachPlan		编辑我的教案
 		* @param name

@@ -3,15 +3,13 @@
 
 		import java.util.List;
 
-		import javax.annotation.Resource;
+import javax.annotation.Resource;
 
-		import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Service;
 
-		import com.sevenpp.qinglantutor.dao.TutorListDao;
-		import com.sevenpp.qinglantutor.dao.impl.TutorListDaoImpl;
-		import com.sevenpp.qinglantutor.entity.Course;
-		import com.sevenpp.qinglantutor.entity.Grade;
-		import com.sevenpp.qinglantutor.service.TutorListService;
+import com.sevenpp.qinglantutor.dao.impl.TutorListDaoImpl;
+import com.sevenpp.qinglantutor.entity.UserInfo;
+import com.sevenpp.qinglantutor.service.TutorListService;
 
 
 		/**
@@ -34,6 +32,9 @@
 			@Resource
 			private TutorListDaoImpl tutorlistDaoImpl;
 			
+			public List<Object[]> findAllCourses(){
+				return this.tutorlistDaoImpl.findAllCourses();
+			}
 			/**
 			 * 
 			 * @Title: grades 
@@ -45,8 +46,8 @@
 			 * @date 2018年12月5日 下午3:25:17 
 			 * @version V1.0   
 			 */
-			public List<Object[]> grades(){
-				return this.tutorlistDaoImpl.findGrades();
+			public List<Object[]> findAllGrades(){
+				return this.tutorlistDaoImpl.findAllGrades();
 			}
 			
 			/**
@@ -61,29 +62,13 @@
 			 * @date 2018年12月5日 下午4:48:55 
 			 * @version V1.0   
 			 */
-			public List<Object[]> gradesBySchoolType(String schoolType){
+			public List<Object[]> findGradesBySchoolType(String schoolType){
 				return this.tutorlistDaoImpl.findGradesBySchoolType(schoolType);
 			}
+
+	
+
 			
-			/**
-			 * 
-			 * @Title: courses 
-			 * @Description: 查询所有课程 
-			 * @param @return 
-			 * @return List<Course>
-			 * @author cuishan
-			 * @throws	
-			 * @date 2018年12月5日 下午3:30:44 
-			 * @version V1.0   
-			 */
-			public List<Object[]> courses(){
-				return this.tutorlistDaoImpl.findCourses();
-			}
-			
-			
-			public List<Object[]> find(){
-				return this.tutorlistDaoImpl.find();
-			}
 
 }
 

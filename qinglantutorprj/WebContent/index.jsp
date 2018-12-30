@@ -27,7 +27,6 @@
     <!--  js功能代码 -->
     <script src="<%=basePath%>/js/header.js"></script>
     <script src="<%=basePath%>/js/nav.js"></script>
-    
     <!-- semantic -->
     <link rel="stylesheet" type="text/css" href="<%=basePath%>/Semantic/components/card.css"/>
     <link rel="stylesheet" type="text/css" href="<%=basePath%>/Semantic/components/input.css"/>
@@ -398,5 +397,6 @@
 	<script type="text/javascript" src="<%=basePath%>/js/index.js"></script>
 	<script type="text/javascript" src="<%=basePath%>/js/checkLogin_regist.js"></script>
 	<jsp:include page="footer.jsp" />
+	
 </body>
 </html>

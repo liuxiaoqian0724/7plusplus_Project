@@ -1,8 +1,10 @@
 package com.sevenpp.qinglantutor.controller.course;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.Cookie;
@@ -38,6 +40,7 @@ public class CourseController {
 	
 	@Resource
 	private CourseServiceImpl courseServiceImpl;
+	private List<CourseInformation> list;
 	
 	
 	@RequestMapping("courseInformation")
@@ -49,12 +52,70 @@ public class CourseController {
 		response.setContentType("text/html;charset=utf-8");
 		response.setCharacterEncoding("utf-8");
 		Cookie[]cookies = request.getCookies();
-		System.out.println(cookies.length);
 		String SESSIONID = CookieUtils.getCookieFromCookies(cookies,"JSESSIONID").getValue();
 		String email = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
 		
-		List<CourseInformation> list = this.courseServiceImpl.getCourseInfor(email);		
-		request.setAttribute("courseDetailList", list);
+		list = this.courseServiceImpl.getCourseInfor(email);
+		List<CourseInformation> list1 = new ArrayList<>();
+		int page = 1;
+		int pageTotal = 1;
+		if(list.size()!=0) {
+			pageTotal = list.size()%3 == 0 ? list.size()/3 : list.size()/3+1;
+		}
+		if(list.size()>=3) {
+			list1.add(list.get(0));
+			list1.add(list.get(1));
+			list1.add(list.get(2));
+		}else {
+			for(int i=0;i<list.size();i++) {
+				list1.add(list.get(i));
+			}
+		}
+		Map<String, Object> map = this.courseServiceImpl.getPersonalDetail(email);
+		
+		request.setAttribute("map", map);
+		request.setAttribute("courseDetailList", list1);
+		request.setAttribute("page", page);
+		request.setAttribute("pageTotal", pageTotal);
+		
+		if(this.courseServiceImpl.getRoleByEmail(email).startsWith("老师")) {
+			return "teacher-personal-center-mycourse";
+		}else {
+			return "student-personal-center-mycourse";
+		}
+	}
+	
+	@RequestMapping("/courseJump")
+	public String jump(@RequestParam(value="page")int page,HttpServletRequest request,HttpServletResponse response) {
+		response.setHeader("Access-Control-Allow-Origin", "*");
+		response.setHeader("Access-Control-Allow-Methods", "POST");
+		response.setHeader("Access-Control-Allow-Headers","x-requested-with,content-type");
+		response.setHeader("Access-Control-Allow-Credentials","true");
+		response.setContentType("text/html;charset=utf-8");
+		response.setCharacterEncoding("utf-8");
+		Cookie[]cookies = request.getCookies();
+		String SESSIONID = CookieUtils.getCookieFromCookies(cookies,"JSESSIONID").getValue();
+		//String email = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
+		String email = "zhangsan@qq.com";
+		
+		int pageTotal = 1;
+		if(list.size()!=0) {
+			pageTotal = list.size()%3 == 0 ? list.size()/3 : list.size()/3+1;
+		}
+		List<CourseInformation> list1 = new ArrayList<>();
+		if(page == pageTotal ) {
+			for(int i = (page-1)*3 ;i<list.size();i++) {
+				list1.add(list.get(i));
+			}
+		}else {
+			for(int i = (page-1)*3;i<(page-1)*3+3;i++) {
+				list1.add(list.get(i));
+			}
+		}
+		
+		request.setAttribute("courseDetailList", list1);
+		request.setAttribute("page", page);
+		request.setAttribute("pageTotal", pageTotal);
 		
 		if(this.courseServiceImpl.getRoleByEmail(email).startsWith("老师")) {
 			return "teacher-personal-center-mycourse";
@@ -67,8 +128,9 @@ public class CourseController {
 	@ResponseBody
 	public String stuCourseReview(@RequestParam(value="classRelationId")Integer classRelationId
 			,@RequestParam(value="reviewContent")String reviewContent,@RequestParam(value="reviewStar")Integer reviewStar){
-		Timestamp reviewTime = new Timestamp(System.currentTimeMillis());
-		this.courseServiceImpl.insertReview(reviewTime, reviewContent, reviewStar, classRelationId);
+		Date reviewTime = new Date();
+		Timestamp time = new Timestamp(reviewTime.getTime());
+		this.courseServiceImpl.insertReview(time, reviewContent, reviewStar, classRelationId);
 		return "反馈成功";
 	}
 	
