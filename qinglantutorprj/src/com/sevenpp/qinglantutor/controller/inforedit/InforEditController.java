@@ -53,7 +53,7 @@ public class InforEditController {
 		Cookie[]cookies = request.getCookies();
 		String SESSIONID = CookieUtils.getCookieFromCookies(cookies,"JSESSIONID").getValue();
 		//String email = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
-		String email = "zhangsan@qq.com";
+		String email = "zhaoyi@qq.com";
 		User u = this.inforEditServiceImpl.getUserByEmail(email);
 		request.setAttribute("user", u);
 		return "personal-information-edit";

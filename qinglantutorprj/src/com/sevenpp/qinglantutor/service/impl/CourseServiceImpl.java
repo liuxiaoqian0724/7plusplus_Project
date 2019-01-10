@@ -215,7 +215,6 @@ public class CourseServiceImpl implements CourseService {
 			List<ClassRelation> classRelationList =  new ArrayList<>();
 			List<Review> reviewList = new ArrayList<>();
 			int starTotal = 0 , reviewTotal = 0;
-			
 			if(user.getRole().startsWith("老师")) {
 				List<TeachRelation> teachRelationList= user.getTeachRelations();
 				for(int i=0;i<teachRelationList.size();i++) {
@@ -250,7 +249,6 @@ public class CourseServiceImpl implements CourseService {
 				map.put("star"+i,"empty-star");i++;
 			}
 			
-			System.out.println(map.get("star1"));
 			map.put("user", user);
 			map.put("grade", grade);
 			

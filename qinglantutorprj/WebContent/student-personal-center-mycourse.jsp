@@ -14,11 +14,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<base href="<%=basePath%>">
-		<link rel="stylesheet" href="dist/css/zui.css" />
 		<link rel="stylesheet" type="text/css" href="css/personal-center.css">
 		<link rel="stylesheet" type="text/css" href="css/student-mycourse.css">
 		<link rel="stylesheet" type="text/css" href="css/header.css"/>
 		<link rel="stylesheet" type="text/css" href="css/footer.css"/>
+		<link rel="stylesheet" type="text/css" href="css/register_login.css"/>
 		
 		<!-- ZUI Javascript 依赖 jQuery -->
 		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
@@ -31,22 +31,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	<!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
     	<script type="text/javascript" charset="utf-8" src="textarea/lang/zh-cn/zh-cn.js"></script>
 		
-		<style type="text/css">
-		  #inputSearchExample3{
-		    width: 228.67px;
-		  }
-		  .input-group-btn{
-		    display: block;
-		    width: 52px;
-		    height: 32px;
-		  }
-		  #header-login > span:first-of-type{
-		    margin-left: -10px;
-		  }
-		  #header-login > span:last-of-type{
-		    margin-left: -10px;
-		  }
-		</style>
+		<script src="js/jquery-3.2.1.js"></script>
+		<link rel="stylesheet" href="dist/css/zui.css" />
+		<link href="dist/lib/datetimepicker/datetimepicker.min.css" rel="stylesheet">
+		<!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
+		<!-- <script src="dist/lib/jquery/jquery.js"></script> -->
+		<!-- ZUI Javascript组件 -->
+		<script type="text/javascript" src="dist/js/zui.js"></script>
+		<script src="dist/lib/datetimepicker/datetimepicker.min.js"></script>
+		
+		<link rel="stylesheet" href="css/verify.css" />
+		<script type="text/javascript" src="js/verify.js"></script>
+	    <script type="text/javascript" src="js/verify.min.js"></script>
+	    <script type="text/javascript" src="js/header.js"></script>
+	 	<script type="text/javascript" src="js/nav.js"></script>
+	 	
+	 	<!-- semantic -->
+		<link rel="stylesheet" type="text/css" href="Semantic/components/message.css"/>
+		
 	<title>学生，我的课程</title>
 </head>
 <body>
@@ -81,7 +83,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <img src="images/${map.star3 }.png" style="width: 25px;height: 25px;">
             <img src="images/${map.star4 }.png" style="width: 25px;height: 25px;">
             <img src="images/${map.star5 }.png" style="width: 25px;height: 25px;">
-            <form>
+             <form action="jumptoReview" method="post">
               <input type="submit" name="查看详情" value="查看详情">
             </form>
           </div>
@@ -90,14 +92,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </div>
     <div id="c2">
       <div class="c2" id="c2-left">
-         <div class="c2-left-item" id="c2-left-news"><a href="#"><i class="icon icon-envelope"></i>&nbsp;我的消息<i class="icon icon-chevron-right"></i></a></div>
-         <div class="c2-left-item" id="c2-left-news"><a href="#"><i class="i2con icon-book"></i>&nbsp;我的课程<i class="icon icon-chevron-right"></i></a></div>
-         <div class="c2-left-item" id="c2-left-news"><a href="#"><i class="icon icon-flag"></i>&nbsp;学员评价<i class="icon icon-chevron-right"></i></a></div>
+         <div class="c2-left-item" id="c2-left-news"><a href="jumptoNews"><i class="icon icon-envelope"></i>&nbsp;我的消息<i class="icon icon-chevron-right"></i></a></div>
+         <div class="c2-left-item" id="c2-left-news"><a href="courseInformation"><i class="icon icon-book"></i>&nbsp;我的课程<i class="icon icon-chevron-right"></i></a></div>
+         <div class="c2-left-item" id="c2-left-news"><a href="jumptoReview"><i class="icon icon-flag"></i>&nbsp;我的评价<i class="icon icon-chevron-right"></i></a></div>
          <div class="c2-left-item" id="c2-left-news"><a href="#"><i class="icon icon-newspaper-o"></i>&nbsp;我的文章<i class="icon icon-chevron-right"></i></a></div>
          <div class="c2-left-item" id="c2-left-news"><a href="#"><i class="icon icon-question-sign"></i>&nbsp;我的问答<i class="icon icon-chevron-right"></i></a></div>
-         <div class="c2-left-item" id="c2-left-news"><a href="#"><i class="icon icon-wrench"></i>&nbsp;个人资料<i class="icon icon-chevron-right"></i></a></div>
-         <div class="c2-left-item" id="c2-left-news"><a href="#"><i class="icon icon-stack"></i>&nbsp;我的教案<i class="icon icon-chevron-right"></i></a></div>
-         <div class="c2-left-item" id="c2-left-news"><a href="#"><i class="icon icon-file-text-o"></i>&nbsp;我的作业<i class="icon icon-chevron-right"></i></a></div>
+         <div class="c2-left-item" id="c2-left-news"><a href="inforedit"><i class="icon icon-wrench"></i>&nbsp;个人资料<i class="icon icon-chevron-right"></i></a></div>
+         <div class="c2-left-item" id="c2-left-news"><a href="teachPlanInformation"><i class="icon icon-stack"></i>&nbsp;我的教案<i class="icon icon-chevron-right"></i></a></div>
+         <div class="c2-left-item" id="c2-left-news"><a href="HomeWorkShow"><i class="icon icon-file-text-o"></i>&nbsp;我的作业<i class="icon icon-chevron-right"></i></a></div>
       </div>
       <div class="c2 panel" id="c2-right">
         <div class="panel-heading">
@@ -143,7 +145,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			                  <form action="HomeWorkShow" method="post">
 			                    <input type="button" name="detail" value="查看作业">
 			                  </form>
-			                  <form action="#" method="post">
+			                  <form action="teachPlanInformation" method="post">
 			                    <input type="submit" name="detail" value="查看文案">
 			                  </form>
 			                </li>
@@ -194,6 +196,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
  <!-- 底部 -->
 <jsp:include page="footer.jsp"></jsp:include>	
-	
+<script type="text/javascript" src="js/checkLogin_regist.js"></script>
 </body>
 </html>

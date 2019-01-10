@@ -10,7 +10,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
-<body>	
+<body>
 	<a href="courseInformation">课程</a>
 	<a href="teachPlanInformation">教案</a>
 	<a href="inforedit">个人中心修改</a>

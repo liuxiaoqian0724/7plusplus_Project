@@ -17,22 +17,39 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta name="format-detectison" content="telephone=no">
 	<base href="<%=basePath%>">
 	<!-- ZUI 标准版压缩后的 CSS 文件 -->
-	<link rel="stylesheet" href="dist/css/zui.min.css">
-	<link rel="stylesheet" href="dist/css/zui.css" />
 	<link rel="stylesheet" type="text/css" href="css/personal-teacher-information-edit.css">
 	<link rel="stylesheet" type="text/css" href="css/header.css" />
 	<link rel="stylesheet" type="text/css" href="css/footer.css" />
+	<link rel="stylesheet" type="text/css" href="css/register_login.css"/>
 	<link rel="stylesheet" href="css/cropper.min.css">
 	<link rel="stylesheet" href="css/ImgCropping.css">
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="css/jquery-school-seletor.css">	
-	<!-- ZUI Javascript 依赖 jQuery -->
-	<script src="js/jquery-3.2.1.js"></script>
+	
+	
 	<!-- ZUI 标准版压缩后的 JavaScript 文件 -->
-	<script src="dist/js/zui.min.js"></script>
-	<script type="text/javascript" src="dist/js/zui.js"></script>
+	<script src="js/jquery-3.2.1.js"></script>
+	
 	<script src="js/cropper.min.js"></script>
 	<script src="js/jquery-school-seletor.min.js"></script>
+	
+	<link rel="stylesheet" href="dist/css/zui.css" />
+	<link href="dist/lib/datetimepicker/datetimepicker.min.css" rel="stylesheet">
+	<!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
+	<!-- <script src="dist/lib/jquery/jquery.js"></script> -->
+	<!-- ZUI Javascript组件 -->
+	<script type="text/javascript" src="dist/js/zui.js"></script>
+	<script src="dist/lib/datetimepicker/datetimepicker.min.js"></script>
+	
+	<link rel="stylesheet" href="css/verify.css" />
+	<script type="text/javascript" src="js/verify.js"></script>
+    <script type="text/javascript" src="js/verify.min.js"></script>
+    <script type="text/javascript" src="js/header.js"></script>
+ 	<script type="text/javascript" src="js/nav.js"></script>
+ 	
+ 	<!-- semantic -->
+	<link rel="stylesheet" type="text/css" href="Semantic/components/message.css"/>
+
 </head>
 
 <body>
@@ -42,7 +59,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div id="content">
 		<div id="c1">
 			<div>
-				<a href="#"><i class="icon icon-arrow-left icon-1x"></i>返回个人中心</a>
+				<a href="jumptoNews"><i class="icon icon-arrow-left icon-1x"></i>返回个人中心</a>
 			</div><br>
 			<span class="c1-item">个人信息</span>
 		</div>
@@ -249,6 +266,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!-- 底部 -->
 	<jsp:include page="footer.jsp"></jsp:include>
 	
+	<script type="text/javascript" src="js/checkLogin_regist.js"></script>
 	<script src="js/personal-information-check.js"></script>
 </body>
 </html>

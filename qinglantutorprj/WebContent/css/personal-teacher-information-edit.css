@@ -6,9 +6,10 @@ input{
 }
 #content{
 	width: 1200px;
-	height: 1260px;
+	height: 1320px;
 	margin-left: 40px;
 	margin: 0 auto;
+	padding-top:60px;
 }
 #c1{
 	width: 900px;
