@@ -53,10 +53,7 @@ public class TeachPlanController {
 		list = this.teachPlanServiceImpl.getTeachPlanInfor(email);
 		List<Object> list1 = new ArrayList<>();
 		int page = 1;
-		int pageTotal = 1;
-		if(list.size()!=0) {
-			pageTotal = list.size()%3 == 0 ? list.size()/3 : list.size()/3+1;
-		}
+		int pageTotal = list.size()%3 == 0 ? list.size()/3 : list.size()/3+1;
 		if(list.size()>=3) {
 			list1.add(list.get(0));
 			list1.add(list.get(1));
@@ -97,10 +94,7 @@ public class TeachPlanController {
 		//String email = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
 		String email = "zhangsan@qq.com";
 		
-		int pageTotal = 1;
-		if(list.size()!=0) {
-			pageTotal = list.size()%3 == 0 ? list.size()/3 : list.size()/3+1;
-		}
+		int pageTotal = list.size()%3 == 0 ? list.size()/3 : list.size()/3+1;
 		List<Object> list1 = new ArrayList<>();
 		if(page == pageTotal ) {
 			for(int i = (page-1)*3 ;i<list.size();i++) {

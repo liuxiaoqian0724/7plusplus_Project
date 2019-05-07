@@ -61,7 +61,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <span class="label label-badge">${x.major}</span>
         </li>
         <li id="c1-person">
-          <p id="c1-person-p1">个人简介</p>
+          <p id="c1-person-p1">个人介绍</p>
           <p id="c1-person-p2">
             &nbsp;&nbsp;${x.introduce}
           </p>

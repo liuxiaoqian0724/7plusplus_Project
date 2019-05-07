@@ -69,7 +69,9 @@ public class InforEditController {
 		response.setCharacterEncoding("utf-8");
 		Cookie[]cookies = request.getCookies();
 		String SESSIONID = CookieUtils.getCookieFromCookies(cookies,"JSESSIONID").getValue();
-		String email = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();	
+		String email = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
+		
+		
 		u.setEmail(email);
 		User user = this.inforEditServiceImpl.getUserByEmail(email);
 		if(u.getUserImg().startsWith("data:image/")) {
@@ -91,7 +93,7 @@ public class InforEditController {
 			u.setImg4(BaseDecoderUtil.ifSuccess(u.getImg4(), request,"img4",u.getEmail(),user.getImg4()));
 		}
 		this.inforEditServiceImpl.changeInforEdit(u);
-		return "student-personal-center-mynews";
+		return "成功";
 	}
 }
 

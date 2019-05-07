@@ -165,9 +165,6 @@ public class reviewController {
 				if (endNews>totalnews) {
 					endNews=totalnews;
 				}
-				if (totalpage==0) {
-					totalpage=1;
-				}
 				List<NewsPage> listpagefinal =listpage.subList(beginNews, endNews);
 			request.getServletContext().setAttribute("listpage",listpagefinal);
 			request.getServletContext().setAttribute("pagenow",page);
@@ -276,9 +273,6 @@ public class reviewController {
 				int endNews=beginNews+newsperpage;
 				if (endNews>totalnews) {
 					endNews=totalnews;
-				}
-				if (totalpage==0) {
-					totalpage=1;
 				}
 				List<NewsPage> listpagefinal =listpage.subList(beginNews, endNews);
 			request.getServletContext().setAttribute("listpage",listpagefinal);

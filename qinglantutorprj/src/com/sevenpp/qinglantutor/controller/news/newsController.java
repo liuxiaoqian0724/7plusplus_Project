@@ -11,8 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.sevenpp.qinglantutor.entity.ClassRelation;
 import com.sevenpp.qinglantutor.entity.Msg;
 import com.sevenpp.qinglantutor.entity.NewsPage;
+import com.sevenpp.qinglantutor.entity.Review;
 import com.sevenpp.qinglantutor.entity.TeachRelation;
 import com.sevenpp.qinglantutor.entity.User;
 import com.sevenpp.qinglantutor.service.impl.personalServiceImpl;
@@ -136,9 +138,6 @@ public class newsController {
 			List<NewsPage> listpage =listfinal.subList(beginNews, endNews);
 			request.getServletContext().setAttribute("pagenow",page);
 			request.getServletContext().setAttribute("totalnews", totalnews);
-			if (totalpage==0) {
-				totalpage=1;
-			}
 			request.getServletContext().setAttribute("newsperpage", newsperpage);
 			request.getServletContext().setAttribute("totalpage", totalpage);
 			request.getServletContext().setAttribute("beginNews", beginNews);
@@ -212,9 +211,6 @@ public class newsController {
 			int endNews=beginNews+newsperpage;
 			if (endNews>totalnews) {
 				endNews=totalnews;
-			}
-			if (totalpage==0) {
-				totalpage=1;
 			}
 			List<NewsPage> listpage =listfinal.subList(beginNews, endNews);
 			request.getServletContext().setAttribute("pagenow",page);

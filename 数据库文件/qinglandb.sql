@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50532
 File Encoding         : 65001
 
-Date: 2018-12-18 10:10:03
+Date: 2018-12-18 15:57:30
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -272,7 +272,7 @@ CREATE TABLE `tbl_review` (
   `reviewstar` int(11) DEFAULT NULL,
   `crid` int(11) DEFAULT NULL,
   PRIMARY KEY (`rid`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tbl_review
@@ -286,6 +286,9 @@ INSERT INTO `tbl_review` VALUES ('6', '2018-12-06 00:00:00', '老师善于引导
 INSERT INTO `tbl_review` VALUES ('7', '2018-12-12 00:00:00', '老师善于引导，课件清晰完整，讲课生动，学生很喜欢', '80', '7');
 INSERT INTO `tbl_review` VALUES ('8', '2018-12-01 00:00:00', '老师善于引导，课件清晰完整，讲课生动，学生很喜欢', '90', '8');
 INSERT INTO `tbl_review` VALUES ('9', '2018-12-12 00:00:00', '老师善于引导，课件清晰完整，讲课生动，学生很喜欢', '90', '9');
+INSERT INTO `tbl_review` VALUES ('10', '2018-12-06 15:14:38', '见识到了开发聚隆科技乐山大佛会计师的房价来看莱克斯顿', null, '1');
+INSERT INTO `tbl_review` VALUES ('11', '2018-09-20 15:15:12', '诶UR偶尔有我让业务i', null, '1');
+INSERT INTO `tbl_review` VALUES ('12', '2018-11-05 19:15:34', '反倒是离开家里看电视弗兰克', null, '1');
 
 -- ----------------------------
 -- Table structure for `tbl_teach`
