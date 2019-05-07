@@ -1,18 +1,22 @@
 #myNiceCarousel{
 	position: relative;
+	top:100px;
 }
 .tutor_information{
 	position: relative;
-	margin-top:15px;
-	border:1px solid #e4dfd7;
-	background-color:#fcfcfc;
+	top:115px;
+	border:1px solid #8abcd1;
+	background-image:url(../images/tutorinformationbg.png);
+	background-repeat:repeat-x;
+	height:auto;
+	border-radius:5px;
 }
 .tutor_information_pic img{
 	width:50%;
 	height:50%;
 	position: relative;
 	margin-left:480px;
-	margin-top:30px;
+	margin-top:180px;
 }
 #choose_button{
 	position: relative;
@@ -24,35 +28,33 @@
 	margin-left:300px;
 }
 #personal_information{
-	margin-left:15px;
+	margin-left:23px;
 	margin-top:15px;
 }
 #personal_inf{
-	width:222px;
+	width:200px;
 	background-color:#fff;
 }
 #personal_name{
-	height:100px;
-	border:1px solid #e4dfd7;
+	width:262px; 
+	height:90px;
+	font-size:12px;
 	margin-top:5px;
-}
-#pager{
-	margin-left: 460px;
-}
-.pager a:link{
-	background-color: #FFF;
-	color:#56C9DB;
+	color:#2d2e36;
 }
 #learning_community{
 	margin-top:15px;
-	border:1px solid #e4dfd7;
+	border:1px solid #8abcd1;
 	background-color:#fcfcfc;
+	position:relative; 
+	top:100px;
 }
 .studycommunity img{
 	width:50%;
 	height:50%;
-	margin-left:480px;
-	margin-top:30px;
+	position:relative; 
+	top:115px; 
+	z-index:999;
 }
 #learning_experience{
 	margin:15px;
@@ -75,7 +77,6 @@
 	background-color:#fff;
 }
 #question_answer{
-	
 	position: relative;
 	margin-top:5px;
 }
