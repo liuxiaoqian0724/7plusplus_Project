@@ -66,7 +66,9 @@ public class SendMessageServiceImpl implements SendMessageService {
 		String[] myCourses = course.substring(0,course.length()).split(";");
 		for (int i = 0; i < myCourses.length; i++) {
 			Course course2 = new Course();
-			course2.setCname(myCourses[i]);
+//			course2.setCname(myCourses[i]);
+			int cid=this.sendMessageDaoImpl.findCid(myCourses[i]);
+			course2.setCid(cid);
 			courses.add(course2);
 			
 		}
@@ -75,7 +77,9 @@ public class SendMessageServiceImpl implements SendMessageService {
 		String[] myGrades = grade.substring(0,grade.length()).split(";");
 		for (int i = 0; i < myGrades.length; i++) {
 			Grade grade2 = new Grade();
-			grade2.setGname(myGrades[i]);
+//			grade2.setGname(myGrades[i]);
+			int gid=this.sendMessageDaoImpl.findGid(myGrades[i]);
+			grade2.setGid(gid);
 			grades.add(grade2);
 		}
 		myJob.setGrades(grades);

@@ -6,6 +6,14 @@ $(document).ready(function(){
 	else{
 		$("#choose_button").append('');
 	}
+	if(checkRegist()==true){
+		if(role=="老师"){
+			$("#choose_button").append('<button class="btn btn-info" type="button" id="i_wonder_release" onclick="window.location.href=\'sendmessageed.jsp\'"><i class="icon icon-pencil"></i>我要发布</button>');
+		}
+		else{
+			$("#choose_button").append('');
+		}
+	}
 	// 调用
 	datashow(currentpage);
 	topage(currentpage);
@@ -39,6 +47,7 @@ function datashow(currentpage) {
 		async : false,
 		success : function(data) {
 			totalpage = Math.ceil(data.length / 8);
+			console.log(data.length+"length");
 			$("#personal_name_introduce_school").html("");
 			$.each(data,function(index, res) {
 				// 当前页为第一页时
@@ -79,12 +88,21 @@ function datashow(currentpage) {
 				}
 				if (index >= (currentpage - 1) * 8
 						&& index <= currentpage * 8 - 1) {
-					var str=res.introduce;
-		            if(str.length>27){
-		            	introduce=str.substr(0,30)+'……';
+					var len;
+					if(res.introduce==null){
+						len=0;
+					}
+					else{
+						len=res.introduce.length;
+					}
+		            if(len>27){
+		            	introduce=res.introduce.substr(0,27)+'……';
+		            }
+		            if(len==0){
+		            	introduce='还没有详细介绍呦';
 		            }
 		            else{
-		            	introduce=str;
+		            	introduce=res.introduce;
 		            }
 					teacherinf = '<a href="tutorDetail/showtutorDetail/'+res.id+'">'
 								+'<div class="card"  style="position: relative; width:262px; height:300px;">'
@@ -106,6 +124,7 @@ function datashow(currentpage) {
 								+'</a>'
 					$("#personal_name_introduce_school")
 							.append(teacherinf);
+					console.log(res.id);
 				}
 			})
 		}
@@ -161,21 +180,4 @@ function changegood() {
 		good.innerHTML = "<i class='icon icon-thumbs-o-up'></i><span id='goodcount'>"
 				+ goodcount + "</span>";
 	}
-}
-// 图片的划入划出事件
-var arr = new Array();
-$(".card").each(function() {
-	arr.push($(this));
-});
-for (var i = 0; i < 5; i++) {
-	arr[i].mouseover(function() {
-		$(this).animate({
-			top : '-10px'
-		}, "fast");
-	});
-	arr[i].mouseout(function() {
-		$(this).animate({
-			top : '0px'
-		}, "fast");
-	});
 }

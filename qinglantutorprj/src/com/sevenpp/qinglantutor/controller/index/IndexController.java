@@ -80,12 +80,10 @@ public class IndexController {
 	@RequestMapping("/search/{schooltype}")
 	public String schoolType(@PathVariable String schooltype,Model model) {
 		model.addAttribute("schooltype", schooltype);
-		System.out.println(schooltype);
 		return "tutorlisted";
 	}
 	@RequestMapping("/indexfile")
 	public void findAllUser(HttpServletResponse response){
-		System.out.println("IndexController");
 		List<Userinf> list=new ArrayList<Userinf>();
 		list=service.findAllUser();
 		String str = JSON.toJSONString(list,SerializerFeature.DisableCircularReferenceDetect);

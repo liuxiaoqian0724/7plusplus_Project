@@ -9,7 +9,6 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.sevenpp.qinglantutor.dao.impl.IndexDaoImpl;
-import com.sevenpp.qinglantutor.entity.Course;
 import com.sevenpp.qinglantutor.entity.User;
 import com.sevenpp.qinglantutor.entity.Userinf;
 import com.sevenpp.qinglantutor.service.IndexService;
@@ -43,7 +42,6 @@ public class IndexServiceImpl implements IndexService {
 
 	@Override
 	public List<Userinf> findAllUser() {
-		System.out.println("IndexServiceImpl");
 		List<User> userList = new ArrayList<User>();
 		List<Userinf> userlist = new ArrayList<Userinf>();
 		List teachagelist=new ArrayList();
@@ -59,7 +57,7 @@ public class IndexServiceImpl implements IndexService {
 			userinf.setUserImg(userList.get(i).getUserImg());
 			userlist.add(userinf);
 		}
-		for(int i=0;i<teachagelist.size();i++) {
+		for(int i=0;i<teachagelist.size();i++) { 
 			userlist.get(i).setTeachAge(teachagelist.get(i).toString());
 		}
 		return userlist;

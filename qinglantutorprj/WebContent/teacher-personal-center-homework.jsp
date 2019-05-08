@@ -56,7 +56,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           </c:if>
         </li>
         <li id="c1-person">
-          <p id="c1-person-p1">个人介绍</p>
+          <p id="c1-person-p1">个人简介</p>
           <p id="c1-person-p2">
             &nbsp;&nbsp;${map.user.introduce }
           </p>

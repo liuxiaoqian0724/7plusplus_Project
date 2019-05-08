@@ -11,10 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.sevenpp.qinglantutor.entity.ClassRelation;
 import com.sevenpp.qinglantutor.entity.Msg;
 import com.sevenpp.qinglantutor.entity.NewsPage;
-import com.sevenpp.qinglantutor.entity.Review;
 import com.sevenpp.qinglantutor.entity.TeachRelation;
 import com.sevenpp.qinglantutor.entity.User;
 import com.sevenpp.qinglantutor.service.impl.personalServiceImpl;
@@ -62,7 +60,6 @@ public class newsController {
 		response.setCharacterEncoding("utf-8");
 		Cookie[]cookies = request.getCookies();
 		String SESSIONID = CookieUtils.getCookieFromCookies(cookies,"JSESSIONID").getValue();
-		
 		String email1 = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
 		/*个人中心top部分*/
 		teacher="老师";
@@ -74,8 +71,6 @@ public class newsController {
 			request.getServletContext().setAttribute("personal", listUser);
 			/*个人中心星星部分*/
 			String finalstarfull=this.personalServiceImpl.finalstarfull(userid);
-			System.out.println("finalstarfull:");
-			System.out.println(finalstarfull);
 			double finalstar=Double.valueOf(finalstarfull);
 			int finalstarFloor=(int) Math.floor(finalstar);
 			List<String> personalstar=this.reviewServiceImpl.getReviewStar((int) finalstarFloor);
@@ -138,6 +133,9 @@ public class newsController {
 			List<NewsPage> listpage =listfinal.subList(beginNews, endNews);
 			request.getServletContext().setAttribute("pagenow",page);
 			request.getServletContext().setAttribute("totalnews", totalnews);
+			if (totalpage==0) {
+				totalpage=1;
+			}
 			request.getServletContext().setAttribute("newsperpage", newsperpage);
 			request.getServletContext().setAttribute("totalpage", totalpage);
 			request.getServletContext().setAttribute("beginNews", beginNews);
@@ -188,7 +186,7 @@ public class newsController {
 				newspage.setContent(list.get(b).getContent());
 				newspage.setRid(list.get(b).getUser());
 				newspage.setSendtime(list.get(b).getSendTime());
-				newspage.setStatus(list.get(b).getStatus());
+//				newspage.setStatus(list.get(b).getStatus());
 				newspage.setUsername(listsend.get(0).getUserName());
 				newspage.setUserimg(listsend.get(0).getUserImg());
 				newspage.setCutContent(cutcontent1);
@@ -204,13 +202,15 @@ public class newsController {
 	            page = 1;
 	        }
 			int totalnews =listfinal.size();
-			System.out.print("总页数:"+totalnews);
 			int newsperpage=3;
 			int totalpage=totalnews%newsperpage ==0?totalnews/newsperpage:totalnews/ newsperpage+1;
 			int beginNews=(page-1)*newsperpage;
 			int endNews=beginNews+newsperpage;
 			if (endNews>totalnews) {
 				endNews=totalnews;
+			}
+			if (totalpage==0) {
+				totalpage=1;
 			}
 			List<NewsPage> listpage =listfinal.subList(beginNews, endNews);
 			request.getServletContext().setAttribute("pagenow",page);
@@ -243,9 +243,9 @@ public class newsController {
 		response.setCharacterEncoding("utf-8");
 		Cookie[]cookies = request.getCookies();
 		String SESSIONID = CookieUtils.getCookieFromCookies(cookies,"JSESSIONID").getValue();
-		String email1="xiaoming@qq.com";
+		
 		String pagenow="1";
-		//String email = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
+		String email1 = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
 		String statustest="2";/*2是同意*/
 		
 		int sendid=this.newsDaoImpl.getsendId(midnum);
@@ -291,9 +291,9 @@ public class newsController {
 		response.setCharacterEncoding("utf-8");
 		Cookie[]cookies = request.getCookies();
 		String SESSIONID = CookieUtils.getCookieFromCookies(cookies,"JSESSIONID").getValue();
-		String email1="xiaoming@qq.com";
+		
 		String pagenow="1";
-		//String email = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
+		String email1 = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
 
 		return this.Msg(email1, pagenow, request, response);
 		

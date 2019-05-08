@@ -57,7 +57,7 @@
   }
   #c1-about span{
     /*displasy: block;*/
-    width: 100px;
+    width: 140px;
     height: 30px;
     background-color: white;
     border:1px solid #c0c0c0;
@@ -71,6 +71,7 @@
   #c1-person{
     height: 160px;
     width: 380px;
+    margin-left:35px;
   }
   #c1-person-p1{
     height: 30px;

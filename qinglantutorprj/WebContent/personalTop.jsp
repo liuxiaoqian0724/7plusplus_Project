@@ -19,7 +19,7 @@
           <span class="label label-badge">大三</span>
         </li>
         <li id="c1-person">
-          <p id="c1-person-p1">个人介绍</p>
+          <p id="c1-person-p1">个人简介</p>
           <p id="c1-person-p2">
             &nbsp;&nbsp;123123123123123fjhakjfhadjfhakjfhfjhlllllllllllllllllllaaaaa
           </p>

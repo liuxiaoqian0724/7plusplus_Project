@@ -65,12 +65,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <li id="c1-about">
           <p>${map.user.userName }</p>
           <c:if test="${map.user.role eq '老师' }">
-          		<span class="label label-badge">${map.user.school }</span>
-          		<span class="label label-badge">${map.user.grade }</span>
+          		<span class="label label-badge" width="120px">${map.user.school }</span>
+          		<span class="label label-badge" width="120px">${map.user.grade }</span>
           </c:if>
         </li>
         <li id="c1-person">
-          <p id="c1-person-p1">个人介绍</p>
+          <p id="c1-person-p1">个人简介</p>
           <p id="c1-person-p2">
             &nbsp;&nbsp;${map.user.introduce }
           </p>

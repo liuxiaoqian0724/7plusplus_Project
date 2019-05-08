@@ -60,7 +60,6 @@ import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 				response.setContentType("textml;charset=utf-8");
 				response.setCharacterEncoding("utf-8");
 				Cookie[]cookies = request.getCookies();
-				System.out.println(cookies.length);
 				String SESSIONID = CookieUtils.getCookieFromCookies(cookies,"JSESSIONID").getValue();
 				String EMAIL = "";
 				response.setContentType("text/html;charset=utf-8");
@@ -72,14 +71,8 @@ import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 				}
 //				session.invalidate();
 				if (CookieUtils.getCookieFromCookies(cookies, "EMAIL") == null) {
-					System.out.println("没有登录");
-					writer.write("请先注册或登录");
-					writer.flush();
-					writer.close();
-				}else {
-					session.setAttribute("islogin", 1);
+					return "index";
 				}
-				System.out.println("schooltype:"+schoolType+"sortcondition:"+sortcondition);
 				session.setAttribute("sortcondition", sortcondition);
 				session.setAttribute("schooltype", schoolType);
 				List<Object[]> courses=this.tutorListServiceImpl.findAllCourses();
@@ -96,18 +89,12 @@ import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 					if(schoolType.equals("gaozhong")) {
 						schoolType="高中";
 					}
-					System.out.println("schooltype!=0");
 					session.setAttribute("schooltype", schoolType);
 					grades=this.tutorListServiceImpl.findGradesBySchoolType(schoolType);
 				}
-				System.out.println("gradesize："+grades.size());
 				session.setAttribute("courses", courses);
 				session.setAttribute("grades", grades);
 				
-				if(session.getAttribute("conditions")!=null) {
-					System.out.println("conditions:");
-					System.out.println(session.getAttribute("conditions").toString());
-				}
 				List conditions=null;
 				if(session.getAttribute("conditions")!=null) {
 					conditions=(List)session.getAttribute("conditions");
@@ -129,7 +116,6 @@ import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 				}
 				List<UserInfo> tutors=new ArrayList<UserInfo>();
 				tutors=this.conditionsServiceImpl.findTutorByAllConditions(gid, cid, (String)conditions.get(3), (String)conditions.get(4), (String)conditions.get(5),schoolType);
-				System.out.println("tutors.size:"+tutors.size());
 				if(sortcondition.equals("price")) 
 					Collections.sort(tutors, UserInfo.Comparators.price);
 				if(sortcondition.equals("reviewsum")) 
@@ -151,8 +137,6 @@ import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 				pagetutors.setPageSize(4);
 				pagetutors.setTotalCount(totalcount);
 				session.setAttribute("totalcount", totalcount);
-				System.out.println("totalcount:"+totalcount);
-				System.out.println("tutorpage："+pagetutors.getTotalPageNum());
 				model.addAttribute("pagetutors", pagetutors);
 				return "tutorlisted";
 			}
