@@ -1,3 +1,4 @@
+    
 /**   
 		* @Title: IndexDaoImpl.java 
 		* @Package com.sevenpp.qinglantutor.dao.Impl 
@@ -9,7 +10,9 @@
 package com.sevenpp.qinglantutor.dao.impl;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.annotation.Resource;
 
@@ -19,6 +22,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
 import com.sevenpp.qinglantutor.dao.IndexDao;
+import com.sevenpp.qinglantutor.entity.Course;
 import com.sevenpp.qinglantutor.entity.MyJob;
 import com.sevenpp.qinglantutor.entity.User;
 
@@ -43,16 +47,10 @@ public class IndexDaoImpl implements IndexDao {
 	public List<User> queryUser(){
 		Session session=sessionFactory.openSession();
 		session.beginTransaction();
-		Query query1=session.createQuery("from MyJob");
-		List<MyJob> list1=query1.list();
-		List<User> list2=new ArrayList<User>();
-		for(MyJob mj:list1) {
-			User u=new User();
-			u=mj.getUser();
-			list2.add(u);
-		}
+		Query query1=session.createQuery("from User where role='老师'");
+		List<User> list1=query1.list();
 		session.getTransaction().commit();
-		return list2;
+		return list1;
 	}
 	@Override 
 	public List queryTeachage() {
