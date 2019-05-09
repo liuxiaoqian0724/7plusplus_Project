@@ -566,3 +566,8 @@ h3{
 	overflow: hidden; 
 	height: 1px;
 }
+#addCanadiate{
+	/* border: #ADADAD 1px dashed; */
+	margin-left:100px;
+	margin-top:5px;
+}

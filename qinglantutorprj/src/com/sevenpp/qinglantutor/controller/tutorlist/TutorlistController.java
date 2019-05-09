@@ -78,7 +78,6 @@ import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 				List<Object[]> courses=this.tutorListServiceImpl.findAllCourses();
 				List<Object[]> grades=null;
 				if(schoolType.equals("0")) {	
-					System.out.println("schooltype=0");
 					grades=this.tutorListServiceImpl.findAllGrades();
 					grades=grades.subList(0,9);
 				}else {
