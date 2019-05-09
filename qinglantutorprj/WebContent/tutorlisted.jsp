@@ -220,17 +220,16 @@
 					<!-- <a href="#"><li class="top-li">教过的学生最多 </li></a> -->
 				</ul>
 				<!--加入备选按钮  -->
-				<button class="btn btn-link" type="button" id="addCanadiate">链接按钮</button>
+				<button class="btn btn-link" type="button" id="addCanadiate">一键对比</button>
 				<!--比较老师  -->
 				<script type="text/javascript">
 							 $(document).on('click','#addCanadiate',function(){
-								 alert("lkdsjflksdjflkjdsl")
 								  var arr=[];//定义一个数组
 								   var arr2=$(":checked");//获取多选框的数组
 								    $.each(arr2,function () {
 								        arr.push($(this).val());//把多选框数组的value放入自己定义的里面
 								    })
-								    alert(JSON.stringify(arr));
+								    /*alert(JSON.stringify(arr));  */
 								     $.ajax({
 			                             type:"get",
 			                             contentType : 'application/json;charset=utf-8',
@@ -285,7 +284,7 @@
 							<div class="tutor-comment">&nbsp;<i class="icon2 icon-comment-alt"></i>&nbsp;<span>家长评论&nbsp;${tutor.reviewsum}条</span>
 								<p>${tutor.reviewcontent}</p>
 								<!--多选按钮  -->
-								<input type="checkbox" name="sProblem" value="${tutor.id}" class="checks"/>加入对比
+								<input type="checkbox" name="sProblem" value="${tutor.id}" class="checks"/>&nbsp;&nbsp;<font color="blue">加入对比</font>
 							</div>
 							<div class="separator"></div>
 							<div class="tutor-check">
