@@ -1,4 +1,3 @@
-    
 /**   
 		* @Title: IndexDaoImpl.java 
 		* @Package com.sevenpp.qinglantutor.dao.Impl 

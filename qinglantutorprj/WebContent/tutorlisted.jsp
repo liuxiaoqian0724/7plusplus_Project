@@ -219,13 +219,38 @@
 					<a href="/qinglantutorprj/tutorlist/conditions/${schooltype}/reviewstar"><li class="top-li">星级最高 </li></a>
 					<!-- <a href="#"><li class="top-li">教过的学生最多 </li></a> -->
 				</ul>
+				<!--加入备选按钮  -->
+				<button class="btn btn-link" type="button" id="addCanadiate">一键对比</button>
+				<!--比较老师  -->
+				<script type="text/javascript">
+							 $(document).on('click','#addCanadiate',function(){
+								  var arr=[];//定义一个数组
+								   var arr2=$(":checked");//获取多选框的数组
+								    $.each(arr2,function () {
+								        arr.push($(this).val());//把多选框数组的value放入自己定义的里面
+								    })
+								    /*alert(JSON.stringify(arr));  */
+								     $.ajax({
+			                             type:"get",
+			                             contentType : 'application/json;charset=utf-8',
+			                             url:"${ctx}/qinglantutorprj/findCandiateInfo",
+			                             data : {"arr":JSON.stringify(arr)},
+			                             traditional: true,
+			                             async:false,//异步加载
+			                             dataType : 'json', 
+			                             /* success:function(){
+			                            	 confirm("ss");
+			                             }, */
+			                         }) 
+								});
+				</script>
 			</div>
 			<!--家教列表展示-->
 			<div class="tutorshow" >
 				<!--一个家教展示-->
 				<!--foreach循环每个家教的信息-->
 				<c:forEach items="${pagetutors.list}" var="tutor">
-					<a href="/qinglantutorprj/tutorDetail/showtutorDetail/${tutor.id}">
+					<%-- <a href="/qinglantutorprj/tutorDetail/showtutorDetail/${tutor.id}"> --%>
 						<div class="tutorone">
 							<div class="tutorinformation">
 							<!--家教头像-->
@@ -252,24 +277,27 @@
 											</c:forEach>
 										</div>
 										<div class="teachages">教龄${tutor.teacherage}年</div>	
-										<!-- <div class="teachhours">授课134小时</div> -->
 									</div>
 								</div>
 							</div>
 							<!--家长评论-->
 							<div class="tutor-comment">&nbsp;<i class="icon2 icon-comment-alt"></i>&nbsp;<span>家长评论&nbsp;${tutor.reviewsum}条</span>
 								<p>${tutor.reviewcontent}</p>
+								<!--多选按钮  -->
+								<input type="checkbox" name="sProblem" value="${tutor.id}" class="checks"/>&nbsp;&nbsp;<font color="blue">加入对比</font>
 							</div>
 							<div class="separator"></div>
 							<div class="tutor-check">
 								<div class="price"><i class="icon22 icon-yen"></i>${tutor.price}<span class="spe2">起</span></div>
 								<div class="check">
 									<a href="/qinglantutorprj/tutorDetail/showtutorDetail/${tutor.id}"><button class="btn1" type="button">立即查看</button></a>
+									<!-- <a href="/qinglantutorprj/findCandiateInfo"><button class="btn1" type="button">立即ddddd查看</button></a> -->
 								</div>
 							</div>
 							</div>
 						</div>
-					</a>
+						
+					<!-- </a> -->
 				</c:forEach>	
 				<ul class="pager">
 				  <li class="previous"><a href="/qinglantutorprj/tutorlist/page/${pagetutors.prePageNum}">«</a></li>
