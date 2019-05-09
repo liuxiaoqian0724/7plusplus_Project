@@ -16,6 +16,14 @@ html{
 	left: 15%;
 	width: 70%;
 }
+/* 标题 */
+#toptop{
+	position: relative;
+	width: auto;
+	height: auto;
+	font-size: 20px;
+	font-family: "黑体";
+}
 #top {
 	border: 1px solid #CBCBCB;
 	background-color: #fff;
@@ -24,27 +32,53 @@ html{
 #left {
 	border-right: 1px solid #CBCBCB;
 	float: left;
-	width: 500px;
-	height: 98px;
+	width: 80%;
+	height: 148px;
 	background-color: #fff;
 }
+/* 加关注的头像 */
+#img-circle1{
+	position: relative;
+	top: 10%;
+	left: 2%;
+ 	margin-top: 30px;
+ }
+ /* 回复的头像 */
+#img-circle2{
+	position: relative;
+	top: 20%;
+	left: 2%;
+	margin-top: 26px;
+}
+/* 发表回复的头像 */
 #img-circle{
 	position: relative;
 	top: 20%;
 	margin-top: 20px;
 }
-#times{
+/* 对该教师加关注 */
+#follow{
 	position: relative;
-	left: 10%;
-	top: -55%;
+	left: 14%;
+	top: -50%;
 	width:50%;
-	height:auto;
+	height:50%;
 	background-color: #fff;
+}
+/* 教师name */
+#teachername{
+	position: relative;
+	display: inline-block;
+	width: 70%;
+	background-color: #fff;
+}
+#button{
+	border-radius: 8px;
 }
 #right {
 	float: left;
-	height: 94px;
-	width: 250px;
+	height: 50%;
+	width: 20%;
 	background-color: #fff;
 }
 #blank{
@@ -59,6 +93,7 @@ html{
 	height: auto;
 	width: auto;
 	top: 10%;
+	padding: 16px;
 }
 #word{
 	position: relative;
@@ -77,6 +112,7 @@ html{
 	position: relative;
 	left: 2%;
 	top: 30%;
+	border-radius: 8px;
 }
 #Middlebottom{
 	border: 1px solid #CBCBCB;
@@ -87,7 +123,7 @@ html{
 }
 #comment{
 	font-size: 25px;
-	font-family: "楷体";
+	font-family: "黑体";
 	background-color: #fff;
 	position: relative;
 	left: 2%;
@@ -105,27 +141,31 @@ html{
 }
 #name{
 	position: relative;
-	left: 3%;
+	left: 4%;
 	width: 20%;
 	background-color: #fff;
+	font-size: 16px;
 }
 #introducep{
 	position: relative;
-	left: 12%;
-	width:88%;
+	left: 14%;
+	width:84%;
 	height:auto;
-	margin-top: -100px;
+	margin-top: -110px;
 	background-color: #fff;
 }
 #reply{
 	position: relative;
 	left: 72%;
 }
-#timess{
+/* 回复的时间 */
+#replytimess{
+	background-color: #fff;
 	position: relative;
 	left: 82%;
 	width: 14%;
-	margin-top: -26px;
+	margin-top: -28px;
+	font-size: 16px;
 }
 #pager{
 	position: relative;
@@ -142,13 +182,14 @@ html{
 	left: 2%;
 	top: 10%;
 	height: 180px;
-	width: 87%;
+	width: 88%;
 	background-color: #fff;
+	padding: 16px;
 }
 #row{
 	position: relative;
 	width: 20%;
-	left: 80%;
+	left: 86%;
 	margin-top: 4px;
 }
 #replyok{
