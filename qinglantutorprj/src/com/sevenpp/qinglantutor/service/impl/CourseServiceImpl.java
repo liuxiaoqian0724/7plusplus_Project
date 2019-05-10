@@ -117,7 +117,7 @@ public class CourseServiceImpl implements CourseService {
 							homeWork = classRelationList.get(j).getHomeWorks();
 							for(int m=0;m<homeWork.size();m++) {
 								SimpleDateFormat format = new SimpleDateFormat("MM-dd");
-								homework.add(format.format(homeWork.get(j).getTstartTime()));
+								homework.add(format.format(homeWork.get(m).getTstartTime()));
 							}
 							
 							CourseInformation courseInformation = new CourseInformation();
