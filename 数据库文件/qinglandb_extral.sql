@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2019/5/13 21:04:05                           */
+/* Created on:     2019/5/14 10:06:58                           */
 /*==============================================================*/
 
 
@@ -13,7 +13,7 @@ drop table if exists tbl_articlereview;
 /*==============================================================*/
 create table tbl_article
 (
-   aId                  int not null,
+   aId                  int not null auto_increment,
    id                   int,
    title                varchar(500),
    content              text,
@@ -29,7 +29,7 @@ alter table tbl_article comment 'ндуб╠М';
 /*==============================================================*/
 create table tbl_articlereview
 (
-   arid                 int not null,
+   arid                 int not null auto_increment,
    id                   int,
    aid                  int,
    rcontent             varchar(500),
