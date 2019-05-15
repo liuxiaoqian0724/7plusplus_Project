@@ -284,6 +284,26 @@
 				<li><a data-tab href="#tabContent2">老师详情</a></li>
 				<!-- <li><a data-tab href="#tabContent3">标签3</a></li> -->
 			</ul>
+			<!--调用百度ai接口实现  评论抽取功能-->
+			<script type="text/javascript">
+			$(document).ready(function(){
+				var userId=$("#hidden-UserId").val();
+				 $.ajax({
+                     type:"POST",
+                     contentType : 'application/json;charset=utf-8',
+                     url:"tutorDetail/inquire",
+                     data:JSON.stringify(params),
+                     dataType : 'json',
+                     success:function(date){
+                    	 confirm("您好！已经向家教发送咨询信息，家教同意后会将家教联系方式反馈到个人中心-我的消息中。");
+                     },
+                     error:function(e) {
+                         alert("出错："+e);
+                     }
+                 })
+			}		
+			)
+			</script>
 			<div class="tab-content">
 				<div class="tab-pane active" id="tabContent1">
 					<div class="tabone-top">
