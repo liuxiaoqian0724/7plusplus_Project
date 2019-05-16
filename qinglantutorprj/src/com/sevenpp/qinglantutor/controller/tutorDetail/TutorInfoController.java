@@ -55,7 +55,7 @@ import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
  */
 @Controller
 @RequestMapping(value = "/tutorDetail")
-public class tutorInfoController {
+public class TutorInfoController {
 	@Resource
 	private TutorDetailServiceImpl tutorDetailServiceImpl;
 

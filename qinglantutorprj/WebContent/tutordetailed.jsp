@@ -288,22 +288,25 @@
 			<script type="text/javascript">
 			$(document).ready(function(){
 				var userId=$("#hidden-UserId").val();
+				var params={"tid":userId}
 				 $.ajax({
-                     type:"POST",
+                     type:"post",
                      contentType : 'application/json;charset=utf-8',
-                     url:"tutorDetail/inquire",
+                     url : 'divideReviews',
                      data:JSON.stringify(params),
                      dataType : 'json',
                      success:function(date){
-                    	 confirm("您好！已经向家教发送咨询信息，家教同意后会将家教联系方式反馈到个人中心-我的消息中。");
+                    	 confirm("xxx");
                      },
-                     error:function(e) {
-                         alert("出错："+e);
-                     }
-                 })
+                     error:function(XMLHttpRequest, textStatus, errorThrown){
+                         alert(XMLHttpRequest.status);
+                         alert(XMLHttpRequest.readyState);
+                         alert(textStatus);
+                 }
 			}		
-			)
+			)})
 			</script>
+			<!--//结束 调用百度ai接口实现  评论抽取功能-->
 			<div class="tab-content">
 				<div class="tab-pane active" id="tabContent1">
 					<div class="tabone-top">
