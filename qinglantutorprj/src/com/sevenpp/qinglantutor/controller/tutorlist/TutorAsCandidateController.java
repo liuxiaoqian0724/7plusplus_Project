@@ -104,24 +104,24 @@ public class TutorAsCandidateController {
 				dataset.addValue(userinfosec.getTeachsum(), group, "教过的学生数");
 				dataset.addValue(userinfosec.getDataintegrity(), group, "资料完整度");
 			}
-			return "image";
-//			SpiderWebPlot spiderwebplot = new SpiderWebPlot(dataset);
-//			JFreeChart jfreechart = new JFreeChart("Test", TextTitle.DEFAULT_FONT, spiderwebplot, false);
-//			LegendTitle legendtitle = new LegendTitle(spiderwebplot);
-//			legendtitle.setPosition(RectangleEdge.TOP);
-//			jfreechart.addSubtitle(legendtitle);
-//			ByteArrayOutputStream out = new ByteArrayOutputStream();
-//			String filename = ServletUtilities.saveChartAsPNG(jfreechart, 400, 500, null);
-//			String graphURL = request.getContextPath() + "/DisplayChart?filename="   + filename;
-//			System.out.println(graphURL);
-//			String image=  "<img src='" 
-//		            + graphURL 
-//		            + "' width=400 height=500 border=0 usemap='#" 
-//		            + filename + "'/>"; 
-//			System.out.println("success");
-//			model.addAttribute("radarimage", image);
+			
+			SpiderWebPlot spiderwebplot = new SpiderWebPlot(dataset);
+			JFreeChart jfreechart = new JFreeChart("Test", TextTitle.DEFAULT_FONT, spiderwebplot, false);
+			LegendTitle legendtitle = new LegendTitle(spiderwebplot);
+			legendtitle.setPosition(RectangleEdge.TOP);
+			jfreechart.addSubtitle(legendtitle);
+			ByteArrayOutputStream out = new ByteArrayOutputStream();
+			String filename = ServletUtilities.saveChartAsPNG(jfreechart, 400, 500, null);
+			String graphURL = request.getContextPath() + "/DisplayChart?filename="   + filename;
+			System.out.println(graphURL);
+			String image=  "<img src='" 
+		            + graphURL 
+		            + "' width=400 height=500 border=0 usemap='#" 
+		            + filename + "'/>"; 
+			System.out.println("success");
+			model.addAttribute("radarimage", image);
 //			mv.setViewName("image");
-////			return mv;
+			return "image";
 		}
 		return null;
 	}
