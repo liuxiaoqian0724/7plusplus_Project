@@ -491,6 +491,7 @@ hr{
 	height: 1px;
 }
 .page{
+	/*border: 2px red solid;*/
 	height: 50px;
 	line-height: 50px;
 	text-align: center;
@@ -764,7 +765,3 @@ hr{
 	font-size: 22px;
 	margin-left: 8%;
 }
-
-
-
-

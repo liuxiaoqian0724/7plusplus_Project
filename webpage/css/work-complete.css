@@ -1,13 +1,10 @@
 body{
-	height: 1200px;
+	height: 1000px;
 	list-style:none;
 	line-height: 16px;
 	font-family: STXihei, "Microsoft YaHei";
 	font-size: 16px;
 	
-}
-input{
-	outline:none;
 }
 #d1{
 
@@ -15,15 +12,13 @@ input{
 	border-width: 1px;
 	border-color: #c0c0c0;
 	width: 900px;
-	height: 870px;
+	height: 800px;
 	margin: auto;
-	
 }
 #c1{
-	margin-top:60px;
 	float: left;
 	margin-left: 20px;
-	
+	margin-top: 12px;
 	width: 800px;
 	height: 50px;
 	border-bottom: 1px solid #c0c0c0;
@@ -101,18 +96,11 @@ input{
 	margin-left: 60px;
 	margin-top: 37px;
 }
-.btn-submit{
+.btn{
 	height: 30px;
 	width: 80px;
-	float:right;
-	margin-right: 15px;
+	margin-left: 145px;
 	margin-top: 60px;
-	background-color:white;
-	border:1px solid #c0c0c0;
-	border-radius:12px;
-}
-.btn-submit:hover{
-	background-color:#33a6b8;
 }
 #time1{
 	float: left;

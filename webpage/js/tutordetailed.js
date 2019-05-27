@@ -1,10 +1,8 @@
 $(document).ready(function(event){
-	
 	$('.gradeli').click(function(){
 		$('.gradeli').css('background-color','#f9f9f9');
 		$(this).css('background-color','#81C7D4');
 		// $(this).css('border','1px blue solid');
-		
 	})
 
 	$('.patternli').click(function(){
@@ -39,32 +37,14 @@ $(document).ready(function(event){
 		$(this).css("border","2px #56c9db solid");
 		$('.img-rounded').attr('src',$(this).attr("data-image"));
 	})
-	 
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	// $('.page1').click(function(event){
+	// 	alert(123);
+	// 	$(this).css('background-color','#0072E3');
+	// })
+	// $("li[name='page2']").click(function(event){
+	// 	alert(1);
+	// 	// $('page1').css('background-color','#2894FF');
+	// 	$(this).attr("class","active");
+	// })

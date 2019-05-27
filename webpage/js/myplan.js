@@ -3,189 +3,93 @@
 var ue = UE.getEditor('editor',{
     toolbars:[
         [
-        	'bold', //加粗
-			  'indent', //首行缩进
-	        'italic', //斜体
-	        'underline', //下划线
-	        'strikethrough', //删除线
-	        'justifyleft', //居左对齐
-	        'justifyright', //居右对齐
-	        'justifycenter', //居中对齐
-	        'justifyjustify', //两端对齐
-	        'forecolor', //字体颜色
-	        'backcolor', //背景色
-	        'subscript', //下标
-	        'fontborder', //字符边框
-	        'superscript', //上标
-	        'fontfamily', //字体
-	        'fontsize', //字号
-	        'pasteplain', //纯文本粘贴模式
-	        'selectall', //全选
-	         'horizontal', //分隔线
-	        'removeformat', //清除格式
-	        'link', //超链接
-	        'emotion', //表情
-	        'spechars', //特殊字符
-	        'simpleupload', //单图上传
+             'bold', //加粗
+              'indent', //首行缩进
+            'snapscreen', //截图
+            'italic', //斜体
+            'underline', //下划线
+            'strikethrough', //删除线
+            'subscript', //下标
+            'fontborder', //字符边框
+            'superscript', //上标
+            'formatmatch', //格式刷
+            'blockquote', //引用
+            'pasteplain', //纯文本粘贴模式
+            'selectall', //全选
+             'horizontal', //分隔线
+            'removeformat', //清除格式
+            'time', //时间
+            'date', //日期
+            'insertrow', //前插入行
+            'insertcol', //前插入列
+            'mergeright', //右合并单元格
+            'mergedown', //下合并单元格
+            'deleterow', //删除行
+            'deletecol', //删除列
+             'splittocells', //完全拆分单元格
+            'deletecaption', //删除表格标题
+            'inserttitle', //插入标题
+            'mergecells', //合并多个单元格
+            'deletetable', //删除表格
+            'cleardoc', //清空文档
+            'insertparagraphbeforetable', //"表格前插入行"
+            'fontfamily', //字体
+            'fontsize', //字号
+            'paragraph', //段落格式
+            'simpleupload', //单图上传
+             'edittable', //表格属性
+            'edittd', //单元格属性
+            'link', //超链接
+            'emotion', //表情
+            'spechars', //特殊字符
+            'searchreplace', //查询替换
+            'justifyleft', //居左对齐
+            'justifyright', //居右对齐
+            'justifycenter', //居中对齐
+            'justifyjustify', //两端对齐
+            'forecolor', //字体颜色
+            'backcolor', //背景色
+            'insertorderedlist', //有序列表
+            'insertunorderedlist', //无序列表
+            'fullscreen', //全屏
+            'rowspacingtop', //段前距
+            'rowspacingbottom', //段后距
+            'pagebreak', //分页
+            'imagenone', //默认
+            'imageleft', //左浮动
+            'imageright', //右浮动
+            'attachment', //附件
+             'lineheight', //行间距
+              'imagecenter', //居中
+              'touppercase', //字母大写
+            'tolowercase', //字母小写
+            'background', //背景
+             'inserttable', //插入表格
+              'charts', // 图表
         ]
     ]
 });
-var ue2 = UE.getEditor('editor-2',{
-    toolbars:[
-        [
-        	'bold', //加粗
-			  'indent', //首行缩进
-	        'italic', //斜体
-	        'underline', //下划线
-	        'strikethrough', //删除线
-	        'justifyleft', //居左对齐
-	        'justifyright', //居右对齐
-	        'justifycenter', //居中对齐
-	        'justifyjustify', //两端对齐
-	        'forecolor', //字体颜色
-	        'backcolor', //背景色
-	        'subscript', //下标
-	        'fontborder', //字符边框
-	        'superscript', //上标
-	        'fontfamily', //字体
-	        'fontsize', //字号
-	        'pasteplain', //纯文本粘贴模式
-	        'selectall', //全选
-	         'horizontal', //分隔线
-	        'removeformat', //清除格式
-	        'link', //超链接
-	        'emotion', //表情
-	        'spechars', //特殊字符
-	        'simpleupload', //单图上传
-        ]
-    ]
-});
-
-//仅选择日期
-$(".form-date").datetimepicker(
-{
-    language:  "zh-CN",
-    weekStart: 1,
-    todayBtn:  1,
-    autoclose: 1,
-    todayHighlight: 1,
-    startView: 2,
-    minView: 2,
-    forceParse: 0,
-    format: "mm-dd"
-});
 
 
-
-//打开教案编辑键
 var which = 0;
-var planid = 0;
-function contentOpen(i){
-	which="content-"+i;
-	planid = i;
-	$("#light").css("display","block");
-	$("#fade").css("display","block");
-	var content = document.getElementById(which).innerHTML;
-	var time = document.getElementById("time-"+i).innerHTML;
-	//清空内容插入
-	UE.getEditor('editor').setContent(content,false);
-	$("#light > div > input").val(time);
-	$("#light >span").css("display","none");
-}
 
-//点击确定键
 function getContent() {
+	document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none';
     var arr = [];
     arr.push(UE.getEditor('editor').getContent());
     var content=arr.join("\r\n");
-    var time = $("#light > div > input").val();
-    if(content.length==0){
-    	$("#light >span").css("display","block");
-    }else{
-    	var json = {
-    		"id":planid,"content":content,"time":time
-    	};
-    	$.ajax({
-    		type:"post",
-    		dataType:"json",
-    		url:"teachPlanEdit",
-    		data:json,
-    		success:function(data){
-    			alert(data);
-    			document.getElementById(which).innerHTML=content;
-    	    	document.getElementById("time-"+planid).innerHTML=time;
-    		},
-    		error:function(){
-    			alert("error");
-    		}
-    	});
-    	$("#light").css("display","none");
-    	$("#fade").css("display","none");
-    }
-        
-}
 
-//删除某个教案
-function deletePlan(pid){
-	var id = "plan-" + pid;
-	$("div").remove(".c2-right-item #" + id);
-	$.ajax({
-		type:"post",
-		dataType:"json",
-		data:{"id":pid},
-		url:"teachPlanDelete",
-		success:function(data){
-			alert(data);
-		},
-		error:function(){
-			alert("error");
-		}
-	});
-}
+    document.getElementById(which).innerHTML=content;
 
-//点击新增教案键
-var trid = 0;
-function addTeachPlan(param){
-	trid = param;
-	$("#addPlan").css("display","block");
-	$("#fade").css("display","block");
-	$("#addPlan >span").css("display","none");
-}
-
-//新增按钮的 确定
-function addTeachPlanInfor(){
-	 var arr = [];
-    arr.push(UE.getEditor('editor-2').getContent());
-    var content=arr.join("\r\n");
-    var time = $("#addPlan > div > input").val();
-    var total = 0;
-    if(content.length==0||time.length==0){
-    	$("#addPlan >span").css("display","block");
-    }else{
-    	$.ajax({
-        	type:"post",
-        	dataType:"json",
-        	url:"teachPlanAdd",
-        	data:{"trid":trid,"content":content,"time":time},
-        	success:function(data){
-    			alert("反馈成功");
-    			total = parseInt(data);
-    			$("#addPlan").css("display","none");
-    			$("#fade").css("display","none");
-    			var id = "addPlan-" + trid;
-    			$("#"+id).append("<div id=\"plan-"+total+"\">" +
-    					" <a href=\"javascript:void(0)\"  onclick=\"deletePlan("+total+" )\"><span class=\"icon icon-times\"></span></a>"
-    		    		+"<a href=\"javascript:void(0)\"  onclick=\"contentOpen("+total+" )\"><span class=\"icon icon-edit\"></span></a>" 
-    		    		+"<div id=\"content-"+total+"\">"+content+"</div>" 
-    		    		+"<span id=\"time-"+total+"\">"+time+"</span>" 
-    		    		+"</div>");
-    		},
-    		error:function(){
-    			alert("error");
-    		}
-        });
-    	
-    }
+    // alert(content);
     
 }
+function setContent(i){
+	which=i;
+	document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block';
+	var a = document.getElementById(i).innerHTML;
+	//清空内容插入
+	UE.getEditor('editor').setContent(a,false);
+}
+
 	

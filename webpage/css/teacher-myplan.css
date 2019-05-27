@@ -1,13 +1,8 @@
 .panel-body > div{
     height: 200px;
     margin-bottom: 20px;
+    border:1px dashed red;
   }
-  button{
-	outline:none;  
-  }
-  input{
-  outline:none;
- }
  .panel-body > div >div{
  	float: left;
  }
@@ -27,8 +22,17 @@
 }
 .panel-body .c2-right-items{
 	width: 616px;
-	height: 200px;
+	height: 180px:;
 	overflow: auto;
+}
+.panel-body .c2-right-items > div > button{
+	width: 100px;
+	height: 25px;
+	font-size: 15px;
+	border-radius: 12px;
+	float: left;
+	padding-bottom: 0px;
+	margin-top: 160px;
 }
 .panel-body .c2-right-items > div{
 	width: 1200px;
@@ -43,7 +47,6 @@
 	margin-top: 10px;
 	margin-left: 10px;
 	margin-bottom: 5px;
-	float:left;
 }
 .panel-body .c2-right-item > div a{
 	float: right;
@@ -69,11 +72,11 @@
 
 .white_content { 
     display: none; 
-    position: fixed; 
-    top: 15%; 
-    left: 20%; 
-    width: 800px; 
-    height: 450px; 
+    position: absolute; 
+    top: 35%; 
+    left: 15%; 
+    width: 70%; 
+    height: 80%; 
     padding: 20px; 
     border: 1px solid black; 
     background-color: white; 
@@ -93,37 +96,18 @@
 	margin-right: 20px;
 	margin-bottom: 14px;
 }
-.white_content >button{
+#light >button{
 	width: 80px;
 	height: 30px;
 	background-color: white;
 	font-size: 14px;
 	border-radius: 12px;
 	border:1px solid #c0c0c0;
-	position:absolute;
-	bottom:38px;
-	right:50px;
+	float: right;
+	margin-right: 10px;
+	margin-top: 30px;
 }
-.white_content > div {
-	margin-bottom:10px;
-}
-.white_content > div> input{
-	width:300px;
-	float:right;
-	margin-right:280px;
-}
-.white_content > div> span{
-	font-size:18px;
-}
-.white_content > span{
-	display:none;
-	font-size:24px;
-	color:red;
-	float:right;
-	margin-top:36px;
-	margin-right:130px;
-}
-.white_content > button:hover{
+#light > button:hover{
 	background-color: #33A6B8;
 }
 .panel-body button{
@@ -144,8 +128,9 @@
 	text-decoration: none;
 	color: black;
 }.panel-body .c2-right-item > div > div{
-	width: 140px;
+	width: 160px;
 	height: 120px;
+	text-indent: 2em;
 	font-size: 15px;
 	word-wrap: break-word;
 	overflow-y: auto;
@@ -160,8 +145,8 @@
 }
 
 .panel-body .c2-right-edit a{
-	width: 28px;
-	height: 35px;
+	width: 30px;
+	height: 20px;
 	color: black;
 	display: block;
 	margin-left: 7px;

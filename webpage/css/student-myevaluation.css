@@ -1,9 +1,8 @@
 #c2-right{	
-	
 }
 #c2-right > div{
 	float: left;
-	width: 100%;
+	width: 50%;
 	height: auto;
 }
 #c2-right > div:first-of-type{
@@ -12,13 +11,16 @@
 #c2-right > div:lase-of-type{
 	height: 100%;
 }
-#c2-right .panel-body > div{
-	height: 200px;
-	background-color:white;
+#c2-right .panel-body > div:nth-child(1){
+	height: 100%;
+}
+#c2-right .panel-body > div:nth-child(2){
+	height: 100%;
 }
 #c2-right .c2-right-item{
+	/*border:1px solid black;*/
+	/*margin: 0 auto;*/
 	margin-bottom: 10px;
-	border:1px solid black;
 }
 #c2-right .c2-right-item > div:nth-child(1){
 	width: 100%;
@@ -30,13 +32,12 @@
 	float: right;
 }
 #c2-right .c2-right-item > div:nth-child(2){
-	height: 165px;
+	height: 200px;
 	border-bottom: 1px solid #c0c0c0;
 	padding-top: 35px;
 }
 #c2-right .c2-right-item > div:nth-child(2) > p{
 	height: 155px;
-	width:100%;
 	margin-left: 5px;
 	text-indent: 2em;
 	overflow-y: auto;

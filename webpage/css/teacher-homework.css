@@ -5,7 +5,7 @@
 	float: left;
 }
 #c2-right .panel-body .c2-right-left{
-	height: 200px;
+	height: 100%;
 	width: 20%;
 	border-right: 1px solid #c0c0c0;
 }
@@ -27,7 +27,7 @@
 }
 #c2-right .panel-body .c2-right-right{
 	width: 80%;
-	height: 200px;
+	height: 100%;
 }
 #c2-right .panel-body .c2-right-right > div{
 	width: 100%;

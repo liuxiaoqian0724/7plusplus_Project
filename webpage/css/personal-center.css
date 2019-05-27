@@ -2,20 +2,18 @@
  body{
   margin: 0 auto;
  }
- a:hover{
- 	color:black;
- }
+
  #content{
     /*width: 93.5%;*/
     width: 1200px;
-    height: 1030px;
+    height: 800px;
     z-index: -1;
     margin: 0 auto;
   }
   #c1{
     width: 1200px;
     height: 20%;
-    padding-top:50px;
+    margin-top: -10px;
   }
   #c1 ul li{
     float: left;
@@ -119,7 +117,7 @@
   }
   .c2{
     float: left;
-  /*   overflow-y: auto; */
+    overflow-y: auto;
   }
   #c2-left{
     height: 100%;
@@ -130,12 +128,11 @@
   .c2-left-item{
     width: 180px;
     height: 43px;
-    padding-bottom:50px;
   }
   .c2-left-item a{
     display: block;
     width: 160px;
-    height: 40px;
+    height: 35px;
     color: black;
     font-size: 17px;
     padding-left: 15px;
@@ -144,7 +141,6 @@
     text-decoration: none;
   }
   .c2-left-item a:hover{
-  	color:black;
     text-decoration: none;
     background-color: #33A6B8;
   }
@@ -164,9 +160,10 @@
   
   #c2-right .panel-body{
     background-color: #F9F9F9;
-    height: 90.9%;
+    height: 88%;
+
   }
-  #c2-right .panel-body> div> div{
+  #c2-right .panel-body> div{
     background-color: white;
     border:1px solid black;
     margin-bottom: 10px;
