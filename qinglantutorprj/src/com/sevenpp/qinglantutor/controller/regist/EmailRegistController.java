@@ -77,7 +77,6 @@ public class EmailRegistController {
 	@RequestMapping(value="/send", method=RequestMethod.POST)
 	public void sendEmail(@RequestBody Map<String, String>map,HttpServletResponse response,HttpServletRequest request) {
 		String email = map.get("email");
-		System.out.println(email);
 		HttpSession session = request.getSession();
 		MailSenderPool pool = MailSenderPool.getInstance();
 		pool.sendByThread(new MailSenderReg(email,session));

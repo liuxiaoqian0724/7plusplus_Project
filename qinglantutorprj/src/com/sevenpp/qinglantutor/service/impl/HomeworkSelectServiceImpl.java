@@ -93,7 +93,6 @@ public class HomeworkSelectServiceImpl implements HomeworkSelectService {
 			map.put("star"+i,"empty-star");i++;
 		}
 		
-		System.out.println(map.get("star1"));
 		map.put("user", user);
 		map.put("grade", grade);
 		

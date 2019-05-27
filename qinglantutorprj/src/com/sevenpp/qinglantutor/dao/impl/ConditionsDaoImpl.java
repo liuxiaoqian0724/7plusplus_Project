@@ -157,7 +157,6 @@ import com.sevenpp.qinglantutor.entity.UserInfo;
 				int star1=0;
 				List list=sq.list();
 				for (Object object : list) {
-					System.out.println("content："+object);
 					if(object!=null) {
 						Float star=((Number)sq.uniqueResult()).floatValue();
 						star1=Math.round(star);
@@ -301,7 +300,6 @@ import com.sevenpp.qinglantutor.entity.UserInfo;
 				Session session=this.sessionFactory.getCurrentSession();
 				Query q=session.createSQLQuery(sql);
 //				q.setFirstResult((pageNum-1)*pageSize).setMaxResults(pageSize);
-				System.out.println("q.list.size:"+q.list().size());
 				return q.list();
 			}
 //			public List<UserInfo> findTutorByAllConditions(int grade,int subject,String department,String sex,String major,int pageNum,int pageSize){
