@@ -127,7 +127,7 @@ a {
 .btn-group {
 
 	float: left;
-	height: 100px;
+	height: 45px;
 	padding-left: 400px;
 	padding-top: 30px;
 	margin: auto;
@@ -138,6 +138,9 @@ a {
 	height: 40px;
 	width: 100px;
 	background-color: white;
+	border-color: gray;
+	border-style: solid;
+	border-width: 2px;
 }
 
 /* 个人简介 */
