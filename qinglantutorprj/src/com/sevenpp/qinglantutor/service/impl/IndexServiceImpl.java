@@ -9,7 +9,6 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.sevenpp.qinglantutor.dao.impl.IndexDaoImpl;
-import com.sevenpp.qinglantutor.entity.Course;
 import com.sevenpp.qinglantutor.entity.User;
 import com.sevenpp.qinglantutor.entity.Userinf;
 import com.sevenpp.qinglantutor.service.IndexService;
@@ -43,23 +42,49 @@ public class IndexServiceImpl implements IndexService {
 
 	@Override
 	public List<Userinf> findAllUser() {
-		System.out.println("IndexServiceImpl");
 		List<User> userList = new ArrayList<User>();
 		List<Userinf> userlist = new ArrayList<Userinf>();
 		List teachagelist=new ArrayList();
 		userList = idi.queryUser();
 		teachagelist=idi.queryTeachage();
-		userinf = new Userinf();
 		for (int i = 0; i < userList.size(); i++) {
+//			System.out.println(userList.size());
+//			System.out.println("1111111"+userList.get(i));
+//			System.out.println("2222"+userList.get(i).getId());
 			userinf = new Userinf();
-			userinf.setId(userList.get(i).getId());
-			userinf.setIntroduce(userList.get(i).getIntroduce());
-			userinf.setRealName(userList.get(i).getRealName());
-			userinf.setSchool(userList.get(i).getSchool());
-			userinf.setUserImg(userList.get(i).getUserImg());
+			if(userList.get(i).getId()!=null) {
+				userinf.setId(userList.get(i).getId());
+			}
+			else {
+				userinf.setId(0);
+			}
+			if(userList.get(i).getIntroduce()!=null) {
+				userinf.setIntroduce(userList.get(i).getIntroduce());
+			}
+			else {
+				userinf.setIntroduce("还没有简介");
+			}
+			if(userList.get(i).getRealName()!=null) {
+				userinf.setRealName(userList.get(i).getRealName());
+			}
+			else {
+				userinf.setRealName("名字暂时保密");
+			}
+			if(userList.get(i).getSchool()!=null) {
+				userinf.setSchool(userList.get(i).getSchool());
+			}
+			else {
+				userinf.setSchool("学校暂时保密");
+			}
+			if(userList.get(i).getUserImg()!=null) {
+				userinf.setUserImg(userList.get(i).getUserImg());
+			}
+			else {
+				userinf.setUserImg("images/default.jpg");
+			}
 			userlist.add(userinf);
 		}
-		for(int i=0;i<teachagelist.size();i++) {
+		for(int i=0;i<teachagelist.size();i++) { 
 			userlist.get(i).setTeachAge(teachagelist.get(i).toString());
 		}
 		return userlist;

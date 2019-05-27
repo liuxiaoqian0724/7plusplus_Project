@@ -83,7 +83,6 @@ public class tutorInfoController {
 		Cookie[] cookies = request.getCookies();
 		String SESSIONID = CookieUtils.getCookieFromCookies(cookies, "JSESSIONID").getValue();
 		String EMAIL = CookieUtils.getCookieFromCookies(cookies, "EMAIL").getValue();
-		System.out.println("---------"+EMAIL);
 		if(EMAIL==null||EMAIL.equals("")) {
 			return "index";
 		}else {
@@ -142,7 +141,6 @@ public class tutorInfoController {
 		String SESSIONID = CookieUtils.getCookieFromCookies(cookies,"JSESSIONID").getValue();
 		String EMAIL = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
 		Integer inquireId=this.tutorDetailServiceImpl.findUser(EMAIL);
-		System.out.println("email:"+EMAIL);
 		Integer tutorId = Integer.parseInt(map.get("userId"));
 		this.tutorDetailServiceImpl.sendMsgToTutor(tutorId, inquireId, map.get("gradeChosen"));
 		String str = JSON.toJSONString("klsdfj");

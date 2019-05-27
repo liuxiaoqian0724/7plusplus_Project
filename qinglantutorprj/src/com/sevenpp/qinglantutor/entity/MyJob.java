@@ -92,7 +92,7 @@ public class MyJob implements java.io.Serializable {
 		this.user = user;
 	}
 
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany
 	@JoinTable(name = "tbl_myjobcourse", // 第三张表
 			joinColumns = @JoinColumn(name = "jid"), inverseJoinColumns = @JoinColumn(name = "cid"))
 	public Set<Course> getCourses() {
@@ -103,7 +103,7 @@ public class MyJob implements java.io.Serializable {
 		this.courses = courses;
 	}
 
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany
 	@JoinTable(name = "tbl_myjobgrade", // 第三张表
 			joinColumns = @JoinColumn(name = "jid"), inverseJoinColumns = @JoinColumn(name = "gid"))
 	public Set<Grade> getGrades() {

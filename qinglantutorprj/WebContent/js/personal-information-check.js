@@ -346,7 +346,7 @@ function checkAll(param){
 					data:JSON.stringify(json),
 					url:"inforchange",
 					success:function(data){
-						alert(data);
+						alert("您好！您的信息修改成功！");
 						return true;
 					},
 					error:function(){

@@ -67,4 +67,14 @@ public class SendMessageDaoImpl implements SendMessageDao {
 						.setParameter(0, email).uniqueResult());
 	}
 
+	public int findCid(String cname) {
+		return ((Integer)this.getSession().createQuery("select cid from Course where cname=?")
+				.setParameter(0, cname).uniqueResult());
+	}
+	
+	
+	public int findGid(String gname) {
+		return ((Integer)this.getSession().createQuery("select gid from Grade where gname=?")
+				.setParameter(0, gname).uniqueResult());
+	}
 }

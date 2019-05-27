@@ -54,6 +54,7 @@ body{
 	width: 160px;
 	height: 48px;
 	float: left;
+	margin-left:10px;
 	background: url(../images/nameTop.png) no-repeat left;
 	background-size:cover;
 }

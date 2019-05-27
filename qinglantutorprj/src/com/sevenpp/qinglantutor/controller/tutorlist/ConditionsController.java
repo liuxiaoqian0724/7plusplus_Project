@@ -1,6 +1,6 @@
+package com.sevenpp.qinglantutor.controller.tutorlist;
 
-		package com.sevenpp.qinglantutor.controller.tutorlist;
-		import java.io.UnsupportedEncodingException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,11 +46,9 @@ import com.sevenpp.qinglantutor.service.impl.ConditionsServiceImpl;
 				response.setCharacterEncoding("utf-8");
 				try {
 					request.setCharacterEncoding("UTF-8");
-				} catch (UnsupportedEncodingException e) {
-					System.out.println("request乱码");		
+				} catch (UnsupportedEncodingException e) {		
 					e.printStackTrace();
 				}
-				System.out.println(grade+subject+department+sex+major);
 				HttpSession session=request.getSession();
 				if(subject.equals("yuwen"))
 					subject="语文";
@@ -86,7 +84,6 @@ import com.sevenpp.qinglantutor.service.impl.ConditionsServiceImpl;
 				String schooltype="0";
 				if(session.getAttribute("schooltype")!=null) 
 					schooltype=(String) session.getAttribute("schooltype");
-				System.out.println("schooltype:"+schooltype);
 				String schoolType="0";
 				if(schooltype.equals("小学"))
 					schoolType="xiaoxue";
@@ -114,7 +111,6 @@ import com.sevenpp.qinglantutor.service.impl.ConditionsServiceImpl;
 					schoolType="chuzhong";
 				if(schooltype.equals("高中"))
 					schoolType="gaozhong";
-				System.out.println("schoolty:"+schooltype);
 				return new ModelAndView("redirect:/tutorlist/conditions/"+schoolType+"/"+sortcondition);
 			}
 }

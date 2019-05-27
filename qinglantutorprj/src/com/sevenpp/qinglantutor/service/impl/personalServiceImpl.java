@@ -78,6 +78,8 @@ public class personalServiceImpl {
 						for(list2numx=list2num;list2numx>0;list2numx--) {
 							int c=list2numx-1;
 							List<Review> list3=list2.subList(c,list2numx);
+							System.out.println("list22222222"+list2.toString());
+							System.out.println("list33333333"+list3.toString());
 								if (list3.isEmpty()) 
 								{}
 								else {
@@ -102,11 +104,7 @@ public class personalServiceImpl {
 				double finalstar=Math.floor(AVGstarfull);
 				List<String> personalstar=this.personalDaoImpl.getReviewStar((int) finalstar);
 				DecimalFormat decimalFormat=new DecimalFormat(".00");
-				System.out.println("AVGstarfull:");
-				System.out.println(AVGstarfull);
 				String p=decimalFormat.format(AVGstarfull);
-				System.out.println("p:");
-				System.out.println(p);
 				return p;
 			}
 			
@@ -147,12 +145,19 @@ public class personalServiceImpl {
 			}
 			double reviewfull=reviewnum;
 			double starfull=Star;
-			double AVGstarfull=starfull/reviewfull;
-			double finalstar=Math.floor(AVGstarfull);
-			List<String> personalstar=this.personalDaoImpl.getReviewStar((int) finalstar);
-			DecimalFormat decimalFormat=new DecimalFormat(".00");
-			String p=decimalFormat.format(AVGstarfull);
-			return p;
+			if (reviewfull==0) {
+				String p="0";
+				return p;
+			}
+			else {
+				double AVGstarfull=starfull/reviewfull;
+				double finalstar=Math.floor(AVGstarfull);
+				List<String> personalstar=this.personalDaoImpl.getReviewStar((int) finalstar);
+				DecimalFormat decimalFormat=new DecimalFormat(".00");
+				String p=decimalFormat.format(AVGstarfull);
+				return p;
+			}
+			
 		}
 	
 

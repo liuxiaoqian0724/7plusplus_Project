@@ -66,7 +66,6 @@ public class reviewDaoImpl {
 		q.setParameter("email", email);
 		List<User> list=q.list();
 		String role=list.get(0).getRole();
-		System.out.println("dao身份"+role);
 		return role;
 		
 	}

@@ -44,8 +44,6 @@ public class IndexDaoImpl implements IndexDao {
 	private SessionFactory sessionFactory;
 	@Override
 	public List<User> queryUser(){
-		System.out.println("IndexDao");
-		System.out.println("queryAll");
 		Session session=sessionFactory.openSession();
 		session.beginTransaction();
 		Query query1=session.createQuery("from User where role='老师'");
