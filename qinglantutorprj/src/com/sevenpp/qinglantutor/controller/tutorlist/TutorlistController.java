@@ -88,7 +88,7 @@ import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 					if(schoolType.equals("gaozhong")) {
 						schoolType="高中";
 					}
-					session.setAttribute("schooltype", schoolType);
+//					session.setAttribute("schooltype", schoolType);
 					grades=this.tutorListServiceImpl.findGradesBySchoolType(schoolType);
 				}
 				session.setAttribute("courses", courses);
@@ -114,6 +114,7 @@ import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 					}
 				}
 				List<UserInfo> tutors=new ArrayList<UserInfo>();
+				System.out.println("gid:"+gid+"  cid:"+cid+"  3:"+(String)conditions.get(3)+"  4:"+(String)conditions.get(4)+"  5:"+(String)conditions.get(5)+" schoolType:"+schoolType);
 				tutors=this.conditionsServiceImpl.findTutorByAllConditions(gid, cid, (String)conditions.get(3), (String)conditions.get(4), (String)conditions.get(5),schoolType);
 				if(sortcondition.equals("price")) 
 					Collections.sort(tutors, UserInfo.Comparators.price);

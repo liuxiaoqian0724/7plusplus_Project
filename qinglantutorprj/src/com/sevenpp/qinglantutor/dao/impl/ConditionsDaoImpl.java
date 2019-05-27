@@ -1,8 +1,7 @@
 
 		package com.sevenpp.qinglantutor.dao.impl;
 
-		import java.util.ArrayList;
-import java.util.List;
+		import java.util.List;
 
 import javax.annotation.Resource;
 
@@ -12,7 +11,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
-import com.sevenpp.qinglantutor.entity.UserInfo;
+import com.sevenpp.qinglantutor.entity.User;
 
 /**
 		*
@@ -212,11 +211,26 @@ import com.sevenpp.qinglantutor.entity.UserInfo;
 				Session session=this.sessionFactory.getCurrentSession();
 				String sql="select reviewcontent from tbl_review where crid in( \r\n" + 
 						"	select crid from tbl_classrelation where trid in(\r\n" + 
-						"	select trid from tbl_teach where tid=1))";
+						"	select trid from tbl_teach where tid=?))";
 				Query q=session.createSQLQuery(sql);
+				q.setInteger(0, tid);
 				List reviewcontents=q.list();
-				String content=reviewcontents.get(0).toString();
+				String content="";
+				if(reviewcontents.size()>1)
+					content=reviewcontents.get(0).toString();
 				return content;
+			}
+			
+			public String findReviewContentById1(int id) {
+				Session session=this.sessionFactory.getCurrentSession();
+				String hql="from User where id=?";
+				Query q=session.createQuery(hql);
+				User user=null;
+				if(q.list().size()>0) {
+					user=(User)q.list().get(0);					
+				}
+				String content="";
+				return user.getTeachRelations().get(0).getClassRelation().get(0).getReviews().get(0).getReviewContent();
 			}
 			
 			/**
