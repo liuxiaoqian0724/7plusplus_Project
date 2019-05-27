@@ -1,0 +1,11 @@
+body{
+	background-color:#fffefa;
+	width:100%; 
+}
+#out{
+	position:relative;
+	width:70%;
+	left:15%;
+	border:1px solid #e4dfd7;
+	padding:3%;
+}
