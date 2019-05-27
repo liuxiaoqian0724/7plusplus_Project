@@ -1,0 +1,248 @@
+.panel-body > div{
+    height: 200px;
+    margin-bottom: 20px;
+  }
+  input{
+  outline:none;
+  }
+button{
+	outline:none;
+}
+.c2-right-item{
+	width: 766px;
+	height:200px;
+}
+.c2-right-item li{
+	width: 20%;
+	height: 198px;
+	list-style-type: none;
+	float: left;
+	border-width: 2px;
+	border-right:1px solid #C0C0C0;
+}
+.c2-right-item li:nth-child(1){
+	margin-left: -20px;
+	width: 16%;
+	word-break:break-word; 
+}
+.c2-right-item li:nth-child(1) span{
+	padding-left: 10px;
+	font-size: 15px;
+}
+.c2-right-item li:nth-child(1) p{
+	font-size: 25px;
+	text-align: center;
+	margin-top: 40px;
+}
+.c2-right-item li:nth-child(2){
+	width: 20%;
+}
+.c2-right-item li:nth-child(2) img{
+	margin-top: 10px;
+	margin-left: 17px;
+}
+.c2-right-item li:nth-child(2) p{
+	text-align: center;
+	font-size: 15px;
+	margin-top: 14px;
+}
+.c2-right-item li:nth-child(3){
+	width: 23%;
+	overflow-y: auto;
+}
+.c2-right-item li:nth-child(3)> p{
+	margin-left: 10px;
+}
+.c2-right-item li:nth-child(4){
+	width: 29.52%;
+	word-break:break-word; 
+}
+.c2-right-item li:nth-child(4) p{
+	text-align: center;
+	font-size: 20px;
+}
+.c2-right-item li:nth-child(4) >div{
+	font-size: 20px;
+	margin-top: 25px;
+	margin-left: 40px;
+}
+.c2-right-item li:nth-child(4) >button{
+	background-color: white;
+	border:1px solid #c0c0c0;
+	border-radius: 10px;
+	width: 90px;
+	float: right;
+	margin-right: 30px;
+	margin-top: 60px;
+}
+.c2-right-item li:nth-child(4)  a {
+	text-decoration: none;
+	color: black;
+}
+.c2-right-item li:nth-child(4) >button:hover{
+	background-color: #33A6B8;
+}
+#fade{ 
+    display: none; 
+    position: absolute; 
+    top: -30px; 
+    left: -40px; 
+    width: 103%; 
+    height: 225%; 
+    background-color: black; 
+    z-index:1001; 
+    -moz-opacity: 0.8; 
+    opacity:.30; 
+    filter: alpha(opacity=88); 
+} 
+#light{ 
+    display: none; 
+    position: fixed; 
+    top: 16%; 
+    left: 32%; 
+    width: 500px; 
+    height: 300px; 
+    padding: 20px; 
+    border: 1px solid #C0C0C0; 
+    background-color: white; 
+    z-index:1002; 
+    overflow: auto; 
+}
+#review{
+	display: none; 
+    position: fixed; 
+    top: 16%; 
+    left: 28%; 
+    width: 650px; 
+    height: 440px; 
+    padding: 20px; 
+    border: 1px solid #C0C0C0; 
+    background-color: white; 
+    z-index:1002; 
+    overflow: auto;
+}
+#review a{
+	margin-right:10px;
+}
+#review > div{
+	width:100%;
+	height:30px;	
+}
+#review > div >span{
+	float:left;
+	font-size:18px;
+}
+#review > div >a{
+	display:block;
+	float:left;
+	margin-right:4px;
+}
+#review > div > a >img{
+	width:25px;
+	height:25px;
+}
+#review textarea{
+	border-color:#c0c0c0;
+	resize: none;
+	font-size:17px;
+	padding:5px 5px 5px 5px;
+	outline:none;
+}
+#review > span{
+	display:none;
+	font-size:20px;
+	color:red;
+	float:right;
+	margin-top:57px;
+	margin-right:120px;
+}
+#review button{
+	position:absolute;
+	bottom:70px;
+	right:32px;
+}
+#review > #noStarButton:hover{
+	background-color:white;
+}
+
+#course{
+	display: none; 
+    position: fixed; 
+    top: 8%; 
+    left: 23%; 
+    width: 800px; 
+    height: 500px; 
+    padding: 20px; 
+    border: 1px solid #C0C0C0; 
+    background-color: white; 
+    z-index:1002; 
+}
+#course > div > span{
+	font-size:20px;
+}
+#course > div > input{
+	float:right;
+	margin-right:300px;
+}
+#course > span{
+	display:none;
+	font-size:20px;
+	color:red;
+	float:right;
+	margin-top:52px;
+	margin-right:120px;
+}
+#course > button{
+	position:absolute;
+	bottom:30px;
+	right:32px;
+}
+#course > p {
+	font-size:25px;
+}
+.white_content  a{
+	float: right;
+	margin-right: 30px;
+	color: black;
+	text-decoration: none;
+}
+.white_content > a:hover{
+ 	color: #33A6B8;
+ }
+.white_content input{
+	width: 240px;
+	margin-left: 10px;
+}
+.white_content	 input:hover{
+	background-color: white;
+}
+.white_content button{
+	width: 90px;
+	background-color: white;
+	border-radius: 12px;
+	border:1px solid #c0c0c0;
+	font-size: 16px;
+	margin-top: 60px;
+}
+.white_content button:hover{
+	background-color: #33A6B8;
+}
+.c2-right-item li:nth-child(5){
+	width: 98px;
+	border-right: 0px;
+	padding-top: 20px;
+}
+.c2-right-item li:nth-child(5) input{
+	background-color: white; 
+	color: black;
+	width: 92px;
+	height: 30px;
+	font-size: 14px;
+	border-radius: 12px;
+	margin-left: 1px;
+	margin-top: 8px;
+	border:1px solid #c0c0c0;
+}
+.c2-right-item li:nth-child(5) input:hover{
+	background-color: #33A6B8;
+}
