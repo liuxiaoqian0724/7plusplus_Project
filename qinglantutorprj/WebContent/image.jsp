@@ -15,7 +15,7 @@
 <body>
 	<div class="all">
 	  	<h2>选中家教对比图</h2>
-	  	<div class="img">${radarimage}</div>
+	  	<div class="img">${radarimage }</div>
   	</div>
   	<div class="return">
   		<a href="<%=basePath%>/tutorlist/conditions/0/0">返回家教页</a>	
