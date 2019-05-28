@@ -2,9 +2,7 @@ package com.sevenpp.qinglantutor.entity;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -98,8 +96,7 @@ public class User  implements java.io.Serializable {
      private List<MyJob> myJobs=new ArrayList<MyJob>();
      private List<TeachRelation> teachRelations=new ArrayList<TeachRelation>();	//用户表和教课关系表是一对多的关系
      private List<ClassRelation> classRelation = new ArrayList<ClassRelation>();	//用户表和上课关系表是一对多的关系
-     private Set<ArticleReview> articleSet=new HashSet<ArticleReview>();//用户评论文章
-     private List<Article>articleList=new ArrayList<Article>();//用户书写评论列表
+     
      @Id
      @GeneratedValue(strategy=GenerationType.IDENTITY)
 	public Integer getId() {
@@ -261,25 +258,7 @@ public class User  implements java.io.Serializable {
 	}
 	public void setClassRelation(List<ClassRelation> classRelation) {
 		this.classRelation = classRelation;
-	}
-	
-	@OneToMany(mappedBy="user",targetEntity=Article.class,cascade= {CascadeType.REMOVE})
-	public List<Article> getArticleList() {
-		return articleList;
-	}
-	public void setArticleList(List<Article> articleList) {
-		this.articleList = articleList;
-	}
-	@OneToMany(mappedBy="user",targetEntity=ArticleReview.class,cascade= {CascadeType.REMOVE})
-	public Set<ArticleReview> getArticle() {
-		return articleSet;
-	}
-	public void setArticle(Set<ArticleReview> article) {
-		this.articleSet = article;
-	}
-	
-	
-	
+	}	
 	
 	
      
