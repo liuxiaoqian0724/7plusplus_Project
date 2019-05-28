@@ -197,7 +197,6 @@ import com.sevenpp.qinglantutor.entity.UserInfo;
 					userinfo.setIntellgencesort();
 					tutors.add(userinfo);
 				}
-				System.out.println("tutors.list.size:"+tutors.size());
 				return tutors;
 			}
 			

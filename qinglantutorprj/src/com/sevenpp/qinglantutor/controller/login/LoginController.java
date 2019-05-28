@@ -92,7 +92,6 @@ public class LoginController {
 			response.addCookie(ROLE);
 			try {
 				writer = response.getWriter();
-				System.out.println("------------");
 				writer.write("ok");
 				writer.flush();
 				writer.close();

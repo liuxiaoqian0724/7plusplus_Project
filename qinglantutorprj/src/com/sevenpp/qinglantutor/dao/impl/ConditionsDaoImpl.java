@@ -1,7 +1,8 @@
 
 		package com.sevenpp.qinglantutor.dao.impl;
 
-		import java.util.List;
+		import java.util.ArrayList;
+import java.util.List;
 
 import javax.annotation.Resource;
 
@@ -11,7 +12,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
-import com.sevenpp.qinglantutor.entity.User;
+import com.sevenpp.qinglantutor.entity.UserInfo;
 
 /**
 		*
@@ -156,7 +157,6 @@ import com.sevenpp.qinglantutor.entity.User;
 				int star1=0;
 				List list=sq.list();
 				for (Object object : list) {
-					System.out.println("content："+object);
 					if(object!=null) {
 						Float star=((Number)sq.uniqueResult()).floatValue();
 						star1=Math.round(star);
@@ -211,28 +211,13 @@ import com.sevenpp.qinglantutor.entity.User;
 				Session session=this.sessionFactory.getCurrentSession();
 				String sql="select reviewcontent from tbl_review where crid in( \r\n" + 
 						"	select crid from tbl_classrelation where trid in(\r\n" + 
-						"	select trid from tbl_teach where tid=?))";
+						"	select trid from tbl_teach where tid=1))";
 				Query q=session.createSQLQuery(sql);
-				q.setInteger(0, tid);
 				List reviewcontents=q.list();
-				String content="";
-				if(reviewcontents.size()>1)
-					content=reviewcontents.get(0).toString();
+				String content=reviewcontents.get(0).toString();
 				return content;
 			}
-			
-			public String findReviewContentById1(int id) {
-				Session session=this.sessionFactory.getCurrentSession();
-				String hql="from User where id=?";
-				Query q=session.createQuery(hql);
-				User user=null;
-				if(q.list().size()>0) {
-					user=(User)q.list().get(0);					
-				}
-				String content="";
-				return user.getTeachRelations().get(0).getClassRelation().get(0).getReviews().get(0).getReviewContent();
-			}
-			
+
 			/**
 			 * 
 			 * @Title: findGidByGname 
@@ -315,7 +300,6 @@ import com.sevenpp.qinglantutor.entity.User;
 				Session session=this.sessionFactory.getCurrentSession();
 				Query q=session.createSQLQuery(sql);
 //				q.setFirstResult((pageNum-1)*pageSize).setMaxResults(pageSize);
-				System.out.println("q.list.size:"+q.list().size());
 				return q.list();
 			}
 //			public List<UserInfo> findTutorByAllConditions(int grade,int subject,String department,String sex,String major,int pageNum,int pageSize){
