@@ -226,9 +226,12 @@ a {
 
 .comment {
 	float: left;
+	margin-left: 200px;
 	width: 250px;
 	height: 60px;
 }
+
+
 
 #content {
 	float: left;
@@ -239,7 +242,13 @@ a {
 	border-color: #c0c0c0;
 }
 
-
+.like{
+	float: left;
+	padding-left: 30px;
+	width: 35px;
+	height: 35px;
+	margin-top: -11px;
+}
 
 
 

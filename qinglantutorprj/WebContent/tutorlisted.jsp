@@ -238,11 +238,9 @@
 			                             traditional: true,
 			                             async:false,//异步加载
 			                             dataType : 'json', 
-			                             success:function(data){
-			                                 if (data) {//根据返回值进行跳转
-			                                     window.location.href = '/qinglantutorprj/image.jsp';
-			                                 }
-			                             }
+			                             /* success:function(){
+			                            	 confirm("ss");
+			                             }, */
 			                         }) 
 								});
 				</script>
