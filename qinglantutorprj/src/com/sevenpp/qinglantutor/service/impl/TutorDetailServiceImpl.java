@@ -17,6 +17,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.sevenpp.qinglantutor.dao.impl.TutorAsCandidateDaoImpl;
 import com.sevenpp.qinglantutor.dao.impl.TutorDetailDaoImpl;
 import com.sevenpp.qinglantutor.entity.ClassRelation;
 import com.sevenpp.qinglantutor.entity.Review;
@@ -51,6 +52,8 @@ import com.sevenpp.qinglantutor.utils.message.SendMessage;
 			
 			@Resource
 			private TutorDetailDaoImpl tutorDetailDaoImp;
+			@Resource
+			private TutorAsCandidateDaoImpl tutorAsCandidateDaoImpl;
 			@Override
 			/**
 			* getTutorDetail 得到家教基本信息
@@ -62,6 +65,22 @@ import com.sevenpp.qinglantutor.utils.message.SendMessage;
 			*/
 			public User getTutorDetail(Integer id) {
 				return tutorDetailDaoImp.findTutorDetail(id);	
+			}
+			
+			public Integer findPrice(User user) {
+				return this.tutorAsCandidateDaoImpl.findPrice(user);
+			}
+			public Integer findReviewStar(User user) {
+				return this.tutorAsCandidateDaoImpl.findReviewStar(user);
+			}
+			public Integer findteachage(User user) {
+				return this.tutorAsCandidateDaoImpl.findteachage(user);
+			}
+			public int findteachstusum(User user) {
+				return this.tutorAsCandidateDaoImpl.findteachstrsum(user);
+			}
+			public double findDataIntegrity(User user) {
+				return this.tutorAsCandidateDaoImpl.findDataIntegrity(user);
 			}
 			
 			/**
