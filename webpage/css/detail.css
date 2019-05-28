@@ -1,5 +1,5 @@
 body {
-
+	
 	list-style: none;
 	line-height: 16px;
 	font-family: STXihei, "Microsoft YaHei";
@@ -8,6 +8,9 @@ body {
 	/* background-color: ; */
 }
 
+@media screen and (min-width:1200px){
+    #page{ width: 1100px; }#content,.div1{width: 730px;}#secondary{width:310px}
+}
 a {
 	text-decoration: none;
 }
