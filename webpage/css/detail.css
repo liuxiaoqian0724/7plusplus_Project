@@ -1,0 +1,268 @@
+body {
+
+	list-style: none;
+	line-height: 16px;
+	font-family: STXihei, "Microsoft YaHei";
+	font-size: 1rem;
+
+	/* background-color: ; */
+}
+
+a {
+	text-decoration: none;
+}
+
+#main {
+	width: 2000px;
+	height: 1500px;
+	MARGIN-RIGHT: auto;
+	MARGIN-LEFT: auto;
+}
+
+#d1 {
+	position: relative;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #c0c0c0;
+	width: 70%;
+	/* height: 100%; */
+	height: 1500px;
+	;
+	margin-top: 60px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.usr {
+	margin-left: 0.625rem;
+	margin-top: 10px;
+	border-style: dashed;
+	border-width: 2px;
+	border-color: skyblue;
+	width: 950px;
+	height: 200px;
+	float: left;
+}
+
+#name {
+	float: left;
+	border-right: 1px solid #c0c0c0;
+	width: 300px;
+	height: 200px;
+}
+
+#follower {
+	margin-top: 100px;
+	margin-left: 90px;
+	float: left;
+}
+
+/* 个人简介css */
+#infor {
+	float: left;
+	border-right: 1px solid #c0c0c0;
+	width: 200px;
+	height: 200px;
+}
+
+.label {
+	width: 100px;
+	height: 30px;
+	margin-top: 5px;
+	padding-top: 5px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: skyblue;
+	text-align: center;
+	border-radius: 10px 10px 10px 10px;
+}
+
+/* 学员评分 */
+
+#score {
+	float: left;
+	border-right: 1px solid #c0c0c0;
+	width: 300px;
+	height: 200px;
+}
+
+#s1 {
+	width: 300px;
+	height: 30px;
+	font-size: 25px;
+	text-align: center;
+	padding-top: 5px;
+
+}
+
+#star {
+	height: 120px;
+	width: 300px;
+}
+
+
+
+/* 消息界面css */
+#message {
+	width: 140px;
+	height: 200px;
+	float: left;
+
+}
+
+.message {
+	width: 100px;
+	height: 30px;
+	margin-top: 20px;
+	margin-left: -10px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: skyblue;
+	text-align: center;
+	border-radius: 20px 20px 20px 20px;
+
+}
+
+/* 按钮格式 */
+.btn-group {
+
+	float: left;
+	height: 45px;
+	padding-left: 400px;
+	padding-top: 30px;
+	margin: auto;
+}
+
+.btn_btn-lg {
+	font-size: 20px;
+	height: 40px;
+	width: 100px;
+	background-color: white;
+	border-color: gray;
+	border-style: solid;
+	border-width: 2px;
+}
+
+/* 个人简介 */
+#profile {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #c0c0c0;
+	float: right;
+	height: 800px;
+	width: 350px;
+	margin-top: 5px;
+	margin-right: 20px;
+}
+
+#p1 {
+
+
+	float: left;
+	font-size: 20px;
+	width: 300px;
+	height: 20px;
+	margin-left: 25px;
+	margin-top: 25px;
+}
+
+#p2 {
+	border-style: dashed;
+	border-width: 2px;
+	border-color: skyblue;
+
+	float: left;
+	line-height: 20px;
+	width: 300px;
+	height: 600px;
+	margin-left: 25px;
+	margin-top: 10px;
+}
+
+#td {}
+
+.im {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #c0c0c0;
+	width: 290px;
+	height: 180px;
+	margin-top: 20px;
+	margin-left: 20px;
+	float: left;
+}
+
+.text {
+
+	border-style: solid;
+	border-width: 1px;
+	border-color: #c0c0c0;
+	float: left;
+	margin-left: 15px;
+	margin-top: 20px;
+	width: 600px;
+	height: 180px;
+
+}
+
+.title {
+	padding-top: 5px;
+	font-size: 20px;
+	width: 600px;
+	height: 30px;
+}
+
+.content {
+	float: left;
+	width: 600px;
+	height: 120px;
+}
+
+.time {
+	float: left;
+	width: 150px;
+	height: 60px;
+}
+
+.comment {
+	float: left;
+	width: 250px;
+	height: 60px;
+}
+
+#content {
+	float: left;
+	width: 1000px;
+	height: 900px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #c0c0c0;
+}
+
+
+
+
+
+
+
+.to {
+	width: 100px;
+	height: 100px;
+	float: left;
+	margin-top: 30px;
+	margin-left: 10px;
+}
+
+#imh {
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
+
+}
+
+#username {
+	text-align: center;
+	font-size: 30px;
+	margin-top: 40px;
+	margin-left: 10px;
+}
