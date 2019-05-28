@@ -8,14 +8,13 @@ body {
 	/* background-color: ; */
 }
 
-@media screen and (min-width:1200px){
-    #page{ width: 1100px; }#content,.div1{width: 730px;}#secondary{width:310px}
-}
+
 a {
 	text-decoration: none;
 }
 
 #main {
+	
 	width: 2000px;
 	height: 1500px;
 	MARGIN-RIGHT: auto;
@@ -230,6 +229,7 @@ a {
 .comment {
 	float: left;
 	margin-left: 200px;
+	margin-top: -10px;
 	width: 250px;
 	height: 60px;
 }
@@ -250,9 +250,14 @@ a {
 	padding-left: 30px;
 	width: 35px;
 	height: 35px;
-	margin-top: -11px;
+	
 }
-
+.comm{
+	
+	padding-left: 30px;
+	width: 35px;
+	height: 35px;
+}
 
 
 
