@@ -2,6 +2,7 @@ package com.sevenpp.qinglantutor.controller.tutorlist;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -25,6 +26,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.alibaba.fastjson.JSON;
 import com.sevenpp.qinglantutor.entity.User;
 import com.sevenpp.qinglantutor.entity.Userinfosec;
 import com.sevenpp.qinglantutor.service.impl.TutorDetailServiceImpl;
@@ -102,6 +104,14 @@ public class TutorAsCandidateController {
 		            + "' width=400 height=500 border=0 usemap='#" 
 		            + filename + "'/>"; 
 			session.setAttribute("radarimage",image);
+			String str = JSON.toJSONString("klsdfj");
+			response.setCharacterEncoding("utf-8");
+			try {
+				PrintWriter writer = response.getWriter();
+				writer.write(str);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 }
