@@ -1,5 +1,5 @@
 * {
-	background-color: #F8F8F8;
+	background-color: #F1F1F1;
 	margin: 0;
 }
 body{
@@ -54,6 +54,7 @@ html{
 #img-circle{
 	position: relative;
 	top: 20%;
+	left: 4%;
 	margin-top: 20px;
 }
 /* 对该教师加关注 */
@@ -177,12 +178,13 @@ html{
 	height: auto;
 	width: auto;
 }
+/* 发表回复 */
 #bottomtextarea{
 	position: relative;
-	left: 2%;
+	left: 8%;
 	top: 10%;
 	height: 180px;
-	width: 88%;
+	width: 78%;
 	background-color: #fff;
 	padding: 16px;
 }
@@ -194,5 +196,5 @@ html{
 }
 #replyok{
 	position: relative;
-	width: 60%;
+	width: 50%;
 }
