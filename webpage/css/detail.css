@@ -244,6 +244,15 @@ a {
 	border-width: 1px;
 	border-color: #c0c0c0;
 }
+#content1 {
+	display: none;
+	float: left;
+	width: 1000px;
+	height: 900px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #c0c0c0;
+}
 
 .like{
 	float: left;
