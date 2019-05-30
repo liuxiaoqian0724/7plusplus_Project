@@ -95,9 +95,8 @@ public class CourseController {
 		response.setCharacterEncoding("utf-8");
 		Cookie[]cookies = request.getCookies();
 		String SESSIONID = CookieUtils.getCookieFromCookies(cookies,"JSESSIONID").getValue();
-		//String email = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
-		String email = "zhangsan@qq.com";
-		
+		String email = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
+
 		int pageTotal = 1;
 		if(list.size()!=0) {
 			pageTotal = list.size()%3 == 0 ? list.size()/3 : list.size()/3+1;
