@@ -79,7 +79,4 @@ public class Article {
 		return "Article [aId=" + aId + " , title=" + title + ", content=" + content + ", sendTime="
 				+ sendTime + ", likeCount=" + likeCount + "]";
 	}
-	
-	
-	
 }

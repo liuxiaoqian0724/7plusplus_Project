@@ -15,11 +15,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.sevenpp.qinglantutor.entity.Article;
 import com.sevenpp.qinglantutor.entity.Userinf;
+import com.sevenpp.qinglantutor.service.impl.ArticlelistServiceImpl;
 import com.sevenpp.qinglantutor.service.impl.IndexServiceImpl;
 
 /**
@@ -95,5 +98,12 @@ public class IndexController {
 			e.printStackTrace();
 		}
 	}
-
+	@RequestMapping("/articleinf")
+	@ResponseBody
+	public List<Article> articles(HttpServletResponse response) {
+		List<Article> list=new ArrayList();
+		list=service.findAllArticles();
+		response.setCharacterEncoding("UTF-8");
+		return list;
+	}
 }
