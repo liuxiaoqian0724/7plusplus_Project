@@ -11,8 +11,8 @@
 <head>
 	<title>家教信息列表</title>
 	<meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="css/header.css" />
-	<link rel="stylesheet" type="text/css" href="css/footer.css" />
+    <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/header.css" />
+	<link rel="stylesheet" type="text/css" href="<%=basePath%>/css/footer.css" />
     <link rel="stylesheet" type="text/css" href="<%=basePath%>/css/register_login.css"/>
     <!-- zui -->
     <link rel="stylesheet" href="<%=basePath%>/dist/css/zui.css" />
