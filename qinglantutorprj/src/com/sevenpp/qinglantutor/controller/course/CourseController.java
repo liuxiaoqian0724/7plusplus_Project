@@ -97,7 +97,6 @@ public class CourseController {
 		String SESSIONID = CookieUtils.getCookieFromCookies(cookies,"JSESSIONID").getValue();
 		String email = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
 
-		
 		int pageTotal = 1;
 		if(list.size()!=0) {
 			pageTotal = list.size()%3 == 0 ? list.size()/3 : list.size()/3+1;
