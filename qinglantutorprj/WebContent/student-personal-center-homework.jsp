@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
    <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
@@ -120,7 +120,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                       <span>${fn:substring(h.tstartTime, 0, 10)}</span>
                   </div>
                   <button type="button"><a href="WorkComplete?hid=${h.hid}">查看详情</a></button>
-                   <button type="button"><c:if test="${h.sstatus == '未完成'}"><a href="WorkComplete?hid=${h.hid}">未完成</a></c:if><c:if test="${h.sstatus == '已完成'}">已完成</c:if></button>
+                   <button type="button"><c:if test="${h.sstatus == null}"><a href="WorkComplete?hid=${h.hid}">未完成</a></c:if><c:if test="${h.sstatus == '已完成'}">已完成</c:if></button>
               </div>
               
            </div>
