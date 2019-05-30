@@ -18,7 +18,7 @@ function persoanlNews(){
 	if(useremail == ""){
 		alert("请先登录");
 	}else{
-		$("#personalNews").attr("href","jumptoNews");
+		$("#personalNews").attr("href","/qinglantutorprj/jumptoNews");
 	}	
 }
 	// 获取指定名称的cookie的值
