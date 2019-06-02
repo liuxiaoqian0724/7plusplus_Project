@@ -53,7 +53,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="pannel-body">
 				<div id="blank"></div>
 				<div id="toptop">
-					<p>标题:炸豆腐丸子，教你小技巧，加入这两种调料拌馅，外酥里嫩，吃着香</p>
+					<p>${article.title}</p>
 				</div>
 				<div id="top" style="height:150px; width:780.5; background-color: #fff;">
 					<div id="left">
@@ -62,26 +62,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<!-- 对该教师加关注 -->
 						<div id="follow">
 							<ul style="list-style-type:none;  background-color: #fff;">
-								<li style="margin-bottom: 6px; background-color: #fff; font-size: 18px;"><span id="teachername">${teachername }</span><span style="background-color: #fff;"><button class="btn" type="button" id="button-follow" style="margin-right: 20px;"><i class="icon icon-plus"></i>关注</button></span></li>
-								<li style="margin-bottom: 6px; background-color: #fff; font-size: 18px;">2019.5.7 15:40&nbsp;&nbsp;&nbsp;阅读:109&nbsp;&nbsp;&nbsp;点赞:10</li>
+								<li style="margin-bottom: 6px; background-color: #fff; font-size: 18px;"><span id="teachername">${article.title }</span><span style="background-color: #fff;"><button class="btn" type="button" id="button-follow" style="margin-right: 20px;"><i class="icon icon-plus"></i>关注</button></span></li>
+								<li style="margin-bottom: 6px; background-color: #fff; font-size: 18px;">${article.sendTime }&nbsp;&nbsp;&nbsp;阅读:${article.likeCount }&nbsp;&nbsp;&nbsp;点赞:${article.likeCount }</li>
 							</ul>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						</div>
 					</div>
 					<div id="right">
 						<ul style="list-style-type:none; background-color: #fff;">
 							<li style=" background-color: #fff; font-size: 20px;">标签:</li>
-							<li style="margin-bottom: 3px; background-color: #fff;"><button class="btn" type="button">生物</button><button class="btn" type="button" style="margin-left: 6px;">认证作者</button></li>
-							<li style="margin-bottom: 3px; background-color: #fff;"><button class="btn" type="button" style="margin-top: 4px;">提分秘籍</button></li>
-							<li style="margin-bottom: 3px; background-color: #fff;"><button class="btn" type="button" style="margin-top: 4px;">高一</button></li>
+							<li style="margin-bottom: 3px; background-color: #fff;"><button class="btn" type="button">${article.user.grade}</button><button class="btn" type="button" style="margin-left: 6px;">${article.user.major}</button></li>
+							<li style="margin-bottom: 3px; background-color: #fff;"><button class="btn" type="button" style="margin-top: 4px;">${article.user.address}</button></li>
+							<li style="margin-bottom: 3px; background-color: #fff;"><button class="btn" type="button" style="margin-top: 4px;">提分密集</button></li>
 						</ul>
 					</div>
 				</div>
 				<div id="blank"></div>
 				<!-- 正文部分 -->
 				<div id="Middletop">
-					<p id="word">驻村大队积极的向我们展示他们近年来的成果，首先就是解决了居民的饮水问题，每家每户通自来水管，保证了居民的日常饮用水的便捷度和安全性，其次道路的硬化，每个村落的主街道都变成了柏油大道，不论是通车还是过往的行人，都便捷了许多，然后是夜晚的亮化，在村落的主干道加太阳能路灯，为村民的晚上出行提供了安全保障，除此之外，还有的村庄，填补多年来的大坑，借土填坑，修桥通路，整个村庄面貌焕然一新。
-不过驻村小组表示，扶贫工作开展到目前为止，仍旧有未曾攻克的难题，比如说，建档立卡的标准无法严格考量，村民的经济难以以产业化的形式带动起来，农村的青壮年劳动力缺失，附近村庄的儿童上学难问题依旧存在，农村教育资源相对较差等等……
-					</p>
+					<p id="word">${article.content }</p>
 				</div>
 				<!-- 收藏点赞分享 -->
 				<!-- <div id="blank"></div>
@@ -93,27 +91,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div id="blank"></div>
 				<div id="Middlebottom">
 					<p id="comment">评论</p><hr>
+					<c:forEach items="${article.userReviewSet }" var="onearticle">
 					<div id="introduce">
 						<img src="images/idphotocircle1.png" width="90px" height="90px" id="img-circle2" alt="圆形图片">
-						<p id="name">NAME</p>
-						<p style="background-color: #fff;" id="introducep"> 炸丸子的肉馅里最好不要加葱花，葱花容易炸糊,吃起来影响口感和颜色。炸丸子时，油烧热后用小火，下入丸子，待全部下入后，在用中火炸，这样丸子成熟度一样，不会有的熟了有的没熟，炸制期间用勺子不停地搅动，使丸子炸的颜色一致，用大火容易炸的丸子外焦里不熟。喜欢这个菜肴的做法，你学会了吗?学会了别忘了点赞、收藏、转发，也欢迎在评论区发表您的看法，或者分享您的做法，欢迎关注-勺美食，每天都会发布家常美食做法。</p>
+						<p id="name">${article.user.id }</p>
+						<p style="background-color: #fff;" id="introducep">${onearticle.rContent }</p>
 						<button class="btn" type="button" id="reply">回复</button>
-						<p id="replytimess"> 2019.5.6 15:59</p>
+						<p id="replytimess"> ${onearticle.rTime }</p>
 					</div>
-					<div id="introduce">
-						<img src="images/idphotocircle1.png" width="90px" height="90px" id="img-circle2" alt="圆形图片">
-						<p id="name">NAME</p>
-						<p style="background-color: #fff;" id="introducep"> 炸丸子的肉馅里最好不要加葱花，葱花容易炸糊,吃起来影响口感和颜色。炸丸子时，油烧热后用小火，下入丸子，待全部下入后，在用中火炸，这样丸子成熟度一样，不会有的熟了有的没熟，炸制期间用勺子不停地搅动，使丸子炸的颜色一致，用大火容易炸的丸子外焦里不熟。喜欢这个菜肴的做法，你学会了吗?学会了别忘了点赞、收藏、转发，也欢迎在评论区发表您的看法，或者分享您的做法，欢迎关注-勺美食，每天都会发布家常美食做法。</p>
-						<button class="btn" type="button" id="reply">回复</button>
-						<p id="replytimess"> 2019.5.6 15:59</p>
-					</div>
-					<div id="introduce">
-						<img src="images/idphotocircle1.png" width="90px" height="90px" id="img-circle2" alt="圆形图片">
-						<p id="name">NAME</p>
-						<p style="background-color: #fff;" id="introducep"> 炸丸子的肉馅里最好不要加葱花，葱花容易炸糊,吃起来影响口感和颜色。炸丸子时，油烧热后用小火，下入丸子，待全部下入后，在用中火炸，这样丸子成熟度一样，不会有的熟了有的没熟，炸制期间用勺子不停地搅动，使丸子炸的颜色一致，用大火容易炸的丸子外焦里不熟。喜欢这个菜肴的做法，你学会了吗?学会了别忘了点赞、收藏、转发，也欢迎在评论区发表您的看法，或者分享您的做法，欢迎关注-勺美食，每天都会发布家常美食做法。</p>
-						<button class="btn" type="button" id="reply">回复</button>
-						<p id="replytimess"> 2019.5.6 15:59</p>
-					</div>
+					</c:forEach>
 					<!-- 分页数 -->
 					<ul class="pager" id="pager">
 					  <li class="previous"><a href="#">上一页</a></li>
@@ -128,9 +114,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div id="blank"></div>
 				<div id="bottom">
 					<img src="images/idphotocircle1.png" width="90px" height="90px" id="img-circle" alt="圆形图片">
-					<textarea id="bottomtextarea" rows="2" placeholder="撰写评论...">炸丸子的肉馅里最好不要加葱花，葱花容易炸糊,吃起来影响口感和颜色。炸丸子时，油烧热后用小火，下入丸子，待全部下入后，在用中火炸，这样丸子成熟度一样，不会有的熟了有的没熟，炸制期间用勺子不停地搅动，使丸子炸的颜色一致，用大火容易炸的丸子外焦里不熟。喜欢这个菜肴的做法，你学会了吗?学会了别忘了点赞、收藏、转发，也欢迎在评论区发表您的看法，或者分享您的做法，欢迎关注-勺美食，每天都会发布家常美食做法。</textarea>
+					<textarea value="content" id="bottomtextarea" rows="2" placeholder="撰写评论..."></textarea>
 					<div id="row">
-						<button class="btn" type="button" id="replyok">发表回复</button>
+						<button class="btn" type="button" id="replyok" name="articlecontent" value="articlecontent">发表回复</button>
 					</div>
 				</div>
 				<div id="blank"></div>

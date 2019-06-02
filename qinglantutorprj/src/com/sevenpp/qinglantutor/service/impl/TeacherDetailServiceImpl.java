@@ -7,6 +7,15 @@
  */
 package com.sevenpp.qinglantutor.service.impl;
 
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.sevenpp.qinglantutor.dao.impl.TeacherDetailDaoImpl;
+import com.sevenpp.qinglantutor.entity.Article;
+import com.sevenpp.qinglantutor.entity.ArticleReview;
+import com.sevenpp.qinglantutor.entity.User;
 import com.sevenpp.qinglantutor.service.TeacherDetailService;
 
 /**
@@ -16,6 +25,28 @@ import com.sevenpp.qinglantutor.service.TeacherDetailService;
  * @Date:2019年6月2日
  *
  */
+@Service
+@Transactional(readOnly=true)
 public class TeacherDetailServiceImpl implements TeacherDetailService {
-
+		@Resource
+		private TeacherDetailDaoImpl teacherdetailDaoImpl;
+	
+		public Article getArticleMessages(int articleId) {
+			
+			return this.teacherdetailDaoImpl.findId(articleId);
+		}
+		public Article findArticleByid(int id) {
+			return this.teacherdetailDaoImpl.findArticleByid(id);
+		}
+		public	void saveComment(ArticleReview articlereviewId) {
+			try {
+				this.teacherdetailDaoImpl.saveComment(articlereviewId);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		public User findUserByid(int userid) {
+			return this.teacherdetailDaoImpl.findUserByid(userid);
+		}
 }

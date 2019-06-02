@@ -7,6 +7,10 @@
  */
 package com.sevenpp.qinglantutor.dao;
 
+import com.sevenpp.qinglantutor.entity.Article;
+import com.sevenpp.qinglantutor.entity.ArticleReview;
+import com.sevenpp.qinglantutor.entity.User;
+
 /**
  * @ClassName:TeacherDetailDao
  * @Description:TODO（用一句话描述这个类的作用）
@@ -15,5 +19,8 @@ package com.sevenpp.qinglantutor.dao;
  *
  */
 public interface TeacherDetailDao {
-
+	public Article findId(int articleId);
+	public Article findArticleByid(int id);
+	public void saveComment(ArticleReview articlereviewId) throws Exception;
+	public User findUserByid(int userid);
 }
