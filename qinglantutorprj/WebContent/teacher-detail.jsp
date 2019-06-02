@@ -1,19 +1,55 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %> 
+<%-- <%
+	String rootpath=application.getRealPath("/");
+	System.out.println(rootpath);
+%> --%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>文章详情</title>
-		<!--css-->
-<!-- 		<link rel="stylesheet" type="text/css" href="css/articledetails.css"/> -->
-		<link rel="stylesheet" type="text/css" href="css/teacher-detile.css"/>
-		<!-- zui -->
-		<link rel="stylesheet" href="dist/css/zui.css" />
-		<script type="text/javascript" src="dist/js/zui.js"></script>
-		<!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
-		<script src="js/jquery-3.2.1.js"></script>
-	</head>
-	<body style="background-color: #F8F8F8;">
-		<div id="out" class="pannel">
+<head>
+	<title>老师详情页</title>
+	<!-- ZUI 标准版压缩后的 CSS 文件 -->
+	<base href="<%=basePath%>">
+<link rel="stylesheet" href="dist/css/zui.min.css">
+<link rel="stylesheet" type="text/css" href="css/personal-center.css">
+<link rel="stylesheet" type="text/css" href="css/teacher-detail.css">
+<link rel="stylesheet" type="text/css" href="css/header.css"/>
+<link rel="stylesheet" type="text/css" href="css/footer.css"/>
+<link rel="stylesheet" type="text/css" href="css/register_login.css"/>
+
+<!-- zui -->
+	<script src="js/jquery-3.2.1.js"></script>
+	<link rel="stylesheet" href="dist/css/zui.css" />
+	<!-- jQuery (ZUI中的Javascript组件依赖于jQuery) -->
+	<!-- <script src="dist/lib/jquery/jquery.js"></script> -->
+	<!-- ZUI Javascript组件 -->
+	<script type="text/javascript" src="dist/js/zui.js"></script>
+	
+	<link rel="stylesheet" href="css/verify.css" />
+	<script type="text/javascript" src="js/verify.js"></script>
+    <script type="text/javascript" src="js/verify.min.js"></script>
+    <script type="text/javascript" src="js/header.js"></script>
+ 	<script type="text/javascript" src="js/nav.js"></script>
+ 	
+ 	<!-- semantic -->
+	<link rel="stylesheet" type="text/css" href="Semantic/components/message.css"/>
+
+<meta charset="utf-8">
+</head>
+<body style="background-color: #F8F8F8;">
+<!-- 头部 -->
+<jsp:include page="header.jsp"></jsp:include>
+<!-- 中部 -->
+<div id="out" class="pannel">
 			<div class="pannel-body">
 				<div id="blank"></div>
 				<div id="toptop">
@@ -26,7 +62,7 @@
 						<!-- 对该教师加关注 -->
 						<div id="follow">
 							<ul style="list-style-type:none;  background-color: #fff;">
-								<li style="margin-bottom: 6px; background-color: #fff; font-size: 18px;"><span id="teachername">一二三四五就就就胡德夫好</span><span style="background-color: #fff;"><button class="btn" type="button" id="button-follow" style="margin-right: 20px;"><i class="icon icon-plus"></i>关注</button></span></li>
+								<li style="margin-bottom: 6px; background-color: #fff; font-size: 18px;"><span id="teachername">${teachername }</span><span style="background-color: #fff;"><button class="btn" type="button" id="button-follow" style="margin-right: 20px;"><i class="icon icon-plus"></i>关注</button></span></li>
 								<li style="margin-bottom: 6px; background-color: #fff; font-size: 18px;">2019.5.7 15:40&nbsp;&nbsp;&nbsp;阅读:109&nbsp;&nbsp;&nbsp;点赞:10</li>
 							</ul>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						</div>
@@ -100,6 +136,10 @@
 				<div id="blank"></div>
 			</div>
 		</div>
-	</body>
 
+
+<!-- 底部 -->
+ <jsp:include page="footer.jsp"></jsp:include>
+ <script type="text/javascript" src="js/checkLogin_regist.js"></script>
+</body>
 </html>
