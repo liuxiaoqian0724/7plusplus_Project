@@ -210,6 +210,7 @@ function learnshow(currentpage2) {
 				}
 				if (index >= (currentpage2 - 1) * 3
 						&& index <= currentpage2 * 3 - 1) {
+					console.log(res.aId);
 					articlelist3='<div class="items items-hover" id="card">'+
 					'<div class="item">'+
 					'<div class="card_keyword">'+
@@ -230,7 +231,7 @@ function learnshow(currentpage2) {
 					'<div class="cards_article">'+
 					'<div class="item-heading">'+
 					'<div class="pull-right label label-success"></div>'+
-					'<h4><a href="###">'+res.title+'</a></h4>'+
+					'<h4><a href="teacherdetail?artid='+res.aId+'">'+res.title+'</a></h4>'+
 					'</div>'+
 					'<div class="item-content">'+
 					'<div class="media pull-right"><img src="images/courses'+(index+1)+'.jpg" alt="" style="width:75%;margin-top:-20px; margin-left:15px;"></div>'+
