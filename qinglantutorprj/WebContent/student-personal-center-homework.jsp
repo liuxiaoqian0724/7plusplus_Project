@@ -120,7 +120,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                       <span>${fn:substring(h.tstartTime, 0, 10)}</span>
                   </div>
                   <button type="button"><a href="WorkComplete?hid=${h.hid}">查看详情</a></button>
-                   <button type="button"><c:if test="${h.sstatus !='已完成'}"><a href="WorkComplete?hid=${h.hid}">未完成</a></c:if><c:if test="${h.sstatus == '已完成'}">已完成</c:if></button>
+                   <button type="button"><c:if test="${empty h.sstatus}"><a href="WorkComplete?hid=${h.hid}">未完成</a></c:if><c:if test="${h.sstatus == '已完成'}">已完成</c:if></button>
               </div>
               
            </div>
