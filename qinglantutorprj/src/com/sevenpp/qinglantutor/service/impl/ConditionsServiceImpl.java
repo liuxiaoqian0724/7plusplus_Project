@@ -196,6 +196,7 @@ import com.sevenpp.qinglantutor.entity.UserInfo;
 					userinfo.setIntellgencesort();
 					tutors.add(userinfo);
 				}
+				
 				for (UserInfo userInfo : tutors) {
 					String new_introduce="";
 					if(userInfo.getIntroduce().length()>25) {
