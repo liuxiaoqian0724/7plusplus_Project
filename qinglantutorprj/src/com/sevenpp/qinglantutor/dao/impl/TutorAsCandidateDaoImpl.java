@@ -56,7 +56,6 @@ import com.sevenpp.qinglantutor.entity.User;
 				int star1=0;
 				List list=sq.list();
 				for (Object object : list) {
-					System.out.println("content："+object);
 					if(object!=null) {
 						Float star=((Number)sq.uniqueResult()).floatValue();
 						star1=Math.round(star);
