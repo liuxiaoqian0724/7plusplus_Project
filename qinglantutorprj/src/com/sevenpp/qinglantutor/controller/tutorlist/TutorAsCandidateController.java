@@ -98,7 +98,6 @@ public class TutorAsCandidateController {
 			ByteArrayOutputStream out = new ByteArrayOutputStream();
 			String filename = ServletUtilities.saveChartAsPNG(jfreechart, 500, 500, null);
 			String graphURL = request.getContextPath() + "/DisplayChart?filename="   + filename;
-			System.out.println(graphURL);
 			String image=  "<img src='" 
 		            + graphURL 
 		            + "' width=400 height=500 border=0 usemap='#" 
