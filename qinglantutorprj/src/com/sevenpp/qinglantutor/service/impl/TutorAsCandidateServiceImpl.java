@@ -42,20 +42,7 @@ import com.sevenpp.qinglantutor.entity.Userinfosec;
 					* @date 2019年5月13日 下午3:00:05 
 					* @version V1.0   
 			 */
-//			public List<User> findUsers(List<String> digitList){
-//				System.out.println("come in");
-//				List<User> users=new ArrayList<User>();
-//				int id=0;
-//				for (String digit : digitList) {
-//					id=Integer.parseInt(digit);
-//					System.out.println("id:"+id);
-//					if(this.tutorDetailServiceImpl.getTutorDetail(id)!=null)
-//						users.add(this.tutorDetailServiceImpl.getTutorDetail(id));
-//				}
-//				System.out.println("users.size:"+users.size());
-//				return users;
-//			}
-//			
+
 			/**
 			 * 
 					* @Title: findUserinfosec 
@@ -69,7 +56,6 @@ import com.sevenpp.qinglantutor.entity.Userinfosec;
 					* @version V1.0   
 			 */
 			public List<Userinfosec> findUserinfosec(List<User> users){
-				System.out.println("come");
 				List<Userinfosec> userinfos=new ArrayList<Userinfosec>();
 				for (User user : users) {
 					Userinfosec userinfo=new Userinfosec();

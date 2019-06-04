@@ -69,15 +69,6 @@ import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 				} catch (IOException e1) {
 
 				}
-//				session.invalidate();
-//				if (CookieUtils.getCookieFromCookies(cookies, "EMAIL") == null) {
-//					return "index";
-//				}
-				
-//				if(EMAIL==null||EMAIL.equals("")) {
-//					System.out.println("come");
-//					return "index";
-//				}
 				session.setAttribute("sortcondition", sortcondition);
 				session.setAttribute("schooltype", schoolType);
 				List<Object[]> courses=this.tutorListServiceImpl.findAllCourses();
