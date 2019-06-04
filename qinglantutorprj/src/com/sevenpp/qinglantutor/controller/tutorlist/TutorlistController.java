@@ -27,14 +27,14 @@ import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 		
 		/**
 		*
-		* 项目名称：qinglantutorprj
-		* 类名称：TutorlistControllerImpl
-		* 类描述：
-		* 创建人：cuishan
-		* 创建时间：2018年12月5日 下午4:18:56
-		* 修改人：rain
-		* 修改时间：2018年12月5日 下午4:18:56
-		* 修改备注：
+		* 椤圭洰鍚嶇О锛歲inglantutorprj
+		* 绫诲悕绉帮細TutorlistControllerImpl
+		* 绫绘弿杩帮細
+		* 鍒涘缓浜猴細cuishan
+		* 鍒涘缓鏃堕棿锛�2018骞�12鏈�5鏃� 涓嬪崍4:18:56
+		* 淇敼浜猴細rain
+		* 淇敼鏃堕棿锛�2018骞�12鏈�5鏃� 涓嬪崍4:18:56
+		* 淇敼澶囨敞锛�
 		* @version
 		*
 		*/

@@ -211,14 +211,19 @@ import com.sevenpp.qinglantutor.entity.UserInfo;
 				Session session=this.sessionFactory.getCurrentSession();
 				String sql="select reviewcontent from tbl_review where crid in( \r\n" + 
 						"	select crid from tbl_classrelation where trid in(\r\n" + 
-						"	select trid from tbl_teach where tid=1))";
+						"	select trid from tbl_teach where tid=?))";
 				Query q=session.createSQLQuery(sql);
+				q.setParameter(0, tid);
 				List reviewcontents=q.list();
-				String content=reviewcontents.get(0).toString();
+				String content="";
+				if(reviewcontents.size()>0) {
+					content=reviewcontents.get(0).toString();
+				}
 				String new_content="";
 				System.out.println("content.length:"+content.length());
 				if(content.length()>20) {
 					new_content=content.substring(0, 20);
+					System.out.println("new_content:"+new_content);
 					return new_content;
 				}else
 					return content;

@@ -192,10 +192,17 @@ import com.sevenpp.qinglantutor.entity.UserInfo;
 					objs[6]=star;
 					objs[7]=sum;
 					objs[8]=content;
-//					System.out.println("id:"+(int)objs[0]+"username"+objs[1].toString()+"userimg"+objs[2].toString()+"introduce:"+objs[3].toString()+"price:"+(int)objs[4]+"teacherage"+(int)objs[5]+"content:"+objs[8].toString());
 					UserInfo userinfo=new UserInfo((int)objs[0],objs[1].toString(),objs[2].toString(),objs[3].toString(),(int)objs[4],objs[5].toString(),(int)objs[6],(int)objs[7],objs[8].toString());
 					userinfo.setIntellgencesort();
 					tutors.add(userinfo);
+				}
+				String new_introduce="";
+				for (UserInfo userInfo : tutors) {
+					if(userInfo.getIntroduce().length()>30) {
+//						System.out.println("introduce.length:"+userInfo.getIntroduce().length());
+						new_introduce=userInfo.getIntroduce().substring(0, 40)+"...";
+						userInfo.setIntroduce(new_introduce);
+					}
 				}
 				return tutors;
 			}
