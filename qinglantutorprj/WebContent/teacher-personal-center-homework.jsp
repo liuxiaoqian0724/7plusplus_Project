@@ -112,7 +112,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                       <span>${fn:substring(h.sfinishTime, 0, 10)}</span>
                   </div><c:if test="${h.sstatus=='已完成'}">
                   <button type="button"><a href="WorkComment?hid=${h.hid}"/>查看详情</a></button>
-                   <button type="button"> <c:if test="${empty h.tstatus}">
+                   <button type="button"> <c:if test="${h.tstatus == '未评价'}">
                   <a href="WorkComment?hid=${h.hid}">未评价</a></c:if><c:if test="${h.tstatus == '已评价'}">已评价</c:if></button></c:if>
               </div>
            </div>

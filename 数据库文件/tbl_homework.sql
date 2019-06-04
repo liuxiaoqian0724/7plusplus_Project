@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50506
 File Encoding         : 65001
 
-Date: 2019-06-03 15:40:03
+Date: 2019-06-04 08:31:51
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -39,7 +39,7 @@ CREATE TABLE `tbl_homework` (
 -- ----------------------------
 -- Records of tbl_homework
 -- ----------------------------
-INSERT INTO `tbl_homework` VALUES ('2', '作业一作业一内容', '作业一作业一内容作业一作业一内容', '2018-11-13 14:05:33', '2018-12-06 14:05:45', '80', '已完成', '', '2', '4', null, null, null);
-INSERT INTO `tbl_homework` VALUES ('3', '作业二作业二内容', '', '2018-11-13 14:05:33', '2018-12-06 14:05:45', '90', '已完成', '', '3', '2', null, '', null);
-INSERT INTO `tbl_homework` VALUES ('4', '作业三作业三内容', '作业三作业三内容', '2018-11-13 14:05:33', '2018-12-06 14:05:45', '90', '', '', '4', '3', null, null, null);
-INSERT INTO `tbl_homework` VALUES ('5', '作业四作业四内容', '作业四作业四内容', '2018-11-13 14:05:33', '2018-12-06 14:05:45', '90', '', '', '1', '1', null, null, null);
+INSERT INTO `tbl_homework` VALUES ('2', '作业一作业一内容', '作业一作业一内容作业一作业一内容', '2018-11-13 14:05:33', '2018-12-06 14:05:45', '80', '已完成', '未评价', '2', '4', null, null, null);
+INSERT INTO `tbl_homework` VALUES ('3', '作业二作业二内容', '', '2018-11-13 14:05:33', '2018-12-06 14:05:45', '90', '已完成', '未评价', '3', '2', null, '', null);
+INSERT INTO `tbl_homework` VALUES ('4', '作业三作业三内容', '作业三作业三内容', '2018-11-13 14:05:33', '2018-12-06 14:05:45', '90', '未完成', '未评价', '4', '3', null, null, null);
+INSERT INTO `tbl_homework` VALUES ('5', '作业四作业四内容', '作业四作业四内容', '2018-11-13 14:05:33', '2018-12-06 14:05:45', '90', '未完成', '未评价', '1', '1', null, null, null);
