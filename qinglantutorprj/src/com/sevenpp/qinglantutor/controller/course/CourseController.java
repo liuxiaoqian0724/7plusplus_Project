@@ -1,5 +1,11 @@
 package com.sevenpp.qinglantutor.controller.course;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
@@ -7,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.ServletContext;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,11 +21,11 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sevenpp.qinglantutor.entity.CourseInformation;
+import com.sevenpp.qinglantutor.log.LogServerImpl;
 import com.sevenpp.qinglantutor.service.impl.CourseServiceImpl;
 import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 
@@ -42,6 +49,9 @@ public class CourseController {
 	private CourseServiceImpl courseServiceImpl;
 	private List<CourseInformation> list;
 	
+	@Resource
+	private LogServerImpl logServerImpl;
+	
 	
 	@RequestMapping("courseInformation")
 	public String stuCourse(HttpServletRequest request,HttpServletResponse response) {
@@ -54,6 +64,16 @@ public class CourseController {
 		Cookie[]cookies = request.getCookies();
 		String SESSIONID = CookieUtils.getCookieFromCookies(cookies,"JSESSIONID").getValue();
 		String email = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
+		
+		logServerImpl.logsth(1, 1);
+		
+		
+//		Logger log = LoggerFactory.getLogger(LogServerImpl.class);
+//		log.debug("logdemo==info");
+//		
+//		log.info("1","2","3333");
+		
+		
 		
 		list = this.courseServiceImpl.getCourseInfor(email);
 		List<CourseInformation> list1 = new ArrayList<>();
@@ -96,7 +116,7 @@ public class CourseController {
 		Cookie[]cookies = request.getCookies();
 		String SESSIONID = CookieUtils.getCookieFromCookies(cookies,"JSESSIONID").getValue();
 		//String email = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
-		String email = "zhangsan@qq.com";
+		String email = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
 		
 		int pageTotal = 1;
 		if(list.size()!=0) {
