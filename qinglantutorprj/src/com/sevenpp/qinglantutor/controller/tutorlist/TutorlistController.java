@@ -70,9 +70,14 @@ import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 
 				}
 //				session.invalidate();
-				if (CookieUtils.getCookieFromCookies(cookies, "EMAIL") == null) {
-					return "index";
-				}
+//				if (CookieUtils.getCookieFromCookies(cookies, "EMAIL") == null) {
+//					return "index";
+//				}
+				
+//				if(EMAIL==null||EMAIL.equals("")) {
+//					System.out.println("come");
+//					return "index";
+//				}
 				session.setAttribute("sortcondition", sortcondition);
 				session.setAttribute("schooltype", schoolType);
 				List<Object[]> courses=this.tutorListServiceImpl.findAllCourses();
