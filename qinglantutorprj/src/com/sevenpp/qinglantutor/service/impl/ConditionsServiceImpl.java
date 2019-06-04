@@ -13,14 +13,14 @@ import com.sevenpp.qinglantutor.entity.UserInfo;
 
 /**
 		*
-		* 项目名称：qinglantutorprj
-		* 类名称：ConditionsServiceImpl
-		* 类描述：conditionsDaoImpl的Service
-		* 创建人：cuishan
-		* 创建时间：2018年12月12日 上午8:35:21
-		* 修改人：rain
-		* 修改时间：2018年12月12日 上午8:35:21
-		* 修改备注：
+		* 椤圭洰鍚嶇О锛歲inglantutorprj
+		* 绫诲悕绉帮細ConditionsServiceImpl
+		* 绫绘弿杩帮細conditionsDaoImpl鐨凷ervice
+		* 鍒涘缓浜猴細cuishan
+		* 鍒涘缓鏃堕棿锛�2018骞�12鏈�12鏃� 涓婂崍8:35:21
+		* 淇敼浜猴細rain
+		* 淇敼鏃堕棿锛�2018骞�12鏈�12鏃� 涓婂崍8:35:21
+		* 淇敼澶囨敞锛�
 		* @version
 		*
 		*/
@@ -43,19 +43,19 @@ import com.sevenpp.qinglantutor.entity.UserInfo;
 			
 			/**
 			 * 
-			 * @Title: findHql 
-			 * @Description: 用于家教库页查询各种条件
+			 * @Title: findHql聽
+			 * @Description: 鐢ㄤ簬瀹舵暀搴撻〉鏌ヨ鍚勭鏉′欢
 			 * @param @param grade
 			 * @param @param subject
 			 * @param @param department
 			 * @param @param sex
 			 * @param @param major
-			 * @param @return    入参
-			 * @return String    返回类型
-			 * @author （作者） 
+			 * @param @return 聽 聽鍏ュ弬
+			 * @return String 聽 聽杩斿洖绫诲瀷
+			 * @author 锛堜綔鑰咃級聽
 			 * @throws
-			 * @date 2018年12月12日 上午8:43:24 
-			 * @version V1.0   
+			 * @date 2018骞�12鏈�12鏃� 涓婂崍8:43:24聽
+			 * @version V1.0 聽聽
 			 */
 			public String findSql(int grade,int subject,String department,String sex,String major,String schooltype) {
 				return this.conditionsDaoImpl.findSql(grade, subject, department, sex, major,schooltype);
@@ -63,30 +63,30 @@ import com.sevenpp.qinglantutor.entity.UserInfo;
 			
 			/**
 			 * 
-					* @Title: findReviewStarById 
-					* @Description: TODO 根据id查询评级星级
+					* @Title: findReviewStarById聽
+					* @Description: TODO 鏍规嵁id鏌ヨ璇勭骇鏄熺骇
 					* @param @param id
-					* @param @return    入参
-					* @return int    返回类型
-					* @author （作者） 
+					* @param @return 聽 聽鍏ュ弬
+					* @return int 聽 聽杩斿洖绫诲瀷
+					* @author 锛堜綔鑰咃級聽
 					* @throws
-					* @date 2018年12月17日 上午8:20:48 
-					* @version V1.0   
+					* @date 2018骞�12鏈�17鏃� 涓婂崍8:20:48聽
+					* @version V1.0 聽聽
 			 */
 			public int findReviewStarById(int id) {
 				return this.conditionsDaoImpl.findReviewStarById(id);
 			}
 			/**
 			 * 
-					* @Title: findReviewSumById 
-					* @Description: TODO 根据老师id查询出对他的评价总数
+					* @Title: findReviewSumById聽
+					* @Description: TODO 鏍规嵁鑰佸笀id鏌ヨ鍑哄浠栫殑璇勪环鎬绘暟
 					* @param @param tid
-					* @param @return    入参
-					* @return int    返回类型
-					* @author （作者） 
+					* @param @return 聽 聽鍏ュ弬
+					* @return int 聽 聽杩斿洖绫诲瀷
+					* @author 锛堜綔鑰咃級聽
 					* @throws
-					* @date 2018年12月17日 上午8:17:28 
-					* @version V1.0   
+					* @date 2018骞�12鏈�17鏃� 涓婂崍8:17:28聽
+					* @version V1.0 聽聽
 			 */
 			public int findReviewSumById(int tid) {
 				return this.conditionsDaoImpl.findReviewSumById(tid);
@@ -94,15 +94,15 @@ import com.sevenpp.qinglantutor.entity.UserInfo;
 			
 			/**
 			 * 
-					* @Title: findReviewContentById 
-					* @Description: TODO 查询第一条评价
+					* @Title: findReviewContentById聽
+					* @Description: TODO 鏌ヨ绗竴鏉¤瘎浠�
 					* @param @param tid
-					* @param @return    入参
-					* @return String    返回类型
-					* @author （作者） 
+					* @param @return 聽 聽鍏ュ弬
+					* @return String 聽 聽杩斿洖绫诲瀷
+					* @author 锛堜綔鑰咃級聽
 					* @throws
-					* @date 2018年12月17日 上午8:22:44 
-					* @version V1.0   
+					* @date 2018骞�12鏈�17鏃� 涓婂崍8:22:44聽
+					* @version V1.0 聽聽
 			 */
 			public String findReviewContentById(int tid) {
 				return this.conditionsDaoImpl.findReviewContentById(tid);
@@ -110,15 +110,15 @@ import com.sevenpp.qinglantutor.entity.UserInfo;
 			
 			/**
 			 * 
-			 * @Title: findGidByGname 
-			 * @Description: TODO根据gname查询gid
+			 * @Title: findGidByGname聽
+			 * @Description: TODO鏍规嵁gname鏌ヨgid
 			 * @param @param gname
-			 * @param @return    入参
-			 * @return int    返回类型
-			 * @author （作者） 
+			 * @param @return 聽 聽鍏ュ弬
+			 * @return int 聽 聽杩斿洖绫诲瀷
+			 * @author 锛堜綔鑰咃級聽
 			 * @throws
-			 * @date 2018年12月12日 上午8:45:11 
-			 * @version V1.0   
+			 * @date 2018骞�12鏈�12鏃� 涓婂崍8:45:11聽
+			 * @version V1.0 聽聽
 			 */
 			public int findGidByGname(String gname) {
 				return this.conditionsDaoImpl.findGidByGname(gname);
@@ -126,15 +126,15 @@ import com.sevenpp.qinglantutor.entity.UserInfo;
 			
 			/**
 			 * 
-			 * @Title: findCidByCname 
-			 * @Description: TODO根据cname查询cid
+			 * @Title: findCidByCname聽
+			 * @Description: TODO鏍规嵁cname鏌ヨcid
 			 * @param @param cname
-			 * @param @return    入参
-			 * @return int    返回类型
-			 * @author （作者） 
+			 * @param @return 聽 聽鍏ュ弬
+			 * @return int 聽 聽杩斿洖绫诲瀷
+			 * @author 锛堜綔鑰咃級聽
 			 * @throws
-			 * @date 2018年12月12日 上午8:46:27 
-			 * @version V1.0   
+			 * @date 2018骞�12鏈�12鏃� 涓婂崍8:46:27聽
+			 * @version V1.0 聽聽
 			 */
 			public int findCidByCname(String cname) {
 				return this.conditionsDaoImpl.findCidByCname(cname);
@@ -142,19 +142,19 @@ import com.sevenpp.qinglantutor.entity.UserInfo;
 			
 			/**
 			 * 
-					* @Title: findTutorOnUserByConditions 
-					* @Description: TODO 查询符合条件的老师的user表中的相应信息
+					* @Title: findTutorOnUserByConditions聽
+					* @Description: TODO 鏌ヨ绗﹀悎鏉′欢鐨勮�佸笀鐨剈ser琛ㄤ腑鐨勭浉搴斾俊鎭�
 					* @param @param grade
 					* @param @param subject
 					* @param @param department
 					* @param @param sex
 					* @param @param major
-					* @param @return    入参
-					* @return List<Object[]>    返回类型
-					* @author （作者） 
+					* @param @return 聽 聽鍏ュ弬
+					* @return List<Object[]> 聽 聽杩斿洖绫诲瀷
+					* @author 锛堜綔鑰咃級聽
 					* @throws
-					* @date 2018年12月17日 上午8:23:45 
-					* @version V1.0   
+					* @date 2018骞�12鏈�17鏃� 涓婂崍8:23:45聽
+					* @version V1.0 聽聽
 			 */
 			public List<Object[]> findTutorOnUserByConditions(int grade,int subject,String department,String sex,String major,String schooltype){
 				return this.conditionsDaoImpl.findTutorOnUserByConditions(grade, subject, department, sex, major,schooltype);
@@ -162,27 +162,27 @@ import com.sevenpp.qinglantutor.entity.UserInfo;
 			
 			/**
 			 * 
-					* @Title: findTutorOnMyJobByConditions 
-					* @Description: TODO  查询符合所有条件的老师
+					* @Title: findTutorOnMyJobByConditions聽
+					* @Description: TODO  鏌ヨ绗﹀悎鎵�鏈夋潯浠剁殑鑰佸笀
 					* @param @param grade
 					* @param @param subject
 					* @param @param department
 					* @param @param sex
 					* @param @param major
-					* @param @return    入参
-					* @return List<Object[]>    返回类型
-					* @author （作者） 
+					* @param @return 聽 聽鍏ュ弬
+					* @return List<Object[]> 聽 聽杩斿洖绫诲瀷
+					* @author 锛堜綔鑰咃級聽
 					* @throws
-					* @date 2018年12月17日 上午8:24:39 
-					* @version V1.0   
+					* @date 2018骞�12鏈�17鏃� 涓婂崍8:24:39聽
+					* @version V1.0 聽聽
 			 */
 			public List<UserInfo> findTutorByAllConditions(int grade,int subject,String department,String sex,String major,String schooltype){
 				List<Object[]> tutorlist=this.conditionsDaoImpl.findTutorByAllConditions(grade, subject, department, sex, major,schooltype);
 				List<UserInfo> tutors=new ArrayList<UserInfo>();
 				for (Object[] objects : tutorlist) {
-					//得到id
+					//寰楀埌id
 					int id=(int)objects[0];
-					//根据id得到星级
+					//鏍规嵁id寰楀埌鏄熺骇
 					int star=this.findReviewStarById(id);
 					int sum=this.findReviewSumById(id);
 					String content=this.findReviewContentById(id);
@@ -202,19 +202,19 @@ import com.sevenpp.qinglantutor.entity.UserInfo;
 			
 			/**
 			 * 
-					* @Title: findCountByPage 
-					* @Description: 得到以某种方式查询的信息总条数
+					* @Title: findCountByPage聽
+					* @Description: 寰楀埌浠ユ煇绉嶆柟寮忔煡璇㈢殑淇℃伅鎬绘潯鏁�
 					* @param @param grade
 					* @param @param subject
 					* @param @param department
 					* @param @param sex
 					* @param @param major
-					* @param @return    入参
-					* @return int    返回类型
-					* @author （作者） 
+					* @param @return 聽 聽鍏ュ弬
+					* @return int 聽 聽杩斿洖绫诲瀷
+					* @author 锛堜綔鑰咃級聽
 					* @throws
-					* @date 2018年12月20日 上午9:16:10 
-					* @version V1.0   
+					* @date 2018骞�12鏈�20鏃� 涓婂崍9:16:10聽
+					* @version V1.0 聽聽
 			 */
 			public int findCountByPage(int grade,int subject,String department,String sex,String major,String schooltype) {
 				return this.conditionsDaoImpl.findCountByPage(grade,subject, department, sex, major,schooltype);
