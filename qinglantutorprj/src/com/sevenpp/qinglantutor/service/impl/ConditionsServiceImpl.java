@@ -102,7 +102,7 @@ import com.sevenpp.qinglantutor.entity.UserInfo;
 					* @author （作者） 
 					* @throws
 					* @date 2018年12月17日 上午8:22:44 
-					* @version V1.0   
+					* @version V1.0 
 			 */
 			public String findReviewContentById(int tid) {
 				return this.conditionsDaoImpl.findReviewContentById(tid);
@@ -118,7 +118,7 @@ import com.sevenpp.qinglantutor.entity.UserInfo;
 			 * @author （作者） 
 			 * @throws
 			 * @date 2018年12月12日 上午8:45:11 
-			 * @version V1.0   
+			 * @version V1.0 
 			 */
 			public int findGidByGname(String gname) {
 				return this.conditionsDaoImpl.findGidByGname(gname);
@@ -134,7 +134,7 @@ import com.sevenpp.qinglantutor.entity.UserInfo;
 			 * @author （作者） 
 			 * @throws
 			 * @date 2018年12月12日 上午8:46:27 
-			 * @version V1.0   
+			 * @version V1.0
 			 */
 			public int findCidByCname(String cname) {
 				return this.conditionsDaoImpl.findCidByCname(cname);
