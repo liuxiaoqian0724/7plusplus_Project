@@ -290,7 +290,6 @@
 						<div class="top-left">
 							<p>满意率</p>
 							<span>96.47%</span>
-							<!-- <span class="star">⭐⭐⭐⭐⭐</span> -->
 						</div>
 						<div class="separator"></div>
 						<div class="top-right">
