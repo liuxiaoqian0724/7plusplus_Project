@@ -1,10 +1,7 @@
 package com.sevenpp.qinglantutor.controller.homework;
 
-import com.sevenpp.qinglantutor.entity.Page;
 
-import com.sevenpp.qinglantutor.entity.ClassRelation;
 import com.sevenpp.qinglantutor.entity.HomeWork;
-import com.sevenpp.qinglantutor.entity.TeachRelation;
 import com.sevenpp.qinglantutor.entity.User;
 import com.sevenpp.qinglantutor.service.impl.HomeworkSelectServiceImpl;
 import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
@@ -36,7 +33,6 @@ public class HomeworkShow {
 		response.setContentType("text/html;charset=utf-8");
 		response.setCharacterEncoding("utf-8");
 		Cookie[]cookies = request.getCookies();
-		System.out.println(cookies.length);
 //		String SESSIONID = CookieUtils.getCookieFromCookies(cookies,"JSESSIONID").getValue();
 		String email = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
 		String page1=request.getParameter("page");
@@ -47,7 +43,7 @@ public class HomeworkShow {
 		List<HomeWork> list=this.homeworkSelectServiceImpl.HomeworkShow();
 		String role=user.getRole();
 		List<HomeWork> list3= new ArrayList();
-		if(role.startsWith("学生")) {
+		if(role.startsWith("家长")) {
 			
 			List<User> timg=new ArrayList();
 			List<HomeWork> show=new ArrayList();
