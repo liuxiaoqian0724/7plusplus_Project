@@ -14,7 +14,8 @@
 				<li>
 					<a href="<%=basePath%>/index.jsp" style="font-weight:800;">首页</a>
 				</li>
-				<li><a href="<%=basePath%>/tutorlist/conditions/0/0" onclick="persoanlNews()">家教</a>
+				<!-- <li><a href="<%=basePath%>/tutorlist/conditions/0/0" onclick="persoanlNews()">家教</a-->
+				<li><a href="javascript:void(0)" onclick="tutor()" id="tutor">家教</a>
 					<ul>
 						<li><a href="<%=basePath%>/tutorlist/conditions/小学/0">小学</a></li>
 						<li><a href="<%=basePath%>/tutorlist/conditions/初中/0">初中</a></li>

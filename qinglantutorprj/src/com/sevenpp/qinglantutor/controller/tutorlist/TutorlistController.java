@@ -1,4 +1,4 @@
-		
+
 		package com.sevenpp.qinglantutor.controller.tutorlist;
 
 		
@@ -68,10 +68,6 @@ import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 					writer = response.getWriter();
 				} catch (IOException e1) {
 
-				}
-//				session.invalidate();
-				if (CookieUtils.getCookieFromCookies(cookies, "EMAIL") == null) {
-					return "index";
 				}
 				session.setAttribute("sortcondition", sortcondition);
 				session.setAttribute("schooltype", schoolType);

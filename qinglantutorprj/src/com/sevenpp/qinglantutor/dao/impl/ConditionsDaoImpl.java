@@ -217,7 +217,7 @@ import com.sevenpp.qinglantutor.entity.UserInfo;
 				String content=reviewcontents.get(0).toString();
 				return content;
 			}
-			
+
 			/**
 			 * 
 			 * @Title: findGidByGname 

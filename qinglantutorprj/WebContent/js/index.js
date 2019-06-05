@@ -2,16 +2,20 @@ $(document).ready(function(){
 	var role=getCookie("ROLE");
 	if(role=="老师"){
 		$("#choose_button").append('<button class="btn btn-info" type="button" id="i_wonder_release" onclick="window.location.href=\'sendmessageed.jsp\'"><i class="icon icon-pencil"></i>我要发布</button>');
+		$("#choose_buttons").append('<button class="btn btn-info" type="button" id="i_wonder_release" onclick="window.location.href=\'publisharticles.jsp\'"><i class="icon icon-pencil"></i>我要发布</button>');
 	}
 	else{
 		$("#choose_button").append('');
+		$("#choose_buttons").append('');
 	}
 	if(checkRegist()==true){
 		if(role=="老师"){
 			$("#choose_button").append('<button class="btn btn-info" type="button" id="i_wonder_release" onclick="window.location.href=\'sendmessageed.jsp\'"><i class="icon icon-pencil"></i>我要发布</button>');
+			$("#choose_buttons").append('<button class="btn btn-info" type="button" id="i_wonder_release" onclick="window.location.href=\'sendmessage.jsp\'"><iclass="icon icon-pencil"></i>我要发布</button>');
 		}
 		else{
 			$("#choose_button").append('');
+			$("#choose_buttons").append('');
 		}
 	}
 	// 调用
@@ -210,6 +214,7 @@ function learnshow(currentpage2) {
 				}
 				if (index >= (currentpage2 - 1) * 3
 						&& index <= currentpage2 * 3 - 1) {
+					console.log(res.aId);
 					articlelist3='<div class="items items-hover" id="card">'+
 					'<div class="item">'+
 					'<div class="card_keyword">'+
@@ -230,7 +235,7 @@ function learnshow(currentpage2) {
 					'<div class="cards_article">'+
 					'<div class="item-heading">'+
 					'<div class="pull-right label label-success"></div>'+
-					'<h4><a href="###">'+res.title+'</a></h4>'+
+					'<h4><a href="teacherdetail?artid='+res.aId+'">'+res.title+'</a></h4>'+
 					'</div>'+
 					'<div class="item-content">'+
 					'<div class="media pull-right"><img src="images/courses'+(index+1)+'.jpg" alt="" style="width:75%;margin-top:-20px; margin-left:15px;"></div>'+

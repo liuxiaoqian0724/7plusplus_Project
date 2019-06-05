@@ -106,12 +106,10 @@
 			<!--学习社区learning_community-->
 			<div id="learning_community" class="panel">
 				<!--按钮choose_button-->
-				<div class="btn-group" id="choose_button">
+				<div class="btn-group" id="choose_buttons" style="position:relative; margin-top:20px; left:40%;">
 					<button type="button" class="btn btn-info" id="opt1" onclick="learning_experienceDis()">学习经验</button>
 					<button type="button" class="btn btn-info" id="opt2" onclick="course_questionDis()">课程问答</button>
 					<button type="button" class="btn btn-info" id="opt3" onclick="community_authorDis()">社区作者</button>
-					<button class="btn btn-info" type="button" id="i_wonder_release" onclick="window.location.href='sendmessage.jsp'"><i
-						 class="icon icon-pencil"></i>我要发布</button>
 				</div>
 				<!--学习经验-->
 				<div id="learning_experience" class="panel" style="display:block; height:auto;">

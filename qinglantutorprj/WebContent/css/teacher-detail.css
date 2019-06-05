@@ -1,0 +1,201 @@
+* {
+	margin: 0;
+}
+body{
+	width: 100%;
+	position:relative;
+}
+html{
+	width:100%;
+	height: 100%;
+}
+#out {
+/* 	border: 1px solid #BBBBBB; */
+	background-color: #fff;
+	position: relative;
+	left: 15%;
+	width: 70%;
+}
+
+/* 标题 */
+#toptop{
+	position: relative;
+	width: auto;
+	height: auto;
+	font-size: 20px;
+	font-family: "榛戜綋";
+	margin-top:60px;
+}
+#top {
+	border: 1px solid #CBCBCB;
+	background-color: #fff;
+	position: relative;
+}
+#left {
+	border-right: 1px solid #CBCBCB;
+	float: left;
+	width: 80%;
+	height: 148px;
+	background-color: #fff;
+}
+/* 加关注的头像 */
+#img-circle1{
+	position: relative;
+	top: 10%;
+	left: 2%;
+ 	margin-top: 30px;
+ }
+ /* 回复的头像 */
+#img-circle2{
+	position: relative;
+	top: 20%;
+	left: 2%;
+	margin-top: 26px;
+	background-color: #fff;
+}
+/* 发表回复的头像 */
+#img-circle{
+	position: relative;
+	top: 20%;
+	margin-top: 20px;
+}
+/* 对该教师加关注 */
+#follow{
+	position: relative;
+	left: 14%;
+	top: -50%;
+	width:50%;
+	height:50%;
+	background-color: #fff;
+}
+/* 教师name */
+#teachername{
+	position: relative;
+	display: inline-block;
+	width: 70%;
+	background-color: #fff;
+}
+#button{
+	border-radius: 8px;
+}
+#right {
+	float: left;
+	height: 50%;
+	width: 20%;
+	background-color: #fff;
+}
+#blank{
+	width: auto;
+	height: 20px;
+	background-color: #F8F8F8;
+}
+#Middletop{
+	border: 1px solid #CBCBCB;
+	background-color: #fff;
+	position: relative;
+	height: auto;
+	width: auto;
+	top: 10%;
+	padding: 16px;
+}
+#word{
+	position: relative;
+	width: auto;;
+	top: 50%;
+	font-size: 14px;
+	background-color: #fff;
+}
+#MiddleMiddle{
+	width: auto;
+	height: 80px;
+	background-color: #fff;
+	border:1px solid #CBCBCB;
+}
+#buttonid1{
+	position: relative;
+	left: 2%;
+	top: 30%;
+	border-radius: 8px;
+}
+#Middlebottom{
+	border: 1px solid #CBCBCB;
+	background-color: #fff;
+	position: relative;
+	height: auto;
+	width: auto;
+}
+#comment{
+	font-size: 25px;
+	font-family: "榛戜綋";
+	background-color: #fff;
+	position: relative;
+	left: 2%;
+	width: 200px;
+	height: 20px;
+}
+#introduce{
+	border: 1px solid #CBCBCB;
+	position: relative;
+	left: 2%;
+	top: 0%;
+	height:180px;
+	width: 96%;
+	background-color: #fff;
+}
+#name{
+	position: relative;
+	left: 4%;
+	width: 20%;
+	background-color: #fff;
+	font-size: 16px;
+}
+#introducep{
+	position: relative;
+	left: 14%;
+	width:84%;
+	height:auto;
+	margin-top: -110px;
+	background-color: #fff;
+}
+#reply{
+	position: relative;
+	left: 62%;
+}
+/* 鍥炲鐨勬椂闂� */
+#replytimess{
+	background-color: #fff;
+	position: relative;
+	left: 72%;
+	width: 24%;
+	margin-top: -28px;
+	font-size: 16px;
+}
+#pager{
+	position: relative;
+	left: 30%;
+}
+#bottom{
+	background-color: #f8f8f8;
+	position: relative;
+	height: auto;
+	width: auto;
+}
+#bottomtextarea{
+	position: relative;
+	left: 12%;
+	margin-top: -100px;
+	height: 180px;
+	width: 88%;
+	background-color: #fff;
+	padding: 16px;
+}
+#row{
+	position: relative;
+	width: 20%;
+	left: 86%;
+	margin-top: 4px;
+}
+#replyok{
+	position: relative;
+	width: 60%;
+}
