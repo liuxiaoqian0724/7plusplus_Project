@@ -1,12 +1,19 @@
 package com.sevenpp.qinglantutor.entity;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 public class TrendReview implements Serializable{
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	private Integer teacherId;//老师id
+	private String reviewUserName;//评论的用户名
+	private String reivewUserImg;//评论用户头像
+	private String reivewContent;//评论内容
+	private Timestamp reviewDateTime;//评论时间
+	
 	private String prop;
 	private String adj;
 	private String sentiment;
@@ -14,8 +21,39 @@ public class TrendReview implements Serializable{
 	private String end_pos;
 	private String abstractWord;
 	
-	
-	
+	public Integer getTeacherId() {
+		return teacherId;
+	}
+	public void setTeacherId(Integer teacherId) {
+		this.teacherId = teacherId;
+	}
+	public String getReviewUserName() {
+		return reviewUserName;
+	}
+	public void setReviewUserName(String reviewUserName) {
+		this.reviewUserName = reviewUserName;
+	}
+	public String getReivewUserImg() {
+		return reivewUserImg;
+	}
+	public void setReivewUserImg(String reivewUserImg) {
+		this.reivewUserImg = reivewUserImg;
+	}
+	public String getReivewContent() {
+		return reivewContent;
+	}
+	public void setReivewContent(String reivewContent) {
+		this.reivewContent = reivewContent;
+	}
+	public Timestamp getReviewDateTime() {
+		return reviewDateTime;
+	}
+	public void setReviewDateTime(Timestamp reviewDateTime) {
+		this.reviewDateTime = reviewDateTime;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 	public String getProp() {
 		return prop;
 	}

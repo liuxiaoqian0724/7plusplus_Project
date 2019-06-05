@@ -1,8 +1,8 @@
 package com.sevenpp.qinglantutor.utils.AipNlp;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.json.JSONObject;
 
@@ -14,21 +14,32 @@ import com.sevenpp.qinglantutor.entity.TrendReview;
 
 public class ReviewTrend {
 
-		public static HashMap<ReviewInf, JSONObject>  getReviewTrend(AipNlp client,List<ReviewInf> reviewList) {
+		public static List<TrendReview>  getReviewTrend(AipNlp client,List<ReviewInf> reviewList) {
 			// 传入可选参数调用接口
 			HashMap<String, Object> options = new HashMap<String, Object>();
 			//评论，评论返回请求json对象
-			HashMap<ReviewInf, JSONObject> reviewListTrend = new HashMap<ReviewInf,JSONObject>();
+			List<TrendReview> reviewListTrend = new ArrayList<TrendReview>();
 			for(int i=0;i<reviewList.size();i++) {
 				JSONObject response = client.commentTag(reviewList.get(i).getReivewContent(), ESimnetType.EDU,options);
-				HashMap<String,TrendReview> nameMap = 
-						JSON.parseObject(response,new TypeReference<HashMap<String,TrendReview>>() {});
-				System.out.println("respose"+response);
-				String str=JSON.toJSONString(response);
-				System.out.println("reviewTrend"+str);
-				reviewListTrend.put(reviewList.get(i),response);
-				System.out.println(reviewListTrend.get(reviewList.get(i)));
+				TrendReview tr=new TrendReview();
+				JSONObject items= (JSONObject) response.get("items");//获取json对象中的items数组
+				
+				//初始化reviewTrend对象
+				tr.setTeacherId(reviewList.get(i).getTeacherId());
+				tr.setReviewUserName(reviewList.get(i).getReviewUserName());
+				tr.setReivewUserImg(reviewList.get(i).getReivewUserImg());
+				tr.setReivewContent(reviewList.get(i).getReivewContent());
+				tr.setReviewDateTime(reviewList.get(i).getReviewDateTime());
+				//josn数组中获取值赋给对象
+				tr.setProp(JSON.toJSONString(items.get("prop")));
+				tr.setProp(JSON.toJSONString(items.get("adj")));
+				tr.setProp(JSON.toJSONString(items.get("sentiment")));
+				tr.setProp(JSON.toJSONString(items.get("begin_pos")));
+				tr.setProp(JSON.toJSONString(items.get("end_pos")));
+				tr.setProp(JSON.toJSONString(items.get("abstractWord")));
+				System.out.println("trrrrr"+tr.toString());
+				reviewListTrend.add(tr);
 			}
-			return reviewListTrend;	
+			return null;	
 		}
 }

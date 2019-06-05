@@ -30,6 +30,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.baidu.aip.nlp.AipNlp;
 import com.sevenpp.qinglantutor.entity.ReviewInf;
+import com.sevenpp.qinglantutor.entity.TrendReview;
 import com.sevenpp.qinglantutor.entity.User;
 import com.sevenpp.qinglantutor.service.impl.TutorDetailServiceImpl;
 import com.sevenpp.qinglantutor.utils.AipNlp.InitAipNlp;
@@ -112,13 +113,10 @@ public class tutorInfoController {
 		AipNlp aipNlp=new InitAipNlp().getAipNlp();
 		String tid = request.getParameter("tid");
 		Integer id = Integer.parseInt(tid);
-		List<ReviewInf> reviewInfList1 = this.tutorDetailServiceImpl.getTutorReivew(id);
-		System.out.println("size"+reviewInfList1.size());
-		HashMap<ReviewInf, JSONObject>	reviewInfList=ReviewTrend.getReviewTrend(aipNlp, reviewInfList1);
-		System.out.println(reviewInfList.get(reviewInfList1.get(0)));
-		
-		String str = JSON.toJSONString(reviewInfList1, SerializerFeature.WriteMapNullValue);
-		System.out.println("str:"+str);
+		List<ReviewInf> reviewInfList = this.tutorDetailServiceImpl.getTutorReivew(id);
+		List<TrendReview> trendReviewInfList=ReviewTrend.getReviewTrend(aipNlp, reviewInfList);
+		System.out.println(trendReviewInfList.toString());
+		String str = JSON.toJSONString(trendReviewInfList, SerializerFeature.WriteMapNullValue);
 		response.setCharacterEncoding("utf-8");
 		try {
 			PrintWriter writer = response.getWriter();

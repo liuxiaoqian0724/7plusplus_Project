@@ -38,8 +38,6 @@ public class ReviewInf {
 	private Timestamp reviewDateTime;//评论时间
 	
 	
-	
-	
 	public Integer getTeacherId() {
 		return teacherId;
 	}
