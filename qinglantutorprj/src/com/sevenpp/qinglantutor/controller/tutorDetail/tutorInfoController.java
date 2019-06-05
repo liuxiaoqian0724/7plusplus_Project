@@ -28,6 +28,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.sevenpp.qinglantutor.entity.ReviewInf;
 import com.sevenpp.qinglantutor.entity.User;
+import com.sevenpp.qinglantutor.log.LogServerImpl;
 import com.sevenpp.qinglantutor.service.impl.TutorDetailServiceImpl;
 import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 
@@ -58,6 +59,9 @@ import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 public class tutorInfoController {
 	@Resource
 	private TutorDetailServiceImpl tutorDetailServiceImpl;
+	
+	@Resource
+	private LogServerImpl logServerImpl;
 
 	/**
 	 * 

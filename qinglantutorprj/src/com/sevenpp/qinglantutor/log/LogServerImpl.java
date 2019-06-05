@@ -9,6 +9,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStreamWriter;
+import java.net.URISyntaxException;
 import java.util.Date;
 
 import org.slf4j.Logger;
@@ -17,17 +18,37 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class LogServerImpl {
-	public void logsth(Integer userId, Integer articleId) {
 	
+	public static final String basePath = "D:\\file\\logs";
+	
+	public static void creatFile(String filePath, String fileName) {
+        File folder = new File(filePath);
+        //文件夹路径不存在
+        if (!folder.exists() && !folder.isDirectory()) 	{folder.mkdirs();} 
+        
+	}
+	
+	public void logsth(Integer userId, Integer articleId,String localname) {
+		
 		long time= new Date().getTime()/1000;
 		String key = userId.toString()+"	"+articleId.toString()+"	"+"1"+"	"+time;
 		
 		BufferedWriter out =null;
+		FileOutputStream fileOutputStream = null;
 		try {
-			FileOutputStream fileOutputStream = new FileOutputStream("./logs.txt",true);
-			out = new BufferedWriter(new OutputStreamWriter(fileOutputStream));
-			out.write(key+"\r\n");
-			out.close(); 
+			if(localname.startsWith("article")) {
+				creatFile(basePath, "article.txt");
+				fileOutputStream = new FileOutputStream(basePath + "\\article.txt",true);
+				out = new BufferedWriter(new OutputStreamWriter(fileOutputStream));
+				out.write(key+"\r\n");
+				out.close(); 
+			}else {
+				creatFile(basePath, "tutor.txt");
+				fileOutputStream = new FileOutputStream(basePath + "\\tutor.txt",true);
+				out = new BufferedWriter(new OutputStreamWriter(fileOutputStream));
+				out.write(key+"\r\n");
+				out.close(); 
+			}
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}

@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -27,6 +28,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.sevenpp.qinglantutor.entity.CourseInformation;
 import com.sevenpp.qinglantutor.log.LogServerImpl;
 import com.sevenpp.qinglantutor.service.impl.CourseServiceImpl;
+import com.sevenpp.qinglantutor.service.impl.RegistServiceImpl;
 import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 
 /**
@@ -51,7 +53,8 @@ public class CourseController {
 	
 	@Resource
 	private LogServerImpl logServerImpl;
-	
+	@Resource
+	private RegistServiceImpl registServiceImpl;
 	
 	@RequestMapping("courseInformation")
 	public String stuCourse(HttpServletRequest request,HttpServletResponse response) {
@@ -65,14 +68,38 @@ public class CourseController {
 		String SESSIONID = CookieUtils.getCookieFromCookies(cookies,"JSESSIONID").getValue();
 		String email = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
 		
-		logServerImpl.logsth(1, 1);
 		
+//		logServerImpl.logsth(1, 1,"tutor");
 		
-//		Logger log = LoggerFactory.getLogger(LogServerImpl.class);
-//		log.debug("logdemo==info");
-//		
-//		log.info("1","2","3333");
-		
+//		创造用户假数据		
+//		Map<String, String> map1 = new HashMap<>();
+//		int m=0;
+//		for(;m<500;m++) {
+//			map1.put("email", m+"@qq.com");
+//			map1.put("username", m+"@qq.com");
+//			map1.put("password", "123456");
+//			if(m%2==0) {				
+//				map1.put("sex", "男");
+//				map1.put("roles", "老师");
+//			}else {
+//				map1.put("sex", "女");
+//				map1.put("roles", "老师");
+//			}
+//			this.registServiceImpl.regist(map1);
+//		}
+//		for(;m<1000;m++) {
+//			map1.put("email", m+"@qq.com");
+//			map1.put("username", m+"@qq.com");
+//			map1.put("password", "123456");
+//			if(m%2==0) {				
+//				map1.put("sex", "男");
+//				map1.put("roles", "家长");
+//			}else {
+//				map1.put("sex", "女");
+//				map1.put("roles", "家长");
+//			}
+//			this.registServiceImpl.regist(map1);
+//		}
 		
 		
 		list = this.courseServiceImpl.getCourseInfor(email);

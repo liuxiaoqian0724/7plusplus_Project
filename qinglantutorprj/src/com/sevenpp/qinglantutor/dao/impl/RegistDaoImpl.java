@@ -72,4 +72,5 @@ public class RegistDaoImpl implements RegistDao {
 			
 	}
 	
+	
 }

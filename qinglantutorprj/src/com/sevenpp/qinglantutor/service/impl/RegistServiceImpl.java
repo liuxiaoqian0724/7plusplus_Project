@@ -1,5 +1,6 @@
 package com.sevenpp.qinglantutor.service.impl;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -52,30 +53,31 @@ public class RegistServiceImpl implements RegistService {
 				* @Exception 异常对象
 				* @since CodingExample Ver(编码范例查看) 1.1
 				*/
-			if (!registDaoImpl.existEmail(map.get("email"))) {
+//			if (!registDaoImpl.existEmail(map.get("email"))) {
 				
-			try {
-				RSAEncrypt rsaEncrypt = new RSAEncrypt();
-				String publicKey = rsaEncrypt.getPublickey();
-				String privateKey = rsaEncrypt.getPrivatekey();
-				String userPwd;
-				userPwd = RSAEncrypt.encrypt(map.get("password"), publicKey);
-				User user = new User();
-				user.setUserName(map.get("username"));
-				user.setSex(map.get("sex"));
-				user.setUserPwd(userPwd);
-				user.setUserImg("images/default.jpg");
-				user.setEmail(map.get("email"));
-				user.setPublicKey(publicKey);
-				user.setPrivateKey(privateKey);
-				user.setRole(map.get("roles"));
-				return registDaoImpl.regist(user);
-			} catch (Exception e) {
-				return false;
-			}
-			}
-			return false;
+				try {
+					RSAEncrypt rsaEncrypt = new RSAEncrypt();
+					String publicKey = rsaEncrypt.getPublickey();
+					String privateKey = rsaEncrypt.getPrivatekey();
+					String userPwd;
+					userPwd = RSAEncrypt.encrypt(map.get("password"), publicKey);
+					User user = new User();
+					user.setUserName(map.get("username"));
+					user.setSex(map.get("sex"));
+					user.setUserPwd(userPwd);
+					user.setUserImg("images/default.jpg");
+					user.setEmail(map.get("email"));
+					user.setPublicKey(publicKey);
+					user.setPrivateKey(privateKey);
+					user.setRole(map.get("roles"));
+					return registDaoImpl.regist(user);
+				} catch (Exception e) {
+					return false;
+				}
+//			}
+//			return false;
 			
 	}
+
 
 }

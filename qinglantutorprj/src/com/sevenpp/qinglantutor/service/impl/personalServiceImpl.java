@@ -78,10 +78,12 @@ public class personalServiceImpl {
 						for(list2numx=list2num;list2numx>0;list2numx--) {
 							int c=list2numx-1;
 							List<Review> list3=list2.subList(c,list2numx);
-								if (list3.isEmpty()) 
+								if (list3.isEmpty())
 								{}
 								else {
+								System.out.println(list3.get(0));
 								int reviewstar=list3.get(0).getReviewStar();
+								System.out.println(reviewstar);
 								Star=Star+reviewstar;
 								reviewnum++;
 								}
