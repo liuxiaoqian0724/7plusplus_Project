@@ -11,7 +11,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
+
 		<title>文章发布</title>
 		<!--本地css-->
 		<link rel="stylesheet" type="text/css" href="<%=basePath%>/css/publisharticles.css">
@@ -40,59 +40,66 @@
 		<jsp:include page="header.jsp" />
 		<div class="panel">
 			<div class="panel-body" id="out">
-				<!--标题-->
-				<h1>文章发布</h1>
-				<hr />
-				<br />
-				<!--输入框-->
-				<lable style="font-size:16px;"><strong>标题&nbsp;&nbsp;&nbsp;</strong></label>
-				<label>
-					<input type="text" class="form-control" style="width: 443%;">
-				</label>
-				<br /><br />
-				<!--富文本编辑框-->
-				<div id="write-box-text" style="width:100%; height:auto;">
-					<textarea id="contentSimple" name="content" class="form-control kindeditorSimple" style="height:300px;"></textarea>
-				</div>
-				<!--小提示-->
-				<div id="tips">tips:发布的文章审核通过之后才能被大家看到哦</div>
-				<br />
-				<!--标签-->
-				<div><strong>编辑标签</strong>(单击回车后添加)：</div>
-				<form>
-					<input id="tags_1" type="text" class="tags" value="默认标签">
+				<form action="${pageContext.request.contextPath}/pubarticles",method="post">
+					<!--标题-->
+					<h1>文章发布</h1>
+					<hr />
+					<br />
+					<!--输入框-->
+					<lable style="font-size:16px;"><strong>标题&nbsp;&nbsp;&nbsp;</strong></label>
+						<label>
+							<input type="text" class="form-control" style="width: 443%;" name="title">
+						</label>
+						<br /><br />
+						<!--富文本编辑框-->
+						<div id="write-box-text" style="width:100%; height:auto;">
+							<textarea id="contentSimple" name="content" class="form-control kindeditorSimple" style="height:300px;"></textarea>
+						</div>
+						<!--小提示-->
+						<div id="tips">tips:发布的文章审核通过之后才能被大家看到哦</div>
+						<br />
+						<!--标签-->
+						<div><strong>编辑标签</strong>(单击回车后添加)：</div>
+						<form>
+							<input id="tags_1" type="text" class="tags" value="默认标签">
+						</form>
+						<br />
+						<!--提交按钮-->
+						<button class="btn" type="button" style="position: relative; left:80%">保存文章</button>
+						<button class="btn btn-primary" type="submit" style="position: relative; left:81%" data-options="attributes:{'url':'index'}">确认发布</button>
 				</form>
-				<br/>
-				<!--提交按钮-->
-				<button class="btn" type="button" style="position: relative; left:80%">保存文章</button>
-				<button class="btn btn-primary" type="button" style="position: relative; left:81%">确认发布</button>
+			</div>
 		</div>
 		<script>
 			//富文本编辑框
 			KindEditor.create('textarea.kindeditorSimple', {
-					basePath: '/dist/lib/kindeditor/',
-					bodyClass : 'article-content',
-					resizeType : 1,
-					allowPreviewEmoticons : false,
-					allowImageUpload : false,
-					items : [
-							'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
-							'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
-							'insertunorderedlist', '|', 'emoticons', 'image', 'link'
-					]
+				basePath: '/dist/lib/kindeditor/',
+				bodyClass: 'article-content',
+				resizeType: 1,
+				allowPreviewEmoticons: false,
+				allowImageUpload: false,
+				items: [
+					'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+					'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+					'insertunorderedlist', '|', 'emoticons', 'image', 'link'
+				]
 			});
 			//标签编辑
 			function onAddTag(tag) {
 				alert("Added a tag: " + tag);
 			}
+
 			function onRemoveTag(tag) {
 				alert("Removed a tag: " + tag);
 			}
-			function onChangeTag(input,tag) {
+
+			function onChangeTag(input, tag) {
 				alert("Changed a tag: " + tag);
 			}
 			$(function() {
-				$('#tags_1').tagsInput({width:'auto'});
+				$('#tags_1').tagsInput({
+					width: 'auto'
+				});
 			});
 		</script>
 		<script type="text/javascript" src="<%=basePath%>/js/index.js"></script>
