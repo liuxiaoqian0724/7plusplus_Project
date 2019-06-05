@@ -23,4 +23,5 @@ public interface TeacherDetailDao {
 	public Article findArticleByid(int id);
 	public void saveComment(ArticleReview articlereviewId) throws Exception;
 	public User findUserByid(int userid);
+	public User FindUserByEmail(String email1);
 }
