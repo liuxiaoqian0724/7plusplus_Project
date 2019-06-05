@@ -40,7 +40,6 @@ public class WorkComment {
 		response.setContentType("text/html;charset=utf-8");
 		response.setCharacterEncoding("utf-8");
 		Cookie[]cookies = request.getCookies();
-		System.out.println(cookies.length);
 //		String SESSIONID = CookieUtils.getCookieFromCookies(cookies,"JSESSIONID").getValue();
 		//String email = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
 		
@@ -73,7 +72,6 @@ public class WorkComment {
 		response.setContentType("text/html;charset=utf-8");
 		response.setCharacterEncoding("utf-8");
 		Cookie[]cookies = request.getCookies();
-		System.out.println(cookies.length);
 //		String SESSIONID = CookieUtils.getCookieFromCookies(cookies,"JSESSIONID").getValue();
 		//String email = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
 		String id=request.getParameter("hid");

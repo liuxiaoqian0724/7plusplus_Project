@@ -13,6 +13,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
+import com.sevenpp.qinglantutor.entity.Article;
 import com.sevenpp.qinglantutor.entity.Course;
 import com.sevenpp.qinglantutor.entity.User;
 
@@ -40,4 +41,5 @@ import com.sevenpp.qinglantutor.entity.User;
 public interface IndexDao {
 	public List<User> queryUser();
 	public List queryTeachage();
+	public List<Article> queryArticles();
 }

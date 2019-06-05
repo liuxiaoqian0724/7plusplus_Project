@@ -21,6 +21,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
 import com.sevenpp.qinglantutor.dao.IndexDao;
+import com.sevenpp.qinglantutor.entity.Article;
 import com.sevenpp.qinglantutor.entity.Course;
 import com.sevenpp.qinglantutor.entity.MyJob;
 import com.sevenpp.qinglantutor.entity.User;
@@ -60,4 +61,13 @@ public class IndexDaoImpl implements IndexDao {
 		session.getTransaction().commit();
 		return list2;
 	}
+	@Override
+	public List<Article> queryArticles() {
+		Session session=sessionFactory.openSession();
+		session.beginTransaction();
+		Query query=session.createQuery("from Article");
+		List<Article> list=query.list();
+		session.getTransaction().commit();
+		return list;
+	}		
 }

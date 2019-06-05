@@ -1,5 +1,5 @@
 body {
-
+	
 	list-style: none;
 	line-height: 16px;
 	font-family: STXihei, "Microsoft YaHei";
@@ -8,11 +8,13 @@ body {
 	/* background-color: ; */
 }
 
+
 a {
 	text-decoration: none;
 }
 
 #main {
+	
 	width: 2000px;
 	height: 1500px;
 	MARGIN-RIGHT: auto;
@@ -26,7 +28,7 @@ a {
 	border-color: #c0c0c0;
 	width: 70%;
 	/* height: 100%; */
-	height: 1500px;
+	height: 1400px;
 	;
 	margin-top: 60px;
 	margin-left: auto;
@@ -204,7 +206,18 @@ a {
 	height: 180px;
 
 }
+.text1 {
 
+	border-style: solid;
+	border-width: 1px;
+	border-color: #c0c0c0;
+	float: left;
+	margin-left: 20px;
+	margin-top: 20px;
+	width: 907px;
+	height: 180px;
+
+}
 .title {
 	padding-top: 5px;
 	font-size: 20px;
@@ -217,6 +230,11 @@ a {
 	width: 600px;
 	height: 120px;
 }
+.content1 {
+	float: left;
+	width: 800px;
+	height: 120px;
+}
 
 .time {
 	float: left;
@@ -227,6 +245,7 @@ a {
 .comment {
 	float: left;
 	margin-left: 200px;
+	margin-top: -10px;
 	width: 250px;
 	height: 60px;
 }
@@ -241,15 +260,29 @@ a {
 	border-width: 1px;
 	border-color: #c0c0c0;
 }
+#content1 {
+	display: none;
+	float: left;
+	width: 1000px;
+	height: 900px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #c0c0c0;
+}
 
 .like{
 	float: left;
 	padding-left: 30px;
 	width: 35px;
 	height: 35px;
-	margin-top: -11px;
+	
 }
-
+.comm{
+	
+	padding-left: 30px;
+	width: 35px;
+	height: 35px;
+}
 
 
 

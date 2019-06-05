@@ -14,6 +14,8 @@ import com.sevenpp.qinglantutor.entity.ClassRelation;
 import com.sevenpp.qinglantutor.entity.Review;
 import com.sevenpp.qinglantutor.entity.TeachRelation;
 import com.sevenpp.qinglantutor.entity.User;
+import com.sevenpp.qinglantutor.service.impl.newsServiceImpl;
+import com.sevenpp.qinglantutor.service.impl.reviewServiceImpl;
 
 /**
 		*

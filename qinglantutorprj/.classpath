@@ -90,6 +90,6 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/sun.misc.base64decoder.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/servlet-api.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/slf4j-api-1.7.21.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jython-standalone-2.7.0.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jython-standalone-2.5.4-rc1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -63,7 +63,15 @@ public class User  implements java.io.Serializable {
      private String img2;
      private String img3;
      private String img4;
-     public String getImg1() {
+     private String img5;
+     
+	public String getImg5() {
+		return img5;
+	}
+	public void setImg5(String img5) {
+		this.img5 = img5;
+	}
+	public String getImg1() {
 		return img1;
 	}
 	public void setImg1(String img1) {

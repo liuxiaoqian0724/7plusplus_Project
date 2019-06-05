@@ -28,10 +28,9 @@ public class LogServerImpl {
         
 	}
 	
-	public void logsth(Integer userId, Integer articleId,String localname) {
-		
+	public void insert_log(Integer a,Integer b,String localname) {
 		long time= new Date().getTime()/1000;
-		String key = userId.toString()+"	"+articleId.toString()+"	"+"1"+"	"+time;
+		String key = a.toString()+"	"+b.toString()+"	"+"1"+"	"+time;
 		
 		BufferedWriter out =null;
 		FileOutputStream fileOutputStream = null;
@@ -52,8 +51,14 @@ public class LogServerImpl {
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-		
-		
-		
+	}
+
+	
+	public void article_logs(Integer userId, Integer articleId,String localname) {
+		insert_log(userId, articleId, localname);
+	}
+	
+	public void tutor_logs(Integer userId, Integer tutorId,String localname) {
+		insert_log(userId, tutorId, localname);
 	}
 }

@@ -95,6 +95,11 @@ public class tutorInfoController {
 			request.setAttribute("user", user);
 			// request.setAttribute("classRelation", classRelation);
 			request.setAttribute("reviewCount", reviewCount);
+			
+			//	将用户浏览家教详情页历史记录存入日志文件中
+			Integer inquireId = tutorDetailServiceImpl.findUser(EMAIL);
+			logServerImpl.tutor_logs(inquireId, id, "tutor");
+			
 			return "tutordetailed";
 		}
 	}

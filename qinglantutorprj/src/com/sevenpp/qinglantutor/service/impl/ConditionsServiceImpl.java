@@ -102,7 +102,7 @@ import com.sevenpp.qinglantutor.entity.UserInfo;
 					* @author （作者） 
 					* @throws
 					* @date 2018年12月17日 上午8:22:44 
-					* @version V1.0   
+					* @version V1.0 
 			 */
 			public String findReviewContentById(int tid) {
 				return this.conditionsDaoImpl.findReviewContentById(tid);
@@ -118,7 +118,7 @@ import com.sevenpp.qinglantutor.entity.UserInfo;
 			 * @author （作者） 
 			 * @throws
 			 * @date 2018年12月12日 上午8:45:11 
-			 * @version V1.0   
+			 * @version V1.0 
 			 */
 			public int findGidByGname(String gname) {
 				return this.conditionsDaoImpl.findGidByGname(gname);
@@ -134,7 +134,7 @@ import com.sevenpp.qinglantutor.entity.UserInfo;
 			 * @author （作者） 
 			 * @throws
 			 * @date 2018年12月12日 上午8:46:27 
-			 * @version V1.0   
+			 * @version V1.0
 			 */
 			public int findCidByCname(String cname) {
 				return this.conditionsDaoImpl.findCidByCname(cname);
@@ -192,10 +192,17 @@ import com.sevenpp.qinglantutor.entity.UserInfo;
 					objs[6]=star;
 					objs[7]=sum;
 					objs[8]=content;
-//					System.out.println("id:"+(int)objs[0]+"username"+objs[1].toString()+"userimg"+objs[2].toString()+"introduce:"+objs[3].toString()+"price:"+(int)objs[4]+"teacherage"+(int)objs[5]+"content:"+objs[8].toString());
 					UserInfo userinfo=new UserInfo((int)objs[0],objs[1].toString(),objs[2].toString(),objs[3].toString(),(int)objs[4],objs[5].toString(),(int)objs[6],(int)objs[7],objs[8].toString());
 					userinfo.setIntellgencesort();
 					tutors.add(userinfo);
+				}
+				
+				for (UserInfo userInfo : tutors) {
+					String new_introduce="";
+					if(userInfo.getIntroduce().length()>25) {
+						new_introduce=userInfo.getIntroduce().substring(0, 35)+"...";
+						userInfo.setIntroduce(new_introduce);
+					}
 				}
 				return tutors;
 			}
