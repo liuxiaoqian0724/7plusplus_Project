@@ -43,6 +43,12 @@ public class personalServiceImpl {
 	private reviewServiceImpl reviewServiceImpl;
 	@Resource
 	private reviewDaoImpl reviewDaoImpl;
+		
+		/**以id查询USER*/
+		public User findUserById(int id) {
+			return this.personalDaoImpl.findUserById(id);
+		}
+	
 		/**以id查询User表获得list*/
 		public List<User> list(int id) {
 			return this.personalDaoImpl.findAll(id);

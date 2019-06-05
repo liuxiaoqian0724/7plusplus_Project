@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URISyntaxException;
 import java.util.List;
 
 import org.python.core.PyFunction;
@@ -11,14 +12,23 @@ import org.python.core.PyInteger;
 import org.python.core.PyObject;
 import org.python.core.PyString;
 import org.python.util.PythonInterpreter;
+import org.springframework.stereotype.Service;
 
-public class recommend_jython {
+@Service
+public class RecommendJython {
 	
 	public static final String basePath = "D:\\file\\logs";
 	
 	public List<Integer> recommend(Integer id) {
 		PythonInterpreter interpreter = new PythonInterpreter();
-		interpreter.execfile("src/recommend.py");
+		String path = "";
+		try {
+			path = RecommendJython.class.getResource("").toURI().getPath();
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
+		}
+		
+		interpreter.execfile(path+"recommend.py");
 		
 		// 第一个参数为期望获得的函数（变量）的名字，第二个参数为期望返回的对象类型
 		PyFunction pyFunction = interpreter.get("tutor", PyFunction.class);

@@ -1,5 +1,7 @@
 package com.sevenpp.qinglantutor.service.impl;
 
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -70,6 +72,7 @@ public class RegistServiceImpl implements RegistService {
 					user.setPublicKey(publicKey);
 					user.setPrivateKey(privateKey);
 					user.setRole(map.get("roles"));
+					
 					return registDaoImpl.regist(user);
 				} catch (Exception e) {
 					return false;
