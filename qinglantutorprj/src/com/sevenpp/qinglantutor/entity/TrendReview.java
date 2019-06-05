@@ -14,6 +14,8 @@ public class TrendReview implements Serializable{
 	private String end_pos;
 	private String abstractWord;
 	
+	
+	
 	public String getProp() {
 		return prop;
 	}
