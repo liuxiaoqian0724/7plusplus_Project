@@ -295,15 +295,10 @@
 						<div class="top-right">
 							<p>大家都在说：</p>
 							<div class="right-tab">
-								<ul>
+								<ul id="reviewTrend">
 									<!--数据库查询-->
-									<li>全部31</li>
-									<li>认真负责31</li>
-									<li>思路清晰31</li>
-									<li>认真负责31</li>
-									<li>思路清晰31</li>
-									<li>认真负责31</li>
-									<li>思路清晰31</li>
+									<li id="reviewTrendcount">全部${reviewCount}</li>
+									<li class="reviewTrendli"></li>
 								</ul>
 							</div>
 						</div>
@@ -552,8 +547,12 @@
            		dataType : 'json',
            		async : false,
            		success : function(data) {
+           			alert("skdfjlks")
            			totalpage = Math.ceil(data.length / 3);
            			$(".comments").html("");
+           			alert("dskfls");
+           			$("reviewTrendli").html("dsk");
+           			alert("dsklfjls")
            			$.each(data,function(index, res) {
            				// 当前页为第一页时
            				if (currentpage == 1) {
