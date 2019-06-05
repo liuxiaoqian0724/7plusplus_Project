@@ -116,9 +116,8 @@ public class tutorInfoController {
 		System.out.println("size"+reviewInfList1.size());
 		HashMap<ReviewInf, JSONObject>	reviewInfList=ReviewTrend.getReviewTrend(aipNlp, reviewInfList1);
 		System.out.println(reviewInfList.get(reviewInfList1.get(0)));
-		String jstr=JSON.toJSONString(reviewInfList.get(reviewInfList1.get(0)));
-		System.out.println("jstr"+jstr);
-		String str = JSON.toJSONString(reviewInfList, SerializerFeature.WriteMapNullValue);
+		
+		String str = JSON.toJSONString(reviewInfList1, SerializerFeature.WriteMapNullValue);
 		System.out.println("str:"+str);
 		response.setCharacterEncoding("utf-8");
 		try {

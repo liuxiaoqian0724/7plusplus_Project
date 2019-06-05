@@ -1,6 +1,12 @@
 package com.sevenpp.qinglantutor.entity;
 
-public class TrendReview{
+import java.io.Serializable;
+
+public class TrendReview implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String prop;
 	private String adj;
 	private String sentiment;

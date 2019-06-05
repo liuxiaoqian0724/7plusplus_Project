@@ -5,9 +5,11 @@ import java.util.List;
 
 import org.json.JSONObject;
 
+import com.alibaba.fastjson.JSON;
 import com.baidu.aip.nlp.AipNlp;
 import com.baidu.aip.nlp.ESimnetType;
 import com.sevenpp.qinglantutor.entity.ReviewInf;
+import com.sevenpp.qinglantutor.entity.TrendReview;
 
 public class ReviewTrend {
 
