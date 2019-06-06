@@ -44,7 +44,7 @@ public class TeacherDetailDaoImpl implements TeacherDetailDao {
 				* @return String DOM对象
 				* @Exception 异常对象a
 				* @since CodingExample Ver(编码范例查看) 1.1
-				*/;
+				*/
 				return ((Article) this.getSession().createQuery(" from Article where aId=?")
 						.setParameter(0, articleId).uniqueResult());
 	}
