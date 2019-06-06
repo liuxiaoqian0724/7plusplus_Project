@@ -18,7 +18,15 @@ function persoanlNews(){
 	if(useremail == ""){
 		alert("请先登录");
 	}else{
-		$("#personalNews").attr("href","jumptoNews");
+		$("#personalNews").attr("href","/qinglantutorprj/jumptoNews");
+	}	
+}
+function tutor(){
+	var useremail=getCookie("EMAIL");
+	if(useremail == ""){
+		alert("请先登录");
+	}else{
+		$("#tutor").attr("href","/qinglantutorprj/tutorlist/conditions/0/0");
 	}	
 }
 	// 获取指定名称的cookie的值

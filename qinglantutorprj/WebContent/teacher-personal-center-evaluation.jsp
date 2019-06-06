@@ -101,7 +101,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <div class="c2 panel" id="c2-right">
         <div>
             <div class="panel-heading">
-                <h2>收到的学生评价</h2>
+                <h2>收到的评价</h2>
             </div>
             <div class="panel-body" style="height:690px;position:relative;width:800px;" > 
             <c:forEach items="${listpage}" var="z">
