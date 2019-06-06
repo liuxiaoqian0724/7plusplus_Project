@@ -20,9 +20,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.sevenpp.qinglantutor.entity.Page;
+import com.sevenpp.qinglantutor.entity.User;
 import com.sevenpp.qinglantutor.entity.UserInfo;
+import com.sevenpp.qinglantutor.log.jython.RecommendJython;
 import com.sevenpp.qinglantutor.service.impl.ConditionsServiceImpl;
+import com.sevenpp.qinglantutor.service.impl.TutorDetailServiceImpl;
 import com.sevenpp.qinglantutor.service.impl.TutorListServiceImpl;
+import com.sevenpp.qinglantutor.service.impl.personalServiceImpl;
 import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 		
 		/**
@@ -49,6 +53,11 @@ import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 			private ConditionsServiceImpl conditionsServiceImpl;
 			private PrintWriter writer;
 			
+			@Resource
+			private RecommendJython recommend_jython;
+			@Resource
+			private personalServiceImpl personal;
+			
 			@RequestMapping(value="/conditions/{schoolType}/{sortcondition}")
 			public String showConditions(HttpServletRequest request,HttpServletResponse response,
 					Model model,@PathVariable String schoolType,@PathVariable String sortcondition) {
@@ -61,7 +70,21 @@ import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 				response.setCharacterEncoding("utf-8");
 				Cookie[]cookies = request.getCookies();
 				String SESSIONID = CookieUtils.getCookieFromCookies(cookies,"JSESSIONID").getValue();
-				String EMAIL = "";
+				
+				//	根据用户email找出推荐老师
+				String email = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
+				List<Integer> list = recommend_jython.recommend(personal.finduridByemail(email).getId());
+				List<User> userList = new ArrayList<>(list.size());
+				for(int i=0;i<list.size();i++) {
+					userList.add(personal.findUserById(list.get(i)));
+				}
+				session.setAttribute("recommond_tutor", userList);
+				
+				for(int i=0;i<userList.size();i++) {
+					System.out.println(userList.get(i).getAddress());
+				}
+				
+				
 				response.setContentType("text/html;charset=utf-8");
 				response.setCharacterEncoding("utf-8");
 				try {

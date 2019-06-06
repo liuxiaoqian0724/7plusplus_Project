@@ -31,6 +31,16 @@ public class personalDaoImpl {
 	@Resource
 	private SessionFactory sessionFactory;
 		
+	/**以id查询USER*/
+	public User findUserById(int id) {
+		Session session=this.sessionFactory.getCurrentSession();
+		Query q=session.createQuery("from User us where us.id = :id");
+		q.setParameter("id", id);
+		List<User> list=q.list();
+		User user=list.get(0);
+		return user;
+	}
+	
 	/**方法需获得id参数 以Id查询User表获得List*/
 	public List<User> findAll(int id){
 		Session session=this.sessionFactory.getCurrentSession();

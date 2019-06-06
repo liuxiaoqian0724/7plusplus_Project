@@ -28,6 +28,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.sevenpp.qinglantutor.entity.ReviewInf;
 import com.sevenpp.qinglantutor.entity.User;
+import com.sevenpp.qinglantutor.log.LogServerImpl;
 import com.sevenpp.qinglantutor.service.impl.TutorDetailServiceImpl;
 import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 
@@ -58,6 +59,9 @@ import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 public class tutorInfoController {
 	@Resource
 	private TutorDetailServiceImpl tutorDetailServiceImpl;
+	
+	@Resource
+	private LogServerImpl logServerImpl;
 
 	/**
 	 * 
@@ -91,6 +95,11 @@ public class tutorInfoController {
 			request.setAttribute("user", user);
 			// request.setAttribute("classRelation", classRelation);
 			request.setAttribute("reviewCount", reviewCount);
+			
+			//	将用户浏览家教详情页历史记录存入日志文件中
+			Integer inquireId = tutorDetailServiceImpl.findUser(EMAIL);
+			logServerImpl.tutor_logs(inquireId, id, "tutor");
+			
 			return "tutordetailed";
 		}
 	}
