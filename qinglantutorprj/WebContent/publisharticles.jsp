@@ -24,11 +24,12 @@
 		<link rel="stylesheet" href="<%=basePath%>/dist/css/zui.css" />
 		<script type="text/javascript" src="<%=basePath%>/dist/js/zui.js"></script>
 		<!-- 富文本编辑框组件 -->
-		<link rel="stylesheet" href="<%=basePath%>/dist/lib/kindeditor/kindeditor.css" />
 		<link rel="stylesheet" href="<%=basePath%>/dist/lib/kindeditor/kindeditor.min.css" />
 		<script src="<%=basePath%>/dist/lib/kindeditor/kindeditor.min.js"></script>
-		<script src="<%=basePath%>/dist/lib/kindeditor/kindeditor.js"></script>
-		<script src="<%=basePath%>/dist/lib/kindeditor/kindeditor/plugins.ok.js"></script>
+		<script src="<%=basePath%>/dist/lib/kindeditor/plugins/ok.js"></script>
+		<script src="<%=basePath%>/dist/lib/kindeditor/plugins/code/prettify.js"></script>
+		<link rel="stylesheet" href="<%=basePath%>/dist/lib/kindeditor/plugins/code/prettify.css" />
+		<script src="<%=basePath%>/dist/lib/kindeditor/lang/zh_CN.js"></script>
 		<!--标签编辑-->
 		<script src="<%=basePath%>/xoxco/src/jquery.tagsinput.js"></script>
 		<link rel="stylesheet" type="text/css" href="<%=basePath%>/xoxco/src/jquery.tagsinput.css" />

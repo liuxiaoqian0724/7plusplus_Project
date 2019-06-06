@@ -213,6 +213,19 @@ function learnshow(currentpage2) {
 				}
 				if (index >= (currentpage2 - 1) * 3
 						&& index <= currentpage2 * 3 - 1) {
+					function repalceHtml(str){
+						var dd=str.replace(/<\/?.+?>/g,"");
+						var dds=dd.replace(/ /g,"");//dds为得到后的内容
+						return dds;
+					}
+					var content=repalceHtml(res.content);
+					var leng=res.content.length;
+		            if(leng>70){
+		            	content=content.substr(0,70)+'……';
+		            }
+		            else{
+		            	content=content;
+		            }
 					articlelist3='<div class="items items-hover" id="card">'+
 					'<div class="item">'+
 					'<div class="card_keyword">'+
@@ -237,7 +250,7 @@ function learnshow(currentpage2) {
 					'</div>'+
 					'<div class="item-content">'+
 					'<div class="media pull-right"><img src="images/courses'+(index+1)+'.jpg" alt="" style="width:75%;margin-top:-20px; margin-left:15px;"></div>'+
-					'<div class="text">'+res.content+'</div>'+
+					'<div class="text">'+content+'</div>'+
 					'</div>'+
 					'<div class="item-footer">'+
 					'<a href="#" class="text-muted"><span class="text-muted">'+timestampToTime(res.sendTime)+'</span>'+
