@@ -96,7 +96,6 @@ function datashow(currentpage1) {
 							+ '&nbsp;&nbsp;&nbsp;页</span></li>'
 							+ '<li class="next"><a id="next1">»</a></li>';
 					$("#pager1").append(devicepage1);
-					console.log(currentpage1);
 				}
 				// 当前页为最后一页时
 				if (currentpage1 == totalpage1) {
@@ -139,7 +138,7 @@ function datashow(currentpage1) {
 		            else{
 		            	introduce=res.introduce;
 		            }
-					teacherinf = '<a href="tutorDetail/showtutorDetail/'+res.id+'">'
+					teacherinf = '<a href="tutorDetail/showtutorDetail/'+res.id+'" onclick="loginstatus(this)">'
 								+'<div class="card"  style="position: relative; width:262px; height:300px;">'
 							    +'<div class="image">'
 								+'<img src="'+res.userImg+'" style="width:263px; height:148px;">'
@@ -214,7 +213,6 @@ function learnshow(currentpage2) {
 				}
 				if (index >= (currentpage2 - 1) * 3
 						&& index <= currentpage2 * 3 - 1) {
-					console.log(res.aId);
 					articlelist3='<div class="items items-hover" id="card">'+
 					'<div class="item">'+
 					'<div class="card_keyword">'+
@@ -235,7 +233,7 @@ function learnshow(currentpage2) {
 					'<div class="cards_article">'+
 					'<div class="item-heading">'+
 					'<div class="pull-right label label-success"></div>'+
-					'<h4><a href="teacherdetail?artid='+res.aId+'">'+res.title+'</a></h4>'+
+					'<h4><a href="teacherdetail?artid='+res.aId+'" onclick="loginstatus(this)">'+res.title+'</a></h4>'+
 					'</div>'+
 					'<div class="item-content">'+
 					'<div class="media pull-right"><img src="images/courses'+(index+1)+'.jpg" alt="" style="width:75%;margin-top:-20px; margin-left:15px;"></div>'+
@@ -306,7 +304,7 @@ function authorshow(currentpage3) {
 						&& index <= currentpage3 * 3 - 1) {
 					articlelist4='<div class="items items-hover" id="author">'+
 					'<div class="item">'+
-					'<a href="#"><img src="'+res.userImg+'" style="width:12%; margin-left:15px;"></a>'+
+					'<a href="#" onclick="loginstatus(this)"><img src="'+res.userImg+'" style="width:12%; margin-left:15px;"></a>'+
 					'<div class="btn-group btn-group-vertical" style="position: relative; margin-left: 25px; width:80px; margin-top: 10px">'+
 					'<button type="button" class="btn">认证家教</button>'+
 					'<p></p>'+
@@ -403,5 +401,22 @@ function changegood() {
 		goodcount = parseInt(goodcount) - 1;
 		good.innerHTML = "<i class='icon icon-thumbs-o-up'></i><span id='goodcount'>"
 				+ goodcount + "</span>";
+	}
+}
+
+//如果未登录则出现弹框
+var email=getCookie("EMAIL");
+function loginstatus(obj){
+	if(email==""){
+		alert("请先登录！");
+		$(obj).attr("href","#");
+	}
+}
+var aNodes = document.getElementsByTagName("a");
+if(email==""){
+	for(var i=0;i<aNodes.length;i++){
+		aNodes[i].onclick=function(){
+			alert("请先登录！");
+		};
 	}
 }
