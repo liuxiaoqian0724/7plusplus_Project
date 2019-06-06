@@ -1,9 +1,9 @@
 * {
-	background-color: #F8F8F8;
 	margin: 0;
 }
 body{
 	width: 100%;
+	position:relative;
 }
 html{
 	width:100%;
@@ -16,13 +16,15 @@ html{
 	left: 15%;
 	width: 70%;
 }
+
 /* 标题 */
 #toptop{
 	position: relative;
 	width: auto;
 	height: auto;
 	font-size: 20px;
-	font-family: "黑体";
+	font-family: "榛戜綋";
+	margin-top:60px;
 }
 #top {
 	border: 1px solid #CBCBCB;
@@ -49,6 +51,7 @@ html{
 	top: 20%;
 	left: 2%;
 	margin-top: 26px;
+	background-color: #fff;
 }
 /* 发表回复的头像 */
 #img-circle{
@@ -123,7 +126,7 @@ html{
 }
 #comment{
 	font-size: 25px;
-	font-family: "黑体";
+	font-family: "榛戜綋";
 	background-color: #fff;
 	position: relative;
 	left: 2%;
@@ -135,7 +138,7 @@ html{
 	position: relative;
 	left: 2%;
 	top: 0%;
-	height:auto;
+	height:180px;
 	width: 96%;
 	background-color: #fff;
 }
@@ -156,14 +159,14 @@ html{
 }
 #reply{
 	position: relative;
-	left: 72%;
+	left: 62%;
 }
-/* 回复的时间 */
+/* 鍥炲鐨勬椂闂� */
 #replytimess{
 	background-color: #fff;
 	position: relative;
-	left: 82%;
-	width: 14%;
+	left: 72%;
+	width: 24%;
 	margin-top: -28px;
 	font-size: 16px;
 }
@@ -179,8 +182,8 @@ html{
 }
 #bottomtextarea{
 	position: relative;
-	left: 2%;
-	top: 10%;
+	left: 12%;
+	margin-top: -100px;
 	height: 180px;
 	width: 88%;
 	background-color: #fff;

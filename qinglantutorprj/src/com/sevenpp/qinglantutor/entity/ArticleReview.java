@@ -1,8 +1,7 @@
 package com.sevenpp.qinglantutor.entity;
 
-import java.sql.Timestamp;
+import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,7 +21,7 @@ public class ArticleReview {
 //	private Integer id;
 //	private Integer aid;
 	private String rContent;
-	private Timestamp rTime;
+	private Date rTime;
 	private User user;
 	private Article article;
 	@Id
@@ -39,10 +38,10 @@ public class ArticleReview {
 	public void setrContent(String rContent) {
 		this.rContent = rContent;
 	}
-	public Timestamp getrTime() {
+	public Date getrTime() {
 		return rTime;
 	}
-	public void setrTime(Timestamp rTime) {
+	public void setrTime(Date rTime) {
 		this.rTime = rTime;
 	}
 	@ManyToOne()
