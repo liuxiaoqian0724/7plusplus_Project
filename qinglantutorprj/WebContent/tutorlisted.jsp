@@ -318,7 +318,8 @@
 			</div>
 			<!--foreach循环-->
 			<!--一个家教-->
-			<div class="recommended">
+			<c:forEach items="${recommond_tutor }" var ="x">
+				<div class="recommended">
 				<div class="recommend-left">
 				<!--照片-->
 					<div class="re-photo">
@@ -326,7 +327,7 @@
 					</div>
 					<!--名字-->
 					<div class="re-name">
-						李老师
+						${x.userName}
 					</div>
 				</div>
 				<!-- <div class="re-tag">
@@ -335,7 +336,7 @@
 				<div class="recommend-right">
 					<!--介绍-->
 					<div class="re-introduce">
-						家教介绍	:教学经验丰富，课堂生动幽默，综合点拨提高。
+						家教介绍	:教学经验丰富，课堂生动幽默，综合点拨提高。${x.introduce}
 					</div>
 					<div class="re-grade">
 						学员评分:95
@@ -346,46 +347,13 @@
 					</div> -->
 					<!--地区-->
 					<!--地区通过数据库查-->
-					<div class="re-region">
-						<i class="icon ion-ios-location"></i>&nbsp;&nbsp;裕华区
+					<div class="re-region" style="width:100px;">
+						<i class="icon ion-ios-location"></i>&nbsp;&nbsp;${x.address}
 					</div>
-					<div class="re-detail"><a href="tutordetailed.html">详情</a></div>
+					<div class="re-detail"><a href="/qinglantutorprj/tutorDetail/showtutorDetail/${x.id}">详情</a></div>
 				</div>
 			</div>
-			<div class="recommended">
-				<div class="recommend-left">
-				<!--照片-->
-					<div class="re-photo">
-						<img src="http://zui.sexy/docs/img/img2.jpg" width="80px" height="80px" class="img-circle" alt="圆形图片">
-					</div>
-					<!--名字-->
-					<div class="re-name">
-						李老师
-					</div>
-				</div>
-				<!-- <div class="re-tag">
-					优秀教师
-				</div> -->
-				<div class="recommend-right">
-					<!--介绍-->
-					<div class="re-introduce">
-						家教介绍	:教学经验丰富，课堂生动幽默，综合点拨提高。
-					</div>
-					<div class="re-grade">
-						学员评分:95
-					</div>
-					<!--家教时长-->
-					<!-- <div class="re-hour">
-						家教时长：100小时
-					</div> -->
-					<!--地区-->
-					<!--地区通过数据库查-->
-					<div class="re-region">
-						<i class="icon ion-ios-location"></i>&nbsp;&nbsp;裕华区
-					</div>
-					<div class="re-detail"><a href="tutordetailed.html">详情</a></div>
-				</div>
-			</div>
+			</c:forEach>
 		</div>
 	</div>
 </div>

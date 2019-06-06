@@ -3,6 +3,7 @@ package com.sevenpp.qinglantutor.controller.course;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -19,7 +20,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sevenpp.qinglantutor.entity.CourseInformation;
+import com.sevenpp.qinglantutor.log.LogServerImpl;
 import com.sevenpp.qinglantutor.service.impl.CourseServiceImpl;
+import com.sevenpp.qinglantutor.service.impl.RegistServiceImpl;
 import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 
 /**
@@ -41,7 +44,10 @@ public class CourseController {
 	@Resource
 	private CourseServiceImpl courseServiceImpl;
 	private List<CourseInformation> list;
-	
+	@Resource
+	private LogServerImpl logServerImpl;
+	@Resource
+	private	RegistServiceImpl registServiceImpl;
 	
 	@RequestMapping("courseInformation")
 	public String stuCourse(HttpServletRequest request,HttpServletResponse response) {
@@ -54,6 +60,9 @@ public class CourseController {
 		Cookie[]cookies = request.getCookies();
 		String SESSIONID = CookieUtils.getCookieFromCookies(cookies,"JSESSIONID").getValue();
 		String email = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
+		
+		
+//		logServerImpl.logsth(1, 1,"tutor");
 		
 		list = this.courseServiceImpl.getCourseInfor(email);
 		List<CourseInformation> list1 = new ArrayList<>();
@@ -149,5 +158,4 @@ public class CourseController {
 		return "{\"data\":\"添加成功\"}";
 	}
 }
-
 	
