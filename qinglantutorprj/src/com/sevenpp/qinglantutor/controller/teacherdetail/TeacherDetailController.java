@@ -18,19 +18,6 @@ import com.sevenpp.qinglantutor.entity.User;
 import com.sevenpp.qinglantutor.service.TeacherDetailService;
 import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 
-/**
-		*
-		* 椤圭洰鍚嶇О锛歲inglantutorprj
-		* 绫诲悕绉帮細newsController
-		* 绫绘弿杩帮細涓汉涓績娑堟伅閮ㄥ垎controller
-		* 鍒涘缓浜猴細鍚曞嚌鎱�
-		* 鍒涘缓鏃堕棿锛�2018骞�12鏈�11鏃� 涓嬪崍4:06:53
-		* 淇敼浜猴細鍚曞嚌鎱�
-		* 淇敼鏃堕棿锛�2018骞�12鏈�11鏃� 涓嬪崍4:06:53
-		* 淇敼澶囨敞锛�
-		* @version
-		*
-		*/
 @Controller
 public class TeacherDetailController {
 	@Resource

@@ -45,8 +45,7 @@ public class TeacherDetailDaoImpl implements TeacherDetailDao {
 				* @Exception 异常对象a
 				* @since CodingExample Ver(编码范例查看) 1.1
 				*/
-		System.out.println("daoimpl 返回article对象");
-				return ((Article) this.getSession().createQuery("select id from Article where id=?")
+				return ((Article) this.getSession().createQuery(" from Article where aId=?")
 						.setParameter(0, articleId).uniqueResult());
 	}
 
@@ -61,20 +60,9 @@ public class TeacherDetailDaoImpl implements TeacherDetailDao {
 	 * @return
 	 */
 	public Article findArticleByid(int id) {
-			String hql="from Article a where a.id=?0";
-			Object[] obj= {id};
-			Article article=null;
-			try {
-				article=this.findOne(hql,obj);
-				
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			return article;
-	}
-
-	
+		return ((Article) this.getSession().createQuery(" from Article where aId=?")
+				.setParameter(0, id).uniqueResult());
+	}	
 	/**
 	 * @desc 根据hql语句，查询单个实体类的对象
 	 * @param hql    hql语句
@@ -136,6 +124,21 @@ public class TeacherDetailDaoImpl implements TeacherDetailDao {
 			e.printStackTrace();
 		}
 		return user;
+	}
+
+	/**
+	* @Title: FindUserByEmail  
+	* @Description: 根据email来获取User对象
+	* @param:@param email1
+	* @param:@return (参数)
+	* @return:User(返回类型)
+	*
+	 * @param email1
+	 * @return
+	 */
+	public User FindUserByEmail(String email1) {
+		return ((User) this.getSession().createQuery("from User where email=?")
+				.setParameter(0, email1).uniqueResult());
 	}
 	
 }

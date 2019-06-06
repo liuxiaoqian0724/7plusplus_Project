@@ -69,7 +69,6 @@
 						<button class="btn btn-primary" type="submit" style="position: relative; left:81%" data-options="attributes:{'url':'index'}">确认发布</button>
 				</form>
 			</div>
-		</div>
 		<script>
 			//富文本编辑框
 			KindEditor.create('textarea.kindeditorSimple', {
