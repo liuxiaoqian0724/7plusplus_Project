@@ -115,7 +115,7 @@ public class tutorInfoController {
 		Integer id = Integer.parseInt(tid);
 		List<ReviewInf> reviewInfList = this.tutorDetailServiceImpl.getTutorReivew(id);
 		List<TrendReview> trendReviewInfList=ReviewTrend.getReviewTrend(aipNlp, reviewInfList);
-		System.out.println(trendReviewInfList.toString());
+//		System.out.println(trendReviewInfList.toString());
 		String str = JSON.toJSONString(trendReviewInfList, SerializerFeature.WriteMapNullValue);
 		response.setCharacterEncoding("utf-8");
 		try {

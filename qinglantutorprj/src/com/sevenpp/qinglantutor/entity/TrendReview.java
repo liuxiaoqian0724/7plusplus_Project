@@ -21,6 +21,7 @@ public class TrendReview implements Serializable{
 	private String end_pos;
 	private String abstractWord;
 	
+	public TrendReview() {}//构造方法
 	public Integer getTeacherId() {
 		return teacherId;
 	}
