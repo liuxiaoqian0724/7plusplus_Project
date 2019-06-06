@@ -80,6 +80,10 @@ import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 				}
 				session.setAttribute("recommond_tutor", userList);
 				
+				for(int i=0;i<userList.size();i++) {
+					System.out.println(userList.get(i).getAddress());
+				}
+				
 				
 				response.setContentType("text/html;charset=utf-8");
 				response.setCharacterEncoding("utf-8");

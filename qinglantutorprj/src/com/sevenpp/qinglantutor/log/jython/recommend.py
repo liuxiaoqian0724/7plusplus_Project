@@ -111,7 +111,7 @@ def scan_teacher_log(user_list, id, filename):
         if tutor.count(i) > 1:
             a[i] = tutor.count(i)
     a = sorted(a.items(), key=lambda item: item[1],reverse=True)
-    a = dict(a[:3]).keys()
+    a = dict(a[:4]).keys()
     
     
     return a 
