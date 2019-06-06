@@ -41,7 +41,6 @@ public class TeacherDetailController {
 	public String teacherDetail(String email,String pagenow,HttpServletRequest request,HttpServletResponse response) {	
 		int id = Integer.valueOf(request.getParameter("artid"));
 		this.aid=id;
-		System.out.println(id);
 		HttpSession session = request.getSession();
 		Article article=this.teacherdetailServiceImpl.findArticleByid(id);
 		request.setAttribute("article", article);
@@ -70,7 +69,6 @@ public class TeacherDetailController {
 	public String saveMessage(String email,String pagenow,HttpServletRequest request,HttpServletResponse response) {	
 //		int id = Integer.valueOf(request.getParameter("artid"));
 		int id=this.aid;
-		System.out.println(id+"我是aid打印出来的");
 		/*cookies获取email*/
 		response.setHeader("Access-Control-Allow-Origin", "*");
 		response.setHeader("Access-Control-Allow-Methods", "POST");

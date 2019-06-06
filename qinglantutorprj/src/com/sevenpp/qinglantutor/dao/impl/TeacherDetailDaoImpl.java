@@ -44,8 +44,7 @@ public class TeacherDetailDaoImpl implements TeacherDetailDao {
 				* @return String DOM对象
 				* @Exception 异常对象a
 				* @since CodingExample Ver(编码范例查看) 1.1
-				*/
-		System.out.println("daoimpl 返回article对象");
+				*/;
 				return ((Article) this.getSession().createQuery(" from Article where aId=?")
 						.setParameter(0, articleId).uniqueResult());
 	}
@@ -61,7 +60,6 @@ public class TeacherDetailDaoImpl implements TeacherDetailDao {
 	 * @return
 	 */
 	public Article findArticleByid(int id) {
-		System.out.println("daoimpl 返回article对象");
 		return ((Article) this.getSession().createQuery(" from Article where aId=?")
 				.setParameter(0, id).uniqueResult());
 	}	
@@ -139,7 +137,6 @@ public class TeacherDetailDaoImpl implements TeacherDetailDao {
 	 * @return
 	 */
 	public User FindUserByEmail(String email1) {
-		System.out.println("daoimpl 返回article对象");
 		return ((User) this.getSession().createQuery("from User where email=?")
 				.setParameter(0, email1).uniqueResult());
 	}
