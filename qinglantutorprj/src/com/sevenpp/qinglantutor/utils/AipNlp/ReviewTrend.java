@@ -7,6 +7,7 @@ import java.util.List;
 import org.json.JSONObject;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.baidu.aip.nlp.AipNlp;
 import com.baidu.aip.nlp.ESimnetType;
 import com.sevenpp.qinglantutor.entity.ReviewInf;
@@ -22,7 +23,7 @@ public class ReviewTrend {
 			for(int i=0;i<reviewList.size();i++) {
 				JSONObject response = client.commentTag(reviewList.get(i).getReivewContent(), ESimnetType.EDU,options);
 				TrendReview tr=new TrendReview();
-				JSONObject items= (JSONObject) response.get("items");//获取json对象中的items数组
+				JSONArray items= (JSONArray) response.get("items");//获取json对象中的items数组
 				
 				//初始化reviewTrend对象
 				tr.setTeacherId(reviewList.get(i).getTeacherId());
