@@ -16,9 +16,6 @@ public class TrendReview implements Serializable{
 	
 	private String prop;
 	private String adj;
-	private String sentiment;
-	private String begin_pos;
-	private String end_pos;
 	private String abstractWord;
 	
 	public TrendReview() {}//构造方法
@@ -67,24 +64,6 @@ public class TrendReview implements Serializable{
 	public void setAdj(String adj) {
 		this.adj = adj;
 	}
-	public String getSentiment() {
-		return sentiment;
-	}
-	public void setSentiment(String sentiment) {
-		this.sentiment = sentiment;
-	}
-	public String getBegin_pos() {
-		return begin_pos;
-	}
-	public void setBegin_pos(String begin_pos) {
-		this.begin_pos = begin_pos;
-	}
-	public String getEnd_pos() {
-		return end_pos;
-	}
-	public void setEnd_pos(String end_pos) {
-		this.end_pos = end_pos;
-	}
 	public String getAbstractWord() {
 		return abstractWord;
 	}
@@ -93,9 +72,11 @@ public class TrendReview implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "TrendReview [prop=" + prop + ", adj=" + adj + ", sentiment=" + sentiment + ", begin_pos=" + begin_pos
-				+ ", end_pos=" + end_pos + ", abstractWord=" + abstractWord + "]";
+		return "TrendReview [teacherId=" + teacherId + ", reviewUserName=" + reviewUserName + ", reivewUserImg="
+				+ reivewUserImg + ", reivewContent=" + reivewContent + ", reviewDateTime=" + reviewDateTime + ", prop="
+				+ prop + ", adj=" + adj + ", abstractWord=" + abstractWord + "]";
 	}
+	
 	
 	
 }
