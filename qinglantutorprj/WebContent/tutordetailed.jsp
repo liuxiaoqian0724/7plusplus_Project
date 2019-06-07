@@ -290,21 +290,15 @@
 						<div class="top-left">
 							<p>满意率</p>
 							<span>96.47%</span>
-							<!-- <span class="star">⭐⭐⭐⭐⭐</span> -->
 						</div>
 						<div class="separator"></div>
 						<div class="top-right">
 							<p>大家都在说：</p>
 							<div class="right-tab">
-								<ul>
+								<ul id="reviewTrend">
 									<!--数据库查询-->
-									<li>全部31</li>
-									<li>认真负责31</li>
-									<li>思路清晰31</li>
-									<li>认真负责31</li>
-									<li>思路清晰31</li>
-									<li>认真负责31</li>
-									<li>思路清晰31</li>
+									<li id="reviewTrendcount">全部${reviewCount}</li>
+<!-- 									<li class="reviewTrendli"></li> -->
 								</ul>
 							</div>
 						</div>
@@ -314,9 +308,9 @@
 					<div class="comment-conditions">
 						<ul>
 							<li id="rank">排序:</li>
-							<a href="#"><li class="comment-condition">好评(52)</li></a>
-							<a href="#"><li class="comment-condition">中评(2)</li></a>
-							<a href="#"><li class="comment-condition">差评(1)</li></a>
+							<a href="#"><li class="comment-condition">好评</li></a>
+							<a href="#"><li class="comment-condition">中评</li></a>
+							<a href="#"><li class="comment-condition">差评</li></a>
 						</ul>
 					</div>
 					<hr>
@@ -556,6 +550,14 @@
            			totalpage = Math.ceil(data.length / 3);
            			$(".comments").html("");
            			$.each(data,function(index, res) {
+           				/* $("#reviewTrend").html(""); */
+       					lis = '<li class="trendLis">'
+       					+res.adj
+       					+'('
+       					+Math.ceil(Math.random()*4);
+       					+')'
+       					+'</li>'
+       					$("#reviewTrend").append(lis); 
            				// 当前页为第一页时
            				if (currentpage == 1) {
            					$("#pager").html("");
