@@ -21,6 +21,7 @@ function persoanlNews(){
 		$("#personalNews").attr("href","/qinglantutorprj/jumptoNews");
 	}	
 }
+
 function tutor(){
 	var useremail=getCookie("EMAIL");
 	if(useremail == ""){
@@ -29,6 +30,7 @@ function tutor(){
 		$("#tutor").attr("href","/qinglantutorprj/tutorlist/conditions/0/0");
 	}	
 }
+
 function primary(){
 	var useremail=getCookie("EMAIL");
 	if(useremail == ""){
@@ -37,6 +39,7 @@ function primary(){
 		$("#primary").attr("href","/qinglantutorprj/tutorlist/conditions/小学/0");
 	}	
 }
+
 function junjor(){
 	var useremail=getCookie("EMAIL");
 	if(useremail == ""){
@@ -45,6 +48,7 @@ function junjor(){
 		$("#junjor").attr("href","/qinglantutorprj/tutorlist/conditions/初中/0");
 	}	
 }
+
 function senior(){
 	var useremail=getCookie("EMAIL");
 	if(useremail == ""){
@@ -53,6 +57,7 @@ function senior(){
 		$("#senior").attr("href","/qinglantutorprj/tutorlist/conditions/高中/0");
 	}	
 }
+
 	// 获取指定名称的cookie的值
 	function getCookie(name) {
 		var strCookie = document.cookie;
