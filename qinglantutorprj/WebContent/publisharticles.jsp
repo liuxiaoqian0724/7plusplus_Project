@@ -67,6 +67,9 @@
 						<!--提交按钮-->
 						<button class="btn" type="button" style="position: relative; left:80%">保存文章</button>
 						<button class="btn btn-primary" type="submit" style="position: relative; left:81%" data-options="attributes:{'url':'index'}">确认发布</button>
+						<c:if test="${isright=='0'}">
+							<script>alert("审核文章失败！")</script>
+						</c:if>
 				</form>
 			</div>
 		<script>
