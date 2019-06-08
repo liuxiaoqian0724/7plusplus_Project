@@ -25,16 +25,15 @@ public class ReviewTrend {
 				String strJson=response.toString();
 				com.alibaba.fastjson.JSONObject jsonObject=JSON.parseObject(strJson);
 				com.alibaba.fastjson.JSONArray items= (com.alibaba.fastjson.JSONArray) jsonObject.get("items");//获取json对象中的items数组
-				System.out.println(items);
 				TrendReview tr=new TrendReview();
 				for (int j = 0; j < items.size(); j++) {
 					com.alibaba.fastjson.JSONObject dataBean = (com.alibaba.fastjson.JSONObject) items.get(j);//得到数组中对应下标对应的json对象
 //					//josn数组中获取值赋给对象
 					tr.setProp((String)dataBean.get("prop"));
 					tr.setAdj((String)dataBean.get("adj"));
-//					tr.setProp(JSON.toJSONString((String)dataBean.get("sentiment")));
-//					tr.setProp(JSON.toJSONString((String)dataBean.get("begin_pos")));
-//					tr.setProp(JSON.toJSONString((String)dataBean.get("end_pos")));
+					tr.setProp(JSON.toJSONString((String)dataBean.get("sentiment")));
+					tr.setProp(JSON.toJSONString((String)dataBean.get("begin_pos")));
+					tr.setProp(JSON.toJSONString((String)dataBean.get("end_pos")));
 					tr.setAbstractWord((String)dataBean.get("abstractWord"));
 				}
 				//初始化reviewTrend对象

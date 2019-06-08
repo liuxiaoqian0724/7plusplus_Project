@@ -26,10 +26,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.baidu.aip.nlp.AipNlp;
 import com.sevenpp.qinglantutor.entity.ReviewInf;
+import com.sevenpp.qinglantutor.entity.TrendReview;
 import com.sevenpp.qinglantutor.entity.User;
 import com.sevenpp.qinglantutor.log.LogServerImpl;
 import com.sevenpp.qinglantutor.service.impl.TutorDetailServiceImpl;
+import com.sevenpp.qinglantutor.utils.AipNlp.InitAipNlp;
+import com.sevenpp.qinglantutor.utils.AipNlp.ReviewTrend;
 import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 
 /**
@@ -112,10 +116,13 @@ public class tutorInfoController {
 		response.setHeader("Access-Control-Allow-Credentials", "true");
 		response.setContentType("textml;charset=utf-8");
 		response.setCharacterEncoding("utf-8");
+		//初始化aipNlp
+		AipNlp aipNlp=new InitAipNlp().getAipNlp();
 		String tid = request.getParameter("tid");
 		Integer id = Integer.parseInt(tid);
 		List<ReviewInf> reviewInfList = this.tutorDetailServiceImpl.getTutorReivew(id);
-		String str = JSON.toJSONString(reviewInfList, SerializerFeature.DisableCircularReferenceDetect);
+		List<TrendReview> trendReviewInfList=ReviewTrend.getReviewTrend(aipNlp, reviewInfList);
+		String str = JSON.toJSONString(trendReviewInfList, SerializerFeature.WriteMapNullValue);
 		response.setCharacterEncoding("utf-8");
 		try {
 			PrintWriter writer = response.getWriter();
