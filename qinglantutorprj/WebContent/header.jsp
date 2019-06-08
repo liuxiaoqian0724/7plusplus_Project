@@ -17,9 +17,9 @@
 				<!-- <li><a href="<%=basePath%>/tutorlist/conditions/0/0" onclick="persoanlNews()">家教</a-->
 				<li><a href="javascript:void(0)" onclick="tutor()" id="tutor">家教</a>
 					<ul>
-						<li><a href="<%=basePath%>/tutorlist/conditions/小学/0">小学</a></li>
-						<li><a href="<%=basePath%>/tutorlist/conditions/初中/0">初中</a></li>
-						<li><a href="<%=basePath%>/tutorlist/conditions/高中/0">高中</a></li>
+						<li><a href="javascript:void(0)" onclick="primary()" id="primary">小学</a></li>
+						<li><a href="javascript:void(0)" onclick="junjor()" id="junjor">初中</a></li>
+						<li><a href="javascript:void(0)" onclick="senior()" id="senior">高中</a></li>
 					</ul>
 				</li>
 				<li><a href="#">论坛社区</a>
