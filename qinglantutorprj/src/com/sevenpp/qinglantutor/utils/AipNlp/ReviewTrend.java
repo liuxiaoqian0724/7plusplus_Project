@@ -31,9 +31,9 @@ public class ReviewTrend {
 //					//josn数组中获取值赋给对象
 					tr.setProp((String)dataBean.get("prop"));
 					tr.setAdj((String)dataBean.get("adj"));
-					tr.setProp(JSON.toJSONString((String)dataBean.get("sentiment")));
-					tr.setProp(JSON.toJSONString((String)dataBean.get("begin_pos")));
-					tr.setProp(JSON.toJSONString((String)dataBean.get("end_pos")));
+//					tr.setProp(JSON.toJSONString((String)dataBean.get("sentiment")));
+//					tr.setProp(JSON.toJSONString((String)dataBean.get("begin_pos")));
+//					tr.setProp(JSON.toJSONString((String)dataBean.get("end_pos")));
 					tr.setAbstractWord((String)dataBean.get("abstractWord"));
 				}
 				//初始化reviewTrend对象
