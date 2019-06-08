@@ -29,6 +29,30 @@ function tutor(){
 		$("#tutor").attr("href","/qinglantutorprj/tutorlist/conditions/0/0");
 	}	
 }
+function primary(){
+	var useremail=getCookie("EMAIL");
+	if(useremail == ""){
+		alert("请先登录");
+	}else{
+		$("#primary").attr("href","/qinglantutorprj/tutorlist/conditions/小学/0");
+	}	
+}
+function junjor(){
+	var useremail=getCookie("EMAIL");
+	if(useremail == ""){
+		alert("请先登录");
+	}else{
+		$("#junjor").attr("href","/qinglantutorprj/tutorlist/conditions/初中/0");
+	}	
+}
+function senior(){
+	var useremail=getCookie("EMAIL");
+	if(useremail == ""){
+		alert("请先登录");
+	}else{
+		$("#senior").attr("href","/qinglantutorprj/tutorlist/conditions/高中/0");
+	}	
+}
 	// 获取指定名称的cookie的值
 	function getCookie(name) {
 		var strCookie = document.cookie;
