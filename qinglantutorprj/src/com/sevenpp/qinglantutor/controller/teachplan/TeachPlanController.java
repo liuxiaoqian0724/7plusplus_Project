@@ -75,10 +75,8 @@ public class TeachPlanController {
 		request.setAttribute("teachPlanInformationList", list1);		
 		
 		if(this.teachPlanServiceImpl.getRoleByEmail(email).getRole().startsWith("老师")) {
-			System.out.println("老师");
 			return "teacher-personal-center-plan";
 		}else {
-			System.out.println("学生");
 			return "student-personal-center-plan";
 		}
 		

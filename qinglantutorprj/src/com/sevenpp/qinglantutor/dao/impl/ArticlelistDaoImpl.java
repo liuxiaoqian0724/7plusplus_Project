@@ -24,7 +24,6 @@ public class ArticlelistDaoImpl implements ArticlelistDao {
 		Query query=session.createQuery("from Article");
 		List<Article> list=query.list();
 		session.getTransaction().commit();
-		System.out.println("dao   "+list);
 		return list;
 	}
 }
