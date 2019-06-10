@@ -22,7 +22,7 @@
 						<li><a href="javascript:void(0)" onclick="senior()" id="senior">高中</a></li>
 					</ul>
 				</li>
-				<li><a href="#">论坛社区</a>
+				<li><a href="arti">论坛社区</a>
 					<ul>
 						<li><a href="#">学霸说</a></li>
 						<li><a href="#">资料库</a></li>

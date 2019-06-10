@@ -20,7 +20,6 @@ public class ArticlelistServiceImpl implements ArticlelistService {
 	public List<Article> findAllArticle(){
 		List<Article> list=new ArrayList();
 		list=aldi.queryArticle();
-		System.out.println("service   "+list);
 		return list;
 	}
 }
