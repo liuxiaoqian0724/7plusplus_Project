@@ -95,7 +95,7 @@ public class TeachPlanController {
 		Cookie[]cookies = request.getCookies();
 		String SESSIONID = CookieUtils.getCookieFromCookies(cookies,"JSESSIONID").getValue();
 		//String email = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
-		String email = "zhangsan@qq.com";
+		String email = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
 		
 		int pageTotal = 1;
 		if(list.size()!=0) {
