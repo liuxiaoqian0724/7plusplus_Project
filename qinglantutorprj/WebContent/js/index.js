@@ -317,7 +317,7 @@ function authorshow(currentpage3) {
 						&& index <= currentpage3 * 3 - 1) {
 					articlelist4='<div class="items items-hover" id="author">'+
 					'<div class="item">'+
-					'<a href="#" onclick="loginstatus(this)"><img src="'+res.userImg+'" style="width:12%; margin-left:15px;"></a>'+
+					'<a href="ArticleShow?id='+res.id+'" onclick="loginstatus(this)"><img src="'+res.userImg+'" style="width:12%; margin-left:15px;"></a>'+
 					'<div class="btn-group btn-group-vertical" style="position: relative; margin-left: 25px; width:80px; margin-top: 10px">'+
 					'<button type="button" class="btn">认证家教</button>'+
 					'<p></p>'+
