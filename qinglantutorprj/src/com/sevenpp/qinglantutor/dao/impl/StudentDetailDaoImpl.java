@@ -18,10 +18,10 @@ public class StudentDetailDaoImpl implements StudentDetailDao {
 	private SessionFactory sessionFactory;	
 	
 	//用户查询
-	public User getUserByEmail(String email){
+	public User getUserByEmail(int id){
 		Session session=this.sessionFactory.getCurrentSession();
-		Query q=session.createQuery("from User u where email=?");
-		q.setString(0, email);
+		Query q=session.createQuery("from User u where id=?");
+		q.setInteger(0, id);
 		return (User) q.list().get(0);
 	}	
 	
