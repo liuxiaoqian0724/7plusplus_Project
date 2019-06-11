@@ -33,7 +33,7 @@
 
 <p>
 <img src="./image/主页.png" width=250 height=400 />
-<img src="./image/登录.jpg" width=250 height=400 />
+<img src="./image/登录.png" width=250 height=400 />
 <img src="./image/注册.png" width=250 height=400 />
 </p>
 <p>
@@ -64,17 +64,17 @@
 <p>
 <img src="./image/家教-个人中心-批改作业页面.png" width=250 height=400 />
 <img src="./image/家教-个人中心-我的评价页.png" width=250 height=400 />
-<img src="./image/家教-个人中心-我的教案页.jpg" width=250 height=400 />
+<img src="./image/家教-个人中心-我的教案页.png" width=250 height=400 />
 </p>
 <p>
-<img src="./image/家教-个人中心-布置作业页.jpg" width=250 height=400 />
-<img src="./image/家教-个人中心-我的课程页面.jpg" width=250 height=400 />
-<img src="./image/家教-个人中心-消息提示页.jpg" width=250 height=400 />
+<img src="./image/家教-个人中心-布置作业页.png" width=250 height=400 />
+<img src="./image/家教-个人中心-我的课程页面.png" width=250 height=400 />
+<img src="./image/家教-个人中心-消息提示页.png" width=250 height=400 />
 </p>
 <p>
-<img src="./image/家教-个人中心-我的消息页.jpg" width=250 height=400 />
-<img src="./image/学习社区-文章发布页.jpg" width=250 height=400 />
-<img src="./image/家教-信息发布页.jpg" width=250 height=400 />
+<img src="./image/家教-个人中心-我的消息页.png" width=250 height=400 />
+<img src="./image/学习社区-文章发布页.png" width=250 height=400 />
+<img src="./image/家教-信息发布页.png" width=250 height=400 />
 </p>
 <p>
 <img src="./image/家教-列表页.png" width=250 height=400 />
