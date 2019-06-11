@@ -1,8 +1,8 @@
-window.onload=function(){
+$(document).ready(function(){
 	//调用
 	topage4(currentpage4);
 	listshow(currentpage4);
-}
+})
 //页码定义
 var currentpage4 = 1;
 var totalpage4 = 1;
