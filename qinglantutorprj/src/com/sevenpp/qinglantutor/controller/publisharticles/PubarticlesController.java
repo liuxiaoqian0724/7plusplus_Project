@@ -1,5 +1,8 @@
 package com.sevenpp.qinglantutor.controller.publisharticles;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import javax.annotation.Resource;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -20,9 +23,8 @@ public class PubarticlesController {
 	@Resource
 	private PubarticlesServiceImpl pasi;
 	
-	@RequestMapping(value="/pubarticles",method=RequestMethod.GET)
-	public String publisharticles(HttpServletRequest request,HttpServletResponse response,@RequestParam("title") String title,
-			@RequestParam("content") String content) {
+	@RequestMapping(value="/pubarticles")
+	public String publisharticles(HttpServletRequest request,HttpServletResponse response) {
 		response.setHeader("Access-Control-Allow-Origin", "*");
 		response.setHeader("Access-Control-Allow-Methods", "POST");
 		response.setHeader("Access-Control-Allow-Headers","x-requested-with,content-type");
@@ -32,6 +34,25 @@ public class PubarticlesController {
 		ModelAndView m=new ModelAndView();
 		Cookie[]cookies = request.getCookies();
 		String email=CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
+		String content=request.getParameter("content");
+		String title=request.getParameter("title");
+		
+		//过滤html标签
+		String regEx_script="<script[^>]*?>[\\s\\S]*?<\\/script>"; //定义script的正则表达式 
+        String regEx_style="<style[^>]*?>[\\s\\S]*?<\\/style>"; //定义style的正则表达式 
+        String regEx_html="<[^>]+>"; //定义HTML标签的正则表达式 
+        Pattern p_script=Pattern.compile(regEx_script,Pattern.CASE_INSENSITIVE); 
+        Matcher m_script=p_script.matcher(content); 
+        content=m_script.replaceAll(""); //过滤  
+        
+        Pattern p_style=Pattern.compile(regEx_style,Pattern.CASE_INSENSITIVE); 
+        Matcher m_style=p_style.matcher(content); 
+        content=m_style.replaceAll(""); //过滤style标签 
+         
+        Pattern p_html=Pattern.compile(regEx_html,Pattern.CASE_INSENSITIVE); 
+        Matcher m_html=p_html.matcher(content); 
+        content=m_html.replaceAll(""); //过滤html标签 
+
 		CheckTextAPI checkTextAPI=new CheckTextAPI();
 		boolean istitleright=true;
 		istitleright=checkTextAPI.check(title);
