@@ -40,7 +40,7 @@
 	<body bgcolor="#ffffff">
 		<jsp:include page="header.jsp" />
 			<div class="panel-body" id="out">
-				<form action="${pageContext.request.contextPath}/pubarticles",method="post">
+				<form method="post" action="${pageContext.request.contextPath}/pubarticles">
 					<!--标题-->
 					<h1>文章发布</h1>
 					<hr />
