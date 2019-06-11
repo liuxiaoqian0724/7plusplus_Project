@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" isErrorPage="true"%>
+<%response.setStatus(HttpServletResponse.SC_OK);%>
 <%
   String path = request.getContextPath();
   String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path;
@@ -65,12 +65,12 @@
 
   <!-- 页面跳转 -->
    
-<!--   <script language="javascript" type="text/javascript"> 
+<script language="javascript" type="text/javascript"> 
 var second = totalSecond.innerText;
   setInterval("redirect()", 1000);
   function redirect() {
     totalSecond.innerText = --second;
-    if(second <= 0) location.href = 'index.html';
+    if(second <= 0) location.href = '/qinglantutorprj/index.jsp';
   }
-</script> -->
+</script> 
 </body></html>

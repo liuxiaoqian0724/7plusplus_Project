@@ -40,10 +40,10 @@
 						<h2>推荐文章</h2>
 						<hr />
 						<div id="articlel">
-						
+
 						</div>
 					</div>
-					<br/>
+					<br />
 					<!--标签导航-->
 					<div id="lablenavigation" style="border:1px solid #8abcd1; padding-top:1%; padding-bottom:1%;">
 						<ul class="nav nav-tabs" style="width:100%;height:auto;">
@@ -76,24 +76,16 @@
 					</div>
 					<!--文章列表-->
 					<div id="articlelist">
-						
+
 					</div>
 					<!--分页条-->
-					<div id="pages">
-						<ul class="pager">
-						  <li class="previous"><a href="your/nice/url">«</a></li>
-						  <li><a href="your/nice/url">1</a></li>
-						  <li class="active"><a href="your/nice/url">2</a></li>
-						  <li><a href="your/nice/url">3</a></li>
-						  <li><a href="your/nice/url">4</a></li>
-						  <li><a href="your/nice/url">5</a></li>
-						  <li class="next"><a href="your/nice/url">»</a></li>
-						</ul>
-					</div>
+					<ul class="pager" id="pager4" style="position:relative; left:45%;">
+						
+					</ul>
+				</div>
 			</div>
-		</div>
-		<script type="text/javascript" src="<%=basePath%>/js/index.js"></script>
-		<script type="text/javascript" src="<%=basePath%>/js/checkLogin_regist.js"></script>
-		<jsp:include page="footer.jsp" />
+			<script type="text/javascript" src="<%=basePath%>/js/index.js"></script>
+			<script type="text/javascript" src="<%=basePath%>/js/checkLogin_regist.js"></script>
+			<jsp:include page="footer.jsp" />
 	</body>
 </html>

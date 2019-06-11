@@ -16,7 +16,6 @@ html{
 	left: 15%;
 	width: 70%;
 }
-
 /* 标题 */
 #toptop{
 	position: relative;
@@ -167,12 +166,8 @@ html{
 	position: relative;
 	left: 72%;
 	width: 24%;
-	margin-top: -28px;
+	margin-top: 28px;
 	font-size: 16px;
-}
-#pager{
-	position: relative;
-	left: 30%;
 }
 #bottom{
 	background-color: #f8f8f8;

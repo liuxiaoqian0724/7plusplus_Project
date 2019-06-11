@@ -79,35 +79,6 @@ public class reviewDaoImpl {
 		List<ClassRelation> list=q.list();
 		return list;
 	}
-	/*过时方法
-	 * public ClassRelation findCrid(TeachRelation trx){
-		Session session=this.sessionFactory.getCurrentSession();
-		Query q=session.createQuery("from ClassRelation cr where cr.teachRelation=:tr");
-		q.setParameter("tr", trx);
-		List<ClassRelation> list=q.list();
-		ClassRelation cr=list.get(0);
-		return cr;
-	}*/
-	
-	/*过时方法
-	 * public List<ClassRelation> findcridByTrid(TeachRelation tr) {
-		Session session=this.sessionFactory.getCurrentSession();
-		Query q=session.createQuery("from ClassRelation cr where cr.teachRelation=:tr");
-		q.setParameter("tr", tr);
-		List<ClassRelation> list=q.list();
-		List<Integer> crids=list.stream().map(ClassRelation::getCrid).collect(Collectors.toList());
-		return list;
-	}*/
-
-	/*过时方法
-	 * public TeachRelation findTrid(User user){
-	Session session=this.sessionFactory.getCurrentSession();
-	Query q=session.createQuery("from TeachRelation tr where tr.user=:user");
-	q.setParameter("user", user);
-	List<TeachRelation> list=q.list();
-	TeachRelation tr=list.get(0);
-	return tr;
-}*/
 }
 
 	

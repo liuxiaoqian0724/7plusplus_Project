@@ -28,7 +28,11 @@ public class ArticlelistController {
 		List<Article> list=new ArrayList();
 		list=alsi.findAllArticle();
 		response.setCharacterEncoding("UTF-8");
-		System.out.println("controller");
 		return list;
+	}
+	
+	@RequestMapping("/arti")
+	public String artis(){
+		return "articlelist";
 	}
 }	

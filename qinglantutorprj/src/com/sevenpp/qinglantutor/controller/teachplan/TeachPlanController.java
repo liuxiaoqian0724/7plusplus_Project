@@ -75,10 +75,8 @@ public class TeachPlanController {
 		request.setAttribute("teachPlanInformationList", list1);		
 		
 		if(this.teachPlanServiceImpl.getRoleByEmail(email).getRole().startsWith("老师")) {
-			System.out.println("老师");
 			return "teacher-personal-center-plan";
 		}else {
-			System.out.println("学生");
 			return "student-personal-center-plan";
 		}
 		
@@ -95,7 +93,7 @@ public class TeachPlanController {
 		Cookie[]cookies = request.getCookies();
 		String SESSIONID = CookieUtils.getCookieFromCookies(cookies,"JSESSIONID").getValue();
 		//String email = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
-		String email = "zhangsan@qq.com";
+		String email = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
 		
 		int pageTotal = 1;
 		if(list.size()!=0) {
@@ -111,7 +109,9 @@ public class TeachPlanController {
 				list1.add(list.get(i));
 			}
 		}
-		
+		Map<String, Object> map = this.teachPlanServiceImpl.getPersonalDetail(email);
+		request.setAttribute("map", map);
+
 
 		request.setAttribute("teachPlanInformationList", list1);
 		request.setAttribute("page", page);

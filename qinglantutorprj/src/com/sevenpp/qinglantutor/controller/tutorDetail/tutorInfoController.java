@@ -26,9 +26,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.baidu.aip.nlp.AipNlp;
 import com.sevenpp.qinglantutor.entity.ReviewInf;
+import com.sevenpp.qinglantutor.entity.TrendReview;
 import com.sevenpp.qinglantutor.entity.User;
+import com.sevenpp.qinglantutor.log.LogServerImpl;
 import com.sevenpp.qinglantutor.service.impl.TutorDetailServiceImpl;
+import com.sevenpp.qinglantutor.utils.AipNlp.InitAipNlp;
+import com.sevenpp.qinglantutor.utils.AipNlp.ReviewTrend;
 import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 
 /**
@@ -58,6 +63,9 @@ import com.sevenpp.qinglantutor.utils.cookie.CookieUtils;
 public class tutorInfoController {
 	@Resource
 	private TutorDetailServiceImpl tutorDetailServiceImpl;
+	
+	@Resource
+	private LogServerImpl logServerImpl;
 
 	/**
 	 * 
@@ -91,6 +99,11 @@ public class tutorInfoController {
 			request.setAttribute("user", user);
 			// request.setAttribute("classRelation", classRelation);
 			request.setAttribute("reviewCount", reviewCount);
+			
+			//	将用户浏览家教详情页历史记录存入日志文件中
+			Integer inquireId = tutorDetailServiceImpl.findUser(EMAIL);
+			logServerImpl.tutor_logs(inquireId, id, "tutor");
+			
 			return "tutordetailed";
 		}
 	}
@@ -103,10 +116,16 @@ public class tutorInfoController {
 		response.setHeader("Access-Control-Allow-Credentials", "true");
 		response.setContentType("textml;charset=utf-8");
 		response.setCharacterEncoding("utf-8");
+		//初始化aipNlp
+		AipNlp aipNlp=new InitAipNlp().getAipNlp();
 		String tid = request.getParameter("tid");
 		Integer id = Integer.parseInt(tid);
 		List<ReviewInf> reviewInfList = this.tutorDetailServiceImpl.getTutorReivew(id);
-		String str = JSON.toJSONString(reviewInfList, SerializerFeature.DisableCircularReferenceDetect);
+		List<TrendReview> trendReviewInfList=ReviewTrend.getReviewTrend(aipNlp, reviewInfList);
+		for (int i = 0; i < trendReviewInfList.size(); i++) {
+			System.out.println(trendReviewInfList.get(i));
+		}
+		String str = JSON.toJSONString(trendReviewInfList, SerializerFeature.WriteMapNullValue);
 		response.setCharacterEncoding("utf-8");
 		try {
 			PrintWriter writer = response.getWriter();

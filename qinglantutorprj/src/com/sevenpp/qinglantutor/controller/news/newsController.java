@@ -186,7 +186,7 @@ public class newsController {
 				newspage.setContent(list.get(b).getContent());
 				newspage.setRid(list.get(b).getUser());
 				newspage.setSendtime(list.get(b).getSendTime());
-//				newspage.setStatus(list.get(b).getStatus());
+				newspage.setStatus(list.get(b).getStatus());
 				newspage.setUsername(listsend.get(0).getUserName());
 				newspage.setUserimg(listsend.get(0).getUserImg());
 				newspage.setCutContent(cutcontent1);

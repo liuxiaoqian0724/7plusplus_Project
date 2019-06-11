@@ -24,11 +24,12 @@
 		<link rel="stylesheet" href="<%=basePath%>/dist/css/zui.css" />
 		<script type="text/javascript" src="<%=basePath%>/dist/js/zui.js"></script>
 		<!-- 富文本编辑框组件 -->
-		<link rel="stylesheet" href="<%=basePath%>/dist/lib/kindeditor/kindeditor.css" />
 		<link rel="stylesheet" href="<%=basePath%>/dist/lib/kindeditor/kindeditor.min.css" />
 		<script src="<%=basePath%>/dist/lib/kindeditor/kindeditor.min.js"></script>
-		<script src="<%=basePath%>/dist/lib/kindeditor/kindeditor.js"></script>
-		<script src="<%=basePath%>/dist/lib/kindeditor/kindeditor/plugins.ok.js"></script>
+		<script src="<%=basePath%>/dist/lib/kindeditor/plugins/ok.js"></script>
+		<script src="<%=basePath%>/dist/lib/kindeditor/plugins/code/prettify.js"></script>
+		<link rel="stylesheet" href="<%=basePath%>/dist/lib/kindeditor/plugins/code/prettify.css" />
+		<script src="<%=basePath%>/dist/lib/kindeditor/lang/zh_CN.js"></script>
 		<!--标签编辑-->
 		<script src="<%=basePath%>/xoxco/src/jquery.tagsinput.js"></script>
 		<link rel="stylesheet" type="text/css" href="<%=basePath%>/xoxco/src/jquery.tagsinput.css" />
@@ -39,7 +40,7 @@
 	<body bgcolor="#ffffff">
 		<jsp:include page="header.jsp" />
 			<div class="panel-body" id="out">
-				<form action="${pageContext.request.contextPath}/pubarticles",method="post">
+				<form method="post" action="${pageContext.request.contextPath}/pubarticles">
 					<!--标题-->
 					<h1>文章发布</h1>
 					<hr />
@@ -66,6 +67,9 @@
 						<!--提交按钮-->
 						<button class="btn" type="button" style="position: relative; left:80%">保存文章</button>
 						<button class="btn btn-primary" type="submit" style="position: relative; left:81%" data-options="attributes:{'url':'index'}">确认发布</button>
+						<c:if test="${isright=='0'}">
+							<script>alert("审核文章失败！")</script>
+						</c:if>
 				</form>
 			</div>
 		<script>
