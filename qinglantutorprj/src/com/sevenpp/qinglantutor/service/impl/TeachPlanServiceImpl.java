@@ -95,7 +95,6 @@ public class TeachPlanServiceImpl implements TeachPlanService {
 					Map<String, Object> planDetailMap = new HashMap<String, Object>();
 					planDetailMap.put("content", teachPlans.get(m).getContent());
 					planDetailMap.put("planId", teachPlans.get(m).getId());
-					
 					SimpleDateFormat format = new SimpleDateFormat("MM-dd");
 					planDetailMap.put("time", format.format(teachPlans.get(m).getTime()));
 
