@@ -35,6 +35,7 @@ public class PubarticlesController {
 		Cookie[]cookies = request.getCookies();
 		String email=CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
 		String content=request.getParameter("content");
+		String content1=content;
 		String title=request.getParameter("title");
 		
 		//过滤html标签
@@ -59,7 +60,7 @@ public class PubarticlesController {
 		boolean iscontentright=checkTextAPI.check(content);
 		if(istitleright && iscontentright) {
 			request.setAttribute("isright", 1);
-			pasi.setArticle(title, content, email);
+			pasi.setArticle(title, content1, email);
 			return "articlestatus";
 		}else {
 			request.setAttribute("isright", 0);
