@@ -8,7 +8,7 @@ import java.util.List;
 public interface StudentDetailService {
 	abstract public List<Article> AtricleShow() ;
 	abstract public List<ArticleReview> AtricleReview() ;
-	abstract public User getUserByEmail(String email);
+	abstract public User getUserByEmail(int id);
 }
 
 	

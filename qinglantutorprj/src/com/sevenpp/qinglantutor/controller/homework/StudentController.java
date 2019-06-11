@@ -33,13 +33,16 @@ public class StudentController {
 		response.setContentType("text/html;charset=utf-8");
 		response.setCharacterEncoding("utf-8");
 		Cookie[]cookies = request.getCookies();
+		System.out.println(cookies.length);
 //		String SESSIONID = CookieUtils.getCookieFromCookies(cookies,"JSESSIONID").getValue();
 		String email = CookieUtils.getCookieFromCookies(cookies,"EMAIL").getValue();
 		String page1=request.getParameter("page");
 		
-		Map<String,Object> em=this.studentdetailserviceimpl.getPersonalDetail(email);
-		request.setAttribute("map", em);
-		User user=studentdetailserviceimpl.getUserByEmail(email);
+		String id=request.getParameter("id");
+		int hid=Integer.parseInt(id);
+		
+		User user=studentdetailserviceimpl.getUserByEmail(hid);
+		
 		String role=user.getRole();
 		List<Article> list=this.studentdetailserviceimpl.AtricleShow();
 		List<ArticleReview> list2=this.studentdetailserviceimpl.AtricleReview();
