@@ -104,7 +104,7 @@ function listshow(currentpage4) {
 		            	content=content;
 		            }
 					articlelist2='<div class="articlecard">'+
-						'<img src="images/course'+(index+1)+'.jpg" class="img-rounded" alt="圆角图片" style="position:relative; margin:1%; width:15%;">'+
+						'<a href="teacherdetail?artid='+res.aId+'"><img src="images/course'+(index+1)+'.jpg" class="img-rounded" alt="圆角图片" style="position:relative; margin:1%; width:15%;"></a>'+
 						'<div class="card-heading" style="position: relative; margin-top:-11%; left:20%; width:80%;"><a href="teacherdetail?artid='+res.aId+'"><strong>'+res.title+'</strong></a></div>'+
 						'<div class="card-content text-muted" style="position: relative; left:20%; width:75%;">'+content+
 						'</div>'+
