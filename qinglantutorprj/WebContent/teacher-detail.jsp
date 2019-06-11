@@ -41,16 +41,16 @@
 				<div id="out">
 				<div id="blank"></div>
 				<div id="toptop">
-					<p>${article.title}</p>
+					<p align="center"><h1>${article.title}</h1></p>
 				</div>
 				<div id="top" style="height:150px; width:780.5; background-color: #fff;">
 					<div id="left">
 						<!-- 上部头像 -->
 						<img id="img-circle1" src="${article.user.img5 }" width="80px" height="80px" alt="圆形图片">
 						<!-- 对该教师加关注 -->
-						<div id="follow">
+						<div id="follow" border-radius:5px>
 							<ul style="list-style-type:none;  background-color: #fff;">
-								<li style="margin-bottom: 6px; background-color: #fff; font-size: 18px;"><span id="teachername">${article.title }</span><span style="background-color: #fff;"><button class="btn" type="button" id="button-follow" style="margin-right: 20px;"><i class="icon icon-plus"></i>关注</button></span></li>
+								<li style="margin-bottom: 6px; background-color: #fff; font-size: 18px;"><span id="teachername">${article.user.userName}</span><span style="background-color: #fff;"><button class="btn" type="button" id="button-follow"  style="margin-right: 20px;"><i class="icon icon-plus"></i>关注</button></span></li>
 								<li style="margin-bottom: 6px; background-color: #fff; font-size: 18px;">${article.sendTime}&nbsp;&nbsp;&nbsp;阅读:${article.likeCount }&nbsp;&nbsp;&nbsp;点赞:${article.likeCount }</li>
 							</ul>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						</div>
@@ -59,7 +59,7 @@
 						<ul style="list-style-type:none; background-color: #fff;">
 							<li style=" background-color: #fff; font-size: 20px;">标签:</li>
 							<li style="margin-bottom: 3px; background-color: #fff;"><button class="btn" type="button">${article.user.grade}</button><button class="btn" type="button" style="margin-left: 6px;">${article.user.major}</button></li>
-							<li style="margin-bottom: 3px; background-color: #fff;"><button class="btn" type="button" style="margin-top: 4px;">${article.user.address}</button></li>
+							<li style="margin-bottom: 3px; background-color: #fff;"><button class="btn" type="button" style="margin-top: 4px;">学习经验</button></li>
 							<li style="margin-bottom: 3px; background-color: #fff;"><button class="btn" type="button" style="margin-top: 4px;">提分密集</button></li>
 						</ul>
 					</div>
@@ -69,19 +69,12 @@
 				<div id="Middletop">
 					<p id="word">${article.content }</p>
 				</div>
-				<!-- 收藏点赞分享 -->
-				<!-- <div id="blank"></div>
-				<div id="MiddleMiddle">
-					<button class="btn btn-success " type="button" id="buttonid1">点赞</button>
-					<button class="btn btn-info " type="button" id="buttonid1">收藏</button>
-					<button class="btn btn-warning " type="button" id="buttonid1">分享</button>
-				</div> -->
 				<div id="blank"></div>
 				<div id="Middlebottom">
 					<p id="comment">评论</p><hr>
 					<c:forEach items="${teacherDetails }" var="onearticle">
 					<div id="introduce">
-						<a href="ArticleShow?teacherid=${article.user.id}"><img src="${onearticle.user.img5 }" width="90px" height="90px" id="img-circle2" alt="圆形图片"></a>
+						<a href="ArticleShow?id=${article.user.id}"><img src="${onearticle.user.img5 }" width="90px" height="90px" id="img-circle2" alt="圆形图片"></a>
 						<p id="name">${onearticle.user.userName }</p>
 						<p style="background-color: #fff;" id="introducep">${onearticle.rContent }</p>
 						<!-- <button class="btn" type="button" id="reply">回复</button> -->

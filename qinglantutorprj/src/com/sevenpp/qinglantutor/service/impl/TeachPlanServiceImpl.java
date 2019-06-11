@@ -73,7 +73,7 @@ public class TeachPlanServiceImpl implements TeachPlanService {
 				}
 				
 				Map<String, Object> map = new HashMap<String,Object>();
-				map.put("img", teachRelation.getUser().getUserImg());
+				map.put("img", teachRelation.getUser().getImg5());
 				map.put("name", teachRelation.getUser().getRealName());
 				map.put("planDetailMap",planDetailMapList);
 				
@@ -108,7 +108,7 @@ public class TeachPlanServiceImpl implements TeachPlanService {
 					
 					Map<String, Object> map = new HashMap<String,Object>();
 					map.put("trid", teachRelationList.get(i).getTrid());
-					map.put("img", student.getUserImg());
+					map.put("img", student.getImg5());
 					map.put("name", student.getRealName());
 					map.put("planDetailMap", planDetailMapList);
 					
@@ -178,7 +178,6 @@ public class TeachPlanServiceImpl implements TeachPlanService {
 		try {
 			date = sdf.parse(time);
 		} catch (ParseException e) {
-			System.out.println("我的教案增加， 时间转换错误");
 			e.printStackTrace();
 		}
 		return this.teachPlanDaoImpl.addTeachPlan(content, date, teachRelation);
