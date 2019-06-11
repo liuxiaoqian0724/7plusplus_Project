@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50506
 File Encoding         : 65001
 
-Date: 2019-06-10 16:45:23
+Date: 2019-06-11 16:59:32
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -27,18 +27,20 @@ CREATE TABLE `tbl_article` (
   `sendtime` datetime DEFAULT NULL,
   `likecount` int(11) DEFAULT NULL,
   PRIMARY KEY (`aId`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='���±�';
+) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=utf8 COMMENT='���±�';
 
 -- ----------------------------
 -- Records of tbl_article
 -- ----------------------------
-INSERT INTO `tbl_article` VALUES ('1', '1', '快速提升高中化学成绩的方法', '听课的重要性不用多介绍，道理大家都懂，只不过学霸做到了，而学渣只看到了，听讲的时候除了要集中精力，而且一定要多积极思考，随时准备向老师提高（但不一定真……', '2019-05-02 10:50:06', '36');
-INSERT INTO `tbl_article` VALUES ('2', '2', '快速提升高中物理成绩的方法', '我们一直提倡不懂就问，在学习的时候，肯定会遇到很多问题，但千万不要一遇到问题马上就请教别人，先独立思考一下，真正解决不了再去问，养成独立思考的好习惯……', '2019-05-16 10:51:26', '11');
-INSERT INTO `tbl_article` VALUES ('3', '4', '快速提高高中生物成绩的方法', '又是老生常谈的学习方法，其实最简单的方法反而是最有效的，前提是你能不能做到。也要承认，高中的学业任务很重，课前预习时间可能不是太多，哪怕粗略看一下……', '2019-05-15 10:52:20', '100');
+INSERT INTO `tbl_article` VALUES ('1', '1', '有哪些歌曲的现场演唱让你久久不能忘怀？', '<p style=\"color:#1A1A1A;font-family:-apple-system, BlinkMacSystemFont, &quot;font-size:15px;background-color:#FFFFFF;\">\r\n	爱看武侠的人，一定对这首《沧海一声笑》不陌生。\r\n</p>\r\n<p style=\"color:#1A1A1A;font-family:-apple-system, BlinkMacSystemFont, &quot;font-size:15px;background-color:#FFFFFF;\">\r\n	如果黄霑的《沧海一声笑》是“退隐江湖的告别陈词”，那GAI的这个版本应该是“江湖儿女摸爬滚打的前半生”\r\n</p>\r\n<p style=\"color:#1A1A1A;font-family:-apple-system, BlinkMacSystemFont, &quot;font-size:15px;background-color:#FFFFFF;\">\r\n	<p>\r\n		<div>\r\n			<p>\r\n				黄霑的《沧海一声笑》唱的是大侠的武林：\r\n			</p>\r\n			<p>\r\n				是重情重义的令狐冲，对着清风明月将名利纷争全部放下，“小舟从此逝，江海寄余生”的洒脱。\r\n			</p>\r\n			<p>\r\n				而GAI的《沧海一声笑》唱的是小人物的江湖：\r\n			</p>\r\n			<p>\r\n				是在刀尖舔血的市井小人物，嘴上说着“我命硬学不来弯腰”，却十分明白“一山还比一山高”，虽然想着我辈卑微平凡，却绝不甘于平庸的勇往直前。\r\n			</p>\r\n			<p>\r\n				<b>不拘一格，不羁放纵，江湖里不仅有大侠，也有升斗小民，还有混混。</b>\r\n			</p>\r\n			<p>\r\n				如果非要形容这个江湖，那就是十八年女儿红配着二斤熟牛肉同时吹着牛逼的江湖。\r\n			</p>\r\n		</div>\r\n<img src=\"https://pic4.zhimg.com/v2-678ffd0c2efe3ee83a87a53cbc009ed6_r.jpg\" width=\"500\" height=\"300\" alt=\"\" /><br />\r\n		<p>\r\n			<div>\r\n				<div>\r\n					<p>\r\n						我们带着一身铮铮铁骨，来到这世界上，注定要历经时间这把刀的打磨。\r\n					</p>\r\n					<p>\r\n						总有些舍不得的棱角会被磨得平整，眼睁睁的看着它由直勾勾的九十度直角变成拥有漂亮的弧度。\r\n					</p>\r\n					<p>\r\n						这不是一个英雄的悲哀，而是大多数普通人的命运。\r\n					</p>\r\n					<p>\r\n						他那些复杂的、深刻的、甚至血雨腥风的经历，都是他江湖生活的一部分。\r\n					</p>\r\n					<p>\r\n						现实生活的打击，反而激励他深刻地反思自我、反思生活，还逼出了一身才气。\r\n					</p>\r\n					<p>\r\n						那些苦难的日子里，创作是他表达自我的唯一出口。\r\n					</p>\r\n					<p>\r\n						GAI用嘻哈歌手的独特嗓音和对歌曲的独特理解，将《沧海一声笑》唱得豪情、潇洒、侠气。一个把酒言欢、快意恩仇的江湖，都在他的声音里了。\r\n					</p>\r\n					<p>\r\n						这个版本的《沧海一声笑》，编曲还是保留着原本的中国风色彩，中国大鼓、琵琶这些非常有中国特色的传统乐器一演奏起来，就是一股浓浓的国风味道。\r\n					</p>\r\n				</div>\r\n				<p>\r\n					<div>\r\n						<p>\r\n							他在改编加入了很多抗争性的表达，比如“我命硬学不来弯腰，一山还要比一山高”，这不仅是他自己的写照，相信也说出了部分男观众想说而不敢说的话。\r\n						</p>\r\n						<p>\r\n							这句词可以说是词魂，点睛之笔。\r\n						</p>\r\n						<p>\r\n							毕竟在最底层挣扎过，带点痞气带点不羁，正邪参半，不正是《笑傲江湖》中刘正风和曲洋的缩影吗？\r\n						</p>\r\n					</div>\r\n					<p>\r\n						<img src=\"https://pic1.zhimg.com/50/v2-3c5a31abbf47d6de4468246123320d06_hd.jpg\" width=\"500\" height=\"300\" alt=\"\" />\r\n					</p>\r\n					<p>\r\n						<p style=\"color:#1A1A1A;font-family:-apple-system, BlinkMacSystemFont, &quot;font-size:15px;background-color:#FFFFFF;\">\r\n							如果说原版更多的是悠然与潇洒，是出世；\r\n						</p>\r\n						<p style=\"color:#1A1A1A;font-family:-apple-system, BlinkMacSystemFont, &quot;font-size:15px;background-color:#FFFFFF;\">\r\n							那么GAI的演绎是侠气与豪情，是入世；\r\n						</p>\r\n						<p style=\"color:#1A1A1A;font-family:-apple-system, BlinkMacSystemFont, &quot;font-size:15px;background-color:#FFFFFF;\">\r\n							<span style=\"font-weight:600;\">华山论剑，紫禁之巅，那是武林。</span>\r\n						</p>\r\n						<p style=\"color:#1A1A1A;font-family:-apple-system, BlinkMacSystemFont, &quot;font-size:15px;background-color:#FFFFFF;\">\r\n							<span style=\"font-weight:600;\">小二上酒，大侠饶命，那是江湖。</span>\r\n						</p>\r\n						<p class=\"ztext-empty-paragraph\" style=\"color:#1A1A1A;font-family:-apple-system, BlinkMacSystemFont, &quot;font-size:15px;background-color:#FFFFFF;\">\r\n							<br />\r\n						</p>\r\n						<p style=\"color:#1A1A1A;font-family:-apple-system, BlinkMacSystemFont, &quot;font-size:15px;background-color:#FFFFFF;\">\r\n							<span style=\"font-weight:600;\">——————END——————</span>\r\n						</p>\r\n					</p>\r\n				</p>\r\n作者：柚子要爆炸<br />\r\n链接：https://www.zhihu.com/question/269082692/answer/682184181<br />\r\n来源：知乎<br />\r\n著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。\r\n			</div>\r\n		</p>\r\n		<p>\r\n			<br />\r\n		</p>\r\n	</p>\r\n</p>', '2019-05-09 10:53:49', '30');
+INSERT INTO `tbl_article` VALUES ('2', '7', '快速提升初中英语成绩的方法', '多次加深印象，是有效记忆最基本的方法。不提倡死记硬背，一定要在理解的前提下进行记忆。也可以把这些公式、定理记到一个小本子上，利用零碎时间看一眼，也是效果很好的记忆方法……', '2019-05-09 10:53:49', '100');
+INSERT INTO `tbl_article` VALUES ('3', '4', '海洋里到底有什么可怕的东西？', '又是老生常谈的学习方法，其实最简单的方法反而是最有效的，前提是你能不能做到。也要承认，高中的学业任务很重，课前预习时间可能不是太多，哪怕粗略看一下……', '2019-05-09 10:53:49', '100');
 INSERT INTO `tbl_article` VALUES ('4', '3', '快速提升高中数学成绩的方法', '课本也是很有必要，预习目的就是找到自己没有理解的问题，然后上课的时候重点听讲。课后一定要复习，对于化学这个科目复习的建议是：学习结束二十四小时、一周后、一月后、以及……', '2019-05-09 10:53:49', '250');
-INSERT INTO `tbl_article` VALUES ('5', '6', '快速提升初中数学成绩的方法', '化学虽然是一门理科，但需要记忆的知识确实很多，不要指望自己能过目不忘，知识要多次重复才能真正记住，对一些化学概念，如元素符号、化学式、某些定义等反复记忆，多……', '2019-05-09 10:55:39', '20');
-INSERT INTO `tbl_article` VALUES ('6', '5', '快速提升初中物理成绩的方法', '多次加深印象，是有效记忆最基本的方法。不提倡死记硬背，一定要在理解的前提下进行记忆。也可以把这些公式、定理记到一个小本子上，利用零碎时间看一眼，也是效果很好的记忆方法……', '2019-05-11 10:57:27', '30');
-INSERT INTO `tbl_article` VALUES ('7', '7', '快速提升初中英语成绩的方法', '很多人都感觉课本太简单，但多数人都没有真正把课本吃透，课本上最基础的知识都没有真正掌握住，以课本为主线，认真吃透课本，这是学好化学的根本。为此，同学们……', '2019-05-02 10:59:09', '100');
+INSERT INTO `tbl_article` VALUES ('5', '6', '瘦了 30 斤后会有什么变化？', '化学虽然是一门理科，但需要记忆的知识确实很多，不要指望自己能过目不忘，知识要多次重复才能真正记住，对一些化学概念，如元素符号、化学式、某些定义等反复记忆，多……', '2019-05-09 10:53:49', '20');
+INSERT INTO `tbl_article` VALUES ('8', '2', '快速提升高中物理成绩的方法', '\'我们一直提倡不懂就问，在学习的时候，肯定会遇到很多问题，但千万不要一遇到问题马上就请教别人，先独立思考一下，真正解决不了再去问，养成独立思考的好习惯……', '2019-05-09 10:53:49', '11');
+INSERT INTO `tbl_article` VALUES ('9', '1', '有哪些可以提升情商、判断力和谈话技巧的书籍？', '听课的重要性不用多介绍，道理大家都懂，只不过学霸做到了，而学渣只看到了，听讲的时候除了要集中精力，而且一定要多积极思考，随时准备向老师提高（但不一定真……', '2019-05-09 10:53:49', '100');
+INSERT INTO `tbl_article` VALUES ('10', '2', '有哪些歌曲的现场演唱让你久久不能忘怀？', '很多人都感觉课本太简单，但多数人都没有真正把课本吃透，课本上最基础的知识都没有真正掌握住，以课本为主线，认真吃透课本，这是学好化学的根本。为此，同学们……', '2019-05-09 10:53:49', '0');
+INSERT INTO `tbl_article` VALUES ('30', '2', '怎样养成瘦子的生活习惯？', '很多人都感觉课本太简单，但多数人都没有真正把课本吃透，课本上最基础的知识都没有真正掌握住，以课本为主线，认真吃透课本，这是学好化学的根本。为此，同学们……', '0000-00-00 00:00:00', '0');
 
 -- ----------------------------
 -- Table structure for `tbl_articlereview`
@@ -56,12 +58,12 @@ CREATE TABLE `tbl_articlereview` (
 -- ----------------------------
 -- Records of tbl_articlereview
 -- ----------------------------
-INSERT INTO `tbl_articlereview` VALUES ('1', '11', '1', '炸丸子的肉馅里最好不要加葱花，葱花容易炸糊,吃起来影响口感和颜色。炸丸子时，油烧热后用小火，下入丸子，待全部下入后，在用中火炸，这样丸子成熟度一样，不会有的熟了有的没熟，炸制期间用勺子不停地搅动，使丸子炸的颜色一致，用大火容易炸的丸子外焦里不熟。喜欢这个菜肴的做法，你学会了吗?学会了别忘了点赞、收藏、转发，也欢迎在评论区发表您的看法，或者分享您的做法，欢迎关注-勺美食，每天都会发布家常美食做法。', '2019-06-05 19:21:15');
-INSERT INTO `tbl_articlereview` VALUES ('2', '10', '1', '《围城》是钱钟书所著的长篇小说，是中国现代文学史上一部风格独特的讽刺小说。被誉为“新儒林外史”。第一版于1947年由上海晨光出版公司出版。故事主要写抗战初期知识分子的群相。', '2019-06-04 21:39:29');
-INSERT INTO `tbl_articlereview` VALUES ('3', '4', '2', '方鸿渐在欧洲游学期间，不理学业。为了给家人一个交待，方于毕业前购买了虚构的“克莱登大学”的博士学位证书，并随海外学成的学生回国。在船上与留学生鲍小姐相识并热恋，但被鲍小姐欺骗感情。同时也遇见了大学同学苏文纨', '2019-05-28 08:13:39');
-INSERT INTO `tbl_articlereview` VALUES ('4', '8', '2', '抗战开始，方家逃难至上海的租界。在赵辛楣的引荐下，与赵辛楣、孙柔嘉、顾尔谦、李梅亭几人同赴位于内地的三闾大学任教。由于方鸿渐性格等方面的弱点，陷入了复杂的人际纠纷当中。', '2019-05-30 08:14:09');
-INSERT INTO `tbl_articlereview` VALUES ('5', '7', '3', '高中时就饭陈冠希的小孩不计其数，夏嘉欢也是因此初入潮流圈。偶尔穿着日本潮牌Tee去上课，被同班同学要求“代购”，于是加价的100块“跑腿费”就是夏嘉欢赚到的第一桶金。', '2019-05-31 08:15:06');
-INSERT INTO `tbl_articlereview` VALUES ('6', '6', '3', '一般人听到“90后鞋王”这种捧杀型Title，都会谦虚地表示担不起这个称谓，但夏嘉欢满意地接受了，毕竟“没有我买不到的鞋”是他的至理名言。', '2019-06-03 08:15:25');
+INSERT INTO `tbl_articlereview` VALUES ('1', '11', '1', '之前在渣浪被推送的      陌路遇知音→先是一个小哥在法国机场弹Una Mattina接着一个旁观很久的boy觉得:诶，好听，我也来一腿吧。然后，两人越弹越有默契当时让我反复看了10遍的   （4:00后是精华，平时忙着工作，没时间的小哥哥小姐姐也请收藏一下留着看看哦，本身这首曲子就很好听，被两人翻弹以后就更加的好听了 ）', '2019-06-05 19:21:15');
+INSERT INTO `tbl_articlereview` VALUES ('2', '10', '1', '大概是这个吧。2010年周杰伦超时代演唱会前，周董说，这场演唱会上会有一位特别来宾……于是，我们等来了Jolin。去过现场的歌迷说：当蔡依林出来的那一刹那，前排的粉丝都快疯了 …', '2019-06-04 21:39:29');
+INSERT INTO `tbl_articlereview` VALUES ('3', '4', '2', '去过现场的歌迷说：当蔡依林出来的那一刹那，前排的粉丝都快疯了 …', '2019-05-28 08:13:39');
+INSERT INTO `tbl_articlereview` VALUES ('4', '8', '2', '2010年周杰伦超时代演唱会前，周董说，这场演唱会上会有一位特别来宾……于是，我们等来了Jolin。', '2019-05-30 08:14:09');
+INSERT INTO `tbl_articlereview` VALUES ('5', '7', '3', '去过现场的歌迷说：当蔡依林出来的那一刹那，前排的粉丝都快疯了 …', '2019-05-31 08:15:06');
+INSERT INTO `tbl_articlereview` VALUES ('6', '6', '3', '去过现场的歌迷说：当蔡依林出来的那一刹那，前排的粉丝都快疯了 …', '2019-06-03 08:15:25');
 INSERT INTO `tbl_articlereview` VALUES ('9', '1', '2', '一般人听到“90后鞋王”这种捧杀型Title，都会谦虚地表示担不起这个称谓，但夏嘉欢满意地接受了，毕竟“没有我买不到的鞋”是他的至理名言。', '2019-06-05 08:27:03');
 
 -- ----------------------------
@@ -80,29 +82,16 @@ CREATE TABLE `tbl_classrelation` (
 -- ----------------------------
 INSERT INTO `tbl_classrelation` VALUES ('1', '10', '1');
 INSERT INTO `tbl_classrelation` VALUES ('2', '11', '1');
-INSERT INTO `tbl_classrelation` VALUES ('3', '2', '2');
 INSERT INTO `tbl_classrelation` VALUES ('4', '1', '3');
 INSERT INTO `tbl_classrelation` VALUES ('5', '3', '4');
 INSERT INTO `tbl_classrelation` VALUES ('6', '4', '1');
-INSERT INTO `tbl_classrelation` VALUES ('7', '5', '3');
 INSERT INTO `tbl_classrelation` VALUES ('8', '6', '2');
 INSERT INTO `tbl_classrelation` VALUES ('9', '7', '4');
 INSERT INTO `tbl_classrelation` VALUES ('10', '8', '1');
 INSERT INTO `tbl_classrelation` VALUES ('11', '9', '1');
 INSERT INTO `tbl_classrelation` VALUES ('12', '1', '2');
-INSERT INTO `tbl_classrelation` VALUES ('13', '2', '3');
-INSERT INTO `tbl_classrelation` VALUES ('14', '3', '4');
-INSERT INTO `tbl_classrelation` VALUES ('15', '4', '1');
 INSERT INTO `tbl_classrelation` VALUES ('16', '5', '2');
-INSERT INTO `tbl_classrelation` VALUES ('17', '6', '3');
-INSERT INTO `tbl_classrelation` VALUES ('18', '7', '1');
-INSERT INTO `tbl_classrelation` VALUES ('19', '8', '2');
-INSERT INTO `tbl_classrelation` VALUES ('20', '9', '3');
 INSERT INTO `tbl_classrelation` VALUES ('21', '10', '4');
-INSERT INTO `tbl_classrelation` VALUES ('22', '11', '4');
-INSERT INTO `tbl_classrelation` VALUES ('23', '1', '1');
-INSERT INTO `tbl_classrelation` VALUES ('24', '2', '2');
-INSERT INTO `tbl_classrelation` VALUES ('25', '3', '1');
 
 -- ----------------------------
 -- Table structure for `tbl_course`
@@ -450,7 +439,6 @@ CREATE TABLE `tbl_teach` (
 INSERT INTO `tbl_teach` VALUES ('1', '1', '2', '9-11', '9-20');
 INSERT INTO `tbl_teach` VALUES ('2', '1', '3', '9-11', '9-20');
 INSERT INTO `tbl_teach` VALUES ('3', '2', '2', '9-11', '9-20');
-INSERT INTO `tbl_teach` VALUES ('4', '2', '3', '9-11', '9-20');
 INSERT INTO `tbl_teach` VALUES ('5', '5', '5', '9-11', '9-20');
 INSERT INTO `tbl_teach` VALUES ('6', '6', '6', '9-11', '9-20');
 INSERT INTO `tbl_teach` VALUES ('7', '7', '7', '9-11', '9-20');
