@@ -109,7 +109,9 @@ public class TeachPlanController {
 				list1.add(list.get(i));
 			}
 		}
-		
+		Map<String, Object> map = this.teachPlanServiceImpl.getPersonalDetail(email);
+		request.setAttribute("map", map);
+
 
 		request.setAttribute("teachPlanInformationList", list1);
 		request.setAttribute("page", page);
