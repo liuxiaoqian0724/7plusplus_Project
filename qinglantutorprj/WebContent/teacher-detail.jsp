@@ -74,7 +74,7 @@
 					<p id="comment">评论</p><hr>
 					<c:forEach items="${teacherDetails }" var="onearticle">
 					<div id="introduce">
-						<a href="ArticleShow?teacherid=${article.user.id}"><img src="${onearticle.user.img5 }" width="90px" height="90px" id="img-circle2" alt="圆形图片"></a>
+						<a href="ArticleShow?id=${article.user.id}"><img src="${onearticle.user.img5 }" width="90px" height="90px" id="img-circle2" alt="圆形图片"></a>
 						<p id="name">${onearticle.user.userName }</p>
 						<p style="background-color: #fff;" id="introducep">${onearticle.rContent }</p>
 						<!-- <button class="btn" type="button" id="reply">回复</button> -->
