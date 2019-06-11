@@ -79,6 +79,10 @@
 		<error-code>500</error-code>
 		<location>/404.jsp</location>
 	</error-page>
+	<error-page>
+		<error-code>400</error-code>
+		<location>/404.jsp</location>
+	</error-page>
 	<!-- java.lang.Exception异常错误,依据这个标记可定义多个类似错误提示 -->
 	<error-page>
 		<exception-type>java.lang.Exception</exception-type>

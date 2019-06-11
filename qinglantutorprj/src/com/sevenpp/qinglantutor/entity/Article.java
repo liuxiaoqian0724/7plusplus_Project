@@ -1,7 +1,9 @@
 package com.sevenpp.qinglantutor.entity;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -23,7 +25,7 @@ public class Article {
 	private String content;
 	private Timestamp sendTime;
 	private Integer likeCount;
-	private Set<ArticleReview> userReviewSet=new HashSet<ArticleReview>();//文章评论表
+	private List<ArticleReview> userReviewSet=new ArrayList<ArticleReview>();//文章评论表
 	private User user=new User();//用户信息
 	
 	@Id
@@ -68,10 +70,10 @@ public class Article {
 		this.user = user;
 	}
 	@OneToMany(mappedBy="article",targetEntity=ArticleReview.class,cascade=CascadeType.REMOVE)
-	public Set<ArticleReview> getUserReviewSet() {
+	public List<ArticleReview> getUserReviewSet() {
 		return userReviewSet;
 	}
-	public void setUserReviewSet(Set<ArticleReview> userReviewSet) {
+	public void setUserReviewSet(List<ArticleReview> userReviewSet) {
 		this.userReviewSet = userReviewSet;
 	}
 	@Override

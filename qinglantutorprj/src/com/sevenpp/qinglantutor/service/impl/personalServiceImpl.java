@@ -89,9 +89,7 @@ public class personalServiceImpl {
 								if (list3.isEmpty())
 								{}
 								else {
-								System.out.println(list3.get(0));
 								int reviewstar=list3.get(0).getReviewStar();
-								System.out.println(reviewstar);
 								Star=Star+reviewstar;
 								reviewnum++;
 								}

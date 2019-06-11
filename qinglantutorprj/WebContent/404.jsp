@@ -70,7 +70,7 @@ var second = totalSecond.innerText;
   setInterval("redirect()", 1000);
   function redirect() {
     totalSecond.innerText = --second;
-    if(second <= 0) location.href = 'index.jsp';
+    if(second <= 0) location.href = '/qinglantutorprj/index.jsp';
   }
 </script> 
 </body></html>
