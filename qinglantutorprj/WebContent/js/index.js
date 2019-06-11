@@ -1,4 +1,4 @@
-$(document).ready(function(){
+window.onload=function(){
 	var role=getCookie("ROLE");
 	if(role=="老师"){
 		$("#choose_button").append('<button class="btn btn-info" type="button" id="i_wonder_release" onclick="window.location.href=\'sendmessageed.jsp\'"><i class="icon icon-pencil"></i>我要发布</button>');
@@ -25,7 +25,7 @@ $(document).ready(function(){
 	datashow(currentpage1);
 	learnshow(currentpage2);
 	authorshow(currentpage3);
-})
+}
 //页码定义
 var currentpage1 = 1;
 var totalpage1 = 1;
