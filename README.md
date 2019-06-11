@@ -52,11 +52,6 @@
 <img src="./image/家长-个人中心-我的消息页面.png" width=250 height=400 />
 </p>
 <p>
-<img src="./image/主页-家长角色.png" width=250 height=400 />
-<img src="./image/树洞主页.png" width=250 height=400 />
-<img src="./image/通讯录.png" width=250 height=400 />
-</p>
-<p>
 <img src="./image/学习社区-文章审核成功页面.png" width=250 height=400 />
 <img src="./image/学习社区-文章列表页.png" width=250 height=400 />
 <img src="./image/个人资料修改页.png" width=250 height=400 />
