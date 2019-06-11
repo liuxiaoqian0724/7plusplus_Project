@@ -24,8 +24,7 @@ public class PubarticlesController {
 	private PubarticlesServiceImpl pasi;
 	
 	@RequestMapping(value="/pubarticles")
-	public String publisharticles(HttpServletRequest request,HttpServletResponse response,@RequestParam("title") String title,
-			@RequestParam("content") String content) {
+	public String publisharticles(HttpServletRequest request,HttpServletResponse response) {
 		response.setHeader("Access-Control-Allow-Origin", "*");
 		response.setHeader("Access-Control-Allow-Methods", "POST");
 		response.setHeader("Access-Control-Allow-Headers","x-requested-with,content-type");
