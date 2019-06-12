@@ -163,10 +163,10 @@
 												<c:when test="${flag==0}">
 													<td data-id="${count}"><c:if
 															test="${count==mytime.tid}">
-															<img src="images/icon/ok.png" alt=" ">
+															<img src="images/icon/error.png" alt=" ">
 															<c:set var="flag" value="1"></c:set>
 														</c:if> <c:if test="${count!=mytime.tid}">
-															<img src="images/icon/error.png" alt=" ">
+															<img src="images/icon/ok.png" alt=" ">
 															<c:set var="flag" value="1"></c:set>
 														</c:if></td>
 												</c:when>

@@ -26,7 +26,7 @@ import org.springframework.stereotype.Controller;
 */
 import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
-public class WorkComment {
+public class WorkCommentController {
 	@Resource HomeworkSelectServiceImpl homeworkSelectServiceImpl;
 	@Resource WorkCompleteServiceImpl workCompleteServiceImpl;
 	

@@ -18,14 +18,14 @@
 <body>
 <div id="wrapper">
   
-	<img src="images/404Top.png" style="position: absolute;float: left;width: 100%">
-	<img src="images/404Left.jpg" style="position: absolute; float: left;margin-top: 4%;width: 15%"  id="leftpic">
-	<a  href="javascript:onclick=jump() "><img src="images/backtoindex2.png" style="width:30%;position: absolute; float: left;margin-top: 25%;margin-left: 45%;z-index:3;"> </a>
-	<img src="images/404Bottom.jpg" style="width:85%;z-index:-2;position: absolute; float: left;margin-top: 37%;margin-left: 15%;overflow: hidden;"> 
-   <img src="images/404.jpg" style="position: absolute; float: left; margin-left: 25%; margin-top:10%;z-index:2;width: 30%">
-  <img src="images/404no2.png" style="position: absolute;float: left;margin-top:12%;margin-left:64%; width:23%; z-index: 3;">
-  <img src="images/404Logo.png" style="width:8%;position: absolute; float: left;margin-top: 11%;margin-left: 90%;z-index: 3;">
-  <img src="images/404beta.jpg" style="position: absolute; float: left;
+	<img src="<%=basePath%>/images/404Top.png" style="position: absolute;float: left;width: 100%">
+	<img src="<%=basePath%>/images/404Left.jpg" style="position: absolute; float: left;margin-top: 4%;width: 15%"  id="leftpic">
+	<a  href="<%=basePath%>/javascript:onclick=jump() "><img src="images/backtoindex2.png" style="width:30%;position: absolute; float: left;margin-top: 25%;margin-left: 45%;z-index:3;"> </a>
+	<img src="<%=basePath%>/images/404Bottom.jpg" style="width:85%;z-index:-2;position: absolute; float: left;margin-top: 37%;margin-left: 15%;overflow: hidden;"> 
+   <img src="<%=basePath%>/images/404.jpg" style="position: absolute; float: left; margin-left: 25%; margin-top:10%;z-index:2;width: 30%">
+  <img src="<%=basePath%>/images/404no2.png" style="position: absolute;float: left;margin-top:12%;margin-left:64%; width:23%; z-index: 3;">
+  <img src="<%=basePath%>/images/404Logo.png" style="width:8%;position: absolute; float: left;margin-top: 11%;margin-left: 90%;z-index: 3;">
+  <img src="<%=basePath%>/images/404beta.jpg" style="position: absolute; float: left;
   width:40%;margin-top:4%;margin-left: 60%;z-index:2;">
  
   <!-- treemenu -->
@@ -33,18 +33,18 @@
 
     <ul id="prj">
       <a href="javascript:onclick=show('open') ">
-      <img src="images/right.png" id="p1" style="display: none;float: left">
-      <img src="images/show.png" id="p2" style="display:block;float: left">
-      <img src="images/prj.gif">青蓝家教网</a></ul>
+      <img src="<%=basePath%>/images/right.png" id="p1" style="display: none;float: left">
+      <img src="<%=basePath%>/images/show.png" id="p2" style="display:block;float: left">
+      <img src="<%=basePath%>/images/prj.gif">青蓝家教网</a></ul>
     <ul id="open" class="no_circle">
-      <li><img src="images/right.png"><img src="images/src.png"></a>src</li>
-          <li> <img src="images/right.png"><img src="images/Apache.png">Apache Tomcat v9.0</li>
-          <li><img src="images/right.png"><img src="images/Apache.png">JRE System Library</li> 
-          <li id="bulid"><img src="images/file.png">bulid</li>
-          <li><img src="images/right.png"><img src="images/file.png">WebContent</li> 
-          <li><a href="javascript:onclick=show('staff')">
-            <img src="images/right.png">
-            <img src="images/file.png">制作人员名单</a></li>
+      <li><img src="<%=basePath%>/images/right.png"><img src="<%=basePath%>/images/src.png"></a>src</li>
+          <li> <img src="<%=basePath%>/images/right.png"><img src="<%=basePath%>/images/Apache.png">Apache Tomcat v9.0</li>
+          <li><img src="<%=basePath%>/images/right.png"><img src="<%=basePath%>/images/Apache.png">JRE System Library</li> 
+          <li id="bulid"><img src="<%=basePath%>/images/file.png">bulid</li>
+          <li><img src="<%=basePath%>/images/right.png"><img src="<%=basePath%>/images/file.png">WebContent</li> 
+          <li><a href="<%=basePath%>/javascript:onclick=show('staff')">
+            <img src="<%=basePath%>/images/right.png">
+            <img src="<%=basePath%>/images/file.png">制作人员名单</a></li>
           <ul id="staff">
             <li>刘晓倩</li>
             <li>崔珊</li>
