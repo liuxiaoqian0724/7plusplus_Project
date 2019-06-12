@@ -26,8 +26,7 @@ function luntan(obj){
 	var useremail=getCookie("EMAIL");
 	if(useremail == ""){
 		alert("请先登录");
-	}else{
-		$("#personalNews").attr("href","arti");
+		$(obj).attr("href","#");
 	}
 }
 
