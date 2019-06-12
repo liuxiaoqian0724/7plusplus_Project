@@ -21,7 +21,7 @@
   - Github：[https://github.com/renjiahua945](https://github.com/renjiahua945)
 - 胡 宇（技术总监、开发工程师、测试工程师）
   - Github：[https://github.com/moustacheyummy](https://github.com/moustacheyummy)
-- 崔 珊（DB、开发工程师、测试工程师）
+- 崔 珊（DBA、开发工程师、测试工程师）
   - Github：[https://github.com/cuishan2000](https://github.com/cuishan2000)
 - 刘杼滨（UI设计师、测试工程师、测试工程师）
   - Github：[https://github.com/yangxiaoyu98](https://github.com/yangxiaoyu98)
