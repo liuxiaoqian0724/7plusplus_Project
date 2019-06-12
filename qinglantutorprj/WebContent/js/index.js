@@ -425,11 +425,3 @@ function loginstatus(obj){
 		$(obj).attr("href","#");
 	}
 }
-var aNodes = document.getElementsByTagName("a");
-if(email==""){
-	for(var i=0;i<aNodes.length;i++){
-		aNodes[i].onclick=function(){
-			alert("请先登录！");
-		};
-	}
-}

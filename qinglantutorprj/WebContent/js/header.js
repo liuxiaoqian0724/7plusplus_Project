@@ -22,6 +22,15 @@ function persoanlNews(){
 	}	
 }
 
+function luntan(obj){
+	var useremail=getCookie("EMAIL");
+	if(useremail == ""){
+		alert("请先登录");
+	}else{
+		$("#personalNews").attr("href","arti");
+	}
+}
+
 function tutor(){
 	var useremail=getCookie("EMAIL");
 	if(useremail == ""){
